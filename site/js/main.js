@@ -113,6 +113,21 @@
         var autoplayInterval = null;
         var autoplayDelay = 5000;
 
+        // Lazy-load slide background images on first display
+        function loadSlide(slide) {
+            var bg = slide.getAttribute('data-bg');
+            if (bg) {
+                slide.style.backgroundImage = "url('" + bg + "')";
+                slide.removeAttribute('data-bg');
+            }
+        }
+
+        // Preload next slide image
+        function preloadSlide(index) {
+            var idx = (index + slideCount) % slideCount;
+            loadSlide(slides[idx]);
+        }
+
         function goToSlide(index) {
             slides[currentSlide].classList.remove('is-active');
             slides[currentSlide].setAttribute('aria-hidden', 'true');
@@ -120,9 +135,13 @@
 
             currentSlide = (index + slideCount) % slideCount;
 
+            loadSlide(slides[currentSlide]);
             slides[currentSlide].classList.add('is-active');
             slides[currentSlide].setAttribute('aria-hidden', 'false');
             dots[currentSlide].classList.add('is-active');
+
+            // Preload the next slide
+            preloadSlide(currentSlide + 1);
         }
 
         function nextSlide() { goToSlide(currentSlide + 1); }

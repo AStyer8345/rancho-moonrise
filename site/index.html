@@ -27,10 +27,14 @@
     <meta name="twitter:title" content="Glamping &amp; Events Ranch Near Austin TX | Rancho Moonrise">
     <meta name="twitter:description" content="Luxury safari tents, cabins, weddings, corporate retreats &amp; live music on 20 acres near Austin.">
 
-    <!-- Fonts -->
+    <!-- Preload hero image for fast LCP -->
+    <link rel="preload" as="image" type="image/webp" href="images/hero-ranch-sunset.webp">
+
+    <!-- Fonts (non-render-blocking) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"></noscript>
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/styles.css">
@@ -149,11 +153,11 @@
 <!-- ============ HERO ============ -->
 <main id="main">
 <section class="hero hero--slideshow" aria-label="Welcome to Rancho Moonrise">
-    <div class="hero__slide is-active" style="background-image: url('images/hero-ranch-sunset.jpg');" aria-hidden="false"></div>
-    <div class="hero__slide" style="background-image: url('images/feature-pool.jpg');" aria-hidden="true"></div>
-    <div class="hero__slide" style="background-image: url('images/feature-music.jpg');" aria-hidden="true"></div>
-    <div class="hero__slide" style="background-image: url('images/about-ranch-aerial.jpg');" aria-hidden="true"></div>
-    <div class="hero__slide" style="background-image: url('images/feature-safari-tent.jpg');" aria-hidden="true"></div>
+    <div class="hero__slide is-active" style="background-image: url('images/hero-ranch-sunset.webp');" aria-hidden="false"></div>
+    <div class="hero__slide" data-bg="images/feature-pool.webp" aria-hidden="true"></div>
+    <div class="hero__slide" data-bg="images/feature-music.webp" aria-hidden="true"></div>
+    <div class="hero__slide" data-bg="images/about-ranch-aerial.webp" aria-hidden="true"></div>
+    <div class="hero__slide" data-bg="images/feature-safari-tent.webp" aria-hidden="true"></div>
 
     <div class="hero__content">
         <span class="hero__label">Manor, Texas — 20 Minutes from Austin</span>
@@ -187,7 +191,7 @@
 
         <div class="features">
             <a href="/pages/accommodations.html" class="feature-card fade-in">
-                <img class="feature-card__img" src="images/feature-safari-tent.jpg" alt="Interior of a luxury safari tent with queen bed, string lights, and air conditioning at Rancho Moonrise glamping near Austin TX" width="600" height="450" loading="lazy">
+                <img class="feature-card__img" src="images/feature-safari-tent.webp" alt="Interior of a luxury safari tent with queen bed, string lights, and air conditioning at Rancho Moonrise glamping near Austin TX" width="600" height="450" loading="lazy">
                 <div class="feature-card__content">
                     <h3 class="feature-card__title">Safari Tents &amp; Cabins</h3>
                     <p class="feature-card__desc">A/C, heat, private fire pits — glamping without compromise.</p>
@@ -195,7 +199,7 @@
             </a>
 
             <a href="/pages/weddings.html" class="feature-card fade-in">
-                <img class="feature-card__img" src="images/feature-wedding.jpg" alt="Outdoor wedding ceremony at Rancho Moonrise with string lights, rustic arch, and Hill Country backdrop near Austin TX" width="600" height="450" loading="lazy">
+                <img class="feature-card__img" src="images/feature-wedding.webp" alt="Outdoor wedding ceremony at Rancho Moonrise with string lights, rustic arch, and Hill Country backdrop near Austin TX" width="600" height="450" loading="lazy">
                 <div class="feature-card__content">
                     <h3 class="feature-card__title">Weddings</h3>
                     <p class="feature-card__desc">Exclusive ranch access, 200+ guests, 50 overnight stays.</p>
@@ -203,7 +207,7 @@
             </a>
 
             <a href="/pages/events.html" class="feature-card fade-in">
-                <img class="feature-card__img" src="images/feature-music.jpg" alt="Live music performance at Neon Moon Bar and Lounge at Rancho Moonrise with string lights and crowd" width="600" height="450" loading="lazy">
+                <img class="feature-card__img" src="images/feature-music.webp" alt="Live music performance at Neon Moon Bar and Lounge at Rancho Moonrise with string lights and crowd" width="600" height="450" loading="lazy">
                 <div class="feature-card__content">
                     <h3 class="feature-card__title">Live Music &amp; Events</h3>
                     <p class="feature-card__desc">Concerts, yoga, sound baths, and seasonal celebrations.</p>
@@ -211,7 +215,7 @@
             </a>
 
             <a href="/pages/host-your-event.html" class="feature-card fade-in">
-                <img class="feature-card__img" src="images/feature-event-barn.jpg" alt="Rancho Moonrise Event Barn set up for a corporate retreat with long tables and modern ranch decor" width="600" height="450" loading="lazy">
+                <img class="feature-card__img" src="images/feature-event-barn.webp" alt="Rancho Moonrise Event Barn set up for a corporate retreat with long tables and modern ranch decor" width="600" height="450" loading="lazy">
                 <div class="feature-card__content">
                     <h3 class="feature-card__title">Private Events</h3>
                     <p class="feature-card__desc">Corporate retreats, birthdays, and full ranch buyouts.</p>
@@ -219,7 +223,7 @@
             </a>
 
             <a href="https://www.resortpass.com/hotels/rancho-moonrise" class="feature-card fade-in" target="_blank" rel="noopener">
-                <img class="feature-card__img" src="images/feature-pool.jpg" alt="Resort-style swimming pool with lounge chairs surrounded by oak trees at Rancho Moonrise glamping ranch" width="600" height="450" loading="lazy">
+                <img class="feature-card__img" src="images/feature-pool.webp" alt="Resort-style swimming pool with lounge chairs surrounded by oak trees at Rancho Moonrise glamping ranch" width="600" height="450" loading="lazy">
                 <div class="feature-card__content">
                     <h3 class="feature-card__title">Pool &amp; Spa</h3>
                     <p class="feature-card__desc">Day passes available — swim, lounge, unwind.</p>
@@ -234,7 +238,7 @@
     <div class="container">
         <div class="split">
             <div class="split__image fade-in">
-                <img src="images/about-ranch-aerial.jpg" alt="Aerial view of Rancho Moonrise 20-acre property showing safari tents, cabins, event barn, and pool area in Manor Texas" width="800" height="600" loading="lazy">
+                <img src="images/about-ranch-aerial.webp" alt="Aerial view of Rancho Moonrise 20-acre property showing safari tents, cabins, event barn, and pool area in Manor Texas" width="800" height="600" loading="lazy">
             </div>
             <div class="split__content fade-in">
                 <span class="section-label">About the Ranch</span>
@@ -250,7 +254,7 @@
 
 <!-- ============ WEDDINGS CTA ============ -->
 <section class="cta-banner" aria-label="Wedding venue information">
-    <div class="cta-banner__bg" style="background-image: url('images/cta-wedding-reception.jpg');" role="img" aria-label="Evening wedding reception under string lights at Rancho Moonrise with dinner tables and Hill Country sunset"></div>
+    <div class="cta-banner__bg" style="background-image: url('images/cta-wedding-reception.webp');" role="img" aria-label="Evening wedding reception under string lights at Rancho Moonrise with dinner tables and Hill Country sunset"></div>
     <div class="cta-banner__content fade-in">
         <span class="section-label">Destination Weddings</span>
         <h2 style="color: var(--color-white); margin-bottom: var(--space-sm);">Your Dream Ranch Wedding</h2>
@@ -316,7 +320,7 @@
 
 <!-- ============ FINAL CTA ============ -->
 <section class="cta-banner" aria-label="Book your stay">
-    <div class="cta-banner__bg" style="background-image: url('images/cta-campfire-night.jpg');" role="img" aria-label="Guests around a campfire at night at Rancho Moonrise with safari tents and starry sky in background"></div>
+    <div class="cta-banner__bg" style="background-image: url('images/cta-campfire-night.webp');" role="img" aria-label="Guests around a campfire at night at Rancho Moonrise with safari tents and starry sky in background"></div>
     <div class="cta-banner__content fade-in">
         <span class="section-label">Your Escape Awaits</span>
         <h2 style="color: var(--color-white); margin-bottom: var(--space-sm);">Ready to Experience the Ranch?</h2>
