@@ -373,9 +373,9 @@ p { margin-bottom: 1em; }
     z-index: 1;
     background: linear-gradient(
         to bottom,
-        rgba(0, 0, 0, 0.1) 0%,
-        rgba(0, 0, 0, 0.25) 50%,
-        rgba(0, 0, 0, 0.5) 100%
+        rgba(0, 0, 0, 0.15) 0%,
+        rgba(0, 0, 0, 0.35) 40%,
+        rgba(0, 0, 0, 0.6) 100%
     );
 }
 
@@ -397,9 +397,9 @@ p { margin-bottom: 1em; }
     inset: 0;
     background: linear-gradient(
         to bottom,
-        rgba(0, 0, 0, 0.1) 0%,
-        rgba(0, 0, 0, 0.2) 50%,
-        rgba(0, 0, 0, 0.45) 100%
+        rgba(0, 0, 0, 0.15) 0%,
+        rgba(0, 0, 0, 0.35) 40%,
+        rgba(0, 0, 0, 0.6) 100%
     );
 }
 
@@ -415,22 +415,7 @@ p { margin-bottom: 1em; }
 }
 
 .hero__arrow {
-    background: rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    color: var(--color-white);
-    width: 44px;
-    height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    font-size: 1.2rem;
-    transition: all var(--transition);
-    backdrop-filter: blur(4px);
-}
-.hero__arrow:hover {
-    background: rgba(255, 255, 255, 0.35);
-    border-color: var(--color-white);
+    display: none;
 }
 
 .hero__dots {
@@ -462,28 +447,32 @@ p { margin-bottom: 1em; }
 
 .hero__label {
     font-family: var(--font-body);
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 4px;
     text-transform: uppercase;
-    color: var(--color-orange-light);
+    color: var(--color-white);
     margin-bottom: var(--space-sm);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
 
 .hero__title {
     font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 700;
     color: var(--color-white);
     margin-bottom: var(--space-sm);
     line-height: 1.1;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .hero__subtitle {
-    font-family: var(--font-accent);
-    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-    color: rgba(255, 255, 255, 0.85);
-    font-style: italic;
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 300;
     margin-bottom: var(--space-lg);
-    line-height: 1.6;
+    line-height: 1.7;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero__scroll {
