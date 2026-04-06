@@ -262,7 +262,7 @@
     /* Services */
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
       gap: 20px;
     }
     .service {
@@ -365,16 +365,16 @@
     <p>A plain-English look at what's holding the ranch back online, what's already been fixed, and what comes next. No tech jargon — just what matters for bookings.</p>
     <div class="hero-stats">
       <div class="hero-stat done">
-        <span class="num">3</span>
+        <span class="num">1</span>
         <span class="lbl">Done</span>
       </div>
       <div class="hero-stat crit">
-        <span class="num">5</span>
-        <span class="lbl">Critical</span>
+        <span class="num">10</span>
+        <span class="lbl">Issues Found</span>
       </div>
       <div class="hero-stat progress">
-        <span class="num">1</span>
-        <span class="lbl">Coming</span>
+        <span class="num">14</span>
+        <span class="lbl">Services</span>
       </div>
     </div>
   </div>
@@ -507,12 +507,65 @@
   </div>
 </section>
 
-<!-- CONVERSION AUDIT — COMING SOON -->
+<!-- CONVERSION AUDIT -->
 <section>
   <div class="container">
-    <div class="coming-soon">
-      <h3>Website Conversion Audit — Coming Soon</h3>
-      <p>I'm running a detailed analysis of how visitors actually use the current website — where they click, where they drop off, and what's blocking them from booking. This section will be updated with findings and fixes once the research is complete.</p>
+    <div class="section-head">
+      <h2>Your Website Is Losing Bookings Right Now</h2>
+      <p>I ran a full conversion audit on the current site. The brand is strong — 4.9 stars, great photos, real demand. But the website isn't converting that demand into booked events. Here's why.</p>
+    </div>
+
+    <div style="background: var(--color-amber-bg); border: 1px solid rgba(196,125,10,0.2); border-radius: var(--radius); padding: 24px 28px; margin-bottom: 32px;">
+      <p style="font-weight: 700; color: var(--color-amber); margin-bottom: 8px; font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase;">Key Finding</p>
+      <p style="font-size: 1.05rem; margin: 0;">A wedding prospect visiting the site today has <strong>no way to schedule a tour, no way to get pricing, and no way to get a question answered outside business hours.</strong> These three gaps alone are causing significant inquiry drop-off.</p>
+    </div>
+
+    <div class="issues">
+
+      <div class="issue">
+        <div class="issue-num">Conversion Gap 1 — High Impact</div>
+        <h3>No Way to Schedule a Venue Tour</h3>
+        <p class="issue-why">Wedding couples rank venue tours as the most important step before booking. Right now, they have to fill out a form and wait for someone to call them back. Most won't wait — they'll book a tour at the competitor who lets them schedule instantly.</p>
+        <div class="issue-fix"><strong>Fix:</strong> I'll set up Calendly with "In-Person Tour" and "Virtual Consultation" options and embed it on the Weddings, Events, and Contact pages. Couples pick a time and it shows up on your calendar automatically.</div>
+      </div>
+
+      <div class="issue">
+        <div class="issue-num">Conversion Gap 2 — High Impact</div>
+        <h3>Chat Widget Goes Dark After Hours</h3>
+        <p class="issue-why">The current JivoChat widget just sits there unless someone manually answers. A couple browsing at 9 PM on a Tuesday — when most wedding planning happens — gets no response. They move on.</p>
+        <div class="issue-fix"><strong>Fix:</strong> I'll replace it with an AI chatbot trained on Rancho Moonrise content — packages, pricing, policies, availability. It answers questions 24/7, and when it can't, it offers a Calendly link or routes to the inquiry form. ~$29/month.</div>
+      </div>
+
+      <div class="issue">
+        <div class="issue-num">Conversion Gap 3 — High Impact</div>
+        <h3>No Instant Response When Someone Inquires</h3>
+        <p class="issue-why">When a couple fills out the wedding inquiry form, they get... nothing. No confirmation email, no package info, no next steps. They're left wondering if anyone even received it. Venues that respond within 5 minutes are <strong>21x more likely</strong> to book the lead.</p>
+        <div class="issue-fix"><strong>Fix:</strong> I'll build an automated email sequence — instant confirmation with a Wedding Package PDF, Calendly link, and photo gallery. If they don't respond in 48 hours, a follow-up with testimonials. Then another at day 5. All automatic.</div>
+      </div>
+
+      <div class="issue amber">
+        <div class="issue-num">Conversion Gap 4 — High Impact</div>
+        <h3>No Pricing Info on the Weddings Page</h3>
+        <p class="issue-why">Budget-conscious couples — a huge portion of the market — will not fill out an inquiry form without some idea of pricing. No range, no package teaser, nothing. They leave and find a competitor who's upfront about costs.</p>
+        <div class="issue-fix"><strong>Fix:</strong> I'll add package teasers with starting prices, a downloadable Wedding Guide PDF (which also captures their email), and urgency messaging like "2026 Saturdays booking fast." Even a range like "Packages starting at $X" dramatically reduces drop-off.</div>
+      </div>
+
+      <div class="issue amber">
+        <div class="issue-num">Conversion Gap 5 — Medium Impact</div>
+        <h3>Contact Page Treats Everyone the Same</h3>
+        <p class="issue-why">A wedding couple, a corporate event planner, and someone asking about pool passes all see the exact same generic form — Name, Email, Phone, Message. No routing, no tailored experience, no reason to feel understood.</p>
+        <div class="issue-fix"><strong>Fix:</strong> I'll redesign the Contact page with a segmented flow: "What brings you to Rancho Moonrise?" → Wedding / Private Event / Accommodation / Pool Pass / General Question. Each path gets the right form, the right follow-up, and the right response.</div>
+      </div>
+
+    </div>
+
+    <div style="background: var(--color-green-bg); border: 1px solid rgba(30,122,67,0.15); border-radius: var(--radius); padding: 24px 28px; margin-top: 32px;">
+      <p style="font-weight: 700; color: var(--color-green); margin-bottom: 8px; font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase;">The Bottom Line</p>
+      <p style="font-size: 1.05rem; margin: 0;">The venue, the brand, and the reputation are all strong. The website just needs to work as hard as the property does. These fixes ensure every visitor who's interested has a clear, frictionless path from curiosity to booked — <strong>24 hours a day, 7 days a week.</strong></p>
+    </div>
+
+    <div style="text-align: center; margin-top: 24px; color: var(--color-text-muted); font-size: 0.85rem;">
+      Estimated monthly cost for the full automation stack: <strong>~$90–$125/month</strong> — less than what one lost wedding inquiry costs.
     </div>
   </div>
 </section>
@@ -522,56 +575,176 @@
   <div class="container">
     <div class="section-head">
       <h2>Everything I Can Handle for You</h2>
-      <p>You don't need to learn any of this or hire multiple people. I take care of all of it.</p>
+      <p>You don't need to learn any of this, hire multiple people, or become a tech person. I take care of all of it — and the website can be redesigned however you want.</p>
     </div>
     <div class="services-grid">
+
+      <!-- DONE -->
       <div class="service">
         <div class="service-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
         </div>
         <h3>New Website</h3>
-        <p>Built, fast, phone-friendly, and fully yours. No monthly vendor fees. Already done.</p>
+        <p>Built, fast, phone-friendly, and fully yours. No monthly vendor fees. Design is flexible — we can adjust it however you like.</p>
         <span class="service-tag done">&#10003; Complete</span>
       </div>
+
+      <!-- BOOKING AUTOMATION -->
+      <div class="service">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <h3>Tour Scheduling</h3>
+        <p>Calendly embedded on Weddings and Events pages. Couples book venue tours and consultations themselves — no phone tag.</p>
+        <span class="service-tag next">Up Next</span>
+      </div>
+
+      <!-- AI CHATBOT -->
+      <div class="service">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <h3>AI Chatbot (24/7)</h3>
+        <p>Replaces the dead chat widget. Answers questions about packages, pricing, availability, and policies around the clock. ~$29/mo.</p>
+        <span class="service-tag next">Up Next</span>
+      </div>
+
+      <!-- INQUIRY AUTOMATION -->
+      <div class="service">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <h3>Instant Email Follow-Up</h3>
+        <p>Every wedding or event inquiry gets an immediate branded email with package info, photos, and a tour link. Automated follow-ups at 48 hours and 5 days.</p>
+        <span class="service-tag next">Up Next</span>
+      </div>
+
+      <!-- DIRECTORY LISTINGS -->
       <div class="service">
         <div class="service-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         </div>
         <h3>Directory Listings</h3>
-        <p>WeddingWire, Glamping Hub, Zola, Foursquare, Yelp, Visit Austin, and more. One-time setup, permanent traffic.</p>
+        <p>WeddingWire, Glamping Hub, Zola, Foursquare, Yelp, Visit Austin, Tentrr, and more. One-time setup, permanent traffic.</p>
         <span class="service-tag next">Up Next</span>
       </div>
+
+      <!-- GOOGLE MAPS -->
       <div class="service">
         <div class="service-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
         </div>
         <h3>Google Maps Fix</h3>
-        <p>Full GBP optimization — description, photos, categories, review system. Show up in the local map pack.</p>
+        <p>Full GBP optimization — description, photos, categories, and a review collection system. Get into that top-3 local map pack.</p>
         <span class="service-tag next">Up Next</span>
       </div>
+
+      <!-- CONTACT PAGE REDESIGN -->
+      <div class="service">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <h3>Smart Contact Forms</h3>
+        <p>Segmented inquiry flow — "What brings you to Rancho Moonrise?" routes weddings, events, stays, and pool passes to the right experience.</p>
+        <span class="service-tag next">Up Next</span>
+      </div>
+
+      <!-- WEDDING PAGE OPTIMIZATION -->
+      <div class="service">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <h3>Weddings Page Upgrade</h3>
+        <p>Add package teasers with pricing, downloadable Wedding Guide PDF, Google Review quotes, urgency messaging, and FAQ section.</p>
+        <span class="service-tag next">Up Next</span>
+      </div>
+
+      <!-- ANALYTICS -->
       <div class="service">
         <div class="service-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
         </div>
         <h3>Analytics Setup</h3>
-        <p>Google Analytics + Search Console so you can see who visits, where they come from, and what they search for.</p>
+        <p>Google Analytics + Search Console so you can see who visits, where they come from, and what they search for. Simple dashboard you can check weekly.</p>
         <span class="service-tag next">Up Next</span>
       </div>
+
+      <!-- SEO CONTENT -->
       <div class="service">
         <div class="service-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
         </div>
         <h3>SEO Content</h3>
-        <p>Blog posts and page copy written around what people actually search — "glamping near Austin," "safari tent Austin," "Manor TX wedding venue."</p>
+        <p>Blog posts and page copy targeting "glamping near Austin," "safari tent Austin," "Manor TX wedding venue" — the exact words people search.</p>
         <span class="service-tag next">Up Next</span>
       </div>
+
+      <!-- PRESS -->
       <div class="service">
         <div class="service-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
         </div>
         <h3>Press Outreach</h3>
         <p>Personalized pitches to CultureMap Austin, Austin Monthly, Do512, Texas Monthly — using story angles only Rancho Moonrise can claim.</p>
         <span class="service-tag next">Up Next</span>
+      </div>
+
+      <!-- LEAD CAPTURE -->
+      <div class="service">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <h3>Lead Magnets</h3>
+        <p>Downloadable Wedding Guide PDF and event planning checklists that capture emails from visitors who aren't ready to inquire yet — so you can nurture them.</p>
+        <span class="service-tag next">Up Next</span>
+      </div>
+
+      <!-- EVENT MANAGEMENT -->
+      <div class="service">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <h3>Events CMS</h3>
+        <p>A simple system for adding and updating events on the website without touching code. Add a flyer, set a date, and it shows up on the site automatically.</p>
+        <span class="service-tag next">Up Next</span>
+      </div>
+
+      <!-- SOCIAL -->
+      <div class="service">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </div>
+        <h3>Social Content</h3>
+        <p>AI-assisted content calendar that generates weekly posts from your events, reviews, and bookings. Scheduled automatically via Publer across all platforms.</p>
+        <span class="service-tag next">Up Next</span>
+      </div>
+
+    </div>
+
+    <!-- COST SUMMARY -->
+    <div style="background: var(--color-surface-2); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 28px; margin-top: 40px; box-shadow: var(--shadow);">
+      <p style="font-weight: 700; font-size: 1.1rem; margin-bottom: 12px;">What This Costs vs. What It Replaces</p>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; font-size: 0.9rem;">
+        <div>
+          <p style="color: var(--color-text-muted); margin-bottom: 8px;"><strong style="color: var(--color-red);">Without this:</strong></p>
+          <ul style="list-style: none; color: var(--color-text-muted);">
+            <li style="padding: 4px 0;">Monthly website vendor fee</li>
+            <li style="padding: 4px 0;">Social media intern ($2,000+/mo)</li>
+            <li style="padding: 4px 0;">Missed wedding inquiries after hours</li>
+            <li style="padding: 4px 0;">Invisible on 7+ booking platforms</li>
+            <li style="padding: 4px 0;">Losing AI recommendation traffic</li>
+          </ul>
+        </div>
+        <div>
+          <p style="color: var(--color-text-muted); margin-bottom: 8px;"><strong style="color: var(--color-green);">With this (~$90–125/mo):</strong></p>
+          <ul style="list-style: none; color: var(--color-text-muted);">
+            <li style="padding: 4px 0;">&#10003; Website you own — $0/mo</li>
+            <li style="padding: 4px 0;">&#10003; AI chatbot answers questions 24/7</li>
+            <li style="padding: 4px 0;">&#10003; Every inquiry gets instant follow-up</li>
+            <li style="padding: 4px 0;">&#10003; Listed on every platform that matters</li>
+            <li style="padding: 4px 0;">&#10003; Content + social posts generated automatically</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
