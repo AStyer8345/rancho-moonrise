@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rancho Moonrise — What We Found &amp; How to Fix It</title>
+  <link href="https://api.fontshare.com/v2/css?f[]=boska@400,500,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://api.fontshare.com/v2/css?f[]=boska@400,500,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet"></noscript>
+  <style>
+    :root {
+      --color-bg: #f5f1ea;
+      --color-surface: #faf8f3;
+      --color-surface-2: #ffffff;
+      --color-divider: #e3ddd4;
+      --color-border: #d5cfc5;
+      --color-text: #221e16;
+      --color-text-muted: #756d60;
+      --color-text-faint: #b2ab9c;
+      --color-orange: #c9944a;
+      --color-orange-dark: #a67832;
+      --color-green: #1e7a43;
+      --color-green-bg: #eaf7f0;
+      --color-red: #b53a2b;
+      --color-red-bg: #fdf0ee;
+      --color-amber: #c47d0a;
+      --color-amber-bg: #fdf6e4;
+      --radius: 0.75rem;
+      --shadow: 0 2px 12px rgba(34,30,22,0.08);
+      --font-display: 'Boska', Georgia, serif;
+      --font-body: 'Satoshi', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); color: var(--color-text); background: var(--color-bg); line-height: 1.65; font-size: 16px; }
+
+    /* Layout */
+    .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+    section { padding: 60px 0; }
+    section + section { border-top: 1px solid var(--color-divider); }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #2a2520 0%, #3d3830 100%);
+      color: #faf8f3;
+      padding: 80px 0 60px;
+      text-align: center;
+    }
+    .hero-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--color-orange);
+      margin-bottom: 16px;
+    }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 1.05rem;
+      color: rgba(250,248,243,0.75);
+      max-width: 600px;
+      margin: 0 auto 32px;
+    }
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .hero-stat {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius);
+      padding: 16px 24px;
+      text-align: center;
+      min-width: 100px;
+    }
+    .hero-stat .num { font-family: var(--font-display); font-size: 2rem; font-weight: 700; display: block; }
+    .hero-stat .lbl { font-size: 0.75rem; color: rgba(250,248,243,0.6); text-transform: uppercase; letter-spacing: 1px; }
+    .hero-stat.done .num { color: #6ee09a; }
+    .hero-stat.crit .num { color: #ff8a7a; }
+    .hero-stat.progress .num { color: var(--color-orange); }
+
+    /* About */
+    .about {
+      background: var(--color-surface);
+    }
+    .about-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .about h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--color-text);
+    }
+    .about p { color: var(--color-text-muted); margin-bottom: 12px; }
+    .about-details {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 16px;
+      margin-top: 20px;
+    }
+    .about-details li {
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+      padding: 6px 0;
+      border-bottom: 1px solid var(--color-divider);
+    }
+    .about-details li strong { color: var(--color-text); font-weight: 600; }
+    .about-photo {
+      width: 100%;
+      border-radius: var(--radius);
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      box-shadow: var(--shadow);
+    }
+    @media (max-width: 700px) {
+      .about-inner { grid-template-columns: 1fr; }
+      .about-details { grid-template-columns: 1fr; }
+    }
+
+    /* Section headers */
+    .section-head {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .section-head h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .section-head p {
+      color: var(--color-text-muted);
+      max-width: 550px;
+      margin: 0 auto;
+    }
+
+    /* Website comparison */
+    .compare-bar {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 32px;
+    }
+    .compare-card {
+      background: var(--color-surface-2);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+    .compare-card.new { border-color: var(--color-green); border-width: 2px; }
+    .compare-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-bottom: 16px;
+    }
+    .compare-tag.old { background: var(--color-red-bg); color: var(--color-red); }
+    .compare-tag.new { background: var(--color-green-bg); color: var(--color-green); }
+    .compare-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--color-divider);
+      font-size: 0.9rem;
+    }
+    .compare-item:last-child { border-bottom: none; }
+    .compare-item .label { color: var(--color-text-muted); }
+    .compare-item .value { font-weight: 600; text-align: right; }
+    .compare-item .value.bad { color: var(--color-red); }
+    .compare-item .value.good { color: var(--color-green); }
+    .big-stat {
+      text-align: center;
+      margin-top: 32px;
+      padding: 24px;
+      background: var(--color-green-bg);
+      border-radius: var(--radius);
+      border: 1px solid rgba(30,122,67,0.15);
+    }
+    .big-stat .num {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--color-green);
+    }
+    .big-stat p { color: var(--color-text-muted); font-size: 0.95rem; margin-top: 4px; }
+    @media (max-width: 700px) {
+      .compare-bar { grid-template-columns: 1fr; }
+    }
+
+    /* Issue cards */
+    .issues { display: flex; flex-direction: column; gap: 16px; }
+    .issue {
+      background: var(--color-surface-2);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      border-left: 4px solid var(--color-red);
+    }
+    .issue.amber { border-left-color: var(--color-amber); }
+    .issue.green { border-left-color: var(--color-green); }
+    .issue-num {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--color-text-faint);
+      margin-bottom: 6px;
+    }
+    .issue h3 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+    .issue-why {
+      color: var(--color-text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+    }
+    .issue-revenue {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--color-red);
+      background: var(--color-red-bg);
+      padding: 6px 12px;
+      border-radius: 4px;
+    }
+    .issue.amber .issue-revenue { color: var(--color-amber); background: var(--color-amber-bg); }
+    .issue-fix {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--color-divider);
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+    }
+    .issue-fix strong { color: var(--color-green); }
+
+    /* Services */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .service {
+      background: var(--color-surface-2);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(201,148,74,0.1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      color: var(--color-orange);
+    }
+    .service h3 {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .service p { font-size: 0.85rem; color: var(--color-text-muted); }
+    .service-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-top: 12px;
+    }
+    .service-tag.done { background: var(--color-green-bg); color: var(--color-green); }
+    .service-tag.next { background: var(--color-amber-bg); color: var(--color-amber); }
+    @media (max-width: 700px) {
+      .services-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Conversion placeholder */
+    .coming-soon {
+      background: var(--color-surface);
+      border: 2px dashed var(--color-border);
+      border-radius: var(--radius);
+      padding: 40px;
+      text-align: center;
+      margin-top: 40px;
+    }
+    .coming-soon h3 { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; margin-bottom: 8px; }
+    .coming-soon p { color: var(--color-text-muted); font-size: 0.95rem; }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 40px 0;
+      color: var(--color-text-faint);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--color-divider);
+    }
+
+    /* Deep dive link */
+    .deep-dive {
+      text-align: center;
+      margin-top: 32px;
+    }
+    .deep-dive a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--color-orange-dark);
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      border-bottom: 1px solid var(--color-orange);
+      padding-bottom: 2px;
+    }
+    .deep-dive a:hover { color: var(--color-orange); }
+
+    /* Print */
+    @media print {
+      body { background: white; font-size: 12px; }
+      .hero { background: #2a2520 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      section { padding: 30px 0; }
+      .compare-bar, .services-grid { gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="container">
+    <p class="hero-eyebrow">Prepared for Rancho Moonrise</p>
+    <h1>Here's What We Found —<br>And How to Fix It</h1>
+    <p>A plain-English look at what's holding the ranch back online, what's already been fixed, and what comes next. No tech jargon — just what matters for bookings.</p>
+    <div class="hero-stats">
+      <div class="hero-stat done">
+        <span class="num">3</span>
+        <span class="lbl">Done</span>
+      </div>
+      <div class="hero-stat crit">
+        <span class="num">5</span>
+        <span class="lbl">Critical</span>
+      </div>
+      <div class="hero-stat progress">
+        <span class="num">1</span>
+        <span class="lbl">Coming</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about">
+  <div class="container">
+    <div class="about-inner">
+      <div>
+        <h2>About Rancho Moonrise</h2>
+        <p>Rancho Moonrise is a family-owned glamping and events ranch on 36 acres in Manor, Texas — just 20 minutes from downtown Austin. What started as a bold family vision has grown into one of the most unique properties in the Austin area: luxury safari tents and hand-crafted cabins, a full Event Barn, the Neon Moon Bar &amp; Lounge, a resort-style pool, and a packed events calendar from weddings to live music to wellness retreats.</p>
+        <p>It's not a hotel. It's not a campground. It's something entirely its own — and the kind of place people remember long after they leave.</p>
+        <ul class="about-details">
+          <li><strong>36 acres</strong> in Manor, TX</li>
+          <li><strong>20 units</strong> — cabins &amp; safari tents</li>
+          <li><strong>50 overnight</strong> guests capacity</li>
+          <li><strong>300+ event</strong> guest capacity</li>
+          <li><strong>4.9 stars</strong> — 122 Google reviews</li>
+          <li><strong>13K followers</strong> on Instagram</li>
+          <li><strong>Event Barn</strong> + Neon Moon Bar</li>
+          <li><strong>20 min</strong> from downtown Austin</li>
+        </ul>
+      </div>
+      <img class="about-photo" src="images/about-ranch-aerial.webp" alt="Aerial view of Rancho Moonrise property">
+    </div>
+  </div>
+</section>
+
+<!-- NEW WEBSITE — DONE -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <h2>The New Website Is Built</h2>
+      <p>I rebuilt the entire site from scratch — faster, phone-friendly, and fully owned by Rancho Moonrise. Here's the before-and-after.</p>
+    </div>
+    <div class="compare-bar">
+      <div class="compare-card">
+        <span class="compare-tag old">Before — Old Site</span>
+        <div class="compare-item"><span class="label">Speed Score</span><span class="value bad">55 / 100</span></div>
+        <div class="compare-item"><span class="label">Load Time (phone)</span><span class="value bad">57 seconds</span></div>
+        <div class="compare-item"><span class="label">SEO Score</span><span class="value">92 / 100</span></div>
+        <div class="compare-item"><span class="label">Meta Description</span><span class="value bad">Missing</span></div>
+        <div class="compare-item"><span class="label">Schema (AI-readable code)</span><span class="value bad">None</span></div>
+        <div class="compare-item"><span class="label">Image Descriptions</span><span class="value bad">None</span></div>
+        <div class="compare-item"><span class="label">Social Share Preview</span><span class="value bad">Broken</span></div>
+        <div class="compare-item"><span class="label">Monthly Cost</span><span class="value bad">Paid to vendor</span></div>
+      </div>
+      <div class="compare-card new">
+        <span class="compare-tag new">After — Adam's Build</span>
+        <div class="compare-item"><span class="label">Speed Score</span><span class="value good">82 / 100</span></div>
+        <div class="compare-item"><span class="label">Load Time (phone)</span><span class="value good">3.6 seconds</span></div>
+        <div class="compare-item"><span class="label">SEO Score</span><span class="value good">100 / 100</span></div>
+        <div class="compare-item"><span class="label">Meta Description</span><span class="value good">Every page &#10003;</span></div>
+        <div class="compare-item"><span class="label">Schema (AI-readable code)</span><span class="value good">Full markup &#10003;</span></div>
+        <div class="compare-item"><span class="label">Image Descriptions</span><span class="value good">Every photo &#10003;</span></div>
+        <div class="compare-item"><span class="label">Social Share Preview</span><span class="value good">Polished &#10003;</span></div>
+        <div class="compare-item"><span class="label">Monthly Cost</span><span class="value good">$0 — you own it</span></div>
+      </div>
+    </div>
+    <div class="big-stat">
+      <div class="num">15&times; faster</div>
+      <p>The new site loads in 3.6 seconds vs. 57 seconds. Google considers anything over 4 seconds unacceptable — most visitors leave before the old site even loads.</p>
+    </div>
+    <div class="deep-dive">
+      <a href="https://rancho-moonrise.vercel.app" target="_blank" rel="noopener">View the new site &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- CRITICAL ISSUES -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <h2>The 5 Things Costing You Bookings Right Now</h2>
+      <p>These are the biggest gaps between Rancho Moonrise and your top competitors. Each one is fixable — and I can handle all of them.</p>
+    </div>
+    <div class="issues">
+
+      <!-- 1 -->
+      <div class="issue">
+        <div class="issue-num">Issue 1 — Critical</div>
+        <h3>You're Invisible on the #1 Wedding Search Website</h3>
+        <p class="issue-why">WeddingWire shows up on page 1 of Google when couples search "wedding venue Manor TX." A smaller competitor — Honeysuckle Ranch, which holds 60 people — is listed there. Rancho Moonrise is not. Couples who are ready to book are finding your competitors instead.</p>
+        <div class="issue-revenue">Every month this stays unfixed = wedding inquiries going to competitors</div>
+        <div class="issue-fix"><strong>Fix:</strong> I'll create and optimize your WeddingWire listing. Free to set up, works 24/7 as permanent advertising. Also missing from Zola — I'll set that up too.</div>
+      </div>
+
+      <!-- 2 -->
+      <div class="issue">
+        <div class="issue-num">Issue 2 — Critical</div>
+        <h3>Missing from the #1 Glamping Discovery Platform</h3>
+        <p class="issue-why">Glamping Hub is where travelers specifically search for glamping — safari tents, cabins, unique stays. Your competitors Talula Mesa and Walden Retreats are listed. Rancho Moonrise is completely absent. This is the single most targeted audience for your overnight business, and they can't find you.</p>
+        <div class="issue-revenue">High-intent glamping travelers are booking elsewhere</div>
+        <div class="issue-fix"><strong>Fix:</strong> I'll create your Glamping Hub listing with optimized descriptions and your best photos. Also setting you up on Tentrr and Outdoorsy.</div>
+      </div>
+
+      <!-- 3 -->
+      <div class="issue">
+        <div class="issue-num">Issue 3 — Critical</div>
+        <h3>Your Google Maps Listing Is Incomplete</h3>
+        <p class="issue-why">When someone searches "glamping near me" or "event venue Austin," Google shows a map with the top 3 businesses. Your Google Business Profile is missing a description entirely — the most important text box Google gives you for free. Your closest competitor, Grand Lady Austin (also in Manor), has 86 reviews. You have 8. Google ranks businesses with more reviews higher in that map.</p>
+        <div class="issue-revenue">8 reviews vs. competitor's 86 = lower map ranking = fewer clicks</div>
+        <div class="issue-fix"><strong>Fix:</strong> I'll write your GBP description, add all amenities, upload keyword-named photos, and set up a simple review request system so you start collecting reviews after every stay and event.</div>
+      </div>
+
+      <!-- 4 -->
+      <div class="issue">
+        <div class="issue-num">Issue 4 — Critical</div>
+        <h3>AI Assistants Don't Know You Exist</h3>
+        <p class="issue-why">300 million people use ChatGPT every week. Many ask "where's a good glamping spot near Austin?" or "outdoor wedding venue Austin TX." I tested this — ChatGPT and Perplexity recommend Lucky Arrow Retreat and Sinya on Lone Man Creek. Rancho Moonrise doesn't come up. This is a massive, invisible source of lost bookings that grows every month.</p>
+        <div class="issue-revenue">Every AI recommendation = a booking that goes to a competitor</div>
+        <div class="issue-fix"><strong>Fix:</strong> The new website's schema markup is the foundation. I'll also add Rancho Moonrise to Foursquare (ChatGPT's main business database) and Yelp. As press coverage and directory listings grow, AI tools start recommending you.</div>
+      </div>
+
+      <!-- 5 -->
+      <div class="issue amber">
+        <div class="issue-num">Issue 5 — High Priority</div>
+        <h3>Zero Press Coverage Where It Counts</h3>
+        <p class="issue-why">Your top competitors have been featured in CultureMap Austin, Texas Monthly, Garden &amp; Gun, and D Magazine. Sinya on Lone Man Creek — a single-tent property smaller than your ranch — was featured in US News &amp; World Report as a top US glamping destination. Rancho Moonrise has only had brief local TV mentions. Press coverage is the #1 thing separating top-ranked competitors from everyone else.</p>
+        <div class="issue-revenue">Competitors get free advertising + Google ranking boosts from every article</div>
+        <div class="issue-fix"><strong>Fix:</strong> I'll write and send targeted pitches to CultureMap Austin, Austin Monthly, Do512, and Texas Monthly using angles only Rancho Moonrise can claim — "Austin's first glamping ranch," the Event Barn + pool + bar combo, the wellness programming, the family story.</div>
+      </div>
+
+    </div>
+
+    <div class="deep-dive" style="margin-top: 24px;">
+      <a href="competitive-intelligence.html">View full competitive research &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONVERSION AUDIT — COMING SOON -->
+<section>
+  <div class="container">
+    <div class="coming-soon">
+      <h3>Website Conversion Audit — Coming Soon</h3>
+      <p>I'm running a detailed analysis of how visitors actually use the current website — where they click, where they drop off, and what's blocking them from booking. This section will be updated with findings and fixes once the research is complete.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT I CAN DO -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <h2>Everything I Can Handle for You</h2>
+      <p>You don't need to learn any of this or hire multiple people. I take care of all of it.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <h3>New Website</h3>
+        <p>Built, fast, phone-friendly, and fully yours. No monthly vendor fees. Already done.</p>
+        <span class="service-tag done">&#10003; Complete</span>
+      </div>
+      <div class="service">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+        <h3>Directory Listings</h3>
+        <p>WeddingWire, Glamping Hub, Zola, Foursquare, Yelp, Visit Austin, and more. One-time setup, permanent traffic.</p>
+        <span class="service-tag next">Up Next</span>
+      </div>
+      <div class="service">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <h3>Google Maps Fix</h3>
+        <p>Full GBP optimization — description, photos, categories, review system. Show up in the local map pack.</p>
+        <span class="service-tag next">Up Next</span>
+      </div>
+      <div class="service">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h3>Analytics Setup</h3>
+        <p>Google Analytics + Search Console so you can see who visits, where they come from, and what they search for.</p>
+        <span class="service-tag next">Up Next</span>
+      </div>
+      <div class="service">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </div>
+        <h3>SEO Content</h3>
+        <p>Blog posts and page copy written around what people actually search — "glamping near Austin," "safari tent Austin," "Manor TX wedding venue."</p>
+        <span class="service-tag next">Up Next</span>
+      </div>
+      <div class="service">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <h3>Press Outreach</h3>
+        <p>Personalized pitches to CultureMap Austin, Austin Monthly, Do512, Texas Monthly — using story angles only Rancho Moonrise can claim.</p>
+        <span class="service-tag next">Up Next</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p>Rancho Moonrise &middot; Prepared by Adam Styer &middot; April 2026</p>
+    <p style="margin-top: 8px;"><a href="dashboard.html" style="color: var(--color-orange); text-decoration: none; border-bottom: 1px solid var(--color-orange);">View detailed audit</a> &middot; <a href="competitive-intelligence.html" style="color: var(--color-orange); text-decoration: none; border-bottom: 1px solid var(--color-orange);">View competitive research</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
