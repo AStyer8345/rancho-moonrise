@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rancho Moonrise — SEO &amp; Online Presence Audit | April 2026</title>
+    <style>
+        :root {
+            --brand-dark: #1a1a2e;
+            --brand-accent: #c9944a;
+            --brand-accent-light: #f5e6cc;
+            --critical: #dc2626;
+            --critical-bg: #fef2f2;
+            --major: #ea580c;
+            --major-bg: #fff7ed;
+            --minor: #ca8a04;
+            --minor-bg: #fefce8;
+            --success: #16a34a;
+            --success-bg: #f0fdf4;
+            --text: #1e293b;
+            --text-light: #64748b;
+            --border: #e2e8f0;
+            --bg: #f8fafc;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Cover */
+        .cover {
+            background: var(--brand-dark);
+            color: #fff;
+            padding: 80px 24px;
+            text-align: center;
+        }
+        .cover h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+        }
+        .cover .subtitle {
+            font-size: 1.2rem;
+            color: var(--brand-accent);
+            font-style: italic;
+            margin-bottom: 32px;
+        }
+        .cover .meta {
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+        .cover .meta strong { color: #cbd5e1; }
+        .cover .divider {
+            width: 80px;
+            height: 3px;
+            background: var(--brand-accent);
+            margin: 24px auto;
+        }
+
+        /* Sections */
+        section {
+            padding: 48px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        section:last-child { border-bottom: none; }
+
+        h2 {
+            font-size: 1.6rem;
+            color: var(--brand-dark);
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--brand-accent);
+            display: inline-block;
+        }
+        h3 {
+            font-size: 1.15rem;
+            color: var(--brand-dark);
+            margin: 24px 0 8px;
+        }
+
+        p { margin-bottom: 12px; }
+
+        /* Priority badges */
+        .badge {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        .badge-critical { background: var(--critical); color: #fff; }
+        .badge-major { background: var(--major); color: #fff; }
+        .badge-minor { background: var(--minor); color: #fff; }
+        .badge-good { background: var(--success); color: #fff; }
+
+        /* Issue cards */
+        .issue-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 24px;
+            margin: 16px 0;
+            border-left: 4px solid var(--border);
+        }
+        .issue-card.critical { border-left-color: var(--critical); }
+        .issue-card.major { border-left-color: var(--major); }
+        .issue-card.minor { border-left-color: var(--minor); }
+
+        .issue-card .issue-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        .issue-card .issue-title {
+            font-weight: 700;
+            font-size: 1.05rem;
+        }
+
+        .issue-detail {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 4px 12px;
+            font-size: 0.92rem;
+            margin-top: 12px;
+        }
+        .issue-detail dt {
+            font-weight: 600;
+            color: var(--text-light);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            padding-top: 2px;
+        }
+        .issue-detail dd { margin-bottom: 8px; }
+
+        /* Executive summary box */
+        .exec-box {
+            background: var(--brand-accent-light);
+            border: 1px solid var(--brand-accent);
+            border-radius: 8px;
+            padding: 28px;
+            margin: 20px 0;
+        }
+        .exec-box p { margin-bottom: 8px; }
+
+        /* Score card */
+        .scorecard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+            margin: 24px 0;
+        }
+        .score-item {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+        .score-item .score-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--brand-dark);
+        }
+        .score-item .score-label {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        /* ROI table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 0.92rem;
+        }
+        th, td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        th {
+            background: var(--brand-dark);
+            color: #fff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        tr:nth-child(even) { background: #f8fafc; }
+        tr:hover { background: var(--brand-accent-light); }
+
+        /* Callout */
+        .callout {
+            background: #fff;
+            border: 2px solid var(--brand-accent);
+            border-radius: 8px;
+            padding: 24px;
+            margin: 24px 0;
+        }
+        .callout-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--brand-dark);
+            margin-bottom: 8px;
+        }
+
+        /* Footer */
+        .report-footer {
+            background: var(--brand-dark);
+            color: #94a3b8;
+            padding: 40px 24px;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+        .report-footer strong { color: var(--brand-accent); }
+
+        /* Print */
+        @media print {
+            .cover { padding: 48px 24px; }
+            section { padding: 32px 0; }
+            .issue-card { break-inside: avoid; }
+            body { font-size: 11pt; }
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .cover h1 { font-size: 1.6rem; }
+            .issue-detail { grid-template-columns: 1fr; }
+            .scorecard { grid-template-columns: 1fr 1fr; }
+        }
+
+        .toc { margin: 16px 0; }
+        .toc ol { padding-left: 20px; }
+        .toc li { margin-bottom: 6px; font-size: 0.95rem; }
+        .toc a { color: var(--brand-accent); text-decoration: none; }
+        .toc a:hover { text-decoration: underline; }
+
+        .highlight { background: #fef3c7; padding: 2px 6px; border-radius: 3px; }
+    </style>
+</head>
+<body>
+
+<!-- ============ COVER ============ -->
+<div class="cover">
+    <h1>Rancho Moonrise</h1>
+    <div class="subtitle">SEO &amp; Online Presence Audit</div>
+    <div class="divider"></div>
+    <div class="meta">
+        <strong>Prepared for:</strong> Rancho Moonrise Ownership<br>
+        <strong>Prepared by:</strong> Adam Styer | Mortgage Solutions LP — Digital Strategy<br>
+        <strong>Date:</strong> April 6, 2026<br>
+        <strong>Site audited:</strong> ranchomoonrise.com
+    </div>
+</div>
+
+<div class="container">
+
+<!-- ============ EXECUTIVE SUMMARY ============ -->
+<section id="exec-summary">
+    <h2>Executive Summary</h2>
+
+    <div class="exec-box">
+        <p><strong>Rancho Moonrise has a beautiful property and a strong product — but its online presence is leaving money on the table.</strong></p>
+        <p>This audit reviewed ranchomoonrise.com, the Google Business Profile, and social media presence across all major platforms. We found <strong>7 critical issues</strong>, <strong>5 major issues</strong>, and <strong>4 minor issues</strong> that are actively suppressing bookings, wedding inquiries, and event leads.</p>
+        <p>The most impactful finding: <strong>the site is invisible for every commercial search term that matters</strong> — "glamping austin texas," "wedding venue manor texas," "corporate retreat austin" — despite being one of the only properties in the Austin metro offering this exact product. You have a 4.9-star rating with 122 reviews. The demand exists. The infrastructure to capture it does not.</p>
+    </div>
+
+    <div class="scorecard">
+        <div class="score-item">
+            <div class="score-value" style="color: var(--critical);">7</div>
+            <div class="score-label">Critical Issues</div>
+        </div>
+        <div class="score-item">
+            <div class="score-value" style="color: var(--major);">5</div>
+            <div class="score-label">Major Issues</div>
+        </div>
+        <div class="score-item">
+            <div class="score-value" style="color: var(--minor);">4</div>
+            <div class="score-label">Minor Issues</div>
+        </div>
+        <div class="score-item">
+            <div class="score-value" style="color: var(--success);">4.9★</div>
+            <div class="score-label">Google Rating (122 reviews)</div>
+        </div>
+    </div>
+
+    <h3>Table of Contents</h3>
+    <nav class="toc">
+        <ol>
+            <li><a href="#exec-summary">Executive Summary</a></li>
+            <li><a href="#priority-matrix">Priority Matrix — All Issues</a></li>
+            <li><a href="#critical-issues">Critical Issues (Detailed)</a></li>
+            <li><a href="#major-issues">Major Issues (Detailed)</a></li>
+            <li><a href="#minor-issues">Minor Issues (Detailed)</a></li>
+            <li><a href="#gbp">Google Business Profile Audit</a></li>
+            <li><a href="#social">Social Media &amp; Presence Gaps</a></li>
+            <li><a href="#top5">Top 5 Highest-ROI Actions</a></li>
+            <li><a href="#outcomes">What Fixing This Is Worth</a></li>
+        </ol>
+    </nav>
+</section>
+
+<!-- ============ PRIORITY MATRIX ============ -->
+<section id="priority-matrix">
+    <h2>Priority Matrix</h2>
+    <p>All issues ranked by business impact. Critical items are actively losing revenue today.</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Priority</th>
+                <th>Issue</th>
+                <th>Area</th>
+                <th>Effort</th>
+                <th>Impact</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="badge badge-critical">Critical</span></td>
+                <td>"COMING SOON!" in meta description</td>
+                <td>SEO</td>
+                <td>15 min</td>
+                <td>High</td>
+            </tr>
+            <tr>
+                <td><span class="badge badge-critical">Critical</span></td>
+                <td>Zero alt text on all images</td>
+                <td>SEO / ADA</td>
+                <td>2-3 hrs</td>
+                <td>High</td>
+            </tr>
+            <tr>
+                <td><span class="badge badge-critical">Critical</span></td>
+                <td>Duplicate H1 tags on homepage</td>
+                <td>SEO</td>
+                <td>15 min</td>
+                <td>High</td>
+            </tr>
+            <tr>
+                <td><span class="badge badge-critical">Critical</span></td>
+                <td>Not ranking for commercial keywords</td>
+                <td>SEO</td>
+                <td>Ongoing</td>
+                <td>Highest</td>
+            </tr>
+            <tr>
+                <td><span class="badge badge-critical">Critical</span></td>
+                <td>GBP unclaimed / no business description</td>
+                <td>GBP</td>
+                <td>1 hr</td>
+                <td>Highest</td>
+            </tr>
+            <tr>
+                <td><span class="badge badge-critical">Critical</span></td>
+                <td>No LocalBusiness / LodgingBusiness schema</td>
+                <td>SEO</td>
+                <td>1-2 hrs</td>
+                <td>High</td>
+            </tr>
+            <tr>
+                <td><span class="badge badge-critical">Critical</span></td>
+                <td>Title tags nearly identical across pages</td>
+                <td>SEO</td>
+                <td>30 min</td>
+                <td>High</td>
+            </tr>
+            <tr>
+                <td><span class="badge badge-major">Major</span></td>
+                <td>Missing meta descriptions on key pages</td>
+                <td>SEO</td>
+                <td>30 min</td>
+                <td>Medium</td>
+            </tr>
+            <tr>
+                <td><span class="badge badge-major">Major</span></td>
+                <td>No blog or content strategy</td>
+                <td>Content</td>
+                <td>Ongoing</td>
+                <td>High</td>
+            </tr>
+            <tr>
+                <td><span class="badge badge-major">Major</span></td>
+                <td>GBP category limited to "Hotel"</td>
+                <td>GBP</td>
+                <td>15 min</td>
+                <td>Medium</td>
+            </tr>
+            <tr>
+                <td><span class="badge badge-major">Major</span></td>
+                <td>No direct booking link on GBP</td>
+                <td>GBP</td>
+                <td>5 min</td>
+                <td>Medium</td>
+            </tr>
+            <tr>
+                <td><span class="badge badge-major">Major</span></td>
+                <td>No canonical tags detected</td>
+                <td>SEO</td>
+                <td>30 min</td>
+                <td>Medium</td>
+            </tr>
+            <tr>
+                <td><span class="badge badge-minor">Minor</span></td>
+                <td>Facebook underdeveloped (864 followers)</td>
+                <td>Social</td>
+                <td>Ongoing</td>
+                <td>Low-Med</td>
+            </tr>
+            <tr>
+                <td><span class="badge badge-minor">Minor</span></td>
+                <td>No Pinterest presence</td>
+                <td>Social</td>
+                <td>2-3 hrs setup</td>
+                <td>Medium</td>
+            </tr>
+            <tr>
+                <td><span class="badge badge-minor">Minor</span></td>
+                <td>No YouTube / video content</td>
+                <td>Social</td>
+                <td>4-8 hrs</td>
+                <td>Medium</td>
+            </tr>
+            <tr>
+                <td><span class="badge badge-minor">Minor</span></td>
+                <td>No press coverage in Austin outlets</td>
+                <td>PR</td>
+                <td>Ongoing</td>
+                <td>Low-Med</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<!-- ============ CRITICAL ISSUES ============ -->
+<section id="critical-issues">
+    <h2>Critical Issues</h2>
+    <p>These are actively costing bookings, event inquiries, and search visibility <em>right now</em>.</p>
+
+    <!-- Issue 1 -->
+    <div class="issue-card critical">
+        <div class="issue-header">
+            <span class="badge badge-critical">Critical</span>
+            <span class="issue-title">Meta Description Contains "COMING SOON!"</span>
+        </div>
+        <p>The homepage meta description — the snippet Google shows below your link in search results — still says "COMING SOON!" This is the first thing potential customers see when they Google your name.</p>
+        <dl class="issue-detail">
+            <dt>Current State</dt>
+            <dd>Meta description reads: <span class="highlight">"Rancho Moonrise is COMING SOON! Austins first glamping and events ranch..."</span></dd>
+            <dt>Problem</dt>
+            <dd>Signals to searchers that the business isn't open yet. Dramatically reduces click-through rate. People skip your listing and click a competitor.</dd>
+            <dt>Recommended Fix</dt>
+            <dd>Replace with: "Austin's premier glamping &amp; events ranch in Manor, TX. Safari tents, cabins, weddings up to 200 guests, pool, live music &amp; more. Book your stay today."</dd>
+            <dt>Effort</dt>
+            <dd>15 minutes</dd>
+            <dt>Expected Impact</dt>
+            <dd>Immediate CTR improvement — likely 20-40% more clicks from the same search impressions.</dd>
+        </dl>
+    </div>
+
+    <!-- Issue 2 -->
+    <div class="issue-card critical">
+        <div class="issue-header">
+            <span class="badge badge-critical">Critical</span>
+            <span class="issue-title">Zero Alt Text on All Images</span>
+        </div>
+        <p>Not a single image on the entire site has descriptive alt text. This is both an SEO failure and an ADA accessibility violation.</p>
+        <dl class="issue-detail">
+            <dt>Current State</dt>
+            <dd>Every &lt;img&gt; tag across all pages has empty or missing alt attributes.</dd>
+            <dt>Problem</dt>
+            <dd>Google can't "see" images — alt text is how it indexes them. You're missing Google Image Search traffic entirely. Additionally, screen readers can't describe your property to visually impaired users, creating ADA compliance risk.</dd>
+            <dt>Recommended Fix</dt>
+            <dd>Add descriptive, keyword-rich alt text to every image. Example: <code>alt="Luxury safari tent interior with queen bed at Rancho Moonrise glamping near Austin TX"</code></dd>
+            <dt>Effort</dt>
+            <dd>2-3 hours (estimate 80-120 images across site)</dd>
+            <dt>Expected Impact</dt>
+            <dd>Opens Google Image Search traffic (high-intent for visual properties). Reduces ADA legal exposure.</dd>
+        </dl>
+    </div>
+
+    <!-- Issue 3 -->
+    <div class="issue-card critical">
+        <div class="issue-header">
+            <span class="badge badge-critical">Critical</span>
+            <span class="issue-title">Duplicate H1 Tags on Homepage</span>
+        </div>
+        <p>The homepage has two H1 tags, both just "Rancho moonrise." Google uses the H1 to understand what a page is about — duplicates dilute that signal.</p>
+        <dl class="issue-detail">
+            <dt>Current State</dt>
+            <dd>Two <code>&lt;h1&gt;</code> elements, both containing "Rancho moonrise" with no descriptive keywords.</dd>
+            <dt>Problem</dt>
+            <dd>Confuses search engines about the page's primary topic. Wastes the most valuable on-page SEO element.</dd>
+            <dt>Recommended Fix</dt>
+            <dd>Single H1: "Austin's Premier Glamping &amp; Events Ranch" — put the brand name in the title tag, use the H1 for what you <em>do</em>.</dd>
+            <dt>Effort</dt>
+            <dd>15 minutes</dd>
+            <dt>Expected Impact</dt>
+            <dd>Clarifies page topic to Google. Supports ranking for commercial keywords.</dd>
+        </dl>
+    </div>
+
+    <!-- Issue 4 -->
+    <div class="issue-card critical">
+        <div class="issue-header">
+            <span class="badge badge-critical">Critical</span>
+            <span class="issue-title">Not Ranking for Any Commercial Keywords</span>
+        </div>
+        <p>Rancho Moonrise does not appear in the first 5 pages of Google for any high-intent search term: "glamping austin texas," "wedding venue manor texas," "corporate retreat austin," "glamping near austin."</p>
+        <dl class="issue-detail">
+            <dt>Current State</dt>
+            <dd>Only ranking for branded searches ("rancho moonrise"). Zero visibility for commercial/transactional queries.</dd>
+            <dt>Problem</dt>
+            <dd>The site is invisible to every potential customer who doesn't already know the name. This is the single largest revenue gap.</dd>
+            <dt>Recommended Fix</dt>
+            <dd>Comprehensive on-page SEO overhaul (unique title tags per page with target keywords, proper H1/H2 hierarchy, internal linking, schema markup) + content strategy (blog targeting informational queries) + GBP optimization for local pack.</dd>
+            <dt>Effort</dt>
+            <dd>8-12 hours initial buildout, then ongoing content (2-4 posts/month)</dd>
+            <dt>Expected Impact</dt>
+            <dd>60-90 days for local pack visibility. 90-120 days for organic content rankings. Potential for 200-500+ new monthly visitors from organic search alone.</dd>
+        </dl>
+    </div>
+
+    <!-- Issue 5 -->
+    <div class="issue-card critical">
+        <div class="issue-header">
+            <span class="badge badge-critical">Critical</span>
+            <span class="issue-title">Google Business Profile — Unclaimed / No Description</span>
+        </div>
+        <p>The GBP appears to have been auto-generated by OTAs (Expedia, Hotels.com) rather than claimed and optimized by the owner. There is <strong>no business description whatsoever</strong> — the single most impactful field for local search.</p>
+        <dl class="issue-detail">
+            <dt>Current State</dt>
+            <dd>GBP exists with 4.9★ / 122 reviews, but: no description, no business hours, no direct booking link, auto-populated category ("Hotel").</dd>
+            <dt>Problem</dt>
+            <dd>The Google Local Pack (map results) is where 46% of local searches end. Without a claimed, optimized profile, you lose to competitors who have one — even if their property and reviews are worse.</dd>
+            <dt>Recommended Fix</dt>
+            <dd>Claim the GBP immediately. Add 750-character description with keywords. Set accurate hours. Add booking link. Add all venue photos. Set categories to: Resort, Glamping Site, Wedding Venue, Event Venue.</dd>
+            <dt>Effort</dt>
+            <dd>1 hour (plus Google's verification process, 3-7 days)</dd>
+            <dt>Expected Impact</dt>
+            <dd>Single highest-ROI action. Could add 50-100+ direct bookings per year from local pack visibility alone.</dd>
+        </dl>
+    </div>
+
+    <!-- Issue 6 -->
+    <div class="issue-card critical">
+        <div class="issue-header">
+            <span class="badge badge-critical">Critical</span>
+            <span class="issue-title">No LocalBusiness / LodgingBusiness Schema Markup</span>
+        </div>
+        <p>The site has basic Organization schema but is missing the specific structured data that tells Google "this is a lodging business and event venue with these amenities, prices, and reviews."</p>
+        <dl class="issue-detail">
+            <dt>Current State</dt>
+            <dd>Generic Organization and WebPage schema only. No LodgingBusiness, EventVenue, or FAQPage schema.</dd>
+            <dt>Problem</dt>
+            <dd>Google uses schema markup to generate rich results (star ratings, pricing, FAQs in search results). Without it, your listings are plain text while competitors get enhanced displays.</dd>
+            <dt>Recommended Fix</dt>
+            <dd>Add JSON-LD schema for: LodgingBusiness (homepage/accommodations), EventVenue (events/weddings), FAQPage (FAQ page), Event (individual events with dates/prices).</dd>
+            <dt>Effort</dt>
+            <dd>1-2 hours</dd>
+            <dt>Expected Impact</dt>
+            <dd>Rich results in Google Search, improved CTR, better local pack signals.</dd>
+        </dl>
+    </div>
+
+    <!-- Issue 7 -->
+    <div class="issue-card critical">
+        <div class="issue-header">
+            <span class="badge badge-critical">Critical</span>
+            <span class="issue-title">Title Tags Nearly Identical Across All Pages</span>
+        </div>
+        <p>Every page title follows the pattern "Rancho Moonrise | Austins glamping and events ranch | [Page Name]" — wasting the most important on-page SEO signal.</p>
+        <dl class="issue-detail">
+            <dt>Current State</dt>
+            <dd>
+                Homepage: "Rancho Moonrise | Austins glamping and events ranch | Home"<br>
+                Weddings: "Rancho Moonrise | Austins glamping and events ranch | Wedding Page"<br>
+                Accommodations: "Rancho Moonrise | Austins glamping and events ranch | Accommodations"<br>
+                Note: "Austins" is missing the apostrophe. "Home" and "Wedding Page" waste character space.
+            </dd>
+            <dt>Problem</dt>
+            <dd>Google weighs the first words of the title tag heaviest. Every page leads with the brand name instead of the keyword. Near-identical titles also confuse Google about which page to rank for which query.</dd>
+            <dt>Recommended Fix</dt>
+            <dd>
+                Homepage: "Glamping &amp; Events Ranch Near Austin TX | Rancho Moonrise"<br>
+                Weddings: "Wedding Venue in Manor, TX — Up to 200 Guests | Rancho Moonrise"<br>
+                Accommodations: "Safari Tents &amp; Cabins — Glamping Near Austin | Rancho Moonrise"<br>
+                Events: "Live Music, Yoga &amp; Ranch Events | Rancho Moonrise Austin"<br>
+                FAQs: "Guest FAQs — Check-in, Pets, Amenities | Rancho Moonrise"
+            </dd>
+            <dt>Effort</dt>
+            <dd>30 minutes</dd>
+            <dt>Expected Impact</dt>
+            <dd>Each page can now rank for its own keyword set. Immediate improvement in search relevance signals.</dd>
+        </dl>
+    </div>
+</section>
+
+<!-- ============ MAJOR ISSUES ============ -->
+<section id="major-issues">
+    <h2>Major Issues</h2>
+    <p>These limit growth and compound over time. Should be fixed within 30 days.</p>
+
+    <div class="issue-card major">
+        <div class="issue-header">
+            <span class="badge badge-major">Major</span>
+            <span class="issue-title">Missing Meta Descriptions on Key Pages</span>
+        </div>
+        <p>The FAQs page, Host Your Event page, and Events page either have no meta description or use the generic site-wide fallback: "Austin's first events and glamping property."</p>
+        <dl class="issue-detail">
+            <dt>Current State</dt>
+            <dd>FAQs: "Austin's first events and glamping property" (generic)<br>Events: "Austin's first events and glamping property" (generic)<br>Host Your Event: "Austin's first events and glamping property" (generic)</dd>
+            <dt>Recommended Fix</dt>
+            <dd>Write unique, compelling meta descriptions (150-160 chars) for each page with relevant keywords and a CTA.</dd>
+            <dt>Effort</dt>
+            <dd>30 minutes</dd>
+            <dt>Expected Impact</dt>
+            <dd>Better CTR for page-specific searches. Each page becomes a distinct entry point.</dd>
+        </dl>
+    </div>
+
+    <div class="issue-card major">
+        <div class="issue-header">
+            <span class="badge badge-major">Major</span>
+            <span class="issue-title">No Blog or Content Strategy</span>
+        </div>
+        <p>There is zero informational content on the site. No blog, no guides, no articles. This means zero top-of-funnel traffic from queries like "best glamping near austin," "what to pack for glamping texas," or "unique wedding venues near austin."</p>
+        <dl class="issue-detail">
+            <dt>Current State</dt>
+            <dd>No blog section exists. Site only has transactional pages.</dd>
+            <dt>Recommended Fix</dt>
+            <dd>Add a blog section. Publish 2-4 articles per month targeting long-tail keywords: "glamping packing list," "austin area wedding venues with overnight stays," "corporate retreat ideas near austin," "best things to do in manor tx."</dd>
+            <dt>Effort</dt>
+            <dd>4 hours initial setup, then 2-4 hours/month for content</dd>
+            <dt>Expected Impact</dt>
+            <dd>Each quality blog post is a new page that can rank in Google. Compounds over time — 20 posts = 20 chances to rank.</dd>
+        </dl>
+    </div>
+
+    <div class="issue-card major">
+        <div class="issue-header">
+            <span class="badge badge-major">Major</span>
+            <span class="issue-title">GBP Category Limited to "Hotel"</span>
+        </div>
+        <dl class="issue-detail">
+            <dt>Current State</dt>
+            <dd>Primary category: Hotel. No secondary categories.</dd>
+            <dt>Recommended Fix</dt>
+            <dd>Primary: "Resort." Secondary: "Glamping Site," "Wedding Venue," "Event Venue," "Corporate Retreat Center."</dd>
+            <dt>Effort</dt>
+            <dd>15 minutes (after GBP is claimed)</dd>
+            <dt>Expected Impact</dt>
+            <dd>Surfaces in local pack for wedding, event, and glamping searches — not just hotel searches.</dd>
+        </dl>
+    </div>
+
+    <div class="issue-card major">
+        <div class="issue-header">
+            <span class="badge badge-major">Major</span>
+            <span class="issue-title">No Direct Booking Link on GBP</span>
+        </div>
+        <dl class="issue-detail">
+            <dt>Current State</dt>
+            <dd>GBP booking links go through OTAs (Expedia, Hotels.com) which charge commission.</dd>
+            <dt>Recommended Fix</dt>
+            <dd>Add direct Cloudbeds booking link to GBP. This appears as the primary "Book" button.</dd>
+            <dt>Effort</dt>
+            <dd>5 minutes</dd>
+            <dt>Expected Impact</dt>
+            <dd>Every direct booking saves 15-20% in OTA commission fees.</dd>
+        </dl>
+    </div>
+
+    <div class="issue-card major">
+        <div class="issue-header">
+            <span class="badge badge-major">Major</span>
+            <span class="issue-title">No Canonical Tags</span>
+        </div>
+        <dl class="issue-detail">
+            <dt>Current State</dt>
+            <dd>No <code>&lt;link rel="canonical"&gt;</code> tags detected on any page.</dd>
+            <dt>Recommended Fix</dt>
+            <dd>Add self-referencing canonical tags to every page. Prevents duplicate content issues from URL variations (trailing slashes, query parameters, etc.).</dd>
+            <dt>Effort</dt>
+            <dd>30 minutes</dd>
+            <dt>Expected Impact</dt>
+            <dd>Prevents Google from splitting "SEO credit" across duplicate URLs. Clean signal.</dd>
+        </dl>
+    </div>
+</section>
+
+<!-- ============ MINOR ISSUES ============ -->
+<section id="minor-issues">
+    <h2>Minor Issues</h2>
+    <p>Nice-to-fix items that support long-term growth.</p>
+
+    <div class="issue-card minor">
+        <div class="issue-header">
+            <span class="badge badge-minor">Minor</span>
+            <span class="issue-title">Facebook Severely Underdeveloped</span>
+        </div>
+        <p>864 followers on Facebook vs. 13,000+ on Instagram. Facebook is still the #1 platform for event discovery among 35-55 year-olds — your wedding and corporate event demographic.</p>
+        <dl class="issue-detail">
+            <dt>Recommended Fix</dt>
+            <dd>Cross-post Instagram content to Facebook. Run targeted local ads ($5-10/day). Share events to local Austin community groups.</dd>
+        </dl>
+    </div>
+
+    <div class="issue-card minor">
+        <div class="issue-header">
+            <span class="badge badge-minor">Minor</span>
+            <span class="issue-title">No Pinterest Presence</span>
+        </div>
+        <p>Pinterest is the #1 platform for wedding planning and travel inspiration. A Rancho Moonrise Pinterest board with professional venue photos would drive high-intent traffic.</p>
+        <dl class="issue-detail">
+            <dt>Recommended Fix</dt>
+            <dd>Create business Pinterest account. Pin all professional photos organized into boards: "Glamping Austin TX," "Ranch Wedding Venue Texas," "Austin Corporate Retreats."</dd>
+        </dl>
+    </div>
+
+    <div class="issue-card minor">
+        <div class="issue-header">
+            <span class="badge badge-minor">Minor</span>
+            <span class="issue-title">No YouTube / Video Content</span>
+        </div>
+        <p>A single professional property tour video would rank for "rancho moonrise" and "glamping austin" on YouTube — the world's second-largest search engine.</p>
+        <dl class="issue-detail">
+            <dt>Recommended Fix</dt>
+            <dd>Produce a 2-3 minute property tour video. Upload to YouTube with optimized title, description, and tags. Embed on homepage.</dd>
+        </dl>
+    </div>
+
+    <div class="issue-card minor">
+        <div class="issue-header">
+            <span class="badge badge-minor">Minor</span>
+            <span class="issue-title">No Press Coverage in Austin Media</span>
+        </div>
+        <p>No features detected in Austin Monthly, CultureMap Austin, Austin American-Statesman, or Texas Monthly. A single feature story drives hundreds of high-quality backlinks and referral traffic.</p>
+        <dl class="issue-detail">
+            <dt>Recommended Fix</dt>
+            <dd>Pitch story angles: "Austin's only full-service glamping ranch," seasonal event series, wedding venue spotlight. Target local lifestyle editors.</dd>
+        </dl>
+    </div>
+</section>
+
+<!-- ============ GBP SECTION ============ -->
+<section id="gbp">
+    <h2>Google Business Profile — Deep Dive</h2>
+
+    <div class="callout">
+        <div class="callout-title">Current GBP Status</div>
+        <p><strong>Rating:</strong> 4.9 ★ with 122 reviews — <em>this is excellent and a massive asset</em><br>
+        <strong>Category:</strong> Hotel (should be Resort + Wedding Venue + Event Venue + Glamping Site)<br>
+        <strong>Description:</strong> <span style="color: var(--critical); font-weight: 700;">EMPTY — no description at all</span><br>
+        <strong>Hours:</strong> Not set<br>
+        <strong>Booking link:</strong> Points to OTAs, not direct booking<br>
+        <strong>Owner verification:</strong> Likely unclaimed (auto-populated by OTAs)</p>
+    </div>
+
+    <h3>Recommended GBP Description (750 characters)</h3>
+    <div class="exec-box">
+        <p style="font-style: italic; font-size: 0.95rem;">"Rancho Moonrise is Austin's premier glamping and events ranch, located on 20 acres in Manor, TX — just 20 minutes from downtown Austin. Stay in luxury safari tents and hand-crafted cabins with A/C, heating, and private fire pits. Host your dream ranch wedding for up to 200 guests with exclusive property access, on-site accommodations for 50, and stunning Hill Country ceremony sites. Our Event Barn, Neon Moon Bar & Lounge, and poolside spaces are perfect for corporate retreats, birthday celebrations, and private events. Enjoy monthly live music, yoga, wellness events, and our resort-style pool and spa. Family-friendly and pet-friendly. Book direct at ranchomoonrise.com for the best rates."</p>
+    </div>
+
+    <h3>GBP Action Items</h3>
+    <table>
+        <thead>
+            <tr><th>#</th><th>Action</th><th>Effort</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>1</td><td>Claim and verify the GBP listing</td><td>15 min + 3-7 day verification</td></tr>
+            <tr><td>2</td><td>Add the 750-character business description above</td><td>5 min</td></tr>
+            <tr><td>3</td><td>Set business hours (check-in 4 PM, general hours)</td><td>5 min</td></tr>
+            <tr><td>4</td><td>Add direct Cloudbeds booking link as primary booking URL</td><td>5 min</td></tr>
+            <tr><td>5</td><td>Change primary category to "Resort," add secondary categories</td><td>5 min</td></tr>
+            <tr><td>6</td><td>Upload 50+ high-quality photos organized by category</td><td>30-45 min</td></tr>
+            <tr><td>7</td><td>Add all services: Weddings, Corporate Events, Pool, Live Music, etc.</td><td>15 min</td></tr>
+            <tr><td>8</td><td>Enable messaging and Q&A</td><td>5 min</td></tr>
+            <tr><td>9</td><td>Begin posting GBP Updates weekly (events, specials)</td><td>15 min/week ongoing</td></tr>
+        </tbody>
+    </table>
+</section>
+
+<!-- ============ SOCIAL AUDIT ============ -->
+<section id="social">
+    <h2>Social Media &amp; Presence Gaps</h2>
+
+    <table>
+        <thead>
+            <tr><th>Platform</th><th>Status</th><th>Assessment</th><th>Recommendation</th></tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Instagram</strong></td>
+                <td><span class="badge badge-good">Good</span> ~13K followers</td>
+                <td>Strong visual content, active posting</td>
+                <td>Continue. Cross-post to other platforms.</td>
+            </tr>
+            <tr>
+                <td><strong>Facebook</strong></td>
+                <td><span class="badge badge-minor">Weak</span> 864 followers</td>
+                <td>Severely underdeveloped for event/wedding demo</td>
+                <td>Cross-post IG content. Run local ads. Share to community groups.</td>
+            </tr>
+            <tr>
+                <td><strong>TikTok</strong></td>
+                <td><span class="badge badge-good">Active</span></td>
+                <td>Present, content being published</td>
+                <td>Continue. Reels/Shorts strategy.</td>
+            </tr>
+            <tr>
+                <td><strong>Pinterest</strong></td>
+                <td><span class="badge badge-critical">Missing</span></td>
+                <td>Zero presence on #1 wedding planning platform</td>
+                <td>Create business account. Pin all professional photos.</td>
+            </tr>
+            <tr>
+                <td><strong>YouTube</strong></td>
+                <td><span class="badge badge-critical">Missing</span></td>
+                <td>No video content on 2nd largest search engine</td>
+                <td>Property tour video. Event highlight reels.</td>
+            </tr>
+            <tr>
+                <td><strong>LinkedIn</strong></td>
+                <td><span class="badge badge-minor">Minimal</span></td>
+                <td>Present but not leveraged for corporate events</td>
+                <td>Post corporate retreat content. Target event planners.</td>
+            </tr>
+            <tr>
+                <td><strong>Press/PR</strong></td>
+                <td><span class="badge badge-critical">None</span></td>
+                <td>No features in Austin media outlets</td>
+                <td>Pitch to Austin Monthly, CultureMap, Texas Monthly.</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<!-- ============ TOP 5 ROI ============ -->
+<section id="top5">
+    <h2>Top 5 Highest-ROI Actions</h2>
+    <p>If you do nothing else, do these five things. Ranked by expected return per hour invested.</p>
+
+    <div class="issue-card" style="border-left-color: var(--brand-accent);">
+        <h3>1. Claim &amp; Optimize the Google Business Profile</h3>
+        <p><strong>Time:</strong> 1-2 hours &nbsp;|&nbsp; <strong>Impact:</strong> Highest</p>
+        <p>This is the single most impactful action available. A fully optimized GBP with your 4.9-star rating, proper categories (Resort, Wedding Venue, Event Venue), a keyword-rich description, and direct booking link will put you in the Google Local Pack — the map results that appear above organic listings. 46% of all Google searches have local intent. You have 122 five-star reviews already. You just need to show up.</p>
+        <p><strong>Business case:</strong> Conservative estimate — an optimized GBP drives 50-100 additional direct bookings per year. At an average booking value of $250-400/night, that's $12,500-$40,000 in annual revenue with zero ad spend.</p>
+    </div>
+
+    <div class="issue-card" style="border-left-color: var(--brand-accent);">
+        <h3>2. Fix the "COMING SOON!" Meta Description</h3>
+        <p><strong>Time:</strong> 15 minutes &nbsp;|&nbsp; <strong>Impact:</strong> High</p>
+        <p>This is the highest ROI-per-minute fix in this audit. Every branded search for "Rancho Moonrise" currently shows "COMING SOON!" in Google. That's telling every potential customer — including people who saw you on Instagram and are now Googling you — that you might not be open. Fix this today.</p>
+    </div>
+
+    <div class="issue-card" style="border-left-color: var(--brand-accent);">
+        <h3>3. Rebuild Title Tags &amp; Meta Descriptions Across All Pages</h3>
+        <p><strong>Time:</strong> 1-2 hours &nbsp;|&nbsp; <strong>Impact:</strong> High</p>
+        <p>Unique, keyword-optimized title tags and meta descriptions for each page tell Google exactly what each page is about. This is the foundation of on-page SEO. Without it, you can't rank for anything. With it, each page becomes a potential entry point for a different customer search.</p>
+    </div>
+
+    <div class="issue-card" style="border-left-color: var(--brand-accent);">
+        <h3>4. Add Schema Markup (LodgingBusiness, EventVenue, FAQPage)</h3>
+        <p><strong>Time:</strong> 1-2 hours &nbsp;|&nbsp; <strong>Impact:</strong> High</p>
+        <p>Schema markup gets you rich results in Google — star ratings, pricing, FAQ dropdowns, event dates right in the search results. Your competitors without schema get plain blue links. You get an enhanced listing that dominates the page.</p>
+    </div>
+
+    <div class="issue-card" style="border-left-color: var(--brand-accent);">
+        <h3>5. Launch a Blog Targeting "Glamping Austin" Keywords</h3>
+        <p><strong>Time:</strong> 4 hours setup + 2-4 hrs/month ongoing &nbsp;|&nbsp; <strong>Impact:</strong> High (compounds)</p>
+        <p>A blog is the only way to rank for informational queries — "best glamping spots near austin," "what to wear to a ranch wedding," "austin corporate retreat ideas." Each post is a new page that can rank. After 6 months of consistent publishing, you could be pulling 500-1,000+ monthly organic visitors from long-tail searches alone.</p>
+    </div>
+</section>
+
+<!-- ============ OUTCOMES ============ -->
+<section id="outcomes">
+    <h2>What Fixing This Is Worth</h2>
+    <p>Here's what these fixes translate to in real business outcomes:</p>
+
+    <table>
+        <thead>
+            <tr><th>Outcome</th><th>Timeline</th><th>Conservative Estimate</th></tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Direct bookings from Google Local Pack</td>
+                <td>60-90 days</td>
+                <td>50-100 additional bookings/year ($12K-$40K revenue)</td>
+            </tr>
+            <tr>
+                <td>Wedding inquiries from organic search</td>
+                <td>90-120 days</td>
+                <td>20-40 additional inquiries/year (even 5 closed = $50K-$150K)</td>
+            </tr>
+            <tr>
+                <td>Corporate event leads</td>
+                <td>90-120 days</td>
+                <td>10-20 additional inquiries/year</td>
+            </tr>
+            <tr>
+                <td>OTA commission savings (direct booking link)</td>
+                <td>Immediate</td>
+                <td>15-20% saved on every booking that goes direct instead of Expedia</td>
+            </tr>
+            <tr>
+                <td>Blog-driven organic traffic</td>
+                <td>4-6 months</td>
+                <td>500-1,000+ new monthly visitors (free, compounds over time)</td>
+            </tr>
+            <tr>
+                <td>Brand search CTR improvement</td>
+                <td>Immediate</td>
+                <td>20-40% more clicks from removing "COMING SOON!"</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="callout">
+        <div class="callout-title">The Bottom Line</div>
+        <p>Rancho Moonrise has a 4.9-star product with 122 reviews, 13K Instagram followers, and a stunning property. The demand is there. The digital infrastructure to capture it is not. Every day without these fixes is revenue walking out the door to competitors who show up when someone Googles "glamping austin texas."</p>
+        <p>The total investment to fix every critical and major issue on this list is approximately <strong>15-20 hours of work</strong>. The expected return — conservatively — is <strong>$75,000-$200,000 in additional annual revenue</strong> from organic search alone, plus ongoing OTA commission savings.</p>
+    </div>
+</section>
+
+</div><!-- /container -->
+
+<!-- ============ FOOTER ============ -->
+<div class="report-footer">
+    <p><strong>Prepared by Adam Styer | Mortgage Solutions LP — Digital Strategy</strong></p>
+    <p>Questions? adam@styermortgage.com</p>
+    <p style="margin-top: 16px; font-size: 0.75rem;">This audit is based on publicly available data as of April 6, 2026. Search rankings and platform data are subject to change.</p>
+</div>
+
+</body>
+</html>
