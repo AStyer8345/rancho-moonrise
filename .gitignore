@@ -3,3 +3,4 @@ node_modules/
 site/images/original/
 site/images/original/_manifest.json
 site/images/original/_all-urls.txt
+.vercel
