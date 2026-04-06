@@ -387,7 +387,8 @@
                         '<button id="chatSend">Send</button>' +
                     '</div>' +
                 '</div>' +
-                '<button class="chat-widget__toggle" id="chatToggle" aria-label="Open chat">💬</button>';
+                '<button class="chat-widget__toggle" id="chatToggle" aria-label="Open chat"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></button>' +
+                '<div class="chat-widget__label">Ask us anything!</div>';
 
             document.body.appendChild(widget);
 
@@ -429,9 +430,12 @@
                 }, 400);
             }
 
+            var labelEl = widget.querySelector('.chat-widget__label');
+
             function openChat() {
                 panel.classList.add('is-open');
                 toggleBtn.style.display = 'none';
+                if (labelEl) labelEl.style.display = 'none';
                 if (body.children.length === 0) {
                     addMessage(GREETING, 'bot');
                     showSuggestions();
