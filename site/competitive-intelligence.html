@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rancho Moonrise — Competitive Intelligence Report</title>
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: #1a1a1a;
+      background: #f8f7f4;
+      padding: 0;
+    }
+
+    /* ── Layout ── */
+    .report-header {
+      background: #1a1a1a;
+      color: #f8f7f4;
+      padding: 3rem 2rem 2.5rem;
+      border-bottom: 4px solid #c9944a;
+    }
+    .report-header .container { max-width: 960px; margin: 0 auto; }
+    .report-header h1 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+    .report-header .meta {
+      font-size: 0.95rem;
+      color: #bbb;
+      line-height: 1.8;
+    }
+    .report-header .meta strong { color: #c9944a; }
+    .report-header .meta a { color: #c9944a; text-decoration: underline; }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    main {
+      padding: 2.5rem 0 4rem;
+    }
+
+    /* ── Typography ── */
+    h2 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin: 3rem 0 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 3px solid #c9944a;
+    }
+    h2:first-child { margin-top: 0; }
+
+    h3 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #2a2a2a;
+      margin: 2rem 0 0.75rem;
+    }
+
+    h4 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #333;
+      margin: 1.75rem 0 0.5rem;
+    }
+
+    p { margin: 0 0 1rem; }
+
+    a { color: #c9944a; text-decoration: underline; }
+    a:hover { color: #a87835; }
+
+    strong { font-weight: 600; }
+    em { font-style: italic; }
+
+    hr {
+      border: none;
+      border-top: 2px solid #e0dcd4;
+      margin: 2.5rem 0;
+    }
+
+    /* ── Blockquotes ── */
+    blockquote {
+      border-left: 4px solid #c9944a;
+      background: #fff;
+      padding: 1rem 1.25rem;
+      margin: 1rem 0 1.5rem;
+      font-style: italic;
+      color: #444;
+      border-radius: 0 4px 4px 0;
+    }
+    blockquote p:last-child { margin-bottom: 0; }
+
+    /* ── Lists ── */
+    ul, ol {
+      margin: 0 0 1.25rem 1.5rem;
+    }
+    li {
+      margin-bottom: 0.4rem;
+    }
+    li ul, li ol {
+      margin-top: 0.3rem;
+      margin-bottom: 0.3rem;
+    }
+
+    /* ── Tables ── */
+    .table-wrap {
+      overflow-x: auto;
+      margin: 1rem 0 1.5rem;
+      -webkit-overflow-scrolling: touch;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      background: #fff;
+      border: 1px solid #d5d0c8;
+      border-radius: 4px;
+    }
+    thead th {
+      background: #1a1a1a;
+      color: #fff;
+      font-weight: 600;
+      text-align: left;
+      padding: 0.65rem 0.75rem;
+      white-space: nowrap;
+    }
+    tbody td {
+      padding: 0.6rem 0.75rem;
+      border-top: 1px solid #e5e1da;
+      vertical-align: top;
+    }
+    tbody tr:nth-child(even) { background: #f5f3ef; }
+    tbody tr:hover { background: #efe9df; }
+    td a { word-break: break-word; }
+
+    /* ── Callout boxes ── */
+    .callout {
+      background: #fff;
+      border: 1px solid #e0dcd4;
+      border-left: 4px solid #c9944a;
+      padding: 1rem 1.25rem;
+      margin: 1.25rem 0;
+      border-radius: 0 4px 4px 0;
+    }
+    .callout p:last-child { margin-bottom: 0; }
+
+    /* ── Status badges ── */
+    .status-yes { color: #2d7a3a; font-weight: 600; }
+    .status-no { color: #c0392b; font-weight: 600; }
+    .status-unknown { color: #7f8c8d; font-weight: 600; }
+
+    /* ── Responsive ── */
+    @media (max-width: 700px) {
+      .report-header { padding: 2rem 1rem 1.5rem; }
+      .report-header h1 { font-size: 1.6rem; }
+      .container { padding: 0 1rem; }
+      h2 { font-size: 1.35rem; }
+      h3 { font-size: 1.15rem; }
+      table { font-size: 0.82rem; }
+      thead th, tbody td { padding: 0.5rem 0.5rem; }
+    }
+
+    /* ── Print ── */
+    @media print {
+      body { background: #fff; font-size: 11pt; color: #000; }
+      .report-header { background: #fff; color: #000; border-bottom: 3px solid #000; padding: 1rem 0; }
+      .report-header h1 { color: #000; font-size: 20pt; }
+      .report-header .meta { color: #333; }
+      .report-header .meta strong { color: #000; }
+      .container { max-width: 100%; padding: 0; }
+      main { padding: 0.5rem 0 1rem; }
+      a { color: #000; text-decoration: underline; }
+      h2 { border-bottom-color: #000; page-break-after: avoid; }
+      h3, h4 { page-break-after: avoid; }
+      table { page-break-inside: avoid; border-color: #999; }
+      thead th { background: #ddd; color: #000; }
+      tbody tr:nth-child(even) { background: #f0f0f0; }
+      blockquote { border-left-color: #999; background: #f5f5f5; }
+      .callout { border-left-color: #999; }
+      hr { border-top-color: #ccc; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="report-header">
+  <div class="container">
+    <h1>Rancho Moonrise &mdash; Competitive Intelligence Report</h1>
+    <div class="meta">
+      <strong>Prepared for:</strong> Client Pitch / Website Rebuild Proposal<br>
+      <strong>Subject Property:</strong> <a href="https://ranchomoonrise.com">Rancho Moonrise</a> &middot; 20117 Lockwood Rd, Manor, TX 78653<br>
+      <strong>Research Date:</strong> April 6, 2026
+    </div>
+  </div>
+</header>
+
+<main>
+<div class="container">
+
+<!-- ══════════════════════════════════════════════════ -->
+<h2>Executive Summary</h2>
+
+<p>Rancho Moonrise is a genuinely differentiated property in Austin's glamping and events market: a 36-acre ranch with safari tents, cabins, a pool, an Event Barn, a bar/lounge, and a rapidly growing events calendar &mdash; all under 25 minutes from downtown Austin. Despite a compelling product, the brand is nearly invisible in the channels that drive high-intent bookings. It is absent from WeddingWire, Zola, Glamping Hub, Outdoorsy, Tentrr, and the Visit Austin tourism directory. Its top competitors have been featured in CultureMap, Texas Monthly, Garden &amp; Gun, and US News &amp; World Report. Its own Google presence is thin (8 Knot reviews vs. a nearby competitor's 86). The opportunity gap &mdash; and the pitch &mdash; is clear: the venue has the raw material of a destination brand; it simply has not been built into one yet.</p>
+
+<div class="callout">
+<p><strong>Top 3 Actionable Findings:</strong></p>
+<ol>
+  <li><strong>WeddingWire entirely misses Rancho Moonrise.</strong> The WeddingWire "Top 10 Wedding Venues in Manor, TX" page &mdash; which ranks on page one for "wedding venue manor texas" &mdash; lists zero Rancho Moonrise results. The only true Manor TX property on the list is Honeysuckle Ranch (a 60-person barn). This is a massive gap for a venue with 300+ capacity and overnight lodging.</li>
+  <li><strong>Press is the #1 differentiator of top-ranked competitors.</strong> Sinya on Lone Man Creek is featured in Texas Monthly, Garden &amp; Gun, D Magazine, and US News &amp; World Report &mdash; despite being a single-unit glamping property smaller than Rancho Moonrise. Lucky Arrow Retreat was covered by CultureMap Austin within its first month of opening. Rancho Moonrise has been open for years and has received only brief local TV mentions (CBS Austin, FOX 7). The CultureMap / Austin Monthly / Texas Monthly gap is a high-leverage, zero-cost target.</li>
+  <li><strong>"Safari tent Austin" is an underserved, high-conversion keyword.</strong> Rancho Moonrise specifically offers safari tents, yet this term has almost no authoritative content targeting it. Competitors optimizing for "glamping near austin" dominate that term with 400+ review signals; breaking in requires either reviews volume or targeted long-tail content like a safari-tent landing page.</li>
+</ol>
+</div>
+
+<hr>
+
+<!-- ══════════════════════════════════════════════════ -->
+<h2>Section 1 &mdash; Competitor Deep Dive</h2>
+
+<h3>Search Query Results Overview</h3>
+
+<p>The table below documents the dominant URL types and named competitors appearing in the top 10 results across all six target queries, based on April 2026 research.</p>
+
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th>Search Query</th><th>Dominant Result Types</th><th>Named Competitors Appearing</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>"glamping austin texas"</td>
+      <td>Aggregators (Yelp, Hipcamp), individual glamping properties, blog listicles</td>
+      <td><a href="https://www.talulamesa.com">Talula Mesa</a>, <a href="https://waldenretreats.com">Walden Retreats</a>, <a href="https://luckyarrowretreat.com">Lucky Arrow Retreat</a>, <a href="https://glampinghub.com/rentalsearch/glamping-austin-tx/">Glamping Hub</a>, <a href="https://www.hipcamp.com/en-US/d/united-states/texas/austin/camping/glamping">Hipcamp</a></td>
+    </tr>
+    <tr>
+      <td>"glamping near austin"</td>
+      <td>Hipcamp (dominant), blog listicles, individual properties</td>
+      <td><a href="https://www.hipcamp.com/en-US/d/united-states/texas/austin/camping/glamping">Hipcamp</a>, <a href="https://www.talulamesa.com">Talula Mesa</a>, <a href="https://waldenretreats.com">Walden Retreats</a>, <a href="https://luckyarrowretreat.com">Lucky Arrow Retreat</a>, <a href="https://www.hudsonbendranch.com">Hudson Bend Ranch</a>, <a href="https://glampinghub.com">Glamping Hub</a></td>
+    </tr>
+    <tr>
+      <td>"ranch wedding venue austin tx"</td>
+      <td>Wedding directory pages, individual venues, photographer blogs</td>
+      <td><a href="https://www.ranchaustin.com">Ranch Austin</a>, <a href="https://www.theknot.com/marketplace/ranch-austin-austin-tx-760455">The Knot</a>, <a href="https://www.zola.com/wedding-vendors/wedding-venues/ranch-austin-wedding-venue">Zola</a>, <a href="https://www.hudsonbendranch.com">Hudson Bend Ranch</a>, <a href="https://austin.wedsociety.com/article/9-ranch-style-wedding-venues/">Wed Society</a></td>
+    </tr>
+    <tr>
+      <td>"wedding venue manor texas"</td>
+      <td><a href="https://www.weddingwire.com/c/tx-texas/manor/wedding-venues/11-vendors.html">WeddingWire</a>, The Knot, Eventective, individual venues</td>
+      <td><a href="https://www.theknot.com/marketplace/grand-lady-austin-manor-tx-2030167">Grand Lady Austin</a>, <a href="https://www.weddingwire.com/biz/honeysuckle-ranch-at-bee-tree/323f73919a4a9c8c.html">Honeysuckle Ranch at Bee Tree</a>, Eventective directory</td>
+    </tr>
+    <tr>
+      <td>"private event venue austin texas"</td>
+      <td>Hotel/downtown venues, Peerspace, Giggster directories</td>
+      <td><a href="https://www.fairmont-austin.com/gather/social-events/">Fairmont Austin</a>, <a href="https://www.peerspace.com/venues/austin--tx/outdoor-event-venue">Peerspace</a>, <a href="https://giggster.com/find/austin--tx/outdoor-party">Giggster</a></td>
+    </tr>
+    <tr>
+      <td>"outdoor event venue austin tx"</td>
+      <td>Peerspace (dominant), Reddit, event directories</td>
+      <td><a href="https://www.peerspace.com/venues/austin--tx/outdoor-event-venue">Peerspace</a>, Reddit (TXeventplanning), Eventective</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p><strong>Rancho Moonrise's ranking position:</strong> Absent from organic results for all six queries. The venue appears on Hipcamp when searching specifically within Manor, and holds a The Knot listing (8 reviews), but does not appear in any of the organic SERP features for these queries.</p>
+
+<hr>
+
+<h3>Competitors Appearing 2+ Times</h3>
+
+<!-- Talula Mesa -->
+<h4>Talula Mesa &mdash; <a href="https://www.talulamesa.com">talulamesa.com</a></h4>
+<p><strong>Appearances:</strong> "glamping austin texas," "glamping near austin," multiple blog listicles<br>
+<strong>GBP Status:</strong> Listed on Expedia and Airbnb; no public Google review count found<br>
+<strong>Self-Description:</strong> "4 luxury glamping tents designed with style and comfort in mind. Each tent is an architectural gem, outfitted with high-end furniture, textiles, and linens. Our guests are the lucky few to uncover this secret hideout in nature, yet so close to Austin."<br>
+<strong>Page title SEO:</strong> "Stunning Hill Country Glamping Near Austin | Talula Mesa Glamping Resort in Texas"</p>
+<p><strong>Differentiators vs. Rancho Moonrise:</strong></p>
+<ul>
+  <li>Scarcity positioning (only 4 tents on 15 acres; Rancho Moonrise has 22 sites)</li>
+  <li>Hot tubs at every unit, show-stopping glass walls</li>
+  <li>Lake Travis overlook (Marble Falls area, ~1 hour from Austin)</li>
+  <li>Emphasizes privacy and "secret hideout" exclusivity</li>
+  <li>No events or weddings &mdash; pure leisure glamping</li>
+  <li>Deeper integration with nearby outdoor activities (paddleboards, kayaks included)</li>
+</ul>
+
+<!-- Walden Retreats -->
+<h4>Walden Retreats &mdash; <a href="https://waldenretreats.com">waldenretreats.com</a></h4>
+<p><strong>Appearances:</strong> "glamping austin texas," "glamping near austin," A Taste of Koko, FOX 7 Austin video feature<br>
+<strong>GBP/Review Status:</strong> <a href="https://www.booking.com/hotel/us/walden-retreats-hill-country.html">Booking.com 9.7/10</a>; <a href="https://www.expedia.com/Johnson-City-Hotels-Walden-Retreats.h76921646.Hotel-Information">Expedia 10/10 Exceptional (33 reviews)</a><br>
+<strong>Self-Description:</strong> "Perched among the cliffs of the Pedernales River on 96 acres of private property, Walden is a refined, adventurous retreat designed for solitude and restoration among nature. This is camping, elevated."<br>
+<strong>Meta Description:</strong> "Come experience the ultimate get-away at Walden Retreats. We offer luxury glamping in Texas, just one hour from Austin and surrounded by nature."</p>
+<p><strong>Differentiators vs. Rancho Moonrise:</strong></p>
+<ul>
+  <li>96 acres (vs. 36 acres) &mdash; scale signals permanence and prestige</li>
+  <li>Private bathroom with claw-foot tub + full kitchen in every tent</li>
+  <li>Event Lodge designed by Michael Hsu Office of Architecture (high-end signifier)</li>
+  <li>1 hour from Austin (farther out, positioned as a true escape)</li>
+  <li>Has press coverage: FOX 7 Austin video feature; atxwoman.com feature</li>
+  <li>Does not host weddings with overnight capacity at Rancho Moonrise's scale</li>
+</ul>
+
+<!-- Lucky Arrow Retreat -->
+<h4>Lucky Arrow Retreat &mdash; <a href="https://luckyarrowretreat.com">luckyarrowretreat.com</a></h4>
+<p><strong>Appearances:</strong> "glamping near austin" (#8 on Hipcamp), A Taste of Koko, CultureMap Austin, CultureMap Houston<br>
+<strong>GBP/Review Status:</strong> <a href="https://www.expedia.com/Austin-Hotels-Lucky-Arrow-Retreat-Dripping-Springs.h34812423.Hotel-Information">Expedia 9.6/10 Exceptional (173 reviews)</a>; <a href="https://www.yelp.com/biz/lucky-arrow-retreat-dripping-springs">Yelp 60 reviews</a>; 24 Hipcamp reviews (100%)<br>
+<strong>Self-Description:</strong> "Boutique Hill Country resort just west of Austin, designed for meaningful gatherings, getaways and memorable celebrations. Elevated accommodations, versatile event spaces, and sweeping Hill Country views. 40 Guest Rooms | Events up to 175 Guests | 25 Minutes to Austin"<br>
+<strong>Meta Description:</strong> "Lucky Arrow is a boutique Hill Country resort just west of Austin, designed for meaningful gatherings, getaways and memorable celebrations."</p>
+<p><strong>Differentiators vs. Rancho Moonrise:</strong></p>
+<ul>
+  <li>Has trademarked "Glamping Capital of Texas&reg;" &mdash; owns a brand identity claim</li>
+  <li>Private gate access to Bell Springs Winery &mdash; huge partnership differentiator</li>
+  <li>40 guest rooms (vs. 20 at Rancho Moonrise) &mdash; bigger overnight capacity</li>
+  <li>Covered by <a href="https://austin.culturemap.com/news/travel/05-13-19-dripping-springs-lucky-arrow-retreat-hits-the-bullseye/">CultureMap Austin</a> and CultureMap Houston at opening</li>
+  <li>173 Expedia reviews vs. Rancho Moonrise's 8 Knot reviews</li>
+  <li>Active weekly programming (Mavericks Watering Hole every Fri/Sat)</li>
+  <li>Weddings page with detailed package descriptions; Rancho Moonrise lacks this</li>
+</ul>
+
+<!-- Ranch Austin -->
+<h4>Ranch Austin &mdash; <a href="https://www.ranchaustin.com">ranchaustin.com</a></h4>
+<p><strong>Appearances:</strong> "ranch wedding venue austin tx" &mdash; dominant across The Knot, Zola, Wedding Spot, Eventective, eventplanner.net<br>
+<strong>GBP/Review Status:</strong> <a href="https://www.theknot.com/marketplace/ranch-austin-austin-tx-760455">The Knot: 46 reviews</a>; <a href="https://www.zola.com/wedding-vendors/wedding-venues/ranch-austin-wedding-venue">Zola listing</a><br>
+<strong>Self-Description:</strong> "Beautiful Austin wedding venue, offering indoor and outdoor options. This elegant venue was voted one of Austin's best places to get married!"<br>
+<strong>Price Range:</strong> $3,000&ndash;$6,500 venue rental; <a href="https://www.wedding-spot.com/venue/9467/ranch-austin/">Wedding Spot starting at $6,392 for 50 guests</a></p>
+<p><strong>Differentiators vs. Rancho Moonrise:</strong></p>
+<ul>
+  <li>Firmly established in wedding directory ecosystem &mdash; The Knot, Zola, Wedding Spot all active</li>
+  <li>25 acres but no overnight glamping/lodging</li>
+  <li>Strong review velocity (46 The Knot reviews; Rancho Moonrise has 8)</li>
+  <li>Pricing is publicly available; Rancho Moonrise pricing is not</li>
+</ul>
+
+<!-- Grand Lady Austin -->
+<h4>Grand Lady Austin &mdash; <a href="https://www.theknot.com/marketplace/grand-lady-austin-manor-tx-2030167">Manor, TX</a></h4>
+<p><strong>Appearances:</strong> "wedding venue manor texas" &mdash; #1 The Knot result for Manor area<br>
+<strong>GBP/Review Status:</strong> <a href="https://www.theknot.com/marketplace/grand-lady-austin-manor-tx-2030167">The Knot: 86 reviews</a>; <a href="https://www.yelp.com/biz/grand-lady-austin-manor">Yelp: 58 photos; strong Google presence</a><br>
+<strong>Address:</strong> 19704 Hogeye Rd, Manor, TX 78653 (same general market as Rancho Moonrise)<br>
+<strong>Self-Description:</strong> Stunning historic mansion on immaculate grounds with modern reception hall, on-site florist, garden, dog-friendly, woman-owned.</p>
+<p><strong>Differentiators vs. Rancho Moonrise:</strong></p>
+<ul>
+  <li>86 Knot reviews &mdash; 10.75x more than Rancho Moonrise (8)</li>
+  <li>Responds personally to every single review &mdash; sets the customer service tone</li>
+  <li>On-site florist (vertical integration) removes a vendor pain point</li>
+  <li>Dog-friendly messaging explicit throughout</li>
+  <li>Has "preferred vendor" ecosystem built; guides couples to trusted vendors</li>
+  <li>No glamping/overnight accommodations &mdash; pure wedding venue</li>
+</ul>
+
+<!-- Honeysuckle Ranch -->
+<h4>Honeysuckle Ranch at Bee Tree &mdash; Manor, TX</h4>
+<p><strong>Appearances:</strong> The only true Manor, TX property listed in <a href="https://www.weddingwire.com/biz/honeysuckle-ranch-at-bee-tree/323f73919a4a9c8c.html">WeddingWire's top 10 Manor venues</a><br>
+<strong>GBP/Review Status:</strong> Active WeddingWire listing; Facebook: 133 likes<br>
+<strong>Self-Description:</strong> "Rustic event and party venue just east of Austin, TX nestled in the woods on Bee Tree Farm." Capacity: 60 (barn); dairy goat farm; 3 cabins.</p>
+<p><strong>Differentiators vs. Rancho Moonrise:</strong></p>
+<ul>
+  <li>Registered on WeddingWire (Rancho Moonrise is not)</li>
+  <li>Unique "dairy goat interaction" as a wedding feature</li>
+  <li>Much smaller capacity (60 vs. 300+)</li>
+  <li>Hyper-local Manor positioning; owns the WeddingWire Manor slot by default</li>
+</ul>
+
+<hr>
+
+<!-- ══════════════════════════════════════════════════ -->
+<h2>Section 2 &mdash; Keyword Research</h2>
+
+<p>Direct keyword volume data requires a tool subscription (SEMrush, Ahrefs, Keyword Planner). The estimates below are derived from relative indicator signals: number of competing pages, aggregator activity, directory prominence, and organic click-through proxies from the search results landscape observed.</p>
+
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th>Keyword</th><th>Est. Monthly Searches</th><th>Competition Level</th><th>Rancho Moonrise Ranking</th><th>Priority</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>glamping near austin</td><td>2,400&ndash;5,000</td><td>High</td><td>Not ranking</td><td>High</td></tr>
+    <tr><td>outdoor wedding venue austin</td><td>2,000&ndash;4,000</td><td>High</td><td>Not ranking</td><td>High</td></tr>
+    <tr><td>glamping austin texas</td><td>1,000&ndash;2,900</td><td>Medium-High</td><td>Not ranking</td><td>High</td></tr>
+    <tr><td>austin glamping</td><td>800&ndash;1,600</td><td>Medium</td><td>Not ranking</td><td>Medium-High</td></tr>
+    <tr><td>ranch wedding venue austin</td><td>400&ndash;800</td><td>Medium</td><td>Not ranking</td><td>Medium</td></tr>
+    <tr><td>safari tent austin</td><td>100&ndash;400</td><td>Low</td><td>Not ranking</td><td>High (low competition, ownable)</td></tr>
+    <tr><td>outdoor wedding venue austin tx</td><td>200&ndash;500</td><td>Medium</td><td>Not ranking</td><td>Medium</td></tr>
+    <tr><td>manor tx wedding venue</td><td>50&ndash;200</td><td>Low</td><td>Not ranking</td><td>High (local, ownable)</td></tr>
+    <tr><td>event venue manor texas</td><td>50&ndash;150</td><td>Very Low</td><td>Not ranking</td><td>Medium (local)</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p><strong>Volume methodology note:</strong> These are proxies based on directory competition density and SERP crowding, not exported tool data. Independent validation with Google Keyword Planner or SEMrush is strongly recommended. The <em>glamping near austin</em> cluster likely represents the highest combined volume; the <em>manor tx / event venue manor texas</em> cluster represents the highest capture probability given low local competition.</p>
+
+<p><strong>Key observations:</strong></p>
+
+<ul>
+  <li><strong>"Safari tent austin"</strong> is uniquely ownable. Rancho Moonrise explicitly has safari tents; competitors like Walden Retreats are 1+ hour from Austin. A dedicated landing page ("Safari Tents Near Austin, TX") could rank quickly in a low-competition space. Glamping Hub has a <a href="https://www.hipcamp.com/en-US/d/united-states/texas/austin/camping/safari-tent">safari tent near Austin filter page</a> that Rancho Moonrise is not listed on.</li>
+  <li><strong>"Manor tx wedding venue"</strong> is structurally ownable with near-zero competition. The WeddingWire top-10 page ranks for it, and Rancho Moonrise is entirely absent. Registering on WeddingWire and optimizing for this term could make Rancho Moonrise the default Manor result overnight.</li>
+  <li><strong>Aggregators dominate glamping terms.</strong> Hipcamp, Glamping Hub, and Yelp collectively own the top 3&ndash;4 positions for both "glamping austin texas" and "glamping near austin." Getting Rancho Moonrise's listings fully optimized on these platforms &mdash; particularly <a href="https://glampinghub.com/unitedstatesofamerica/south/texas/austin/">Glamping Hub</a> where it is currently absent &mdash; will drive more referral traffic than organic SEO alone in the near term.</li>
+</ul>
+
+<hr>
+
+<!-- ══════════════════════════════════════════════════ -->
+<h2>Section 3 &mdash; Press &amp; Backlink Gap Analysis</h2>
+
+<h3>Current Press Coverage for Rancho Moonrise</h3>
+
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th>Outlet</th><th>Coverage</th><th>Type</th><th>Date</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><a href="https://cbsaustin.com/features/we-are-austin/moonrise-music-series-at-rancho-moonrise-brings-live-music-under-the-stars">CBS Austin (KEYE)</a></td><td>Moonrise Music Series feature</td><td>News segment</td><td>March 2026</td></tr>
+    <tr><td><a href="https://www.fox7austin.com/video/fmc-5lnt4lor3jky4u90">FOX 7 Austin</a></td><td>"Events and glamping ranch 20 min from Austin"</td><td>Brief video clip</td><td>March 2026</td></tr>
+    <tr><td><a href="https://patch.com/texas/downtownaustin/calendar/event/20260401/fe6c060b-43c3-4d25-a75d-3c4d128b927a/full-moon-floating-sound-bath-at-rancho-moonrise">Austin Patch</a></td><td>Full Moon Sound Bath event listing</td><td>Calendar</td><td>April 2026</td></tr>
+    <tr><td><a href="https://www.rowanandbirch.com/stories/rancho-moonrise-wedding">Rowan + Birch Photography</a></td><td>Rancho Moonrise wedding feature</td><td>Photography blog</td><td>March 2023</td></tr>
+    <tr><td><a href="https://romanticspotsaustin.com/spots/rancho-moonrise/">Romantic Spots Austin</a></td><td>Venue directory listing</td><td>Directory</td><td>2022</td></tr>
+    <tr><td><a href="https://www.eventbrite.com/e/rancho-moonrise-bridal-open-house-tickets-1975628187090">Eventbrite</a></td><td>Bridal Open House event</td><td>Event platform</td><td>2025</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p><strong>Absent from:</strong> CultureMap Austin, Austin Monthly, Texas Monthly, Do512 editorial, Eater Austin, Austin American-Statesman, Garden &amp; Gun, D Magazine</p>
+
+<h3>Competitors with Backlinks Rancho Moonrise Is Missing</h3>
+
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th>Outlet</th><th>Competitor Featured</th><th>URL</th><th>Backlink Value</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><a href="https://austin.culturemap.com/news/travel/05-13-19-dripping-springs-lucky-arrow-retreat-hits-the-bullseye/">CultureMap Austin</a></td><td>Lucky Arrow Retreat</td><td>Full feature at opening</td><td>Very High</td></tr>
+    <tr><td><a href="https://austin.culturemap.com/news/travel/luxury-glamping-hill-country-outdoorsy/">CultureMap Austin</a></td><td>Outdoorsy Hill Country</td><td>Glamping launch feature (Mar 2024)</td><td>Very High</td></tr>
+    <tr><td><a href="https://www.youtube.com/watch?v=SV_Fa3BAMUI">FOX 7 Austin (video)</a></td><td>Walden Retreats</td><td>Supper club launch feature (2023)</td><td>High</td></tr>
+    <tr><td><a href="https://gardenandgun.com/articles/sinya-on-lone-man-creek/">Garden &amp; Gun</a></td><td>Sinya on Lone Man Creek</td><td>Destination travel feature</td><td>Very High</td></tr>
+    <tr><td><a href="https://www.hillcountrysinya.com/more-press">Texas Monthly</a></td><td>Sinya on Lone Man Creek</td><td>"A Summer Weekend in Wimberley"</td><td>Very High</td></tr>
+    <tr><td><a href="https://www.dmagazine.com/travel/2016/05/sinya-on-lone-man-creek-wimberly-texas/">D Magazine</a></td><td>Sinya on Lone Man Creek</td><td>Travel feature</td><td>High</td></tr>
+    <tr><td><a href="https://www.explore.com/2074265/campers-agree-top-five-us-glamping-spots-amazing-getaway/">US News &amp; World Report</a></td><td>Sinya on Lone Man Creek</td><td>Top US glamping spots</td><td>High</td></tr>
+    <tr><td><a href="https://atxwoman.com/2019/02/01/walden-retreats-glamping-destination/">atxwoman.com</a></td><td>Walden Retreats</td><td>Lifestyle travel feature</td><td>Medium</td></tr>
+    <tr><td><a href="https://www.atasteofkoko.com/visit-austin/glamping-near-austin">A Taste of Koko</a></td><td>Lucky Arrow, Walden, Talula Mesa</td><td>"11 Best Spots for Glamping Near Austin"</td><td>High</td></tr>
+    <tr><td><a href="https://whimsysoul.com/texas-glamping-spots-best-luxury-tents-stylish-yurts-treehouses/">Whimsy Soul</a></td><td>Talula Mesa, Sinya</td><td>Texas glamping roundup</td><td>Medium</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p><strong>Pitch angles for Rancho Moonrise that competitors cannot claim:</strong></p>
+<ul>
+  <li>"Austin's first glamping and events ranch" &mdash; a legitimate first-mover claim</li>
+  <li>The only Austin-area glamping property with a full events barn, pool, and bar lounge in a combined package</li>
+  <li>Honky Tonk Two-Step programming (Rancho Rodeo) &mdash; cultural/lifestyle story</li>
+  <li>Woman-owned business in the experiential hospitality space</li>
+  <li>Full Moon Sound Baths, Yogalates, Paella Dinner Parties &mdash; wellness/lifestyle angle for Austin Monthly or Do512</li>
+</ul>
+
+<p>The CBS Austin and FOX 7 coverage shows the property is media-ready. The missing step is a proactive pitch to CultureMap Austin (their primary beat is opening/launch features) and a lifestyle angle to Austin Monthly or Do512 editorial.</p>
+
+<hr>
+
+<!-- ══════════════════════════════════════════════════ -->
+<h2>Section 4 &mdash; Directory Gap Analysis</h2>
+
+<p>The following table shows Rancho Moonrise's current status across key platforms, with notes on what's needed.</p>
+
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th>Platform</th><th>Listed?</th><th>Status / Notes</th><th>Priority</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://www.weddingwire.com/c/tx-texas/manor/wedding-venues/11-vendors.html">WeddingWire</a></td>
+      <td><span class="status-no">Not listed</span></td>
+      <td>Absent from "Top 10 Wedding Venues Manor TX" &mdash; page ranks page 1 for "wedding venue manor texas." Honeysuckle Ranch (60-person capacity) is the only Manor TX venue listed.</td>
+      <td><strong>Critical</strong></td>
+    </tr>
+    <tr>
+      <td><a href="https://www.zola.com/wedding-vendors/wedding-venues/ranch-austin-wedding-venue">Zola</a></td>
+      <td><span class="status-no">Not found</span></td>
+      <td>Ranch Austin is on Zola; Rancho Moonrise is not. Free listing available.</td>
+      <td><strong>High</strong></td>
+    </tr>
+    <tr>
+      <td><a href="https://www.theknot.com/marketplace/rancho-moonrise-manor-tx-2087722">The Knot</a></td>
+      <td><span class="status-yes">Active</span></td>
+      <td>8 reviews, 4.5 stars. Profile exists but review volume is severely low vs. competition (Grand Lady Austin: 86 reviews).</td>
+      <td>Active &mdash; needs review cultivation</td>
+    </tr>
+    <tr>
+      <td>WeddingPro (WW Pro)</td>
+      <td><span class="status-unknown">Unknown</span></td>
+      <td>WeddingWire and WeddingPro share infrastructure; confirming this requires direct platform check.</td>
+      <td><strong>High</strong></td>
+    </tr>
+    <tr>
+      <td><a href="https://www.eventbrite.com/e/rancho-moonrise-bridal-open-house-tickets-1975628187090">Eventbrite</a></td>
+      <td><span class="status-yes">As Event Host</span></td>
+      <td>Active as event organizer for ticketed events; not necessarily listed as a venue for third-party bookings.</td>
+      <td>Active &mdash; expand venue listing</td>
+    </tr>
+    <tr>
+      <td><a href="https://www.austintexas.org">Visit Austin</a></td>
+      <td><span class="status-no">Not found</span></td>
+      <td>Visit Austin tourism directory does not appear to list Rancho Moonrise in glamping or venue searches.</td>
+      <td><strong>High</strong></td>
+    </tr>
+    <tr>
+      <td>Texas Tourism</td>
+      <td><span class="status-unknown">Unknown</span></td>
+      <td>Requires direct verification on travel.texas.gov.</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <td><a href="https://glampinghub.com/unitedstatesofamerica/south/texas/austin/">Glamping Hub</a></td>
+      <td><span class="status-no">Not listed</span></td>
+      <td>Glamping Hub's Austin page confirmed absent. Competitors including Talula Mesa actively appear here. High-referral platform for glamping discovery.</td>
+      <td><strong>Critical</strong></td>
+    </tr>
+    <tr>
+      <td><a href="https://www.tentrr.com">Tentrr</a></td>
+      <td><span class="status-no">Not found</span></td>
+      <td>Curated glamping booking platform; suitable for safari tent and camping inventory.</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <td><a href="https://www.outdoorsy.com">Outdoorsy</a></td>
+      <td><span class="status-no">Not as venue</span></td>
+      <td>Outdoorsy operates a glamping blog and booking platform; their own Hill Country glamping property is a competitor.</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <td><a href="https://www.hipcamp.com/en-US/land/texas-rancho-moonrise-dw9hklej">Hipcamp</a></td>
+      <td><span class="status-yes">Active</span></td>
+      <td>Listed with 22 sites on 37 acres. Does not appear on the top 20 glamping near Austin list &mdash; likely due to low review volume.</td>
+      <td>Active &mdash; needs review volume</td>
+    </tr>
+    <tr>
+      <td><a href="https://www.airbnb.com/rooms/1284213223278884167">Airbnb</a></td>
+      <td><span class="status-yes">Active</span></td>
+      <td>Family Safari Tent listed individually.</td>
+      <td>Active</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p><strong>Highest-leverage unlisted platforms:</strong> WeddingWire and Glamping Hub are the two most critical gaps. Both platforms drive high-intent search traffic specifically for the terms Rancho Moonrise needs to own, and both are free to list on.</p>
+
+<hr>
+
+<!-- ══════════════════════════════════════════════════ -->
+<h2>Section 5 &mdash; Google Business Profile Optimization Research</h2>
+
+<!-- Example 1 -->
+<h3>Example 1: Lucky Arrow Retreat &mdash; Dripping Springs, TX</h3>
+<p><a href="https://luckyarrowretreat.com">luckyarrowretreat.com</a> | <a href="https://www.expedia.com/Austin-Hotels-Lucky-Arrow-Retreat-Dripping-Springs.h34812423.Hotel-Information">Expedia profile</a></p>
+
+<p><strong>Review Volume:</strong> 173 Expedia reviews (9.6/10), 60 Yelp reviews, 24 Hipcamp reviews (100%)<br>
+<strong>Primary GBP Category:</strong> Hotel (with secondary: Campground, Event Venue, Wedding Venue)</p>
+
+<p><strong>What their description does well:</strong></p>
+<ul>
+  <li>Front-loads the proximity claim: "just west of Austin" + "25 Minutes to Austin"</li>
+  <li>Uses a trademark: "Glamping Capital of Texas&reg;" &mdash; owns a brand identity signal</li>
+  <li>Specifies key metrics: "40 Guest Rooms | Events up to 200 Guests"</li>
+  <li>Mentions the Bell Springs Winery adjacency &mdash; a unique partner that increases desirability</li>
+  <li>Describes active programming (weekly bar events with specific prices: $5 house wine/beer)</li>
+</ul>
+
+<p><strong>What makes their listing strong:</strong></p>
+<ul>
+  <li>Review velocity is the single biggest factor &mdash; 173 Expedia reviews create trust signals Google uses for local pack ranking</li>
+  <li>Weddings page with complete package details, capacity numbers, and named spaces (Overlook, Tree Grove, Event Hall, Sky Terrace)</li>
+  <li>Active social and event posting keeps the GBP "fresh"</li>
+</ul>
+
+<hr>
+
+<!-- Example 2 -->
+<h3>Example 2: Walden Retreats Hill Country &mdash; Johnson City, TX</h3>
+<p><a href="https://waldenretreats.com">waldenretreats.com</a> | <a href="https://www.booking.com/hotel/us/walden-retreats-hill-country.html">Booking.com profile</a></p>
+
+<p><strong>Review Volume:</strong> 9.7/10 on Booking.com; 10/10 Exceptional on Expedia (33 reviews)<br>
+<strong>Primary GBP Category:</strong> Glamping / Campground</p>
+
+<p><strong>What their description does well:</strong></p>
+<ul>
+  <li>Opens with location orientation: "1 hour West of Austin and 1 hour North of San Antonio"</li>
+  <li>Uses specific luxury language: "Casper&reg; mattress," "claw-foot tub," "catering kitchen"</li>
+  <li>Quantifies the property: "96-acre," "15 luxury glamping tents," "3,500 sq ft Event Lodge," "5,000 sq ft lawn"</li>
+  <li>Mentions the architect (Michael Hsu Office of Architecture) &mdash; prestige signal</li>
+  <li>Uses "Featured In" section on website mirroring press signals</li>
+</ul>
+
+<p><strong>What makes their listing strong:</strong></p>
+<ul>
+  <li>Near-perfect review scores &mdash; single most powerful GBP ranking signal</li>
+  <li>Well-structured amenities list (Google's Hotel category unlocks amenities features)</li>
+  <li>Keyword-rich H-tags: "Glamping in Texas," "GLAMPING NEAR AUSTIN," "luxury glamping Texas Hill Country"</li>
+</ul>
+
+<hr>
+
+<!-- Example 3 -->
+<h3>Example 3: Grand Lady Austin &mdash; Manor, TX</h3>
+<p><a href="https://www.theknot.com/marketplace/grand-lady-austin-manor-tx-2030167">The Knot listing: 86 reviews</a></p>
+
+<p><strong>Review Volume:</strong> 86 Knot reviews (all 5-star or near); 58 Yelp photos<br>
+<strong>Primary GBP Category:</strong> Wedding Venue / Event Venue</p>
+
+<p><strong>What their GBP/listing does well:</strong></p>
+<ul>
+  <li>Personalized, named staff responses to every review (Christy, Katie, Carly are named regularly) &mdash; builds trust and engagement signals</li>
+  <li>Uses local SEO anchor terms: "near the Austin area," "manor texas," "historic mansion"</li>
+  <li>Dog-friendly attribute prominently featured</li>
+  <li>On-site florals reduces friction for clients and creates a cross-selling differentiator</li>
+  <li>Review responses include keywords naturally: "We're so glad you enjoyed the garden&hellip;"</li>
+</ul>
+
+<p><strong>What makes their listing strong:</strong></p>
+<ul>
+  <li>Review velocity (86 vs. 8 for Rancho Moonrise) &mdash; the single biggest gap to close</li>
+  <li>Responding to every review signals to Google that the business is actively managed</li>
+  <li>Business attributes: Woman-owned, dog-friendly, historic site &mdash; these filter search results</li>
+</ul>
+
+<hr>
+
+<!-- Example 4 -->
+<h3>Example 4: Sinya on Lone Man Creek &mdash; Wimberley, TX</h3>
+<p><a href="https://www.hillcountrysinya.com">hillcountrysinya.com</a> | <a href="https://www.hillcountrysinya.com/more-press">Press page</a></p>
+
+<p><strong>Review Volume:</strong> Limited Google reviews but mentioned as a top glamping destination by US News &amp; World Report, D Magazine, Texas Monthly, and Garden &amp; Gun<br>
+<strong>Primary GBP Category:</strong> Glamping / Bed &amp; Breakfast</p>
+
+<p><strong>What their description does well:</strong></p>
+<ul>
+  <li>"The Gold Standard of Luxury Camping since 2009" &mdash; anchors on longevity and standard-setting</li>
+  <li>One-unit property creates complete exclusivity claim: "Sinya consists of only ONE unit, which creates complete peace &amp; privacy"</li>
+  <li>Press page on website (Texas Monthly, Garden &amp; Gun, D Magazine) creates a backlink signal loop</li>
+</ul>
+
+<p><strong>What makes their listing strong:</strong></p>
+<ul>
+  <li>Press coverage compensates for low review volume &mdash; media credibility signals authority</li>
+  <li>Hyper-specific niche (single-unit safari tent for couples) creates ultra-targeted keyword relevance</li>
+  <li>Founding story (Lynn Gallimore's Tanzania journey) creates emotional differentiation and editorial hooks</li>
+</ul>
+
+<hr>
+
+<!-- Example 5 -->
+<h3>Example 5: Talula Mesa Glamping Resort &mdash; Marble Falls, TX</h3>
+<p><a href="https://www.talulamesa.com">talulamesa.com</a></p>
+
+<p><strong>Review Volume:</strong> No public count; Expedia and Airbnb listed<br>
+<strong>Primary GBP Category:</strong> Glamping / Campground<br>
+<strong>SEO title:</strong> "Stunning Hill Country Glamping Near Austin | Talula Mesa Glamping Resort in Texas"</p>
+
+<p><strong>What their description does well:</strong></p>
+<ul>
+  <li>Title tags include primary keyword + location + brand name in optimal order</li>
+  <li>"Cheaper to book here than on AirBnB (Guaranteed)" &mdash; direct booking incentive in GBP description</li>
+  <li>Privacy language: "just four tents" / "secret hideout" &mdash; creates scarcity and prestige signal</li>
+  <li>Proximity without distance: "so close to Austin" + "Lake Travis is just 2 minutes away"</li>
+</ul>
+
+<p><strong>What makes their listing strong:</strong></p>
+<ul>
+  <li>Strong on-page keyword architecture mirrors GBP categories</li>
+  <li>Experience language is sensory and aspirational: "flickering lanterns," "ethereal fairy tale village," "show-stopping glass wall"</li>
+  <li>Dedicated page for each tent unit creates indexable content depth</li>
+</ul>
+
+<hr>
+
+<!-- GBP Recommendations -->
+<h3>GBP Recommendations for Rancho Moonrise</h3>
+
+<p>Based on competitor benchmarking, the following elements should be incorporated into Rancho Moonrise's GBP build:</p>
+
+<p><strong>Recommended Primary Category:</strong> <code>Event Venue</code><br>
+<strong>Recommended Secondary Categories (2&ndash;3 max):</strong> <code>Campground</code>, <code>Wedding Venue</code>, <code>Resort Hotel</code></p>
+
+<p><strong>Description Framework (draft):</strong></p>
+<blockquote>
+<p>Rancho Moonrise is Austin's first glamping and events ranch &mdash; a 36-acre retreat just 20 minutes from downtown, where safari tents and custom cabins meet a working Event Barn, Neon Moon Bar &amp; Lounge, and a resort-style pool. Host destination weddings for 300+ guests, corporate retreats, private events, or a weekend escape for up to 50 overnight guests. Located in Manor, TX at 20117 Lockwood Rd.</p>
+</blockquote>
+
+<p><strong>Priority actions:</strong></p>
+<ol>
+  <li>Cultivate review volume on Google (target: 50 reviews in 90 days &mdash; use post-event email campaigns)</li>
+  <li>Add all amenities to GBP: pool, bar, Event Barn, safari tents, cabins, outdoor stage</li>
+  <li>Upload 25+ photos with keyword-named files (e.g., "safari-tent-austin-texas.jpg")</li>
+  <li>Enable booking link to direct site</li>
+  <li>Post weekly updates via GBP posts (events, promotions, new photos)</li>
+  <li>Add Business Attributes: Woman-owned, Outdoor seating, Pet-friendly, Accessible</li>
+</ol>
+
+<hr>
+
+<!-- ══════════════════════════════════════════════════ -->
+<h2>Appendix: Rancho Moonrise Current Positioning Summary</h2>
+
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th>Attribute</th><th>Current State</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Website</td><td><a href="https://ranchomoonrise.com">ranchomoonrise.com</a> &mdash; "COMING SOON" still visible in meta; active content exists</td></tr>
+    <tr><td>Size</td><td>36 acres (per Instagram); website says "large property" &mdash; no spec given</td></tr>
+    <tr><td>Accommodations</td><td>20 luxury cabins and safari tents (per The Knot), 22 Hipcamp sites</td></tr>
+    <tr><td>Overnight Capacity</td><td>Up to 50 guests</td></tr>
+    <tr><td>Event Capacity</td><td>300+ (per The Knot)</td></tr>
+    <tr><td>Key Venue Spaces</td><td>Event Barn (covered), Neon Moon Bar &amp; Lounge (indoor/outdoor), Pool</td></tr>
+    <tr><td>Event Programming</td><td>Rancho Rodeo (monthly), Yoga + Mimosas, Sound Baths, Ceramics, Two-Step Nights, Paint &amp; Sip</td></tr>
+    <tr><td>Address (confirmed)</td><td>20117 Lockwood Road, Manor, TX 78653</td></tr>
+    <tr><td>The Knot</td><td><a href="https://www.theknot.com/marketplace/rancho-moonrise-manor-tx-2087722">Active: 8 reviews, 4.5 stars</a></td></tr>
+    <tr><td>Hipcamp</td><td><a href="https://www.hipcamp.com/en-US/land/texas-rancho-moonrise-dw9hklej">Active: 22 sites</a></td></tr>
+    <tr><td>Airbnb</td><td>Active &mdash; individual tent listings</td></tr>
+    <tr><td>Eventbrite</td><td>Active &mdash; event ticketing</td></tr>
+    <tr><td>WeddingWire</td><td><span class="status-no">Not listed</span></td></tr>
+    <tr><td>Zola</td><td><span class="status-no">Not listed</span></td></tr>
+    <tr><td>Glamping Hub</td><td><span class="status-no">Not listed</span></td></tr>
+    <tr><td>Visit Austin</td><td><span class="status-no">Not confirmed</span></td></tr>
+    <tr><td>Texas Tourism</td><td><span class="status-no">Not confirmed</span></td></tr>
+    <tr><td>Outdoorsy / Tentrr</td><td><span class="status-no">Not listed</span></td></tr>
+    <tr><td>Press (tier 1)</td><td>Only CBS Austin + FOX 7 brief features (March 2026)</td></tr>
+    <tr><td>Social</td><td>Active Instagram (@ranchomoonrise); TikTok active; Facebook active</td></tr>
+  </tbody>
+</table>
+</div>
+
+</div><!-- /.container -->
+</main>
+
+</body>
+</html>
