@@ -102,6 +102,68 @@
         }
     });
 
+    // ---------- Hero Slideshow ----------
+    var slideshow = document.querySelector('.hero--slideshow');
+    if (slideshow) {
+        var slides = slideshow.querySelectorAll('.hero__slide');
+        var dots = slideshow.querySelectorAll('.hero__dot');
+        var arrows = slideshow.querySelectorAll('.hero__arrow');
+        var currentSlide = 0;
+        var slideCount = slides.length;
+        var autoplayInterval = null;
+        var autoplayDelay = 5000;
+
+        function goToSlide(index) {
+            slides[currentSlide].classList.remove('is-active');
+            slides[currentSlide].setAttribute('aria-hidden', 'true');
+            dots[currentSlide].classList.remove('is-active');
+
+            currentSlide = (index + slideCount) % slideCount;
+
+            slides[currentSlide].classList.add('is-active');
+            slides[currentSlide].setAttribute('aria-hidden', 'false');
+            dots[currentSlide].classList.add('is-active');
+        }
+
+        function nextSlide() { goToSlide(currentSlide + 1); }
+        function prevSlide() { goToSlide(currentSlide - 1); }
+
+        function startAutoplay() {
+            stopAutoplay();
+            autoplayInterval = setInterval(nextSlide, autoplayDelay);
+        }
+
+        function stopAutoplay() {
+            if (autoplayInterval) clearInterval(autoplayInterval);
+        }
+
+        // Arrow controls
+        arrows.forEach(function (arrow) {
+            arrow.addEventListener('click', function () {
+                var dir = this.getAttribute('data-dir');
+                if (dir === 'next') nextSlide();
+                else prevSlide();
+                startAutoplay(); // restart timer after manual nav
+            });
+        });
+
+        // Dot controls
+        dots.forEach(function (dot) {
+            dot.addEventListener('click', function () {
+                var index = parseInt(this.getAttribute('data-slide'), 10);
+                goToSlide(index);
+                startAutoplay();
+            });
+        });
+
+        // Pause on hover
+        slideshow.addEventListener('mouseenter', stopAutoplay);
+        slideshow.addEventListener('mouseleave', startAutoplay);
+
+        // Start autoplay
+        startAutoplay();
+    }
+
     // ---------- Smooth scroll for anchor links ----------
     document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
         anchor.addEventListener('click', function (e) {

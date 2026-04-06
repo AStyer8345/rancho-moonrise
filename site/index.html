@@ -148,8 +148,12 @@
 
 <!-- ============ HERO ============ -->
 <main id="main">
-<section class="hero" aria-label="Welcome to Rancho Moonrise">
-    <div class="hero__bg" style="background-image: url('images/hero-ranch-sunset.jpg');" role="img" aria-label="Aerial view of Rancho Moonrise glamping ranch at sunset with safari tents and Hill Country landscape near Austin Texas"></div>
+<section class="hero hero--slideshow" aria-label="Welcome to Rancho Moonrise">
+    <div class="hero__slide is-active" style="background-image: url('images/hero-ranch-sunset.jpg');" aria-hidden="false"></div>
+    <div class="hero__slide" style="background-image: url('images/feature-pool.jpg');" aria-hidden="true"></div>
+    <div class="hero__slide" style="background-image: url('images/feature-music.jpg');" aria-hidden="true"></div>
+    <div class="hero__slide" style="background-image: url('images/about-ranch-aerial.jpg');" aria-hidden="true"></div>
+    <div class="hero__slide" style="background-image: url('images/feature-safari-tent.jpg');" aria-hidden="true"></div>
 
     <div class="hero__content">
         <span class="hero__label">Manor, Texas — 20 Minutes from Austin</span>
@@ -161,10 +165,17 @@
         </div>
     </div>
 
-    <a href="#explore" class="hero__scroll" aria-label="Scroll to explore">
-        Explore
-        <span></span>
-    </a>
+    <div class="hero__nav">
+        <button class="hero__arrow" aria-label="Previous slide" data-dir="prev">&#8249;</button>
+        <div class="hero__dots">
+            <button class="hero__dot is-active" aria-label="Slide 1" data-slide="0"></button>
+            <button class="hero__dot" aria-label="Slide 2" data-slide="1"></button>
+            <button class="hero__dot" aria-label="Slide 3" data-slide="2"></button>
+            <button class="hero__dot" aria-label="Slide 4" data-slide="3"></button>
+            <button class="hero__dot" aria-label="Slide 5" data-slide="4"></button>
+        </div>
+        <button class="hero__arrow" aria-label="Next slide" data-dir="next">&#8250;</button>
+    </div>
 </section>
 
 <!-- ============ FEATURES GRID ============ -->
@@ -243,7 +254,7 @@
     <div class="cta-banner__content fade-in">
         <span class="section-label">Destination Weddings</span>
         <h2 style="color: var(--color-white); margin-bottom: var(--space-sm);">Your Dream Ranch Wedding</h2>
-        <p style="color: var(--color-text); margin-bottom: var(--space-md);">Exclusive full-ranch access for up to 200 guests. Four ceremony sites. On-site accommodations for 50. The Event Barn, Neon Moon Bar, and Texas sky — all yours.</p>
+        <p style="color: rgba(255,255,255,0.8); margin-bottom: var(--space-md);">Exclusive full-ranch access for up to 200 guests. Four ceremony sites. On-site accommodations for 50. The Event Barn, Neon Moon Bar, and Texas sky — all yours.</p>
         <div class="btn-group">
             <a href="/pages/weddings.html" class="btn btn--primary">View Wedding Packages</a>
             <a href="/pages/contact.html" class="btn btn--outline">Request a Quote</a>
@@ -260,7 +271,7 @@
             <p class="testimonial__attr">— Google Review, 5 Stars</p>
         </div>
         <div class="text-center" style="margin-top: var(--space-sm);">
-            <p style="color: var(--color-gold); font-size: 1.4rem; font-weight: 700; margin-bottom: 4px;">4.9 ★ Rating</p>
+            <p style="color: var(--color-orange); font-size: 1.4rem; font-weight: 700; margin-bottom: 4px;">4.9 ★ Rating</p>
             <p style="color: var(--color-text-muted); font-size: 0.85rem;">122 Reviews on Google</p>
         </div>
     </div>
@@ -309,7 +320,7 @@
     <div class="cta-banner__content fade-in">
         <span class="section-label">Your Escape Awaits</span>
         <h2 style="color: var(--color-white); margin-bottom: var(--space-sm);">Ready to Experience the Ranch?</h2>
-        <p style="color: var(--color-text); margin-bottom: var(--space-md);">Safari tents, cabins, pool, live music, and 20 acres of Texas sky. Check availability and book direct for the best rates.</p>
+        <p style="color: rgba(255,255,255,0.8); margin-bottom: var(--space-md);">Safari tents, cabins, pool, live music, and 20 acres of Texas sky. Check availability and book direct for the best rates.</p>
         <a href="https://hotels.cloudbeds.com/en/reservation/5tzv1r" class="btn btn--primary" target="_blank" rel="noopener">Check Availability</a>
     </div>
 </section>
