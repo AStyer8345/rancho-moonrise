@@ -545,6 +545,124 @@
     }
     .help-status.active { background: var(--color-done-bg); color: var(--color-done); border: 1px solid var(--color-done-border); }
     .help-status.planned { background: var(--color-medium-bg); color: var(--color-medium); border: 1px solid var(--color-medium-border); }
+    .help-status.new-offer { background: var(--color-high-bg); color: var(--color-high); border: 1px solid var(--color-high-border); }
+
+    /* ============================================================
+       BIGGER PICTURE BANNER
+    ============================================================ */
+    .vision-banner {
+      background: linear-gradient(160deg, #1a0f05 0%, #1f1408 50%, #0d1a0f 100%);
+      border-top: 1px solid rgba(255,255,255,0.04);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      padding: var(--space-12) 0;
+    }
+    .vision-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #e8a840;
+      margin-bottom: var(--space-4);
+    }
+    .vision-title {
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      font-weight: 700;
+      color: #f0ece4;
+      line-height: 1.2;
+      margin: 0 0 var(--space-3);
+    }
+    .vision-subtitle {
+      font-size: var(--text-sm);
+      color: rgba(240,236,228,0.6);
+      margin: 0 0 var(--space-8);
+      max-width: 650px;
+      line-height: 1.65;
+    }
+    .vision-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-5);
+      margin-bottom: var(--space-8);
+    }
+    .vision-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius-xl);
+      padding: var(--space-6);
+    }
+    .vision-card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: var(--space-4);
+    }
+    .vision-card-icon.time { background: rgba(110,224,154,0.12); color: #6ee09a; }
+    .vision-card-icon.money { background: rgba(232,168,64,0.12); color: #e8a840; }
+    .vision-card-icon.growth { background: rgba(160,120,240,0.12); color: #c0a0f0; }
+    .vision-card-title {
+      font-family: var(--font-display);
+      font-size: var(--text-base);
+      font-weight: 700;
+      color: rgba(240,236,228,0.9);
+      margin-bottom: var(--space-2);
+    }
+    .vision-card-text {
+      font-size: var(--text-sm);
+      color: rgba(240,236,228,0.5);
+      line-height: 1.65;
+    }
+    .vision-card-stat {
+      display: block;
+      font-size: var(--text-lg);
+      font-weight: 800;
+      margin-top: var(--space-3);
+    }
+    .vision-card-stat.green { color: #6ee09a; }
+    .vision-card-stat.gold { color: #e8a840; }
+    .vision-card-stat.purple { color: #c0a0f0; }
+    .vision-bottom {
+      background: rgba(232,168,64,0.06);
+      border: 1px solid rgba(232,168,64,0.2);
+      border-radius: var(--radius-xl);
+      padding: var(--space-6);
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-5);
+    }
+    .vision-bottom-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-full);
+      background: rgba(232,168,64,0.15);
+      color: #e8a840;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .vision-bottom-title {
+      font-family: var(--font-display);
+      font-size: var(--text-base);
+      font-weight: 700;
+      color: rgba(240,236,228,0.9);
+      margin-bottom: var(--space-2);
+    }
+    .vision-bottom-text {
+      font-size: var(--text-sm);
+      color: rgba(240,236,228,0.55);
+      line-height: 1.65;
+    }
+    @media (max-width: 700px) {
+      .vision-grid { grid-template-columns: 1fr; }
+      .vision-bottom { flex-direction: column; }
+    }
 
     .help-title {
       font-family: var(--font-display);
@@ -1924,6 +2042,63 @@
         </div>
       </section>
 
+      <!-- THE BIGGER PICTURE -->
+      </div>
+    </main>
+
+    <section class="vision-banner">
+      <div class="container">
+        <div class="vision-eyebrow">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          The Bigger Picture
+        </div>
+        <h2 class="vision-title">This Isn't Just a Website.<br><span style="color:#e8a840;">It's a System That Runs While You Sleep.</span></h2>
+        <p class="vision-subtitle">Everything below works together. The website brings people in. The chatbot answers their questions at midnight. The voice guide makes sure every blog post and social caption sounds like Ashley wrote it — not a robot. The automations handle the follow-up so nobody falls through the cracks. You focus on the ranch and the baby. The system handles the rest.</p>
+
+        <div class="vision-grid">
+          <div class="vision-card">
+            <div class="vision-card-icon time">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="vision-card-title">Get Your Time Back</div>
+            <div class="vision-card-text">Ashley just had her second baby. She doesn't have 3 hours a day to write Instagram captions, answer the same 10 questions from brides, and follow up on every inquiry. This system does all of that automatically — and it sounds like her, not a chatbot.</div>
+            <span class="vision-card-stat green">Hours saved per week: 10–15</span>
+          </div>
+
+          <div class="vision-card">
+            <div class="vision-card-icon money">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <div class="vision-card-title">Replace the PR Company</div>
+            <div class="vision-card-text">You're paying a PR firm that hasn't delivered yet. Everything they're supposed to do — social media, blog content, press outreach, brand consistency — this system can handle. Same output, no monthly retainer, and it actually knows your voice.</div>
+            <span class="vision-card-stat gold">Monthly savings: $1,000–3,000+</span>
+          </div>
+
+          <div class="vision-card">
+            <div class="vision-card-icon growth">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            </div>
+            <div class="vision-card-title">Grow Without Hiring</div>
+            <div class="vision-card-text">Most venues at this stage hire a marketing person or a social media manager. That's $40–60K/year. This system replaces that role — blog posts, social posts, email follow-ups, review requests — all running on autopilot with your brand voice.</div>
+            <span class="vision-card-stat purple">Scale without headcount</span>
+          </div>
+        </div>
+
+        <div class="vision-bottom">
+          <div class="vision-bottom-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <div class="vision-bottom-title">Your Voice, Not AI Voice</div>
+            <div class="vision-bottom-text">The first thing I'll build is a <strong>Brand Voice Guide</strong> — I'll study how Ashley and Randy actually talk, the words they use, the personality of the ranch — and train the system on that. Every blog post, every social caption, every email will sound like it came from y'all. Nobody would ever know. It's not generic AI content — it's Ashley and Randy's voice, just automated.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <main class="main" style="padding-top: 0;">
+      <div class="container">
+
       <!-- HOW I CAN HELP -->
       <section class="section">
         <div class="section-head">
@@ -1931,7 +2106,7 @@
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
           <h2 class="section-title">How I Can Help</h2>
-          <span class="section-badge done">9 services</span>
+          <span class="section-badge done">13 services</span>
         </div>
         <div class="help-grid">
 
@@ -2049,6 +2224,58 @@
             <div class="help-benefit">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
               Each feature = free advertising + Google ranking boost
+            </div>
+          </div>
+
+          <div class="help-card" style="border: 2px solid var(--color-high); background: var(--color-high-bg);">
+            <div class="help-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+            </div>
+            <span class="help-status new-offer">New — High Impact</span>
+            <div class="help-title">Brand Voice Guide</div>
+            <div class="help-desc">I'll study how Ashley and Randy actually talk — Instagram captions, texts, the vibe of the ranch — and build a voice guide that trains every piece of AI-generated content to sound exactly like them. Not generic. Not robotic. Nobody would know the difference. Every blog post, caption, and email runs through this.</div>
+            <div class="help-benefit">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Everything sounds like Ashley & Randy — never embarrassing AI content
+            </div>
+          </div>
+
+          <div class="help-card" style="border: 2px solid var(--color-high); background: var(--color-high-bg);">
+            <div class="help-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </div>
+            <span class="help-status new-offer">New — High Impact</span>
+            <div class="help-title">Social Media Automation</div>
+            <div class="help-desc">Automated posts to Instagram, Facebook, and Google Business — written in your voice using the Brand Voice Guide. I'll set up a content calendar that runs itself: ranch photos, behind-the-scenes, event recaps, wedding features, seasonal promos. You approve or it just goes. Same system I use for my own business.</div>
+            <div class="help-benefit">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Consistent social presence without touching your phone
+            </div>
+          </div>
+
+          <div class="help-card" style="border: 2px solid var(--color-high); background: var(--color-high-bg);">
+            <div class="help-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            </div>
+            <span class="help-status new-offer">New — High Impact</span>
+            <div class="help-title">Blog Content Generator</div>
+            <div class="help-desc">SEO blog posts written in Ashley's voice and published automatically to the website. Topics that brides and event planners actually Google: "outdoor wedding venues near Austin," "glamping bachelorette party ideas," "Hill Country venue with pool." Each post brings in free traffic from Google — forever. No writer to hire, no deadlines to manage.</div>
+            <div class="help-benefit">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Free Google traffic that compounds every month
+            </div>
+          </div>
+
+          <div class="help-card" style="border: 2px solid var(--color-high); background: var(--color-high-bg);">
+            <div class="help-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <span class="help-status new-offer">New — High Impact</span>
+            <div class="help-title">Automated Email Follow-Ups</div>
+            <div class="help-desc">When someone fills out the contact form, they get an instant personalized response — not a generic "thanks, we'll be in touch." Wedding inquiries get package details and availability. Event inquiries get pricing and venue specs. Pool pass requests get a booking link. Nobody waits. Nobody falls through the cracks — even if Ashley's up all night with the baby.</div>
+            <div class="help-benefit">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Every lead gets a response in seconds, 24/7
             </div>
           </div>
 
