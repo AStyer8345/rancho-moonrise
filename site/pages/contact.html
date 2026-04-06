@@ -49,47 +49,49 @@
     </div>
 </header>
 
-<!-- Social Proof Banner -->
-<section class="section" style="padding-bottom: 0;">
-    <div class="container text-center">
-        <div class="contact-trust">
-            <div class="contact-trust__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <p class="contact-trust__rating"><strong>4.9 out of 5</strong> — 122 Google Reviews</p>
-            <p class="contact-trust__sla">We respond within 2 business hours</p>
-        </div>
-    </div>
-</section>
-
 <!-- Segmented Inquiry Flow -->
 <section class="section" aria-label="Contact form and information">
     <div class="container">
+
+        <!-- Trust bar -->
+        <div class="contact-trust-bar">
+            <span class="contact-trust-bar__stars">&#9733;&#9733;&#9733;&#9733;&#9733; <strong>4.9</strong> / 122 Reviews</span>
+            <span class="contact-trust-bar__divider"></span>
+            <span>We respond immediately &middot; AI concierge available 24/7</span>
+        </div>
+
         <div class="split">
             <!-- Segmented Forms -->
             <div class="split__content">
                 <h2 style="margin-bottom: var(--space-xs);">What Brings You to Rancho Moonrise?</h2>
-                <p style="color: var(--color-text-muted); margin-bottom: var(--space-md);">Select your interest and we'll get you exactly what you need.</p>
+                <p style="color: var(--color-text-muted); margin-bottom: var(--space-md);">Choose one below and we'll send you everything you need — or ask our AI concierge in the bottom right corner anytime.</p>
 
                 <!-- Intent Selector -->
                 <div class="intent-selector" id="intentSelector">
                     <button class="intent-btn" data-intent="wedding" aria-pressed="false">
-                        <span class="intent-btn__icon">&#128141;</span>
+                        <span class="intent-btn__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></span>
                         <span class="intent-btn__label">Wedding</span>
+                        <span class="intent-btn__desc">Tours, quotes &amp; packages</span>
                     </button>
                     <button class="intent-btn" data-intent="event" aria-pressed="false">
-                        <span class="intent-btn__icon">&#127881;</span>
+                        <span class="intent-btn__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>
                         <span class="intent-btn__label">Private Event</span>
+                        <span class="intent-btn__desc">Corporate, parties &amp; more</span>
                     </button>
                     <button class="intent-btn" data-intent="accommodation" aria-pressed="false">
-                        <span class="intent-btn__icon">&#9978;</span>
-                        <span class="intent-btn__label">Accommodation</span>
+                        <span class="intent-btn__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
+                        <span class="intent-btn__label">Stay</span>
+                        <span class="intent-btn__desc">Cabins &amp; safari tents</span>
                     </button>
                     <button class="intent-btn" data-intent="pool" aria-pressed="false">
-                        <span class="intent-btn__icon">&#127946;</span>
+                        <span class="intent-btn__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></span>
                         <span class="intent-btn__label">Pool Pass</span>
+                        <span class="intent-btn__desc">Day visits &amp; Free Fridays</span>
                     </button>
                     <button class="intent-btn" data-intent="general" aria-pressed="false">
-                        <span class="intent-btn__icon">&#9993;</span>
-                        <span class="intent-btn__label">General Question</span>
+                        <span class="intent-btn__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+                        <span class="intent-btn__label">Question</span>
+                        <span class="intent-btn__desc">General inquiries</span>
                     </button>
                 </div>
 
@@ -97,17 +99,34 @@
                 <div class="intent-form" id="form-wedding" hidden>
                     <div class="intent-form__header">
                         <h3>Wedding Inquiry</h3>
-                        <p>Tell us about your dream ranch wedding and we'll follow up with package details, pricing, and availability.</p>
+                        <p>Fill out the form and we'll send you package details, pricing, and availability immediately. Have a quick question? Our <strong>AI concierge</strong> in the bottom-right corner can answer right now.</p>
                     </div>
 
                     <!-- Calendly CTA -->
                     <div class="calendly-cta">
-                        <p class="calendly-cta__text"><strong>Want to see the ranch first?</strong></p>
-                        <div class="btn-group" style="margin-top: var(--space-xs);">
-                            <a href="#" class="btn btn--primary calendly-placeholder" data-calendly="tour">Schedule a Venue Tour</a>
-                            <a href="#" class="btn btn--outline calendly-placeholder" data-calendly="virtual">Book a Virtual Tour</a>
+                        <div class="calendly-cta__options">
+                            <div class="calendly-cta__option">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                <div>
+                                    <strong>Tour the ranch in person</strong>
+                                    <a href="#" class="calendly-placeholder" data-calendly="tour">Schedule a venue tour (60 min) &rarr;</a>
+                                </div>
+                            </div>
+                            <div class="calendly-cta__option">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+                                <div>
+                                    <strong>See it from anywhere</strong>
+                                    <a href="#" class="calendly-placeholder" data-calendly="virtual">Book a virtual walkthrough (30 min) &rarr;</a>
+                                </div>
+                            </div>
+                            <div class="calendly-cta__option">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                                <div>
+                                    <strong>Talk to us directly</strong>
+                                    <a href="#" class="calendly-placeholder" data-calendly="call">Schedule a call</a> or dial <a href="tel:+17372911260">737-291-1260</a>
+                                </div>
+                            </div>
                         </div>
-                        <p class="calendly-cta__note">Or fill out the form below and we'll reach out within 2 hours.</p>
                     </div>
 
                     <form action="#" method="POST" aria-label="Wedding inquiry form">
@@ -158,13 +177,7 @@
                 <div class="intent-form" id="form-event" hidden>
                     <div class="intent-form__header">
                         <h3>Private Event Inquiry</h3>
-                        <p>Corporate retreats, birthday parties, festivals, and more — tell us what you're planning.</p>
-                    </div>
-
-                    <div class="calendly-cta">
-                        <p class="calendly-cta__text"><strong>Want to discuss your event?</strong></p>
-                        <a href="#" class="btn btn--primary calendly-placeholder" data-calendly="call" style="margin-top: var(--space-xs);">Schedule a Planning Call</a>
-                        <p class="calendly-cta__note">Or fill out the form and we'll respond within 2 hours.</p>
+                        <p>Fill out the form and we'll send you venue details and pricing right away. You can also <a href="#" class="calendly-placeholder" data-calendly="call"><strong>schedule a planning call</strong></a>, call <a href="tel:+17372911260">737-291-1260</a>, or ask our <strong>AI concierge</strong> in the bottom-right corner.</p>
                     </div>
 
                     <form action="#" method="POST" aria-label="Private event inquiry form">
