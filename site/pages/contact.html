@@ -60,14 +60,12 @@
             <span>We respond immediately &middot; AI concierge available 24/7</span>
         </div>
 
-        <div class="split">
-            <!-- Segmented Forms -->
-            <div class="split__content">
-                <h2 style="margin-bottom: var(--space-xs);">What Brings You to Rancho Moonrise?</h2>
-                <p style="color: var(--color-text-muted); margin-bottom: var(--space-md);">Choose one below and we'll send you everything you need — or ask our AI concierge in the bottom right corner anytime.</p>
+        <!-- Full-width heading + intent cards -->
+        <h2 style="margin-bottom: var(--space-xs);">What Brings You to Rancho Moonrise?</h2>
+        <p style="color: var(--color-text-muted); margin-bottom: var(--space-md);">Choose one below and we'll send you everything you need — or ask our AI concierge in the bottom right corner anytime.</p>
 
-                <!-- Intent Selector -->
-                <div class="intent-selector" id="intentSelector">
+        <!-- Intent Selector — full width -->
+        <div class="intent-selector" id="intentSelector">
                     <button class="intent-btn" data-intent="wedding" aria-pressed="false">
                         <span class="intent-btn__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></span>
                         <span class="intent-btn__label">Wedding</span>
@@ -93,7 +91,11 @@
                         <span class="intent-btn__label">Question</span>
                         <span class="intent-btn__desc">General inquiries</span>
                     </button>
-                </div>
+        </div>
+
+        <!-- Split layout: forms on left, sidebar on right -->
+        <div class="split split--contact">
+            <div class="split__content">
 
                 <!-- Wedding Form -->
                 <div class="intent-form" id="form-wedding" hidden>
