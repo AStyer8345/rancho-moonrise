@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Block internal/non-public files
+Disallow: /server.js
+Disallow: /dashboard.html
+Disallow: /report.html
+Disallow: /competitive-intelligence.html
+
+Sitemap: https://ranchomoonrise.com/sitemap.xml
