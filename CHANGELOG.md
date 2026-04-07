@@ -1,5 +1,13 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-07 — Daily SEO Agent Run #2
+
+- Homepage: added AEO section "The Best Glamping Near Austin, Texas" with direct-answer paragraphs targeting AI/SGE search queries
+- Accommodations page: added AEO section "What Is Glamping Near Austin, Texas?" with concrete details (tent numbers, check-in hours, pet policy, etc.)
+- First blog article published: "Glamping Near Austin, Texas — The Complete Guide" at `/pages/glamping-near-austin-texas.html` with full BlogPosting schema, OG tags, and internal links
+- Blog listing page updated: placeholder Post 1 replaced with real article card and link
+- Sitemap updated to include the new blog article URL
+
 ## 2026-04-07 — Daily SEO Agent Run #1
 
 - Created `/site/robots.txt` — was missing entirely; blocks dashboard/report/internal pages from crawlers

@@ -94,11 +94,12 @@ Advisory engagement for Rancho Moonrise — glamping, events, and retreat ranch 
 
 ## Website SEO Status
 
-- robots.txt + sitemap.xml: created 2026-04-07 (were missing)
+- robots.txt + sitemap.xml: created 2026-04-07
 - Contact page: OG/Twitter/schema added 2026-04-07
-- AEO paragraphs: not yet added (next priority)
-- Blog: scaffold exists, no content yet
-- GBP: not yet claimed/completed (flagged in TODO)
+- AEO paragraphs: added to homepage + accommodations (2026-04-07)
+- Blog: first article live — "Glamping Near Austin Texas" (2026-04-07)
+- GBP: not yet claimed/completed (requires Adam's Google account)
+- Sitemap not yet submitted to Google Search Console (requires Adam's UI access)
 
 ---
 

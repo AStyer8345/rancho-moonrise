@@ -25,6 +25,8 @@
 - [ ] Post-event review generation automation (→ Google Reviews)
 - [ ] Target LCP < 2.5s (currently 3.3s)
 - [ ] Accessibility page (linked in footer but not built)
-- [ ] AEO paragraphs: add direct-answer sections to homepage + accommodations targeting "glamping near austin tx" queries
-- [ ] Blog: first article needed — "glamping near austin texas" — scaffold exists but no content
-- [ ] Submit sitemap to Google Search Console
+- [x] AEO paragraphs: added to homepage and accommodations (2026-04-07)
+- [x] Blog: first article published — "Glamping Near Austin Texas" (2026-04-07)
+- [ ] Submit sitemap to Google Search Console — requires Adam's Google account UI access
+- [ ] Blog article #2 — "Unique Wedding Venues Near Austin With Overnight Stays" (high search volume)
+- [ ] AEO paragraphs: add to weddings page targeting "wedding venue manor tx" queries
