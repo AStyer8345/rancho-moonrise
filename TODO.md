@@ -2,6 +2,9 @@
 
 ## Now (this week)
 
+- [ ] Share admin panel credentials with Ashley (admin@ranchomoonrise.com / RanchoMoonrise2026)
+- [ ] Get Ashley's feedback on admin panel — what else does she want to edit?
+- [ ] Mobile layout polish — Adam flagged homepage needs rearranging on mobile
 - [ ] Get operating agreement from Nancy/Ashley — review ownership terms, buyout provisions, voting rights
 - [ ] Get QuickBooks access or P&L + Balance Sheet from Nancy/Ashley — need expenses and net profit
 - [ ] Collect remaining due diligence docs: signed event contracts, staff/pay list, permits, title docs, property tax statements, appraisals
@@ -17,9 +20,13 @@
 
 ## Backlog (someday/maybe)
 
+- [ ] Enable hero photo CMS loading once Ashley uploads photos via admin (currently commented out in cms.js)
+- [ ] Admin panel: add photo section management (hero photos, venue photos by section)
+- [ ] Admin panel: bulk sort reordering (drag-and-drop)
 - [ ] Inquiry automation: AI auto-responder for wedding/event DMs and web inquiries
 - [ ] Calendly integration: self-service tour scheduling on website
 - [ ] Website intake form: structured event inquiry form replacing generic contact
+- [x] Admin panel + CMS: Supabase backend + admin UI for Ashley to manage events, photos, reviews (2026-04-08)
 - [ ] Event management system: Google Sheet → auto-publish to site + social + email
 - [ ] Social media automation via Publer
 - [ ] Email capture / newsletter signup (Flodesk integration)

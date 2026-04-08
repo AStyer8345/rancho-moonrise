@@ -1,5 +1,15 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-08 — Admin Panel + Supabase CMS
+
+- **Supabase CMS tables:** Created `rancho_events`, `rancho_photos`, `rancho_testimonials` with RLS (public SELECT for site reads, authenticated-only writes for admin). Auto-updating `updated_at` triggers. Storage bucket `rancho-moonrise` with public read, authenticated write.
+- **Admin panel built:** `/admin/index.html` — Supabase Auth login, 3-tab dashboard (Events, Photos, Reviews). Full CRUD: create/edit/hide/delete items, file upload with preview, sort order control, active/hidden badges. Toast notifications for feedback.
+- **CMS content loader:** `site/js/cms.js` — raw `fetch()` to Supabase REST API (no SDK on public site). Loads testimonials into marquee and events into slideshow + grid. Graceful fallback: if Supabase unreachable, hardcoded HTML stays. Hero photo loader built but commented out until Ashley uploads new photos.
+- **Admin credentials created:** admin@ranchomoonrise.com in Supabase Auth, email confirmed via SQL.
+- **Vercel config updated:** `/admin/*` routes get `no-cache` + `X-Robots-Tag: noindex, nofollow` headers.
+- **Cache bust:** All CSS links updated to `?v=6` across all pages.
+- **Seeded data:** 6 events (Lone Star Party through Paella Dinner), 4 hero photos, 6 testimonials loaded into Supabase tables.
+
 ## 2026-04-08 — Weekly Content Agent Run #5
 
 - **Blog article #4 published:** "Things to Do in Manor, TX — A Local's Guide" at `/pages/things-to-do-manor-tx.html` — targets "things to do in Manor TX", "things to do near Manor Texas", "weekend getaway near Austin". Full BlogPosting schema, OG/Twitter tags, AEO Q&A section, internal links to accommodations + events pages.

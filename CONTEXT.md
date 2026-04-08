@@ -102,7 +102,7 @@ Advisory engagement for Rancho Moonrise — glamping, events, and retreat ranch 
 - GBP: not yet claimed/completed (requires Adam's Google account)
 - Sitemap not yet submitted to Google Search Console (requires Adam's UI access)
 
-## Website UI Status (updated 2026-04-07)
+## Website UI Status (updated 2026-04-08)
 
 - **Design overhaul**: "Modern Desert / Boutique Ranch" aesthetic applied
 - Nav: orange glassmorphism, logo with shadow box (72px default → 44px scrolled)
@@ -117,7 +117,17 @@ Advisory engagement for Rancho Moonrise — glamping, events, and retreat ranch 
 - Events page: list + calendar view toggle (calendar default on desktop, list on mobile)
 - Event artwork slideshow: 6 event posters cycle in Wellness section (4s autoplay, dot nav)
 - Testimonial marquee: horizontal CSS-only infinite scroll (6 reviews, edge fades, pause on hover)
-- CSS cache busted to ?v=5 across all pages
+- CSS cache busted to ?v=6 across all pages
+
+## Admin Panel + CMS (added 2026-04-08)
+
+- **Supabase CMS backend**: 3 tables (rancho_events, rancho_photos, rancho_testimonials) with RLS (public SELECT, authenticated writes)
+- **Storage bucket**: `rancho-moonrise` — public read, authenticated upload, 10MB limit, images only
+- **Admin UI**: `/admin/index.html` — login screen + 3-tab dashboard (Events, Photos, Reviews) with full CRUD, file upload, sort order, active/hidden toggle
+- **CMS loader**: `site/js/cms.js` — raw fetch() to Supabase REST API, overwrites hardcoded HTML with live data, graceful fallback if Supabase unreachable
+- **Hero photos**: CMS loader commented out until Ashley uploads new photos via admin (currently using local paths)
+- **Admin credentials**: admin@ranchomoonrise.com / RanchoMoonrise2026 (Supabase Auth, email confirmed)
+- **Vercel headers**: `/admin/*` routes set to no-cache + noindex/nofollow
 
 ---
 
@@ -127,10 +137,11 @@ Advisory engagement for Rancho Moonrise — glamping, events, and retreat ranch 
 2. Determine real buyout number from operating agreement terms
 3. Build proper deal summary for Christopher with real numbers
 4. Explore Hog Eye Rd acquisition path simultaneously
-5. (Website) Submit sitemap.xml to Google Search Console — requires Adam's UI access
-6. (Website) Internal link from host-your-event.html to corporate retreat blog article
-7. (Website) AEO paragraph on host-your-event.html targeting "private event venue near austin"
-8. (Website) Blog article #5 — "Glamping vs. Camping: What's the Difference?" (next up)
+5. (Website) Share admin credentials with Ashley, get her feedback on the panel
+6. (Website) Mobile layout polish — Adam flagged it needs rearranging work
+7. (Website) Enable hero photo CMS loading once Ashley uploads photos via admin
+8. (Website) Submit sitemap.xml to Google Search Console — requires Adam's UI access
+9. (Website) Blog article #5 — "Glamping vs. Camping: What's the Difference?" (next up)
 
 ---
 
