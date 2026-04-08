@@ -1,5 +1,14 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-08 — Daily SEO Agent Run #4
+
+- **OG image tags added:** `og:image`, `og:image:width/height`, `twitter:card`, `twitter:title`, `twitter:description`, `twitter:image` added to weddings.html, accommodations.html, and faqs.html. Images: `wedding-hero.jpg`, `accommodation-premium-safari.jpg`, `faqs-hero.jpg`.
+- **faqs.html OG tags:** Full open graph block added (was completely missing all OG/Twitter tags).
+- **FAQPage schema expanded:** faqs.html schema grew from 6 to 14 questions, now covers all FAQ accordion items — accommodations included, parking, WiFi, campfires, noise curfew, cancellation, group site requests.
+- **Blog article #3 published:** "Why Your Next Corporate Retreat Should Be at a Ranch" at `/pages/corporate-retreat-near-austin.html` — targets "corporate retreat near Austin" / "corporate retreat venue Austin Texas". Full BlogPosting schema, OG/Twitter tags, AEO Q&A section, internal links to host-your-event/accommodations/contact. Mobile CTA is "Schedule a Tour".
+- **Blog listing updated:** Post #3 placeholder wired to live article with April 8 date, link, updated alt text.
+- **Sitemap updated:** Added `/blog/corporate-retreat-near-austin/` entry with `lastmod 2026-04-08`.
+
 ## 2026-04-07 — Daily SEO Agent Run #3
 
 - **Weddings page AEO:** Added 5-question AEO section before the final CTA banner targeting "wedding venue manor tx", "ranch wedding near austin", "outdoor wedding venue austin with overnight stays", and related queries. Each Q&A is a self-contained paragraph for AI/SGE extraction.
