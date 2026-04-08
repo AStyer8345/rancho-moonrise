@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rancho Moonrise — Admin</title>
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- Supabase JS Client -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --orange: #c9944a;
+            --orange-light: #ddb878;
+            --orange-dark: #a67832;
+            --bg: #F5F2ED;
+            --bg-card: #ffffff;
+            --text: #333333;
+            --text-muted: #7a7168;
+            --border: #e0dbd4;
+            --danger: #c0392b;
+            --danger-light: #fdecea;
+            --success: #27ae60;
+            --success-light: #eafaf1;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.5;
+        }
+
+        /* ---- Login Screen ---- */
+        .login-screen {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .login-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 48px 40px;
+            max-width: 400px;
+            width: 100%;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .login-card h1 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            color: var(--orange);
+        }
+
+        .login-card p {
+            color: var(--text-muted);
+            margin-bottom: 32px;
+            font-size: 0.9rem;
+        }
+
+        /* ---- Form Elements ---- */
+        .form-group {
+            margin-bottom: 16px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="date"],
+        input[type="number"],
+        input[type="url"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            background: var(--bg);
+            transition: border-color 0.2s;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: var(--orange);
+            box-shadow: 0 0 0 3px rgba(201, 148, 74, 0.15);
+        }
+
+        textarea { resize: vertical; min-height: 80px; }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 24px;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+
+        .btn--primary {
+            background: var(--orange);
+            color: white;
+        }
+        .btn--primary:hover { background: var(--orange-dark); }
+
+        .btn--secondary {
+            background: transparent;
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+        .btn--secondary:hover { background: var(--bg); }
+
+        .btn--danger {
+            background: transparent;
+            color: var(--danger);
+            border: 1px solid var(--danger);
+            font-size: 0.8rem;
+            padding: 6px 14px;
+        }
+        .btn--danger:hover { background: var(--danger-light); }
+
+        .btn--sm { padding: 6px 14px; font-size: 0.8rem; }
+
+        .btn--full { width: 100%; justify-content: center; }
+
+        /* ---- Dashboard Layout ---- */
+        .dashboard { display: none; }
+
+        .topbar {
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border);
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .topbar__brand {
+            font-weight: 700;
+            color: var(--orange);
+            font-size: 1.1rem;
+        }
+
+        .topbar__user {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .tabs {
+            display: flex;
+            gap: 0;
+            background: var(--bg-card);
+            border-bottom: 2px solid var(--border);
+            padding: 0 24px;
+        }
+
+        .tab-btn {
+            padding: 12px 20px;
+            background: none;
+            border: none;
+            border-bottom: 2px solid transparent;
+            margin-bottom: -2px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-family: inherit;
+            transition: all 0.2s;
+        }
+
+        .tab-btn:hover { color: var(--text); }
+        .tab-btn.is-active {
+            color: var(--orange);
+            border-bottom-color: var(--orange);
+        }
+
+        .tab-content {
+            display: none;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 32px 24px;
+        }
+        .tab-content.is-active { display: block; }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+        }
+
+        .section-header h2 {
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        /* ---- Content Cards ---- */
+        .content-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 16px;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: 16px;
+            align-items: center;
+            transition: border-color 0.2s;
+        }
+
+        .content-card:hover { border-color: var(--orange-light); }
+
+        .content-card__thumb {
+            width: 80px;
+            height: 80px;
+            border-radius: 6px;
+            object-fit: cover;
+            background: var(--bg);
+        }
+
+        .content-card__info h3 {
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+
+        .content-card__info p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .content-card__actions {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .content-card--no-thumb {
+            grid-template-columns: 1fr auto;
+        }
+
+        /* Stars display */
+        .stars { color: var(--orange); letter-spacing: 2px; font-size: 0.85rem; }
+
+        /* Status badge */
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .badge--active { background: var(--success-light); color: var(--success); }
+        .badge--inactive { background: var(--danger-light); color: var(--danger); }
+
+        /* ---- Modal ---- */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 100;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .modal-overlay.is-open { display: flex; }
+
+        .modal {
+            background: var(--bg-card);
+            border-radius: 12px;
+            max-width: 540px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 32px;
+        }
+
+        .modal h2 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .modal__footer {
+            display: flex;
+            gap: 12px;
+            justify-content: flex-end;
+            margin-top: 24px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+        }
+
+        /* File upload */
+        .file-upload {
+            border: 2px dashed var(--border);
+            border-radius: 8px;
+            padding: 24px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            position: relative;
+        }
+        .file-upload:hover { border-color: var(--orange); background: rgba(201,148,74,0.04); }
+        .file-upload input[type="file"] {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            cursor: pointer;
+        }
+        .file-upload__label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        .file-upload__preview {
+            max-width: 200px;
+            max-height: 150px;
+            margin: 12px auto 0;
+            border-radius: 6px;
+            display: none;
+        }
+
+        /* Toast notifications */
+        .toast {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: var(--text);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            z-index: 200;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s;
+        }
+        .toast.is-visible { transform: translateY(0); opacity: 1; }
+        .toast--success { background: var(--success); }
+        .toast--error { background: var(--danger); }
+
+        /* Loading state */
+        .loading {
+            text-align: center;
+            padding: 48px;
+            color: var(--text-muted);
+        }
+
+        /* Empty state */
+        .empty-state {
+            text-align: center;
+            padding: 48px;
+            color: var(--text-muted);
+        }
+        .empty-state p { margin-bottom: 16px; }
+
+        /* Error message */
+        .error-msg {
+            background: var(--danger-light);
+            color: var(--danger);
+            padding: 10px 16px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            margin-bottom: 16px;
+            display: none;
+        }
+
+        @media (max-width: 600px) {
+            .content-card { grid-template-columns: 1fr; }
+            .content-card__thumb { width: 100%; height: 160px; }
+            .content-card__actions { flex-direction: row; }
+            .tabs { overflow-x: auto; }
+            .modal { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============ LOGIN ============ -->
+<div class="login-screen" id="loginScreen">
+    <div class="login-card">
+        <h1>Rancho Moonrise</h1>
+        <p>Admin Panel — Sign in to manage your site content</p>
+        <div class="error-msg" id="loginError"></div>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="loginEmail">Email</label>
+                <input type="email" id="loginEmail" required placeholder="your@email.com">
+            </div>
+            <div class="form-group">
+                <label for="loginPassword">Password</label>
+                <input type="password" id="loginPassword" required placeholder="Enter password">
+            </div>
+            <button type="submit" class="btn btn--primary btn--full" style="margin-top: 8px;">Sign In</button>
+        </form>
+    </div>
+</div>
+
+<!-- ============ DASHBOARD ============ -->
+<div class="dashboard" id="dashboard">
+    <div class="topbar">
+        <span class="topbar__brand">Rancho Moonrise Admin</span>
+        <div class="topbar__user">
+            <span id="userEmail"></span>
+            <button class="btn btn--secondary btn--sm" id="logoutBtn">Sign Out</button>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <button class="tab-btn is-active" data-tab="events">Events</button>
+        <button class="tab-btn" data-tab="photos">Photos</button>
+        <button class="tab-btn" data-tab="reviews">Reviews</button>
+    </div>
+
+    <!-- EVENTS TAB -->
+    <div class="tab-content is-active" id="tab-events">
+        <div class="section-header">
+            <h2>Events</h2>
+            <button class="btn btn--primary" id="addEventBtn">+ Add Event</button>
+        </div>
+        <div id="eventsList" class="loading">Loading events...</div>
+    </div>
+
+    <!-- PHOTOS TAB -->
+    <div class="tab-content" id="tab-photos">
+        <div class="section-header">
+            <h2>Hero Slideshow Photos</h2>
+            <button class="btn btn--primary" id="addPhotoBtn">+ Add Photo</button>
+        </div>
+        <div id="photosList" class="loading">Loading photos...</div>
+    </div>
+
+    <!-- REVIEWS TAB -->
+    <div class="tab-content" id="tab-reviews">
+        <div class="section-header">
+            <h2>Guest Reviews</h2>
+            <button class="btn btn--primary" id="addReviewBtn">+ Add Review</button>
+        </div>
+        <div id="reviewsList" class="loading">Loading reviews...</div>
+    </div>
+</div>
+
+<!-- ============ EVENT MODAL ============ -->
+<div class="modal-overlay" id="eventModal">
+    <div class="modal">
+        <h2 id="eventModalTitle">Add Event</h2>
+        <div class="error-msg" id="eventError"></div>
+        <form id="eventForm">
+            <input type="hidden" id="eventId">
+            <div class="form-group">
+                <label for="eventTitle">Event Name</label>
+                <input type="text" id="eventTitle" required placeholder="e.g. Yoga & Bottomless Mimosas">
+            </div>
+            <div class="form-group">
+                <label for="eventDate">Date</label>
+                <input type="date" id="eventDate" required>
+            </div>
+            <div class="form-group">
+                <label for="eventTime">Time (optional)</label>
+                <input type="text" id="eventTime" placeholder="e.g. 10:00 AM - 1:00 PM">
+            </div>
+            <div class="form-group">
+                <label for="eventDesc">Description</label>
+                <textarea id="eventDesc" placeholder="Brief description of the event..."></textarea>
+            </div>
+            <div class="form-group">
+                <label for="eventPrice">Price (optional)</label>
+                <input type="text" id="eventPrice" placeholder="e.g. $35 or Free">
+            </div>
+            <div class="form-group">
+                <label for="eventTicketUrl">Ticket Link (optional)</label>
+                <input type="url" id="eventTicketUrl" placeholder="https://...">
+            </div>
+            <div class="form-group">
+                <label>Event Artwork</label>
+                <div class="file-upload" id="eventArtworkUpload">
+                    <input type="file" accept="image/*" id="eventArtworkFile">
+                    <p class="file-upload__label">Click or drag to upload artwork</p>
+                    <img class="file-upload__preview" id="eventArtworkPreview">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="eventOrder">Sort Order</label>
+                <input type="number" id="eventOrder" value="0" min="0">
+            </div>
+            <div class="modal__footer">
+                <button type="button" class="btn btn--secondary" onclick="closeModal('eventModal')">Cancel</button>
+                <button type="submit" class="btn btn--primary">Save Event</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- ============ PHOTO MODAL ============ -->
+<div class="modal-overlay" id="photoModal">
+    <div class="modal">
+        <h2 id="photoModalTitle">Add Photo</h2>
+        <div class="error-msg" id="photoError"></div>
+        <form id="photoForm">
+            <input type="hidden" id="photoId">
+            <div class="form-group">
+                <label for="photoTitle">Title</label>
+                <input type="text" id="photoTitle" required placeholder="e.g. Pool at Sunset">
+            </div>
+            <div class="form-group">
+                <label for="photoAlt">Alt Text (for accessibility)</label>
+                <input type="text" id="photoAlt" placeholder="Describe the image for screen readers">
+            </div>
+            <div class="form-group">
+                <label>Photo</label>
+                <div class="file-upload" id="photoFileUpload">
+                    <input type="file" accept="image/*" id="photoFile">
+                    <p class="file-upload__label">Click or drag to upload photo</p>
+                    <img class="file-upload__preview" id="photoFilePreview">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="photoOrder">Sort Order</label>
+                <input type="number" id="photoOrder" value="0" min="0">
+            </div>
+            <div class="modal__footer">
+                <button type="button" class="btn btn--secondary" onclick="closeModal('photoModal')">Cancel</button>
+                <button type="submit" class="btn btn--primary">Save Photo</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- ============ REVIEW MODAL ============ -->
+<div class="modal-overlay" id="reviewModal">
+    <div class="modal">
+        <h2 id="reviewModalTitle">Add Review</h2>
+        <div class="error-msg" id="reviewError"></div>
+        <form id="reviewForm">
+            <input type="hidden" id="reviewId">
+            <div class="form-group">
+                <label for="reviewQuote">Review Text</label>
+                <textarea id="reviewQuote" required placeholder="Paste the guest's review here..." style="min-height: 120px;"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="reviewAttr">Attribution</label>
+                <input type="text" id="reviewAttr" value="— Google Review" placeholder="— Google Review">
+            </div>
+            <div class="form-group">
+                <label for="reviewStars">Star Rating</label>
+                <select id="reviewStars">
+                    <option value="5" selected>5 Stars ★★★★★</option>
+                    <option value="4">4 Stars ★★★★</option>
+                    <option value="3">3 Stars ★★★</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="reviewOrder">Sort Order</label>
+                <input type="number" id="reviewOrder" value="0" min="0">
+            </div>
+            <div class="modal__footer">
+                <button type="button" class="btn btn--secondary" onclick="closeModal('reviewModal')">Cancel</button>
+                <button type="submit" class="btn btn--primary">Save Review</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ============================================================
+// Rancho Moonrise Admin — Supabase CMS
+// ============================================================
+
+const SUPABASE_URL = 'https://uuqedsvjlkeszrbwzizl.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV1cWVkc3ZqbGtlc3pyYnd6aXpsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI5ODcwMjYsImV4cCI6MjA4ODU2MzAyNn0.Wu1DKotPPigTpVpQvmdRMpa7NW9-WnEou6bTV3kakFM';
+
+const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+// ---- Utility ----
+function $(sel) { return document.querySelector(sel); }
+function $$(sel) { return document.querySelectorAll(sel); }
+
+function toast(msg, type) {
+    var t = $('#toast');
+    t.textContent = msg;
+    t.className = 'toast toast--' + (type || 'success') + ' is-visible';
+    setTimeout(function() { t.classList.remove('is-visible'); }, 3000);
+}
+
+function formatDate(d) {
+    if (!d) return '';
+    var dt = new Date(d + 'T00:00:00');
+    return dt.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+}
+
+function starsHtml(n) {
+    return '★'.repeat(n) + '☆'.repeat(5 - n);
+}
+
+function closeModal(id) {
+    $('#' + id).classList.remove('is-open');
+}
+
+function openModal(id) {
+    $('#' + id).classList.add('is-open');
+}
+
+// ---- Auth ----
+$('#loginForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    var err = $('#loginError');
+    err.style.display = 'none';
+
+    var email = $('#loginEmail').value.trim();
+    var pass = $('#loginPassword').value;
+
+    var { data, error } = await sb.auth.signInWithPassword({ email: email, password: pass });
+
+    if (error) {
+        err.textContent = error.message;
+        err.style.display = 'block';
+        return;
+    }
+
+    showDashboard(data.user);
+});
+
+$('#logoutBtn').addEventListener('click', async function() {
+    await sb.auth.signOut();
+    $('#dashboard').style.display = 'none';
+    $('#loginScreen').style.display = 'flex';
+});
+
+// Check existing session
+sb.auth.getSession().then(function(res) {
+    if (res.data.session) {
+        showDashboard(res.data.session.user);
+    }
+});
+
+function showDashboard(user) {
+    $('#loginScreen').style.display = 'none';
+    $('#dashboard').style.display = 'block';
+    $('#userEmail').textContent = user.email;
+    loadEvents();
+    loadPhotos();
+    loadReviews();
+}
+
+// ---- Tabs ----
+$$('.tab-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+        $$('.tab-btn').forEach(function(b) { b.classList.remove('is-active'); });
+        $$('.tab-content').forEach(function(c) { c.classList.remove('is-active'); });
+        this.classList.add('is-active');
+        $('#tab-' + this.dataset.tab).classList.add('is-active');
+    });
+});
+
+// ============================================================
+// EVENTS
+// ============================================================
+async function loadEvents() {
+    var container = $('#eventsList');
+    var { data, error } = await sb.from('rancho_events')
+        .select('*').order('sort_order').order('event_date');
+
+    if (error) { container.innerHTML = '<p class="empty-state">Error loading events.</p>'; return; }
+    if (!data.length) { container.innerHTML = '<div class="empty-state"><p>No events yet.</p></div>'; return; }
+
+    container.innerHTML = data.map(function(ev) {
+        var thumb = ev.artwork_url
+            ? '<img class="content-card__thumb" src="' + ev.artwork_url + '" alt="">'
+            : '<div class="content-card__thumb" style="display:flex;align-items:center;justify-content:center;font-size:2rem;">📅</div>';
+        return '<div class="content-card">' +
+            thumb +
+            '<div class="content-card__info">' +
+                '<h3>' + ev.title + ' <span class="badge ' + (ev.is_active ? 'badge--active' : 'badge--inactive') + '">' + (ev.is_active ? 'Active' : 'Hidden') + '</span></h3>' +
+                '<p style="color:var(--orange);font-size:0.8rem;font-weight:600;margin-bottom:4px;">' + formatDate(ev.event_date) + (ev.event_time ? ' · ' + ev.event_time : '') + '</p>' +
+                '<p>' + (ev.description || '') + '</p>' +
+            '</div>' +
+            '<div class="content-card__actions">' +
+                '<button class="btn btn--secondary btn--sm" onclick="editEvent(\'' + ev.id + '\')">Edit</button>' +
+                '<button class="btn btn--danger btn--sm" onclick="toggleEvent(\'' + ev.id + '\',' + !ev.is_active + ')">' + (ev.is_active ? 'Hide' : 'Show') + '</button>' +
+                '<button class="btn btn--danger btn--sm" onclick="deleteEvent(\'' + ev.id + '\')">Delete</button>' +
+            '</div>' +
+        '</div>';
+    }).join('');
+}
+
+$('#addEventBtn').addEventListener('click', function() {
+    $('#eventModalTitle').textContent = 'Add Event';
+    $('#eventForm').reset();
+    $('#eventId').value = '';
+    $('#eventArtworkPreview').style.display = 'none';
+    openModal('eventModal');
+});
+
+async function editEvent(id) {
+    var { data } = await sb.from('rancho_events').select('*').eq('id', id).single();
+    if (!data) return;
+
+    $('#eventModalTitle').textContent = 'Edit Event';
+    $('#eventId').value = data.id;
+    $('#eventTitle').value = data.title;
+    $('#eventDate').value = data.event_date;
+    $('#eventTime').value = data.event_time || '';
+    $('#eventDesc').value = data.description || '';
+    $('#eventPrice').value = data.price || '';
+    $('#eventTicketUrl').value = data.ticket_url || '';
+    $('#eventOrder').value = data.sort_order;
+
+    var preview = $('#eventArtworkPreview');
+    if (data.artwork_url) {
+        preview.src = data.artwork_url;
+        preview.style.display = 'block';
+    } else {
+        preview.style.display = 'none';
+    }
+
+    openModal('eventModal');
+}
+
+async function toggleEvent(id, active) {
+    await sb.from('rancho_events').update({ is_active: active }).eq('id', id);
+    toast(active ? 'Event shown on site' : 'Event hidden from site');
+    loadEvents();
+}
+
+async function deleteEvent(id) {
+    if (!confirm('Delete this event? This cannot be undone.')) return;
+    await sb.from('rancho_events').delete().eq('id', id);
+    toast('Event deleted');
+    loadEvents();
+}
+
+$('#eventForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    var errEl = $('#eventError');
+    errEl.style.display = 'none';
+
+    var id = $('#eventId').value;
+    var file = $('#eventArtworkFile').files[0];
+
+    var row = {
+        title: $('#eventTitle').value.trim(),
+        event_date: $('#eventDate').value,
+        event_time: $('#eventTime').value.trim() || null,
+        description: $('#eventDesc').value.trim(),
+        price: $('#eventPrice').value.trim() || null,
+        ticket_url: $('#eventTicketUrl').value.trim() || null,
+        sort_order: parseInt($('#eventOrder').value) || 0,
+    };
+
+    // Upload artwork if provided
+    if (file) {
+        var path = 'events/' + Date.now() + '-' + file.name.replace(/[^a-zA-Z0-9.-]/g, '_');
+        var { error: upErr } = await sb.storage.from('rancho-moonrise').upload(path, file);
+        if (upErr) { errEl.textContent = 'Upload failed: ' + upErr.message; errEl.style.display = 'block'; return; }
+        var { data: urlData } = sb.storage.from('rancho-moonrise').getPublicUrl(path);
+        row.artwork_url = urlData.publicUrl;
+        row.artwork_storage_path = path;
+    }
+
+    var result;
+    if (id) {
+        result = await sb.from('rancho_events').update(row).eq('id', id);
+    } else {
+        result = await sb.from('rancho_events').insert(row);
+    }
+
+    if (result.error) {
+        errEl.textContent = result.error.message;
+        errEl.style.display = 'block';
+        return;
+    }
+
+    closeModal('eventModal');
+    toast(id ? 'Event updated!' : 'Event added!');
+    loadEvents();
+});
+
+// ============================================================
+// PHOTOS
+// ============================================================
+async function loadPhotos() {
+    var container = $('#photosList');
+    var { data, error } = await sb.from('rancho_photos')
+        .select('*').eq('section', 'hero').order('sort_order');
+
+    if (error) { container.innerHTML = '<p class="empty-state">Error loading photos.</p>'; return; }
+    if (!data.length) { container.innerHTML = '<div class="empty-state"><p>No photos yet.</p></div>'; return; }
+
+    container.innerHTML = data.map(function(ph) {
+        return '<div class="content-card">' +
+            '<img class="content-card__thumb" src="' + ph.public_url + '" alt="' + (ph.alt_text || '') + '">' +
+            '<div class="content-card__info">' +
+                '<h3>' + ph.title + ' <span class="badge ' + (ph.is_active ? 'badge--active' : 'badge--inactive') + '">' + (ph.is_active ? 'Active' : 'Hidden') + '</span></h3>' +
+                '<p>' + (ph.alt_text || 'No alt text') + '</p>' +
+            '</div>' +
+            '<div class="content-card__actions">' +
+                '<button class="btn btn--secondary btn--sm" onclick="editPhoto(\'' + ph.id + '\')">Edit</button>' +
+                '<button class="btn btn--danger btn--sm" onclick="togglePhoto(\'' + ph.id + '\',' + !ph.is_active + ')">' + (ph.is_active ? 'Hide' : 'Show') + '</button>' +
+                '<button class="btn btn--danger btn--sm" onclick="deletePhoto(\'' + ph.id + '\')">Delete</button>' +
+            '</div>' +
+        '</div>';
+    }).join('');
+}
+
+$('#addPhotoBtn').addEventListener('click', function() {
+    $('#photoModalTitle').textContent = 'Add Photo';
+    $('#photoForm').reset();
+    $('#photoId').value = '';
+    $('#photoFilePreview').style.display = 'none';
+    openModal('photoModal');
+});
+
+async function editPhoto(id) {
+    var { data } = await sb.from('rancho_photos').select('*').eq('id', id).single();
+    if (!data) return;
+
+    $('#photoModalTitle').textContent = 'Edit Photo';
+    $('#photoId').value = data.id;
+    $('#photoTitle').value = data.title;
+    $('#photoAlt').value = data.alt_text || '';
+    $('#photoOrder').value = data.sort_order;
+
+    var preview = $('#photoFilePreview');
+    if (data.public_url) {
+        preview.src = data.public_url;
+        preview.style.display = 'block';
+    }
+
+    openModal('photoModal');
+}
+
+async function togglePhoto(id, active) {
+    await sb.from('rancho_photos').update({ is_active: active }).eq('id', id);
+    toast(active ? 'Photo shown on site' : 'Photo hidden from site');
+    loadPhotos();
+}
+
+async function deletePhoto(id) {
+    if (!confirm('Delete this photo? This cannot be undone.')) return;
+    // Get storage path to clean up
+    var { data: ph } = await sb.from('rancho_photos').select('storage_path').eq('id', id).single();
+    if (ph && ph.storage_path) {
+        await sb.storage.from('rancho-moonrise').remove([ph.storage_path]);
+    }
+    await sb.from('rancho_photos').delete().eq('id', id);
+    toast('Photo deleted');
+    loadPhotos();
+}
+
+$('#photoForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    var errEl = $('#photoError');
+    errEl.style.display = 'none';
+
+    var id = $('#photoId').value;
+    var file = $('#photoFile').files[0];
+
+    var row = {
+        title: $('#photoTitle').value.trim(),
+        alt_text: $('#photoAlt').value.trim(),
+        section: 'hero',
+        sort_order: parseInt($('#photoOrder').value) || 0,
+    };
+
+    if (file) {
+        var path = 'photos/' + Date.now() + '-' + file.name.replace(/[^a-zA-Z0-9.-]/g, '_');
+        var { error: upErr } = await sb.storage.from('rancho-moonrise').upload(path, file);
+        if (upErr) { errEl.textContent = 'Upload failed: ' + upErr.message; errEl.style.display = 'block'; return; }
+        var { data: urlData } = sb.storage.from('rancho-moonrise').getPublicUrl(path);
+        row.public_url = urlData.publicUrl;
+        row.storage_path = path;
+    } else if (!id) {
+        errEl.textContent = 'Please select a photo to upload.';
+        errEl.style.display = 'block';
+        return;
+    }
+
+    var result;
+    if (id) {
+        result = await sb.from('rancho_photos').update(row).eq('id', id);
+    } else {
+        result = await sb.from('rancho_photos').insert(row);
+    }
+
+    if (result.error) {
+        errEl.textContent = result.error.message;
+        errEl.style.display = 'block';
+        return;
+    }
+
+    closeModal('photoModal');
+    toast(id ? 'Photo updated!' : 'Photo added!');
+    loadPhotos();
+});
+
+// ============================================================
+// REVIEWS
+// ============================================================
+async function loadReviews() {
+    var container = $('#reviewsList');
+    var { data, error } = await sb.from('rancho_testimonials')
+        .select('*').order('sort_order');
+
+    if (error) { container.innerHTML = '<p class="empty-state">Error loading reviews.</p>'; return; }
+    if (!data.length) { container.innerHTML = '<div class="empty-state"><p>No reviews yet.</p></div>'; return; }
+
+    container.innerHTML = data.map(function(r) {
+        return '<div class="content-card content-card--no-thumb">' +
+            '<div class="content-card__info">' +
+                '<h3><span class="stars">' + starsHtml(r.stars) + '</span> <span class="badge ' + (r.is_active ? 'badge--active' : 'badge--inactive') + '">' + (r.is_active ? 'Active' : 'Hidden') + '</span></h3>' +
+                '<p style="-webkit-line-clamp:3;">\u201C' + r.quote + '\u201D</p>' +
+                '<p style="color:var(--orange);font-size:0.8rem;margin-top:4px;">' + r.attribution + '</p>' +
+            '</div>' +
+            '<div class="content-card__actions">' +
+                '<button class="btn btn--secondary btn--sm" onclick="editReview(\'' + r.id + '\')">Edit</button>' +
+                '<button class="btn btn--danger btn--sm" onclick="toggleReview(\'' + r.id + '\',' + !r.is_active + ')">' + (r.is_active ? 'Hide' : 'Show') + '</button>' +
+                '<button class="btn btn--danger btn--sm" onclick="deleteReview(\'' + r.id + '\')">Delete</button>' +
+            '</div>' +
+        '</div>';
+    }).join('');
+}
+
+$('#addReviewBtn').addEventListener('click', function() {
+    $('#reviewModalTitle').textContent = 'Add Review';
+    $('#reviewForm').reset();
+    $('#reviewId').value = '';
+    $('#reviewAttr').value = '— Google Review';
+    openModal('reviewModal');
+});
+
+async function editReview(id) {
+    var { data } = await sb.from('rancho_testimonials').select('*').eq('id', id).single();
+    if (!data) return;
+
+    $('#reviewModalTitle').textContent = 'Edit Review';
+    $('#reviewId').value = data.id;
+    $('#reviewQuote').value = data.quote;
+    $('#reviewAttr').value = data.attribution;
+    $('#reviewStars').value = data.stars;
+    $('#reviewOrder').value = data.sort_order;
+
+    openModal('reviewModal');
+}
+
+async function toggleReview(id, active) {
+    await sb.from('rancho_testimonials').update({ is_active: active }).eq('id', id);
+    toast(active ? 'Review shown on site' : 'Review hidden from site');
+    loadReviews();
+}
+
+async function deleteReview(id) {
+    if (!confirm('Delete this review? This cannot be undone.')) return;
+    await sb.from('rancho_testimonials').delete().eq('id', id);
+    toast('Review deleted');
+    loadReviews();
+}
+
+$('#reviewForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    var errEl = $('#reviewError');
+    errEl.style.display = 'none';
+
+    var id = $('#reviewId').value;
+    var row = {
+        quote: $('#reviewQuote').value.trim(),
+        attribution: $('#reviewAttr').value.trim(),
+        stars: parseInt($('#reviewStars').value),
+        sort_order: parseInt($('#reviewOrder').value) || 0,
+    };
+
+    var result;
+    if (id) {
+        result = await sb.from('rancho_testimonials').update(row).eq('id', id);
+    } else {
+        result = await sb.from('rancho_testimonials').insert(row);
+    }
+
+    if (result.error) {
+        errEl.textContent = result.error.message;
+        errEl.style.display = 'block';
+        return;
+    }
+
+    closeModal('reviewModal');
+    toast(id ? 'Review updated!' : 'Review added!');
+    loadReviews();
+});
+
+// ---- File Preview ----
+$$('input[type="file"]').forEach(function(input) {
+    input.addEventListener('change', function() {
+        var preview = this.closest('.file-upload').querySelector('.file-upload__preview');
+        if (this.files && this.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                preview.src = e.target.result;
+                preview.style.display = 'block';
+            };
+            reader.readAsDataURL(this.files[0]);
+        }
+    });
+});
+
+// ---- Close modals on overlay click ----
+$$('.modal-overlay').forEach(function(overlay) {
+    overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) overlay.classList.remove('is-open');
+    });
+});
+
+// ---- Close modals on Escape ----
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        $$('.modal-overlay.is-open').forEach(function(m) { m.classList.remove('is-open'); });
+    }
+});
+</script>
+
+</body>
+</html>
