@@ -37,7 +37,7 @@
     <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"></noscript>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="css/styles.css?v=4">
+    <link rel="stylesheet" href="css/styles.css?v=5">
 
     <!-- Favicon placeholder -->
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -245,15 +245,42 @@
     </div>
 </section>
 
-<!-- ============ WELLNESS & EXPERIENCES ============ -->
+<!-- ============ WELLNESS & EXPERIENCES (Event Slideshow) ============ -->
 <section class="section" aria-label="Wellness and experiences">
     <div class="container">
         <div class="split split--reverse">
             <div class="split__image fade-in">
-                <img src="images/event-yoga-mimosas.webp" alt="Outdoor yoga session at Rancho Moonrise with Hill Country views" width="800" height="600" loading="lazy">
+                <div class="event-slideshow" id="eventSlideshow">
+                    <div class="event-slideshow__slide is-active">
+                        <img src="images/event-yoga-mimosas.webp" alt="Yoga & Bottomless Mimosas — last Sunday of the month" width="800" height="800" loading="lazy">
+                    </div>
+                    <div class="event-slideshow__slide">
+                        <img src="images/event-lone-star-party.webp" alt="Lone Star Party — live music and crawfish" width="800" height="800" loading="lazy">
+                    </div>
+                    <div class="event-slideshow__slide">
+                        <img src="images/event-mothers-day.webp" alt="Mother's Day Brunch at the Ranch" width="800" height="800" loading="lazy">
+                    </div>
+                    <div class="event-slideshow__slide">
+                        <img src="images/event-bridal-sip-see.webp" alt="Bridal Sip & See — venue tours and mimosas" width="800" height="800" loading="lazy">
+                    </div>
+                    <div class="event-slideshow__slide">
+                        <img src="images/event-rancho-rodeo.webp" alt="Rancho Rodeo — ranch games and competition" width="800" height="800" loading="lazy">
+                    </div>
+                    <div class="event-slideshow__slide">
+                        <img src="images/event-paella-dinner.webp" alt="Paella Dinner under the stars" width="800" height="800" loading="lazy">
+                    </div>
+                    <div class="event-slideshow__dots">
+                        <button class="event-slideshow__dot is-active" aria-label="Event 1" data-slide="0"></button>
+                        <button class="event-slideshow__dot" aria-label="Event 2" data-slide="1"></button>
+                        <button class="event-slideshow__dot" aria-label="Event 3" data-slide="2"></button>
+                        <button class="event-slideshow__dot" aria-label="Event 4" data-slide="3"></button>
+                        <button class="event-slideshow__dot" aria-label="Event 5" data-slide="4"></button>
+                        <button class="event-slideshow__dot" aria-label="Event 6" data-slide="5"></button>
+                    </div>
+                </div>
             </div>
             <div class="split__content fade-in">
-                <span class="section-label reveal">Wellness &amp; Experiences</span>
+                <span class="section-label reveal">Upcoming Events</span>
                 <h2>More Than a Place to Stay</h2>
                 <p>Yoga under the oaks, sound baths at sunset, crawfish boils, paint nights, and live music every month. Rancho Moonrise is a full weekend destination — not just a place to sleep.</p>
                 <p>Check the calendar for upcoming events or book your stay and discover what's happening during your visit.</p>
@@ -284,17 +311,74 @@
     </div>
 </section>
 
-<!-- ============ TESTIMONIAL ============ -->
-<section class="section" aria-label="Guest reviews">
-    <div class="container">
-        <div class="testimonial fade-in">
-            <span class="section-label reveal">Guest Reviews</span>
-            <p class="testimonial__quote">The most magical place we've ever stayed. The tents are gorgeous, the staff is incredible, and waking up on the ranch with coffee and Hill Country views — nothing compares. We've already booked our next trip.</p>
-            <p class="testimonial__attr">— Google Review, 5 Stars</p>
+<!-- ============ REVIEWS MARQUEE ============ -->
+<section class="testimonial-marquee" aria-label="Guest reviews">
+    <div class="testimonial-marquee__header">
+        <span class="section-label reveal">Guest Reviews</span>
+        <p style="color: var(--color-orange); font-size: 1.2rem; font-weight: 700; margin-bottom: 0;">4.9 ★ Rating &middot; 122 Google Reviews</p>
+    </div>
+    <div class="testimonial-marquee__track">
+        <!-- Original cards -->
+        <div class="testimonial-marquee__card">
+            <p class="testimonial-marquee__stars">★★★★★</p>
+            <p class="testimonial-marquee__quote">The most magical place we've ever stayed. The tents are gorgeous, the staff is incredible, and waking up on the ranch with coffee and Hill Country views — nothing compares.</p>
+            <p class="testimonial-marquee__attr">— Google Review</p>
         </div>
-        <div class="text-center" style="margin-top: var(--space-sm);">
-            <p style="color: var(--color-orange); font-size: 1.4rem; font-weight: 700; margin-bottom: 4px;">4.9 ★ Rating</p>
-            <p style="color: var(--color-text-muted); font-size: 0.85rem;">122 Reviews on Google</p>
+        <div class="testimonial-marquee__card">
+            <p class="testimonial-marquee__stars">★★★★★</p>
+            <p class="testimonial-marquee__quote">We hosted our wedding here and it was absolutely perfect. The Event Barn was stunning, the Neon Moon made for the best after-party, and our guests are still talking about it months later.</p>
+            <p class="testimonial-marquee__attr">— Google Review</p>
+        </div>
+        <div class="testimonial-marquee__card">
+            <p class="testimonial-marquee__stars">★★★★★</p>
+            <p class="testimonial-marquee__quote">Brought the whole family for a weekend getaway. Kids loved the fire pits and pool, we loved the peace and quiet. Already booked our next trip back.</p>
+            <p class="testimonial-marquee__attr">— Google Review</p>
+        </div>
+        <div class="testimonial-marquee__card">
+            <p class="testimonial-marquee__stars">★★★★★</p>
+            <p class="testimonial-marquee__quote">The yoga and mimosas event was incredible. Beautiful property, amazing vibes, and the staff made us feel so welcome. Can't wait for the next one!</p>
+            <p class="testimonial-marquee__attr">— Google Review</p>
+        </div>
+        <div class="testimonial-marquee__card">
+            <p class="testimonial-marquee__stars">★★★★★</p>
+            <p class="testimonial-marquee__quote">Best corporate retreat venue near Austin. Our team bonded over campfires, the barn was perfect for our presentations, and the cabins were way more comfortable than any hotel.</p>
+            <p class="testimonial-marquee__attr">— Google Review</p>
+        </div>
+        <div class="testimonial-marquee__card">
+            <p class="testimonial-marquee__stars">★★★★★</p>
+            <p class="testimonial-marquee__quote">This place is a hidden gem. 20 minutes from Austin but feels like you're in a completely different world. The safari tents are beautiful and the pool area is resort-level.</p>
+            <p class="testimonial-marquee__attr">— Google Review</p>
+        </div>
+        <!-- Duplicates for seamless loop -->
+        <div class="testimonial-marquee__card" aria-hidden="true">
+            <p class="testimonial-marquee__stars">★★★★★</p>
+            <p class="testimonial-marquee__quote">The most magical place we've ever stayed. The tents are gorgeous, the staff is incredible, and waking up on the ranch with coffee and Hill Country views — nothing compares.</p>
+            <p class="testimonial-marquee__attr">— Google Review</p>
+        </div>
+        <div class="testimonial-marquee__card" aria-hidden="true">
+            <p class="testimonial-marquee__stars">★★★★★</p>
+            <p class="testimonial-marquee__quote">We hosted our wedding here and it was absolutely perfect. The Event Barn was stunning, the Neon Moon made for the best after-party, and our guests are still talking about it months later.</p>
+            <p class="testimonial-marquee__attr">— Google Review</p>
+        </div>
+        <div class="testimonial-marquee__card" aria-hidden="true">
+            <p class="testimonial-marquee__stars">★★★★★</p>
+            <p class="testimonial-marquee__quote">Brought the whole family for a weekend getaway. Kids loved the fire pits and pool, we loved the peace and quiet. Already booked our next trip back.</p>
+            <p class="testimonial-marquee__attr">— Google Review</p>
+        </div>
+        <div class="testimonial-marquee__card" aria-hidden="true">
+            <p class="testimonial-marquee__stars">★★★★★</p>
+            <p class="testimonial-marquee__quote">The yoga and mimosas event was incredible. Beautiful property, amazing vibes, and the staff made us feel so welcome. Can't wait for the next one!</p>
+            <p class="testimonial-marquee__attr">— Google Review</p>
+        </div>
+        <div class="testimonial-marquee__card" aria-hidden="true">
+            <p class="testimonial-marquee__stars">★★★★★</p>
+            <p class="testimonial-marquee__quote">Best corporate retreat venue near Austin. Our team bonded over campfires, the barn was perfect for our presentations, and the cabins were way more comfortable than any hotel.</p>
+            <p class="testimonial-marquee__attr">— Google Review</p>
+        </div>
+        <div class="testimonial-marquee__card" aria-hidden="true">
+            <p class="testimonial-marquee__stars">★★★★★</p>
+            <p class="testimonial-marquee__quote">This place is a hidden gem. 20 minutes from Austin but feels like you're in a completely different world. The safari tents are beautiful and the pool area is resort-level.</p>
+            <p class="testimonial-marquee__attr">— Google Review</p>
         </div>
     </div>
 </section>
