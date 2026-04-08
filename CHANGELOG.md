@@ -1,5 +1,12 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-07 — Daily SEO Agent Run #3
+
+- **Weddings page AEO:** Added 5-question AEO section before the final CTA banner targeting "wedding venue manor tx", "ranch wedding near austin", "outdoor wedding venue austin with overnight stays", and related queries. Each Q&A is a self-contained paragraph for AI/SGE extraction.
+- **Blog article #2 published:** "Unique Wedding Venues Near Austin With Overnight Stays" at `/pages/wedding-venues-near-austin.html` — full BlogPosting schema, OG tags, internal links to weddings/accommodations/contact pages.
+- **Blog listing updated:** Post #2 placeholder wired to live article with correct date, alt text, and link.
+- **Sitemap updated:** Added `/blog/wedding-venues-near-austin/` entry with `lastmod 2026-04-07`.
+
 ## 2026-04-07 — Event Slideshow + Review Marquee
 
 - **Event artwork slideshow:** Wellness section now cycles through 6 event posters (yoga, lone star party, mother's day, bridal sip & see, rancho rodeo, paella dinner) with dot navigation, autoplay every 4s, pause-on-hover. Uses `object-fit: contain` so artwork isn't cropped.

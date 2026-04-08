@@ -29,8 +29,8 @@
 - [x] AEO paragraphs: added to homepage and accommodations (2026-04-07)
 - [x] Blog: first article published — "Glamping Near Austin Texas" (2026-04-07)
 - [ ] Submit sitemap to Google Search Console — requires Adam's Google account UI access
-- [ ] Blog article #2 — "Unique Wedding Venues Near Austin With Overnight Stays" (high search volume)
-- [ ] AEO paragraphs: add to weddings page targeting "wedding venue manor tx" queries
+- [x] Blog article #2 — "Unique Wedding Venues Near Austin With Overnight Stays" (2026-04-07)
+- [x] AEO paragraphs: add to weddings page targeting "wedding venue manor tx" queries (2026-04-07)
 - [x] Logo in nav header (2026-04-07)
 - [x] Pool Passes in top nav (2026-04-07)
 - [x] FAQs + Blog moved to footer nav only (2026-04-07)

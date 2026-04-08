@@ -94,10 +94,10 @@ Advisory engagement for Rancho Moonrise — glamping, events, and retreat ranch 
 
 ## Website SEO Status
 
-- robots.txt + sitemap.xml: created 2026-04-07
+- robots.txt + sitemap.xml: created 2026-04-07, sitemap updated 2026-04-07 (run #3)
 - Contact page: OG/Twitter/schema added 2026-04-07
-- AEO paragraphs: added to homepage + accommodations (2026-04-07)
-- Blog: first article live — "Glamping Near Austin Texas" (2026-04-07)
+- AEO paragraphs: homepage + accommodations (run #2), weddings page (run #3)
+- Blog articles live: "Glamping Near Austin Texas" (run #2), "Wedding Venues Near Austin With Overnight Stays" (run #3)
 - GBP: not yet claimed/completed (requires Adam's Google account)
 - Sitemap not yet submitted to Google Search Console (requires Adam's UI access)
 
@@ -126,8 +126,10 @@ Advisory engagement for Rancho Moonrise — glamping, events, and retreat ranch 
 2. Determine real buyout number from operating agreement terms
 3. Build proper deal summary for Christopher with real numbers
 4. Explore Hog Eye Rd acquisition path simultaneously
-5. (Website) Submit sitemap.xml to Google Search Console
-6. (Website) Continue refining homepage to closer match live site patterns
+5. (Website) Submit sitemap.xml to Google Search Console — requires Adam's UI access
+6. (Website) Blog article #3 — "Why Your Next Corporate Retreat Should Be at a Ranch"
+7. (Website) FAQPage schema on faqs.html for rich results
+8. (Website) Add weddings page AEO Q&A to FAQPage schema
 
 ---
 
