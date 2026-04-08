@@ -1,5 +1,20 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-07 — "Modern Desert" Design Overhaul
+
+- **Orange glassmorphism nav:** Semi-transparent orange bar with backdrop-blur, compact height (~41px), logo left-aligned with white background and rounded corners
+- **Outline buttons:** All CTAs changed to transparent background with 1px border; orange fill on hover
+- **Sand palette:** Page background changed from white to #F5F2ED, text from #3d3830 to charcoal #333
+- **Montserrat font:** Replaced Lato body font with Montserrat (wider, more modern tracking)
+- **20% more spacing:** All spacing tokens increased for more breathing room between sections
+- **Cards:** 4px border-radius, removed box shadows, added lift-on-hover (translateY -4px)
+- **Hero:** Lighter overlay (20% opacity), reduced to 85vh height
+- **Scroll animations:** Fade-in-up reveal on section labels via IntersectionObserver
+- **Mobile sticky CTA:** Fixed "Book Your Stay" bar at bottom of viewport on screens < 960px
+- **Cache bust:** All CSS links updated to ?v=3
+- **Nav restructured:** Logo-left with single nav__links group (removed centered split layout)
+- **Dev server fix:** Added query string stripping so ?v=N cache busters don't cause 404s
+
 ## 2026-04-07 — Website UI Updates
 
 - **Logo in header:** Added RM logo image (`logo.webp`) next to "Rancho Moonrise" text in nav across all 10 pages. Logo shrinks on scroll.

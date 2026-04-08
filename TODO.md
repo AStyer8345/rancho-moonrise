@@ -24,6 +24,7 @@
 - [ ] Email capture / newsletter signup (Flodesk integration)
 - [ ] Post-event review generation automation (→ Google Reviews)
 - [ ] Target LCP < 2.5s (currently 3.3s)
+- [ ] Slideshow images: some too zoomed (pool 800x779 nearly square crops heavily with cover)
 - [ ] Accessibility page (linked in footer but not built)
 - [x] AEO paragraphs: added to homepage and accommodations (2026-04-07)
 - [x] Blog: first article published — "Glamping Near Austin Texas" (2026-04-07)

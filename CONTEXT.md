@@ -1,6 +1,6 @@
 # Rancho Moonrise — Project Context
 
-**Last updated:** 2026-04-07 (daily SEO agent run)
+**Last updated:** 2026-04-07 (design overhaul session)
 
 ---
 
@@ -103,11 +103,17 @@ Advisory engagement for Rancho Moonrise — glamping, events, and retreat ranch 
 
 ## Website UI Status (updated 2026-04-07)
 
-- Logo added to nav header across all pages
-- Pool Passes added to top nav (links to ResortPass)
-- FAQs + Blog moved from top nav to footer-only
+- **Design overhaul**: "Modern Desert / Boutique Ranch" aesthetic applied
+- Nav: orange glassmorphism (semi-transparent + blur), compact, logo left with white background
+- Buttons: outline-style with orange fill on hover
+- Background: sand (#F5F2ED), body font switched from Lato to Montserrat
+- Cards: 4px border-radius, no box shadows, lift-on-hover
+- Hero: lighter overlay, 85vh height
+- Scroll reveal fade-in-up animations on sections
+- Mobile sticky "Book Your Stay" CTA bar pinned to bottom
+- Pool Passes in nav (links to ResortPass), FAQs + Blog footer-only
 - Events page: list + calendar view toggle (calendar default on desktop, list on mobile)
-- Mobile responsiveness: tightened spacing, font sizes, button layout for < 640px and < 400px
+- CSS cache busted to ?v=3 across all pages
 
 ---
 
