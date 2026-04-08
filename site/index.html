@@ -33,11 +33,11 @@
     <!-- Fonts (non-render-blocking) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"></noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"></noscript>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="css/styles.css?v=2">
+    <link rel="stylesheet" href="css/styles.css?v=3">
 
     <!-- Favicon placeholder -->
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -117,18 +117,15 @@
 <!-- ============ NAVIGATION ============ -->
 <nav class="nav" role="navigation" aria-label="Main navigation">
     <div class="nav__inner">
-        <ul class="nav__links nav__links--left">
-            <li><a href="/pages/accommodations.html">Accommodations</a></li>
-            <li><a href="/pages/weddings.html">Weddings</a></li>
-            <li><a href="/pages/events.html">Events</a></li>
-            <li><a href="/pages/host-your-event.html">Private Events</a></li>
-        </ul>
-
         <a href="/" class="nav__logo" aria-label="Rancho Moonrise — Home">
             <img src="/images/logo.webp" alt="Rancho Moonrise" class="nav__logo-img" width="200" height="186">
         </a>
 
-        <ul class="nav__links nav__links--right">
+        <ul class="nav__links">
+            <li><a href="/pages/accommodations.html">Accommodations</a></li>
+            <li><a href="/pages/weddings.html">Weddings</a></li>
+            <li><a href="/pages/events.html">Events</a></li>
+            <li><a href="/pages/host-your-event.html">Private Events</a></li>
             <li><a href="/pages/contact.html">Contact</a></li>
             <li><a href="https://hotels.cloudbeds.com/en/reservation/5tzv1r" class="btn btn--primary" target="_blank" rel="noopener">Book Now</a></li>
             <li><a href="https://www.resortpass.com/hotels/rancho-moonrise" class="btn btn--primary" target="_blank" rel="noopener">Pool Passes</a></li>
@@ -188,7 +185,7 @@
 <!-- ============ FEATURES GRID ============ -->
 <section id="explore" class="section" aria-label="What we offer">
     <div class="container text-center">
-        <span class="section-label">Experience the Ranch</span>
+        <span class="section-label reveal">Experience the Ranch</span>
         <h2>Where Comfort Meets the Outdoors</h2>
         <p class="accent-text" style="max-width: 600px; margin: var(--space-sm) auto var(--space-lg);">Kick back, relax, and dream under a blanket of Texas sky.</p>
 
@@ -244,7 +241,7 @@
                 <img src="images/about-ranch-aerial.webp" alt="Aerial view of Rancho Moonrise 20-acre property showing safari tents, cabins, event barn, and pool area in Manor Texas" width="800" height="600" loading="lazy">
             </div>
             <div class="split__content fade-in">
-                <span class="section-label">About the Ranch</span>
+                <span class="section-label reveal">About the Ranch</span>
                 <h2>20 Acres of Texas Magic</h2>
                 <p>Rancho Moonrise is Austin's first full-service glamping and events property — a working ranch where luxury meets the land. Located in Manor, TX, just 20 minutes from downtown Austin, we offer overnight stays in safari tents and hand-crafted cabins, each with A/C, heat, and private fire pits.</p>
                 <p>Whether you're planning a destination wedding, a corporate retreat, or a weekend escape, the ranch is yours to explore — from our Event Barn and Neon Moon Bar &amp; Lounge to the poolside deck and oak-shaded pastures with sweeping Hill Country views.</p>
@@ -259,7 +256,7 @@
 <section class="cta-banner" aria-label="Wedding venue information">
     <div class="cta-banner__bg" style="background-image: url('images/cta-wedding-reception.webp');" role="img" aria-label="Evening wedding reception under string lights at Rancho Moonrise with dinner tables and Hill Country sunset"></div>
     <div class="cta-banner__content fade-in">
-        <span class="section-label">Destination Weddings</span>
+        <span class="section-label reveal">Destination Weddings</span>
         <h2 style="color: var(--color-white); margin-bottom: var(--space-sm);">Your Dream Ranch Wedding</h2>
         <p style="color: rgba(255,255,255,0.8); margin-bottom: var(--space-md);">Exclusive full-ranch access for up to 200 guests. Four ceremony sites. On-site accommodations for 50. The Event Barn, Neon Moon Bar, and Texas sky — all yours.</p>
         <div class="btn-group">
@@ -273,7 +270,7 @@
 <section class="section" aria-label="Guest reviews">
     <div class="container">
         <div class="testimonial fade-in">
-            <span class="section-label">Guest Reviews</span>
+            <span class="section-label reveal">Guest Reviews</span>
             <p class="testimonial__quote">The most magical place we've ever stayed. The tents are gorgeous, the staff is incredible, and waking up on the ranch with coffee and Hill Country views — nothing compares. We've already booked our next trip.</p>
             <p class="testimonial__attr">— Google Review, 5 Stars</p>
         </div>
@@ -288,7 +285,7 @@
 <section class="section section--cream" aria-label="About glamping near Austin Texas">
     <div class="container">
         <div style="max-width: 760px; margin: 0 auto;">
-            <span class="section-label">Glamping Near Austin, TX</span>
+            <span class="section-label reveal">Glamping Near Austin, TX</span>
             <h2>The Best Glamping Near Austin, Texas</h2>
             <p>Rancho Moonrise is Austin's premier glamping destination — located in Manor, TX, just 20 minutes from downtown Austin. The property spans 20 acres and offers 20 units including luxury safari tents and hand-crafted cabins, each with air conditioning, heating, and private fire pits. Unlike traditional camping, every accommodation comes fully furnished with a comfortable bed, mini fridge, and toiletries included.</p>
             <p>Guests can access the resort-style pool, General Store, and Neon Moon Bar &amp; Lounge during their stay. The ranch is family-friendly, pet-friendly (one dog up to 60 lbs, $50 fee), and checks in between 4–8 PM daily. Reservations book directly through Cloudbeds with real-time availability.</p>
@@ -305,7 +302,7 @@
 <section class="section section--dark" aria-label="Upcoming events">
     <div class="container">
         <div class="text-center" style="margin-bottom: var(--space-lg);">
-            <span class="section-label">What's Happening</span>
+            <span class="section-label reveal">What's Happening</span>
             <h2>Upcoming Events</h2>
         </div>
 
@@ -342,7 +339,7 @@
 <section class="cta-banner" aria-label="Book your stay">
     <div class="cta-banner__bg" style="background-image: url('images/cta-campfire-night.webp');" role="img" aria-label="Guests around a campfire at night at Rancho Moonrise with safari tents and starry sky in background"></div>
     <div class="cta-banner__content fade-in">
-        <span class="section-label">Your Escape Awaits</span>
+        <span class="section-label reveal">Your Escape Awaits</span>
         <h2 style="color: var(--color-white); margin-bottom: var(--space-sm);">Ready to Experience the Ranch?</h2>
         <p style="color: rgba(255,255,255,0.8); margin-bottom: var(--space-md);">Safari tents, cabins, pool, live music, and 20 acres of Texas sky. Check availability and book direct for the best rates.</p>
         <a href="https://hotels.cloudbeds.com/en/reservation/5tzv1r" class="btn btn--primary" target="_blank" rel="noopener">Check Availability</a>
@@ -408,5 +405,24 @@
 <!-- ============ SCRIPTS ============ -->
 <script src="js/main.js" defer></script>
 
+
+<!-- Mobile Sticky CTA -->
+<div class="mobile-cta">
+    <a href="https://hotels.cloudbeds.com/en/reservation/5tzv1r" target="_blank" rel="noopener">Book Your Stay</a>
+</div>
+
+<!-- Scroll Reveal -->
+<script>
+(function() {
+    var reveals = document.querySelectorAll('.reveal');
+    if (!reveals.length) return;
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) entry.target.classList.add('is-visible');
+        });
+    }, { threshold: 0.15 });
+    reveals.forEach(function(el) { observer.observe(el); });
+})();
+</script>
 </body>
 </html>

@@ -12,9 +12,9 @@
     <meta property="og:url" content="https://ranchomoonrise.com/events/">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"></noscript>
-    <link rel="stylesheet" href="../css/styles.css?v=2">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"></noscript>
+    <link rel="stylesheet" href="../css/styles.css?v=3">
 
     <script type="application/ld+json">
     [{
@@ -65,18 +65,15 @@
 
 <nav class="nav" role="navigation" aria-label="Main navigation">
     <div class="nav__inner">
-        <ul class="nav__links nav__links--left">
-            <li><a href="/pages/accommodations.html">Accommodations</a></li>
-            <li><a href="/pages/weddings.html">Weddings</a></li>
-            <li><a href="/pages/events.html" aria-current="page">Events</a></li>
-            <li><a href="/pages/host-your-event.html">Private Events</a></li>
-        </ul>
-
         <a href="/" class="nav__logo" aria-label="Rancho Moonrise — Home">
             <img src="/images/logo.webp" alt="Rancho Moonrise" class="nav__logo-img" width="200" height="186">
         </a>
 
-        <ul class="nav__links nav__links--right">
+        <ul class="nav__links">
+            <li><a href="/pages/accommodations.html">Accommodations</a></li>
+            <li><a href="/pages/weddings.html">Weddings</a></li>
+            <li><a href="/pages/events.html" aria-current="page">Events</a></li>
+            <li><a href="/pages/host-your-event.html">Private Events</a></li>
             <li><a href="/pages/contact.html">Contact</a></li>
             <li><a href="https://hotels.cloudbeds.com/en/reservation/5tzv1r" class="btn btn--primary" target="_blank" rel="noopener">Book Now</a></li>
             <li><a href="https://www.resortpass.com/hotels/rancho-moonrise" class="btn btn--primary" target="_blank" rel="noopener">Pool Passes</a></li>
@@ -103,7 +100,7 @@
 
 <header class="page-header">
     <div class="container">
-        <span class="section-label">What's Happening</span>
+        <span class="section-label reveal">What's Happening</span>
         <h1>Upcoming Events</h1>
         <p>Live music, yoga, crawfish boils, wellness retreats, and seasonal celebrations — all on the ranch.</p>
     </div>
@@ -295,7 +292,7 @@
 <section class="cta-banner" aria-label="Stay and attend events">
     <div class="cta-banner__bg" style="background-image: url('../images/cta-music-night.webp');" role="img" aria-label="Live music performance at night under string lights at Rancho Moonrise with audience"></div>
     <div class="cta-banner__content fade-in">
-        <span class="section-label">Make It a Weekend</span>
+        <span class="section-label reveal">Make It a Weekend</span>
         <h2 style="color: var(--color-white); margin-bottom: var(--space-sm);">Stay the Night, Catch the Show</h2>
         <p style="color: rgba(255,255,255,0.8); margin-bottom: var(--space-md);">Book a cabin or safari tent and turn any event into a full ranch weekend. No driving — just walk back to your tent under the stars.</p>
         <a href="https://hotels.cloudbeds.com/en/reservation/5tzv1r" class="btn btn--primary" target="_blank" rel="noopener">Book Your Stay</a>
@@ -525,6 +522,25 @@
 
     // Initial render
     renderCalendar(currentYear, currentMonth);
+})();
+</script>
+
+<!-- Mobile Sticky CTA -->
+<div class="mobile-cta">
+    <a href="https://hotels.cloudbeds.com/en/reservation/5tzv1r" target="_blank" rel="noopener">Book Your Stay</a>
+</div>
+
+<!-- Scroll Reveal -->
+<script>
+(function() {
+    var reveals = document.querySelectorAll('.reveal');
+    if (!reveals.length) return;
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) entry.target.classList.add('is-visible');
+        });
+    }, { threshold: 0.15 });
+    reveals.forEach(function(el) { observer.observe(el); });
 })();
 </script>
 </body>
