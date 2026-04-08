@@ -22,7 +22,8 @@ const MIME = {
 };
 
 http.createServer((req, res) => {
-    let filePath = path.join(ROOT, req.url === '/' ? 'index.html' : req.url);
+    const urlPath = req.url.split('?')[0];
+    let filePath = path.join(ROOT, urlPath === '/' ? 'index.html' : urlPath);
 
     // Try adding .html if no extension
     if (!path.extname(filePath)) {
