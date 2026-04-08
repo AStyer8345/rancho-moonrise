@@ -629,6 +629,11 @@ function starsHtml(n) {
     return '★'.repeat(n) + '☆'.repeat(5 - n);
 }
 
+function escapeHtml(str) {
+    if (!str) return '';
+    return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}
+
 function closeModal(id) {
     $('#' + id).classList.remove('is-open');
 }
@@ -702,14 +707,14 @@ async function loadEvents() {
 
     container.innerHTML = data.map(function(ev) {
         var thumb = ev.artwork_url
-            ? '<img class="content-card__thumb" src="' + ev.artwork_url + '" alt="">'
+            ? '<img class="content-card__thumb" src="' + escapeHtml(ev.artwork_url) + '" alt="">'
             : '<div class="content-card__thumb" style="display:flex;align-items:center;justify-content:center;font-size:2rem;">📅</div>';
         return '<div class="content-card">' +
             thumb +
             '<div class="content-card__info">' +
-                '<h3>' + ev.title + ' <span class="badge ' + (ev.is_active ? 'badge--active' : 'badge--inactive') + '">' + (ev.is_active ? 'Active' : 'Hidden') + '</span></h3>' +
-                '<p style="color:var(--orange);font-size:0.8rem;font-weight:600;margin-bottom:4px;">' + formatDate(ev.event_date) + (ev.event_time ? ' · ' + ev.event_time : '') + '</p>' +
-                '<p>' + (ev.description || '') + '</p>' +
+                '<h3>' + escapeHtml(ev.title) + ' <span class="badge ' + (ev.is_active ? 'badge--active' : 'badge--inactive') + '">' + (ev.is_active ? 'Active' : 'Hidden') + '</span></h3>' +
+                '<p style="color:var(--orange);font-size:0.8rem;font-weight:600;margin-bottom:4px;">' + formatDate(ev.event_date) + (ev.event_time ? ' · ' + escapeHtml(ev.event_time) : '') + '</p>' +
+                '<p>' + escapeHtml(ev.description) + '</p>' +
             '</div>' +
             '<div class="content-card__actions">' +
                 '<button class="btn btn--secondary btn--sm" onclick="editEvent(\'' + ev.id + '\')">Edit</button>' +
@@ -761,6 +766,10 @@ async function toggleEvent(id, active) {
 
 async function deleteEvent(id) {
     if (!confirm('Delete this event? This cannot be undone.')) return;
+    var { data: ev } = await sb.from('rancho_events').select('artwork_storage_path').eq('id', id).single();
+    if (ev && ev.artwork_storage_path) {
+        await sb.storage.from('rancho-moonrise').remove([ev.artwork_storage_path]);
+    }
     await sb.from('rancho_events').delete().eq('id', id);
     toast('Event deleted');
     loadEvents();
@@ -770,6 +779,9 @@ $('#eventForm').addEventListener('submit', async function(e) {
     e.preventDefault();
     var errEl = $('#eventError');
     errEl.style.display = 'none';
+    var submitBtn = this.querySelector('[type="submit"]');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Saving...';
 
     var id = $('#eventId').value;
     var file = $('#eventArtworkFile').files[0];
@@ -786,9 +798,16 @@ $('#eventForm').addEventListener('submit', async function(e) {
 
     // Upload artwork if provided
     if (file) {
+        // Remove old artwork from storage when replacing
+        if (id) {
+            var { data: old } = await sb.from('rancho_events').select('artwork_storage_path').eq('id', id).single();
+            if (old && old.artwork_storage_path) {
+                await sb.storage.from('rancho-moonrise').remove([old.artwork_storage_path]);
+            }
+        }
         var path = 'events/' + Date.now() + '-' + file.name.replace(/[^a-zA-Z0-9.-]/g, '_');
         var { error: upErr } = await sb.storage.from('rancho-moonrise').upload(path, file);
-        if (upErr) { errEl.textContent = 'Upload failed: ' + upErr.message; errEl.style.display = 'block'; return; }
+        if (upErr) { errEl.textContent = 'Upload failed: ' + upErr.message; errEl.style.display = 'block'; submitBtn.disabled = false; submitBtn.textContent = 'Save Event'; return; }
         var { data: urlData } = sb.storage.from('rancho-moonrise').getPublicUrl(path);
         row.artwork_url = urlData.publicUrl;
         row.artwork_storage_path = path;
@@ -800,6 +819,9 @@ $('#eventForm').addEventListener('submit', async function(e) {
     } else {
         result = await sb.from('rancho_events').insert(row);
     }
+
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Save Event';
 
     if (result.error) {
         errEl.textContent = result.error.message;
@@ -825,10 +847,10 @@ async function loadPhotos() {
 
     container.innerHTML = data.map(function(ph) {
         return '<div class="content-card">' +
-            '<img class="content-card__thumb" src="' + ph.public_url + '" alt="' + (ph.alt_text || '') + '">' +
+            '<img class="content-card__thumb" src="' + escapeHtml(ph.public_url) + '" alt="' + escapeHtml(ph.alt_text) + '">' +
             '<div class="content-card__info">' +
-                '<h3>' + ph.title + ' <span class="badge ' + (ph.is_active ? 'badge--active' : 'badge--inactive') + '">' + (ph.is_active ? 'Active' : 'Hidden') + '</span></h3>' +
-                '<p>' + (ph.alt_text || 'No alt text') + '</p>' +
+                '<h3>' + escapeHtml(ph.title) + ' <span class="badge ' + (ph.is_active ? 'badge--active' : 'badge--inactive') + '">' + (ph.is_active ? 'Active' : 'Hidden') + '</span></h3>' +
+                '<p>' + escapeHtml(ph.alt_text || 'No alt text') + '</p>' +
             '</div>' +
             '<div class="content-card__actions">' +
                 '<button class="btn btn--secondary btn--sm" onclick="editPhoto(\'' + ph.id + '\')">Edit</button>' +
@@ -888,6 +910,9 @@ $('#photoForm').addEventListener('submit', async function(e) {
     e.preventDefault();
     var errEl = $('#photoError');
     errEl.style.display = 'none';
+    var submitBtn = this.querySelector('[type="submit"]');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Saving...';
 
     var id = $('#photoId').value;
     var file = $('#photoFile').files[0];
@@ -900,15 +925,24 @@ $('#photoForm').addEventListener('submit', async function(e) {
     };
 
     if (file) {
+        // Remove old photo from storage when replacing
+        if (id) {
+            var { data: old } = await sb.from('rancho_photos').select('storage_path').eq('id', id).single();
+            if (old && old.storage_path) {
+                await sb.storage.from('rancho-moonrise').remove([old.storage_path]);
+            }
+        }
         var path = 'photos/' + Date.now() + '-' + file.name.replace(/[^a-zA-Z0-9.-]/g, '_');
         var { error: upErr } = await sb.storage.from('rancho-moonrise').upload(path, file);
-        if (upErr) { errEl.textContent = 'Upload failed: ' + upErr.message; errEl.style.display = 'block'; return; }
+        if (upErr) { errEl.textContent = 'Upload failed: ' + upErr.message; errEl.style.display = 'block'; submitBtn.disabled = false; submitBtn.textContent = 'Save Photo'; return; }
         var { data: urlData } = sb.storage.from('rancho-moonrise').getPublicUrl(path);
         row.public_url = urlData.publicUrl;
         row.storage_path = path;
     } else if (!id) {
         errEl.textContent = 'Please select a photo to upload.';
         errEl.style.display = 'block';
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Save Photo';
         return;
     }
 
@@ -918,6 +952,9 @@ $('#photoForm').addEventListener('submit', async function(e) {
     } else {
         result = await sb.from('rancho_photos').insert(row);
     }
+
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Save Photo';
 
     if (result.error) {
         errEl.textContent = result.error.message;
@@ -945,8 +982,8 @@ async function loadReviews() {
         return '<div class="content-card content-card--no-thumb">' +
             '<div class="content-card__info">' +
                 '<h3><span class="stars">' + starsHtml(r.stars) + '</span> <span class="badge ' + (r.is_active ? 'badge--active' : 'badge--inactive') + '">' + (r.is_active ? 'Active' : 'Hidden') + '</span></h3>' +
-                '<p style="-webkit-line-clamp:3;">\u201C' + r.quote + '\u201D</p>' +
-                '<p style="color:var(--orange);font-size:0.8rem;margin-top:4px;">' + r.attribution + '</p>' +
+                '<p style="-webkit-line-clamp:3;">\u201C' + escapeHtml(r.quote) + '\u201D</p>' +
+                '<p style="color:var(--orange);font-size:0.8rem;margin-top:4px;">' + escapeHtml(r.attribution) + '</p>' +
             '</div>' +
             '<div class="content-card__actions">' +
                 '<button class="btn btn--secondary btn--sm" onclick="editReview(\'' + r.id + '\')">Edit</button>' +
@@ -996,6 +1033,9 @@ $('#reviewForm').addEventListener('submit', async function(e) {
     e.preventDefault();
     var errEl = $('#reviewError');
     errEl.style.display = 'none';
+    var submitBtn = this.querySelector('[type="submit"]');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Saving...';
 
     var id = $('#reviewId').value;
     var row = {
@@ -1011,6 +1051,9 @@ $('#reviewForm').addEventListener('submit', async function(e) {
     } else {
         result = await sb.from('rancho_testimonials').insert(row);
     }
+
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Save Review';
 
     if (result.error) {
         errEl.textContent = result.error.message;

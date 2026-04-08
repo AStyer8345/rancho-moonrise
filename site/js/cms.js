@@ -30,6 +30,11 @@
         return dt.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
     }
 
+    function escapeHtml(str) {
+        if (!str) return '';
+        return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+    }
+
     function starsHtml(n) {
         return '★'.repeat(n);
     }
@@ -46,8 +51,8 @@
                 var cards = data.map(function (r) {
                     return '<div class="testimonial-marquee__card">' +
                         '<p class="testimonial-marquee__stars">' + starsHtml(r.stars) + '</p>' +
-                        '<p class="testimonial-marquee__quote">' + r.quote + '</p>' +
-                        '<p class="testimonial-marquee__attr">' + r.attribution + '</p>' +
+                        '<p class="testimonial-marquee__quote">' + escapeHtml(r.quote) + '</p>' +
+                        '<p class="testimonial-marquee__attr">' + escapeHtml(r.attribution) + '</p>' +
                     '</div>';
                 }).join('');
 
@@ -55,8 +60,8 @@
                 var dupes = data.map(function (r) {
                     return '<div class="testimonial-marquee__card" aria-hidden="true">' +
                         '<p class="testimonial-marquee__stars">' + starsHtml(r.stars) + '</p>' +
-                        '<p class="testimonial-marquee__quote">' + r.quote + '</p>' +
-                        '<p class="testimonial-marquee__attr">' + r.attribution + '</p>' +
+                        '<p class="testimonial-marquee__quote">' + escapeHtml(r.quote) + '</p>' +
+                        '<p class="testimonial-marquee__attr">' + escapeHtml(r.attribution) + '</p>' +
                     '</div>';
                 }).join('');
 
@@ -78,7 +83,7 @@
                     var slidesHtml = data.map(function (ev, i) {
                         return '<div class="event-slideshow__slide' + (i === 0 ? ' is-active' : '') + '">' +
                             (ev.artwork_url
-                                ? '<img src="' + ev.artwork_url + '" alt="' + ev.title + '" width="800" height="800" loading="lazy">'
+                                ? '<img src="' + escapeHtml(ev.artwork_url) + '" alt="' + escapeHtml(ev.title) + '" width="800" height="800" loading="lazy">'
                                 : '') +
                         '</div>';
                     }).join('');
@@ -100,12 +105,12 @@
                     eventsGrid.innerHTML = top3.map(function (ev) {
                         return '<div class="event-card fade-in is-visible">' +
                             (ev.artwork_url
-                                ? '<div class="event-card__img"><img src="' + ev.artwork_url + '" alt="' + ev.title + ' event artwork" width="600" height="600" loading="lazy"></div>'
+                                ? '<div class="event-card__img"><img src="' + escapeHtml(ev.artwork_url) + '" alt="' + escapeHtml(ev.title) + ' event artwork" width="600" height="600" loading="lazy"></div>'
                                 : '') +
                             '<div class="event-card__body">' +
                                 '<p class="event-card__date">' + formatDate(ev.event_date) + '</p>' +
-                                '<h3 class="event-card__title">' + ev.title + '</h3>' +
-                                '<p class="event-card__desc">' + (ev.description || '') + '</p>' +
+                                '<h3 class="event-card__title">' + escapeHtml(ev.title) + '</h3>' +
+                                '<p class="event-card__desc">' + escapeHtml(ev.description) + '</p>' +
                                 '<a href="/pages/events.html" class="event-card__link">Learn More &rarr;</a>' +
                             '</div>' +
                         '</div>';
