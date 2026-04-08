@@ -1,5 +1,14 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-08 — Weekly Content Agent Run #5
+
+- **Blog article #4 published:** "Things to Do in Manor, TX — A Local's Guide" at `/pages/things-to-do-manor-tx.html` — targets "things to do in Manor TX", "things to do near Manor Texas", "weekend getaway near Austin". Full BlogPosting schema, OG/Twitter tags, AEO Q&A section, internal links to accommodations + events pages.
+- **Blog listing updated:** Post #4 placeholder wired to live article — April 8 date, real link, updated alt text.
+- **Sitemap updated:** Added `/blog/things-to-do-manor-tx/` with `lastmod 2026-04-08`.
+- **GBP webhook triggered:** n8n post sent summarizing the Manor guide with CTA link.
+- **Social snippets created:** 3 Instagram/Facebook captions saved to `outreach/social-snippets/2026-04-08-manor-things-to-do.md`.
+- **Events check:** All April events (Lone Star Party Apr 11, Bridal Sip & See Apr 12, Free Friday Apr 24, Yoga & Mimosas Apr 26) still upcoming — no removals needed.
+
 ## 2026-04-08 — Daily SEO Agent Run #4
 
 - **OG image tags added:** `og:image`, `og:image:width/height`, `twitter:card`, `twitter:title`, `twitter:description`, `twitter:image` added to weddings.html, accommodations.html, and faqs.html. Images: `wedding-hero.jpg`, `accommodation-premium-safari.jpg`, `faqs-hero.jpg`.

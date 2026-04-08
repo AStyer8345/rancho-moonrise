@@ -1,6 +1,6 @@
 # Rancho Moonrise — Project Context
 
-**Last updated:** 2026-04-08 (daily SEO agent run #4)
+**Last updated:** 2026-04-08 (weekly content agent run #5)
 
 ---
 
@@ -98,7 +98,7 @@ Advisory engagement for Rancho Moonrise — glamping, events, and retreat ranch 
 - OG/Twitter tags: all pages complete including og:image on weddings, accommodations, faqs (run #4)
 - AEO paragraphs: homepage + accommodations (run #2), weddings page (run #3)
 - FAQPage schema: expanded to all 14 questions on faqs.html (run #4)
-- Blog articles live: "Glamping Near Austin Texas" (run #2), "Wedding Venues Near Austin With Overnight Stays" (run #3), "Why Your Next Corporate Retreat Should Be at a Ranch" (run #4)
+- Blog articles live: "Glamping Near Austin Texas" (run #2), "Wedding Venues Near Austin With Overnight Stays" (run #3), "Why Your Next Corporate Retreat Should Be at a Ranch" (run #4), "Things to Do in Manor, TX" (run #5)
 - GBP: not yet claimed/completed (requires Adam's Google account)
 - Sitemap not yet submitted to Google Search Console (requires Adam's UI access)
 
@@ -128,9 +128,9 @@ Advisory engagement for Rancho Moonrise — glamping, events, and retreat ranch 
 3. Build proper deal summary for Christopher with real numbers
 4. Explore Hog Eye Rd acquisition path simultaneously
 5. (Website) Submit sitemap.xml to Google Search Console — requires Adam's UI access
-6. (Website) Blog article #4 — "Best Things to Do in Manor, TX — A Local's Guide"
-7. (Website) Internal link from host-your-event.html to new corporate retreat blog article
-8. (Website) AEO paragraph on host-your-event.html targeting "private event venue near austin"
+6. (Website) Internal link from host-your-event.html to corporate retreat blog article
+7. (Website) AEO paragraph on host-your-event.html targeting "private event venue near austin"
+8. (Website) Blog article #5 — "Glamping vs. Camping: What's the Difference?" (next up)
 
 ---
 

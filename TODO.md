@@ -12,7 +12,8 @@
 - [ ] Build proper deal summary for Christopher — real numbers, ownership structure, growth thesis
 - [ ] Explore Hog Eye Rd acquisition: comp analysis, offer strategy at $650-750K, deed restriction review
 - [ ] GBP: Claim profile, add business description, complete hours, add direct booking link
-- [ ] Blog: Write first SEO article — "glamping near austin texas"
+- [x] Blog: Write first SEO article — "glamping near austin texas" (2026-04-07)
+- [x] Blog article #4 — "Things to Do in Manor, TX — A Local's Guide" (2026-04-08)
 
 ## Backlog (someday/maybe)
 
