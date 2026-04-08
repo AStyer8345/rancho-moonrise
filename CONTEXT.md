@@ -114,7 +114,9 @@ Advisory engagement for Rancho Moonrise — glamping, events, and retreat ranch 
 - Mobile sticky "Book Your Stay" CTA bar pinned to bottom
 - Pool Passes in nav (links to ResortPass), FAQs + Blog footer-only
 - Events page: list + calendar view toggle (calendar default on desktop, list on mobile)
-- CSS cache busted to ?v=4 across all pages
+- Event artwork slideshow: 6 event posters cycle in Wellness section (4s autoplay, dot nav)
+- Testimonial marquee: horizontal CSS-only infinite scroll (6 reviews, edge fades, pause on hover)
+- CSS cache busted to ?v=5 across all pages
 
 ---
 

@@ -1,5 +1,11 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-07 — Event Slideshow + Review Marquee
+
+- **Event artwork slideshow:** Wellness section now cycles through 6 event posters (yoga, lone star party, mother's day, bridal sip & see, rancho rodeo, paella dinner) with dot navigation, autoplay every 4s, pause-on-hover. Uses `object-fit: contain` so artwork isn't cropped.
+- **Testimonial marquee scroller:** Reviews section replaced with horizontal CSS-only infinite scrolling ticker (6 cards + 6 duplicates for seamless loop). Edge fade gradients, pause on hover, responsive card sizing. Pattern matches Styer Mortgage site.
+- **Cache bust:** All CSS links updated to ?v=5
+
 ## 2026-04-07 — Homepage Redesign + Live Site Alignment
 
 - **Logo bigger + shadow box:** 72px default with box-shadow, shrinks to 44px on scroll (was 44px/38px)
