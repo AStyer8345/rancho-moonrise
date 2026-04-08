@@ -259,5 +259,5 @@ Follows a clear formula: hook → description → schedule details → CTA. Emoj
 | Star rating | 4.9 / 122 reviews on Google |
 | Capacity | 20 units, sleeps ~50. Events up to 200. |
 | Pet policy | Welcome, $50 fee, 60 lb limit, 1 per reservation |
-| Check-in | 4-8 PM |
+| Check-in | 3-5 PM |
 | Check-out | 11 AM |
