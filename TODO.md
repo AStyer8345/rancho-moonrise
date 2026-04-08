@@ -30,3 +30,8 @@
 - [ ] Submit sitemap to Google Search Console — requires Adam's Google account UI access
 - [ ] Blog article #2 — "Unique Wedding Venues Near Austin With Overnight Stays" (high search volume)
 - [ ] AEO paragraphs: add to weddings page targeting "wedding venue manor tx" queries
+- [x] Logo in nav header (2026-04-07)
+- [x] Pool Passes in top nav (2026-04-07)
+- [x] FAQs + Blog moved to footer nav only (2026-04-07)
+- [x] Events page: calendar + list view toggle (2026-04-07)
+- [x] Mobile responsiveness audit + fixes (2026-04-07)

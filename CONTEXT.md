@@ -101,6 +101,14 @@ Advisory engagement for Rancho Moonrise — glamping, events, and retreat ranch 
 - GBP: not yet claimed/completed (requires Adam's Google account)
 - Sitemap not yet submitted to Google Search Console (requires Adam's UI access)
 
+## Website UI Status (updated 2026-04-07)
+
+- Logo added to nav header across all pages
+- Pool Passes added to top nav (links to ResortPass)
+- FAQs + Blog moved from top nav to footer-only
+- Events page: list + calendar view toggle (calendar default on desktop, list on mobile)
+- Mobile responsiveness: tightened spacing, font sizes, button layout for < 640px and < 400px
+
 ---
 
 ## What's Next
@@ -109,8 +117,7 @@ Advisory engagement for Rancho Moonrise — glamping, events, and retreat ranch 
 2. Determine real buyout number from operating agreement terms
 3. Build proper deal summary for Christopher with real numbers
 4. Explore Hog Eye Rd acquisition path simultaneously
-5. (Website) Add AEO paragraphs to homepage and accommodations page
-6. (Website) Submit sitemap.xml to Google Search Console
+5. (Website) Submit sitemap.xml to Google Search Console
 
 ---
 

@@ -2,6 +2,14 @@
 
 ---
 
+## 2026-04-07 — Adam Running Point on Christopher (Not Nancy)
+
+**Decision:** Adam handles all communication and deal presentation to Christopher, the potential incoming 45% partner.
+
+**Why:** Nancy deferred to Adam. Christopher will want real numbers, a professional deal summary, and a structured conversation — not a casual owner pitch. Nancy is the idea person, not the numbers person. A clean, credible presentation increases the odds Christopher commits.
+
+---
+
 ## 2026-04-06 — Static HTML/CSS/JS (No Framework)
 
 **Decision:** Pure HTML/CSS/JS with no build step. No React, no Next.js, no WordPress.

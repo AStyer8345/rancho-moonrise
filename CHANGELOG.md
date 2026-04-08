@@ -1,5 +1,13 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-07 — Website UI Updates
+
+- **Logo in header:** Added RM logo image (`logo.webp`) next to "Rancho Moonrise" text in nav across all 10 pages. Logo shrinks on scroll.
+- **Pool Passes in top nav:** Added "Pool Passes" as prominent nav item linking to ResortPass, in both desktop and mobile nav.
+- **FAQs & Blog moved to footer:** Removed from top nav and mobile menu. Both were already present in footer nav (Stay → FAQs, Celebrate → Blog).
+- **Events page redesign:** Added list/calendar view toggle. List view preserves existing card layout. Calendar view shows month grid with clickable event buttons that open a detail popup. Defaults to list on mobile, calendar on desktop.
+- **Mobile responsiveness:** Tightened section padding, button sizing, hero height, nav spacing, footer layout, and feature card aspect ratios on screens < 640px. Added full-width stacked buttons on screens < 400px.
+
 ## 2026-04-07 — Daily SEO Agent Run #2
 
 - Homepage: added AEO section "The Best Glamping Near Austin, Texas" with direct-answer paragraphs targeting AI/SGE search queries

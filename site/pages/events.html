@@ -65,14 +65,13 @@
 
 <nav class="nav" role="navigation" aria-label="Main navigation">
     <div class="nav__inner">
-        <a href="/" class="nav__logo">Rancho Moonrise</a>
+        <a href="/" class="nav__logo" aria-label="Rancho Moonrise — Home"><img src="/images/logo.webp" alt="Rancho Moonrise" class="nav__logo-img" width="40" height="37">Rancho Moonrise</a>
         <ul class="nav__links">
             <li><a href="/pages/accommodations.html">Accommodations</a></li>
             <li><a href="/pages/weddings.html">Weddings</a></li>
             <li><a href="/pages/events.html" aria-current="page">Events</a></li>
             <li><a href="/pages/host-your-event.html">Private Events</a></li>
-            <li><a href="/pages/blog.html">Blog</a></li>
-            <li><a href="/pages/faqs.html">FAQs</a></li>
+            <li><a href="https://www.resortpass.com/hotels/rancho-moonrise" target="_blank" rel="noopener">Pool Passes</a></li>
             <li><a href="/pages/contact.html">Contact</a></li>
             <li><a href="https://hotels.cloudbeds.com/en/reservation/5tzv1r" class="btn btn--primary" target="_blank" rel="noopener">Book Now</a></li>
         </ul>
@@ -81,7 +80,13 @@
 </nav>
 <div class="nav__mobile" id="mobileMenu" role="dialog" aria-label="Mobile navigation">
     <button class="nav__close" aria-label="Close navigation menu">&times;</button>
-    <a href="/">Home</a><a href="/pages/accommodations.html">Accommodations</a><a href="/pages/weddings.html">Weddings</a><a href="/pages/events.html">Events</a><a href="/pages/host-your-event.html">Private Events</a><a href="/pages/blog.html">Blog</a><a href="/pages/faqs.html">FAQs</a><a href="/pages/contact.html">Contact</a>
+    <a href="/">Home</a>
+    <a href="/pages/accommodations.html">Accommodations</a>
+    <a href="/pages/weddings.html">Weddings</a>
+    <a href="/pages/events.html">Events</a>
+    <a href="/pages/host-your-event.html">Private Events</a>
+    <a href="https://www.resortpass.com/hotels/rancho-moonrise" target="_blank" rel="noopener">Pool Passes</a>
+    <a href="/pages/contact.html">Contact</a>
     <a href="https://hotels.cloudbeds.com/en/reservation/5tzv1r" class="btn btn--primary" target="_blank" rel="noopener">Book Now</a>
 </div>
 
@@ -94,6 +99,25 @@
         <p>Live music, yoga, crawfish boils, wellness retreats, and seasonal celebrations — all on the ranch.</p>
     </div>
 </header>
+
+<!-- View Toggle -->
+<section class="section" style="padding-top: var(--space-lg); padding-bottom: 0;" aria-label="Event view options">
+    <div class="container">
+        <div class="events-view-toggle" role="tablist" aria-label="Switch event view">
+            <button class="events-view-toggle__btn is-active" role="tab" aria-selected="true" aria-controls="eventsListView" id="tabList" data-view="list">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+                List
+            </button>
+            <button class="events-view-toggle__btn" role="tab" aria-selected="false" aria-controls="eventsCalendarView" id="tabCalendar" data-view="calendar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                Calendar
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- ========== LIST VIEW ========== -->
+<div id="eventsListView" class="events-list-view is-active" role="tabpanel" aria-labelledby="tabList">
 
 <!-- April 2026 -->
 <section class="section" aria-label="April 2026 events">
@@ -232,6 +256,32 @@
     </div>
 </section>
 
+</div><!-- /events-list-view -->
+
+<!-- ========== CALENDAR VIEW ========== -->
+<div id="eventsCalendarView" class="events-calendar" role="tabpanel" aria-labelledby="tabCalendar">
+    <section class="section">
+        <div class="container">
+            <div class="calendar-nav">
+                <button class="calendar-nav__btn" id="calPrev" aria-label="Previous month">&#8249;</button>
+                <h2 class="calendar-nav__title" id="calTitle"></h2>
+                <button class="calendar-nav__btn" id="calNext" aria-label="Next month">&#8250;</button>
+            </div>
+            <div class="calendar-grid" id="calGrid"></div>
+        </div>
+    </section>
+</div>
+
+<!-- Event Detail Popup -->
+<div class="calendar-event-detail__overlay" id="eventOverlay"></div>
+<div class="calendar-event-detail" id="eventDetail" role="dialog" aria-label="Event details">
+    <button class="calendar-event-detail__close" id="eventDetailClose" aria-label="Close">&times;</button>
+    <p class="calendar-event-detail__date" id="eventDetailDate"></p>
+    <h3 class="calendar-event-detail__title" id="eventDetailTitle"></h3>
+    <p class="calendar-event-detail__desc" id="eventDetailDesc"></p>
+    <a class="calendar-event-detail__link" id="eventDetailLink" target="_blank" rel="noopener"></a>
+</div>
+
 <!-- Stay + Attend CTA -->
 <section class="cta-banner" aria-label="Stay and attend events">
     <div class="cta-banner__bg" style="background-image: url('../images/cta-music-night.webp');" role="img" aria-label="Live music performance at night under string lights at Rancho Moonrise with audience"></div>
@@ -293,5 +343,180 @@
 </footer>
 
 <script src="../js/main.js" defer></script>
+<script>
+(function () {
+    'use strict';
+
+    // ---- Event Data ----
+    var EVENTS = [
+        { date: '2026-04-11', title: 'Lone Star Party', time: '5:00 PM – 10:00 PM', desc: 'Live music by Chasen Wayne, crawfish by East Side Boilers, cold drinks, and pop-up experiences.', link: 'https://hotels.cloudbeds.com/en/reservation/5tzv1r', linkText: 'Get Tickets' },
+        { date: '2026-04-12', title: 'Bridal Sip & See — Venue Tours', time: '12:00 PM – 4:00 PM', desc: 'Mimosa service with full property tours of cabins, tents, and event spaces. Wedding package discounts for attendees.', link: '#', linkText: 'RSVP for Tour' },
+        { date: '2026-04-24', title: 'Free Friday at the Pool', time: '10:00 AM – 6:00 PM', desc: 'Last Friday of the month — free pool access with advanced RSVP. No outside beverages.', link: '/pages/contact.html?intent=general', linkText: 'RSVP Free' },
+        { date: '2026-04-26', title: 'Yoga & Bottomless Mimosas', time: '10:30 AM – 2:00 PM', desc: 'Vinyasa yoga class under the wide Texas sky followed by bottomless mimosas poolside.', link: 'https://hotels.cloudbeds.com/en/reservation/5tzv1r', linkText: 'Get Tickets' },
+        { date: '2026-05-02', title: 'Rancho Rodeo: Sun Series', time: '2:00 PM – 11:00 PM', desc: 'Monthly honky-tonk party with pool activities, live music, and the best vibes in the Austin area.', link: 'https://hotels.cloudbeds.com/en/reservation/5tzv1r', linkText: 'Get Tickets' },
+        { date: '2026-05-10', title: "Mother's Day Retreat", time: '10:00 AM – 3:00 PM', desc: 'A wellness experience for Mom — featuring rest, beauty services, and social connection on the ranch.', link: 'https://hotels.cloudbeds.com/en/reservation/5tzv1r', linkText: 'Get Tickets' },
+        { date: '2026-05-31', title: 'Yoga & Bottomless Mimosas', time: '10:30 AM – 2:00 PM', desc: 'Vinyasa yoga under the Texas sky followed by bottomless mimosas. Monthly series.', link: 'https://hotels.cloudbeds.com/en/reservation/5tzv1r', linkText: 'Get Tickets' },
+        { date: '2026-06-06', title: 'Rancho Rodeo: Sun Series', time: '2:00 PM – 11:00 PM', desc: 'The summer honky-tonk party continues. Pool, music, and ranch vibes all night long.', link: 'https://hotels.cloudbeds.com/en/reservation/5tzv1r', linkText: 'Get Tickets' },
+        { date: '2026-06-20', title: 'Paella Dinner Party', time: '5:30 PM – 8:00 PM', desc: 'Dinner party under the stars. Doors at 5:30 PM, dinner service at 7:00 PM.', link: 'https://hotels.cloudbeds.com/en/reservation/5tzv1r', linkText: 'Get Tickets' },
+        { date: '2026-06-28', title: 'Yoga & Bottomless Mimosas', time: '10:30 AM – 2:00 PM', desc: 'Monthly yoga and mimosas — the perfect way to close out June.', link: 'https://hotels.cloudbeds.com/en/reservation/5tzv1r', linkText: 'Get Tickets' }
+    ];
+
+    var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    var DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+    // ---- View Toggle ----
+    var toggleBtns = document.querySelectorAll('.events-view-toggle__btn');
+    var listView = document.getElementById('eventsListView');
+    var calView = document.getElementById('eventsCalendarView');
+
+    function setView(view) {
+        toggleBtns.forEach(function (btn) {
+            var isActive = btn.getAttribute('data-view') === view;
+            btn.classList.toggle('is-active', isActive);
+            btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        });
+        if (view === 'list') {
+            listView.classList.add('is-active');
+            calView.classList.remove('is-active');
+        } else {
+            listView.classList.remove('is-active');
+            calView.classList.add('is-active');
+        }
+    }
+
+    toggleBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            setView(this.getAttribute('data-view'));
+        });
+    });
+
+    // Default: list on mobile, calendar on desktop
+    if (window.innerWidth >= 960) {
+        setView('calendar');
+    }
+
+    // ---- Calendar ----
+    var calGrid = document.getElementById('calGrid');
+    var calTitle = document.getElementById('calTitle');
+    var calPrev = document.getElementById('calPrev');
+    var calNext = document.getElementById('calNext');
+    var currentYear = 2026;
+    var currentMonth = 3; // April (0-indexed)
+
+    function getEventsForDate(year, month, day) {
+        var dateStr = year + '-' + String(month + 1).padStart(2, '0') + '-' + String(day).padStart(2, '0');
+        return EVENTS.filter(function (e) { return e.date === dateStr; });
+    }
+
+    function renderCalendar(year, month) {
+        calTitle.textContent = MONTHS[month] + ' ' + year;
+        calGrid.innerHTML = '';
+
+        // Day headers
+        DAYS.forEach(function (day) {
+            var header = document.createElement('div');
+            header.className = 'calendar-grid__header';
+            header.textContent = day;
+            calGrid.appendChild(header);
+        });
+
+        var firstDay = new Date(year, month, 1).getDay();
+        var daysInMonth = new Date(year, month + 1, 0).getDate();
+        var today = new Date();
+        var todayDate = today.getDate();
+        var todayMonth = today.getMonth();
+        var todayYear = today.getFullYear();
+
+        // Empty cells before first day
+        for (var i = 0; i < firstDay; i++) {
+            var empty = document.createElement('div');
+            empty.className = 'calendar-grid__cell calendar-grid__cell--empty';
+            calGrid.appendChild(empty);
+        }
+
+        // Day cells
+        for (var d = 1; d <= daysInMonth; d++) {
+            var cell = document.createElement('div');
+            cell.className = 'calendar-grid__cell';
+
+            if (d === todayDate && month === todayMonth && year === todayYear) {
+                cell.classList.add('calendar-grid__cell--today');
+            }
+
+            var dayNum = document.createElement('div');
+            dayNum.className = 'calendar-grid__day';
+            dayNum.textContent = d;
+            cell.appendChild(dayNum);
+
+            var dayEvents = getEventsForDate(year, month, d);
+            dayEvents.forEach(function (evt) {
+                var eventBtn = document.createElement('button');
+                eventBtn.className = 'calendar-grid__event';
+                eventBtn.textContent = evt.title;
+                eventBtn.addEventListener('click', function () {
+                    showEventDetail(evt);
+                });
+                cell.appendChild(eventBtn);
+            });
+
+            calGrid.appendChild(cell);
+        }
+    }
+
+    calPrev.addEventListener('click', function () {
+        currentMonth--;
+        if (currentMonth < 0) { currentMonth = 11; currentYear--; }
+        renderCalendar(currentYear, currentMonth);
+    });
+
+    calNext.addEventListener('click', function () {
+        currentMonth++;
+        if (currentMonth > 11) { currentMonth = 0; currentYear++; }
+        renderCalendar(currentYear, currentMonth);
+    });
+
+    // ---- Event Detail Popup ----
+    var detailEl = document.getElementById('eventDetail');
+    var overlayEl = document.getElementById('eventOverlay');
+    var detailDate = document.getElementById('eventDetailDate');
+    var detailTitle = document.getElementById('eventDetailTitle');
+    var detailDesc = document.getElementById('eventDetailDesc');
+    var detailLink = document.getElementById('eventDetailLink');
+    var detailClose = document.getElementById('eventDetailClose');
+
+    function showEventDetail(evt) {
+        var parts = evt.date.split('-');
+        var monthName = MONTHS[parseInt(parts[1], 10) - 1];
+        detailDate.textContent = monthName + ' ' + parseInt(parts[2], 10) + ' \u00B7 ' + evt.time;
+        detailTitle.textContent = evt.title;
+        detailDesc.textContent = evt.desc;
+        detailLink.href = evt.link;
+        detailLink.textContent = evt.linkText + ' \u2192';
+        if (evt.link.startsWith('http')) {
+            detailLink.setAttribute('target', '_blank');
+            detailLink.setAttribute('rel', 'noopener');
+        } else {
+            detailLink.removeAttribute('target');
+            detailLink.removeAttribute('rel');
+        }
+        detailEl.classList.add('is-open');
+        overlayEl.classList.add('is-open');
+    }
+
+    function closeEventDetail() {
+        detailEl.classList.remove('is-open');
+        overlayEl.classList.remove('is-open');
+    }
+
+    detailClose.addEventListener('click', closeEventDetail);
+    overlayEl.addEventListener('click', closeEventDetail);
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeEventDetail();
+    });
+
+    // Initial render
+    renderCalendar(currentYear, currentMonth);
+})();
+</script>
 </body>
 </html>
