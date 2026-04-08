@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rancho Moonrise — Design Mockup Preview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* ========== PROPOSED NEW DESIGN TOKENS ========== */
+        :root {
+            --color-bg: #F5F2ED;          /* Sand (was #fff) */
+            --color-bg-card: #ffffff;
+            --color-text: #333333;         /* Charcoal (was #3d3830) */
+            --color-text-muted: #7a7168;
+            --color-heading: #2a2520;
+            --color-orange: #c9944a;
+            --color-orange-dark: #a67832;
+            --color-terracotta: #C4704B;   /* NEW accent */
+            --color-sage: #8B9E82;         /* NEW accent */
+            --color-cream: #f5f0e8;
+            --color-white: #ffffff;
+            --color-dark: #1a1a1a;
+
+            --font-heading: 'Playfair Display', Georgia, serif;
+            --font-body: 'Montserrat', 'Helvetica Neue', sans-serif; /* Was Lato */
+            --font-accent: 'Cormorant Garamond', Georgia, serif;
+
+            /* 20% more spacing */
+            --space-xs: 10px;
+            --space-sm: 20px;
+            --space-md: 30px;
+            --space-lg: 58px;
+            --space-xl: 96px;
+            --space-2xl: 144px;
+
+            --max-width: 1200px;
+            --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --transition: 0.3s var(--ease);
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--color-text);
+            background: var(--color-bg);
+            line-height: 1.7;
+            font-size: 16px;
+            overflow-x: hidden;
+        }
+
+        img { max-width: 100%; height: auto; display: block; }
+
+        /* ========== NAV — Glassmorphism ========== */
+        .nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            padding: 6px 0;
+            background: rgba(201, 148, 74, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            transition: all 0.4s var(--ease);
+        }
+
+        .nav--scrolled {
+            background: rgba(201, 148, 74, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+            padding: 4px 0;
+        }
+
+        .nav__inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+            display: flex;
+            align-items: center;
+        }
+
+        .nav__logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+
+        .nav__logo-img {
+            height: 44px;
+            width: auto;
+            background: white;
+            border-radius: 6px;
+            padding: 3px;
+            transition: height var(--transition);
+        }
+
+        .nav--scrolled .nav__logo-img {
+            height: 38px;
+        }
+
+        .nav__links {
+            display: flex;
+            list-style: none;
+            gap: var(--space-sm);
+            align-items: center;
+            margin-left: auto;
+        }
+
+        .nav__links li a {
+            font-family: var(--font-body);
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--color-white);
+            text-decoration: none;
+            padding: 6px 0;
+            position: relative;
+            transition: color var(--transition);
+        }
+
+        .nav--scrolled .nav__links li a {
+            color: var(--color-white);
+        }
+
+        .nav__links li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: currentColor;
+            transition: width var(--transition);
+        }
+        .nav__links li a:hover::after { width: 100%; }
+
+        /* Outline-style buttons */
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            font-family: var(--font-body);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: 1px solid;
+            background: transparent;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s var(--ease);
+        }
+
+        .btn--primary {
+            border-color: var(--color-white);
+            color: var(--color-white);
+        }
+        .btn--primary:hover {
+            background: var(--color-orange);
+            color: var(--color-white);
+            border-color: var(--color-orange);
+        }
+
+        .nav__links .btn--primary {
+            padding: 10px 24px;
+            border-color: var(--color-white);
+            color: var(--color-white);
+        }
+        .nav--scrolled .nav__links .btn--primary {
+            border-color: var(--color-white);
+            color: var(--color-white);
+        }
+        .nav__links .btn--primary:hover {
+            background: var(--color-orange);
+            color: var(--color-white);
+            border-color: var(--color-orange);
+        }
+
+        .btn--outline {
+            border-color: var(--color-white);
+            color: var(--color-white);
+        }
+        .btn--outline:hover {
+            background: var(--color-orange);
+            color: var(--color-white);
+            border-color: var(--color-orange);
+        }
+
+        .btn--dark {
+            border-color: var(--color-heading);
+            color: var(--color-heading);
+        }
+        .btn--dark:hover {
+            background: var(--color-heading);
+            color: var(--color-white);
+        }
+
+        .btn-group {
+            display: flex;
+            gap: var(--space-sm);
+            flex-wrap: wrap;
+        }
+
+        /* ========== HERO ========== */
+        .hero {
+            position: relative;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero__bg {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center 40%;
+            background-repeat: no-repeat;
+        }
+
+        .hero__bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(0,0,0,0.10) 0%,
+                rgba(0,0,0,0.20) 50%,
+                rgba(0,0,0,0.50) 100%
+            );
+        }
+
+        .hero__content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 var(--space-md);
+        }
+
+        .hero__label {
+            font-family: var(--font-body);
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--color-white);
+            display: block;
+            margin-bottom: var(--space-sm);
+        }
+
+        .hero__title {
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 400;
+            color: var(--color-white);
+            line-height: 1.1;
+            margin-bottom: var(--space-md);
+        }
+
+        .hero__subtitle {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 300;
+            color: rgba(255,255,255,0.85);
+            line-height: 1.8;
+            max-width: 600px;
+            margin: 0 auto var(--space-lg);
+            letter-spacing: 0.5px;
+        }
+
+        /* ========== SECTION LABELS ========== */
+        .section-label {
+            font-family: var(--font-body);
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--color-orange);
+            display: block;
+            margin-bottom: var(--space-xs);
+        }
+
+        /* ========== FEATURES / CARDS ========== */
+        .section { padding: var(--space-2xl) 0; }
+        .container { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--space-md); }
+
+        .section--center { text-align: center; }
+        .section--center h2 { margin-bottom: var(--space-sm); }
+        .section--center p { max-width: 600px; margin: 0 auto var(--space-xl); color: var(--color-text-muted); }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-md);
+        }
+
+        /* Asymmetrical grid */
+        .features--asym {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto;
+        }
+        .features--asym .feature-card:first-child {
+            grid-row: 1 / 3;
+        }
+
+        .feature-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+            background: var(--color-bg-card);
+            transition: transform var(--transition);
+        }
+        .feature-card:hover { transform: translateY(-4px); }
+
+        .feature-card__img {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            border-radius: 4px 4px 0 0;
+        }
+
+        .features--asym .feature-card:first-child .feature-card__img {
+            aspect-ratio: auto;
+            height: 100%;
+            border-radius: 4px 0 0 4px;
+        }
+
+        .feature-card__body {
+            padding: var(--space-md);
+        }
+
+        .feature-card__body h3 {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            color: var(--color-heading);
+        }
+
+        .feature-card__body p {
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+            margin: 0;
+        }
+
+        /* ========== SPLIT SECTION ========== */
+        .split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-xl);
+            align-items: center;
+        }
+
+        .split__image {
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .split__image img {
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .split__content h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            margin-bottom: var(--space-sm);
+            color: var(--color-heading);
+        }
+
+        .split__content p {
+            color: var(--color-text-muted);
+            margin-bottom: var(--space-md);
+        }
+
+        /* ========== DIVIDER ========== */
+        .divider {
+            width: 60px;
+            height: 1px;
+            background: var(--color-orange);
+            margin: var(--space-lg) auto;
+        }
+
+        /* ========== SCROLL ANIMATION ========== */
+        .reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            background: #1e1b16;
+            color: rgba(255,255,255,0.6);
+            padding: var(--space-xl) 0 var(--space-lg);
+            font-size: 0.85rem;
+        }
+        .footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
+        .footer a:hover { color: var(--color-white); }
+
+        /* ========== MOBILE STICKY CTA ========== */
+        .mobile-cta {
+            display: none;
+            position: fixed;
+            bottom: 0; left: 0; right: 0;
+            z-index: 999;
+            background: var(--color-orange);
+            padding: 12px var(--space-md);
+            text-align: center;
+        }
+        .mobile-cta a {
+            color: var(--color-white);
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-cta { display: block; }
+            .features { grid-template-columns: 1fr; }
+            .features--asym { grid-template-columns: 1fr; }
+            .features--asym .feature-card:first-child { grid-row: auto; }
+            .features--asym .feature-card:first-child .feature-card__img {
+                aspect-ratio: 4 / 3;
+                height: auto;
+                border-radius: 4px 4px 0 0;
+            }
+            .split { grid-template-columns: 1fr; gap: var(--space-lg); }
+            .nav__links { display: none; }
+            body { padding-bottom: 52px; }
+        }
+
+        /* ========== COMPARISON BANNER ========== */
+        .compare-banner {
+            position: sticky;
+            top: 0;
+            z-index: 2000;
+            background: #1e1b16;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+<div class="compare-banner">PROPOSED DESIGN MOCKUP — NOT LIVE</div>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+    <div class="nav__inner">
+        <a href="#" class="nav__logo">
+            <img src="/images/logo.webp" alt="Rancho Moonrise" class="nav__logo-img">
+        </a>
+        <ul class="nav__links">
+            <li><a href="#">Accommodations</a></li>
+            <li><a href="#">Weddings</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Private Events</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#" class="btn btn--primary">Book Now</a></li>
+            <li><a href="#" class="btn btn--primary">Pool Passes</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero__bg" style="background-image: url('/images/hero-ranch-sunset.webp');"></div>
+    <div class="hero__content">
+        <span class="hero__label">Manor, Texas — 20 Minutes from Austin</span>
+        <h1 class="hero__title">Austin's Premier Glamping &amp; Events Ranch</h1>
+        <p class="hero__subtitle">Luxury safari tents, hand-crafted cabins, destination weddings, and unforgettable events — all on 20 acres of Texas Hill Country.</p>
+        <div class="btn-group" style="justify-content: center;">
+            <a href="#" class="btn btn--primary">Book Your Stay</a>
+            <a href="#" class="btn btn--outline">Plan a Wedding</a>
+        </div>
+    </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section">
+    <div class="container section--center">
+        <span class="section-label reveal">Experience the Ranch</span>
+        <h2 class="reveal">Where Comfort Meets the Outdoors</h2>
+        <p class="reveal">Kick back, relax, and dream under a blanket of Texas sky.</p>
+
+        <div class="features reveal">
+            <div class="feature-card">
+                <img src="/images/feature-safari-tent.webp" class="feature-card__img" alt="Safari tent" loading="lazy">
+                <div class="feature-card__body">
+                    <h3>Safari Tents &amp; Cabins</h3>
+                    <p>A/C, heat, private fire pits — glamping without compromise.</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <img src="/images/feature-pool.webp" class="feature-card__img" alt="Pool" loading="lazy">
+                <div class="feature-card__body">
+                    <h3>Pool &amp; Spa</h3>
+                    <p>Day passes available — swim, lounge, unwind.</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <img src="/images/feature-music.webp" class="feature-card__img" alt="Live music" loading="lazy">
+                <div class="feature-card__body">
+                    <h3>Live Music &amp; Events</h3>
+                    <p>Concerts, yoga, sound baths, and seasonal celebrations.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SPLIT — ABOUT -->
+<section class="section">
+    <div class="container">
+        <div class="split reveal">
+            <div class="split__image">
+                <img src="/images/about-ranch-aerial.webp" alt="Aerial view of ranch" loading="lazy">
+            </div>
+            <div class="split__content">
+                <span class="section-label">About the Ranch</span>
+                <h2>20 Acres of Texas Magic</h2>
+                <p>Rancho Moonrise is Austin's first full-service glamping and events property — a working ranch where luxury meets the land. Located in Manor, TX, just 20 minutes from downtown Austin.</p>
+                <a href="#" class="btn btn--dark">Explore Accommodations</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ASYMMETRIC GRID DEMO -->
+<section class="section">
+    <div class="container section--center">
+        <span class="section-label reveal">Destination Weddings</span>
+        <h2 class="reveal">Your Dream Ranch Wedding</h2>
+        <p class="reveal">Exclusive full-ranch access for up to 200 guests. Four ceremony sites. On-site accommodations for 50.</p>
+
+        <div class="features features--asym reveal">
+            <div class="feature-card">
+                <img src="/images/hero-ranch-sunset.webp" class="feature-card__img" alt="Wedding venue" loading="lazy">
+            </div>
+            <div class="feature-card">
+                <img src="/images/feature-music.webp" class="feature-card__img" alt="Reception" loading="lazy">
+                <div class="feature-card__body">
+                    <h3>Event Barn &amp; Neon Moon Bar</h3>
+                    <p>Indoor and outdoor ceremony options with full bar service.</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <img src="/images/feature-safari-tent.webp" class="feature-card__img" alt="Guest stays" loading="lazy">
+                <div class="feature-card__body">
+                    <h3>50 Overnight Stays</h3>
+                    <p>Your guests stay on-site in luxury tents and cabins.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER TEASER -->
+<footer class="footer">
+    <div class="container" style="text-align: center;">
+        <p style="color: rgba(255,255,255,0.4); letter-spacing: 2px; text-transform: uppercase; font-size: 0.7rem;">End of mockup preview</p>
+    </div>
+</footer>
+
+<!-- MOBILE STICKY CTA -->
+<div class="mobile-cta">
+    <a href="#">Book Your Stay</a>
+</div>
+
+<script>
+// Scroll handler — nav glassmorphism transition
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+    nav.classList.toggle('nav--scrolled', window.scrollY > 60);
+});
+
+// Reveal on scroll
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+        }
+    });
+}, { threshold: 0.15 });
+reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

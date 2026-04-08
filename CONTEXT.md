@@ -142,6 +142,18 @@ Advisory engagement for Rancho Moonrise — glamping, events, and retreat ranch 
 | `DECISIONS.md` | Architecture and deal decisions |
 | `TODO.md` | Prioritized open work |
 | `ARCHITECTURE.md` | Website tech reference |
+| `sync-to-notebooklm.sh` | Syncs /deal and /brand folders to NotebookLM |
+
+## Document Organization
+
+| Folder | Purpose |
+|--------|---------|
+| `/deal` | Financial docs, operating agreement, title, permits, appraisals |
+| `/brand` | Brand assets, logo, photos, voice guide |
+
+**NotebookLM notebook:** `f2e7baf6-e0f2-4b29-93af-4f5ae09303bf` (Rancho Moonrise)
+- Currently seeded: CONTEXT.md, VOICE-GUIDE.md
+- Sync: drop files in /deal or /brand, then run `./sync-to-notebooklm.sh`
 
 ---
 
