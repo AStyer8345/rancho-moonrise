@@ -37,7 +37,7 @@
     <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"></noscript>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="css/styles.css?v=3">
+    <link rel="stylesheet" href="css/styles.css?v=4">
 
     <!-- Favicon placeholder -->
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -154,7 +154,7 @@
 <main id="main">
 <section class="hero hero--slideshow" aria-label="Welcome to Rancho Moonrise">
     <div class="hero__slide is-active" style="background-image: url('images/hero-ranch-sunset.webp');" aria-hidden="false"></div>
-    <div class="hero__slide" data-bg="images/feature-pool.webp" aria-hidden="true"></div>
+    <div class="hero__slide" data-bg="images/feature-pool.webp" data-pos="center" aria-hidden="true"></div>
     <div class="hero__slide" data-bg="images/feature-music.webp" aria-hidden="true"></div>
     <div class="hero__slide" data-bg="images/about-ranch-aerial.webp" aria-hidden="true"></div>
     <div class="hero__slide" data-bg="images/feature-safari-tent.webp" aria-hidden="true"></div>
@@ -182,53 +182,86 @@
     </div>
 </section>
 
-<!-- ============ FEATURES GRID ============ -->
-<section id="explore" class="section" aria-label="What we offer">
-    <div class="container text-center">
-        <span class="section-label reveal">Experience the Ranch</span>
-        <h2>Where Comfort Meets the Outdoors</h2>
-        <p class="accent-text" style="max-width: 600px; margin: var(--space-sm) auto var(--space-lg);">Kick back, relax, and dream under a blanket of Texas sky.</p>
+<!-- ============ CABINS & TENTS ============ -->
+<section id="explore" class="section" aria-label="Accommodations">
+    <div class="container">
+        <div class="split">
+            <div class="split__image fade-in">
+                <img src="images/feature-safari-tent.webp" alt="Interior of a luxury safari tent with queen bed, string lights, and air conditioning at Rancho Moonrise" width="800" height="477" loading="lazy">
+            </div>
+            <div class="split__content fade-in">
+                <span class="section-label reveal">Cabins &amp; Safari Tents</span>
+                <h2>Glamping Without Compromise</h2>
+                <p>20 luxury accommodations across hand-crafted cabins and safari tents — each with A/C, heat, private fire pits, and real beds. Wake up to Hill Country views and fall asleep under a blanket of Texas stars.</p>
+                <p><strong>Family-friendly. Pet-friendly. Fully furnished.</strong></p>
+                <div class="btn-group" style="justify-content: flex-start;">
+                    <a href="https://hotels.cloudbeds.com/en/reservation/5tzv1r" class="btn btn--outline-gold" target="_blank" rel="noopener">Book Your Stay</a>
+                    <a href="/pages/accommodations.html" class="btn btn--dark">View All Units</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-        <div class="features">
-            <a href="/pages/accommodations.html" class="feature-card fade-in">
-                <img class="feature-card__img" src="images/feature-safari-tent.webp" alt="Interior of a luxury safari tent with queen bed, string lights, and air conditioning at Rancho Moonrise glamping near Austin TX" width="600" height="450" loading="lazy">
-                <div class="feature-card__content">
-                    <h3 class="feature-card__title">Safari Tents &amp; Cabins</h3>
-                    <p class="feature-card__desc">A/C, heat, private fire pits — glamping without compromise.</p>
+<!-- ============ EVENT BARN & NEON MOON ============ -->
+<section class="section section--dark" aria-label="Venues">
+    <div class="container">
+        <div class="text-center" style="margin-bottom: var(--space-lg);">
+            <span class="section-label reveal">Our Venues</span>
+            <h2>The Event Barn &amp; Neon Moon</h2>
+        </div>
+        <div class="venue-duo">
+            <a href="/pages/host-your-event.html" class="venue-duo__card fade-in">
+                <img src="images/venue-event-barn.webp" alt="Rancho Moonrise Event Barn set up for dinner with long tables and modern ranch decor" width="800" height="600" loading="lazy">
+                <div class="venue-duo__overlay">
+                    <h3>The Event Barn</h3>
+                    <p>Climate-controlled, flexible layouts for weddings, corporate retreats, and private celebrations up to 200 guests.</p>
+                    <span class="btn btn--primary" style="align-self: flex-start;">Explore the Barn &rarr;</span>
                 </div>
             </a>
-
-            <a href="/pages/weddings.html" class="feature-card fade-in">
-                <img class="feature-card__img" src="images/feature-wedding.webp" alt="Outdoor wedding ceremony at Rancho Moonrise with string lights, rustic arch, and Hill Country backdrop near Austin TX" width="600" height="450" loading="lazy">
-                <div class="feature-card__content">
-                    <h3 class="feature-card__title">Weddings</h3>
-                    <p class="feature-card__desc">Exclusive ranch access, 200+ guests, 50 overnight stays.</p>
+            <a href="/pages/host-your-event.html" class="venue-duo__card fade-in">
+                <img src="images/venue-neon-moon.webp" alt="Neon Moon Bar and Lounge at Rancho Moonrise with string lights and cocktail atmosphere" width="800" height="600" loading="lazy">
+                <div class="venue-duo__overlay">
+                    <h3>Neon Moon Bar &amp; Lounge</h3>
+                    <p>Full bar service in a one-of-a-kind setting — cocktail hours, live music, and celebrations that go late.</p>
+                    <span class="btn btn--primary" style="align-self: flex-start;">See the Neon Moon &rarr;</span>
                 </div>
             </a>
+        </div>
+    </div>
+</section>
 
-            <a href="/pages/events.html" class="feature-card fade-in">
-                <img class="feature-card__img" src="images/feature-music.webp" alt="Live music performance at Neon Moon Bar and Lounge at Rancho Moonrise with string lights and crowd" width="600" height="450" loading="lazy">
-                <div class="feature-card__content">
-                    <h3 class="feature-card__title">Live Music &amp; Events</h3>
-                    <p class="feature-card__desc">Concerts, yoga, sound baths, and seasonal celebrations.</p>
-                </div>
-            </a>
+<!-- ============ RANCH WEDDINGS ============ -->
+<section class="cta-banner" aria-label="Wedding venue information">
+    <div class="cta-banner__bg" style="background-image: url('images/cta-wedding-reception.webp');" role="img" aria-label="Evening wedding reception under string lights at Rancho Moonrise with dinner tables and Hill Country sunset"></div>
+    <div class="cta-banner__content fade-in">
+        <span class="section-label reveal">Ranch Weddings</span>
+        <h2 style="color: var(--color-white); margin-bottom: var(--space-sm);">Your Dream Wedding Under Texas Sky</h2>
+        <p style="color: rgba(255,255,255,0.8); margin-bottom: var(--space-md);">Exclusive full-ranch access for up to 200 guests. Four ceremony sites. On-site accommodations for 50. The Event Barn, Neon Moon Bar, and a sunset you'll never forget — all yours.</p>
+        <div class="btn-group">
+            <a href="/pages/weddings.html" class="btn btn--primary">View Wedding Packages</a>
+            <a href="/pages/contact.html?intent=wedding" class="btn btn--outline">Request a Quote</a>
+        </div>
+    </div>
+</section>
 
-            <a href="/pages/host-your-event.html" class="feature-card fade-in">
-                <img class="feature-card__img" src="images/feature-event-barn.webp" alt="Rancho Moonrise Event Barn set up for a corporate retreat with long tables and modern ranch decor" width="600" height="450" loading="lazy">
-                <div class="feature-card__content">
-                    <h3 class="feature-card__title">Private Events</h3>
-                    <p class="feature-card__desc">Corporate retreats, birthdays, and full ranch buyouts.</p>
+<!-- ============ WELLNESS & EXPERIENCES ============ -->
+<section class="section" aria-label="Wellness and experiences">
+    <div class="container">
+        <div class="split split--reverse">
+            <div class="split__image fade-in">
+                <img src="images/event-yoga-mimosas.webp" alt="Outdoor yoga session at Rancho Moonrise with Hill Country views" width="800" height="600" loading="lazy">
+            </div>
+            <div class="split__content fade-in">
+                <span class="section-label reveal">Wellness &amp; Experiences</span>
+                <h2>More Than a Place to Stay</h2>
+                <p>Yoga under the oaks, sound baths at sunset, crawfish boils, paint nights, and live music every month. Rancho Moonrise is a full weekend destination — not just a place to sleep.</p>
+                <p>Check the calendar for upcoming events or book your stay and discover what's happening during your visit.</p>
+                <div class="btn-group" style="justify-content: flex-start;">
+                    <a href="/pages/events.html" class="btn btn--outline-gold">View All Events</a>
+                    <a href="https://www.resortpass.com/hotels/rancho-moonrise" class="btn btn--dark" target="_blank" rel="noopener">Pool Passes</a>
                 </div>
-            </a>
-
-            <a href="https://www.resortpass.com/hotels/rancho-moonrise" class="feature-card fade-in" target="_blank" rel="noopener">
-                <img class="feature-card__img" src="images/feature-pool.webp" alt="Resort-style swimming pool with lounge chairs surrounded by oak trees at Rancho Moonrise glamping ranch" width="600" height="450" loading="lazy">
-                <div class="feature-card__content">
-                    <h3 class="feature-card__title">Pool &amp; Spa</h3>
-                    <p class="feature-card__desc">Day passes available — swim, lounge, unwind.</p>
-                </div>
-            </a>
+            </div>
         </div>
     </div>
 </section>
@@ -243,25 +276,10 @@
             <div class="split__content fade-in">
                 <span class="section-label reveal">About the Ranch</span>
                 <h2>20 Acres of Texas Magic</h2>
-                <p>Rancho Moonrise is Austin's first full-service glamping and events property — a working ranch where luxury meets the land. Located in Manor, TX, just 20 minutes from downtown Austin, we offer overnight stays in safari tents and hand-crafted cabins, each with A/C, heat, and private fire pits.</p>
-                <p>Whether you're planning a destination wedding, a corporate retreat, or a weekend escape, the ranch is yours to explore — from our Event Barn and Neon Moon Bar &amp; Lounge to the poolside deck and oak-shaded pastures with sweeping Hill Country views.</p>
-                <p><strong>Family-friendly. Pet-friendly. Unforgettable.</strong></p>
+                <p>Rancho Moonrise is Austin's first full-service glamping and events property — located in Manor, TX, just 20 minutes from downtown Austin. The property spans 20 acres with safari tents, cabins, a resort-style pool, the Event Barn, and the Neon Moon Bar &amp; Lounge.</p>
+                <p>Whether you're planning a destination wedding, a corporate retreat, or a weekend escape with friends, the ranch is yours to explore.</p>
                 <a href="/pages/accommodations.html" class="btn btn--outline-gold">Explore Accommodations</a>
             </div>
-        </div>
-    </div>
-</section>
-
-<!-- ============ WEDDINGS CTA ============ -->
-<section class="cta-banner" aria-label="Wedding venue information">
-    <div class="cta-banner__bg" style="background-image: url('images/cta-wedding-reception.webp');" role="img" aria-label="Evening wedding reception under string lights at Rancho Moonrise with dinner tables and Hill Country sunset"></div>
-    <div class="cta-banner__content fade-in">
-        <span class="section-label reveal">Destination Weddings</span>
-        <h2 style="color: var(--color-white); margin-bottom: var(--space-sm);">Your Dream Ranch Wedding</h2>
-        <p style="color: rgba(255,255,255,0.8); margin-bottom: var(--space-md);">Exclusive full-ranch access for up to 200 guests. Four ceremony sites. On-site accommodations for 50. The Event Barn, Neon Moon Bar, and Texas sky — all yours.</p>
-        <div class="btn-group">
-            <a href="/pages/weddings.html" class="btn btn--primary">View Wedding Packages</a>
-            <a href="/pages/contact.html" class="btn btn--outline">Request a Quote</a>
         </div>
     </div>
 </section>
@@ -281,6 +299,58 @@
     </div>
 </section>
 
+<!-- ============ UPCOMING EVENTS (with artwork) ============ -->
+<section class="section section--dark" aria-label="Upcoming events">
+    <div class="container">
+        <div class="text-center" style="margin-bottom: var(--space-lg);">
+            <span class="section-label reveal">What's Happening</span>
+            <h2>Upcoming Events</h2>
+        </div>
+
+        <div class="events-grid">
+            <div class="event-card fade-in">
+                <div class="event-card__img">
+                    <img src="images/event-lone-star-party.webp" alt="Lone Star Party event artwork" width="600" height="600" loading="lazy">
+                </div>
+                <div class="event-card__body">
+                    <p class="event-card__date">April 11, 2026</p>
+                    <h3 class="event-card__title">Lone Star Party</h3>
+                    <p class="event-card__desc">Live music by Chasen Wayne, crawfish by East Side Boilers, cold drinks, and pop-up experiences.</p>
+                    <a href="/pages/events.html" class="event-card__link">Learn More &rarr;</a>
+                </div>
+            </div>
+
+            <div class="event-card fade-in">
+                <div class="event-card__img">
+                    <img src="images/event-bridal-sip-see.webp" alt="Bridal Sip and See event artwork" width="600" height="600" loading="lazy">
+                </div>
+                <div class="event-card__body">
+                    <p class="event-card__date">April 12, 2026</p>
+                    <h3 class="event-card__title">Bridal Sip &amp; See</h3>
+                    <p class="event-card__desc">Mimosa service, property tours, and wedding package discounts for engaged couples.</p>
+                    <a href="/pages/events.html" class="event-card__link">Learn More &rarr;</a>
+                </div>
+            </div>
+
+            <div class="event-card fade-in">
+                <div class="event-card__img">
+                    <img src="images/event-yoga-mimosas.webp" alt="Yoga and Bottomless Mimosas event artwork" width="600" height="600" loading="lazy">
+                </div>
+                <div class="event-card__body">
+                    <p class="event-card__date">April 26, 2026</p>
+                    <h3 class="event-card__title">Yoga &amp; Bottomless Mimosas</h3>
+                    <p class="event-card__desc">Vinyasa yoga under the Texas sky followed by bottomless mimosas poolside.</p>
+                    <a href="/pages/events.html" class="event-card__link">Learn More &rarr;</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center" style="margin-top: var(--space-lg);">
+            <a href="/pages/events.html" class="btn btn--outline-gold">View All Events</a>
+        </div>
+    </div>
+</section>
+
 <!-- ============ AEO: GLAMPING NEAR AUSTIN ============ -->
 <section class="section section--cream" aria-label="About glamping near Austin Texas">
     <div class="container">
@@ -294,43 +364,6 @@
                 <a href="https://hotels.cloudbeds.com/en/reservation/5tzv1r" class="btn btn--primary" target="_blank" rel="noopener">Check Availability</a>
                 <a href="/pages/accommodations.html" class="btn btn--outline">View Accommodations</a>
             </div>
-        </div>
-    </div>
-</section>
-
-<!-- ============ UPCOMING EVENTS ============ -->
-<section class="section section--dark" aria-label="Upcoming events">
-    <div class="container">
-        <div class="text-center" style="margin-bottom: var(--space-lg);">
-            <span class="section-label reveal">What's Happening</span>
-            <h2>Upcoming Events</h2>
-        </div>
-
-        <div class="events-grid">
-            <div class="event-card fade-in">
-                <p class="event-card__date">April 11, 2026</p>
-                <h3 class="event-card__title">Lone Star Party</h3>
-                <p class="event-card__desc">Live music by Chasen Wayne, crawfish by East Side Boilers, cold drinks, and pop-up experiences.</p>
-                <a href="/pages/events.html" class="event-card__link">Learn More &rarr;</a>
-            </div>
-
-            <div class="event-card fade-in">
-                <p class="event-card__date">April 12, 2026</p>
-                <h3 class="event-card__title">Bridal Sip &amp; See</h3>
-                <p class="event-card__desc">Mimosa service, property tours, and wedding package discounts for engaged couples.</p>
-                <a href="/pages/events.html" class="event-card__link">Learn More &rarr;</a>
-            </div>
-
-            <div class="event-card fade-in">
-                <p class="event-card__date">April 26, 2026</p>
-                <h3 class="event-card__title">Yoga &amp; Bottomless Mimosas</h3>
-                <p class="event-card__desc">Vinyasa yoga under the Texas sky followed by bottomless mimosas poolside.</p>
-                <a href="/pages/events.html" class="event-card__link">Learn More &rarr;</a>
-            </div>
-        </div>
-
-        <div class="text-center" style="margin-top: var(--space-lg);">
-            <a href="/pages/events.html" class="btn btn--outline-gold">View All Events</a>
         </div>
     </div>
 </section>

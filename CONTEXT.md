@@ -104,16 +104,17 @@ Advisory engagement for Rancho Moonrise — glamping, events, and retreat ranch 
 ## Website UI Status (updated 2026-04-07)
 
 - **Design overhaul**: "Modern Desert / Boutique Ranch" aesthetic applied
-- Nav: orange glassmorphism (semi-transparent + blur), compact, logo left with white background
-- Buttons: outline-style with orange fill on hover
-- Background: sand (#F5F2ED), body font switched from Lato to Montserrat
-- Cards: 4px border-radius, no box shadows, lift-on-hover
-- Hero: lighter overlay, 85vh height
+- Nav: orange glassmorphism, logo with shadow box (72px default → 44px scrolled)
+- Nav buttons (Book Now, Pool Passes): white background + orange text
+- Homepage restructured: dedicated sections for Cabins & Tents, Event Barn & Neon Moon duo, Ranch Weddings CTA, Wellness & Experiences
+- Event cards now include artwork images (Lone Star Party, Bridal Sip & See, Yoga & Mimosas)
+- Slideshow: improved positioning for near-square images (`background-position: center 30%`)
+- Background: sand (#F5F2ED), body font Montserrat, headings Playfair Display
 - Scroll reveal fade-in-up animations on sections
 - Mobile sticky "Book Your Stay" CTA bar pinned to bottom
 - Pool Passes in nav (links to ResortPass), FAQs + Blog footer-only
 - Events page: list + calendar view toggle (calendar default on desktop, list on mobile)
-- CSS cache busted to ?v=3 across all pages
+- CSS cache busted to ?v=4 across all pages
 
 ---
 
@@ -124,6 +125,7 @@ Advisory engagement for Rancho Moonrise — glamping, events, and retreat ranch 
 3. Build proper deal summary for Christopher with real numbers
 4. Explore Hog Eye Rd acquisition path simultaneously
 5. (Website) Submit sitemap.xml to Google Search Console
+6. (Website) Continue refining homepage to closer match live site patterns
 
 ---
 

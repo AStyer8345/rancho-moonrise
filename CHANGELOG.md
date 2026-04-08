@@ -1,5 +1,19 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-07 — Homepage Redesign + Live Site Alignment
+
+- **Logo bigger + shadow box:** 72px default with box-shadow, shrinks to 44px on scroll (was 44px/38px)
+- **Nav buttons filled:** Book Now and Pool Passes now white background + orange text (was outline)
+- **Slideshow zoom fix:** Default `background-position: center 30%` + per-slide `data-pos` attribute for near-square images
+- **Homepage restructured** to match live site with dedicated showcase sections:
+  - Cabins & Safari Tents (split section with image + CTAs)
+  - Event Barn & Neon Moon (venue duo cards side-by-side)
+  - Ranch Weddings (full-width CTA banner)
+  - Wellness & Experiences (reverse split with yoga image)
+- **Event cards with artwork:** Upcoming events now display event poster images (Lone Star Party, Bridal Sip & See, Yoga & Mimosas)
+- **Venue duo CSS component:** New `.venue-duo` two-column card layout with image overlay
+- **Cache bust:** All CSS links updated to ?v=4
+
 ## 2026-04-07 — "Modern Desert" Design Overhaul
 
 - **Orange glassmorphism nav:** Semi-transparent orange bar with backdrop-blur, compact height (~41px), logo left-aligned with white background and rounded corners
