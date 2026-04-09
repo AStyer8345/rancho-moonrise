@@ -24,7 +24,8 @@
 - [x] OG/Twitter tags: completed across all core pages including og:site_name + og:locale (2026-04-09)
 - [x] AEO paragraph: host-your-event.html targeting "private event venue near austin" (2026-04-09)
 - [x] Internal link: host-your-event → corporate retreat blog (2026-04-09)
-- [ ] Blog article #5 — candidates: "Best Glamping Spots Near Austin" or "How to Plan a Bachelorette Party in Austin"
+- [x] Blog article #5 — "Bachelorette Party in Austin, Texas — The Complete Planning Guide" (2026-04-09)
+- [ ] Blog article #6 — candidates: "Best Glamping Spots Near Austin", "Planning a Ranch Wedding in Texas: What Couples Should Know", "Glamping vs Camping"
 - [ ] GBP: Claim profile, add business description, complete hours, add direct booking link
 
 ## Backlog (someday/maybe)

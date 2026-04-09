@@ -1,5 +1,11 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-09 — SEO Run #7: Blog Article #5 + Blog Page Cleanup
+
+- **bachelorette-party-austin-texas.html:** New blog article published — "Bachelorette Party in Austin, Texas — The Complete Planning Guide". Targets high-intent query "bachelorette party Austin Texas". Includes AEO block (4 direct-answer paragraphs), BlogPosting schema, full OG + Twitter Card. CTAs → contact page (private event inquiry) + accommodations. Related links → private events, accommodations, weddings.
+- **blog.html:** Removed "Blog Launching Soon" placeholder block. Replaced two placeholder post cards (posts 5 & 6) with live article #5 entry (bachelorette guide). Blog grid now shows 5 live published articles.
+- **sitemap.xml:** Added `/blog/bachelorette-party-austin-texas/` entry (lastmod 2026-04-09). Updated `/blog/` lastmod to 2026-04-09.
+
 ## 2026-04-09 — SEO Run #6: OG Completion + Host-Your-Event AEO
 
 - **events.html:** Added full OG block (og:image, og:site_name, og:locale) + Twitter Card — page had zero social sharing metadata before this run.
