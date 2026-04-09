@@ -1,5 +1,16 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-09 — Live Audit + SEO/AEO Strategy
+
+- Live-verified all platforms: GBP, TripAdvisor, Yelp, Hipcamp, Instagram, WeddingWire, TheKnot, ResortPass, Expedia, Facebook
+- Created metrics baseline (`brand/2026-04-09-metrics-baseline.md`) with verified data
+- Updated improvement plan: marked Tasks 4, 6, 10 as DONE; updated Tasks 1, 2, 5, 7, 27 with verified findings
+- Added 8 SEO/AEO tasks (S1-S8) to improvement plan — blog splitting, AEO summaries, schema, topical clusters, pool page, GSC, tracking, blog-to-GBP automation
+- Created `tasks/seo-aeo/` folder with master-agent, backlog, agent-rules, session-log, blockers
+- Created scheduled task `rancho-seo-aeo-weekly` — Mon/Wed/Fri at 5 AM
+- Key findings: live site has broken SEO ("COMING SOON" meta desc, malformed schema, no H1s), not ranking for any non-brand query, not cited by any AI engine
+- Rewrote CONTEXT.md (was 217 lines, now under 80), cleaned TODO.md with Now/Next/Backlog
+
 ## 2026-04-09 — SEO Run #7: Blog Article #5 + Blog Page Cleanup
 
 - **bachelorette-party-austin-texas.html:** New blog article published — "Bachelorette Party in Austin, Texas — The Complete Planning Guide". Targets high-intent query "bachelorette party Austin Texas". Includes AEO block (4 direct-answer paragraphs), BlogPosting schema, full OG + Twitter Card. CTAs → contact page (private event inquiry) + accommodations. Related links → private events, accommodations, weddings.
