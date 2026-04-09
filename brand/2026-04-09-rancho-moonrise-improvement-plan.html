@@ -302,6 +302,62 @@
 
 <div class="divider"></div>
 
+
+<!-- ===== SEO/AEO ===== -->
+<h2><span class="phase-label">SEO/AEO</span>Search & AI Visibility — Ongoing</h2>
+<p class="phase-dates">Starts immediately &middot; Ongoing weekly &middot; Accelerates after DNS cutover</p>
+<p class="section-intro">Rancho Moonrise does NOT rank for any non-brand search query. "Best glamping near Austin," "wedding venues Austin TX ranch," "pool day pass Austin" — zero presence. AI answer engines (ChatGPT, Perplexity, Google AI Overviews) don't cite Rancho Moonrise at all. The Vercel site has good schema and page structure — but it's not live yet. Launching the new site on the main domain is the single biggest SEO/AEO unlock.</p>
+
+<div class="task">
+  <div class="task-header"><span class="task-num">S1</span><span class="task-title">Split blog posts into individual pages with unique URLs</span></div>
+  <div class="task-meta"><span class="tag tag-owner-claude">Claude</span><span class="tag tag-audit">SEO: F → C</span></div>
+  <p class="task-desc">All 6 blog posts live on a single blog.html page — Google can't index them individually. Each post needs its own HTML file in site/blog/ with Article schema, canonical URL, meta description, and links back to the blog index. Blog index gets CollectionPage schema. This is a prerequisite for any blog SEO.</p>
+</div>
+
+<div class="task">
+  <div class="task-header"><span class="task-num">S2</span><span class="task-title">Add answer-first H2 summaries to key pages</span></div>
+  <div class="task-meta"><span class="tag tag-owner-claude">Claude</span><span class="tag tag-audit">AEO</span></div>
+  <p class="task-desc">AI engines extract the first sentence after each H2. Currently, page content buries the answer. Add a direct, extractable answer in the first sentence of every H2 section on: glamping page, weddings page, corporate retreat page, accommodations page. Example: "Rancho Moonrise is a 34-acre glamping ranch 20 minutes from downtown Austin with luxury safari tents, cabins, a pool, and event spaces for up to 200 guests."</p>
+</div>
+
+<div class="task">
+  <div class="task-header"><span class="task-num">S3</span><span class="task-title">Build topical authority clusters with internal linking</span></div>
+  <div class="task-meta"><span class="tag tag-owner-claude">Claude</span><span class="tag tag-audit">SEO + AEO</span></div>
+  <p class="task-desc">Pages exist but don't interlink deeply. Build three clusters: (1) Glamping cluster: glamping page ↔ packing guide ↔ glamping vs camping ↔ Austin outdoor activities, (2) Wedding cluster: weddings ↔ ranch wedding tips ↔ wedding venues near Austin ↔ bachelorette, (3) Events cluster: events ↔ corporate retreats ↔ host your event ↔ things to do Manor TX. Each page should link to 3-5 related pages with contextual anchor text.</p>
+</div>
+
+<div class="task">
+  <div class="task-header"><span class="task-num">S4</span><span class="task-title">Add BreadcrumbList + SpeakableSpecification schema</span></div>
+  <div class="task-meta"><span class="tag tag-owner-claude">Claude</span><span class="tag tag-audit">AEO</span></div>
+  <p class="task-desc">Add BreadcrumbList schema to all subpages (Home > Glamping > ...). Add SpeakableSpecification to homepage, glamping, weddings, and corporate pages — this tells AI engines exactly which text blocks are quotable answers. Also add AggregateRating schema pulling from the 127 Google reviews (4.9★).</p>
+</div>
+
+<div class="task">
+  <div class="task-header"><span class="task-num">S5</span><span class="task-title">Create "Pool Day Pass Austin" dedicated page</span></div>
+  <div class="task-meta"><span class="tag tag-owner-claude">Claude</span><span class="tag tag-audit">SEO + Revenue</span></div>
+  <p class="task-desc">ResortPass already ranks for "pool day pass Austin" with a Rancho Moonrise listing. Own this query directly with a dedicated page on the new site — pricing, hours (10AM-6PM), what's included, photos, link to ResortPass booking. This is high-margin, low-effort revenue with search demand.</p>
+</div>
+
+<div class="task">
+  <div class="task-header"><span class="task-num">S6</span><span class="task-title">Post-launch: Google Search Console + sitemap + indexing</span></div>
+  <div class="task-meta"><span class="tag tag-owner-adam">Adam</span><span class="tag tag-owner-claude">Claude</span><span class="tag tag-audit">SEO: F → B</span></div>
+  <p class="task-desc">After DNS cutover: (1) Set up Google Search Console for ranchomoonrise.com, (2) Submit XML sitemap, (3) Request indexing of all key pages, (4) Set up redirect map from old BofillTech URLs, (5) Monitor indexing weekly — all pages should be indexed within 14 days. This is the moment everything built above starts working.</p>
+</div>
+
+<div class="task">
+  <div class="task-header"><span class="task-num">S7</span><span class="task-title">AEO baseline + monthly tracking</span></div>
+  <div class="task-meta"><span class="tag tag-owner-claude">Claude</span><span class="tag tag-auto">AUTO</span><span class="tag tag-audit">AEO</span></div>
+  <p class="task-desc">Baseline (April 9, 2026): Rancho Moonrise is NOT cited in any AI answer engine for non-brand queries. Monthly task: query ChatGPT, Perplexity, and Google AI Overviews for all 10 target keywords and log whether Rancho Moonrise appears. Track competitors who DO appear. Target: cited in at least 3 of 10 queries within 90 days of site launch.</p>
+</div>
+
+<div class="task">
+  <div class="task-header"><span class="task-num">S8</span><span class="task-title">Blog-to-GBP automation</span></div>
+  <div class="task-meta"><span class="tag tag-owner-claude">Claude</span><span class="tag tag-auto">AUTO</span><span class="tag tag-audit">GBP + SEO</span></div>
+  <p class="task-desc">Every new blog post should automatically generate a GBP post with a summary + link back to the full article. Build as a scheduled task or n8n workflow that monitors the blog directory for new files and creates a GBP post within 24 hours of publishing.</p>
+</div>
+
+<div class="divider"></div>
+
 <!-- ===== SCHEDULED TASKS ===== -->
 <h2><span class="phase-label">Automation</span>Claude Scheduled Tasks</h2>
 <p class="section-intro">These run automatically on a schedule. Adam or Ashley provides raw materials (photos, updates, guest data); Claude handles the rest.</p>
