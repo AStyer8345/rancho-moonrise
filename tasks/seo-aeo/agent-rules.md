@@ -28,3 +28,7 @@ When you complete a backlog item that corresponds to a task in the improvement p
 - Also update the "Last updated" line in the plan header
 - Copy the updated file to `site/improvement-plan.html` so the Vercel deployment updates
 - Git commit and push so the live URL refreshes
+
+
+## Rule 8: Read voice guide before writing ANY content
+Before writing blog posts, meta descriptions, FAQ answers, AEO paragraphs, page copy, or any text that will appear on the site or GBP, ALWAYS read `/Users/adamstyer/Documents/rancho-moonrise/brand/voice-guide.md` first. The voice is authentic, Texan, laid-back — NOT corporate, NOT slick, NOT generic hospitality language. Ashley specifically rejected "modern/computerized" tone. If your content could appear on any hotel website, it's wrong.

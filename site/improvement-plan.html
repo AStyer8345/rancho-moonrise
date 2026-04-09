@@ -65,6 +65,36 @@
   .checklist { list-style: none; padding-left: 44px; margin-top: 8px; }
   .checklist li { font-size: 0.85rem; color: #A89F94; padding: 3px 0; }
   .checklist li::before { content: "☐ "; color: #D4A574; }
+
+  /* Metrics Dashboard */
+  .metrics-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 24px 0; }
+  @media (max-width: 700px) { .metrics-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 440px) { .metrics-grid { grid-template-columns: 1fr; } }
+  .metric-card { background: #1A1A1A; border-radius: 10px; padding: 16px 20px; }
+  .metric-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; color: #8B7D6B; margin-bottom: 6px; }
+  .metric-value { font-size: 1.6rem; font-weight: 700; color: #E8E0D4; }
+  .metric-change { font-size: 0.75rem; margin-top: 4px; }
+  .metric-change.up { color: #4ECDC4; }
+  .metric-change.down { color: #D4714E; }
+  .metric-change.flat { color: #8B7D6B; }
+  .metric-sub { font-size: 0.72rem; color: #5A5A5A; margin-top: 2px; }
+
+  .metrics-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 0.82rem; }
+  .metrics-table th { text-align: left; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px; color: #8B7D6B; padding: 10px 12px; border-bottom: 1px solid #333; }
+  .metrics-table td { padding: 10px 12px; border-bottom: 1px solid #1F1F1F; color: #A89F94; }
+  .metrics-table td:first-child { color: #E8E0D4; font-weight: 600; }
+  .metrics-table .baseline-col { color: #8B7D6B; }
+  .metrics-table .current-col { color: #E8E0D4; font-weight: 700; }
+  .metrics-table .delta-up { color: #4ECDC4; font-weight: 600; }
+  .metrics-table .delta-down { color: #D4714E; font-weight: 600; }
+  .metrics-table .delta-flat { color: #8B7D6B; }
+  .metrics-cat { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1.5px; color: #D4A574; padding-top: 16px !important; border-bottom: 1px solid #333 !important; }
+
+  .search-rank { display: inline-block; background: #222; padding: 2px 8px; border-radius: 4px; font-size: 0.78rem; font-weight: 600; }
+  .rank-none { color: #D4714E; }
+  .rank-low { color: #C9842B; }
+  .rank-mid { color: #6B8E5B; }
+  .rank-top { color: #4ECDC4; }
 </style>
 </head>
 <body>
@@ -330,7 +360,7 @@
 <div class="task">
   <div class="task-header"><span class="task-num">S4</span><span class="task-title">Add BreadcrumbList + SpeakableSpecification schema</span></div>
   <div class="task-meta"><span class="tag tag-owner-claude">Claude</span><span class="tag tag-audit">AEO</span></div>
-  <p class="task-desc">Add BreadcrumbList schema to all subpages (Home > Glamping > ...). Add SpeakableSpecification to homepage, glamping, weddings, and corporate pages — this tells AI engines exactly which text blocks are quotable answers. Also add AggregateRating schema pulling from the 127 Google reviews (4.9★).</p>
+  <p class="task-desc">Add BreadcrumbList schema to all subpages (Home > Glamping > ...). Add SpeakableSpecification to homepage, glamping, weddings, and corporate pages — this tells AI engines exactly which text blocks are quotable answers. Also add AggregateRating schema pulling from the 125 Google reviews (4.9★).</p>
 </div>
 
 <div class="task">
@@ -427,6 +457,96 @@
 <tr><td>HoneyBook</td><td class="grade-b">B</td><td>B</td><td>B</td><td>A</td><td>A</td></tr>
 <tr><td>Operations</td><td class="grade-c">C</td><td>C</td><td>C+</td><td>B</td><td>A</td></tr>
 </table>
+
+<div class="divider"></div>
+
+<!-- ===== METRICS DASHBOARD ===== -->
+<h2><span class="phase-label">Metrics</span>Live Tracking Dashboard</h2>
+<p class="section-intro">Baseline captured April 9, 2026. Updated weekly by scheduled tasks. Metrics that matter most are bolded. This is how we know the work is actually moving the needle.</p>
+
+<!-- Key Metrics Cards -->
+<div class="metrics-grid">
+  <div class="metric-card">
+    <div class="metric-label">Google Reviews</div>
+    <div class="metric-value">125 (4.9★)</div>
+    <div class="metric-change flat">Baseline — April 9</div>
+  </div>
+  <div class="metric-card">
+    <div class="metric-label">Instagram Followers</div>
+    <div class="metric-value">13,000</div>
+    <div class="metric-change flat">Baseline — April 9</div>
+  </div>
+  <div class="metric-card">
+    <div class="metric-label">Facebook Followers</div>
+    <div class="metric-value">864</div>
+    <div class="metric-change flat">Baseline — April 9</div>
+  </div>  <div class="metric-card">
+    <div class="metric-label">TikTok Followers</div>
+    <div class="metric-value">1,408</div>
+    <div class="metric-change flat">Baseline — April 9</div>
+  </div>
+  <div class="metric-card">
+    <div class="metric-label">AI Engine Citations</div>
+    <div class="metric-value" style="color: #D4714E;">0 / 10</div>
+    <div class="metric-change flat">Non-brand queries — April 9</div>
+  </div>
+  <div class="metric-card">
+    <div class="metric-label">Google Indexed Pages</div>
+    <div class="metric-value">~10</div>
+    <div class="metric-change flat">Old site only — April 9</div>
+  </div>
+</div>
+
+<!-- Full Metrics Table -->
+<h3>All Tracked Metrics</h3>
+
+<table class="metrics-table">
+<tr><th>Metric</th><th>Baseline (Apr 9)</th><th>Current</th><th>Change</th><th>Target (90 Day)</th></tr>
+
+<tr><td colspan="5" class="metrics-cat">Reviews &amp; Reputation</td></tr>
+<tr><td><strong>Google Reviews — count</strong></td><td class="baseline-col">125</td><td class="current-col">125</td><td class="delta-flat">—</td><td>200+</td></tr>
+<tr><td>Google Reviews — avg rating</td><td class="baseline-col">4.9★</td><td class="current-col">4.9★</td><td class="delta-flat">—</td><td>4.9★ (maintain)</td></tr><tr><td>Google Reviews — reply rate</td><td class="baseline-col">~10%</td><td class="current-col">~10%</td><td class="delta-flat">—</td><td>100%</td></tr>
+<tr><td>Facebook Reviews</td><td class="baseline-col">5 (100%)</td><td class="current-col">5</td><td class="delta-flat">—</td><td>15+</td></tr>
+<tr><td>Expedia Rating</td><td class="baseline-col">8.0</td><td class="current-col">8.0</td><td class="delta-flat">—</td><td>8.5+</td></tr>
+<tr><td>The Knot Reviews</td><td class="baseline-col">Present</td><td class="current-col">Present</td><td class="delta-flat">—</td><td>5+ reviews</td></tr>
+<tr><td>TripAdvisor</td><td class="baseline-col">Listed</td><td class="current-col">Listed</td><td class="delta-flat">—</td><td>Claimed + 10 reviews</td></tr>
+<tr><td>Hipcamp</td><td class="baseline-col">Listed</td><td class="current-col">Listed</td><td class="delta-flat">—</td><td>Updated listing + 10 reviews</td></tr>
+
+<tr><td colspan="5" class="metrics-cat">Social Media</td></tr>
+<tr><td><strong>Instagram Followers</strong></td><td class="baseline-col">13,000</td><td class="current-col">13,000</td><td class="delta-flat">—</td><td>15,000</td></tr>
+<tr><td><strong>Facebook Followers</strong></td><td class="baseline-col">864</td><td class="current-col">864</td><td class="delta-flat">—</td><td>1,500</td></tr>
+<tr><td>TikTok Followers</td><td class="baseline-col">1,408</td><td class="current-col">1,408</td><td class="delta-flat">—</td><td>3,000</td></tr>
+<tr><td>LinkedIn</td><td class="baseline-col">Page exists</td><td class="current-col">Page exists</td><td class="delta-flat">—</td><td>100+ followers</td></tr>
+<tr><td>YouTube</td><td class="baseline-col">No channel</td><td class="current-col">No channel</td><td class="delta-flat">—</td><td>Channel + 3 videos</td></tr>
+
+<tr><td colspan="5" class="metrics-cat">SEO — Search Rankings</td></tr>
+<tr><td><strong>"glamping near austin"</strong></td><td class="baseline-col"><span class="search-rank rank-none">Not ranked</span></td><td class="current-col"><span class="search-rank rank-none">Not ranked</span></td><td class="delta-flat">—</td><td>Top 10</td></tr>
+<tr><td><strong>"wedding venue Manor TX"</strong></td><td class="baseline-col"><span class="search-rank rank-none">Not ranked*</span></td><td class="current-col"><span class="search-rank rank-none">Not ranked*</span></td><td class="delta-flat">—</td><td>Top 5</td></tr>
+<tr><td>"pool day pass Austin"</td><td class="baseline-col"><span class="search-rank rank-none">Not ranked</span></td><td class="current-col"><span class="search-rank rank-none">Not ranked</span></td><td class="delta-flat">—</td><td>Top 10</td></tr><tr><td>"corporate retreat Austin"</td><td class="baseline-col"><span class="search-rank rank-none">Not ranked</span></td><td class="current-col"><span class="search-rank rank-none">Not ranked</span></td><td class="delta-flat">—</td><td>Top 20</td></tr>
+<tr><td>"things to do Manor TX"</td><td class="baseline-col"><span class="search-rank rank-none">Not ranked</span></td><td class="current-col"><span class="search-rank rank-none">Not ranked</span></td><td class="delta-flat">—</td><td>Top 10</td></tr>
+<tr><td>Google indexed pages (new site)</td><td class="baseline-col">0</td><td class="current-col">0</td><td class="delta-flat">—</td><td>14+</td></tr>
+
+<tr><td colspan="5" class="metrics-cat">AEO — AI Answer Engine Citations</td></tr>
+<tr><td><strong>ChatGPT citations (non-brand)</strong></td><td class="baseline-col"><span class="search-rank rank-none">0 / 10</span></td><td class="current-col"><span class="search-rank rank-none">0 / 10</span></td><td class="delta-flat">—</td><td>3 / 10</td></tr>
+<tr><td>Perplexity citations</td><td class="baseline-col"><span class="search-rank rank-none">0 / 10</span></td><td class="current-col"><span class="search-rank rank-none">0 / 10</span></td><td class="delta-flat">—</td><td>3 / 10</td></tr>
+<tr><td>Google AI Overviews</td><td class="baseline-col"><span class="search-rank rank-none">0 / 10</span></td><td class="current-col"><span class="search-rank rank-none">0 / 10</span></td><td class="delta-flat">—</td><td>2 / 10</td></tr>
+
+<tr><td colspan="5" class="metrics-cat">GBP Health</td></tr>
+<tr><td>Description</td><td class="baseline-col" style="color:#D4714E;">Blog post (wrong)</td><td class="current-col" style="color:#D4714E;">Blog post (wrong)</td><td class="delta-flat">—</td><td>Proper business desc</td></tr>
+<tr><td>Hours set</td><td class="baseline-col" style="color:#D4714E;">No</td><td class="current-col" style="color:#D4714E;">No</td><td class="delta-flat">—</td><td>Yes</td></tr>
+<tr><td>Q&amp;As posted</td><td class="baseline-col">0</td><td class="current-col">0</td><td class="delta-flat">—</td><td>10</td></tr>
+<tr><td>Weekly posts active</td><td class="baseline-col" style="color:#D4714E;">No</td><td class="current-col" style="color:#D4714E;">No</td><td class="delta-flat">—</td><td>Yes (automated)</td></tr>
+<tr><td>Google Chat enabled</td><td class="baseline-col" style="color:#D4714E;">No</td><td class="current-col" style="color:#D4714E;">No</td><td class="delta-flat">—</td><td>Yes</td></tr>
+<tr><td colspan="5" class="metrics-cat">Website</td></tr>
+<tr><td><strong>DNS cutover to new site</strong></td><td class="baseline-col" style="color:#D4714E;">Not done</td><td class="current-col" style="color:#D4714E;">Not done</td><td class="delta-flat">—</td><td>Complete</td></tr>
+<tr><td>Schema markup (new site)</td><td class="baseline-col" style="color:#4ECDC4;">12 / 14 pages</td><td class="current-col" style="color:#4ECDC4;">12 / 14</td><td class="delta-flat">—</td><td>14 / 14</td></tr>
+<tr><td>Blog individual URLs</td><td class="baseline-col" style="color:#D4714E;">No (single page)</td><td class="current-col" style="color:#D4714E;">No</td><td class="delta-flat">—</td><td>6 individual pages</td></tr>
+</table>
+
+<p style="font-size: 0.75rem; color: #5A5A5A; margin-top: 8px;">* "Wedding venue Manor TX" — The Knot listing for Rancho Moonrise appears at ~#9, but the direct site does not rank. Asterisk denotes third-party listing only.</p>
+<p style="font-size: 0.75rem; color: #5A5A5A;">Metrics updated by the <strong style="color:#4ECDC4;">rancho-monthly-progress</strong> and <strong style="color:#4ECDC4;">rancho-seo-aeo-weekly</strong> scheduled tasks. Last metrics update: April 9, 2026.</p>
+
+<div class="divider"></div>
 
 <div class="bottom-line">
   <p><strong>Bottom line:</strong> 27 tasks across 4 phases over 90 days. 6 scheduled automations running in the background. The biggest jumps come from Phase 1 (GBP from D to B in one week) and Phase 2 (Reviews from F to C+ with automated collection). By July 8, every area should be at an A — and most of the ongoing work will be handled by automation, not Ashley's inbox.</p>
