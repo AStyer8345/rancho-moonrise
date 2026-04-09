@@ -18,3 +18,13 @@ As of April 9 2026, the "From the owner" section on GBP contains a full article 
 
 ## Rule 6: Site not on main domain yet
 Until DNS cutover happens, all SEO work on the Vercel site is preparation only. Google Search Console, sitemap submission, and indexing monitoring cannot begin until the site is live on ranchomoonrise.com.
+
+## Rule 7: Update improvement plan HTML when completing tasks
+When you complete a backlog item that corresponds to a task in the improvement plan HTML (`brand/2026-04-09-rancho-moonrise-improvement-plan.html`), mark that task as DONE in the HTML using the same pattern as existing DONE tasks:
+- Add `style="text-decoration: line-through; opacity: 0.5;"` to the task-title span
+- Add `<span style="color:#4ECDC4; font-size: 0.85rem;">✅ DONE</span>` after the title
+- Replace the task-desc with a verified note: `<strong style="color:#4ECDC4;">Completed [date]:</strong> [what was done]`
+- Add `style="opacity: 0.5;"` to the task-desc paragraph
+- Also update the "Last updated" line in the plan header
+- Copy the updated file to `site/improvement-plan.html` so the Vercel deployment updates
+- Git commit and push so the live URL refreshes
