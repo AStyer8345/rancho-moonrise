@@ -1,5 +1,17 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-09 — Weekly Metrics: Baseline Confirmed
+
+- First automated run of `rancho-metrics-weekly` scheduled task
+- Searched all 10 target keywords live — ranchomoonrise.com not ranking for any (unchanged from baseline)
+- Confirmed review counts: Google ~125 (4.9★), Facebook 5 (100%), Expedia 8.0, TripAdvisor 0 (unclaimed), Hipcamp listed, The Knot present
+- Confirmed social: Instagram ~13K, Facebook 864, TikTok 1,408, LinkedIn page exists, YouTube no channel
+- AEO citations: 0/10 across all engines (unchanged)
+- Google indexed pages (old site): ~10; new site: 0
+- GBP health: description still blog post, hours still not set, 0 Q&As, weekly posts status unverified, Google Chat not enabled
+- Updated improvement plan HTML timestamps (both brand/ and site/ copies)
+- Committed and pushed to main — Vercel auto-deploys
+
 ## 2026-04-09 — Live Audit + SEO/AEO Strategy
 
 - Live-verified all platforms: GBP, TripAdvisor, Yelp, Hipcamp, Instagram, WeddingWire, TheKnot, ResortPass, Expedia, Facebook

@@ -37,16 +37,21 @@ Advisory engagement for Rancho Moonrise — glamping, events, and retreat ranch 
 
 ---
 
-## Key Metrics (live-verified April 9, 2026)
+## Key Metrics (confirmed April 9, 2026 — baseline week)
 
 | Metric | Value |
 |--------|-------|
-| Google reviews | 127 (4.9★) — 9/10 unreplied |
+| Google reviews | ~125 (4.9★) — 9/10 unreplied |
 | GBP views | 50,500 |
-| Instagram | 13.3K followers, 279 posts |
+| Instagram | ~13K followers, 279 posts |
+| Facebook | 864 followers, 5 reviews (100%) |
+| TikTok | 1,408 followers |
 | TripAdvisor | 0 reviews, NOT claimed |
-| Google ranking (non-brand) | NOT ranking |
-| AI engine citations | NOT cited |
+| Expedia | 8.0 rating |
+| Google ranking (non-brand) | NOT ranking (0/10 keywords) |
+| AI engine citations | NOT cited (0/10) |
+| Google indexed pages (old site) | ~10 |
+| Next metrics update | April 16, 2026 |
 
 ---
 
