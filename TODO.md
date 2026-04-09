@@ -21,6 +21,10 @@
 - [ ] Build proper deal summary for Christopher — real numbers, ownership structure, growth thesis
 - [ ] Explore Hog Eye Rd acquisition: comp analysis, offer strategy at $650-750K, deed restriction review- [x] Blog: Write first SEO article — "glamping near austin texas" (2026-04-07)
 - [x] Blog article #4 — "Things to Do in Manor, TX — A Local's Guide" (2026-04-08)
+- [x] OG/Twitter tags: completed across all core pages including og:site_name + og:locale (2026-04-09)
+- [x] AEO paragraph: host-your-event.html targeting "private event venue near austin" (2026-04-09)
+- [x] Internal link: host-your-event → corporate retreat blog (2026-04-09)
+- [ ] Blog article #5 — candidates: "Best Glamping Spots Near Austin" or "How to Plan a Bachelorette Party in Austin"
 - [ ] GBP: Claim profile, add business description, complete hours, add direct booking link
 
 ## Backlog (someday/maybe)

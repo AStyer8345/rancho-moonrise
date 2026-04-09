@@ -1,5 +1,14 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-09 — SEO Run #6: OG Completion + Host-Your-Event AEO
+
+- **events.html:** Added full OG block (og:image, og:site_name, og:locale) + Twitter Card — page had zero social sharing metadata before this run.
+- **host-your-event.html:** Added full OG block + Twitter Card. Used events-hero-barn.jpg as social image.
+- **weddings.html, accommodations.html, faqs.html:** Added og:site_name + og:locale (both missing despite having og:image + Twitter Card from prior runs).
+- **host-your-event.html:** Added AEO paragraph section (two direct-answer paragraphs targeting "private event venue near Austin" — covers location, capacity, rental models, overnight stays, exclusive-use differentiator).
+- **host-your-event.html:** Added inline internal link in Corporate Retreats card → corporate-retreat-near-austin.html blog article.
+- **sitemap.xml:** Updated lastmod to 2026-04-08 for accommodations, weddings, events, host-your-event, faqs.
+
 ## 2026-04-08 — Brand Alignment Update (2022 Brand Guide + Pinterest Direction)
 
 - **Color palette warmed to brand guide:** Background → White Denim #F2E9DB (was #F5F2ED), terracotta → Clay #B6603F (was #C4704B), amber → #C9842B (was #c9944a). Added Coral #DE8556 and Pine #31735A as new CSS variables.

@@ -1,6 +1,6 @@
 # Rancho Moonrise — Project Context
 
-**Last updated:** 2026-04-08 (operating agreement review)
+**Last updated:** 2026-04-09 (SEO run #6 — OG completion + host-your-event AEO)
 
 ---
 
@@ -134,11 +134,12 @@ Advisory engagement for Rancho Moonrise — glamping, events, and retreat ranch 
 
 ## Website SEO Status
 
-- robots.txt + sitemap.xml: created 2026-04-07, sitemap updated 2026-04-08 (run #4)
-- OG/Twitter tags: all pages complete including og:image on weddings, accommodations, faqs (run #4)
-- AEO paragraphs: homepage + accommodations (run #2), weddings page (run #3)
+- robots.txt + sitemap.xml: created 2026-04-07, sitemap updated 2026-04-09 (run #6)
+- OG/Twitter tags: all core pages complete — og:site_name + og:locale now on all pages (run #6)
+- AEO paragraphs: homepage + accommodations (run #2), weddings (run #3), host-your-event (run #6)
 - FAQPage schema: expanded to all 14 questions on faqs.html (run #4)
 - Blog articles live: "Glamping Near Austin Texas" (run #2), "Wedding Venues Near Austin With Overnight Stays" (run #3), "Why Your Next Corporate Retreat Should Be at a Ranch" (run #4), "Things to Do in Manor, TX" (run #5)
+- Internal links: host-your-event → corporate retreat blog (run #6)
 - GBP: not yet claimed/completed (requires Adam's Google account)
 - Sitemap not yet submitted to Google Search Console (requires Adam's UI access)
 ## Website UI Status (updated 2026-04-08)
