@@ -141,3 +141,15 @@
 - 8 pages: homepage, accommodations, weddings, events, host-your-event, blog, FAQs, contact, policies
 - Hero slideshow with 5 images, mobile-responsive nav
 - CSS custom properties design system, Vercel push-to-deploy
+
+## 2026-04-08 — Operating Agreement Full Review
+
+- Reviewed full 20-page LLC Company Agreement (2022-02-22) — all 10 articles
+- Key finding: transfers require Manager Unanimous Approval (Section 2.4) — Paul has veto power
+- Key finding: no buyout formula, no right of first refusal, no forced buyout mechanism
+- Key finding: valuation = fair market value determined by Board in good faith (no formula)
+- Key finding: two Manager seats — PRH Partnership LP (Herchman) and Stichter Gal LLC (Tittle)
+- Identified critical gap: Exhibit A (ownership %, units, capital contributions) NOT included in 20 pages — still missing
+- Updated CONTEXT.md with full "Operating Agreement — Key Findings" section and deal implications
+- Updated TODO.md: added Exhibit A as top priority, added post-Exhibit-A deal modeling tasks
+- Updated Active Blockers: operating agreement now reviewed, Exhibit A flagged as new blocker

@@ -2,22 +2,26 @@
 
 ## Now (this week)
 
-- [x] Share admin panel credentials with Ashley (admin@ranchomoonrise.com / RanchoMoonrise2026) — done 2026-04-08
+- [ ] **Get Exhibit A from Nancy/Ashley** — ownership percentages, unit counts, capital contributions. Not included in 20-page agreement. Cannot model buyout without it.
+- [ ] Get QuickBooks access or P&L + Balance Sheet from Nancy/Ashley — need expenses and net profit
+- [ ] Collect remaining due diligence docs: signed event contracts, staff/pay list, permits, title docs, property tax statements, appraisals
 - [ ] Get Ashley's feedback on admin panel — what else does she want to edit?
 - [ ] Ask Ashley if she has Adobe Fonts access for Americane heading font (brand guide primary)
 - [ ] Mobile layout polish — Adam flagged homepage needs rearranging on mobile
+- [x] Share admin panel credentials with Ashley (admin@ranchomoonrise.com / RanchoMoonrise2026) — done 2026-04-08
 - [x] Get operating agreement from Nancy/Ashley — done 2026-04-08, document in project folder
-- [ ] Get QuickBooks access or P&L + Balance Sheet from Nancy/Ashley — need expenses and net profit
-- [ ] Collect remaining due diligence docs: signed event contracts, staff/pay list, permits, title docs, property tax statements, appraisals
+- [x] Review full operating agreement (20 pages, 10 articles) — done 2026-04-08
 
-## Next (after that)
+## Next (after Exhibit A obtained)
 
-- [ ] Determine real buyout number from operating agreement terms (likely $1.5-2M+, not Nancy's $1.25M)
+- [ ] Calculate real buyout number using Exhibit A ownership splits + revenue data + $4.2M invested capital
+- [ ] Model Christopher's entry: ownership %, capital contribution, Manager seat assignment
+- [ ] Determine "Required Interest" threshold — majority or supermajority (check Article 1 / Exhibit A)
+- [ ] Engage lawyer to draft: transfer instrument, Exhibit A amendment, Paul's Manager resignation
 - [ ] Build proper deal summary for Christopher — real numbers, ownership structure, growth thesis
-- [ ] Explore Hog Eye Rd acquisition: comp analysis, offer strategy at $650-750K, deed restriction review
-- [ ] GBP: Claim profile, add business description, complete hours, add direct booking link
-- [x] Blog: Write first SEO article — "glamping near austin texas" (2026-04-07)
+- [ ] Explore Hog Eye Rd acquisition: comp analysis, offer strategy at $650-750K, deed restriction review- [x] Blog: Write first SEO article — "glamping near austin texas" (2026-04-07)
 - [x] Blog article #4 — "Things to Do in Manor, TX — A Local's Guide" (2026-04-08)
+- [ ] GBP: Claim profile, add business description, complete hours, add direct booking link
 
 ## Backlog (someday/maybe)
 
