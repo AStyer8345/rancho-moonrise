@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rancho Moonrise — Road to All A's</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Plus Jakarta Sans', sans-serif; background: #0D0D0D; color: #E8E0D4; line-height: 1.7; }
+  .container { max-width: 940px; margin: 0 auto; padding: 60px 24px 80px; }
+  h1 { font-family: 'DM Serif Display', serif; font-size: 2.8rem; color: #D4A574; letter-spacing: -0.5px; }
+  .subtitle { font-size: 0.9rem; color: #8B7D6B; margin-top: 8px; margin-bottom: 12px; }
+  .intro { font-size: 1rem; color: #A89F94; margin-bottom: 48px; max-width: 700px; line-height: 1.8; }
+  h2 { font-family: 'DM Serif Display', serif; font-size: 1.8rem; color: #D4A574; margin-top: 64px; margin-bottom: 8px; }
+  h2 .phase-label { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #8B7D6B; display: block; margin-bottom: 4px; }
+  .phase-dates { font-size: 0.85rem; color: #8B7D6B; margin-bottom: 28px; }
+  h3 { font-size: 1.05rem; font-weight: 700; color: #E8E0D4; margin-top: 32px; margin-bottom: 12px; padding-left: 16px; border-left: 3px solid #D4A574; }
+
+  .scorecard { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 32px 0 48px; }
+  @media (max-width: 600px) { .scorecard { grid-template-columns: 1fr; } h1 { font-size: 2rem; } }
+  .sc-card { background: #1A1A1A; border-radius: 10px; padding: 16px 20px; display: flex; align-items: center; gap: 16px; }
+  .sc-now { font-size: 1.5rem; font-weight: 700; min-width: 44px; text-align: center; }
+  .sc-arrow { color: #8B7D6B; font-size: 1.2rem; }
+  .sc-target { font-size: 1.5rem; font-weight: 700; min-width: 44px; text-align: center; color: #31735A; }
+  .sc-label { flex: 1; font-size: 0.85rem; color: #A89F94; }
+  .grade-d { color: #D4714E; }
+  .grade-c { color: #C9842B; }
+  .grade-b { color: #6B8E5B; }
+  .grade-f { color: #B6603F; }
+
+  .task { background: #1A1A1A; border-radius: 10px; padding: 20px 24px; margin-bottom: 12px; position: relative; }
+  .task-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 8px; }
+  .task-num { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: #D4A574; min-width: 32px; }
+  .task-title { font-weight: 700; font-size: 0.95rem; color: #E8E0D4; }
+  .task-meta { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 6px; margin-bottom: 8px; padding-left: 44px; }
+  .tag { display: inline-block; font-size: 0.65rem; font-weight: 700; padding: 3px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .tag-owner-adam { background: #2A1F14; color: #D4A574; }
+  .tag-owner-ashley { background: #1A2A1A; color: #7DB87D; }
+  .tag-owner-claude { background: #1A1A2E; color: #7D8EDB; }
+  .tag-owner-nancy { background: #2A1A2A; color: #DB7DB8; }
+  .tag-auto { background: #0D2A2A; color: #4ECDC4; border: 1px solid #1A3A3A; }
+  .tag-manual { background: #2A200D; color: #C9842B; }
+  .tag-audit { font-size: 0.6rem; background: #222; color: #8B7D6B; }
+  .task-desc { font-size: 0.88rem; color: #A89F94; padding-left: 44px; line-height: 1.6; }
+  .task-impact { font-size: 0.8rem; color: #8B7D6B; padding-left: 44px; margin-top: 8px; font-style: italic; }
+
+  .divider { height: 1px; background: linear-gradient(90deg, transparent, #333, transparent); margin: 56px 0 0; }
+  .section-intro { font-size: 0.9rem; color: #8B7D6B; margin-bottom: 24px; max-width: 660px; }
+
+  .summary-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 0.85rem; }
+  .summary-table th { text-align: left; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; color: #8B7D6B; padding: 10px 12px; border-bottom: 1px solid #333; }
+  .summary-table td { padding: 10px 12px; border-bottom: 1px solid #1F1F1F; color: #A89F94; }
+  .summary-table td:first-child { color: #E8E0D4; font-weight: 600; }
+
+  .schedule-card { background: #0D2A2A; border: 1px solid #1A3A3A; border-radius: 10px; padding: 20px 24px; margin-bottom: 12px; }
+  .schedule-card strong { color: #4ECDC4; font-size: 0.95rem; }
+  .schedule-card p { font-size: 0.85rem; color: #A89F94; margin-top: 6px; }
+  .schedule-card .sched-detail { font-size: 0.78rem; color: #5A8A8A; margin-top: 4px; }
+
+  .bottom-line { background: #1A1A1A; border-radius: 12px; padding: 32px; margin-top: 48px; }
+  .bottom-line p { font-size: 0.95rem; color: #A89F94; }
+  .bottom-line strong { color: #D4A574; }
+
+  .checklist { list-style: none; padding-left: 44px; margin-top: 8px; }
+  .checklist li { font-size: 0.85rem; color: #A89F94; padding: 3px 0; }
+  .checklist li::before { content: "☐ "; color: #D4A574; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Road to All A's</h1>
+<p class="subtitle">Rancho Moonrise — 90-Day Improvement Plan &middot; Created April 9, 2026</p>
+<p class="intro">This plan takes every area from the April 8 business audit and maps it to specific actions, owners, and timelines. The goal: bring every category from its current grade to an A within 90 days. Items marked <span class="tag tag-auto">AUTO</span> will run as scheduled Claude tasks — no manual effort from anyone.</p>
+
+<!-- ===== SCORECARD ===== -->
+<h2 style="margin-top: 32px;">Grade Targets</h2>
+
+<div class="scorecard">
+  <div class="sc-card"><span class="sc-now grade-b">B</span><span class="sc-arrow">→</span><span class="sc-target">A</span><span class="sc-label">Website (New Build)</span></div>
+  <div class="sc-card"><span class="sc-now grade-d">D</span><span class="sc-arrow">→</span><span class="sc-target">A</span><span class="sc-label">Website (Current)</span></div>
+  <div class="sc-card"><span class="sc-now grade-d">D</span><span class="sc-arrow">→</span><span class="sc-target">A</span><span class="sc-label">Google Business Profile</span></div>
+  <div class="sc-card"><span class="sc-now grade-b">B-</span><span class="sc-arrow">→</span><span class="sc-target">A</span><span class="sc-label">Social Media</span></div>
+  <div class="sc-card"><span class="sc-now grade-f">F</span><span class="sc-arrow">→</span><span class="sc-target">A</span><span class="sc-label">Review Platforms</span></div>
+  <div class="sc-card"><span class="sc-now grade-c">C+</span><span class="sc-arrow">→</span><span class="sc-target">A</span><span class="sc-label">Booking Flow</span></div>
+  <div class="sc-card"><span class="sc-now grade-b">B</span><span class="sc-arrow">→</span><span class="sc-target">A</span><span class="sc-label">Client Experience (HoneyBook)</span></div>
+  <div class="sc-card"><span class="sc-now grade-c">C</span><span class="sc-arrow">→</span><span class="sc-target">A</span><span class="sc-label">Operations & Processes</span></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ===== PHASE 1 ===== -->
+<h2><span class="phase-label">Phase 1</span>Quick Wins — This Week</h2>
+<p class="phase-dates">April 9–15, 2026 &middot; 7 days &middot; Items that take under 2 hours each</p>
+<p class="section-intro">Everything here is either free, fast, or both. These are the highest-impact items relative to effort. Most move the needle on GBP and Reviews — the two worst-graded areas.</p>
+
+<div class="task">
+  <div class="task-header"><span class="task-num">1</span><span class="task-title">Reply to all unreplied Google reviews</span></div>
+  <div class="task-meta"><span class="tag tag-owner-ashley">Ashley</span><span class="tag tag-manual">Manual</span><span class="tag tag-audit">GBP: D → B</span></div>
+  <p class="task-desc">8+ reviews sitting unanswered. Each response should reference something specific from the review — not generic. Positive reviews: thank them and mention something about their stay. Negative reviews: acknowledge, explain what's changed, invite them back. Aim for all replies done in one sitting.</p>
+  <p class="task-impact">Impact: Directly improves local search ranking + shows future guests the business is engaged.</p>
+</div>
+
+<div class="task">
+  <div class="task-header"><span class="task-num">2</span><span class="task-title">Complete GBP hotel amenities, description, and hours</span></div>
+  <div class="task-meta"><span class="tag tag-owner-ashley">Ashley</span><span class="tag tag-manual">Manual</span><span class="tag tag-audit">GBP: D → B</span></div>
+  <p class="task-desc">Google is explicitly warning that missing amenities reduce search visibility. Go through every Hotel Details category (Breakfast, Hot tub, Fitness, Kitchen, Sustainability, Health & safety, Internet, Food & drink, Policies, Activities, Services, Children, Pools, Parking, Wellness, Accessibility) and answer Yes or No. Write a 750-character business description. Fix Monday/Tuesday hours — set them as Closed or enter real hours.</p>
+  <ul class="checklist">
+    <li>Answer all hotel amenity questions (even "No" helps)</li>
+    <li>Write business description (750 chars max)</li>
+    <li>Set Mon/Tue hours (Closed or actual hours)</li>
+    <li>Add opening date</li>
+    <li>Verify phone number (737) 291-1260</li>
+    <li>Update website URL to HTTPS</li>
+  </ul>
+</div>
+
+<div class="task">
+  <div class="task-header"><span class="task-num">3</span><span class="task-title">Answer Q&A + seed 10 FAQs on GBP</span></div>
+  <div class="task-meta"><span class="tag tag-owner-adam">Adam</span><span class="tag tag-owner-claude">Claude</span><span class="tag tag-audit">GBP: D → B</span></div>
+  <p class="task-desc">One question sitting unanswered ("Do you do day passes for the pool?"). Answer it, then seed 10 common questions and answer them from the business account: pet policy, check-in/out times, events schedule, booking process, alcohol policy, pricing ranges, kids allowed?, parking, directions from Austin, cancellation policy.</p>
+  <p class="task-impact">Claude will draft all 10 Q&A pairs. Ashley or Adam posts them to GBP.</p>
+</div>
+
+<div class="task">
+  <div class="task-header"><span class="task-num">4</span><span class="task-title">Add 2-4 secondary categories to GBP</span></div>
+  <div class="task-meta"><span class="tag tag-owner-ashley">Ashley</span><span class="tag tag-manual">Manual</span><span class="tag tag-audit">GBP: D → B</span></div>
+  <p class="task-desc">Currently only "Hotel." Add: Event Venue, Wedding Venue, Campground, and Resort Hotel. This expands which searches the profile appears in.</p>
+</div>
+
+<div class="task">
+  <div class="task-header"><span class="task-num">5</span><span class="task-title">Claim TripAdvisor listing + create WeddingWire listing</span></div>
+  <div class="task-meta"><span class="tag tag-owner-ashley">Ashley</span><span class="tag tag-owner-nancy">Nancy</span><span class="tag tag-manual">Manual</span><span class="tag tag-audit">Reviews: F → D</span></div>
+  <p class="task-desc">TripAdvisor listing exists but is unclaimed with zero reviews. Claim it, add photos, write description. WeddingWire doesn't have a listing — create one (free). These are two major discovery channels currently invisible.</p>
+</div>
+
+<div class="task">
+  <div class="task-header"><span class="task-num">6</span><span class="task-title">Set up Instagram link-in-bio page</span></div>
+  <div class="task-meta"><span class="tag tag-owner-adam">Adam</span><span class="tag tag-owner-claude">Claude</span><span class="tag tag-audit">Social: B- → B+</span></div>
+  <p class="task-desc">13K followers with no conversion funnel. Build a link-in-bio page (can be a simple HTML page on the new site) with: Book a Stay, Plan a Wedding/Event, Pool Passes, Upcoming Events, Contact Us. Update Instagram bio to "Austin's glamping + events ranch" with location tag.</p>
+  <p class="task-impact">Claude builds the page. Adam/Ashley updates the Instagram bio link.</p>
+</div>
+
+<div class="task">
+  <div class="task-header"><span class="task-num">7</span><span class="task-title">Verify social profile links on GBP</span></div>
+  <div class="task-meta"><span class="tag tag-owner-ashley">Ashley</span><span class="tag tag-manual">Manual</span><span class="tag tag-audit">GBP: D → B</span></div>
+  <p class="task-desc">Google auto-added Instagram (@rancho_moonrise) and TikTok (@rancho_moonrise). Verify these are correct. Add Facebook page link if one exists.</p>
+</div>
+
+<div class="divider"></div>
+
+<!-- ===== PHASE 2 ===== -->
+<h2><span class="phase-label">Phase 2</span>Systems & Automation — Weeks 2-3</h2>
+<p class="phase-dates">April 16–29, 2026 &middot; 14 days &middot; Build the systems that run on autopilot</p>
+<p class="section-intro">Phase 2 is about building the machines that do the work going forward. Review collection, inquiry follow-up, GBP posting, and the website launch. Most of these have a "Claude builds it, Ashley activates it" pattern.</p>
+
+<div class="task">
+  <div class="task-header"><span class="task-num">8</span><span class="task-title">Build post-stay/post-event review request system</span></div>
+  <div class="task-meta"><span class="tag tag-owner-adam">Adam</span><span class="tag tag-owner-claude">Claude</span><span class="tag tag-auto">AUTO</span><span class="tag tag-audit">Reviews: F → C</span></div>
+  <p class="task-desc">Build an automated email/text sequence triggered after checkout. Route by stay type: wedding guests → The Knot + Google, glamping guests → Hipcamp + TripAdvisor, event attendees → Google + Facebook. Include direct review links. Send 48 hours after checkout.</p>
+  <p class="task-impact">Could 3x review count across platforms in 6 months. This is the #1 fix for the F grade on Reviews.</p>
+</div>
+
+<div class="task">
+  <div class="task-header"><span class="task-num">9</span><span class="task-title">Build automated inquiry response sequence</span></div>
+  <div class="task-meta"><span class="tag tag-owner-adam">Adam</span><span class="tag tag-owner-claude">Claude</span><span class="tag tag-auto">AUTO</span><span class="tag tag-audit">Booking: C+ → B+</span></div>
+  <p class="task-desc">When someone fills out the website contact form, they currently get nothing. Build a 3-email sequence: (1) Instant confirmation with what to expect, (2) 24hr follow-up with Calendly tour link + FAQ, (3) 72hr gentle nudge if no response. This is where leads are dying.</p>
+  <p class="task-impact">Even a 10% improvement in inquiry-to-tour conversion = multiple additional bookings per month.</p>
+</div>
+
+<div class="task">
+  <div class="task-header"><span class="task-num">10</span><span class="task-title">Launch weekly GBP posting schedule</span></div>
+  <div class="task-meta"><span class="tag tag-owner-claude">Claude</span><span class="tag tag-auto">AUTO</span><span class="tag tag-audit">GBP: D → A</span></div>
+  <p class="task-desc">Create a Claude scheduled task that generates and posts one GBP post per week. Rotate content types: event announcements, seasonal property photos, special offers, behind-the-scenes, guest spotlights. Ashley provides 5-10 photos monthly; Claude writes the posts and schedules them.</p>
+  <p class="task-impact">From 1 post in 3 years to weekly presence. Google rewards this directly with visibility.</p>
+</div>
+
+<div class="task">
+  <div class="task-header"><span class="task-num">11</span><span class="task-title">Launch new website on main domain</span></div>
+  <div class="task-meta"><span class="tag tag-owner-adam">Adam</span><span class="tag tag-owner-ashley">Ashley</span><span class="tag tag-audit">Website: D → A</span></div>
+  <p class="task-desc">The new build (rancho-moonrise.vercel.app) is better in every way. Steps remaining:</p>
+  <ul class="checklist">
+    <li>Ashley final review of mobile layout</li>
+    <li>Ashley uploads hero photos via CMS</li>
+    <li>Adam sets up DNS cutover from BofillTech to Vercel</li>
+    <li>SSL verification</li>
+    <li>Build redirect map from old URLs to new structure</li>
+    <li>Submit sitemap to Google Search Console</li>
+    <li>Notify BofillTech of transition</li>
+  </ul>
+</div>
+
+<div class="task">
+  <div class="task-header"><span class="task-num">12</span><span class="task-title">Fix the Hipcamp listing</span></div>
+  <div class="task-meta"><span class="tag tag-owner-ashley">Ashley</span><span class="tag tag-owner-claude">Claude</span><span class="tag tag-audit">Booking: C+ → B+</span></div>
+  <p class="task-desc">Current listing says "no showers" and "shared toilet" — reads like a bare campsite, not a luxury glamping ranch. Claude rewrites the copy and photo captions. Ashley updates on Hipcamp: fix amenity list (showers, private bathrooms if applicable, AC, linens), upload best property photos, rewrite description to match brand voice.</p>
+</div>
+
+<div class="task">
+  <div class="task-header"><span class="task-num">13</span><span class="task-title">Fix the broken Cloudbeds booking URL</span></div>
+  <div class="task-meta"><span class="tag tag-owner-ashley">Ashley</span><span class="tag tag-manual">Manual</span><span class="tag tag-audit">Booking: C+ → B+</span></div>
+  <p class="task-desc">The direct Cloudbeds URL found in search results returns a 404. This means people searching for Rancho Moonrise bookings are hitting a dead end. Check Cloudbeds settings, fix the URL, and ensure the "Book Now" button on the website points to a working link.</p>
+</div>
+
+<div class="task">
+  <div class="task-header"><span class="task-num">14</span><span class="task-title">Add pool pass promotion across all channels</span></div>
+  <div class="task-meta"><span class="tag tag-owner-adam">Adam</span><span class="tag tag-owner-claude">Claude</span><span class="tag tag-audit">Revenue</span></div>
+  <p class="task-desc">Pool passes (ResortPass) are high-margin, low-effort revenue currently buried. Make it a primary CTA: add to GBP products/services, Instagram bio link-in-bio page, website hero section, and Facebook page. Consider dynamic pricing (weekends higher, weekday specials).</p>
+</div>
+
+<div class="task">
+  <div class="task-header"><span class="task-num">15</span><span class="task-title">Enable Google Chat on GBP</span></div>
+  <div class="task-meta"><span class="tag tag-owner-ashley">Ashley</span><span class="tag tag-manual">Manual</span><span class="tag tag-audit">GBP: D → A</span></div>
+  <p class="task-desc">Chat is not set up. For a hospitality/events property, Google Chat captures booking inquiries directly from search. Enable it and connect to a monitored number or Ashley's phone.</p>
+</div>
+
+<div class="divider"></div>
+
+<!-- ===== PHASE 3 ===== -->
+<h2><span class="phase-label">Phase 3</span>Revenue & Experience — Weeks 4-6</h2>
+<p class="phase-dates">April 30 – May 20, 2026 &middot; 3 weeks &middot; Build new revenue channels and upgrade client experience</p>
+<p class="section-intro">Phase 3 targets the revenue opportunities and HoneyBook gaps identified in the audit. These take more effort but have the biggest dollar impact.</p>
+
+<div class="task">
+  <div class="task-header"><span class="task-num">16</span><span class="task-title">Build corporate retreat landing page + HoneyBook flow</span></div>
+  <div class="task-meta"><span class="tag tag-owner-adam">Adam</span><span class="tag tag-owner-claude">Claude</span><span class="tag tag-audit">HoneyBook: B → A</span><span class="tag tag-audit">Revenue</span></div>
+  <p class="task-desc">No dedicated marketing for corporate events. Austin is a massive corporate events market. Build: (1) landing page on the new website targeting corporate event planners, (2) HoneyBook flow for corporate retreats with packages, policies, and booking steps, (3) LinkedIn company page content targeting corporate planners.</p>
+  <p class="task-impact">A single corporate retreat at $15K = 3 weekends of glamping revenue.</p>
+</div>
+
+<div class="task">
+  <div class="task-header"><span class="task-num">17</span><span class="task-title">Build HoneyBook flows for private events + intimate events + retreats</span></div>
+  <div class="task-meta"><span class="tag tag-owner-adam">Adam</span><span class="tag tag-owner-claude">Claude</span><span class="tag tag-audit">HoneyBook: B → A</span></div>
+  <p class="task-desc">Only weddings have a HoneyBook flow. Private events (46% of revenue!) have nothing. Build branded flows for: private events, intimate events, wellness/yoga retreats, and glamping packages. Each should have pricing, policies, vendor options, and next steps — matching the quality of the wedding flow.</p>
+</div>
+
+<div class="task">
+  <div class="task-header"><span class="task-num">18</span><span class="task-title">Build "Build Your Experience" add-on booking flow</span></div>
+  <div class="task-meta"><span class="tag tag-owner-adam">Adam</span><span class="tag tag-owner-claude">Claude</span><span class="tag tag-audit">Revenue</span></div>
+  <p class="task-desc">Horseback riding, yoga, tomahawk throwing, hat making, line dance lessons — these exist as vendor options but aren't priced or bookable online. Build an add-on experience page on the website with pricing and a way to add to any booking. Even $50/person average on add-ons is significant.</p>
+</div>
+
+<div class="task">
+  <div class="task-header"><span class="task-num">19</span><span class="task-title">Build breakfast taco/morning-after upsell for all stay types</span></div>
+  <div class="task-meta"><span class="tag tag-owner-ashley">Ashley</span><span class="tag tag-owner-claude">Claude</span><span class="tag tag-audit">Revenue</span></div>
+  <p class="task-desc">Currently offered in the wedding flow at $600/50 guests. Extend to ALL overnight stays (glamping, retreats, corporate). Add as a checkbox at booking time. $15/person breakfast add-on for 50 guests/week = $39K/year.</p>
+</div>
+
+<div class="task">
+  <div class="task-header"><span class="task-num">20</span><span class="task-title">Set up conversion tracking + UTM parameters</span></div>
+  <div class="task-meta"><span class="tag tag-owner-adam">Adam</span><span class="tag tag-owner-claude">Claude</span><span class="tag tag-audit">Operations: C → B</span></div>
+  <p class="task-desc">Can't optimize what you can't measure. Set up: Google Analytics 4 events on all form submissions, UTM parameters on all marketing links (social, email, GBP), conversion tracking on "Book Now" clicks, and a basic dashboard showing which channels drive inquiries.</p>
+</div>
+
+<div class="divider"></div>
+
+<!-- ===== PHASE 4 ===== -->
+<h2><span class="phase-label">Phase 4</span>Scale & Systemize — Weeks 7-12</h2>
+<p class="phase-dates">May 21 – July 8, 2026 &middot; 7 weeks &middot; Turn everything into a machine</p>
+<p class="section-intro">Phase 4 is about making the whole operation run without single points of failure. CRM, SOPs, and ongoing content.</p>
+
+<div class="task">
+  <div class="task-header"><span class="task-num">21</span><span class="task-title">Implement a CRM for lead tracking</span></div>
+  <div class="task-meta"><span class="tag tag-owner-adam">Adam</span><span class="tag tag-owner-ashley">Ashley</span><span class="tag tag-audit">Operations: C → A</span></div>
+  <p class="task-desc">Everything lives in Ashley's email and head. If she's out for a week, leads go cold. Options: (1) HoneyBook CRM features (already paying for it), (2) Simple Supabase pipeline board Adam can build, (3) Airtable. Every inquiry, every follow-up, every status update should be tracked. This is the single biggest operational risk in the business.</p>
+</div>
+
+<div class="task">
+  <div class="task-header"><span class="task-num">22</span><span class="task-title">Build SOPs for Ashley's critical processes</span></div>
+  <div class="task-meta"><span class="tag tag-owner-adam">Adam</span><span class="tag tag-owner-ashley">Ashley</span><span class="tag tag-audit">Operations: C → A</span></div>
+  <p class="task-desc">Document the top 10 processes only Ashley knows: inquiry handling, event setup checklist, vendor coordination, day-of operations, post-event cleanup, booking management, guest communication templates. These SOPs mean anyone can step in if Ashley is unavailable.</p>
+</div>
+
+<div class="task">
+  <div class="task-header"><span class="task-num">23</span><span class="task-title">Build YouTube channel with venue walkthrough videos</span></div>
+  <div class="task-meta"><span class="tag tag-owner-ashley">Ashley</span><span class="tag tag-owner-adam">Adam</span><span class="tag tag-audit">Social: B- → A</span></div>
+  <p class="task-desc">No YouTube presence for a visual property is a major miss. Venue walkthroughs are what brides, event planners, and glamping guests search for. Start with 3 videos: (1) full property walkthrough, (2) wedding day setup timelapse, (3) glamping tent tour. These also embed in the website and GBP.</p>
+</div>
+
+<div class="task">
+  <div class="task-header"><span class="task-num">24</span><span class="task-title">Launch Facebook as a real channel (not just cross-posts)</span></div>
+  <div class="task-meta"><span class="tag tag-owner-claude">Claude</span><span class="tag tag-auto">AUTO</span><span class="tag tag-audit">Social: B- → A</span></div>
+  <p class="task-desc">~500 followers and only cross-posts from Instagram. Brides' parents and corporate event planners live on Facebook. Build a dedicated content strategy: event albums, testimonials, local community engagement, Facebook Events for public events. Claude can auto-generate and schedule weekly Facebook-specific posts.</p>
+</div>
+
+<div class="task">
+  <div class="task-header"><span class="task-num">25</span><span class="task-title">Address the neighbor noise issue</span></div>
+  <div class="task-meta"><span class="tag tag-owner-nancy">Nancy</span><span class="tag tag-owner-ashley">Ashley</span><span class="tag tag-audit">Reviews</span></div>
+  <p class="task-desc">Critical The Knot review mentions a neighboring property playing loud amplified music that was "impossible to sleep through." This is a dealbreaker for weddings. Actions: (1) develop a disclosure script for tours so couples aren't blindsided, (2) explore noise mitigation options, (3) draft a response to the review acknowledging it and explaining steps taken, (4) consider event scheduling coordination with the neighbor.</p>
+</div>
+
+<div class="task">
+  <div class="task-header"><span class="task-num">26</span><span class="task-title">Launch weekday utilization program</span></div>
+  <div class="task-meta"><span class="tag tag-owner-ashley">Ashley</span><span class="tag tag-owner-adam">Adam</span><span class="tag tag-audit">Revenue</span></div>
+  <p class="task-desc">Property is likely empty Mon-Thu. Target: corporate day retreats, yoga/wellness workshops, photography shoots (engagement, maternity, branding), small private dinners, team-building events. Build a weekday-specific page on the website with lower pricing. Even at $500-1K per weekday event booked 2x/week = $100K+/year.</p>
+</div>
+
+<div class="task">
+  <div class="task-header"><span class="task-num">27</span><span class="task-title">Upload 10+ owner photos to GBP across all categories</span></div>
+  <div class="task-meta"><span class="tag tag-owner-ashley">Ashley</span><span class="tag tag-manual">Manual</span><span class="tag tag-audit">GBP: D → A</span></div>
+  <p class="task-desc">Currently ~8 owner photos. Google recommends 10+ across categories: cabin interiors, pool area, event setup, food/drink, aerial/drone shots, sunset views, seasonal shots. Ashley should upload 10-15 high-quality photos covering all property highlights.</p>
+</div>
+
+<div class="divider"></div>
+
+<!-- ===== SCHEDULED TASKS ===== -->
+<h2><span class="phase-label">Automation</span>Claude Scheduled Tasks</h2>
+<p class="section-intro">These run automatically on a schedule. Adam or Ashley provides raw materials (photos, updates, guest data); Claude handles the rest.</p>
+
+<div class="schedule-card">
+  <strong>Weekly GBP Post</strong>
+  <p>Generate one Google Business Profile post per week. Rotate: event announcements, property photos with captions, seasonal offers, behind-the-scenes. Pull from a shared photo folder + events calendar.</p>
+  <div class="sched-detail">Schedule: Every Monday at 9:00 AM &middot; Owner: Claude &middot; Input: Photo folder + events list</div>
+</div>
+
+<div class="schedule-card">
+  <strong>Weekly Review Monitor</strong>
+  <p>Check Google, TripAdvisor, Hipcamp, The Knot, and WeddingWire for new reviews. Draft responses for Ashley to approve. Flag any negative reviews as urgent.</p>
+  <div class="sched-detail">Schedule: Every Tuesday at 8:00 AM &middot; Owner: Claude → Ashley approves &middot; Output: Drafted responses</div>
+</div>
+
+<div class="schedule-card">
+  <strong>Post-Event Review Request</strong>
+  <p>After any event or checkout, send a branded email/text requesting a review on the appropriate platform. Route by stay type (wedding → The Knot, glamping → Hipcamp, event → Google).</p>
+  <div class="sched-detail">Schedule: Triggered 48 hours post-checkout &middot; Owner: Claude (via n8n workflow) &middot; Requires: Guest data feed</div>
+</div>
+
+<div class="schedule-card">
+  <strong>Inquiry Auto-Response Sequence</strong>
+  <p>When a website form submission comes in: instant confirmation email, 24hr follow-up with Calendly tour link, 72hr gentle nudge. All branded to Rancho Moonrise voice.</p>
+  <div class="sched-detail">Schedule: Triggered on form submission &middot; Owner: Claude (via n8n workflow) &middot; Requires: Form webhook</div>
+</div>
+
+<div class="schedule-card">
+  <strong>Weekly Facebook Post</strong>
+  <p>Generate one Facebook-specific post per week targeting parents of brides and corporate event planners. Different content than Instagram — more informational, testimonial-driven.</p>
+  <div class="sched-detail">Schedule: Every Wednesday at 10:00 AM &middot; Owner: Claude &middot; Input: Photo folder + guest testimonials</div>
+</div>
+
+<div class="schedule-card">
+  <strong>Monthly Analytics Summary</strong>
+  <p>Pull website analytics, GBP insights, social media metrics, and review counts. Generate a one-page dashboard showing month-over-month progress toward A grades.</p>
+  <div class="sched-detail">Schedule: 1st of each month at 7:00 AM &middot; Owner: Claude &middot; Output: HTML dashboard</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ===== SUMMARY TABLE ===== -->
+<h2>Summary: Who Does What</h2>
+
+<table class="summary-table">
+<tr><th>Owner</th><th>Phase 1 (Wk 1)</th><th>Phase 2 (Wk 2-3)</th><th>Phase 3 (Wk 4-6)</th><th>Phase 4 (Wk 7-12)</th></tr>
+<tr><td>Ashley</td><td>GBP fixes (#1-4, 7), claim TripAdvisor (#5)</td><td>Hipcamp fix (#12), Cloudbeds fix (#13), enable chat (#15)</td><td>Breakfast upsell (#19)</td><td>SOPs (#22), YouTube (#23), photos (#27), noise plan (#25)</td></tr>
+<tr><td>Adam</td><td>Q&A drafts (#3), link-in-bio (#6)</td><td>Inquiry automation (#9), DNS cutover (#11), pool pass (#14)</td><td>Corporate page (#16), HoneyBook flows (#17), add-ons (#18), analytics (#20)</td><td>CRM (#21), weekday program (#26)</td></tr>
+<tr><td>Claude</td><td>Q&A drafts (#3), link-in-bio page (#6)</td><td>Review system (#8), inquiry emails (#9), GBP posts (#10), Hipcamp copy (#12)</td><td>Corporate page (#16), HoneyBook flows (#17), add-on page (#18), UTM setup (#20)</td><td>Facebook content (#24), all scheduled tasks</td></tr>
+<tr><td>Nancy</td><td>WeddingWire listing (#5)</td><td>—</td><td>—</td><td>Noise issue (#25)</td></tr>
+</table>
+
+<div class="divider"></div>
+
+<!-- ===== GRADE TRAJECTORY ===== -->
+<h2>Expected Grade Trajectory</h2>
+
+<table class="summary-table">
+<tr><th>Area</th><th>Now</th><th>After Phase 1</th><th>After Phase 2</th><th>After Phase 3</th><th>After Phase 4</th></tr>
+<tr><td>Website</td><td class="grade-d">D / B</td><td>D / B</td><td>— / A</td><td>— / A</td><td>A</td></tr>
+<tr><td>Google Business Profile</td><td class="grade-d">D</td><td>B</td><td>A-</td><td>A</td><td>A</td></tr>
+<tr><td>Social Media</td><td class="grade-b">B-</td><td>B</td><td>B+</td><td>B+</td><td>A</td></tr>
+<tr><td>Reviews</td><td class="grade-f">F</td><td>D</td><td>C+</td><td>B</td><td>A</td></tr>
+<tr><td>Booking Flow</td><td class="grade-c">C+</td><td>C+</td><td>B+</td><td>A-</td><td>A</td></tr>
+<tr><td>HoneyBook</td><td class="grade-b">B</td><td>B</td><td>B</td><td>A</td><td>A</td></tr>
+<tr><td>Operations</td><td class="grade-c">C</td><td>C</td><td>C+</td><td>B</td><td>A</td></tr>
+</table>
+
+<div class="bottom-line">
+  <p><strong>Bottom line:</strong> 27 tasks across 4 phases over 90 days. 6 scheduled automations running in the background. The biggest jumps come from Phase 1 (GBP from D to B in one week) and Phase 2 (Reviews from F to C+ with automated collection). By July 8, every area should be at an A — and most of the ongoing work will be handled by automation, not Ashley's inbox.</p>
+</div>
+
+<p style="margin-top: 40px; font-size: 0.75rem; color: #555;">Prepared by Adam Styer via Claude &middot; April 9, 2026 &middot; Based on the Rancho Moonrise Full Business Audit (April 8, 2026)</p>
+
+</div>
+</body>
+</html>
