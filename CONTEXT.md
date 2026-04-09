@@ -141,7 +141,7 @@ Advisory engagement for Rancho Moonrise — glamping, events, and retreat ranch 
 - Blog articles live: "Glamping Near Austin Texas" (run #2), "Wedding Venues Near Austin With Overnight Stays" (run #3), "Why Your Next Corporate Retreat Should Be at a Ranch" (run #4), "Things to Do in Manor, TX" (run #5), "Bachelorette Party in Austin, Texas" (run #7)
 - Blog page: "Blog Launching Soon" placeholder removed (run #7) — 5 live posts displayed
 - Internal links: host-your-event → corporate retreat blog (run #6)
-- GBP: not yet claimed/completed (requires Adam's Google account)
+- GBP: claimed (confirmed 2026-04-09)
 - Sitemap not yet submitted to Google Search Console (requires Adam's UI access)
 ## Website UI Status (updated 2026-04-08)
 

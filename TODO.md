@@ -26,7 +26,8 @@
 - [x] Internal link: host-your-event → corporate retreat blog (2026-04-09)
 - [x] Blog article #5 — "Bachelorette Party in Austin, Texas — The Complete Planning Guide" (2026-04-09)
 - [ ] Blog article #6 — candidates: "Best Glamping Spots Near Austin", "Planning a Ranch Wedding in Texas: What Couples Should Know", "Glamping vs Camping"
-- [ ] GBP: Claim profile, add business description, complete hours, add direct booking link
+- [x] GBP: Profile claimed (2026-04-09)
+- [ ] GBP: Verify business description, hours, direct booking link, and photos are complete
 
 ## Backlog (someday/maybe)
 

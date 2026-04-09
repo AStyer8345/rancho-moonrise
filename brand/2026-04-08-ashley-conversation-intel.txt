@@ -1,0 +1,39 @@
+Source: Adam's notes from Ashley conversation
+Date: 2026-04-08
+---
+
+ASHLEY CONVERSATION — KEY INTEL FOR WEBSITE & BRAND
+
+=== BRAND VOICE / LANGUAGE ===
+- Official brand deck exists with fonts, colors, and language guidelines — includes direction like "use a little country twang sometimes." Ashley sending it.
+- Old website feels more "organic" and "handmade" — new one feels too modern/computerized. She wants texture and warmth, not slick and corporate.
+- Pinterest is a major creative reference for events — she wants to share access. Pull into NotebookLM when link arrives.
+
+=== WEBSITE MANAGEMENT REALITY ===
+- Nancy/Ashley manage the site themselves near-daily — events added/removed 3x/week, pop-up changes weekly, content edits every 6 months.
+- Monet cannot be trusted with event page design — requires strategic layout thinking she hasn't demonstrated.
+- CMS interface must be simple enough for Ashley to do event pages herself without a developer.
+- The pop-up is a critical recurring touch point — needs to be dead-simple to update.
+
+=== DESIGN PRIORITIES ===
+- Desktop experience is strong; mobile is 42/100 — she knows it and wants it fixed.
+- Private events page has too many blocks stacked on mobile (6 blocks for "birthdays, etc.") — needs consolidation.
+- Event pages need strategic visual hierarchy: font sizes, bolds, colors — she thinks about this carefully.
+- Photos resized/cropped manually by her — image handling in CMS needs to be easier.
+- She wants photos that are properly sized without manual cropping.
+
+=== EVENT MARKETING PROCESS ===
+- Event flow: idea → Pinterest board → graphic designer (or Kylie) → sized assets (square for web, vertical for IG, horizontal for email).
+- Graphic designer is now gone — doing more AI graphics + Kylie internally going forward.
+- Email marketing is active and branded — she'll add Adam to the list (holiday@rancho.com sender).
+- Graphics competition is fierce in Austin's event space — quality matters.
+
+=== CONTENT / SEO ===
+- Blog exists but she doesn't want it surfaced prominently — SEO value only.
+- FAQs were severely outdated (she rewrote them last night) — pull updated copy before touching that page.
+- Old accommodations page was repurposed to events — original architecture doesn't reflect current business.
+
+=== ORGANIZATION / NOTEBOOKLM ===
+- She's generating lots of documents — both deal/financial AND brand/website docs.
+- NotebookLM as central knowledge base is the right call.
+- Two tracks in same project: (1) deal/partnership docs, (2) brand/website assets — keep organized, can share a notebook.

@@ -1,0 +1,99 @@
+RANCHO MOONRISE — SOURCE GUIDE
+Last updated: 2026-04-08
+===============================
+
+THIS FILE IS THE AUTHORITY ON WHAT IS CURRENT VS. HISTORICAL.
+When answering questions, always check this guide first. If a document
+is marked HISTORICAL, do not treat its data as current. Use it only
+for context on how the deal evolved over time.
+
+=== FINANCIAL DATA ===
+
+CURRENT:
+- 2026-04-07-rm-numbers.txt — Actual monthly revenue 2024/2025/2026 YTD. THIS IS THE SOURCE OF TRUTH for revenue.
+- 2026-04-07-revenue-numbers-24-25-26.txt — Same data in PDF format, confirms the spreadsheet.
+
+HISTORICAL (do not use as current projections):
+- 2023-10-25-projections-spreadsheet.txt — Original 2023 projections. Superseded by actuals.
+- 2024-03-21-rancho-moonrise-updated-projections.txt — March 2024 update. Superseded by actuals.
+- 2023-10-25-rancho-moonrise-master-sheet.txt — Original master sheet. Superseded by RM NUMBERS.
+- 2025-05-01-styer-rancho-projections.txt — May 2025 projections PDF. Compare against actuals for variance.
+
+=== LLC / LEGAL ===
+
+CURRENT (these are the governing docs):
+- 2022-02-22-llc-company-agreement.txt — Operating agreement (most recent version)
+- 2022-02-22-certificate-of-amendment.txt — Name change / amendment
+- 2022-02-22-written-consent.txt — Member consent for 2022 changes
+- 2022-02-22-certificate-of-formation.txt — 2022 formation cert
+- 2021-06-14-warranty-deed.txt — Property deed (Anne Burkett → Rancho Casa Amigos LLC)
+
+HISTORICAL (earlier formation docs, superseded by amendments):
+- 2021-04-12-certificate-of-formation-sos.txt — Original 2021 SOS filing. Superseded by 2022 amendment.
+- 2021-04-12-certificate-of-filing-sos.txt — Original SOS filing letter. Context only.
+
+SUPPLEMENTAL LEGAL (additional consent/amendment docs):
+- 2024-10-17-unknown-document.txt — LLC consent (Oct 2024)
+- 2025-01-24-unknown-document.txt — SOS amendment (Jan 2025) — may be MORE RECENT than 2022 docs
+- 2025-01-27-unknown-document.txt — Manager consent (Jan 2025)
+
+=== DEAL STRUCTURE & NEGOTIATIONS ===
+
+CURRENT:
+- 2026-04-07-styer-items-needed.txt — Adam's comprehensive buyout/legal/financial/ops checklist. THIS is the current deal framework.
+- 2026-04-07-ranchomoonrise-items-needed-response.txt — Ashley's response with LLC info link.
+
+HISTORICAL (earlier deal exploration):
+- 2024-06-20-styer-update-hogg-eye-property.txt — Hogg Eye property update with Christopher Gill. Early deal structure.
+- 2024-02-26-styer-projections-to-christopher-gill.txt — Projections sent to Gill. Pre-deal.
+- 2024-02-29-walton-rv-park-discussion-thread.txt — RV park feasibility discussion. Exploratory only.
+- 2024-05-03-donnelly-frontier-bank.txt — Frontier Bank inquiry. Early financing exploration.
+- 2025-02-12-styer-10-acre-tract-rancho-moonrise.txt — 10-acre tract pitch. Separate sub-deal.
+- 2025-02-12-hoefs-10-acre-tract-thread.txt — STR/tiny homes discussion. Exploratory.
+
+=== PROPERTY & ENGINEERING ===
+
+CURRENT:
+- 2025-03-25-cunningham-kimley-horn-manor-10ac.txt — Kimley-Horn engineering (ESD12, water, storage feasibility). Most recent technical assessment.
+- 2024-02-14-tittle-rancho-moonrise-utilities-permits.txt — Utilities and permits info. Still relevant baseline.
+
+HISTORICAL:
+- 2023-11-30-springer-site-plan.txt — Jay Springer's original site plan. Superseded by current property use.
+
+=== BUSINESS PLAN ===
+
+CURRENT:
+- 2025-05-01-styer-business-plan-draft.txt — Most recent business plan draft.
+
+HISTORICAL:
+- 2023-10-24-styer-business-plan-for-rancho-moonrise.txt — Original LivePlan business plan. Outdated assumptions and projections.
+
+=== OPERATIONS / CONTRACTS ===
+
+CURRENT:
+- 2026-04-07-ranchomoonrise-bar-packages.txt — Current bar packages (HoneyBook)
+- 2026-04-07-ranchomoonrise-wedding-vendor-guidelines.txt — Current vendor guidelines
+- 2026-04-07-ranchomoonrise-private-wedding-contract.txt — Current wedding contract
+- 2023-11-20-ranchomoonrise-pricing.txt — Pricing links (verify if still current)
+
+=== BRAND / MARKETING ===
+
+CURRENT:
+- 2022-brand-guidelines.txt — Official brand guidelines (logos, colors, fonts, voice). Still the governing brand doc.
+- 2025-05-rancho-moonrise-events-sponsorship.txt — Latest events/sponsorship deck.
+- 2026-04-08-ranchomoonrise-brand-pack-website-feedback.txt — Brand pack + website feedback.
+- 2026-04-06-ranchomoonrise-gbp-performance-report-march.txt — March 2026 GBP stats.
+- 2026-04-07-ranchomoonrise-form-info.txt — Venue details, capacity, pricing, FAQs.
+
+HISTORICAL (marketing decks — useful for brand voice/positioning, but details may be outdated):
+- 2024-01-retreats-deck.txt — Retreats deck. Packages/pricing may have changed.
+- 2024-01-pr-deck.txt — PR deck. Property details may have evolved.
+- 2023-11-events-deck.txt — Events deck. Early-stage marketing.
+- 2023-11-weddings-deck.txt — Weddings deck. Packages likely updated since.
+- 2023-10-24-competitive-landscape.txt — Competitive analysis. Market has shifted since 2023.
+
+=== GENERAL RULE ===
+When in doubt: 2026 files > 2025 files > 2024 files > 2023 files.
+If two files cover the same topic, the newer one is authoritative.
+Older files are useful for understanding history, tracking changes over time, and seeing how the business evolved — but never cite them as current facts.
+

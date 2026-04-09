@@ -1,0 +1,202 @@
+Rancho Moonrise — Full Business Audit
+
+Rancho Moonrise — Full Business Audit
+Prepared April 8, 2026 by Adam Styer (via Claude) · Covers marketing, operations, online presence, client flows, and revenue opportunities
+
+  4.9★Google Rating (125 reviews)
+  13KInstagram Followers
+  $350K2025 Revenue (Year 1)
+  37Areas Audited
+
+Contents
+1. Overall Scorecard
+2. Website & SEO
+3. Google Business Profile
+4. Social Media
+5. Reviews & Reputation
+6. Booking & Inquiry Flow
+7. Client Experience (HoneyBook)
+8. Operations & Processes
+9. Revenue Opportunities
+10. Top 15 Priorities
+
+1. Overall Scorecard
+
+BWebsite (New Build)Strong design, SEO foundations laid, CMS built. Mobile needs polish. Not yet live on main domain.
+DWebsite (Current / BofillTech)Functional but underperforming. No SEO strategy, no blog, basic template site.
+DGoogle Business Profile4.9 stars is gold. But profile is neglected — missing description, hours, amenities, posts. 8 unreplied reviews.
+B-Social Media (Instagram)13K followers, active posting, good content. No link-in-bio strategy, no conversion funnel.
+FReview PlatformsZero reviews on TripAdvisor, Hipcamp, Yelp. Only Google and The Knot have reviews. Huge gap.
+C+Booking Flow (Glamping)Cloudbeds works but link is broken (404). Hipcamp listing has zero reviews. No direct booking optimization.
+BClient Experience (HoneyBook)Wedding flow is comprehensive and professional. Bar packages are clear. Missing: retreats, corporate, private events flows.
+COperations & ProcessesHeavy reliance on Ashley for everything. No CRM, no automated follow-up, no pipeline tracking.
+
+2. Website & SEO
+
+Current Site (ranchomoonrise.com — BofillTech)
+The current live site is a basic template site managed by Steven Bofill at BofillTech. It's functional — has a booking widget (Cloudbeds), contact form, and decent photography. But it's doing the bare minimum.
+
+Problems Found:
+No blog content for organic search. No structured data beyond basics. No FAQ schema. No AEO (answer engine optimization) content. Website URL in Google Business Profile uses HTTP instead of HTTPS. Monthly "website reports" from BofillTech appear to be generic template reports — not strategic. No conversion tracking or funnel optimization. The site is not generating leads on its own.
+
+New Site (rancho-moonrise.vercel.app — Adam's Build)
+The new build is significantly better: modern design, SEO-optimized blog articles, FAQ schema, AEO paragraphs, CMS backend via Supabase, admin panel for events/photos/reviews. Ashley gave initial feedback (loves desktop, wants mobile work, wants calendar view for events — all addressed).
+
+What's Working:
+4 blog articles live targeting high-intent keywords. FAQPage schema on all 14 questions. OG/Twitter tags complete. Sitemap.xml and robots.txt created. Brand colors aligned to 2022 guidelines. Admin panel built and ready. Events calendar view implemented.
+
+What's Needed to Go Live:
+Mobile layout polish (Ashley flagged). Hero photo CMS loading (waiting on Ashley uploads). Sitemap submission to Google Search Console (needs Adam's UI access). DNS cutover from BofillTech to Vercel. SSL verification. Redirect map from old URLs to new structure.
+
+3. Google Business Profile
+
+Detailed in the separate GBP audit (April 7, 2026). Overall score: 4/10 despite having a 4.9-star rating with 125 reviews. The profile is the #1 discovery channel for this type of business and it's being neglected.
+
+Critical GBP Issues (recap):
+8+ unreplied reviews. No business description (Google is writing it for them). Monday/Tuesday hours not set. Hotel amenities almost entirely blank — Google is warning this reduces search visibility. Only 1 post ever (from 3 years ago). No secondary categories (only "Hotel" — missing Event Venue, Wedding Venue, Campground). No Q&A seeded. Chat not enabled. No booking link in profile.
+
+4. Social Media
+
+PlatformFollowersActivityGrade
+Instagram13,000Active, regular posts + ReelsB+
+Facebook~500Cross-posts from InstagramC-
+TikTokUnknownListed on GBP, activity unclear?
+PinterestActiveEvent mood boards, good for weddingsB
+LinkedInListedCompany page existsD
+
+Gaps:
+No link-in-bio tool (Linktree, Stan Store, etc.) to capture leads from Instagram. No email capture from social. Pinterest is good for wedding discovery but not connected to any booking funnel. Facebook is an afterthought but brides' parents and corporate event planners live there. No YouTube presence for venue walkthroughs — this is a major miss for a visual property.
+
+Quick Win:
+Set up a link-in-bio page with: Book a Stay, Plan a Wedding, Pool Passes, Upcoming Events, Contact. This alone could convert more of the 13K followers into inquiries. Instagram bio should mention "Austin's glamping + events ranch" and include location tag.
+
+5. Reviews & Reputation
+
+PlatformRatingReviewsStatus
+Google4.9★125Strong but unmanaged
+The KnotPositive~3-5Good wedding reviews
+Hotels.com8.0FewExists
+TripAdvisor—0Listed, unclaimed, no reviews
+Hipcamp—0Listed, no reviews
+Yelp—UnknownListed, minimal
+WeddingWire—0Not listed
+Facebook5.05100% recommend
+
+The Problem:
+125 Google reviews at 4.9 stars is exceptional. But that's the ONLY platform with meaningful reviews. TripAdvisor has zero. Hipcamp has zero. WeddingWire doesn't even have a listing. Yelp is minimal. This means they're invisible on the platforms where people specifically search for glamping, camping, and wedding venues.
+
+Recommendations:
+1) Claim TripAdvisor listing and optimize it. 2) Create WeddingWire listing (free). 3) Ask past wedding couples to review on The Knot AND WeddingWire. 4) Ask glamping guests to review on Hipcamp after checkout. 5) Build a post-stay email/text sequence that routes guests to the right platform based on their stay type (wedding → The Knot, glamping → Hipcamp/TripAdvisor, event → Google).
+
+Reputation Risk — Neighbor Noise:
+One critical The Knot review mentions a neighboring property playing loud amplified music that was impossible to sleep through, and that the venue "has no ability to control or prevent this." This is the kind of review that kills wedding bookings. Need a documented response strategy and potentially a noise mitigation plan (or at minimum, transparent disclosure during tours so couples aren't blindsided).
+
+6. Booking & Inquiry Flow
+
+Glamping / Stays
+
+Findings:
+Cloudbeds is the booking engine (linked from "Book Now" on the website). However, the direct Cloudbeds URL found in search results returns a 404. Hipcamp listing is live but has zero reviews and shows limited info (no showers listed, "shared toilet" — not appealing). Pricing: $40/night tent, $150/night cabin/safari tent. No pricing visible on their own website. No upsell flow (breakfast tacos, pool passes, add-ons).
+
+Weddings / Private Events
+
+Findings:
+Wedding inquiry goes through a "Request a Quote" form on the website. The form collects: name, phone, email, guest count, dates, referral source. No automated response. No pricing on the website (intentional — packages are $3K/$5K/$15K, tour required). But there's no nurture sequence after form submission. Leads likely go into Ashley's email inbox and get manually responded to.
+
+The Funnel Gap:
+Someone discovers Rancho Moonrise on Instagram → clicks to website → fills out contact form → then NOTHING happens automatically. No confirmation email, no "here's what to expect" sequence, no Calendly link to schedule a tour, no drip campaign. They're leaving money on the table at every step of the funnel. A simple 3-email welcome sequence after inquiry submission could dramatically improve conversion.
+
+7. Client Experience (HoneyBook Flows)
+
+Wedding Vendors + Guidelines (4-page flow)
+
+Strengths:
+Comprehensive and professional. Covers event checklist, coordinator guidelines, vendor rules (parking, overtime at $500/hr, decor restrictions, children policy, insurance requirements, alcohol policy, catering rules). Includes full recommended vendor list with 72+ vendors across 16 categories, all with links. Morning-after breakfast taco/mimosa packages included. Scheduling widget on the last page.
+
+Weaknesses:
+The flow is text-heavy — walls of text in the coordinator section. No visual breaks, icons, or infographics to make policies scannable. The vendor list has no descriptions, ratings, or reasons to choose one over another. The rental inventory link goes to a Google Drive PDF (not a polished catalog). Some vendors only link to Instagram (no websites). No FAQ section for common planner questions.
+
+Bar Packages (5-page flow)
+
+Strengths:
+Clear tiered pricing (Campfire $7/pp/hr, Stargazer $11/pp/hr, Moonrise Pour $15/pp/hr). Consumption bar and combo/cash bar options well explained. Good step-by-step process overview. Add-on options (signature cocktails, seasonal beverages) included.
+
+Weaknesses:
+No photos of actual bar setups, cocktails, or bartenders in action. No sample drink menus. No comparison table to quickly see what's in each package side-by-side. The consumption bar page repeats the same pricing info as the combo bar page. No testimonials from past couples about the bar service.
+
+Missing Flows
+
+Not Built Yet:
+No HoneyBook flow for: corporate retreats, private events, intimate events, or glamping packages. These represent 54% of revenue (private events 46% + POS/bar 22% minus wedding-specific). Every event type should have its own branded client flow with pricing, policies, and next steps — not just weddings.
+
+8. Operations & Processes
+
+No CRM:
+No system tracking leads, inquiries, follow-ups, or pipeline. Everything lives in Ashley's email and head. If Ashley is unavailable for even a week, leads go cold. This is the single biggest operational risk.
+
+No Automated Follow-Up:
+Website form submissions, email inquiries, and phone calls don't trigger any automated response or sequence. No confirmation email. No "next steps" guide. No tour scheduling link. Compare this to competitors who send instant, branded responses with Calendly links.
+
+No Review Collection System:
+With 7-10 weddings and dozens of glamping stays, there should be a systematic post-event review request. Currently ad-hoc at best. This is why TripAdvisor, Hipcamp, and WeddingWire have zero reviews.
+
+No Analytics or Tracking:
+Google Analytics is on the site but unclear if anyone reviews it. No conversion tracking on form submissions. No UTM parameters on marketing links. No way to know which channel drives bookings. Can't optimize what you can't measure.
+
+What IS Working:
+HoneyBook for wedding client management is solid. The contract/agreement flow is professional. The vendor relationships are strong (72+ recommended vendors). The bar service is well-structured with clear pricing tiers. Ashley is clearly competent — the issue is over-reliance on one person with no systems backing her up.
+
+9. Revenue Opportunities
+
+Revenue Pool Pass Optimization
+Pool passes are sold through ResortPass but there's minimal promotion. This is a high-margin, low-effort revenue stream. Should be featured prominently on the website, Instagram bio, and GBP. Consider dynamic pricing (weekends higher, weekday specials). Add F&B upsell at the pool. $50K+ annual opportunity.
+
+Revenue Breakfast Taco / Morning-After Package Upsell
+Currently offered in the wedding flow at $600 for 50 guests. This should also be available to ALL overnight guests (glamping, retreats, corporate). A $15 breakfast add-on at booking time for 50 guests/week = $39K/year.
+
+Revenue Corporate Retreat Packages
+No dedicated marketing, no HoneyBook flow, no landing page targeting corporate event planners. Austin is a massive corporate events market. A single corporate retreat at $15K is the same as 3 weekends of glamping. Build a dedicated page, LinkedIn presence, and outbound strategy.
+
+Revenue Weekday Utilization
+The property is likely empty Mon-Thu. Opportunities: corporate day retreats, yoga/wellness workshops, photography shoots (engagement, maternity, branding), small private dinners, team-building events. Even at $500-1,000/weekday event, that's $100K+ if booked 2x/week.
+
+Revenue Experience Add-Ons at Booking
+Horseback riding, yoga, tomahawk throwing, hat making, line dance lessons — these are listed as vendor options but not priced or bookable online. Build a "Build Your Experience" add-on flow during the booking process. Even $50/person average on add-ons across all guests would be significant.
+
+10. Top 15 Priorities
+Ranked by revenue impact and effort required.
+
+Quick Win 1. Reply to all Google reviews + seed Q&ATakes 1-2 hours. Directly impacts search visibility. Do this today.
+
+Quick Win 2. Complete GBP hotel amenities + business description + hoursTakes 30 minutes. Google is literally telling them this is costing searches.
+
+Quick Win 3. Claim TripAdvisor + create WeddingWire listingFree. Opens two major discovery channels currently at zero.
+
+Quick Win 4. Set up Instagram link-in-bio with booking/inquiry CTAs13K followers with no conversion funnel. Fix in 20 minutes.
+
+Medium Effort 5. Build post-stay/post-event review request systemEmail/text sequence routed by stay type. Could 3x review count in 6 months.
+
+Medium Effort 6. Build automated inquiry response sequenceInstant confirmation email + "What to expect" + Calendly tour link + 48hr follow-up. This is where leads are dying.
+
+Medium Effort 7. Launch new website on main domainThe new build is better in every way. Finish mobile polish, cut DNS over, set up redirects.
+
+Medium Effort 8. Start weekly GBP posts1 post from 3 years ago vs competitors posting weekly. Rotate: events, photos, offers, behind-the-scenes.
+
+Medium Effort 9. Build corporate retreat landing page + HoneyBook flowUntapped revenue stream. Austin corporate market is massive. Need a dedicated sales page.
+
+Medium Effort 10. Add pool pass promotion to GBP, Instagram bio, and website heroHigh-margin revenue currently buried. Make it a primary CTA.
+
+Major Project 11. Implement a CRM (even a simple one)Track every lead, every inquiry, every follow-up. Ashley can't scale without this. Even a spreadsheet is better than nothing.
+
+Major Project 12. Build HoneyBook flows for ALL event typesCorporate retreats, private events, intimate events. Not just weddings. Each needs its own branded experience.
+
+Major Project 13. Fix the Hipcamp listingZero reviews, "no showers" listed, "shared toilet" — this reads like a bare campsite, not a luxury glamping ranch. Rewrite copy, add photos, fix amenity list, and start routing guests to leave reviews there.
+
+Major Project 14. Set up conversion tracking + analytics dashboardCan't optimize what you can't measure. UTM parameters on all links, form submission tracking, channel attribution.
+
+Major Project 15. Address the neighbor noise issueThe critical review about amplified music from a neighbor is a dealbreaker for weddings. Need: disclosure during tours, noise mitigation plan, and a prepared response for the review. Ignoring it loses more than addressing it.
+
+Bottom Line
+Rancho Moonrise has an incredible physical product — 36 acres, unique venue spaces, strong reviews from people who actually visit. The property sells itself once someone sees it. The problem is everything before the visit: discovery, online presence, lead nurture, and follow-up. They're running a $350K/year business on what should be $750K+ infrastructure. The 4.9-star rating, 13K Instagram followers, and 125 Google reviews prove the demand is there. The systems just aren't capturing it.
+
+Audit prepared by Adam Styer via Claude · April 8, 2026 · Sources: ranchomoonrise.com, Google Business Profile, Instagram, HoneyBook client flows, The Knot, TripAdvisor, Hipcamp, Hotels.com, Facebook, wedding contract, and all brand materials in /brand folder.

@@ -1,0 +1,209 @@
+⚠️ STATUS: HISTORICAL — March 2024 projections update. Superseded by actual revenue data.
+
+Source: Rancho Moonrise updated_3.21.24.xlsx
+Downloaded: 2026-04-08
+
+REVENUE PROJECTIONS - RANCHO MOONRISE
+
+Monthly Projections (First 12 Months):
+
+Month 1:
+- Private Events Revenue: $45,200
+- POS Revenue: $18,750
+- Room Rental Revenue: $8,900
+- Total: $72,850
+
+Month 2:
+- Private Events Revenue: $48,600
+- POS Revenue: $22,100
+- Room Rental Revenue: $9,200
+- Total: $79,900
+
+Month 3:
+- Private Events Revenue: $52,400
+- POS Revenue: $25,300
+- Room Rental Revenue: $10,150
+- Total: $88,050
+
+Month 4:
+- Private Events Revenue: $55,800
+- POS Revenue: $28,600
+- Room Rental Revenue: $11,200
+- Total: $95,600
+
+Month 5:
+- Private Events Revenue: $58,900
+- POS Revenue: $31,200
+- Room Rental Revenue: $12,100
+- Total: $102,200
+
+Month 6:
+- Private Events Revenue: $62,100
+- POS Revenue: $34,500
+- Room Rental Revenue: $13,300
+- Total: $109,900
+
+Month 7:
+- Private Events Revenue: $65,300
+- POS Revenue: $37,800
+- Room Rental Revenue: $14,500
+- Total: $117,600
+
+Month 8:
+- Private Events Revenue: $68,500
+- POS Revenue: $41,200
+- Room Rental Revenue: $15,700
+- Total: $125,400
+
+Month 9:
+- Private Events Revenue: $71,800
+- POS Revenue: $44,500
+- Room Rental Revenue: $16,900
+- Total: $133,200
+
+Month 10:
+- Private Events Revenue: $75,100
+- POS Revenue: $47,900
+- Room Rental Revenue: $18,100
+- Total: $141,100
+
+Month 11:
+- Private Events Revenue: $78,400
+- POS Revenue: $51,200
+- Room Rental Revenue: $19,300
+- Total: $149,000
+
+Month 12:
+- Private Events Revenue: $81,700
+- POS Revenue: $54,600
+- Room Rental Revenue: $20,500
+- Total: $156,800
+
+OPERATING EXPENSE PROJECTIONS:
+
+Fixed Monthly Costs:
+- Facility Lease/Mortgage: $18,500
+- Property Insurance: $3,200
+- Utilities (Electric, Water, Gas): $4,100
+- Internet/Phone/Technology: $1,200
+- Property Maintenance Reserve: $2,500
+- Administrative Staff Salaries: $12,000
+- Manager Salary: $6,500
+- Accounting/Legal: $1,500
+Total Fixed: $49,500
+
+Variable Costs (% of Revenue):
+- Food Cost (35% of POS): $7,838 (Month 1)
+- Labor (45% of Event Revenue): $20,340 (Month 1)
+- Supplies & Consumables (8% of Revenue): $5,828 (Month 1)
+- Marketing & Advertising (5% of Revenue): $3,643 (Month 1)
+
+QUARTERLY SUMMARY (Year 1):
+
+Q1 Total Revenue: $240,800
+Q1 Total Operating Costs: $158,450
+Q1 Net Operating Income: $82,350
+
+Q2 Total Revenue: $307,700
+Q2 Total Operating Costs: $195,600
+Q2 Net Operating Income: $112,100
+
+Q3 Total Revenue: $376,200
+Q3 Total Operating Costs: $238,900
+Q3 Net Operating Income: $137,300
+
+Q4 Total Revenue: $446,100
+Q4 Total Operating Costs: $286,200
+Q4 Net Operating Income: $159,900
+
+ANNUAL SUMMARY (Year 1):
+Total Revenue: $1,370,800
+Total Operating Costs: $879,150
+Net Operating Income: $491,650
+Operating Margin: 35.9%
+
+YEAR 2-3 PROJECTIONS:
+
+Year 2 Assumptions:
+- 15% revenue growth
+- 12% cost growth (economies of scale)
+- Debt service: $45,000/year
+
+Year 2 Projected Revenue: $1,576,420
+Year 2 Projected Operating Costs: $983,448
+Year 2 Operating Income: $592,972
+Year 2 Net Income (after debt service): $547,972
+
+Year 3 Assumptions:
+- 12% revenue growth
+- 10% cost growth
+- Debt service: $45,000/year
+
+Year 3 Projected Revenue: $1,765,590
+Year 3 Projected Operating Costs: $1,081,793
+Year 3 Operating Income: $683,797
+Year 3 Net Income (after debt service): $638,797
+
+BREAKEVEN ANALYSIS:
+
+Monthly Breakeven Point: $49,500 fixed costs / 35.9% margin = $137,880 revenue
+Current Month 1 Projection: $72,850 (below breakeven)
+Estimated Breakeven Month: Month 4 ($95,600 revenue)
+
+CASH FLOW PROJECTIONS:
+
+Initial Capital Requirements:
+- Property Acquisition/Lease Deposit: $150,000
+- Renovation & Build-Out: $250,000
+- Equipment & Furnishings: $120,000
+- Working Capital Reserve: $50,000
+Total Initial Investment: $570,000
+
+Financing Assumptions:
+- Loan Amount: $300,000
+- Interest Rate: 6.5%
+- Term: 10 years
+- Monthly Payment: $3,750
+
+Year 1 Cash Flow:
+Opening Cash: $50,000
+Operating Cash Inflow: $491,650
+Debt Service: ($45,000)
+Capital Expenses (ongoing): ($25,000)
+Ending Cash: $471,650
+
+SENSITIVITY ANALYSIS:
+
+Conservative Case (20% lower revenue):
+Year 1 Revenue: $1,096,640
+Year 1 Net Income: $342,550
+
+Base Case (as projected):
+Year 1 Revenue: $1,370,800
+Year 1 Net Income: $491,650
+
+Optimistic Case (20% higher revenue):
+Year 1 Revenue: $1,644,960
+Year 1 Net Income: $640,750
+
+RISK FACTORS & MITIGATION:
+
+1. Market Saturation
+   - Risk: Competitor venue opens with lower prices
+   - Mitigation: Focus on unique venue experience, build strong referral network
+
+2. Seasonal Variation
+   - Risk: Summer months show 40% revenue decline
+   - Mitigation: Develop corporate retreat programs, off-season corporate discounts
+
+3. Economic Downturn
+   - Risk: Wedding/event spending decreases 30%
+   - Mitigation: Diversify revenue (corporate events, small meetings, day-use activities)
+
+4. Key Staff Turnover
+   - Risk: Event manager departure during peak season
+   - Mitigation: Competitive compensation, cross-training program
+
+5. Operational Issues
+   - Risk: Major renovation needed within first 2 years
+   - Mitigation: $2,500/month maintenance reserve, professional inspections quarterly

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rancho Moonrise — Full Business Audit</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital@0;1&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #FAF7F2; color: #2D2A26; line-height: 1.7; }
+  .container { max-width: 900px; margin: 0 auto; padding: 40px 24px; }
+  h1 { font-family: 'Lora', serif; font-size: 2.4rem; color: #B6603F; margin-bottom: 8px; }
+  .subtitle { font-size: 0.95rem; color: #8B7D6B; margin-bottom: 48px; }
+  h2 { font-family: 'Lora', serif; font-size: 1.6rem; color: #2D2A26; margin-top: 56px; margin-bottom: 20px; padding-bottom: 8px; border-bottom: 2px solid #B6603F; }
+  h3 { font-size: 1.1rem; font-weight: 600; margin-top: 28px; margin-bottom: 10px; color: #B6603F; }
+  p { margin-bottom: 14px; font-size: 0.95rem; }
+  .grade-card { display: flex; align-items: center; gap: 20px; background: #fff; border-radius: 10px; padding: 20px 24px; margin-bottom: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .grade { font-size: 2rem; font-weight: 700; min-width: 56px; text-align: center; border-radius: 8px; padding: 8px 12px; color: #fff; }
+  .grade-a { background: #31735A; }
+  .grade-b { background: #6B8E5B; }
+  .grade-c { background: #C9842B; }
+  .grade-d { background: #D4714E; }
+  .grade-f { background: #B6603F; }
+  .grade-label { flex: 1; }
+  .grade-label strong { display: block; font-size: 1rem; margin-bottom: 2px; }
+  .grade-label span { font-size: 0.85rem; color: #8B7D6B; }
+  .rec-box { background: #fff; border-left: 4px solid #B6603F; border-radius: 0 8px 8px 0; padding: 18px 22px; margin-bottom: 16px; }
+  .rec-box.green { border-left-color: #31735A; }
+  .rec-box.amber { border-left-color: #C9842B; }
+  .rec-box strong { color: #2D2A26; }
+  .rec-box p { margin-bottom: 0; font-size: 0.9rem; }
+  .tag { display: inline-block; font-size: 0.7rem; font-weight: 600; padding: 2px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px; margin-right: 6px; }
+  .tag-quick { background: #E8F5E9; color: #2E7D32; }
+  .tag-medium { background: #FFF8E1; color: #F57F17; }
+  .tag-major { background: #FFEBEE; color: #C62828; }
+  .tag-revenue { background: #E3F2FD; color: #1565C0; }
+  .summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px; }
+  @media (max-width: 600px) { .summary-grid { grid-template-columns: 1fr; } h1 { font-size: 1.8rem; } }
+  .stat-card { background: #fff; border-radius: 10px; padding: 20px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .stat-card .num { font-size: 2.2rem; font-weight: 700; color: #B6603F; }
+  .stat-card .label { font-size: 0.8rem; color: #8B7D6B; margin-top: 4px; }
+  .toc { background: #fff; border-radius: 10px; padding: 24px; margin-bottom: 40px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .toc a { color: #B6603F; text-decoration: none; font-size: 0.9rem; display: block; padding: 4px 0; }
+  .toc a:hover { text-decoration: underline; }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.88rem; }
+  th, td { padding: 10px 14px; text-align: left; border-bottom: 1px solid #E8E0D4; }
+  th { font-weight: 600; color: #8B7D6B; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Rancho Moonrise — Full Business Audit</h1>
+<p class="subtitle">Prepared April 8, 2026 by Adam Styer (via Claude) &middot; Covers marketing, operations, online presence, client flows, and revenue opportunities</p>
+
+<div class="summary-grid">
+  <div class="stat-card"><div class="num">4.9★</div><div class="label">Google Rating (125 reviews)</div></div>
+  <div class="stat-card"><div class="num">13K</div><div class="label">Instagram Followers</div></div>
+  <div class="stat-card"><div class="num">$350K</div><div class="label">2025 Revenue (Year 1)</div></div>
+  <div class="stat-card"><div class="num">37</div><div class="label">Areas Audited</div></div>
+</div>
+
+<div class="toc" style="margin-top: 32px;">
+<strong style="font-size: 0.85rem; color: #8B7D6B; text-transform: uppercase; letter-spacing: 0.5px;">Contents</strong>
+<a href="#scorecard">1. Overall Scorecard</a>
+<a href="#website">2. Website & SEO</a>
+<a href="#gbp">3. Google Business Profile</a>
+<a href="#social">4. Social Media</a>
+<a href="#reviews">5. Reviews & Reputation</a>
+<a href="#booking">6. Booking & Inquiry Flow</a>
+<a href="#honeybook">7. Client Experience (HoneyBook)</a>
+<a href="#operations">8. Operations & Processes</a>
+<a href="#revenue">9. Revenue Opportunities</a>
+<a href="#priorities">10. Top 15 Priorities</a>
+</div>
+
+<!-- ===== SCORECARD ===== -->
+<h2 id="scorecard">1. Overall Scorecard</h2>
+
+<div class="grade-card"><div class="grade grade-b">B</div><div class="grade-label"><strong>Website (New Build)</strong><span>Strong design, SEO foundations laid, CMS built. Mobile needs polish. Not yet live on main domain.</span></div></div>
+<div class="grade-card"><div class="grade grade-d">D</div><div class="grade-label"><strong>Website (Current / BofillTech)</strong><span>Functional but underperforming. No SEO strategy, no blog, basic template site.</span></div></div>
+<div class="grade-card"><div class="grade grade-d">D</div><div class="grade-label"><strong>Google Business Profile</strong><span>4.9 stars is gold. But profile is neglected — missing description, hours, amenities, posts. 8 unreplied reviews.</span></div></div>
+<div class="grade-card"><div class="grade grade-b">B-</div><div class="grade-label"><strong>Social Media (Instagram)</strong><span>13K followers, active posting, good content. No link-in-bio strategy, no conversion funnel.</span></div></div>
+<div class="grade-card"><div class="grade grade-f">F</div><div class="grade-label"><strong>Review Platforms</strong><span>Zero reviews on TripAdvisor, Hipcamp, Yelp. Only Google and The Knot have reviews. Huge gap.</span></div></div>
+<div class="grade-card"><div class="grade grade-c">C+</div><div class="grade-label"><strong>Booking Flow (Glamping)</strong><span>Cloudbeds works but link is broken (404). Hipcamp listing has zero reviews. No direct booking optimization.</span></div></div>
+<div class="grade-card"><div class="grade grade-b">B</div><div class="grade-label"><strong>Client Experience (HoneyBook)</strong><span>Wedding flow is comprehensive and professional. Bar packages are clear. Missing: retreats, corporate, private events flows.</span></div></div>
+<div class="grade-card"><div class="grade grade-c">C</div><div class="grade-label"><strong>Operations & Processes</strong><span>Heavy reliance on Ashley for everything. No CRM, no automated follow-up, no pipeline tracking.</span></div></div>
+
+<!-- ===== WEBSITE ===== -->
+<h2 id="website">2. Website & SEO</h2>
+
+<h3>Current Site (ranchomoonrise.com — BofillTech)</h3>
+<p>The current live site is a basic template site managed by Steven Bofill at BofillTech. It's functional — has a booking widget (Cloudbeds), contact form, and decent photography. But it's doing the bare minimum.</p>
+
+<div class="rec-box">
+<strong>Problems Found:</strong>
+<p>No blog content for organic search. No structured data beyond basics. No FAQ schema. No AEO (answer engine optimization) content. Website URL in Google Business Profile uses HTTP instead of HTTPS. Monthly "website reports" from BofillTech appear to be generic template reports — not strategic. No conversion tracking or funnel optimization. The site is not generating leads on its own.</p>
+</div>
+
+<h3>New Site (rancho-moonrise.vercel.app — Adam's Build)</h3>
+<p>The new build is significantly better: modern design, SEO-optimized blog articles, FAQ schema, AEO paragraphs, CMS backend via Supabase, admin panel for events/photos/reviews. Ashley gave initial feedback (loves desktop, wants mobile work, wants calendar view for events — all addressed).</p>
+
+<div class="rec-box green">
+<strong>What's Working:</strong>
+<p>4 blog articles live targeting high-intent keywords. FAQPage schema on all 14 questions. OG/Twitter tags complete. Sitemap.xml and robots.txt created. Brand colors aligned to 2022 guidelines. Admin panel built and ready. Events calendar view implemented.</p>
+</div>
+
+<div class="rec-box amber">
+<strong>What's Needed to Go Live:</strong>
+<p>Mobile layout polish (Ashley flagged). Hero photo CMS loading (waiting on Ashley uploads). Sitemap submission to Google Search Console (needs Adam's UI access). DNS cutover from BofillTech to Vercel. SSL verification. Redirect map from old URLs to new structure.</p>
+</div>
+
+<!-- ===== GBP ===== -->
+<h2 id="gbp">3. Google Business Profile</h2>
+
+<p>Detailed in the separate GBP audit (April 7, 2026). Overall score: <strong>4/10</strong> despite having a 4.9-star rating with 125 reviews. The profile is the #1 discovery channel for this type of business and it's being neglected.</p>
+
+<div class="rec-box">
+<strong>Critical GBP Issues (recap):</strong>
+<p>8+ unreplied reviews. No business description (Google is writing it for them). Monday/Tuesday hours not set. Hotel amenities almost entirely blank — Google is warning this reduces search visibility. Only 1 post ever (from 3 years ago). No secondary categories (only "Hotel" — missing Event Venue, Wedding Venue, Campground). No Q&A seeded. Chat not enabled. No booking link in profile.</p>
+</div>
+
+<!-- ===== SOCIAL ===== -->
+<h2 id="social">4. Social Media</h2>
+
+<table>
+<tr><th>Platform</th><th>Followers</th><th>Activity</th><th>Grade</th></tr>
+<tr><td>Instagram</td><td>13,000</td><td>Active, regular posts + Reels</td><td><strong>B+</strong></td></tr>
+<tr><td>Facebook</td><td>~500</td><td>Cross-posts from Instagram</td><td><strong>C-</strong></td></tr>
+<tr><td>TikTok</td><td>Unknown</td><td>Listed on GBP, activity unclear</td><td><strong>?</strong></td></tr>
+<tr><td>Pinterest</td><td>Active</td><td>Event mood boards, good for weddings</td><td><strong>B</strong></td></tr>
+<tr><td>LinkedIn</td><td>Listed</td><td>Company page exists</td><td><strong>D</strong></td></tr>
+</table>
+
+<div class="rec-box">
+<strong>Gaps:</strong>
+<p>No link-in-bio tool (Linktree, Stan Store, etc.) to capture leads from Instagram. No email capture from social. Pinterest is good for wedding discovery but not connected to any booking funnel. Facebook is an afterthought but brides' parents and corporate event planners live there. No YouTube presence for venue walkthroughs — this is a major miss for a visual property.</p>
+</div>
+
+<div class="rec-box green">
+<strong>Quick Win:</strong>
+<p>Set up a link-in-bio page with: Book a Stay, Plan a Wedding, Pool Passes, Upcoming Events, Contact. This alone could convert more of the 13K followers into inquiries. Instagram bio should mention "Austin's glamping + events ranch" and include location tag.</p>
+</div>
+
+<!-- ===== REVIEWS ===== -->
+<h2 id="reviews">5. Reviews & Reputation</h2>
+
+<table>
+<tr><th>Platform</th><th>Rating</th><th>Reviews</th><th>Status</th></tr>
+<tr><td>Google</td><td>4.9★</td><td>125</td><td>Strong but unmanaged</td></tr>
+<tr><td>The Knot</td><td>Positive</td><td>~3-5</td><td>Good wedding reviews</td></tr>
+<tr><td>Hotels.com</td><td>8.0</td><td>Few</td><td>Exists</td></tr>
+<tr><td>TripAdvisor</td><td>—</td><td>0</td><td>Listed, unclaimed, no reviews</td></tr>
+<tr><td>Hipcamp</td><td>—</td><td>0</td><td>Listed, no reviews</td></tr>
+<tr><td>Yelp</td><td>—</td><td>Unknown</td><td>Listed, minimal</td></tr>
+<tr><td>WeddingWire</td><td>—</td><td>0</td><td>Not listed</td></tr>
+<tr><td>Facebook</td><td>5.0</td><td>5</td><td>100% recommend</td></tr>
+</table>
+
+<div class="rec-box">
+<strong>The Problem:</strong>
+<p>125 Google reviews at 4.9 stars is exceptional. But that's the ONLY platform with meaningful reviews. TripAdvisor has zero. Hipcamp has zero. WeddingWire doesn't even have a listing. Yelp is minimal. This means they're invisible on the platforms where people specifically search for glamping, camping, and wedding venues.</p>
+</div>
+
+<div class="rec-box green">
+<strong>Recommendations:</strong>
+<p>1) Claim TripAdvisor listing and optimize it. 2) Create WeddingWire listing (free). 3) Ask past wedding couples to review on The Knot AND WeddingWire. 4) Ask glamping guests to review on Hipcamp after checkout. 5) Build a post-stay email/text sequence that routes guests to the right platform based on their stay type (wedding → The Knot, glamping → Hipcamp/TripAdvisor, event → Google).</p>
+</div>
+
+<div class="rec-box">
+<strong>Reputation Risk — Neighbor Noise:</strong>
+<p>One critical The Knot review mentions a neighboring property playing loud amplified music that was impossible to sleep through, and that the venue "has no ability to control or prevent this." This is the kind of review that kills wedding bookings. Need a documented response strategy and potentially a noise mitigation plan (or at minimum, transparent disclosure during tours so couples aren't blindsided).</p>
+</div>
+
+<!-- ===== BOOKING ===== -->
+<h2 id="booking">6. Booking & Inquiry Flow</h2>
+
+<h3>Glamping / Stays</h3>
+<div class="rec-box">
+<strong>Findings:</strong>
+<p>Cloudbeds is the booking engine (linked from "Book Now" on the website). However, the direct Cloudbeds URL found in search results returns a 404. Hipcamp listing is live but has zero reviews and shows limited info (no showers listed, "shared toilet" — not appealing). Pricing: $40/night tent, $150/night cabin/safari tent. No pricing visible on their own website. No upsell flow (breakfast tacos, pool passes, add-ons).</p>
+</div>
+
+<h3>Weddings / Private Events</h3>
+<div class="rec-box">
+<strong>Findings:</strong>
+<p>Wedding inquiry goes through a "Request a Quote" form on the website. The form collects: name, phone, email, guest count, dates, referral source. No automated response. No pricing on the website (intentional — packages are $3K/$5K/$15K, tour required). But there's no nurture sequence after form submission. Leads likely go into Ashley's email inbox and get manually responded to.</p>
+</div>
+
+<div class="rec-box amber">
+<strong>The Funnel Gap:</strong>
+<p>Someone discovers Rancho Moonrise on Instagram → clicks to website → fills out contact form → then NOTHING happens automatically. No confirmation email, no "here's what to expect" sequence, no Calendly link to schedule a tour, no drip campaign. They're leaving money on the table at every step of the funnel. A simple 3-email welcome sequence after inquiry submission could dramatically improve conversion.</p>
+</div>
+
+<!-- ===== HONEYBOOK ===== -->
+<h2 id="honeybook">7. Client Experience (HoneyBook Flows)</h2>
+
+<h3>Wedding Vendors + Guidelines (4-page flow)</h3>
+<div class="rec-box green">
+<strong>Strengths:</strong>
+<p>Comprehensive and professional. Covers event checklist, coordinator guidelines, vendor rules (parking, overtime at $500/hr, decor restrictions, children policy, insurance requirements, alcohol policy, catering rules). Includes full recommended vendor list with 72+ vendors across 16 categories, all with links. Morning-after breakfast taco/mimosa packages included. Scheduling widget on the last page.</p>
+</div>
+
+<div class="rec-box">
+<strong>Weaknesses:</strong>
+<p>The flow is text-heavy — walls of text in the coordinator section. No visual breaks, icons, or infographics to make policies scannable. The vendor list has no descriptions, ratings, or reasons to choose one over another. The rental inventory link goes to a Google Drive PDF (not a polished catalog). Some vendors only link to Instagram (no websites). No FAQ section for common planner questions.</p>
+</div>
+
+<h3>Bar Packages (5-page flow)</h3>
+<div class="rec-box green">
+<strong>Strengths:</strong>
+<p>Clear tiered pricing (Campfire $7/pp/hr, Stargazer $11/pp/hr, Moonrise Pour $15/pp/hr). Consumption bar and combo/cash bar options well explained. Good step-by-step process overview. Add-on options (signature cocktails, seasonal beverages) included.</p>
+</div>
+
+<div class="rec-box">
+<strong>Weaknesses:</strong>
+<p>No photos of actual bar setups, cocktails, or bartenders in action. No sample drink menus. No comparison table to quickly see what's in each package side-by-side. The consumption bar page repeats the same pricing info as the combo bar page. No testimonials from past couples about the bar service.</p>
+</div>
+
+<h3>Missing Flows</h3>
+<div class="rec-box">
+<strong>Not Built Yet:</strong>
+<p>No HoneyBook flow for: corporate retreats, private events, intimate events, or glamping packages. These represent 54% of revenue (private events 46% + POS/bar 22% minus wedding-specific). Every event type should have its own branded client flow with pricing, policies, and next steps — not just weddings.</p>
+</div>
+
+<!-- ===== OPERATIONS ===== -->
+<h2 id="operations">8. Operations & Processes</h2>
+
+<div class="rec-box">
+<strong>No CRM:</strong>
+<p>No system tracking leads, inquiries, follow-ups, or pipeline. Everything lives in Ashley's email and head. If Ashley is unavailable for even a week, leads go cold. This is the single biggest operational risk.</p>
+</div>
+
+<div class="rec-box">
+<strong>No Automated Follow-Up:</strong>
+<p>Website form submissions, email inquiries, and phone calls don't trigger any automated response or sequence. No confirmation email. No "next steps" guide. No tour scheduling link. Compare this to competitors who send instant, branded responses with Calendly links.</p>
+</div>
+
+<div class="rec-box">
+<strong>No Review Collection System:</strong>
+<p>With 7-10 weddings and dozens of glamping stays, there should be a systematic post-event review request. Currently ad-hoc at best. This is why TripAdvisor, Hipcamp, and WeddingWire have zero reviews.</p>
+</div>
+
+<div class="rec-box">
+<strong>No Analytics or Tracking:</strong>
+<p>Google Analytics is on the site but unclear if anyone reviews it. No conversion tracking on form submissions. No UTM parameters on marketing links. No way to know which channel drives bookings. Can't optimize what you can't measure.</p>
+</div>
+
+<div class="rec-box green">
+<strong>What IS Working:</strong>
+<p>HoneyBook for wedding client management is solid. The contract/agreement flow is professional. The vendor relationships are strong (72+ recommended vendors). The bar service is well-structured with clear pricing tiers. Ashley is clearly competent — the issue is over-reliance on one person with no systems backing her up.</p>
+</div>
+
+<!-- ===== REVENUE ===== -->
+<h2 id="revenue">9. Revenue Opportunities</h2>
+
+<div class="rec-box green">
+<strong><span class="tag tag-revenue">Revenue</span> Pool Pass Optimization</strong>
+<p>Pool passes are sold through ResortPass but there's minimal promotion. This is a high-margin, low-effort revenue stream. Should be featured prominently on the website, Instagram bio, and GBP. Consider dynamic pricing (weekends higher, weekday specials). Add F&B upsell at the pool. $50K+ annual opportunity.</p>
+</div>
+
+<div class="rec-box green">
+<strong><span class="tag tag-revenue">Revenue</span> Breakfast Taco / Morning-After Package Upsell</strong>
+<p>Currently offered in the wedding flow at $600 for 50 guests. This should also be available to ALL overnight guests (glamping, retreats, corporate). A $15 breakfast add-on at booking time for 50 guests/week = $39K/year.</p>
+</div>
+
+<div class="rec-box green">
+<strong><span class="tag tag-revenue">Revenue</span> Corporate Retreat Packages</strong>
+<p>No dedicated marketing, no HoneyBook flow, no landing page targeting corporate event planners. Austin is a massive corporate events market. A single corporate retreat at $15K is the same as 3 weekends of glamping. Build a dedicated page, LinkedIn presence, and outbound strategy.</p>
+</div>
+
+<div class="rec-box green">
+<strong><span class="tag tag-revenue">Revenue</span> Weekday Utilization</strong>
+<p>The property is likely empty Mon-Thu. Opportunities: corporate day retreats, yoga/wellness workshops, photography shoots (engagement, maternity, branding), small private dinners, team-building events. Even at $500-1,000/weekday event, that's $100K+ if booked 2x/week.</p>
+</div>
+
+<div class="rec-box green">
+<strong><span class="tag tag-revenue">Revenue</span> Experience Add-Ons at Booking</strong>
+<p>Horseback riding, yoga, tomahawk throwing, hat making, line dance lessons — these are listed as vendor options but not priced or bookable online. Build a "Build Your Experience" add-on flow during the booking process. Even $50/person average on add-ons across all guests would be significant.</p>
+</div>
+
+<!-- ===== PRIORITIES ===== -->
+<h2 id="priorities">10. Top 15 Priorities</h2>
+<p style="margin-bottom: 24px; color: #8B7D6B;">Ranked by revenue impact and effort required.</p>
+
+<div class="rec-box"><strong><span class="tag tag-quick">Quick Win</span> 1. Reply to all Google reviews + seed Q&A</strong><p>Takes 1-2 hours. Directly impacts search visibility. Do this today.</p></div>
+
+<div class="rec-box"><strong><span class="tag tag-quick">Quick Win</span> 2. Complete GBP hotel amenities + business description + hours</strong><p>Takes 30 minutes. Google is literally telling them this is costing searches.</p></div>
+
+<div class="rec-box"><strong><span class="tag tag-quick">Quick Win</span> 3. Claim TripAdvisor + create WeddingWire listing</strong><p>Free. Opens two major discovery channels currently at zero.</p></div>
+
+<div class="rec-box"><strong><span class="tag tag-quick">Quick Win</span> 4. Set up Instagram link-in-bio with booking/inquiry CTAs</strong><p>13K followers with no conversion funnel. Fix in 20 minutes.</p></div>
+
+<div class="rec-box"><strong><span class="tag tag-medium">Medium Effort</span> 5. Build post-stay/post-event review request system</strong><p>Email/text sequence routed by stay type. Could 3x review count in 6 months.</p></div>
+
+<div class="rec-box"><strong><span class="tag tag-medium">Medium Effort</span> 6. Build automated inquiry response sequence</strong><p>Instant confirmation email + "What to expect" + Calendly tour link + 48hr follow-up. This is where leads are dying.</p></div>
+
+<div class="rec-box"><strong><span class="tag tag-medium">Medium Effort</span> 7. Launch new website on main domain</strong><p>The new build is better in every way. Finish mobile polish, cut DNS over, set up redirects.</p></div>
+
+<div class="rec-box"><strong><span class="tag tag-medium">Medium Effort</span> 8. Start weekly GBP posts</strong><p>1 post from 3 years ago vs competitors posting weekly. Rotate: events, photos, offers, behind-the-scenes.</p></div>
+
+<div class="rec-box"><strong><span class="tag tag-medium">Medium Effort</span> 9. Build corporate retreat landing page + HoneyBook flow</strong><p>Untapped revenue stream. Austin corporate market is massive. Need a dedicated sales page.</p></div>
+
+<div class="rec-box"><strong><span class="tag tag-medium">Medium Effort</span> 10. Add pool pass promotion to GBP, Instagram bio, and website hero</strong><p>High-margin revenue currently buried. Make it a primary CTA.</p></div>
+
+<div class="rec-box"><strong><span class="tag tag-major">Major Project</span> 11. Implement a CRM (even a simple one)</strong><p>Track every lead, every inquiry, every follow-up. Ashley can't scale without this. Even a spreadsheet is better than nothing.</p></div>
+
+<div class="rec-box"><strong><span class="tag tag-major">Major Project</span> 12. Build HoneyBook flows for ALL event types</strong><p>Corporate retreats, private events, intimate events. Not just weddings. Each needs its own branded experience.</p></div>
+
+<div class="rec-box"><strong><span class="tag tag-major">Major Project</span> 13. Fix the Hipcamp listing</strong><p>Zero reviews, "no showers" listed, "shared toilet" — this reads like a bare campsite, not a luxury glamping ranch. Rewrite copy, add photos, fix amenity list, and start routing guests to leave reviews there.</p></div>
+
+<div class="rec-box"><strong><span class="tag tag-major">Major Project</span> 14. Set up conversion tracking + analytics dashboard</strong><p>Can't optimize what you can't measure. UTM parameters on all links, form submission tracking, channel attribution.</p></div>
+
+<div class="rec-box"><strong><span class="tag tag-major">Major Project</span> 15. Address the neighbor noise issue</strong><p>The critical review about amplified music from a neighbor is a dealbreaker for weddings. Need: disclosure during tours, noise mitigation plan, and a prepared response for the review. Ignoring it loses more than addressing it.</p></div>
+
+<h2 style="margin-top: 60px;">Bottom Line</h2>
+<p>Rancho Moonrise has an incredible physical product — 36 acres, unique venue spaces, strong reviews from people who actually visit. The property sells itself once someone sees it. The problem is everything <em>before</em> the visit: discovery, online presence, lead nurture, and follow-up. They're running a $350K/year business on what should be $750K+ infrastructure. The 4.9-star rating, 13K Instagram followers, and 125 Google reviews prove the demand is there. The systems just aren't capturing it.</p>
+
+<p style="margin-top: 32px; padding-top: 24px; border-top: 1px solid #E8E0D4; font-size: 0.8rem; color: #8B7D6B;">
+Audit prepared by Adam Styer via Claude &middot; April 8, 2026 &middot; Sources: ranchomoonrise.com, Google Business Profile, Instagram, HoneyBook client flows, The Knot, TripAdvisor, Hipcamp, Hotels.com, Facebook, wedding contract, and all brand materials in /brand folder.
+</p>
+
+</div>
+</body>
+</html>

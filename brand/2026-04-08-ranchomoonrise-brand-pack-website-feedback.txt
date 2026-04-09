@@ -1,0 +1,24 @@
+From: Rancho Moonrise <howdy@ranchomoonrise.com>
+Date: Wed, 8 Apr 2026 12:23:36 -0500
+Subject: Re: I accidentally built you a new website
+To: Adam Styer <styer.adam@gmail.com>
+
+Dropping the Brand Pack into the folder.
+
+Here is our pinterest page where we make different folders for different events but can see the overall fun vibe we go for: https://www.pinterest.com/Rancho_Moonrise/
+
+On Tue, Apr 7, 2026 at 3:32 PM Rancho Moonrise wrote:
+> COOL. Let's do this.
+> Some things I quickly noticed:
+> - love it on desktop, dont love it on the phone
+> - need RM logo at the top
+> - need POOL PASSES at the top
+> - Drop down FAQS and BLOG to bottom navigation
+> - re-do events page a bit, I like the option for a calendar view as well as list view
+> Can you talk Friday at 11 AM?
+
+On Mon, Apr 6, 2026 at 4:04 PM Adam Styer wrote:
+> See it for yourselves:
+> New website: https://rancho-moonrise.vercel.app/
+> Full breakdown of everything I can do: https://rancho-moonrise.vercel.app/dashboard.html
+> [Full email about new website with SEO details, GBP optimization, AEO, conversion improvements, automations including voice guide, social media, blog content, email automation, event management]

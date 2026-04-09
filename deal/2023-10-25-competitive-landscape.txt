@@ -1,0 +1,14 @@
+⚠️ STATUS: HISTORICAL — 2023 competitive landscape. Market conditions have shifted. See _SOURCE-GUIDE.txt for current sources.
+Source: Google Drive — Competitive landscape spreadsheet
+Downloaded: 2026-04-08
+---
+
+| Venue | Type | Rating | Distance from Austin |
+| :-: | :-: | :-: | :-: |
+| Rancho Moonrise | Hotel, glamping resort, and wedding venue | 5 stars | 20 minutes |
+| House On the Hill | Wedding venue | 4.7 stars | 10 miles |
+| Anderson Terrace Weddings & Events Venue | Wedding venue | 4.6 stars | 15 miles |
+| Barr Mansion, Ballroom, and Farmstead | Wedding venue | 4.5 stars | 25 miles |
+| The Vineyards at Chappel Lodge | Wedding venue | 4.5 stars | 30 miles |
+| Vista On Seward Hill | Wedding venue | 4.6 stars | 35 miles |
+| Camposanto ATX Glamping | Glamping resort | 5 stars | 40 miles |

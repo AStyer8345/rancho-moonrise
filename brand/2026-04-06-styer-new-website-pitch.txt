@@ -1,0 +1,29 @@
+From: Adam Styer <styer.adam@gmail.com>
+Date: Mon, 6 Apr 2026 16:03:54 -0500
+Subject: I accidentally built you a new website
+To: [Rancho Moonrise]
+
+See it for yourselves:
+New website: https://rancho-moonrise.vercel.app/
+Full breakdown: https://rancho-moonrise.vercel.app/dashboard.html
+
+Your current site scores 55/100 on Google's speed test, takes 57 seconds to load. New one is 87/100, loads in 3.3 seconds.
+
+SEO — Google ranks fast websites higher. At 55/100 you're getting buried. At 87/100 you're competing.
+
+GBP Optimization — Immediate results.
+
+AEO — When someone asks AI "where should I have my wedding near Austin?" the new site is built to feed those AI engines the right information.
+
+Conversion improvements:
+- Loads in 3.3 seconds
+- Professional contact page with tailored experience
+- AI-powered chatbot answering questions 24/7
+- Sticky sidebar with phone and booking link
+
+Automations:
+- Voice Guide — AI trained on how you actually talk
+- Automated social media
+- SEO blog content
+- Email automation for leads
+- Event management — one upload, everything handled
