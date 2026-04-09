@@ -10,6 +10,14 @@
 
 ---
 
+## 2026-04-08 — Keep Playfair Display for Headings (Americane Not Available)
+
+**Decision:** Keep Playfair Display as the heading font. Add Overpass (body) and Lora (accent) from Google Fonts per brand guide. Americane (brand guide primary heading font) is skipped.
+
+**Why:** Americane is Adobe-only — requires an Adobe Fonts subscription and web project setup. Playfair Display is a reasonable serif substitute already in use. Overpass and Lora are both brand guide fonts available on Google Fonts, so those were added. If Ashley has Adobe Fonts access, Americane can be added later as a single CSS change.
+
+---
+
 ## 2026-04-06 — Static HTML/CSS/JS (No Framework)
 
 **Decision:** Pure HTML/CSS/JS with no build step. No React, no Next.js, no WordPress.

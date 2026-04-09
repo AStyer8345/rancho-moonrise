@@ -1,6 +1,6 @@
 # Rancho Moonrise — Project Context
 
-**Last updated:** 2026-04-08 (weekly content agent run #5)
+**Last updated:** 2026-04-08 (brand alignment update)
 
 ---
 
@@ -105,19 +105,20 @@ Advisory engagement for Rancho Moonrise — glamping, events, and retreat ranch 
 ## Website UI Status (updated 2026-04-08)
 
 - **Design overhaul**: "Modern Desert / Boutique Ranch" aesthetic applied
-- Nav: orange glassmorphism, logo with shadow box (72px default → 44px scrolled)
+- **Brand alignment** (2026-04-08): Colors warmed to 2022 brand guide (White Denim #F2E9DB bg, Clay #B6603F nav/terracotta, Amber #C9842B accents, Coral #DE8556, Pine #31735A). Fonts updated to Overpass (body) + Lora (accent) per brand guide. SVG paper texture overlay on backgrounds. Card border-radius softened to 8px. Playfair Display kept for headings (Americane is Adobe-only).
+- Nav: clay glassmorphism (was gold), logo with shadow box (72px default → 44px scrolled)
 - Nav buttons (Book Now, Pool Passes): white background + orange text
 - Homepage restructured: dedicated sections for Cabins & Tents, Event Barn & Neon Moon duo, Ranch Weddings CTA, Wellness & Experiences
 - Event cards now include artwork images (Lone Star Party, Bridal Sip & See, Yoga & Mimosas)
 - Slideshow: improved positioning for near-square images (`background-position: center 30%`)
-- Background: sand (#F5F2ED), body font Montserrat, headings Playfair Display
+- Background: White Denim (#F2E9DB), body font Overpass, headings Playfair Display
 - Scroll reveal fade-in-up animations on sections
 - Mobile sticky "Book Your Stay" CTA bar pinned to bottom
 - Pool Passes in nav (links to ResortPass), FAQs + Blog footer-only
 - Events page: list + calendar view toggle (calendar default on desktop, list on mobile)
 - Event artwork slideshow: 6 event posters cycle in Wellness section (4s autoplay, dot nav)
 - Testimonial marquee: horizontal CSS-only infinite scroll (6 reviews, edge fades, pause on hover)
-- CSS cache busted to ?v=6 across all pages
+- CSS cache busted to ?v=7 across all pages
 
 ## Admin Panel + CMS (added 2026-04-08)
 
@@ -142,6 +143,7 @@ Advisory engagement for Rancho Moonrise — glamping, events, and retreat ranch 
 7. (Website) Enable hero photo CMS loading once Ashley uploads photos via admin
 8. (Website) Submit sitemap.xml to Google Search Console — requires Adam's UI access
 9. (Website) Blog article #5 — "Glamping vs. Camping: What's the Difference?" (next up)
+10. (Website) Ask Ashley if she has Adobe Fonts access for Americane heading font
 
 ---
 

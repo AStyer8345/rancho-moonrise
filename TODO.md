@@ -4,6 +4,7 @@
 
 - [ ] Share admin panel credentials with Ashley (admin@ranchomoonrise.com / RanchoMoonrise2026)
 - [ ] Get Ashley's feedback on admin panel — what else does she want to edit?
+- [ ] Ask Ashley if she has Adobe Fonts access for Americane heading font (brand guide primary)
 - [ ] Mobile layout polish — Adam flagged homepage needs rearranging on mobile
 - [ ] Get operating agreement from Nancy/Ashley — review ownership terms, buyout provisions, voting rights
 - [ ] Get QuickBooks access or P&L + Balance Sheet from Nancy/Ashley — need expenses and net profit

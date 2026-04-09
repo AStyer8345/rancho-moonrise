@@ -1,5 +1,16 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-08 — Brand Alignment Update (2022 Brand Guide + Pinterest Direction)
+
+- **Color palette warmed to brand guide:** Background → White Denim #F2E9DB (was #F5F2ED), terracotta → Clay #B6603F (was #C4704B), amber → #C9842B (was #c9944a). Added Coral #DE8556 and Pine #31735A as new CSS variables.
+- **Nav glassmorphism shifted:** Gold → clay/terracotta (`rgba(182, 96, 63, 0.78)`) for warmer, earthier feel.
+- **Fonts updated to brand guide:** Added Overpass (body secondary) and Lora (accent) from Google Fonts across all 13 HTML pages. Kept Playfair Display for headings (Americane is Adobe-only).
+- **Paper texture overlay:** SVG inline noise pattern added to `body` and `.section--cream` backgrounds for subtle paper/canvas feel per Pinterest vintage poster direction.
+- **Card softening:** Border-radius increased from 4px to 8px on all card types, warmer shadows (`0 2px 8px rgba(0,0,0,0.08)`).
+- **Content fix:** Homepage AEO check-in time corrected from "4–8 PM" to "3–5 PM"; schema.org `checkinTime` from "16:00" to "15:00".
+- **Mobile tweaks:** Nav gap tightened, mobile CTA bar updated to terracotta background.
+- **Cache bust:** All CSS links updated to `?v=7` across all pages.
+
 ## 2026-04-08 — Admin Panel + Supabase CMS
 
 - **Supabase CMS tables:** Created `rancho_events`, `rancho_photos`, `rancho_testimonials` with RLS (public SELECT for site reads, authenticated-only writes for admin). Auto-updating `updated_at` triggers. Storage bucket `rancho-moonrise` with public read, authenticated write.
