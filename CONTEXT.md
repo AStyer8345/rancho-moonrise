@@ -85,7 +85,7 @@ Advisory engagement for Rancho Moonrise — glamping, events, and retreat ranch 
 
 ## Active Blockers
 
-- **No operating agreement reviewed** — can't determine real buyout number
+- ~~No operating agreement reviewed~~ — **OBTAINED 2026-04-08**, in project folder. Next: review ownership terms, buyout provisions, voting rights to determine real buyout number.
 - **No P&L or Balance Sheet** — can't build credible deal summary for Christopher
 - **No QuickBooks access** — expenses unknown
 - Signed event contracts, staff/pay list, permits, title docs, property tax statements, appraisals all outstanding

@@ -2,11 +2,11 @@
 
 ## Now (this week)
 
-- [ ] Share admin panel credentials with Ashley (admin@ranchomoonrise.com / RanchoMoonrise2026)
+- [x] Share admin panel credentials with Ashley (admin@ranchomoonrise.com / RanchoMoonrise2026) — done 2026-04-08
 - [ ] Get Ashley's feedback on admin panel — what else does she want to edit?
 - [ ] Ask Ashley if she has Adobe Fonts access for Americane heading font (brand guide primary)
 - [ ] Mobile layout polish — Adam flagged homepage needs rearranging on mobile
-- [ ] Get operating agreement from Nancy/Ashley — review ownership terms, buyout provisions, voting rights
+- [x] Get operating agreement from Nancy/Ashley — done 2026-04-08, document in project folder
 - [ ] Get QuickBooks access or P&L + Balance Sheet from Nancy/Ashley — need expenses and net profit
 - [ ] Collect remaining due diligence docs: signed event contracts, staff/pay list, permits, title docs, property tax statements, appraisals
 
