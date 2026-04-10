@@ -117,6 +117,7 @@
 <div class="tab-bar">
   <button class="tab-btn active" onclick="switchTab('plan')">Plan</button>
   <button class="tab-btn" onclick="switchTab('metrics')">Metrics</button>
+  <button class="tab-btn" onclick="switchTab('audits')">Audits</button>
 </div>
 
 <div id="tab-plan" class="tab-content active">
@@ -589,6 +590,29 @@
 
 </div><!-- /tab-metrics -->
 
+<div id="tab-audits" class="tab-content">
+<div class="divider"></div>
+
+<!-- ===== BUSINESS AUDITS ===== -->
+<h2><span class="phase-label">Audits</span>Rancho Moonrise Business Audits</h2>
+<p class="section-intro">Complete business audits of Rancho Moonrise across website, GBP, social, reviews, booking flow, HoneyBook, and operations. Each audit is dated so we can re-run the process later and measure progress against the original findings. The improvement plan on the first tab was built directly from the April 9, 2026 audit below.</p>
+
+<div class="schedule-card" style="border-left: 4px solid #D4A574;">
+  <strong>April 9, 2026 — Full Business Audit (Baseline)</strong>
+  <p>First comprehensive audit across all 7 business areas. Graded every channel, identified 27 specific issues, and drove the Phase 1–4 improvement plan. This is the benchmark every future audit gets compared against.</p>
+  <div class="sched-detail">
+    Areas graded: Website (D/B), GBP (D), Social (B-), Reviews (F), Booking (C+), HoneyBook (B), Operations (C)
+    <br>Source findings: <a href="/audits/2026-04-09-business-audit.html" style="color:#D4A574; text-decoration: underline;">View full audit →</a>
+  </div>
+</div>
+
+<div style="background:#0F1419; border:1px dashed #2A2E3A; border-radius:8px; padding:1.25rem 1.5rem; margin-top:1.5rem;">
+  <strong style="color:#8B7D6B; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em;">Next Audit</strong>
+  <p style="margin: 0.5rem 0 0; color: #9BA3B0; font-size: 0.88rem;">Recommended cadence: re-run the full business audit every 30 days to track grade movement against the April 9 baseline. Each new audit drops in as a new card above this one, keeping the full history visible. The grade trajectory on the Plan tab forecasts where we should be at each checkpoint — audits are how we verify we actually got there.</p>
+</div>
+
+</div><!-- /tab-audits -->
+
 <div class="divider"></div>
 
 <div class="bottom-line">
@@ -609,6 +633,7 @@ function switchTab(tabName) {
 }
 // Support direct linking via hash
 if (window.location.hash === '#metrics') { switchTab('metrics'); }
+if (window.location.hash === '#audits') { switchTab('audits'); }
 </script>
 
 </body>
