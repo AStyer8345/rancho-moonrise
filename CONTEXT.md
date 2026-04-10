@@ -1,12 +1,14 @@
 # Rancho Moonrise — Project Context
 
-**Last updated:** 2026-04-10 (3-disposition tag sweep; Adam now has GBP Manager access)
+**Last updated:** 2026-04-10 (site-wide brand-facts sweep complete — all 17 customer-facing pages shipped to Vercel preview)
 
 ---
 
 ## What This Is
 
-Advisory engagement for Rancho Moonrise — glamping, events, and retreat ranch in Manor, TX (20117 Lockwood Rd, Manor TX 78653). Adam runs deal structuring (buyout + new partner) and builds digital/operational systems. Ashley runs day-to-day operations.
+Advisory engagement for Rancho Moonrise — glamping, events, and retreat ranch on 36 acres, 20 minutes from downtown Austin (street address 20117 Lockwood Rd, 78653 — operational only; never use "Manor" as a location descriptor in copy). Adam runs deal structuring (buyout + new partner) and builds digital/operational systems. Ashley runs day-to-day operations.
+
+**Brand facts (authoritative):** See `VOICE-GUIDE.md` → "Property Facts" section. Never use "luxury", "Hill Country", "Manor", "General Store", or cite a specific unit count. The Neon Moon Barn Lounge is event-only, not a walk-in bar.
 
 **Repo:** `AStyer8345/rancho-moonrise`, branch `main`, deploys to Vercel
 **Live site:** ranchomoonrise.com (BofillTech hosting — OLD, not editable by Claude)
@@ -24,14 +26,17 @@ Advisory engagement for Rancho Moonrise — glamping, events, and retreat ranch 
 
 ## What's Next
 
+- Adam: Curate real-wedding photo set to replace weddings.html gallery placeholder (6 tiles, aria-hidden, "photos coming soon" note live now)
 - Adam: Execute the 5 DRAFT→POST GBP tasks now that he has access — #1 (reply to 9 reviews, Claude drafts), #2 (replace blog-post description + amenities + hours, Claude drafts), #3 (answer pending Q&A + seed 10 FAQs, Claude drafts), plus pure-manual #7 (verify social links) and #15 (enable Chat) and #27 (upload photos)
-- Adam: DNS cutover from BofillTech to Vercel (#1 overall unlock)
+- Adam: DNS cutover from BofillTech to Vercel (#1 overall unlock — NOW the Vercel site is brand-correct so cutover is low-risk)
 - Adam: Rotate GITHUB_TOKEN on Vercel to a fine-grained PAT (5 min)
 - Claude (auto): SEO/AEO prep work on Vercel site — Mon/Wed/Fri at 5 AM
 - Claude (auto): Weekly GBP posts — drafts saved to `brand/gbp-posts/` for Adam to review
 
 ## Last Worked On
 
+- 2026-04-10: **Brand-facts site sweep shipped.** All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms (luxury, Hill Country, General Store, 20/31 acres, Manor-as-descriptor, Neon Moon walk-in framing, 4 ceremony sites, premier, oak trees, specific unit counts, private-fire-pit-per-site). Header logo swapped to brand-pack Clay SVG on every page. 4-icon social group (Instagram-priority + FB/TikTok/LinkedIn) added to nav + mobile menu. Events → "RM Events" rename propagated across nav, mobile, and all footers. Wedding budget dropdown (required, 4 tiers $5K-$60K+) added to contact form wedding inquiry section. Placeholder wedding gallery section added to weddings.html with "photos coming soon" note (asset gap — real-wedding photo curation still pending). CSS cache bust v=7 → v=8. Footer description replaced with 36-acre framing on every page. 2 commits pushed: `59beb4b` (main sweep, 373 files) + `5bbf84d` (4 footer fixes the subagent missed). Verified live on rancho-moonrise.vercel.app: RM Events × 3 on homepage, wedding gallery + Unlimited Ceremony Options on weddings, budget dropdown on contact, zero banned terms across 7 spot-checked pages, logo SVG returns 200.
+- 2026-04-10: **Ashley brand-facts call processed + acreage locked at 36.** Updated `VOICE-GUIDE.md` (root) and `brand/voice-guide.md` with Ashley's corrections: banned "luxury", "Texas Hill Country", "Manor" (as copy descriptor), "General Store" (→ "The Lodge"), walk-in bar framing for Neon Moon Barn Lounge (event-only). Removed specific unit count (fluctuates 15/18/19), oak references (no oak trees), and corrected "fire pits throughout the property" (not every unit). Added wedding budget dropdown, "unlimited ceremony options", "Our Venues" → "Our Spaces" rename, Events → "RM Events" rename. New "Property Facts (authoritative)" section in VOICE-GUIDE.md. Official brand pack imported: web-ready subset committed at `site/images/brand/`, full 1 GB pack at `rancho-moonrise-assets/brand-pack-2026-04-10/` (outside repo), index at `brand/BRAND-ASSETS.md`, update prompt rewritten at `brand/CLAUDE-CODE-WEBSITE-UPDATE-PROMPT.md`. **Acreage resolved to 36** for all customer-facing copy (DECISIONS.md 2026-04-10); deal-file per-tract reconciliation (31.6) left open for buyout modeling as non-blocking. Site sweep itself (~109 banned-term matches across 22 files) deferred to a fresh session using the rewritten prompt.
 - 2026-04-10: **3-disposition tag sweep + GBP access unblock.** Adam confirmed GBP Manager access (can post, reply, edit, view performance). Added `tag-draft-post` CSS class + new `.disposition-legend` intro block on `improvement-plan.html` explicitly defining AUTO / DRAFT→POST / MANUAL. Re-tagged every one of the 35 tasks so each carries exactly ONE disposition: 12 AUTO, 5 DRAFT→POST (#1 review replies, #2 GBP description, #3 Q&A seed, #12 Hipcamp, #22 SOPs), 18 MANUAL. Shifted GBP tasks (#1, #2, #7, #15, #27) from Ashley → Adam; #1 and #2 also gained Claude as co-owner (drafts the copy). HTML balance 243/243 divs, 35 tasks preserved.
 - 2026-04-10 (SEO run): Published blog #6 (`ranch-wedding-texas.html` — "Planning a Ranch Wedding in Texas"). Added SpeakableSpecification schema to homepage. Fixed AggregateRating count 122→125 (homepage + accommodations). Updated sitemap with new entry + lastmods. Blog index now shows 6 published articles.
 - 2026-04-10: Added **Links tab** and **Voice tab** to improvement-plan.html. Links tab is a mind-map-style grid of 8 category cards (Websites, Booking, Social, GBP, Reviews, OTAs, Wedding Directories, Internal) with status tags (Primary/Live/Gap/Verify) — doubles as a visible gap audit. Voice tab is a condensed render of `VOICE-GUIDE.md` (three words, tone table, key phrases, never-say table, writing patterns, Instagram voice, personas, brand details). Tab order now: Plan · Metrics · Audits · Intel · Done · Links · Voice. Hash routing added for `#links` and `#voice`. 239/239 div balance verified.

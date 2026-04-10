@@ -2,6 +2,30 @@
 
 ---
 
+## 2026-04-10 — Ship Wedding Gallery As Placeholder, Don't Block Sweep
+
+**Decision:** `site/pages/weddings.html` gets a 6-tile `.wedding-gallery` placeholder section with a visible "photos coming soon" note, `aria-hidden="true"` on the empty grid, and a TODO comment pointing at the missing asset. Shipped in the same commit as the brand-facts sweep.
+
+**Over:** (a) blocking the entire sweep until Ashley delivers curated wedding photos, or (b) omitting the gallery entirely and adding it as a separate future task.
+
+**Why:** The sweep was the #1 unlock for DNS cutover (a brand-correct Vercel site is the gate to pointing `ranchomoonrise.com` at it). Holding the whole sweep for a photo asset that Ashley hasn't curated would delay cutover by days or weeks. Omitting the gallery would leave weddings.html structurally incomplete relative to the user's stated design (wedding page needs a gallery per the 2026-04-10 Ashley call), and future-Adam would have to remember to add the section back — easy to miss. The placeholder is the compromise: the structure is already in the HTML/CSS/DOM where real photos slot in as a one-commit swap later, and the visible "photos coming soon" note is honest with visitors instead of leaving a broken-looking empty row.
+
+**Context:** Revisit when Ashley delivers the photo set (tracked in TODO.md "Open asset gap"). Replacement is mechanical: swap the 6 `<div class="wedding-gallery__tile"></div>` placeholders for `<img>` tags, drop `aria-hidden="true"`, delete the `.wedding-gallery__note` paragraph. CSS for the grid already lives in the committed stylesheet so no styling work is needed on delivery.
+
+---
+
+## 2026-04-10 — Website Copy Uses "36 Acres" (Ashley's Number)
+
+**Decision:** All customer-facing site copy, GBP posts, social content, and brand materials will say **36 acres**. This is Ashley's number from the 2026-04-10 brand-facts call and it's the authoritative figure for anything the public sees.
+
+**Over:** 31.6 acres (the per-tract sum in `CONTEXT.md`: Tract I 9.9 + Tract II 11 + Tract III 10.7).
+
+**Why:** Ashley runs the business and is the operator of record. Her stated acreage is what shows up in every other Rancho-operated touchpoint (GBP, Instagram, conversations with guests), so having the website disagree with her would create a "what do you actually own?" confusion on tours and inquiries. The 4.4-acre gap is small enough that the most likely explanation is rounding, an easement, or a parcel measurement that didn't land in the three tracts — none of which matter for marketing.
+
+**Context:** The per-tract math in the deal file is separately load-bearing for the Exhibit A buyout modeling — that's a finance concern, not a website concern, and stays flagged in `TODO.md` for reconciliation before the buyout modeling is final. Marketing copy ships now; finance reconciliation happens on its own track.
+
+---
+
 ## 2026-04-10 — DOM Location Is Source of Truth for "Done"
 
 **Decision:** A task is considered done if and only if its `<div class="task" data-item-id="...">` element lives inside `#done-tasks-container` in `improvement-plan.html`. Not a class, not a data attribute, not localStorage.
