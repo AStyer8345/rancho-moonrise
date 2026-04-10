@@ -1,6 +1,6 @@
 # Rancho Moonrise — Project Context
 
-**Last updated:** 2026-04-10 (daily SEO run: blog #6, SpeakableSpecification, AggregateRating fix)
+**Last updated:** 2026-04-10 (3-disposition tag sweep; Adam now has GBP Manager access)
 
 ---
 
@@ -18,20 +18,21 @@ Advisory engagement for Rancho Moonrise — glamping, events, and retreat ranch 
 ## Active Blockers
 
 - **DNS cutover not done** — New Vercel site not live on main domain. ALL SEO/AEO impact blocked until this happens. This is the #1 unlock.
-- **GBP access** — Claude cannot edit GBP. Description fix, hours, Q&A seeding all require Ashley.
 - **Exhibit A missing** — Cannot model buyout without ownership percentages from Nancy/Ashley.
 - **GITHUB_TOKEN on Vercel is broad-scoped** — using `gh auth token` bootstrap. TODO: swap for fine-grained PAT scoped only to `AStyer8345/rancho-moonrise` contents:write.
+- ~~GBP access~~ ✅ **UNBLOCKED 2026-04-10** — Adam has Manager access. Tasks #1, #2, #3, #7, #15, #27 now owned by Adam, not Ashley.
 
 ## What's Next
 
-- Ashley: Fix GBP (description is a blog post, hours not set, reply to 9 unreplied reviews, seed Q&As)
-- Adam: DNS cutover from BofillTech to Vercel
+- Adam: Execute the 5 DRAFT→POST GBP tasks now that he has access — #1 (reply to 9 reviews, Claude drafts), #2 (replace blog-post description + amenities + hours, Claude drafts), #3 (answer pending Q&A + seed 10 FAQs, Claude drafts), plus pure-manual #7 (verify social links) and #15 (enable Chat) and #27 (upload photos)
+- Adam: DNS cutover from BofillTech to Vercel (#1 overall unlock)
 - Adam: Rotate GITHUB_TOKEN on Vercel to a fine-grained PAT (5 min)
 - Claude (auto): SEO/AEO prep work on Vercel site — Mon/Wed/Fri at 5 AM
-- Claude (auto): Weekly GBP posts — drafts saved to `brand/gbp-posts/` for Adam/Ashley to review
+- Claude (auto): Weekly GBP posts — drafts saved to `brand/gbp-posts/` for Adam to review
 
 ## Last Worked On
 
+- 2026-04-10: **3-disposition tag sweep + GBP access unblock.** Adam confirmed GBP Manager access (can post, reply, edit, view performance). Added `tag-draft-post` CSS class + new `.disposition-legend` intro block on `improvement-plan.html` explicitly defining AUTO / DRAFT→POST / MANUAL. Re-tagged every one of the 35 tasks so each carries exactly ONE disposition: 12 AUTO, 5 DRAFT→POST (#1 review replies, #2 GBP description, #3 Q&A seed, #12 Hipcamp, #22 SOPs), 18 MANUAL. Shifted GBP tasks (#1, #2, #7, #15, #27) from Ashley → Adam; #1 and #2 also gained Claude as co-owner (drafts the copy). HTML balance 243/243 divs, 35 tasks preserved.
 - 2026-04-10 (SEO run): Published blog #6 (`ranch-wedding-texas.html` — "Planning a Ranch Wedding in Texas"). Added SpeakableSpecification schema to homepage. Fixed AggregateRating count 122→125 (homepage + accommodations). Updated sitemap with new entry + lastmods. Blog index now shows 6 published articles.
 - 2026-04-10: Added **Links tab** and **Voice tab** to improvement-plan.html. Links tab is a mind-map-style grid of 8 category cards (Websites, Booking, Social, GBP, Reviews, OTAs, Wedding Directories, Internal) with status tags (Primary/Live/Gap/Verify) — doubles as a visible gap audit. Voice tab is a condensed render of `VOICE-GUIDE.md` (three words, tone table, key phrases, never-say table, writing patterns, Instagram voice, personas, brand details). Tab order now: Plan · Metrics · Audits · Intel · Done · Links · Voice. Hash routing added for `#links` and `#voice`. 239/239 div balance verified.
 - 2026-04-10: Added Done tab to improvement-plan.html — completed tasks now physically relocate into `#done-tasks-container` (newest on top) rather than fading in place on the Plan tab. Backfilled tasks 4, 6, 10 moved at rest. Deploy live at commit 01319c8.

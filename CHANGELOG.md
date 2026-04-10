@@ -1,5 +1,16 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-10 — 3-Disposition Tag Sweep (Adam Now Has GBP Access)
+- Adam confirmed he has Google Business Profile **Manager** access — can post, reply to reviews, edit info, view performance. Unblocks GBP work previously waiting on Ashley.
+- Added new `tag-draft-post` CSS class (dark magenta on `#2A0D2A`, text `#D47DC4`) for "Claude writes content, human pastes into third-party system" tasks. Sits alongside existing `tag-auto` (teal) and `tag-manual` (amber).
+- Replaced vague intro paragraph on `site/improvement-plan.html` with a new `.disposition-legend` block that explicitly defines all 3 dispositions: **AUTO** (scheduled Claude task, zero human touch), **DRAFT→POST** (Claude writes, human pastes into GBP/Hipcamp/WeddingWire/etc.), **MANUAL** (click/verify/configure/decide — Claude cannot advance alone).
+- Re-tagged every task so each carries exactly ONE disposition (was previously inconsistent — many tasks had no disposition tag at all):
+  - **AUTO (12):** #8 review request system, #9 inquiry response, #14 pool pass promo, #24 Facebook channel, S1-S5 (blog splits, H2 summaries, topical clusters, schema, pool pass page), S7 AEO baseline, S8 blog-to-GBP, plus completed #10 weekly GBP posting
+  - **DRAFT→POST (5):** #1 Google review replies, #2 GBP description/amenities/hours, #3 GBP Q&A seed, #12 Hipcamp listing fix, #22 SOPs for Ashley
+  - **MANUAL (18):** #5, #7, #11, #13, #15, #16, #17, #18, #19, #20, #21, #23, #25, #26, #27, S6, plus completed #4, #6
+- Shifted GBP-related ownership from Ashley → Adam on tasks now unblocked by Manager access: #1, #2, #7, #15, #27 all moved to Adam. Task #1 and #2 also gained Claude as co-owner (Claude drafts the copy). Task #3 was already Adam + Claude — disposition clarified.
+- HTML balance post-sweep: 243 open `<div>` / 243 close (gained 4 from the legend block), 35 task cards preserved (32 active + 3 completed), all 35 tasks now carry exactly one disposition tag.
+
 ## 2026-04-10 — Daily SEO Run: Blog #6, SpeakableSpecification, AggregateRating Fix
 - Published blog article #6: `site/pages/ranch-wedding-texas.html` — "Planning a Ranch Wedding in Texas — What Austin Couples Need to Know". Targets "ranch wedding Texas", "ranch wedding near Austin", "planning a ranch wedding". ~1,500 words with AEO block (4 direct-answer Q&As), BlogPosting + BreadcrumbList schema, full OG/Twitter tags, cross-links to weddings/accommodations/contact pages.
 - Blog index updated: 6th post card added to `site/pages/blog.html`; CollectionPage ItemList schema updated to position 6.

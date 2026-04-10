@@ -3,19 +3,25 @@ Last updated: 2026-04-10
 
 ## Now (this week — April 9-15)
 
-### NEEDS ASHLEY (manual, GBP access required)
-- [ ] Reply to all 9 unreplied Google reviews (Task 1)
-- [ ] Replace blog post in GBP "From the owner" with real business description (Task 2 — CRITICAL)
-- [ ] Set business hours on GBP (Task 2)
-- [ ] Answer remaining hotel amenity categories on GBP (Task 2)
-- [ ] Answer the unanswered pool day pass Q&A on GBP (Task 3)
-- [ ] Post 10 FAQ Q&As to GBP (Claude drafts, Ashley posts) (Task 3)
+### NEEDS ADAM — GBP work (newly unblocked, he has Manager access)
+- [ ] Reply to all 9 unreplied Google reviews — Claude drafts, Adam pastes (Task 1 — DRAFT→POST)
+- [ ] Replace blog post in GBP "From the owner" with real business description — Claude drafts, Adam pastes (Task 2 — CRITICAL — DRAFT→POST)
+- [ ] Set business hours on GBP (Task 2 — MANUAL)
+- [ ] Answer remaining hotel amenity categories on GBP (Task 2 — MANUAL)
+- [ ] Answer the unanswered pool day pass Q&A + seed 10 FAQ Q&As on GBP — Claude drafts, Adam pastes (Task 3 — DRAFT→POST)
+- [ ] Verify social profile links on GBP (Task 7 — MANUAL)
+- [ ] Enable Google Chat on GBP (Task 15 — MANUAL)
+- [ ] Upload 10+ owner photos to GBP across all categories (Task 27 — MANUAL)
 
-### NEEDS ADAM
+### NEEDS ADAM — Infrastructure
 - [ ] DNS cutover from BofillTech to Vercel — THE #1 unlock for all SEO/AEO
 - [ ] Rotate `GITHUB_TOKEN` on Vercel → fine-grained PAT scoped only to `AStyer8345/rancho-moonrise` contents:write (currently broad `gh auth token`, 5 min fix)
 - [ ] Get Exhibit A from Nancy/Ashley (ownership %, capital contributions)
 - [ ] Get QuickBooks access or P&L + Balance Sheet
+
+### NEEDS ASHLEY
+- [ ] Claim TripAdvisor + optimize WeddingWire listings (Task 5 — MANUAL)
+- [ ] Fix broken Cloudbeds URL in Cloudbeds admin (Task 13 — MANUAL)
 
 ### CLAUDE (autonomous — scheduled task handles these)
 - [x] Split blog posts into individual pages with URLs (S1) — already done previously
