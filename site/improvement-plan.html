@@ -118,6 +118,7 @@
   <button class="tab-btn active" onclick="switchTab('plan')">Plan</button>
   <button class="tab-btn" onclick="switchTab('metrics')">Metrics</button>
   <button class="tab-btn" onclick="switchTab('audits')">Audits</button>
+  <button class="tab-btn" onclick="switchTab('intel')">Intel</button>
 </div>
 
 <div id="tab-plan" class="tab-content active">
@@ -613,6 +614,42 @@
 
 </div><!-- /tab-audits -->
 
+<div id="tab-intel" class="tab-content">
+<div class="divider"></div>
+
+<!-- ===== COMPETITIVE INTEL ===== -->
+<h2><span class="phase-label">Intel</span>Weekly Competitive Intelligence</h2>
+<p class="section-intro">Every Monday morning, the <code style="color:#4ECDC4; background:#0F1A1A; padding:1px 6px; border-radius:3px; font-size:0.82em;">rancho-competitive-weekly</code> scheduled agent runs SERP research across Austin-area glamping, wedding, and event-venue keywords, analyzes the top-ranking competitors, and drops a summary card below. The newest report is always on top. Full write-ups link out to <a href="/competitive-intelligence.html" style="color:#D4A574; text-decoration: underline;">the full intelligence report</a>.</p>
+
+<!-- NEWEST CARDS GO HERE — agent inserts above this line -->
+
+<div class="schedule-card" style="border-left: 4px solid #D4A574;">
+  <strong>April 6, 2026 — Baseline Competitive Intelligence</strong>
+  <p>First full SERP + competitor deep-dive across six target query clusters. Established the baseline for where Rancho Moonrise stands in the Austin glamping and wedding-venue market.</p>
+  <div class="sched-detail">
+    <strong style="color:#E8E0D4;">Top findings:</strong>
+    <ol style="margin: 6px 0 10px 20px; padding: 0;">
+      <li>Absent from organic results for all 6 target queries (glamping, wedding, event-venue clusters).</li>
+      <li>WeddingWire's "Top 10 Manor TX" page lists zero Rancho Moonrise results despite 300+ capacity.</li>
+      <li>Press is the #1 differentiator of top-ranked competitors — Sinya, Walden, and Lucky Arrow all have Texas Monthly / CultureMap / Garden &amp; Gun coverage; Rancho Moonrise has only brief local TV mentions.</li>
+    </ol>
+    <strong style="color:#E8E0D4;">Action items:</strong>
+    <ol style="margin: 6px 0 10px 20px; padding: 0;">
+      <li>Submit to WeddingWire, Zola, Glamping Hub, Outdoorsy, Visit Austin directory.</li>
+      <li>Pitch CultureMap Austin / Austin Monthly / Texas Monthly for editorial coverage.</li>
+      <li>Build a dedicated "safari tent Austin" landing page — underserved, high-conversion keyword.</li>
+    </ol>
+    Full report: <a href="/competitive-intelligence.html" style="color:#D4A574; text-decoration: underline;">View April 6 intelligence report →</a>
+  </div>
+</div>
+
+<div style="background:#0F1419; border:1px dashed #2A2E3A; border-radius:8px; padding:1.25rem 1.5rem; margin-top:1.5rem;">
+  <strong style="color:#8B7D6B; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em;">Next Intel Drop</strong>
+  <p style="margin: 0.5rem 0 0; color: #9BA3B0; font-size: 0.88rem;">The <code style="color:#4ECDC4; background:#0A1414; padding:1px 5px; border-radius:3px; font-size:0.92em;">rancho-competitive-weekly</code> agent runs every Monday at 6:00 AM CT. Each run produces a fresh card above this one — date, 3 top findings, 2–3 action items, link to the full report. Weeks where the competitive landscape is flat get a short "no material change" card so the cadence is visible. Quick-win action items flow to the Plan tab via TODO.md; the daily SEO and weekly content agents pick them up from there.</p>
+</div>
+
+</div><!-- /tab-intel -->
+
 <div class="divider"></div>
 
 <div class="bottom-line">
@@ -634,6 +671,7 @@ function switchTab(tabName) {
 // Support direct linking via hash
 if (window.location.hash === '#metrics') { switchTab('metrics'); }
 if (window.location.hash === '#audits') { switchTab('audits'); }
+if (window.location.hash === '#intel') { switchTab('intel'); }
 </script>
 
 </body>
