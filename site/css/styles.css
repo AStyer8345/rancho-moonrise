@@ -161,6 +161,21 @@ p { margin-bottom: 1em; }
 .section--charcoal .split__content p,
 .section--charcoal .event-card__desc { color: rgba(245, 240, 232, 0.7); }
 
+.section--sage { background: var(--color-sage); color: var(--color-white); }
+.section--sage h2, .section--sage h3 { color: var(--color-white); }
+.section--sage .section-label { color: var(--color-cream-dark); }
+.section--sage p, .section--sage .split__content p { color: var(--color-text); }
+
+.section--pine { background: var(--color-pine); color: var(--color-white); }
+.section--pine h2, .section--pine h3 { color: var(--color-white); }
+.section--pine .section-label { color: var(--color-orange-light); }
+.section--pine p, .section--pine .event-card__desc, .section--pine .split__content p { color: rgba(255, 255, 255, 0.85); }
+
+.section--terracotta { background: var(--color-terracotta); color: var(--color-white); }
+.section--terracotta h2, .section--terracotta h3 { color: var(--color-white); }
+.section--terracotta .section-label { color: var(--color-cream-dark); }
+.section--terracotta p, .section--terracotta .split__content p { color: rgba(255, 255, 255, 0.85); }
+
 /* ---------- Buttons — Outline style with fill hover ---------- */
 .btn {
     display: inline-block;
@@ -287,7 +302,8 @@ p { margin-bottom: 1em; }
     list-style: none;
     gap: var(--space-sm);
     align-items: center;
-    margin-left: auto;
+    margin-left: 20px;
+    flex-grow: 1;
 }
 
 .nav__links li a {
@@ -322,6 +338,12 @@ p { margin-bottom: 1em; }
     color: var(--color-terracotta);
     border: 1px solid var(--color-white);
     font-weight: 700;
+}
+.nav__social-group {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 .nav__links .btn:hover {
     background: var(--color-terracotta);
@@ -627,7 +649,7 @@ p { margin-bottom: 1em; }
 /* ---------- Event Slideshow (contained) ---------- */
 .event-slideshow {
     position: relative;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 4 / 5;
     overflow: hidden;
     border-radius: 8px;
     background: var(--color-dark);
@@ -1538,13 +1560,16 @@ p { margin-bottom: 1em; }
 
 /* ---------- Urgency Banner ---------- */
 .urgency-banner {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     padding: var(--space-sm) var(--space-md);
     background: linear-gradient(135deg, rgba(201,148,74,0.1) 0%, rgba(201,148,74,0.05) 100%);
     border: 1px solid rgba(201,148,74,0.25);
     font-size: 0.95rem;
     color: var(--color-heading);
 }
+
+.urgency-banner p { margin-bottom: 0; }
 
 .urgency-banner a {
     color: var(--color-orange-dark);
