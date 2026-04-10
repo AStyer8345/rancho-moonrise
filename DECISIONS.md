@@ -2,6 +2,30 @@
 
 ---
 
+## 2026-04-10 — Buttons Must Be Self-Contained, Not Context-Assumed
+
+**Decision:** `.btn--primary` and `.btn--outline` carry their own solid fill color, text color, and border. They no longer assume they are sitting on a dark hero-background where a transparent fill + white text would be readable.
+
+**Over:** the previous cascade where `.btn--primary = transparent / white text / white border`, which relied on every consumer to only ever place primary buttons on a dark background. In practice the same class was used on cream sections, cream cards, and event cards — where white-on-cream was invisible.
+
+**Why:** The invisible-button bug was catastrophic in effect but subtle on inspection — DOM lint was clean, CSS was valid, but entire sections looked empty because every CTA in them was white-on-cream. Making buttons self-contained means a developer dropping a `btn btn--primary` anywhere on the site gets a visible button by default. The only explicit override left is `.nav__links .btn` (white pill / terracotta text) because the nav bar background is terracotta and the inverse makes visual sense there. If a future section wants a transparent-on-dark button, it should use a new modifier class (e.g. `.btn--ghost`), not re-hijack the primary.
+
+**Context:** Fix shipped in commit `ddf556e` in `site/css/styles.css`. Verified live via Playwright — hero Book Your Stay (terracotta) and Plan a Wedding (charcoal) render correctly, and all previously-empty cream sections now show their CTAs.
+
+---
+
+## 2026-04-10 — `.reveal` Must Be Registered With The Same Observer As `.fade-in`
+
+**Decision:** `main.js`'s IntersectionObserver query selector is `.fade-in, .reveal`. Any class that starts at `opacity: 0` in CSS and expects a scroll-triggered reveal MUST be listed in that selector, or it will never become visible.
+
+**Over:** (a) Giving `.reveal` its own separate observer, or (b) removing the `opacity: 0` default from `.reveal` so the problem can't happen again.
+
+**Why:** The pre-existing bug was that `.reveal { opacity: 0 }` was defined in CSS but no JS ever added `.is-visible` to those elements — the observer only watched `.fade-in`. Section labels ("Our Spaces", "Upcoming Events", "@rancho_moonrise", etc.) were permanently hidden on every page for however long this has been live. A single shared observer is the simplest fix (one line, one observer, two classes) and a pure copy-paste of the existing pattern — cheaper than a second observer, and safer than dropping the `opacity: 0` default, which would remove the fade-in animation entirely from elements that currently rely on it. The rule now is: if you invent a new scroll-reveal class, add it to this selector. Full stop.
+
+**Context:** Fix shipped in commit `36fb00d` in `site/js/main.js`. Verified via Playwright that after a natural scroll-through of the homepage, zero `.reveal` or `.fade-in` elements remain at `opacity: 0`. Bug was pre-existing — not introduced in this session — but surfaced because the button-visibility investigation forced a close look at "why do these sections look empty?"
+
+---
+
 ## 2026-04-10 — Ship Wedding Gallery As Placeholder, Don't Block Sweep
 
 **Decision:** `site/pages/weddings.html` gets a 6-tile `.wedding-gallery` placeholder section with a visible "photos coming soon" note, `aria-hidden="true"` on the empty grid, and a TODO comment pointing at the missing asset. Shipped in the same commit as the brand-facts sweep.

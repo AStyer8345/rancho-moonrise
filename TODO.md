@@ -1,5 +1,12 @@
 # Rancho Moonrise — TODO
-Last updated: 2026-04-10 (brand-facts site sweep shipped)
+Last updated: 2026-04-10 (Phase 2 UI fixes shipped)
+
+## ✅ DONE 2026-04-10 — Phase 2 UI fixes
+
+Button visibility fix (root cause: `.btn--primary` was transparent + white text on cream), nav logo swap (Secondary lockup → Tertiary wordmark, 88×88), nav social icons moved right of Pool Passes across 15 pages, weddings FAQ renamed + shortened + FAQPage schema, new `#wedding-inquiry` form on weddings.html, and **pre-existing `.reveal` bug fixed** (section labels were permanently invisible site-wide — `main.js` IntersectionObserver only watched `.fade-in`). Commits `ddf556e` + `36fb00d`, live on `https://rancho-moonrise.vercel.app/`. See CHANGELOG 2026-04-10 "Phase 2 UI Fixes".
+
+**Open follow-up:**
+- [ ] **Wedding inquiry form backend** — `weddings.html#wedding-inquiry` and `contact.html` wedding section both currently use `action="#"` placeholder. Needs a real form handler (Formspree / Netlify Forms / serverless function → email + Salesforce create_lead). Current UX: form submits and does nothing. Flag on the Vercel cutover checklist.
 
 ## ✅ DONE 2026-04-10 — Brand-facts site sweep
 
