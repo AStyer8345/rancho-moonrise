@@ -405,44 +405,48 @@
 
 <div class="divider"></div>
 
-<!-- ===== SCHEDULED TASKS ===== -->
-<h2><span class="phase-label">Automation</span>Claude Scheduled Tasks</h2>
-<p class="section-intro">These run automatically on a schedule. Adam or Ashley provides raw materials (photos, updates, guest data); Claude handles the rest.</p>
+<!-- ===== CLIENT OPERATIONS ===== -->
+<h2><span class="phase-label">Automation</span>Client Operations — Live Scheduled Tasks</h2>
+<p class="section-intro">These tasks run automatically on Adam's machine via the scheduled-tasks system. Each one reads the Rancho Moonrise voice guide, updates the repo's tracking files (CONTEXT / CHANGELOG / DECISIONS / TODO), and commits/pushes changes. All 6 are currently <strong style="color:#4ECDC4;">live and active</strong> as of April 9, 2026.</p>
 
 <div class="schedule-card">
-  <strong>Weekly GBP Post</strong>
-  <p>Generate one Google Business Profile post per week. Rotate: event announcements, property photos with captions, seasonal offers, behind-the-scenes. Pull from a shared photo folder + events calendar.</p>
-  <div class="sched-detail">Schedule: Every Monday at 9:00 AM &middot; Owner: Claude &middot; Input: Photo folder + events list</div>
+  <strong>rancho-seo-aeo-weekly</strong> &middot; <span style="color:#4ECDC4;">● ACTIVE</span>
+  <p>SEO/AEO session for Rancho Moonrise. Audits indexed pages, identifies schema gaps, drafts new FAQ/location content, checks AEO citations across ChatGPT/Perplexity/Gemini/Claude, and ships optimizations directly to the site repo. Primary engine for the Phase 2–4 SEO backlog.</p>
+  <div class="sched-detail">Schedule: Mon / Wed / Fri at 5:09 AM &middot; Owner: Claude &middot; Cron: <code>0 5 * * 1,3,5</code></div>
 </div>
 
 <div class="schedule-card">
-  <strong>Weekly Review Monitor</strong>
-  <p>Check Google, TripAdvisor, Hipcamp, The Knot, and WeddingWire for new reviews. Draft responses for Ashley to approve. Flag any negative reviews as urgent.</p>
-  <div class="sched-detail">Schedule: Every Tuesday at 8:00 AM &middot; Owner: Claude → Ashley approves &middot; Output: Drafted responses</div>
+  <strong>rancho-gbp-weekly-post</strong> &middot; <span style="color:#4ECDC4;">● ACTIVE</span>
+  <p>Generates and drafts a weekly Google Business Profile post. Rotates event announcements, property photos with captions, seasonal offers, and behind-the-scenes. Last run confirmed visible on GBP with post published within the hour — working as intended.</p>
+  <div class="sched-detail">Schedule: Every Monday at 9:01 AM &middot; Owner: Claude &middot; Cron: <code>0 9 * * 1</code></div>
 </div>
 
 <div class="schedule-card">
-  <strong>Post-Event Review Request</strong>
-  <p>After any event or checkout, send a branded email/text requesting a review on the appropriate platform. Route by stay type (wedding → The Knot, glamping → Hipcamp, event → Google).</p>
-  <div class="sched-detail">Schedule: Triggered 48 hours post-checkout &middot; Owner: Claude (via n8n workflow) &middot; Requires: Guest data feed</div>
+  <strong>rancho-review-monitor</strong> &middot; <span style="color:#4ECDC4;">● ACTIVE</span>
+  <p>Monitors Rancho Moonrise reviews across Google, TripAdvisor, Hipcamp, The Knot, and WeddingWire. Detects new reviews since last run, drafts on-brand responses for Ashley to approve, and flags negative reviews as urgent. Logs everything to the repo.</p>
+  <div class="sched-detail">Schedule: Every Tuesday at 8:07 AM &middot; Owner: Claude → Ashley approves &middot; Cron: <code>0 8 * * 2</code></div>
 </div>
 
 <div class="schedule-card">
-  <strong>Inquiry Auto-Response Sequence</strong>
-  <p>When a website form submission comes in: instant confirmation email, 24hr follow-up with Calendly tour link, 72hr gentle nudge. All branded to Rancho Moonrise voice.</p>
-  <div class="sched-detail">Schedule: Triggered on form submission &middot; Owner: Claude (via n8n workflow) &middot; Requires: Form webhook</div>
+  <strong>rancho-metrics-weekly</strong> &middot; <span style="color:#4ECDC4;">● ACTIVE</span>
+  <p>Pulls live data for all tracked metrics — target keyword rankings, GBP performance (impressions, clicks, calls, directions), AEO citations, review counts, social followers, indexed pages — and writes current values + week-over-week deltas directly into the Metrics tab of this dashboard. Auto-commits and pushes so the live page refreshes via Vercel.</p>
+  <div class="sched-detail">Schedule: Every Wednesday at 6:08 AM &middot; Owner: Claude &middot; Cron: <code>0 6 * * 3</code></div>
 </div>
 
 <div class="schedule-card">
-  <strong>Weekly Facebook Post</strong>
-  <p>Generate one Facebook-specific post per week targeting parents of brides and corporate event planners. Different content than Instagram — more informational, testimonial-driven.</p>
-  <div class="sched-detail">Schedule: Every Wednesday at 10:00 AM &middot; Owner: Claude &middot; Input: Photo folder + guest testimonials</div>
+  <strong>rancho-moonrise-notebooklm-sync</strong> &middot; <span style="color:#4ECDC4;">● ACTIVE</span>
+  <p>Watches the <code>deal/</code> and <code>brand/</code> folders for new or modified files and syncs them to the Rancho Moonrise NotebookLM so Claude can answer questions grounded in the latest contracts, brand assets, and voice materials. Deletes stale versions before re-uploading to avoid duplicate sources.</p>
+  <div class="sched-detail">Schedule: Every 4 hours &middot; Owner: Claude &middot; Cron: <code>0 */4 * * *</code></div>
 </div>
 
 <div class="schedule-card">
-  <strong>Monthly Analytics Summary</strong>
-  <p>Pull website analytics, GBP insights, social media metrics, and review counts. Generate a one-page dashboard showing month-over-month progress toward A grades.</p>
-  <div class="sched-detail">Schedule: 1st of each month at 7:00 AM &middot; Owner: Claude &middot; Output: HTML dashboard</div>
+  <strong>rancho-monthly-progress</strong> &middot; <span style="color:#4ECDC4;">● ACTIVE</span>
+  <p>Generates a monthly progress report for the Rancho Moonrise improvement plan. Reviews completed tasks by phase, calculates grade movement since the April 9 baseline, surfaces wins, flags stalled items, and recommends what to focus on next month. Delivered as a clean one-pager.</p>
+  <div class="sched-detail">Schedule: 1st of each month at 7:00 AM &middot; Owner: Claude &middot; Cron: <code>0 7 1 * *</code></div>
+</div>
+
+<div style="background:#0F1419; border:1px solid #2A2E3A; border-radius:8px; padding:1rem 1.25rem; margin-top:1.5rem; font-size:0.82rem; color:#9BA3B0;">
+  <strong style="color:#E8E8E5;">How these operate together:</strong> Every task reads the <code>brand/voice-guide.md</code> before generating content, so all outputs stay on-brand. Every task updates the four MD files (CONTEXT, CHANGELOG, DECISIONS, TODO) in the <code>rancho-moonrise</code> repo at the end of its run. Nothing emails Adam — all status rolls up to his daily briefing. No task touches the live site directly; all changes flow through git → Vercel auto-deploy.
 </div>
 
 <div class="divider"></div>
