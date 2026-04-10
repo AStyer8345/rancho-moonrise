@@ -104,6 +104,32 @@
   .tab-content { display: none; }
   .tab-content.active { display: block; }
   @media (max-width: 440px) { .tab-btn { padding: 10px 16px; font-size: 0.85rem; } }
+  .done-count-badge {
+    display: inline-block;
+    min-width: 1.3rem;
+    padding: 0 0.35rem;
+    margin-left: 0.35rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    line-height: 1.3rem;
+    text-align: center;
+    border-radius: 0.65rem;
+    background: #1A2A1A;
+    color: #7DB87D;
+    border: 1px solid #31735A;
+    vertical-align: 1px;
+  }
+  .done-count-badge.empty { background: #222; color: #5A5A5A; border-color: #333; }
+
+  /* Grade mini-progress indicator on scorecards */
+  .sc-progress { font-size: 0.68rem; color: #8B7D6B; margin-left: 4px; white-space: nowrap; }
+  .sc-progress.active { color: #4ECDC4; }
+
+  /* Done tab styling */
+  #tab-done .done-intro { font-size: 0.9rem; color: #A89F94; margin: 24px 0 20px; max-width: 660px; }
+  #tab-done .done-empty { background: #1A1A1A; border: 1px dashed #333; border-radius: 10px; padding: 40px 24px; text-align: center; color: #5A5A5A; font-size: 0.9rem; }
+  #tab-done .task[data-item-id] { /* inherit base styling */ }
+  #done-tasks-container .task[data-item-id] .mark-done-btn { display: none; }
 
   /* ------- Mark Done buttons + completed state (improvement plan) ------- */
   .task[data-item-id] {
@@ -294,6 +320,7 @@
   <button class="tab-btn" onclick="switchTab('metrics')">Metrics</button>
   <button class="tab-btn" onclick="switchTab('audits')">Audits</button>
   <button class="tab-btn" onclick="switchTab('intel')">Intel</button>
+  <button class="tab-btn" onclick="switchTab('done')">Done <span id="done-count-badge" class="done-count-badge">0</span></button>
 </div>
 
 <div id="tab-plan" class="tab-content active">
@@ -302,14 +329,14 @@
 <h2 style="margin-top: 32px;">Grade Targets</h2>
 
 <div class="scorecard">
-  <div class="sc-card"><span class="sc-now grade-b">B</span><span class="sc-arrow">→</span><span class="sc-target">A</span><span class="sc-label">Website (New Build)</span></div>
-  <div class="sc-card"><span class="sc-now grade-d">D</span><span class="sc-arrow">→</span><span class="sc-target">A</span><span class="sc-label">Website (Current)</span></div>
-  <div class="sc-card"><span class="sc-now grade-d">D</span><span class="sc-arrow">→</span><span class="sc-target">A</span><span class="sc-label">Google Business Profile</span></div>
-  <div class="sc-card"><span class="sc-now grade-b">B-</span><span class="sc-arrow">→</span><span class="sc-target">A</span><span class="sc-label">Social Media</span></div>
-  <div class="sc-card"><span class="sc-now grade-f">F</span><span class="sc-arrow">→</span><span class="sc-target">A</span><span class="sc-label">Review Platforms</span></div>
-  <div class="sc-card"><span class="sc-now grade-c">C+</span><span class="sc-arrow">→</span><span class="sc-target">A</span><span class="sc-label">Booking Flow</span></div>
-  <div class="sc-card"><span class="sc-now grade-b">B</span><span class="sc-arrow">→</span><span class="sc-target">A</span><span class="sc-label">Client Experience (HoneyBook)</span></div>
-  <div class="sc-card"><span class="sc-now grade-c">C</span><span class="sc-arrow">→</span><span class="sc-target">A</span><span class="sc-label">Operations & Processes</span></div>
+  <div class="sc-card" data-area="website-newbuild"><span class="sc-now grade-b">B</span><span class="sc-arrow">→</span><span class="sc-target">A</span><span class="sc-label">Website (New Build)<span class="sc-progress"></span></span></div>
+  <div class="sc-card" data-area="website-current"><span class="sc-now grade-d">D</span><span class="sc-arrow">→</span><span class="sc-target">A</span><span class="sc-label">Website (Current)<span class="sc-progress"></span></span></div>
+  <div class="sc-card" data-area="gbp"><span class="sc-now grade-d">D</span><span class="sc-arrow">→</span><span class="sc-target">A</span><span class="sc-label">Google Business Profile<span class="sc-progress"></span></span></div>
+  <div class="sc-card" data-area="social"><span class="sc-now grade-b">B-</span><span class="sc-arrow">→</span><span class="sc-target">A</span><span class="sc-label">Social Media<span class="sc-progress"></span></span></div>
+  <div class="sc-card" data-area="reviews"><span class="sc-now grade-f">F</span><span class="sc-arrow">→</span><span class="sc-target">A</span><span class="sc-label">Review Platforms<span class="sc-progress"></span></span></div>
+  <div class="sc-card" data-area="booking"><span class="sc-now grade-c">C+</span><span class="sc-arrow">→</span><span class="sc-target">A</span><span class="sc-label">Booking Flow<span class="sc-progress"></span></span></div>
+  <div class="sc-card" data-area="honeybook"><span class="sc-now grade-b">B</span><span class="sc-arrow">→</span><span class="sc-target">A</span><span class="sc-label">Client Experience (HoneyBook)<span class="sc-progress"></span></span></div>
+  <div class="sc-card" data-area="operations"><span class="sc-now grade-c">C</span><span class="sc-arrow">→</span><span class="sc-target">A</span><span class="sc-label">Operations & Processes<span class="sc-progress"></span></span></div>
 </div>
 
 <div class="divider"></div>
@@ -347,22 +374,10 @@
   <p class="task-impact">Claude will draft all 10 Q&A pairs. Ashley or Adam posts them to GBP.</p>
 </div>
 
-<div class="task completed" data-item-id="rancho-p1-04-gbp-secondary-categories" data-item-title="Add 2-4 secondary categories to GBP" data-item-system="rancho-plan">
-  <div class="task-header"><span class="task-num">4</span><span class="task-title">Add 2-4 secondary categories to GBP</span></div>
-  <div class="task-meta"><span class="tag tag-owner-ashley">Ashley</span><span class="tag tag-manual">Manual</span><span class="tag tag-audit">GBP: D → B</span><span class="tag tag-done">✓ Done</span></div>
-  <p class="task-desc"><strong style="color:#4ECDC4;">Verified April 9:</strong> Already set — Hotel (primary), Campground, Event venue, Resort hotel, Wedding venue. Secondary categories don't display publicly but influence which searches surface the listing.</p>
-</div>
-
 <div class="task" data-item-id="rancho-p1-05-tripadvisor-weddingwire" data-item-title="Claim TripAdvisor listing + optimize WeddingWire listing" data-item-system="rancho-plan">
   <div class="task-header"><span class="task-num">5</span><span class="task-title">Claim TripAdvisor listing + optimize WeddingWire listing</span></div>
   <div class="task-meta"><span class="tag tag-owner-ashley">Ashley</span><span class="tag tag-owner-nancy">Nancy</span><span class="tag tag-manual">Manual</span><span class="tag tag-audit">Reviews: F → D</span></div>
   <p class="task-desc"><strong style="color:#4ECDC4;">Verified April 9:</strong> TripAdvisor confirmed — 0 reviews, 0 photos, NOT claimed ("Is this your business?" link visible). This is the single biggest review platform gap. Claim it, add photos, write description. WeddingWire listing DOES exist (audit was wrong) — optimize it with updated photos and descriptions.</p>
-</div>
-
-<div class="task completed" data-item-id="rancho-p1-06-instagram-link-in-bio" data-item-title="Set up Instagram link-in-bio page" data-item-system="rancho-plan">
-  <div class="task-header"><span class="task-num">6</span><span class="task-title">Set up Instagram link-in-bio page</span></div>
-  <div class="task-meta"><span class="tag tag-owner-adam">Adam</span><span class="tag tag-owner-claude">Claude</span><span class="tag tag-audit">Social: B- → B+</span><span class="tag tag-done">✓ Done</span></div>
-  <p class="task-desc"><strong style="color:#4ECDC4;">Verified April 9:</strong> Linktree already set up (linktr.ee/ranchomoonrise) with Book A Room, Weddings, Events Calendar, Day Pool Pass, and merch shop. Bio reads: "Austin, TX 🌙 Glamping + Events Ranch / Cabins · Live music · Weddings · Pool" with 13.3K followers.</p>
 </div>
 
 <div class="task" data-item-id="rancho-p1-07-gbp-social-links" data-item-title="Verify social profile links on GBP" data-item-system="rancho-plan">
@@ -390,12 +405,6 @@
   <div class="task-meta"><span class="tag tag-owner-adam">Adam</span><span class="tag tag-owner-claude">Claude</span><span class="tag tag-auto">AUTO</span><span class="tag tag-audit">Booking: C+ → B+</span></div>
   <p class="task-desc">When someone fills out the website contact form, they currently get nothing. Build a 3-email sequence: (1) Instant confirmation with what to expect, (2) 24hr follow-up with Calendly tour link + FAQ, (3) 72hr gentle nudge if no response. This is where leads are dying.</p>
   <p class="task-impact">Even a 10% improvement in inquiry-to-tour conversion = multiple additional bookings per month.</p>
-</div>
-
-<div class="task completed" data-item-id="rancho-p2-10-weekly-gbp-posting" data-item-title="Launch weekly GBP posting schedule" data-item-system="rancho-plan">
-  <div class="task-header"><span class="task-num">10</span><span class="task-title">Launch weekly GBP posting schedule</span></div>
-  <div class="task-meta"><span class="tag tag-owner-claude">Claude</span><span class="tag tag-auto">AUTO</span><span class="tag tag-audit">GBP: D → A</span><span class="tag tag-done">✓ Done</span></div>
-  <p class="task-desc"><strong style="color:#4ECDC4;">Verified April 9:</strong> Scheduled task "rancho-gbp-weekly-post" running every Monday at 9 AM. Posts confirmed visible on GBP — latest post "16 mins ago" and another "a day ago". Working as intended.</p>
 </div>
 
 <div class="task" data-item-id="rancho-p2-11-website-launch-dns" data-item-title="Launch new website on main domain" data-item-system="rancho-plan">
@@ -646,13 +655,13 @@
 
 <table class="summary-table">
 <tr><th>Area</th><th>Now</th><th>After Phase 1</th><th>After Phase 2</th><th>After Phase 3</th><th>After Phase 4</th></tr>
-<tr><td>Website</td><td class="grade-d">D / B</td><td>D / B</td><td>— / A</td><td>— / A</td><td>A</td></tr>
-<tr><td>Google Business Profile</td><td class="grade-d">D</td><td>B</td><td>A-</td><td>A</td><td>A</td></tr>
-<tr><td>Social Media</td><td class="grade-b">B-</td><td>B</td><td>B+</td><td>B+</td><td>A</td></tr>
-<tr><td>Reviews</td><td class="grade-f">F</td><td>D</td><td>C+</td><td>B</td><td>A</td></tr>
-<tr><td>Booking Flow</td><td class="grade-c">C+</td><td>C+</td><td>B+</td><td>A-</td><td>A</td></tr>
-<tr><td>HoneyBook</td><td class="grade-b">B</td><td>B</td><td>B</td><td>A</td><td>A</td></tr>
-<tr><td>Operations</td><td class="grade-c">C</td><td>C</td><td>C+</td><td>B</td><td>A</td></tr>
+<tr data-area="website"><td>Website</td><td class="traj-now grade-d">D / B</td><td>D / B</td><td>— / A</td><td>— / A</td><td>A</td></tr>
+<tr data-area="gbp"><td>Google Business Profile</td><td class="traj-now grade-d">D</td><td>B</td><td>A-</td><td>A</td><td>A</td></tr>
+<tr data-area="social"><td>Social Media</td><td class="traj-now grade-b">B-</td><td>B</td><td>B+</td><td>B+</td><td>A</td></tr>
+<tr data-area="reviews"><td>Reviews</td><td class="traj-now grade-f">F</td><td>D</td><td>C+</td><td>B</td><td>A</td></tr>
+<tr data-area="booking"><td>Booking Flow</td><td class="traj-now grade-c">C+</td><td>C+</td><td>B+</td><td>A-</td><td>A</td></tr>
+<tr data-area="honeybook"><td>HoneyBook</td><td class="traj-now grade-b">B</td><td>B</td><td>B</td><td>A</td><td>A</td></tr>
+<tr data-area="operations"><td>Operations</td><td class="traj-now grade-c">C</td><td>C</td><td>C+</td><td>B</td><td>A</td></tr>
 </table>
 
 
@@ -825,6 +834,42 @@
 
 </div><!-- /tab-intel -->
 
+<div id="tab-done" class="tab-content">
+<div class="divider"></div>
+
+<!-- ===== DONE ===== -->
+<h2><span class="phase-label">Done</span>Completed Tasks</h2>
+<p class="done-intro">Every task that's been marked done lands here — newest on top. This is the archive of everything Rancho Moonrise has knocked out since the April 9 baseline. Items stop contributing to the Plan tab's active work the moment they land here, but they still count toward the grade progression calculations above.</p>
+
+<div id="done-tasks-container">
+  <!-- Tasks physically move here when marked done. The rancho-apply-done scheduled task -->
+  <!-- reconciles rancho-done-log.md → this container on next deploy. Newest on top. -->
+
+  <div class="task completed" data-item-id="rancho-p2-10-weekly-gbp-posting" data-item-title="Launch weekly GBP posting schedule" data-item-system="rancho-plan">
+    <div class="task-header"><span class="task-num">10</span><span class="task-title">Launch weekly GBP posting schedule</span></div>
+    <div class="task-meta"><span class="tag tag-owner-claude">Claude</span><span class="tag tag-auto">AUTO</span><span class="tag tag-audit">GBP: D → A</span><span class="tag tag-done">✓ Done</span></div>
+    <p class="task-desc"><strong style="color:#4ECDC4;">Verified April 9:</strong> Scheduled task "rancho-gbp-weekly-post" running every Monday at 9 AM. Posts confirmed visible on GBP — latest post "16 mins ago" and another "a day ago". Working as intended.</p>
+  </div>
+
+  <div class="task completed" data-item-id="rancho-p1-06-instagram-link-in-bio" data-item-title="Set up Instagram link-in-bio page" data-item-system="rancho-plan">
+    <div class="task-header"><span class="task-num">6</span><span class="task-title">Set up Instagram link-in-bio page</span></div>
+    <div class="task-meta"><span class="tag tag-owner-adam">Adam</span><span class="tag tag-owner-claude">Claude</span><span class="tag tag-audit">Social: B- → B+</span><span class="tag tag-done">✓ Done</span></div>
+    <p class="task-desc"><strong style="color:#4ECDC4;">Verified April 9:</strong> Linktree already set up (linktr.ee/ranchomoonrise) with Book A Room, Weddings, Events Calendar, Day Pool Pass, and merch shop. Bio reads: "Austin, TX 🌙 Glamping + Events Ranch / Cabins · Live music · Weddings · Pool" with 13.3K followers.</p>
+  </div>
+
+  <div class="task completed" data-item-id="rancho-p1-04-gbp-secondary-categories" data-item-title="Add 2-4 secondary categories to GBP" data-item-system="rancho-plan">
+    <div class="task-header"><span class="task-num">4</span><span class="task-title">Add 2-4 secondary categories to GBP</span></div>
+    <div class="task-meta"><span class="tag tag-owner-ashley">Ashley</span><span class="tag tag-manual">Manual</span><span class="tag tag-audit">GBP: D → B</span><span class="tag tag-done">✓ Done</span></div>
+    <p class="task-desc"><strong style="color:#4ECDC4;">Verified April 9:</strong> Already set — Hotel (primary), Campground, Event venue, Resort hotel, Wedding venue. Secondary categories don't display publicly but influence which searches surface the listing.</p>
+  </div>
+</div>
+
+<div class="done-empty" id="done-empty-state" style="display:none;">
+  Nothing here yet. Mark a task done on the Plan tab and it'll land here.
+</div>
+
+</div><!-- /tab-done -->
+
 <div class="divider"></div>
 
 <div class="bottom-line">
@@ -847,12 +892,18 @@ function switchTab(tabName) {
 if (window.location.hash === '#metrics') { switchTab('metrics'); }
 if (window.location.hash === '#audits') { switchTab('audits'); }
 if (window.location.hash === '#intel') { switchTab('intel'); }
+if (window.location.hash === '#done') { switchTab('done'); }
 
 // ===== Mark Done system — improvement plan =====
 // Click "Mark done" on any task → POST /api/complete → appends to rancho-done-log.md
-// via GitHub API. Auth token stored in localStorage (briefingAuthToken — same key as the
-// client-ops briefing page so the same secret works on both). Completed state also
-// reconciled by the rancho-apply-done scheduled task which reads the log.
+// via GitHub API, then physically relocates the task div into the Done tab.
+// Auth token stored in localStorage (briefingAuthToken — same key as the client-ops
+// briefing page so the same secret works on both). The rancho-apply-done scheduled
+// task reconciles rancho-done-log.md → HTML so multi-device moves converge.
+//
+// Source of truth for "is this done?" is DOM location: if the task div is inside
+// #done-tasks-container, it's done. localStorage is used only for optimistic UI
+// on the device that clicked — the reconciler rewrites HTML on next deploy.
 
 const AUTH_KEY = 'briefingAuthToken';
 const COMPLETED_KEY = 'ranchoPlanCompletedItems'; // { ids: ["id1","id2", ...] }
@@ -883,8 +934,227 @@ function markCompletedLocal(id) {
   if (!obj.ids.includes(id)) obj.ids.push(id);
   saveCompleted(obj);
 }
-function isCompletedLocal(id) {
-  return getCompleted().ids.includes(id);
+
+// Source-of-truth check: is this task currently in the Done tab?
+function isTaskDone(id) {
+  const task = document.querySelector('.task[data-item-id="' + CSS.escape(id) + '"]');
+  if (!task) return false;
+  return !!task.closest('#done-tasks-container');
+}
+
+// ===== Grade progression (Option C: phase-gated headline + mini-progress) =====
+// Each graded area maps tasks to the phase they unlock. A phase is "complete" for an
+// area only when every task in that phase (and all prior phases) is done. Headline
+// grade snaps to the highest complete phase. Mini-progress shows tasks done so far
+// in the next phase as "(X/Y toward <next grade>)".
+//
+// AREA_PLAN is derived from the Grade Trajectory table and the task-to-area tags.
+// Revenue-only tasks (#14, #18, #19, #26) don't appear here because Revenue is not
+// a graded scorecard area. Website is tracked as two twin areas (current vs. new
+// build) because the scorecard shows them separately — both unlock at P2 via #11.
+
+const AREA_PLAN = {
+  gbp: {
+    label: 'Google Business Profile',
+    grades: ['D', 'B', 'A-', 'A', 'A'],
+    phases: {
+      1: ['rancho-p1-01-reply-google-reviews', 'rancho-p1-02-gbp-amenities-hours-description', 'rancho-p1-03-gbp-qa-seed-faqs', 'rancho-p1-04-gbp-secondary-categories', 'rancho-p1-07-gbp-social-links'],
+      2: ['rancho-p2-10-weekly-gbp-posting', 'rancho-p2-15-gbp-chat'],
+      3: [],
+      4: ['rancho-p4-27-gbp-owner-photos'],
+    },
+  },
+  social: {
+    label: 'Social Media',
+    grades: ['B-', 'B', 'B+', 'B+', 'A'],
+    phases: {
+      1: ['rancho-p1-06-instagram-link-in-bio'],
+      2: [],
+      3: [],
+      4: ['rancho-p4-23-youtube-channel', 'rancho-p4-24-facebook-channel'],
+    },
+  },
+  reviews: {
+    label: 'Reviews',
+    grades: ['F', 'D', 'C+', 'B', 'A'],
+    phases: {
+      1: ['rancho-p1-05-tripadvisor-weddingwire'],
+      2: ['rancho-p2-08-review-request-system'],
+      3: [],
+      4: ['rancho-p4-25-neighbor-noise'],
+    },
+  },
+  booking: {
+    label: 'Booking Flow',
+    grades: ['C+', 'C+', 'B+', 'A-', 'A'],
+    phases: {
+      1: [],
+      2: ['rancho-p2-09-inquiry-response-sequence', 'rancho-p2-12-hipcamp-listing-fix', 'rancho-p2-13-cloudbeds-url-fix'],
+      3: [],
+      4: [],
+    },
+  },
+  honeybook: {
+    label: 'HoneyBook',
+    grades: ['B', 'B', 'B', 'A', 'A'],
+    phases: {
+      1: [],
+      2: [],
+      3: ['rancho-p3-16-corporate-retreat-page', 'rancho-p3-17-honeybook-flows'],
+      4: [],
+    },
+  },
+  operations: {
+    label: 'Operations',
+    grades: ['C', 'C', 'C+', 'B', 'A'],
+    phases: {
+      1: [],
+      2: [],
+      3: ['rancho-p3-20-conversion-tracking'],
+      4: ['rancho-p4-21-crm-lead-tracking', 'rancho-p4-22-sops-ashley'],
+    },
+  },
+  // Website: both scorecards unlock simultaneously at Phase 2 when #11 ships DNS.
+  'website-current': {
+    label: 'Website (Current)',
+    grades: ['D', 'D', 'A', 'A', 'A'],
+    phases: { 1: [], 2: ['rancho-p2-11-website-launch-dns'], 3: [], 4: [] },
+  },
+  'website-newbuild': {
+    label: 'Website (New Build)',
+    grades: ['B', 'B', 'A', 'A', 'A'],
+    phases: { 1: [], 2: ['rancho-p2-11-website-launch-dns'], 3: [], 4: [] },
+  },
+};
+
+function computeAreaProgress(areaKey) {
+  const plan = AREA_PLAN[areaKey];
+  if (!plan) return null;
+
+  // Walk phases 1..4. Empty phases (no required work for this area) are skipped
+  // WITHOUT advancing the grade — otherwise areas with no early-phase work would
+  // falsely show improved grades at baseline. The grade only climbs when actual
+  // required tasks are completed.
+  let completePhase = 0;
+  for (let p = 1; p <= 4; p++) {
+    const tasks = plan.phases[p] || [];
+    if (tasks.length === 0) continue; // carry state forward, no grade change
+    if (tasks.every(id => isTaskDone(id))) {
+      completePhase = p;
+    } else {
+      break;
+    }
+  }
+
+  // If all REMAINING phases beyond completePhase are empty, roll forward to the
+  // end — nothing left to do for this area means the area is "complete".
+  if (completePhase > 0) {
+    let hasRemaining = false;
+    for (let p = completePhase + 1; p <= 4; p++) {
+      if ((plan.phases[p] || []).length > 0) { hasRemaining = true; break; }
+    }
+    if (!hasRemaining) completePhase = 4;
+  }
+
+  const headline = plan.grades[completePhase];
+
+  // Find next phase with actual tasks for progress indicator
+  let progress = null;
+  for (let p = completePhase + 1; p <= 4; p++) {
+    const tasks = plan.phases[p] || [];
+    if (tasks.length === 0) continue;
+    const done = tasks.filter(id => isTaskDone(id)).length;
+    progress = {
+      done,
+      total: tasks.length,
+      nextGrade: plan.grades[p],
+    };
+    break;
+  }
+
+  return { completePhase, headline, progress };
+}
+
+// Map a grade string to a CSS class. "B-" and "B+" both map to grade-b, etc.
+function gradeClass(grade) {
+  if (!grade) return '';
+  const letter = grade.charAt(0).toUpperCase();
+  return 'grade-' + letter.toLowerCase();
+}
+
+function updateScorecard(areaKey) {
+  const card = document.querySelector('.sc-card[data-area="' + areaKey + '"]');
+  if (!card) return;
+  const result = computeAreaProgress(areaKey);
+  if (!result) return;
+
+  const nowEl = card.querySelector('.sc-now');
+  if (nowEl) {
+    // Remove old grade-* classes, then re-add
+    nowEl.className = nowEl.className.replace(/grade-[a-f]/g, '').trim();
+    nowEl.classList.add('sc-now', gradeClass(result.headline));
+    nowEl.textContent = result.headline;
+  }
+
+  const progEl = card.querySelector('.sc-progress');
+  if (progEl) {
+    if (result.progress && result.progress.done > 0) {
+      progEl.textContent = ' (' + result.progress.done + '/' + result.progress.total + ' toward ' + result.progress.nextGrade + ')';
+      progEl.classList.add('active');
+    } else if (result.progress) {
+      progEl.textContent = ' (0/' + result.progress.total + ' toward ' + result.progress.nextGrade + ')';
+      progEl.classList.remove('active');
+    } else {
+      progEl.textContent = '';
+      progEl.classList.remove('active');
+    }
+  }
+}
+
+function updateTrajectoryRow(areaKey) {
+  // Trajectory table uses a single "website" row for both website-current and
+  // website-newbuild. Pick the worse (lower phase) of the two, display "D / B"-style.
+  const row = document.querySelector('tr[data-area="' + areaKey + '"]');
+  if (!row) return;
+  const cell = row.querySelector('.traj-now');
+  if (!cell) return;
+
+  let headline, gradeCls;
+  if (areaKey === 'website') {
+    const cur = computeAreaProgress('website-current');
+    const nb = computeAreaProgress('website-newbuild');
+    if (!cur || !nb) return;
+    headline = cur.headline + ' / ' + nb.headline;
+    // Grade the row color by the WORSE of the two
+    const worse = cur.completePhase <= nb.completePhase ? cur.headline : nb.headline;
+    gradeCls = gradeClass(worse);
+  } else {
+    const result = computeAreaProgress(areaKey);
+    if (!result) return;
+    headline = result.headline;
+    gradeCls = gradeClass(headline);
+  }
+  cell.className = cell.className.replace(/grade-[a-f]/g, '').trim();
+  cell.classList.add('traj-now', gradeCls);
+  cell.textContent = headline;
+}
+
+function recomputeAllGrades() {
+  // Scorecards (one per AREA_PLAN key)
+  Object.keys(AREA_PLAN).forEach(k => updateScorecard(k));
+  // Trajectory rows (website is merged, others are 1:1)
+  ['website', 'gbp', 'social', 'reviews', 'booking', 'honeybook', 'operations'].forEach(updateTrajectoryRow);
+}
+
+function updateDoneCountBadge() {
+  const badge = document.getElementById('done-count-badge');
+  const empty = document.getElementById('done-empty-state');
+  const container = document.getElementById('done-tasks-container');
+  if (!badge || !container) return;
+  const count = container.querySelectorAll('.task[data-item-id]').length;
+  badge.textContent = count;
+  badge.classList.toggle('empty', count === 0);
+  if (empty) empty.style.display = count === 0 ? 'block' : 'none';
 }
 
 function showToast(msg, isError) {
@@ -954,6 +1224,14 @@ async function postComplete({ id, title, system }) {
   return r.json();
 }
 
+function moveTaskToDone(task) {
+  const container = document.getElementById('done-tasks-container');
+  if (!container || !task) return;
+  task.classList.add('completed');
+  // Newest on top — insertBefore firstChild
+  container.insertBefore(task, container.firstChild);
+}
+
 function injectMarkDoneButtons() {
   const tasks = document.querySelectorAll('.task[data-item-id]');
   tasks.forEach(task => {
@@ -962,11 +1240,13 @@ function injectMarkDoneButtons() {
     const title = task.dataset.itemTitle || '';
     const system = task.dataset.itemSystem || 'rancho-plan';
 
-    // Seed completed state from localStorage OR from a pre-existing ✅ DONE marker
-    // (so backfilled tasks 4/6/10 with inline line-through styling show as completed
-    // immediately on first load, even if this device has never marked anything).
-    const hasExistingDoneMark = task.querySelector('.task-title[style*="line-through"]') !== null;
-    if (isCompletedLocal(id) || hasExistingDoneMark) task.classList.add('completed');
+    // If localStorage says this was marked done on this device but the server-side
+    // reconciler hasn't moved it yet, move it optimistically now so the grade
+    // calculator sees the correct state.
+    const alreadyInDone = !!task.closest('#done-tasks-container');
+    if (!alreadyInDone && getCompleted().ids.includes(id)) {
+      moveTaskToDone(task);
+    }
 
     const btn = document.createElement('button');
     btn.className = 'mark-done-btn';
@@ -981,9 +1261,11 @@ function injectMarkDoneButtons() {
       btn.textContent = '…';
       try {
         await postComplete({ id, title, system });
-        task.classList.add('completed');
-        btn.textContent = '✓ Done';
         markCompletedLocal(id);
+        moveTaskToDone(task);
+        btn.textContent = '✓ Done';
+        recomputeAllGrades();
+        updateDoneCountBadge();
         showToast('Logged: ' + (title || id));
       } catch (err) {
         btn.textContent = prevText;
@@ -999,6 +1281,9 @@ function injectMarkDoneButtons() {
 document.addEventListener('DOMContentLoaded', () => {
   updateGearState();
   injectMarkDoneButtons();
+  // Compute grades AFTER injection so any optimistic moves are already reflected.
+  recomputeAllGrades();
+  updateDoneCountBadge();
 
   const gear = document.getElementById('auth-gear');
   if (gear) gear.addEventListener('click', () => openAuthModal());
