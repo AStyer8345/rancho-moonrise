@@ -24,7 +24,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Overpass:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Overpass:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"></noscript>
-    <link rel="stylesheet" href="../css/styles.css?v=9">
+    <link rel="stylesheet" href="../css/styles.css?v=10">
 
     <script type="application/ld+json">
     {
@@ -363,102 +363,52 @@
     </div>
 </section>
 
-<!-- AEO Section — Wedding Venue Questions -->
-<section class="section" aria-label="Wedding venue answers">
+<!-- Wedding Inquiry Form (mirrors contact.html wedding form) -->
+<section class="section" id="wedding-inquiry" aria-label="Wedding inquiry form">
     <div class="container">
-        <div style="max-width: 800px; margin: 0 auto;">
-            <span class="section-label reveal">Common Questions</span>
-            <h2 style="margin-bottom: var(--space-lg);">Frequently Asked Questions</h2>
-
-            <div style="display: flex; flex-direction: column; gap: var(--space-lg);">
-
-                <div>
-                    <h3>Where is Rancho Moonrise?</h3>
-                    <p>Rancho Moonrise is a full-service ranch wedding venue 20 minutes from downtown Austin. The property offers exclusive full-ranch buyouts for weddings, meaning no outside guests will be on the property during your event. With unlimited ceremony layouts across 36 acres, an indoor Event Barn, a pool, and capacity for 200+ guests, it's one of the few venues near Austin that handles ceremony, reception, and overnight stays all in one location.</p>
-                </div>
-
-                <div>
-                    <h3>What makes Rancho Moonrise different?</h3>
-                    <p>The combination of exclusivity and on-site overnight accommodations sets Rancho Moonrise apart from most Austin-area wedding venues. When you book a wedding here, you're not sharing the property with other events or day guests — the entire 36-acre ranch is yours. Your wedding party can sleep on-site in hand-crafted cabins and safari tents, eliminating the hotel block coordination problem that trips up most wedding planners. Austin has dozens of wedding venues, but very few offer this level of full-property exclusivity with overnight stays built in.</p>
-                </div>
-
-                <div>
-                    <h3>How many guests can attend?</h3>
-                    <p>Rancho Moonrise accommodates up to 200+ guests for ceremonies and receptions, with on-site sleeping accommodations for up to 50 overnight guests across cabins and safari tents. For the wedding party, this means close friends and family can stay on the ranch itself — with A/C, heat, real beds, and fire pits throughout the property — while remaining guests can find hotels in nearby Austin.</p>
-                </div>
-
-                <div>
-                    <h3>Can we bring outside vendors?</h3>
-                    <p>Yes — Rancho Moonrise works with outside caterers, photographers, florists, officiants, and other vendors. The venue provides the space, bar service, and the ranch infrastructure. Couples bring their own preferred vendors for catering and ceremony specifics. Schedule a venue tour to get a full list of what's included versus what you'd source externally.</p>
-                </div>
-
-                <div>
-                    <h3>How far in advance should we book?</h3>
-                    <p>For peak wedding season (March–May and September–November), booking 12–18 months in advance is common for Saturday dates. Rancho Moonrise's 2026 Saturday availability is already limited. If you have a specific date in mind, schedule a tour and discuss availability as early as possible — there's no waitlist, and dates are held on a first-come basis.</p>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Embedded Wedding Inquiry Form -->
-<section class="section section--cream" id="wedding-inquiry" aria-label="Wedding inquiry form">
-    <div class="container">
-        <div style="max-width: 720px; margin: 0 auto;">
-            <div class="text-center" style="margin-bottom: var(--space-lg);">
+        <div class="intent-form" style="max-width: 780px; margin: 0 auto;">
+            <div class="intent-form__header text-center">
                 <span class="section-label reveal">Let's Talk</span>
-                <h2>Start Planning Your Wedding</h2>
-                <p style="color: var(--color-text-muted); margin-top: var(--space-xs);">Tell us a little about your day and we'll be in touch within 24 hours.</p>
+                <h2>Wedding Inquiry</h2>
+                <p>Fill out the form and we'll send you package details, pricing, and availability right away. Have a quick question? Our <strong>AI concierge</strong> in the bottom-right corner can answer immediately.</p>
             </div>
 
             <form action="#" method="POST" aria-label="Wedding inquiry form">
                 <input type="hidden" name="inquiry_type" value="wedding">
                 <input type="hidden" name="source_page" value="weddings">
-
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="w-first-name">First Name <span aria-hidden="true" style="color: var(--color-orange-dark);">*</span></label>
-                        <input type="text" id="w-first-name" name="first_name" required autocomplete="given-name">
+                        <label for="wedding-name">Full Name</label>
+                        <input type="text" id="wedding-name" name="name" required autocomplete="name">
                     </div>
                     <div class="form-group">
-                        <label for="w-last-name">Last Name <span aria-hidden="true" style="color: var(--color-orange-dark);">*</span></label>
-                        <input type="text" id="w-last-name" name="last_name" required autocomplete="family-name">
+                        <label for="wedding-partner">Partner's Name</label>
+                        <input type="text" id="wedding-partner" name="partner_name">
                     </div>
                 </div>
-
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="w-email">Email <span aria-hidden="true" style="color: var(--color-orange-dark);">*</span></label>
-                        <input type="email" id="w-email" name="email" required autocomplete="email">
+                        <label for="wedding-email">Email</label>
+                        <input type="email" id="wedding-email" name="email" required autocomplete="email">
                     </div>
                     <div class="form-group">
-                        <label for="w-phone">Phone</label>
-                        <input type="tel" id="w-phone" name="phone" autocomplete="tel">
+                        <label for="wedding-phone">Phone</label>
+                        <input type="tel" id="wedding-phone" name="phone" autocomplete="tel">
                     </div>
                 </div>
-
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="w-date">Wedding Date</label>
-                        <input type="date" id="w-date" name="wedding_date">
+                        <label for="wedding-date">Preferred Date Range</label>
+                        <input type="text" id="wedding-date" name="date_range" placeholder="e.g. Fall 2026, October 2026">
                     </div>
                     <div class="form-group">
-                        <label for="w-guests">Estimated Guest Count</label>
-                        <select id="w-guests" name="guest_count">
-                            <option value="" disabled selected>Select a range...</option>
-                            <option value="under-50">Under 50</option>
-                            <option value="50-100">50 &ndash; 100</option>
-                            <option value="100-150">100 &ndash; 150</option>
-                            <option value="150-200">150 &ndash; 200</option>
-                            <option value="200-plus">200+</option>
-                        </select>
+                        <label for="wedding-guests">Estimated Guest Count</label>
+                        <input type="number" id="wedding-guests" name="guests" min="1" max="300" placeholder="e.g. 150">
                     </div>
                 </div>
-
                 <div class="form-group">
-                    <label for="w-budget">Total Wedding Budget <span aria-hidden="true" style="color: var(--color-orange-dark);">*</span></label>
-                    <select id="w-budget" name="budget" required>
+                    <label for="wedding-budget">Total Wedding Budget <span aria-hidden="true" style="color: var(--color-orange-dark);">*</span></label>
+                    <select id="wedding-budget" name="budget" required>
                         <option value="" disabled selected>Select a budget range...</option>
                         <option value="5k-20k">$5,000 &ndash; $20,000</option>
                         <option value="20k-40k">$20,000 &ndash; $40,000</option>
@@ -467,30 +417,75 @@
                     </select>
                     <small style="display: block; margin-top: 6px; color: var(--color-text-muted); font-size: 0.85rem;">Helps us recommend the right package and tailor your tour.</small>
                 </div>
-
                 <div class="form-group">
-                    <label for="w-referral">How Did You Hear About Us?</label>
-                    <select id="w-referral" name="referral">
-                        <option value="" disabled selected>Select one...</option>
-                        <option value="google">Google search</option>
-                        <option value="instagram">Instagram</option>
-                        <option value="facebook">Facebook</option>
-                        <option value="tiktok">TikTok</option>
-                        <option value="friend">Friend or family referral</option>
-                        <option value="vendor">Vendor or planner referral</option>
-                        <option value="directory">Wedding directory (The Knot, WeddingWire, etc.)</option>
-                        <option value="event">Attended an event here</option>
-                        <option value="other">Other</option>
-                    </select>
+                    <label for="wedding-details">Tell Us About Your Vision</label>
+                    <textarea id="wedding-details" name="details" rows="4" placeholder="Indoor or outdoor ceremony? Reception style? Any special requests?"></textarea>
                 </div>
-
                 <div class="form-group">
-                    <label for="w-message">Tell Us About Your Vision</label>
-                    <textarea id="w-message" name="message" rows="4" placeholder="Indoor or outdoor ceremony? Reception style? Anything that's already set?"></textarea>
+                    <label for="wedding-referral">How Did You Hear About Us?</label>
+                    <input type="text" id="wedding-referral" name="referral">
                 </div>
-
-                <button type="submit" class="btn btn--primary" style="width: 100%; padding: 18px 32px;">Send Inquiry</button>
+                <button type="submit" class="btn btn--primary" style="width: 100%;">Send Wedding Inquiry</button>
             </form>
+        </div>
+    </div>
+</section>
+
+<!-- AEO Section — Wedding Venue Questions -->
+<section class="section" aria-label="Wedding venue answers">
+    <div class="container">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <span class="section-label reveal">Common Questions</span>
+            <h2 style="margin-bottom: var(--space-lg);">Frequently Asked Questions</h2>
+
+            <div class="faq-list">
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Where is Rancho Moonrise?</button>
+                    <div class="faq-answer" role="region">
+                        <div class="faq-answer__inner">
+                            <p>Rancho Moonrise is a full-service ranch wedding venue 20 minutes from downtown Austin. The property offers exclusive full-ranch buyouts for weddings, meaning no outside guests will be on the property during your event. With unlimited ceremony layouts across 36 acres, an indoor Event Barn, a pool, and capacity for 200+ guests, it's one of the few venues near Austin that handles ceremony, reception, and overnight stays all in one location.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">What makes Rancho Moonrise different?</button>
+                    <div class="faq-answer" role="region">
+                        <div class="faq-answer__inner">
+                            <p>The combination of exclusivity and on-site overnight accommodations sets Rancho Moonrise apart from most Austin-area wedding venues. When you book a wedding here, you're not sharing the property with other events or day guests — the entire 36-acre ranch is yours. Your wedding party can sleep on-site in hand-crafted cabins and safari tents, eliminating the hotel block coordination problem that trips up most wedding planners. Austin has dozens of wedding venues, but very few offer this level of full-property exclusivity with overnight stays built in.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">How many guests can attend?</button>
+                    <div class="faq-answer" role="region">
+                        <div class="faq-answer__inner">
+                            <p>Rancho Moonrise accommodates up to 200+ guests for ceremonies and receptions, with on-site sleeping accommodations for up to 50 overnight guests across cabins and safari tents. For the wedding party, this means close friends and family can stay on the ranch itself — with A/C, heat, real beds, and fire pits throughout the property — while remaining guests can find hotels in nearby Austin.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Can we bring outside vendors?</button>
+                    <div class="faq-answer" role="region">
+                        <div class="faq-answer__inner">
+                            <p>Yes — Rancho Moonrise works with outside caterers, photographers, florists, officiants, and other vendors. The venue provides the space, bar service, and the ranch infrastructure. Couples bring their own preferred vendors for catering and ceremony specifics. Schedule a venue tour to get a full list of what's included versus what you'd source externally.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">How far in advance should we book?</button>
+                    <div class="faq-answer" role="region">
+                        <div class="faq-answer__inner">
+                            <p>For peak wedding season (March–May and September–November), booking 12–18 months in advance is common for Saturday dates. Rancho Moonrise's 2026 Saturday availability is already limited. If you have a specific date in mind, schedule a tour and discuss availability as early as possible — there's no waitlist, and dates are held on a first-come basis.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
 </section>
