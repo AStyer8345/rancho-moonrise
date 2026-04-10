@@ -180,25 +180,25 @@ p { margin-bottom: 1em; }
 }
 
 .btn--primary {
-    border-color: var(--color-white);
+    background: var(--color-terracotta);
     color: var(--color-white);
-    background: transparent;
+    border-color: var(--color-terracotta);
 }
 .btn--primary:hover {
-    background: var(--color-orange);
+    background: #9a4f33; /* darker Clay for hover feedback */
     color: var(--color-white);
-    border-color: var(--color-orange);
+    border-color: #9a4f33;
 }
 
 .btn--outline {
-    background: transparent;
+    background: var(--color-heading);
     color: var(--color-white);
-    border: 1px solid var(--color-white);
+    border: 1px solid var(--color-heading);
 }
 .btn--outline:hover {
-    background: var(--color-orange);
+    background: var(--color-terracotta);
     color: var(--color-white);
-    border-color: var(--color-orange);
+    border-color: var(--color-terracotta);
 }
 
 .btn--outline-gold {
