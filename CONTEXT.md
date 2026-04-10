@@ -1,6 +1,6 @@
 # Rancho Moonrise — Project Context
 
-**Last updated:** 2026-04-09 (live-verified audit + SEO/AEO strategy built)
+**Last updated:** 2026-04-09 (SEO/AEO Session 2 — schema rollout)
 
 ---
 
@@ -25,15 +25,17 @@ Advisory engagement for Rancho Moonrise — glamping, events, and retreat ranch 
 - Ashley: Fix GBP (description is a blog post, hours not set, reply to 9 unreplied reviews, seed Q&As)
 - Adam: DNS cutover from BofillTech to Vercel
 - Claude (auto): SEO/AEO prep work on Vercel site — Mon/Wed/Fri at 5 AM
-- Claude (auto): Weekly GBP posts — Mondays at 9 AM (confirmed working)
+- Claude (auto): Weekly GBP posts — drafts saved to `brand/gbp-posts/` for Adam/Ashley to review and post manually
+  - Week 1 (April 9, 2026): Event announcement drafted — `brand/gbp-posts/2026-04-09-gbp-post.md`
+  - Rotation: Event → Property showcase → Special offer → Behind-the-scenes → repeat
 
 ## Last Worked On
 
-- 2026-04-09: Live-verified all platforms (GBP, TripAdvisor, Yelp, Hipcamp, Instagram, WeddingWire)
-- 2026-04-09: Built metrics baseline with verified data across 10 platforms
-- 2026-04-09: Updated improvement plan — marked 3 tasks DONE, updated 5 with verified findings
-- 2026-04-09: Added 8 SEO/AEO tasks (S1-S8) to improvement plan
-- 2026-04-09: Created SEO/AEO task folder + scheduled task (Mon/Wed/Fri 5 AM)
+- 2026-04-09 (Session 2): Added BreadcrumbList schema to all 13 subpages (5 blog posts + 8 nav pages)
+- 2026-04-09 (Session 2): Added CollectionPage + ItemList schema to blog.html listing all 5 posts
+- 2026-04-09 (Session 2): Fixed banned word "premier" in blog.html meta description + footer per voice guide
+- 2026-04-09 (Session 2): Verified homepage LodgingBusiness schema is complete (geo, priceRange, amenityFeature)
+- 2026-04-09 (Session 2): Committed + pushed schema work in one clean commit (6fb84e8)
 
 ---
 

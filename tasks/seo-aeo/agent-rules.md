@@ -30,5 +30,12 @@ When you complete a backlog item that corresponds to a task in the improvement p
 - Git commit and push so the live URL refreshes
 
 
+## Rule 8a: Subpage schema placement patterns vary
+When inserting new JSON-LD into subpages, the ending pattern differs:
+- `</script>\n</head>` — accommodations, weddings, events, host-your-event, faqs, policies (schema is last element before </head>)
+- `</script>\n\n    <link rel="preconnect"` — contact, blog post pages (preconnect comes after schema)
+- `policies.html has NO existing schema` — must insert before `</head>` after the last `<link rel="stylesheet">`
+Grep for the exact trailing pattern before using Edit with find-and-replace, or the Edit will miss.
+
 ## Rule 8: Read voice guide before writing ANY content
 Before writing blog posts, meta descriptions, FAQ answers, AEO paragraphs, page copy, or any text that will appear on the site or GBP, ALWAYS read `/Users/adamstyer/Documents/rancho-moonrise/brand/voice-guide.md` first. The voice is authentic, Texan, laid-back — NOT corporate, NOT slick, NOT generic hospitality language. Ashley specifically rejected "modern/computerized" tone. If your content could appear on any hotel website, it's wrong.

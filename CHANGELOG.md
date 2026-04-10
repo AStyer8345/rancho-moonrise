@@ -1,5 +1,12 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-09 — SEO/AEO Session 2: Schema Rollout
+- Added CollectionPage + ItemList schema to blog.html (5 posts)
+- Added BreadcrumbList schema to all 13 subpages on Vercel site
+- Fixed banned word "premier" in blog.html meta + footer (voice guide)
+- Verified homepage LodgingBusiness schema: geo, priceRange, amenityFeature all present
+- Committed + pushed (6fb84e8): 13 files, 214 insertions
+
 ## 2026-04-09 — Weekly Metrics: Baseline Confirmed
 
 - First automated run of `rancho-metrics-weekly` scheduled task

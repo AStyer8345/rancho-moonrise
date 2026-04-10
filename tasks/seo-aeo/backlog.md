@@ -1,5 +1,5 @@
 # Rancho Moonrise — SEO/AEO Backlog
-Last updated: 2026-04-09
+Last updated: 2026-04-09 (Session 2)
 
 ## CRITICAL — Pre-Launch (do now, no site access needed)
 
@@ -10,12 +10,12 @@ Last updated: 2026-04-09
 - [ ] Set business hours on GBP (Ashley)
 
 ### Vercel Site — Schema Improvements
-- [ ] Add Article schema to each blog post section on blog.html (interim until individual pages built)
-- [ ] Add BreadcrumbList schema to all subpages
-- [ ] Add Review/AggregateRating schema to homepage (pull from Google reviews)
-- [ ] Verify LodgingBusiness schema has geo coordinates, priceRange, amenityFeature
+- [x] Add Article schema to each blog post section on blog.html — DONE 2026-04-09 (individual blog pages already have BlogPosting schema; blog.html now has ItemList referencing all 5)
+- [x] Add BreadcrumbList schema to all subpages — DONE 2026-04-09 (13 pages)
+- [ ] Add Review/AggregateRating schema to homepage (pull from Google reviews) — accommodations.html already has AggregateRating, homepage missing
+- [x] Verify LodgingBusiness schema has geo coordinates, priceRange, amenityFeature — VERIFIED 2026-04-09 (all three present on homepage)
 - [ ] Add SpeakableSpecification to homepage, glamping page, weddings page
-- [ ] Fix blog.html — add CollectionPage schema
+- [x] Fix blog.html — add CollectionPage schema — DONE 2026-04-09
 
 ### Vercel Site — Content Gaps
 - [ ] Split blog posts into individual pages with unique URLs

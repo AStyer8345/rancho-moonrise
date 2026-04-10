@@ -17,10 +17,11 @@ Last updated: 2026-04-09
 - [ ] Get QuickBooks access or P&L + Balance Sheet
 
 ### CLAUDE (autonomous — scheduled task handles these)
-- [ ] Split blog posts into individual pages with URLs (S1)
+- [x] Split blog posts into individual pages with URLs (S1) — already done previously
 - [ ] Add answer-first H2 summaries to key pages (S2)
 - [ ] Build topical authority clusters with internal linking (S3)
-- [ ] Add BreadcrumbList + SpeakableSpecification schema (S4)
+- [~] Add BreadcrumbList + SpeakableSpecification schema (S4) — Breadcrumbs DONE 2026-04-09, Speakable still pending
+- [ ] Add Review/AggregateRating schema to homepage (accommodations.html already has it)
 
 ## Next (after DNS cutover)
 - [ ] Google Search Console setup + sitemap submission (S6)
@@ -55,3 +56,6 @@ Last updated: 2026-04-09
 - [x] Weekly GBP posting — scheduled task confirmed working (Task 10)
 - [x] Live-verified all platforms and created metrics baseline
 - [x] Built SEO/AEO strategy and scheduled task (Mon/Wed/Fri 5 AM)
+- [x] BreadcrumbList schema on all 13 subpages
+- [x] CollectionPage + ItemList schema on blog.html
+- [x] Verified homepage LodgingBusiness schema complete (geo, price, amenities)
