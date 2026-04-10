@@ -1,12 +1,16 @@
 # Rancho Moonrise — TODO
-Last updated: 2026-04-10 (Phase 2 UI fixes shipped)
+Last updated: 2026-04-10 (Phase 3 UI refinements shipped)
+
+## ✅ DONE 2026-04-10 — Phase 3 UI refinements
+
+Logo size bump site-wide (`.nav__logo-img` 72→112 px desktop, 44→68 px scrolled, 32→48 px tablet, 30→44 px narrow mobile), weddings.html `#wedding-inquiry` replaced with exact contact.html wedding form and repositioned directly under the Schedule a Venue Tour section, and the 5 weddings FAQs converted from plain h3+p to `.faq-item` accordion markup so they collapse/expand on click (existing main.js handler picks them up automatically). CSS cache-bust `v=9 → v=10` across all 15 pages. Commit `e9fb9e3`, live on `https://rancho-moonrise.vercel.app/`. See CHANGELOG 2026-04-10 "Phase 3 UI Refinements".
 
 ## ✅ DONE 2026-04-10 — Phase 2 UI fixes
 
 Button visibility fix (root cause: `.btn--primary` was transparent + white text on cream), nav logo swap (Secondary lockup → Tertiary wordmark, 88×88), nav social icons moved right of Pool Passes across 15 pages, weddings FAQ renamed + shortened + FAQPage schema, new `#wedding-inquiry` form on weddings.html, and **pre-existing `.reveal` bug fixed** (section labels were permanently invisible site-wide — `main.js` IntersectionObserver only watched `.fade-in`). Commits `ddf556e` + `36fb00d`, live on `https://rancho-moonrise.vercel.app/`. See CHANGELOG 2026-04-10 "Phase 2 UI Fixes".
 
-**Open follow-up:**
-- [ ] **Wedding inquiry form backend** — `weddings.html#wedding-inquiry` and `contact.html` wedding section both currently use `action="#"` placeholder. Needs a real form handler (Formspree / Netlify Forms / serverless function → email + Salesforce create_lead). Current UX: form submits and does nothing. Flag on the Vercel cutover checklist.
+**Open follow-up (carried forward from Phase 2):**
+- [ ] **Wedding inquiry form backend** — `weddings.html#wedding-inquiry` and `contact.html` wedding section both use `action="#"` placeholder. Now that Phase 3 made the two forms identical (same field schema), one backend wire-up covers both. Needs Formspree / Netlify Forms / Vercel serverless → email + Salesforce create_lead. Current UX: form submits and does nothing. Flag on the DNS cutover checklist.
 
 ## ✅ DONE 2026-04-10 — Brand-facts site sweep
 
