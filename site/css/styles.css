@@ -2193,3 +2193,143 @@ p { margin-bottom: 1em; }
     background: var(--color-terracotta);
     margin: 0 auto;
 }
+
+/* ---------- Header Social Buttons (nav) ---------- */
+.nav__social-group {
+    display: none;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0 0.5rem;
+}
+@media (min-width: 960px) {
+    .nav__social-group { display: inline-flex; }
+}
+.nav__social {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    color: var(--color-white, #fff);
+    border: 1px solid rgba(255,255,255,0.35);
+    background: transparent;
+    transition: background var(--transition), transform var(--transition), border-color var(--transition);
+}
+.nav__social:hover,
+.nav__social:focus-visible {
+    background: var(--color-terracotta, #B6603F);
+    border-color: var(--color-terracotta, #B6603F);
+    transform: translateY(-1px);
+    outline: none;
+}
+.nav__social--primary {
+    background: var(--color-terracotta, #B6603F);
+    border-color: var(--color-terracotta, #B6603F);
+}
+.nav__social--primary:hover,
+.nav__social--primary:focus-visible {
+    background: var(--color-amber, #C9842B);
+    border-color: var(--color-amber, #C9842B);
+}
+
+/* Mobile social row (inside slide-out nav) */
+.nav__mobile-social {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: var(--space-md, 1.5rem);
+    padding-top: var(--space-md, 1.5rem);
+    border-top: 1px solid rgba(255,255,255,0.15);
+}
+.nav__mobile-social a {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-white, #fff);
+    text-decoration: none;
+    padding: 0.4rem 0.75rem;
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 999px;
+}
+
+/* ---------- Instagram Feed Grid (homepage) ---------- */
+.instagram-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+@media (max-width: 640px) {
+    .instagram-grid { grid-template-columns: repeat(2, 1fr); gap: 0.35rem; }
+}
+.instagram-grid__tile {
+    position: relative;
+    display: block;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 8px;
+    background: var(--color-cream, #F2E9DB);
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+.instagram-grid__tile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 400ms ease;
+}
+.instagram-grid__tile:hover img,
+.instagram-grid__tile:focus-visible img {
+    transform: scale(1.04);
+}
+.instagram-grid__tile:hover,
+.instagram-grid__tile:focus-visible {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    outline: none;
+}
+
+/* ---------- Wedding Gallery Placeholder ---------- */
+.wedding-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    max-width: 960px;
+    margin: 0 auto;
+}
+@media (max-width: 640px) {
+    .wedding-gallery { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+}
+.wedding-gallery__tile {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 8px;
+    background: var(--color-cream, #F2E9DB);
+    border: 1px dashed rgba(182, 96, 63, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    color: rgba(0,0,0,0.5);
+}
+.wedding-gallery__tile img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.wedding-gallery__note {
+    font-size: 0.85rem;
+    color: rgba(0,0,0,0.6);
+    text-align: center;
+    margin-top: var(--space-sm, 1rem);
+    font-style: italic;
+}

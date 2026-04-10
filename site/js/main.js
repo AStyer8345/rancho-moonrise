@@ -307,11 +307,11 @@
 
             // Weddings
             { keywords: ['wedding', 'ceremony', 'reception', 'bride', 'groom', 'marry', 'engaged', 'engagement'],
-              answer: 'We\'d love to host your wedding! Rancho Moonrise offers <strong>exclusive full-ranch access</strong> for weddings — no outside guests on the property. We have 4 ceremony sites, capacity for 200+ guests, and on-site accommodations for 50 overnight guests. <a href="/pages/contact.html?intent=wedding">Start your wedding inquiry &rarr;</a>' },
+              answer: 'We\'d love to host your wedding! Rancho Moonrise offers <strong>exclusive full-ranch access</strong> for weddings — no outside guests on the property. We offer unlimited ceremony options across the property, capacity for 200+ guests, and on-site accommodations for 50 overnight guests. <a href="/pages/contact.html?intent=wedding">Start your wedding inquiry &rarr;</a>' },
             { keywords: ['wedding package', 'wedding price', 'wedding cost', 'how much wedding', 'wedding pricing', 'wedding rate'],
-              answer: 'Wedding packages include full exclusive ranch access, your choice of 4 ceremony sites, the Event Barn, Neon Moon Bar, and accommodations for up to 50 overnight guests. For specific pricing, <a href="/pages/contact.html?intent=wedding">submit a wedding inquiry</a> or call <a href="tel:+17372911260">737-291-1260</a> — we\'ll send you a detailed package within 2 hours.' },
+              answer: 'Wedding packages include full exclusive ranch access, unlimited ceremony options, the Event Barn, and accommodations for up to 50 overnight guests. For specific pricing, <a href="/pages/contact.html?intent=wedding">submit a wedding inquiry</a> or call <a href="tel:+17372911260">737-291-1260</a> — we\'ll send you a detailed package within 2 hours.' },
             { keywords: ['ceremony site', 'ceremony option', 'where ceremony', 'venue option'],
-              answer: 'We have <strong>4 ceremony sites</strong>: the Rustic Corral (circular, surrounded by wildflowers), the Event Barn (modern, climate-controlled), Poolside, and Hill Country Fields (panoramic Texas views). Each creates a completely different atmosphere. <a href="/pages/weddings.html#ceremony-sites">See all ceremony sites &rarr;</a>' },
+              answer: 'We offer <strong>unlimited ceremony options</strong> across the property — from the Rustic Corral surrounded by wildflowers, to the Event Barn (modern, climate-controlled), to poolside, to open Texas fields with panoramic views. Each creates a completely different atmosphere. <a href="/pages/weddings.html#ceremony-sites">Learn more &rarr;</a>' },
             { keywords: ['capacity', 'how many', 'guest count', 'guests', 'max', 'maximum', 'seat'],
               answer: 'We can accommodate <strong>200+ guests</strong> for weddings and events, with <strong>50 overnight guests</strong> across our cabins and safari tents. The Event Barn, pool deck, and outdoor spaces all offer flexible layouts.' },
             { keywords: ['tour', 'visit', 'see the ranch', 'come see', 'walk through', 'schedule tour'],
@@ -319,7 +319,7 @@
 
             // Accommodations
             { keywords: ['cabin', 'tent', 'glamping', 'stay', 'overnight', 'accommodation', 'sleep', 'room', 'lodge'],
-              answer: 'We have <strong>20 units</strong> across three types: <strong>Cabins</strong> (queen bed, A/C, heat, covered deck), <strong>Family Safari Tents</strong> (queen + bunks, sleeps 4), and <strong>Premium Safari Tents</strong> (king bed, private ensuite). All have A/C, heat, and private fire pits. <a href="https://hotels.cloudbeds.com/en/reservation/5tzv1r" target="_blank">Check availability &rarr;</a>' },
+              answer: 'We offer <strong>cabins and safari tents</strong>: <strong>Cabins</strong> (queen bed, A/C, heat, covered deck), <strong>Family Safari Tents</strong> (queen + bunks, sleeps 4), and <strong>Premium Safari Tents</strong> (king bed, private ensuite). All have A/C and heat, with fire pits throughout the property. <a href="https://hotels.cloudbeds.com/en/reservation/5tzv1r" target="_blank">Check availability &rarr;</a>' },
             { keywords: ['book', 'reservation', 'reserve', 'availability', 'available'],
               answer: 'You can check real-time availability and book directly: <a href="https://hotels.cloudbeds.com/en/reservation/5tzv1r" target="_blank"><strong>Book your stay &rarr;</strong></a>. For weddings and events, <a href="/pages/contact.html">contact us</a> for custom availability.' },
             { keywords: ['price', 'cost', 'rate', 'per night', 'nightly', 'how much', 'pricing'],
@@ -330,8 +330,8 @@
               answer: 'We host all types of events: corporate retreats, birthday parties, conferences, private parties, festivals, and wellness retreats. Available for <strong>hourly rental or full ranch buyout</strong>. <a href="/pages/contact.html?intent=event">Submit an event inquiry &rarr;</a>' },
             { keywords: ['event barn', 'barn', 'indoor', 'climate control'],
               answer: 'The <strong>Event Barn</strong> is our modern, climate-controlled indoor venue. Flexible layout for presentations, seated dinners, cocktail receptions, and dance floors. Beautiful ranch aesthetic with all the infrastructure you need.' },
-            { keywords: ['neon moon', 'bar', 'drinks', 'cocktail', 'lounge'],
-              answer: 'The <strong>Neon Moon Bar & Lounge</strong> is the social heart of the ranch — full bar service in a one-of-a-kind setting. Perfect for cocktail hours, after-parties, and celebrations that go late.' },
+            { keywords: ['bar', 'drinks', 'cocktail', 'lounge'],
+              answer: 'The Lodge serves beer, wine, and other beverages on-site — perfect for a drink by the pool or after a day on the ranch. For private events, bar service can be arranged as part of your package.' },
             { keywords: ['upcoming event', 'what\'s happening', 'next event', 'calendar', 'schedule'],
               answer: 'Check out our upcoming events — live music, yoga, crawfish boils, and more: <a href="/pages/events.html"><strong>View upcoming events &rarr;</strong></a>' },
 
@@ -351,15 +351,15 @@
 
             // About & Misc
             { keywords: ['about', 'who', 'owner', 'story', 'ranch', 'property', 'acre', 'acres'],
-              answer: 'Rancho Moonrise is Austin\'s premier glamping and events ranch — <strong>20 acres</strong> in Manor, TX, just 20 minutes from downtown Austin. We offer luxury glamping, weddings, private events, and community gatherings with authentic Texas hospitality.' },
+              answer: 'Rancho Moonrise is Austin\'s glamping and events ranch — <strong>36 acres</strong>, just 20 minutes from downtown Austin. We offer glamping, weddings, private events, and community gatherings with authentic Texas hospitality.' },
             { keywords: ['social', 'instagram', 'facebook', 'tiktok', 'follow'],
               answer: 'Follow us! <a href="https://www.instagram.com/rancho_moonrise/" target="_blank">Instagram</a> · <a href="https://www.facebook.com/RanchoMoonrise/" target="_blank">Facebook</a> · <a href="https://www.tiktok.com/@rancho_moonrise" target="_blank">TikTok</a> · <a href="https://www.linkedin.com/company/rancho-moonrise/" target="_blank">LinkedIn</a>' },
             { keywords: ['review', 'rating', 'stars', 'google review', 'testimonial'],
-              answer: 'We\'re proud of our <strong>4.9-star rating across 122 Google Reviews</strong>! Our guests consistently highlight the beautiful property, amazing hospitality, and unique ranch experience.' },
+              answer: 'We\'re proud of our <strong>4.9-star rating across 125 Google Reviews</strong>! Our guests consistently highlight the beautiful property, amazing hospitality, and unique ranch experience.' },
             { keywords: ['wifi', 'internet', 'wi-fi'],
               answer: 'Yes, WiFi is available on the property. It\'s great for staying connected, though we do encourage unplugging and enjoying the ranch experience!' },
             { keywords: ['fire pit', 'firepit', 'campfire', 'bonfire', 's\'more'],
-              answer: 'Every accommodation comes with a <strong>private fire pit</strong>! Perfect for s\'mores, stargazing, and Texas evenings. We also have communal gathering areas with fire features.' },
+              answer: '<strong>Fire pits are available throughout the property</strong> — perfect for s\'mores, stargazing, and Texas evenings. Firewood is available for purchase at The Lodge.' },
         ];
 
         // Default / fallback

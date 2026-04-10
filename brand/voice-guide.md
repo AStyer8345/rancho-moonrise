@@ -1,8 +1,10 @@
 # Rancho Moonrise — Voice & Tone Guide
-Consolidated from 2022 Brand Guidelines + Ashley's direction (April 2026)
+Consolidated from 2022 Brand Guidelines + Ashley's direction (April 2026, updated 2026-04-10 after brand/facts call)
 
 **Read this file before writing ANY content for Rancho Moonrise.**
 This includes: blog posts, GBP posts, social media, email, website copy, FAQ answers, review responses, and meta descriptions.
+
+See also: `/VOICE-GUIDE.md` (sister file at repo root — same direction, more detail on tone, patterns, personas, and property facts table). Keep them in sync.
 
 ---
 
@@ -31,6 +33,10 @@ Playfully and casually speak about the landscape when possible — it's part of 
 - The old site felt warmer and more personal; the new one felt too modern/computerized
 - She wants texture, warmth, personality
 - Think: a friend inviting you to their ranch, not a hotel chain marketing to you
+- **Lean into the animal element.** Donkeys, ranch life — people love it. Mention in copy where natural.
+- **"Real beds" is a differentiator.** Keep leaning on it — separates RM from tent/gear camping.
+- **"Just show up" is on-brand.** No gear required, everything provided — lead with this for glamping audience.
+- **Not "luxury".** That word is dead from our copy. Describe the actual thing instead (hand-crafted cabins, A/C + heat, real beds, pool bar).
 
 ---
 
@@ -46,16 +52,34 @@ Playfully and casually speak about the landscape when possible — it's part of 
 - "Experience luxury glamping accommodations in the greater Austin metropolitan area."
 - "Our venue offers premier event hosting solutions."
 - "Book your stay today for an unforgettable getaway experience!"
-- "Nestled in the heart of Texas Hill Country..." (we're in Manor, not Hill Country)
+- "Nestled in the heart of Texas Hill Country..." (we're NOT in the Hill Country)
+- "Yoga under the oaks..." (no oak trees)
+- "20 acres of Texas magic" (it's 36 acres)
+- "All 20 of our cabins and tents..." (inventory fluctuates, never cite a number)
+- "Visit our full-service bar any day of the week" (bars are event-only)
+- "Our General Store has drinks and snacks" (it's called The Lodge now)
 
 ---
 
 ## Vocabulary
 
-**Use:** y'all, howdy, ranch, under the stars, kick back, good vibes, out here, down the road, come hang, fire pit, Texas sky, moonrise, neon moon
-**Avoid:** nestled, premier, luxury (overused), solutions, experience (as a verb), curated, bespoke, elevated, artisanal
-**Location:** "Manor, TX — 20 minutes from downtown Austin" (never "Hill Country", never "greater Austin area")
+**Use:** y'all, howdy, ranch, under the stars, kick back, good vibes, out here, down the road, come hang, fire pit, Texas sky, moonrise, neon moon, donkeys, real beds, just show up
+**Avoid (permanent ban list):**
+- **"luxury"** — not the brand, period
+- **"Texas Hill Country"** — factually wrong, locals will call it out
+- **"Manor" / "Mainer"** as a location descriptor — always say "Austin" or "20 minutes from downtown Austin"
+- **"General Store"** — renamed to "The Lodge"
+- **"nestled"**, **"premier"**, **"curated"**, **"bespoke"**, **"elevated"**, **"artisanal"**, **"solutions"**, **"experience" (as a verb)**
+- **"yoga under the oaks"** / **"oak-shaded"** — no oak trees on the property. Use "yoga al fresco" or "poolside yoga"
+- **"4 ceremony sites"** — say "unlimited options for your own unique layout"
+- **"Full-service bar"** / implying the Neon Moon Barn Lounge is open to walk-ins — it's EVENT-ONLY
+
+**Location:** "20 minutes from downtown Austin" (never "Hill Country", never "Manor" in customer copy, never "greater Austin area")
 **Property name:** "Rancho Moonrise" or "the ranch" (never "RM", never "Rancho")
+**Acreage:** **36 acres** (not 20, not 31 — historical numbers on the site are wrong)
+**Unit count:** Do NOT list a specific number of rooms/tents/cabins — inventory fluctuates (15 / 18 / 19). Say "safari tents and cabins" or "overnight accommodations".
+**Fire pits:** "Fire pits throughout the property" — NOT "private fire pit at every cabin" (only some have them).
+**Drinks:** "Margaritas, beer, wine, and more at the Lodge or bars" — specify event bars are event-only if the context risks confusing walk-in guests.
 
 ---
 
