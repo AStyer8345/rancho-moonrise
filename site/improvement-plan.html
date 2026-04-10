@@ -35,14 +35,18 @@
   .task-title { font-weight: 700; font-size: 0.95rem; color: #E8E0D4; }
   .task-meta { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 6px; margin-bottom: 8px; padding-left: 44px; }
   .tag { display: inline-block; font-size: 0.65rem; font-weight: 700; padding: 3px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+  /* Owners — one entry per person assigned work on this plan.
+     Add client-specific owners by copying a line below and swapping the name + colors.
+     Convention: background = ~15% saturation dark tone, color = bright accent. */
   .tag-owner-adam { background: #2A1F14; color: #D4A574; }
   .tag-owner-ashley { background: #1A2A1A; color: #7DB87D; }
+  .tag-owner-monet { background: #1F1A2A; color: #B89DE3; }
   .tag-owner-claude { background: #1A1A2E; color: #7D8EDB; }
   .tag-owner-nancy { background: #2A1A2A; color: #DB7DB8; }
   .tag-auto { background: #0D2A2A; color: #4ECDC4; border: 1px solid #1A3A3A; }
   .tag-draft-post { background: #2A0D2A; color: #D47DC4; border: 1px solid #4A1F4A; }
   .tag-manual { background: #2A200D; color: #C9842B; }
-  .tag-audit { font-size: 0.6rem; background: #222; color: #8B7D6B; }
+  .tag-audit { font-size: 0.6rem; background: #222; color: #8B7D6B; font-weight: 700; }
 
   .disposition-legend { background: #111; border: 1px solid #2A2A2A; border-radius: 10px; padding: 16px 20px; margin: 12px 0 24px; font-size: 0.82rem; color: #A89F94; line-height: 1.6; }
   .disposition-legend strong { color: #E8E0D4; }
@@ -50,7 +54,29 @@
   .disposition-legend .legend-row:first-of-type { margin-top: 10px; }
   .disposition-legend .legend-tag { flex-shrink: 0; min-width: 90px; text-align: center; }
   .task-desc { font-size: 0.88rem; color: #A89F94; padding-left: 44px; line-height: 1.6; }
-  .task-impact { font-size: 0.8rem; color: #8B7D6B; padding-left: 44px; margin-top: 8px; font-style: italic; }
+  .task-impact { font-size: 0.8rem; color: #8B7D6B; padding-left: 44px; margin-top: 8px; font-style: italic; font-weight: 700; }
+
+  /* Task notes — free-text area under each task card, persisted to localStorage.
+     Injected by JS; one textarea per task keyed by data-item-id. */
+  .task-notes {
+    display: block;
+    width: calc(100% - 44px);
+    margin: 12px 0 0 44px;
+    background: #0D0D0D;
+    border: 1px solid #2A2A2A;
+    border-radius: 6px;
+    padding: 10px 12px;
+    color: #E8E0D4;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.82rem;
+    line-height: 1.6;
+    resize: vertical;
+    min-height: 38px;
+    transition: border-color 0.15s;
+  }
+  .task-notes:focus { outline: none; border-color: #D4A574; }
+  .task-notes::placeholder { color: #5A5A5A; font-style: italic; }
+  .task-notes.has-content { border-color: #3A3A3A; }
 
   .divider { height: 1px; background: linear-gradient(90deg, transparent, #333, transparent); margin: 56px 0 0; }
   .section-intro { font-size: 0.9rem; color: #8B7D6B; margin-bottom: 24px; max-width: 660px; }
@@ -72,6 +98,44 @@
   .checklist { list-style: none; padding-left: 44px; margin-top: 8px; }
   .checklist li { font-size: 0.85rem; color: #A89F94; padding: 3px 0; }
   .checklist li::before { content: "☐ "; color: #D4A574; }
+
+  /* Interactive checklist — JS upgrades .checklist → .checklist.interactive, swaps
+     the ::before glyph for a real <input type="checkbox">, persists state to
+     localStorage keyed by `${pathname}:planTaskChecks` → { "<taskId>:<idx>": true }. */
+  .checklist.interactive li::before { content: none; }
+  .checklist.interactive li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 4px 0;
+  }
+  .checklist.interactive input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 14px;
+    height: 14px;
+    border: 1.5px solid #D4A574;
+    border-radius: 3px;
+    background: transparent;
+    flex-shrink: 0;
+    margin-top: 4px;
+    cursor: pointer;
+    position: relative;
+    transition: background 0.15s;
+  }
+  .checklist.interactive input[type="checkbox"]:hover { background: rgba(212, 165, 116, 0.15); }
+  .checklist.interactive input[type="checkbox"]:checked { background: #D4A574; }
+  .checklist.interactive input[type="checkbox"]:checked::after {
+    content: "✓";
+    position: absolute;
+    top: -4px; left: 1px;
+    color: #0D0D0D;
+    font-size: 0.85rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+  .checklist.interactive label { flex: 1; cursor: pointer; user-select: none; }
+  .checklist.interactive li.done label { color: #5A5A5A; text-decoration: line-through; }
 
   /* Metrics Dashboard */
   .metrics-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 24px 0; }
@@ -358,7 +422,320 @@
     border-color: #B6603F;
     color: #D4714E;
   }
+
+  /* ==========================================================================
+     Theme toggle button — sits fixed top-right, same circular treatment as
+     the auth gear in the bottom-right. Visible in both themes; the icon swap
+     (🌙 ⇄ ☀) is handled by JS so the static markup stays accessible.
+     ========================================================================== */
+  .theme-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 50%;
+    background: #1A1A1A;
+    border: 1px solid #2A1F14;
+    color: #D4A574;
+    font-size: 1.05rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    transition: all 0.15s ease;
+    font-family: inherit;
+    line-height: 1;
+  }
+  .theme-toggle:hover {
+    background: #2A1F14;
+    border-color: #D4A574;
+    transform: rotate(15deg);
+  }
+
+  /* ==========================================================================
+     LIGHT MODE — additive override block. Activated by data-theme="light" on
+     <html>. Set on first load via inline script in <head>. Designed to be
+     removed cleanly: every selector below this comment is scoped to
+     [data-theme="light"], so deleting this block reverts to dark-only.
+
+     Aesthetic: warm cream paper (#F5EFE0 page, #FFFCF5 cards) with darker
+     gold/teal/coral accents tuned for legibility on light backgrounds.
+     ========================================================================== */
+  [data-theme="light"] body {
+    background: #F5EFE0;
+    color: #1A1A1A;
+  }
+  [data-theme="light"] h1 { color: #8B5A2B; }
+  [data-theme="light"] h2 { color: #8B5A2B; }
+  [data-theme="light"] h2 .phase-label { color: #7A7060; }
+  [data-theme="light"] .phase-dates { color: #7A7060; }
+  [data-theme="light"] .subtitle { color: #7A7060; }
+  [data-theme="light"] .intro { color: #5A5246; }
+  [data-theme="light"] h3 { color: #1A1A1A; border-left-color: #8B5A2B; }
+  [data-theme="light"] .section-intro { color: #7A7060; }
+
+  /* Cards & containers */
+  [data-theme="light"] .sc-card,
+  [data-theme="light"] .task,
+  [data-theme="light"] .metric-card,
+  [data-theme="light"] .bottom-line,
+  [data-theme="light"] .link-group,
+  [data-theme="light"] .voice-section,
+  [data-theme="light"] .auth-modal-inner,
+  [data-theme="light"] #tab-done .done-empty {
+    background: #FFFCF5;
+    border: 1px solid #E0D9C5;
+  }
+  [data-theme="light"] .disposition-legend {
+    background: #FAF6EA;
+    border: 1px solid #E0D9C5;
+    color: #5A5246;
+  }
+  [data-theme="light"] .disposition-legend strong { color: #1A1A1A; }
+  [data-theme="light"] .schedule-card {
+    background: #E8F4F3;
+    border: 1px solid #B8DDD9;
+  }
+  [data-theme="light"] .schedule-card strong { color: #1F8E89; }
+  [data-theme="light"] .schedule-card p { color: #5A5246; }
+  [data-theme="light"] .schedule-card .sched-detail { color: #7A8E8C; }
+  [data-theme="light"] .bottom-line p { color: #5A5246; }
+  [data-theme="light"] .bottom-line strong { color: #8B5A2B; }
+
+  /* Grade colors — deepen for cream background contrast */
+  [data-theme="light"] .grade-d { color: #B04A2C; }
+  [data-theme="light"] .grade-c { color: #8B5A14; }
+  [data-theme="light"] .grade-b { color: #3E7A3E; }
+  [data-theme="light"] .grade-f { color: #8B2D17; }
+  [data-theme="light"] .sc-arrow { color: #A8A090; }
+  [data-theme="light"] .sc-target { color: #1F6B45; }
+  [data-theme="light"] .sc-label { color: #5A5246; }
+  [data-theme="light"] .sc-progress { color: #7A7060; }
+  [data-theme="light"] .sc-progress.active { color: #1F8E89; }
+
+  /* Task content */
+  [data-theme="light"] .task-num { color: #8B5A2B; }
+  [data-theme="light"] .task-title { color: #1A1A1A; }
+  [data-theme="light"] .task-desc { color: #5A5246; }
+  [data-theme="light"] .task-impact { color: #5A5246; }
+
+  /* Tags — owners */
+  [data-theme="light"] .tag-owner-adam { background: #F4ECD8; color: #8B5A2B; }
+  [data-theme="light"] .tag-owner-ashley { background: #E2EFE2; color: #3E7A3E; }
+  [data-theme="light"] .tag-owner-monet { background: #EAE3F2; color: #6B4FA8; }
+  [data-theme="light"] .tag-owner-claude { background: #E5E8F4; color: #3D4FA8; }
+  [data-theme="light"] .tag-owner-nancy { background: #F4E3EE; color: #9F2B7A; }
+  /* Tags — disposition + audit */
+  [data-theme="light"] .tag-auto { background: #DCF1EF; color: #1F8E89; border-color: #B8DDD9; }
+  [data-theme="light"] .tag-draft-post { background: #F2DDEF; color: #9F3B8B; border-color: #DDB6D5; }
+  [data-theme="light"] .tag-manual { background: #F5EAD0; color: #8B5A14; }
+  [data-theme="light"] .tag-audit { background: #E5E0D2; color: #5A5246; }
+  [data-theme="light"] .tag-done { background: #E2EFE2; color: #3E7A3E; border-color: #9DC79D; }
+
+  /* Notes textarea */
+  [data-theme="light"] .task-notes {
+    background: #FAF6EA;
+    border: 1px solid #DDD3B8;
+    color: #1A1A1A;
+  }
+  [data-theme="light"] .task-notes:focus { border-color: #8B5A2B; }
+  [data-theme="light"] .task-notes::placeholder { color: #A8A090; }
+  [data-theme="light"] .task-notes.has-content { border-color: #C9BFA3; }
+
+  /* Interactive checklist */
+  [data-theme="light"] .checklist li { color: #5A5246; }
+  [data-theme="light"] .checklist li::before { color: #8B5A2B; }
+  [data-theme="light"] .checklist.interactive input[type="checkbox"] { border-color: #8B5A2B; }
+  [data-theme="light"] .checklist.interactive input[type="checkbox"]:hover { background: rgba(139, 90, 43, 0.12); }
+  [data-theme="light"] .checklist.interactive input[type="checkbox"]:checked { background: #8B5A2B; }
+  [data-theme="light"] .checklist.interactive input[type="checkbox"]:checked::after { color: #FFFCF5; }
+  [data-theme="light"] .checklist.interactive li.done label { color: #A8A090; }
+
+  /* Tab bar */
+  [data-theme="light"] .tab-bar { border-bottom-color: #C9BFA3; }
+  [data-theme="light"] .tab-btn { color: #7A7060; }
+  [data-theme="light"] .tab-btn:hover { color: #1A1A1A; }
+  [data-theme="light"] .tab-btn.active { color: #8B5A2B; border-bottom-color: #8B5A2B; }
+
+  /* Done count badge */
+  [data-theme="light"] .done-count-badge { background: #E2EFE2; color: #3E7A3E; border-color: #9DC79D; }
+  [data-theme="light"] .done-count-badge.empty { background: #E5E0D2; color: #A8A090; border-color: #C9BFA3; }
+
+  /* Metrics tab */
+  [data-theme="light"] .metric-label { color: #7A7060; }
+  [data-theme="light"] .metric-value { color: #1A1A1A; }
+  [data-theme="light"] .metric-change.up { color: #1F8E89; }
+  [data-theme="light"] .metric-change.down { color: #B04A2C; }
+  [data-theme="light"] .metric-change.flat { color: #7A7060; }
+  [data-theme="light"] .metric-sub { color: #A8A090; }
+  [data-theme="light"] .metrics-table th { color: #7A7060; border-bottom-color: #C9BFA3; }
+  [data-theme="light"] .metrics-table td { color: #5A5246; border-bottom-color: #EBE3CC; }
+  [data-theme="light"] .metrics-table td:first-child { color: #1A1A1A; }
+  [data-theme="light"] .metrics-table .baseline-col { color: #7A7060; }
+  [data-theme="light"] .metrics-table .current-col { color: #1A1A1A; }
+  [data-theme="light"] .metrics-table .delta-up { color: #1F8E89; }
+  [data-theme="light"] .metrics-table .delta-down { color: #B04A2C; }
+  [data-theme="light"] .metrics-table .delta-flat { color: #7A7060; }
+  [data-theme="light"] .metrics-cat { color: #8B5A2B; border-bottom-color: #C9BFA3 !important; }
+  [data-theme="light"] .search-rank { background: #F4ECD8; }
+  [data-theme="light"] .rank-none { color: #B04A2C; }
+  [data-theme="light"] .rank-low { color: #8B5A14; }
+  [data-theme="light"] .rank-mid { color: #3E7A3E; }
+  [data-theme="light"] .rank-top { color: #1F8E89; }
+
+  /* Summary table (Plan tab) */
+  [data-theme="light"] .summary-table th { color: #7A7060; border-bottom-color: #C9BFA3; }
+  [data-theme="light"] .summary-table td { color: #5A5246; border-bottom-color: #EBE3CC; }
+  [data-theme="light"] .summary-table td:first-child { color: #1A1A1A; }
+
+  /* Done tab */
+  [data-theme="light"] #tab-done .done-intro { color: #5A5246; }
+  [data-theme="light"] #tab-done .done-empty { color: #A8A090; border-style: dashed; border-color: #C9BFA3; }
+
+  /* Links tab */
+  [data-theme="light"] #tab-links .tab-intro { color: #5A5246; }
+  [data-theme="light"] .link-group-header { border-bottom-color: #E0D9C5; }
+  [data-theme="light"] .link-group-title { color: #8B5A2B; }
+  [data-theme="light"] .link-pill {
+    background: #FAF6EA;
+    border: 1px solid #E0D9C5;
+    color: #1A1A1A;
+  }
+  [data-theme="light"] .link-pill:hover {
+    border-color: #8B5A2B;
+    color: #1A1A1A;
+    background: #F4ECD8;
+  }
+  [data-theme="light"] .link-pill-tag.ok { background: #E2EFE2; color: #3E7A3E; border-color: #9DC79D; }
+  [data-theme="light"] .link-pill-tag.gap { background: #F4DDD4; color: #B04A2C; border-color: #DDA694; }
+  [data-theme="light"] .link-pill-tag.verify { background: #E5E8F4; color: #3D4FA8; border-color: #B6BEDD; }
+  [data-theme="light"] .link-pill-tag.primary { background: #F4ECD8; color: #8B5A2B; border-color: #DDC894; }
+  [data-theme="light"] .link-group-note { color: #7A7060; }
+  [data-theme="light"] .link-legend { background: #FAF6EA; border: 1px solid #E0D9C5; color: #7A7060; }
+
+  /* Voice tab */
+  [data-theme="light"] #tab-voice .tab-intro { color: #5A5246; }
+  [data-theme="light"] .voice-section h3 { color: #8B5A2B; border-bottom-color: #E0D9C5; }
+  [data-theme="light"] .voice-section p { color: #5A5246; }
+  [data-theme="light"] .voice-section p.lead { color: #1A1A1A; border-left-color: #8B5A2B; }
+  [data-theme="light"] .voice-three-words .word { background: #FAF6EA; border: 1px solid #E0D9C5; }
+  [data-theme="light"] .voice-three-words .word strong { color: #8B5A2B; }
+  [data-theme="light"] .voice-three-words .word span { color: #5A5246; }
+  [data-theme="light"] .voice-table th { color: #7A7060; }
+  [data-theme="light"] .voice-table th, [data-theme="light"] .voice-table td { border-bottom-color: #E0D9C5; color: #5A5246; }
+  [data-theme="light"] .voice-table td:first-child { color: #B04A2C; }
+  [data-theme="light"] .voice-table td:last-child em { color: #3E7A3E; }
+  [data-theme="light"] .voice-pill { background: #FAF6EA; border: 1px solid #E0D9C5; color: #1A1A1A; }
+  [data-theme="light"] .voice-quote { background: #E8F4F3; border-left-color: #1F8E89; color: #5A5246; }
+  [data-theme="light"] .voice-brand-item { background: #FAF6EA; border: 1px solid #E0D9C5; }
+  [data-theme="light"] .voice-brand-item .k { color: #7A7060; }
+  [data-theme="light"] .voice-brand-item .v { color: #1A1A1A; }
+  [data-theme="light"] .voice-footer-link { background: #FAF6EA; border: 1px solid #E0D9C5; color: #8B5A2B; }
+  [data-theme="light"] .voice-footer-link:hover { border-color: #8B5A2B; background: #F4ECD8; }
+
+  /* Mark Done button + completed state */
+  [data-theme="light"] .mark-done-btn {
+    background: #FAF6EA;
+    border-color: #DDC894;
+    color: #8B5A2B;
+  }
+  [data-theme="light"] .mark-done-btn:hover {
+    background: #F4ECD8;
+    color: #6B4017;
+    border-color: #8B5A2B;
+  }
+  [data-theme="light"] .task[data-item-id].completed .mark-done-btn {
+    background: #E2EFE2;
+    border-color: #9DC79D;
+    color: #3E7A3E;
+  }
+
+  /* Auth gear (bottom-right) */
+  [data-theme="light"] .auth-gear {
+    background: #FFFCF5;
+    border: 1px solid #DDC894;
+    color: #8B5A2B;
+  }
+  [data-theme="light"] .auth-gear:hover {
+    background: #F4ECD8;
+    border-color: #8B5A2B;
+    color: #6B4017;
+  }
+  [data-theme="light"] .auth-gear.authed { color: #3E7A3E; border-color: #9DC79D; }
+
+  /* Auth modal */
+  [data-theme="light"] .auth-modal { background: rgba(245, 239, 224, 0.85); }
+  [data-theme="light"] .auth-modal-inner h3 { color: #8B5A2B; }
+  [data-theme="light"] .auth-modal-inner p { color: #5A5246; }
+  [data-theme="light"] .auth-modal-inner p code { background: #FAF6EA; color: #8B5A2B; }
+  [data-theme="light"] .auth-modal-inner input {
+    background: #FAF6EA;
+    border: 1px solid #C9BFA3;
+    color: #1A1A1A;
+  }
+
+  /* Toast */
+  [data-theme="light"] .rmr-toast {
+    background: #E2EFE2;
+    border-color: #9DC79D;
+    color: #3E7A3E;
+  }
+  [data-theme="light"] .rmr-toast.error {
+    background: #F4DDD4;
+    border-color: #DDA694;
+    color: #B04A2C;
+  }
+
+  /* Theme toggle button — light variant */
+  [data-theme="light"] .theme-toggle {
+    background: #FFFCF5;
+    border: 1px solid #DDC894;
+    color: #8B5A2B;
+  }
+  [data-theme="light"] .theme-toggle:hover {
+    background: #F4ECD8;
+    border-color: #8B5A2B;
+  }
+
+  /* Inline-style overrides — body HTML uses style="color:#XYZ" attributes that
+     CSS variables can't reach. Attribute selectors with !important catch them.
+     Only the colors that change meaning between themes need overriding;
+     accent colors like #4ECDC4 / #D4714E / #D4A574 still read on cream. */
+  [data-theme="light"] [style*="color:#E8E0D4"],
+  [data-theme="light"] [style*="color: #E8E0D4"],
+  [data-theme="light"] [style*="color:#E8E8E5"] { color: #1A1A1A !important; }
+  [data-theme="light"] [style*="color:#A89F94"],
+  [data-theme="light"] [style*="color: #A89F94"],
+  [data-theme="light"] [style*="color:#9BA3B0"],
+  [data-theme="light"] [style*="color:#C8C0B4"] { color: #5A5246 !important; }
+  [data-theme="light"] [style*="color:#8B7D6B"],
+  [data-theme="light"] [style*="color:#7A7268"] { color: #7A7060 !important; }
+  [data-theme="light"] [style*="color:#5A5A5A"],
+  [data-theme="light"] [style*="color: #5A5A5A"],
+  [data-theme="light"] [style*="color: #555"] { color: #A8A090 !important; }
+  [data-theme="light"] [style*="color:#D4A574"],
+  [data-theme="light"] [style*="color: #D4A574"] { color: #8B5A2B !important; }
+  [data-theme="light"] [style*="color:#4ECDC4"],
+  [data-theme="light"] [style*="color: #4ECDC4"] { color: #1F8E89 !important; }
+  [data-theme="light"] [style*="color:#D4714E"],
+  [data-theme="light"] [style*="color: #D4714E"] { color: #B04A2C !important; }
+  [data-theme="light"] [style*="background:#0F1419"] { background: #FAF6EA !important; }
 </style>
+<script>
+  // FOUC prevention: set theme on <html> before body parses.
+  // Default is light; explicit choice in localStorage wins.
+  (function() {
+    try {
+      var key = location.pathname + ':theme';
+      var stored = localStorage.getItem(key);
+      document.documentElement.setAttribute('data-theme', stored === 'dark' ? 'dark' : 'light');
+    } catch (e) {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  })();
+</script>
 </head>
 <body>
 <div class="container">
@@ -1606,9 +1983,110 @@ function injectMarkDoneButtons() {
   });
 }
 
+// ===== Task notes — free-text area under every task, persisted locally =====
+// Namespace by pathname so the same script works unchanged across Styer, Rancho,
+// and any future client fork — localStorage collisions impossible on prod origins,
+// and on a shared dev server the pathname still differentiates the pages.
+const PM_NS = location.pathname + ':';
+const NOTES_KEY = PM_NS + 'planTaskNotes';
+const CHECKS_KEY = PM_NS + 'planTaskChecks';
+
+function loadJSON(key) {
+  try { return JSON.parse(localStorage.getItem(key) || '{}') || {}; }
+  catch (e) { return {}; }
+}
+function saveJSON(key, obj) {
+  try { localStorage.setItem(key, JSON.stringify(obj)); } catch (e) {}
+}
+
+function injectTaskNotes() {
+  const notes = loadJSON(NOTES_KEY);
+  document.querySelectorAll('.task[data-item-id]').forEach(task => {
+    if (task.querySelector(':scope > .task-notes')) return; // idempotent
+    const id = task.getAttribute('data-item-id');
+    const ta = document.createElement('textarea');
+    ta.className = 'task-notes';
+    ta.placeholder = 'Notes…';
+    ta.rows = 1;
+    ta.dataset.taskNotes = id;
+    const initial = notes[id] || '';
+    ta.value = initial;
+    if (initial.trim()) ta.classList.add('has-content');
+    ta.addEventListener('input', () => {
+      const current = loadJSON(NOTES_KEY);
+      const val = ta.value;
+      if (val.trim()) { current[id] = val; ta.classList.add('has-content'); }
+      else { delete current[id]; ta.classList.remove('has-content'); }
+      saveJSON(NOTES_KEY, current);
+    });
+    task.appendChild(ta);
+  });
+}
+
+// ===== Interactive checklists — upgrade static ☐ bullets to real checkboxes =====
+// State stored as { "<taskId>:<idx>": true } so items are stable across DOM re-renders.
+function upgradeChecklists() {
+  const state = loadJSON(CHECKS_KEY);
+  document.querySelectorAll('.task[data-item-id] .checklist').forEach(list => {
+    if (list.classList.contains('interactive')) return; // idempotent
+    const task = list.closest('.task[data-item-id]');
+    if (!task) return;
+    const taskId = task.getAttribute('data-item-id');
+    list.classList.add('interactive');
+    Array.from(list.children).forEach((li, idx) => {
+      if (li.tagName !== 'LI') return;
+      if (li.querySelector('input[type="checkbox"]')) return;
+      const itemKey = taskId + ':' + idx;
+      const checked = state[itemKey] === true;
+      // Preserve inner HTML (bold/color spans, links) inside a label element.
+      const innerHTML = li.innerHTML;
+      li.innerHTML = '';
+      const input = document.createElement('input');
+      input.type = 'checkbox';
+      input.checked = checked;
+      const label = document.createElement('label');
+      label.innerHTML = innerHTML;
+      li.classList.toggle('done', checked);
+      li.appendChild(input);
+      li.appendChild(label);
+      input.addEventListener('change', () => {
+        const current = loadJSON(CHECKS_KEY);
+        if (input.checked) current[itemKey] = true;
+        else delete current[itemKey];
+        saveJSON(CHECKS_KEY, current);
+        li.classList.toggle('done', input.checked);
+      });
+    });
+  });
+}
+
+// Theme toggle — reads current data-theme (already set by the inline <head> script
+// for FOUC prevention) and wires the sun/moon button.
+const THEME_KEY = PM_NS + 'theme';
+function setTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  try { localStorage.setItem(THEME_KEY, theme); } catch (e) {}
+  const icon = document.querySelector('#theme-toggle .theme-toggle-icon');
+  if (icon) icon.textContent = theme === 'dark' ? '☀' : '🌙';
+}
+function initThemeToggle() {
+  const btn = document.getElementById('theme-toggle');
+  if (!btn) return;
+  const current = document.documentElement.getAttribute('data-theme') || 'light';
+  const icon = btn.querySelector('.theme-toggle-icon');
+  if (icon) icon.textContent = current === 'dark' ? '☀' : '🌙';
+  btn.addEventListener('click', () => {
+    const now = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    setTheme(now);
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+  initThemeToggle();
   updateGearState();
   injectMarkDoneButtons();
+  injectTaskNotes();
+  upgradeChecklists();
   // Compute grades AFTER injection so any optimistic moves are already reflected.
   recomputeAllGrades();
   updateDoneCountBadge();
@@ -1633,6 +2111,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 </script>
+
+<!-- Theme toggle -->
+<button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle light/dark theme"><span class="theme-toggle-icon" aria-hidden="true">🌙</span></button>
 
 <!-- Mark Done auth UI -->
 <button id="auth-gear" class="auth-gear" type="button" aria-label="Auth token">⚙</button>
