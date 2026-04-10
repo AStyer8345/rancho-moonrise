@@ -1,5 +1,5 @@
 # Rancho Moonrise — TODO
-Last updated: 2026-04-09
+Last updated: 2026-04-10
 
 ## Now (this week — April 9-15)
 
@@ -13,6 +13,7 @@ Last updated: 2026-04-09
 
 ### NEEDS ADAM
 - [ ] DNS cutover from BofillTech to Vercel — THE #1 unlock for all SEO/AEO
+- [ ] Rotate `GITHUB_TOKEN` on Vercel → fine-grained PAT scoped only to `AStyer8345/rancho-moonrise` contents:write (currently broad `gh auth token`, 5 min fix)
 - [ ] Get Exhibit A from Nancy/Ashley (ownership %, capital contributions)
 - [ ] Get QuickBooks access or P&L + Balance Sheet
 
@@ -50,7 +51,17 @@ Last updated: 2026-04-09
 - [ ] Weekday utilization program (Task 26)
 - [ ] Upload more owner photos to GBP (Task 27)
 
-## Done (April 9, 2026)
+## Done
+
+### April 10, 2026
+- [x] Mark Done system shipped — `/api/complete` serverless fn + GitHub Contents API log append + Bearer auth via shared `BRIEFING_AUTH_TOKEN`
+- [x] Done tab added to improvement-plan.html — completed tasks physically relocate into `#done-tasks-container` (newest on top), not just faded in place
+- [x] Option C grade progression calculator — headline grade = highest phase where all required tasks complete; empty phases pass through without advancing grade; mini-progress "(X/Y toward <next grade>)" under each scorecard
+- [x] Rewrote `rancho-apply-done` scheduled task SKILL.md — physically move task divs into Done tab instead of applying class in place
+- [x] Backfilled tasks 4, 6, 10 into Done tab (moved at rest in source HTML)
+- [x] Smoke tested Mark Done end-to-end on live Vercel deploy — commit 01319c8 READY
+
+### April 9, 2026
 - [x] Secondary GBP categories already set — Hotel, Campground, Event venue, Resort hotel, Wedding venue (Task 4)
 - [x] Instagram link-in-bio — Linktree live with 5 links (Task 6)
 - [x] Weekly GBP posting — scheduled task confirmed working (Task 10)

@@ -131,6 +131,52 @@
   #tab-done .task[data-item-id] { /* inherit base styling */ }
   #done-tasks-container .task[data-item-id] .mark-done-btn { display: none; }
 
+  /* Links tab — mind-map-style category grid */
+  #tab-links .tab-intro { font-size: 0.9rem; color: #A89F94; margin: 24px 0 28px; max-width: 720px; }
+  .links-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 18px; }
+  .link-group { background: #1A1A1A; border: 1px solid #2A2A2A; border-radius: 10px; padding: 18px 20px 20px; }
+  .link-group-header { display: flex; align-items: center; gap: 10px; margin: 0 0 14px; padding-bottom: 10px; border-bottom: 1px solid #2A2A2A; }
+  .link-group-icon { font-size: 1.15rem; line-height: 1; }
+  .link-group-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.85rem; font-weight: 700; color: #D4A574; letter-spacing: 0.05em; text-transform: uppercase; margin: 0; }
+  .link-pill-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; }
+  .link-pill { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 9px 12px; background: #0F0F0F; border: 1px solid #262626; border-radius: 6px; text-decoration: none; color: #E8E0D4; font-size: 0.87rem; transition: all 0.15s; }
+  .link-pill:hover { border-color: #D4A574; color: #fff; background: #141414; }
+  .link-pill-name { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .link-pill-tag { font-size: 0.62rem; font-weight: 700; padding: 2px 6px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.05em; flex-shrink: 0; }
+  .link-pill-tag.ok { background: #1A2A1A; color: #7DB87D; border: 1px solid #31735A; }
+  .link-pill-tag.gap { background: #2A1A1A; color: #D4714E; border: 1px solid #73413A; }
+  .link-pill-tag.verify { background: #1A1F2A; color: #8BA8D4; border: 1px solid #3A4A6A; }
+  .link-pill-tag.primary { background: #2A2410; color: #D4A574; border: 1px solid #6A5A2A; }
+  .link-group-note { font-size: 0.72rem; color: #7A7268; margin: 12px 0 0; line-height: 1.5; }
+  .link-legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.72rem; color: #8B7D6B; margin: 0 0 22px; padding: 12px 14px; background: #0F0F0F; border: 1px solid #222; border-radius: 6px; }
+  .link-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .link-legend .link-pill-tag { font-size: 0.6rem; }
+
+  /* Voice tab */
+  #tab-voice .tab-intro { font-size: 0.9rem; color: #A89F94; margin: 24px 0 28px; max-width: 720px; }
+  .voice-section { background: #1A1A1A; border: 1px solid #2A2A2A; border-radius: 10px; padding: 22px 24px; margin: 0 0 18px; }
+  .voice-section h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.85rem; font-weight: 700; color: #D4A574; text-transform: uppercase; letter-spacing: 0.05em; margin: 0 0 14px; padding-bottom: 10px; border-bottom: 1px solid #2A2A2A; }
+  .voice-section p { color: #C8C0B4; font-size: 0.9rem; line-height: 1.6; margin: 0 0 10px; }
+  .voice-section p.lead { font-size: 1rem; color: #E8E0D4; border-left: 3px solid #D4A574; padding: 4px 0 4px 14px; margin: 0 0 16px; }
+  .voice-three-words { display: flex; gap: 14px; flex-wrap: wrap; margin: 6px 0 0; }
+  .voice-three-words .word { flex: 1; min-width: 150px; background: #0F0F0F; border: 1px solid #3A3A3A; border-radius: 8px; padding: 14px 16px; }
+  .voice-three-words .word strong { display: block; font-size: 1.05rem; color: #D4A574; margin-bottom: 4px; font-family: 'Plus Jakarta Sans', sans-serif; }
+  .voice-three-words .word span { font-size: 0.82rem; color: #9BA3B0; line-height: 1.5; }
+  .voice-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  .voice-table th, .voice-table td { text-align: left; padding: 10px 12px; border-bottom: 1px solid #262626; color: #C8C0B4; vertical-align: top; }
+  .voice-table th { color: #8B7D6B; font-weight: 600; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; }
+  .voice-table td:first-child { color: #D4714E; font-weight: 600; white-space: nowrap; }
+  .voice-table td:last-child em { color: #7DB87D; font-style: normal; font-weight: 600; }
+  .voice-pill-grid { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 0; }
+  .voice-pill { display: inline-block; padding: 6px 13px; background: #0F0F0F; border: 1px solid #3A3A3A; border-radius: 999px; font-size: 0.82rem; color: #E8E0D4; }
+  .voice-quote { background: #0F0F0F; border-left: 3px solid #4ECDC4; padding: 10px 14px; margin: 8px 0; font-size: 0.88rem; color: #C8C0B4; font-style: italic; }
+  .voice-brand-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; margin-top: 8px; }
+  .voice-brand-item { background: #0F0F0F; border: 1px solid #262626; border-radius: 6px; padding: 10px 12px; }
+  .voice-brand-item .k { display: block; font-size: 0.66rem; color: #8B7D6B; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px; }
+  .voice-brand-item .v { color: #E8E0D4; font-size: 0.85rem; }
+  .voice-footer-link { display: inline-block; margin-top: 6px; padding: 8px 14px; background: #0F0F0F; border: 1px solid #3A3A3A; border-radius: 6px; color: #D4A574; text-decoration: none; font-size: 0.82rem; font-weight: 600; transition: all 0.15s; }
+  .voice-footer-link:hover { border-color: #D4A574; background: #1A1A1A; }
+
   /* ------- Mark Done buttons + completed state (improvement plan) ------- */
   .task[data-item-id] {
     padding-right: 7rem;
@@ -321,6 +367,8 @@
   <button class="tab-btn" onclick="switchTab('audits')">Audits</button>
   <button class="tab-btn" onclick="switchTab('intel')">Intel</button>
   <button class="tab-btn" onclick="switchTab('done')">Done <span id="done-count-badge" class="done-count-badge">0</span></button>
+  <button class="tab-btn" onclick="switchTab('links')">Links</button>
+  <button class="tab-btn" onclick="switchTab('voice')">Voice</button>
 </div>
 
 <div id="tab-plan" class="tab-content active">
@@ -870,6 +918,261 @@
 
 </div><!-- /tab-done -->
 
+<div id="tab-links" class="tab-content">
+<div class="divider"></div>
+
+<!-- ===== LINKS ===== -->
+<h2><span class="phase-label">Links</span>Every Rancho Moonrise URL, Grouped</h2>
+<p class="tab-intro">The full digital footprint in one place — booking engines, social handles, review platforms, OTA listings, internal docs. Green pills are live and working. Orange pills are gaps (unclaimed, missing, or broken). Blue pills need a manual verify from Adam or Ashley. Click any pill to open it in a new tab.</p>
+
+<div class="link-legend">
+  <span><span class="link-pill-tag primary">Primary</span> Main customer-facing URL</span>
+  <span><span class="link-pill-tag ok">Live</span> Active and working</span>
+  <span><span class="link-pill-tag gap">Gap</span> Missing, unclaimed, or broken</span>
+  <span><span class="link-pill-tag verify">Verify</span> Exists but URL needs confirmation</span>
+</div>
+
+<div class="links-grid">
+
+  <!-- Websites -->
+  <div class="link-group">
+    <div class="link-group-header"><span class="link-group-icon">🌐</span><h3 class="link-group-title">Websites</h3></div>
+    <ul class="link-pill-list">
+      <li><a class="link-pill" href="https://ranchomoonrise.com" target="_blank" rel="noopener"><span class="link-pill-name">ranchomoonrise.com (current live)</span><span class="link-pill-tag gap">Old</span></a></li>
+      <li><a class="link-pill" href="https://rancho-moonrise.vercel.app" target="_blank" rel="noopener"><span class="link-pill-name">rancho-moonrise.vercel.app (new build)</span><span class="link-pill-tag primary">Primary</span></a></li>
+      <li><a class="link-pill" href="https://rancho-moonrise.vercel.app/improvement-plan.html" target="_blank" rel="noopener"><span class="link-pill-name">Improvement Plan (this page)</span><span class="link-pill-tag ok">Live</span></a></li>
+      <li><a class="link-pill" href="https://rancho-moonrise.vercel.app/audits/2026-04-09-business-audit.html" target="_blank" rel="noopener"><span class="link-pill-name">Business Audit (April 9)</span><span class="link-pill-tag ok">Live</span></a></li>
+      <li><a class="link-pill" href="https://rancho-moonrise.vercel.app/competitive-intelligence.html" target="_blank" rel="noopener"><span class="link-pill-name">Competitive Intelligence</span><span class="link-pill-tag ok">Live</span></a></li>
+      <li><a class="link-pill" href="https://rancho-moonrise.vercel.app/brand-audit.html" target="_blank" rel="noopener"><span class="link-pill-name">Brand Audit</span><span class="link-pill-tag ok">Live</span></a></li>
+    </ul>
+    <p class="link-group-note">DNS cutover from BofillTech to Vercel is the #1 unlock — until it happens, SEO traffic still hits the old template site.</p>
+  </div>
+
+  <!-- Booking & Reservations -->
+  <div class="link-group">
+    <div class="link-group-header"><span class="link-group-icon">📅</span><h3 class="link-group-title">Booking &amp; Reservations</h3></div>
+    <ul class="link-pill-list">
+      <li><a class="link-pill" href="https://hotels.cloudbeds.com/en/reservation/5tzv1r" target="_blank" rel="noopener"><span class="link-pill-name">Cloudbeds — Book Direct</span><span class="link-pill-tag primary">Primary</span></a></li>
+      <li><a class="link-pill" href="https://www.resortpass.com/hotels/rancho-moonrise" target="_blank" rel="noopener"><span class="link-pill-name">ResortPass — Day Pool Passes</span><span class="link-pill-tag ok">Live</span></a></li>
+      <li><a class="link-pill" href="https://hotels.cloudbeds.com/login" target="_blank" rel="noopener"><span class="link-pill-name">Cloudbeds Admin Login</span><span class="link-pill-tag verify">Verify</span></a></li>
+      <li><a class="link-pill" href="https://www.honeybook.com/login" target="_blank" rel="noopener"><span class="link-pill-name">HoneyBook (Ashley's inquiry CRM)</span><span class="link-pill-tag verify">Verify</span></a></li>
+    </ul>
+    <p class="link-group-note">Cloudbeds = direct bookings (no commission). ResortPass = day pool passes. HoneyBook = wedding &amp; event inquiries.</p>
+  </div>
+
+  <!-- Social Media -->
+  <div class="link-group">
+    <div class="link-group-header"><span class="link-group-icon">📱</span><h3 class="link-group-title">Social Media</h3></div>
+    <ul class="link-pill-list">
+      <li><a class="link-pill" href="https://www.instagram.com/rancho_moonrise/" target="_blank" rel="noopener"><span class="link-pill-name">Instagram — @rancho_moonrise (13.3K)</span><span class="link-pill-tag primary">Primary</span></a></li>
+      <li><a class="link-pill" href="https://linktr.ee/ranchomoonrise" target="_blank" rel="noopener"><span class="link-pill-name">Linktree — link-in-bio</span><span class="link-pill-tag ok">Live</span></a></li>
+      <li><a class="link-pill" href="https://www.facebook.com/RanchoMoonrise/" target="_blank" rel="noopener"><span class="link-pill-name">Facebook — 864 followers</span><span class="link-pill-tag ok">Live</span></a></li>
+      <li><a class="link-pill" href="https://www.tiktok.com/@rancho_moonrise" target="_blank" rel="noopener"><span class="link-pill-name">TikTok — @rancho_moonrise (1,408)</span><span class="link-pill-tag ok">Live</span></a></li>
+      <li><a class="link-pill" href="https://www.pinterest.com/Rancho_Moonrise/" target="_blank" rel="noopener"><span class="link-pill-name">Pinterest — Rancho_Moonrise</span><span class="link-pill-tag ok">Live</span></a></li>
+      <li><a class="link-pill" href="https://www.linkedin.com/company/rancho-moonrise/" target="_blank" rel="noopener"><span class="link-pill-name">LinkedIn — Company Page</span><span class="link-pill-tag ok">Live</span></a></li>
+      <li><a class="link-pill" href="https://www.youtube.com/results?search_query=rancho+moonrise+manor+texas" target="_blank" rel="noopener"><span class="link-pill-name">YouTube — channel</span><span class="link-pill-tag gap">Gap</span></a></li>
+    </ul>
+    <p class="link-group-note">No YouTube channel exists yet — Task 23 in the Plan. Publer pushes to GBP/FB/IG/LI.</p>
+  </div>
+
+  <!-- Google Business Profile -->
+  <div class="link-group">
+    <div class="link-group-header"><span class="link-group-icon">📍</span><h3 class="link-group-title">Google Business Profile</h3></div>
+    <ul class="link-pill-list">
+      <li><a class="link-pill" href="https://www.google.com/search?q=Rancho+Moonrise+Manor+TX" target="_blank" rel="noopener"><span class="link-pill-name">Google Search / Maps listing</span><span class="link-pill-tag primary">Primary</span></a></li>
+      <li><a class="link-pill" href="https://business.google.com/dashboard" target="_blank" rel="noopener"><span class="link-pill-name">GBP Manager Dashboard (Ashley)</span><span class="link-pill-tag verify">Verify</span></a></li>
+      <li><a class="link-pill" href="https://www.google.com/maps/search/Rancho+Moonrise+20117+Lockwood+Rd+Manor+TX" target="_blank" rel="noopener"><span class="link-pill-name">Google Maps — directions</span><span class="link-pill-tag ok">Live</span></a></li>
+    </ul>
+    <p class="link-group-note">127 reviews at 4.9★, 50,500 views. 9/10 recent reviews unreplied. Description is a blog post — needs fix.</p>
+  </div>
+
+  <!-- Review Platforms -->
+  <div class="link-group">
+    <div class="link-group-header"><span class="link-group-icon">⭐</span><h3 class="link-group-title">Review Platforms</h3></div>
+    <ul class="link-pill-list">
+      <li><a class="link-pill" href="https://www.google.com/search?q=Rancho+Moonrise+Manor+TX+reviews" target="_blank" rel="noopener"><span class="link-pill-name">Google Reviews (127, 4.9★)</span><span class="link-pill-tag ok">Live</span></a></li>
+      <li><a class="link-pill" href="https://www.facebook.com/RanchoMoonrise/reviews" target="_blank" rel="noopener"><span class="link-pill-name">Facebook Reviews (5, 100%)</span><span class="link-pill-tag ok">Live</span></a></li>
+      <li><a class="link-pill" href="https://www.theknot.com/marketplace/rancho-moonrise-manor-tx-2087722" target="_blank" rel="noopener"><span class="link-pill-name">The Knot — 8 reviews, 4.5★</span><span class="link-pill-tag ok">Live</span></a></li>
+      <li><a class="link-pill" href="https://www.yelp.com/search?find_desc=Rancho+Moonrise&amp;find_loc=Manor%2C+TX" target="_blank" rel="noopener"><span class="link-pill-name">Yelp — 1 review, 5.0★</span><span class="link-pill-tag verify">Verify</span></a></li>
+      <li><a class="link-pill" href="https://www.hipcamp.com/en-US/land/texas-rancho-moonrise-dw9hklej" target="_blank" rel="noopener"><span class="link-pill-name">Hipcamp — 22 sites, 0 reviews</span><span class="link-pill-tag gap">Gap</span></a></li>
+      <li><a class="link-pill" href="https://www.tripadvisor.com/Search?q=Rancho+Moonrise+Manor+TX" target="_blank" rel="noopener"><span class="link-pill-name">TripAdvisor — unclaimed, 0 reviews</span><span class="link-pill-tag gap">Gap</span></a></li>
+      <li><a class="link-pill" href="https://www.weddingwire.com/c/tx-texas/manor/wedding-venues/11-vendors.html" target="_blank" rel="noopener"><span class="link-pill-name">WeddingWire — Manor TX venues</span><span class="link-pill-tag gap">Gap</span></a></li>
+    </ul>
+    <p class="link-group-note">Google is the only platform with real review volume. TripAdvisor, Hipcamp, WeddingWire all need attention — Tasks 5, 8, 12.</p>
+  </div>
+
+  <!-- OTAs -->
+  <div class="link-group">
+    <div class="link-group-header"><span class="link-group-icon">🏨</span><h3 class="link-group-title">OTA Listings</h3></div>
+    <ul class="link-pill-list">
+      <li><a class="link-pill" href="https://www.hotels.com/search.do?q-destination=Rancho+Moonrise+Manor+TX" target="_blank" rel="noopener"><span class="link-pill-name">Hotels.com — 8.0 rating</span><span class="link-pill-tag ok">Live</span></a></li>
+      <li><a class="link-pill" href="https://www.expedia.com/Hotel-Search?destination=Rancho+Moonrise+Manor+TX" target="_blank" rel="noopener"><span class="link-pill-name">Expedia — 8.0 rating</span><span class="link-pill-tag ok">Live</span></a></li>
+      <li><a class="link-pill" href="https://www.agoda.com/search?q=Rancho+Moonrise+Manor+TX" target="_blank" rel="noopener"><span class="link-pill-name">Agoda — listed</span><span class="link-pill-tag verify">Verify</span></a></li>
+      <li><a class="link-pill" href="https://www.airbnb.com/rooms/1284213223278884167" target="_blank" rel="noopener"><span class="link-pill-name">Airbnb — Family Safari Tent</span><span class="link-pill-tag ok">Live</span></a></li>
+    </ul>
+    <p class="link-group-note">OTAs charge 15–20% commission. Every direct Cloudbeds booking saves that. GBP description should de-emphasize OTA links and push direct.</p>
+  </div>
+
+  <!-- Wedding Directories -->
+  <div class="link-group">
+    <div class="link-group-header"><span class="link-group-icon">💍</span><h3 class="link-group-title">Wedding Directories</h3></div>
+    <ul class="link-pill-list">
+      <li><a class="link-pill" href="https://www.theknot.com/marketplace/rancho-moonrise-manor-tx-2087722" target="_blank" rel="noopener"><span class="link-pill-name">The Knot — active profile</span><span class="link-pill-tag ok">Live</span></a></li>
+      <li><a class="link-pill" href="https://www.weddingwire.com/c/tx-texas/manor/wedding-venues/11-vendors.html" target="_blank" rel="noopener"><span class="link-pill-name">WeddingWire — not listed</span><span class="link-pill-tag gap">Gap</span></a></li>
+      <li><a class="link-pill" href="https://www.zola.com/wedding-vendors/wedding-venues/" target="_blank" rel="noopener"><span class="link-pill-name">Zola — not listed</span><span class="link-pill-tag gap">Gap</span></a></li>
+      <li><a class="link-pill" href="https://bridesofaustin.com/" target="_blank" rel="noopener"><span class="link-pill-name">Brides of Austin — partnership</span><span class="link-pill-tag verify">Verify</span></a></li>
+    </ul>
+    <p class="link-group-note">WeddingWire's "Top 10 Manor TX Venues" page doesn't include Rancho Moonrise. That's a page-1 ranking for "wedding venue manor texas" — free listing, high impact.</p>
+  </div>
+
+  <!-- Internal / Source -->
+  <div class="link-group">
+    <div class="link-group-header"><span class="link-group-icon">📂</span><h3 class="link-group-title">Internal &amp; Source</h3></div>
+    <ul class="link-pill-list">
+      <li><a class="link-pill" href="https://github.com/AStyer8345/rancho-moonrise" target="_blank" rel="noopener"><span class="link-pill-name">GitHub — rancho-moonrise repo</span><span class="link-pill-tag primary">Primary</span></a></li>
+      <li><a class="link-pill" href="https://github.com/AStyer8345/rancho-moonrise/blob/main/VOICE-GUIDE.md" target="_blank" rel="noopener"><span class="link-pill-name">Voice Guide (full)</span><span class="link-pill-tag ok">Live</span></a></li>
+      <li><a class="link-pill" href="https://github.com/AStyer8345/rancho-moonrise/blob/main/CONTEXT.md" target="_blank" rel="noopener"><span class="link-pill-name">CONTEXT.md — project state</span><span class="link-pill-tag ok">Live</span></a></li>
+      <li><a class="link-pill" href="https://github.com/AStyer8345/rancho-moonrise/blob/main/brand/2026-04-09-metrics-baseline.md" target="_blank" rel="noopener"><span class="link-pill-name">Metrics Baseline (April 9)</span><span class="link-pill-tag ok">Live</span></a></li>
+      <li><a class="link-pill" href="https://github.com/AStyer8345/rancho-moonrise/blob/main/rancho-done-log.md" target="_blank" rel="noopener"><span class="link-pill-name">Done Log (append-only)</span><span class="link-pill-tag ok">Live</span></a></li>
+      <li><a class="link-pill" href="https://vercel.com/astyer8345s-projects/rancho-moonrise" target="_blank" rel="noopener"><span class="link-pill-name">Vercel Dashboard (Adam only)</span><span class="link-pill-tag verify">Verify</span></a></li>
+    </ul>
+  </div>
+
+</div><!-- /.links-grid -->
+
+<div style="background:#0F1419; border:1px dashed #2A2E3A; border-radius:8px; padding:1.25rem 1.5rem; margin-top:1.75rem;">
+  <strong style="color:#8B7D6B; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em;">Spot a missing link?</strong>
+  <p style="margin: 0.5rem 0 0; color: #9BA3B0; font-size: 0.88rem;">Anything not on this page that should be? Drop it in TODO.md under NEEDS ADAM, or ping Claude and it'll get added. The goal is zero "wait, what's the URL for that?" moments.</p>
+</div>
+
+</div><!-- /tab-links -->
+
+<div id="tab-voice" class="tab-content">
+<div class="divider"></div>
+
+<!-- ===== VOICE ===== -->
+<h2><span class="phase-label">Voice</span>Rancho Moonrise Brand Voice Guide</h2>
+<p class="tab-intro">This is the condensed, scannable version of the full voice guide on GitHub. Use it when writing anything that'll be seen by a guest, bride, event planner, or follower — blog posts, captions, emails, GBP descriptions, ad copy. The full guide lives at <a href="https://github.com/AStyer8345/rancho-moonrise/blob/main/VOICE-GUIDE.md" target="_blank" rel="noopener" style="color:#4ECDC4;">VOICE-GUIDE.md</a>.</p>
+
+<div class="voice-section">
+  <h3>Who We Are (in one breath)</h3>
+  <p class="lead">Rancho Moonrise is a glamping and events ranch on 20 acres in Manor, TX — 20 minutes from downtown Austin. Luxury safari tents, hand-crafted cabins, destination weddings, live music, and a pool you won't want to leave. Family-friendly. Pet-friendly. Unforgettable.</p>
+</div>
+
+<div class="voice-section">
+  <h3>Voice in Three Words</h3>
+  <div class="voice-three-words">
+    <div class="word"><strong>Warm</strong><span>We talk like a friend who owns a ranch, not a hotel chain. Welcoming without being performative.</span></div>
+    <div class="word"><strong>Grounded</strong><span>We're real. Concrete details, actual numbers, honest descriptions. No fluff, no overselling.</span></div>
+    <div class="word"><strong>Magnetic</strong><span>The writing should pull people in. Sensory language, short punchy lines, and a "you need to be here" energy.</span></div>
+  </div>
+</div>
+
+<div class="voice-section">
+  <h3>Tone by Context</h3>
+  <table class="voice-table">
+    <thead><tr><th>Context</th><th>Tone</th><th>Example</th></tr></thead>
+    <tbody>
+      <tr><td>Homepage / Hero</td><td>Evocative</td><td>"Luxury safari tents, hand-crafted cabins, destination weddings, and unforgettable events — all on 20 acres of Texas Hill Country."</td></tr>
+      <tr><td>Accommodations</td><td>Descriptive</td><td>"Queen bed, A/C, heat, private covered deck. Cozy and intimate."</td></tr>
+      <tr><td>Weddings</td><td>Romantic, direct</td><td>"No outside guests will be on the property during your day."</td></tr>
+      <tr><td>Events</td><td>Energetic</td><td>"A Texas night to remember."</td></tr>
+      <tr><td>CTAs</td><td>Confident</td><td>"Check availability and book direct for the best rates."</td></tr>
+      <tr><td>Social (Instagram)</td><td>Casual, emoji</td><td>"Meet you at Rancho! Come see for yourself 🤩"</td></tr>
+      <tr><td>Blog</td><td>Conversational</td><td>Like a friend giving you the inside scoop on Austin</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="voice-section">
+  <h3>Key Phrases (Use and Riff on These)</h3>
+  <div class="voice-pill-grid">
+    <span class="voice-pill">"Austin's premier glamping &amp; events ranch"</span>
+    <span class="voice-pill">"20 acres of Texas magic"</span>
+    <span class="voice-pill">"Manor, TX — 20 minutes from Austin"</span>
+    <span class="voice-pill">"glamping without compromise"</span>
+    <span class="voice-pill">"the ranch is yours"</span>
+    <span class="voice-pill">"under the Texas sky"</span>
+    <span class="voice-pill">"Book direct for the best rates"</span>
+    <span class="voice-pill">"Make it a weekend"</span>
+    <span class="voice-pill">"No outside guests"</span>
+    <span class="voice-pill">"Where comfort meets the outdoors"</span>
+  </div>
+</div>
+
+<div class="voice-section">
+  <h3>Things We Never Say</h3>
+  <table class="voice-table">
+    <thead><tr><th>Avoid</th><th>Why</th><th>Say Instead</th></tr></thead>
+    <tbody>
+      <tr><td>"Rustic chic"</td><td>Overused, means nothing</td><td><em>"hand-crafted cabins with floor-to-ceiling windows"</em></td></tr>
+      <tr><td>"Nestled in"</td><td>Every venue says this</td><td><em>"Located in Manor, TX" or "on 20 acres in..."</em></td></tr>
+      <tr><td>"Curated experience"</td><td>Corporate hospitality speak</td><td><em>"An experience you won't forget"</em></td></tr>
+      <tr><td>"World-class"</td><td>Unearned superlative</td><td><em>Use real proof: "4.9 stars, 127 reviews"</em></td></tr>
+      <tr><td>"Bespoke"</td><td>Pretentious for a Texas ranch</td><td><em>"Custom" or "tailored to your group"</em></td></tr>
+      <tr><td>"Amenities include..."</td><td>Reads like a hotel listing</td><td><em>Integrate features naturally</em></td></tr>
+      <tr><td>"Inquire within"</td><td>Formal, creates friction</td><td><em>"Send us a message" or "Call 737-291-1260"</em></td></tr>
+      <tr><td>"Limited availability!" ⚠</td><td>Desperate urgency kills trust</td><td><em>"2026 dates are booking fast — limited Saturday availability."</em></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="voice-section">
+  <h3>Writing Patterns That Work</h3>
+  <p><strong style="color:#D4A574;">Short + punchy for features.</strong></p>
+  <div class="voice-quote">A/C, heat, private fire pits — glamping without compromise.</div>
+  <p><strong style="color:#D4A574;">Em dashes for rhythm.</strong></p>
+  <div class="voice-quote">Luxury safari tents, hand-crafted cabins, destination weddings, and unforgettable events — all on 20 acres of Texas Hill Country.</div>
+  <p><strong style="color:#D4A574;">Second person — make the reader the guest.</strong></p>
+  <div class="voice-quote">"The ranch is entirely yours." / "Walk back to your tent under the stars."</div>
+  <p><strong style="color:#D4A574;">Concrete numbers over vague claims.</strong></p>
+  <div class="voice-quote">"200+ guests" not "large parties welcome." "20 minutes from downtown Austin" not "conveniently located."</div>
+  <p><strong style="color:#D4A574;">Sensory details that put people on the property.</strong></p>
+  <div class="voice-quote">"under the wide Texas sky" / "oak-shaded pastures with sweeping Hill Country views" / "campfire nights and starry skies"</div>
+</div>
+
+<div class="voice-section">
+  <h3>Instagram Voice (Separate From Website)</h3>
+  <p>Instagram is <strong style="color:#D4A574;">more casual and emoji-forward</strong> than the website. Two caption styles — short-vibes and event-promo. Always tag collaborators. Almost no hashtags. Exclamation points are welcome here (but not on the website).</p>
+  <p><strong style="color:#D4A574;">Style 1 — Short &amp; Vibes:</strong> Hook line + one detail + emoji + soft CTA.</p>
+  <div class="voice-quote">Meet you at Rancho! Our tents come in a variety of options, many including full bathrooms. Come see for yourself 🤩</div>
+  <p><strong style="color:#D4A574;">Style 2 — Event Promo:</strong> Emoji + event name + date → 1–2 sentence description → practical details → "link in bio 🎟️" → tag everyone involved.</p>
+  <div class="voice-quote">@martabandofficial LIVE IN AUSTIN, TX @rancho_moonrise MARCH 28!! 🤩 Music all night long featuring @monicawall (7PM), @martabandofficial (8PM) followed by a late night dj!! 🎶🍹🎧 Come early for $5 margs at the pool &amp; stay for a show! Tickets linked in bio 🎟️</div>
+  <p style="margin-top:14px;"><strong style="color:#D4714E;">What NOT to post:</strong> Generic "another beautiful day at the ranch" captions, hashtag dumps (#glamping #austin #blessed), corporate-polish language, captions longer than the event warrants, posts without tagging partners.</p>
+</div>
+
+<div class="voice-section">
+  <h3>Audience Personas</h3>
+  <table class="voice-table">
+    <thead><tr><th>Persona</th><th>Speak To</th></tr></thead>
+    <tbody>
+      <tr><td>The Couple (Weddings)<br><span style="color:#7A7268; font-weight:400; font-size:0.78rem;">28–38, wants unique, pain = venue fatigue</span></td><td><em>"The entire ranch is yours. No outside guests."</em></td></tr>
+      <tr><td>The Weekend Escaper<br><span style="color:#7A7268; font-weight:400; font-size:0.78rem;">25–45, Austin metro, wants disconnect without a 4hr drive</span></td><td><em>"Glamping without compromise — A/C, heat, and your own fire pit."</em></td></tr>
+      <tr><td>The Event Planner<br><span style="color:#7A7268; font-weight:400; font-size:0.78rem;">Corporate / private, wants unique venue + easy logistics</span></td><td><em>"From 20 to 200 — we've hosted it all."</em></td></tr>
+      <tr><td>The Fun-Seeker<br><span style="color:#7A7268; font-weight:400; font-size:0.78rem;">25–40, Austin social scene, wants something different this weekend</span></td><td><em>"Crawfish, cold drinks, and live music under the stars. A Texas night to remember."</em></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="voice-section">
+  <h3>Brand Details (Quick Reference)</h3>
+  <div class="voice-brand-grid">
+    <div class="voice-brand-item"><span class="k">Business Name</span><span class="v">Rancho Moonrise</span></div>
+    <div class="voice-brand-item"><span class="k">Location</span><span class="v">20117 Lockwood Rd, Manor, TX 78653</span></div>
+    <div class="voice-brand-item"><span class="k">Phone</span><span class="v">737-291-1260</span></div>
+    <div class="voice-brand-item"><span class="k">Instagram</span><span class="v">@rancho_moonrise</span></div>
+    <div class="voice-brand-item"><span class="k">Booking</span><span class="v">Cloudbeds (hotels.cloudbeds.com)</span></div>
+    <div class="voice-brand-item"><span class="k">Pool Passes</span><span class="v">ResortPass</span></div>
+    <div class="voice-brand-item"><span class="k">Google Rating</span><span class="v">4.9★ / 127 reviews</span></div>
+    <div class="voice-brand-item"><span class="k">Capacity</span><span class="v">20 units, sleeps ~50. Events up to 200.</span></div>
+    <div class="voice-brand-item"><span class="k">Pet Policy</span><span class="v">Welcome, $50 fee, 60 lb limit, 1 per reservation</span></div>
+    <div class="voice-brand-item"><span class="k">Check-in / out</span><span class="v">3–5 PM / 11 AM</span></div>
+  </div>
+  <a class="voice-footer-link" href="https://github.com/AStyer8345/rancho-moonrise/blob/main/VOICE-GUIDE.md" target="_blank" rel="noopener">Read the full Voice Guide on GitHub →</a>
+</div>
+
+</div><!-- /tab-voice -->
+
 <div class="divider"></div>
 
 <div class="bottom-line">
@@ -893,6 +1196,8 @@ if (window.location.hash === '#metrics') { switchTab('metrics'); }
 if (window.location.hash === '#audits') { switchTab('audits'); }
 if (window.location.hash === '#intel') { switchTab('intel'); }
 if (window.location.hash === '#done') { switchTab('done'); }
+if (window.location.hash === '#links') { switchTab('links'); }
+if (window.location.hash === '#voice') { switchTab('voice'); }
 
 // ===== Mark Done system — improvement plan =====
 // Click "Mark done" on any task → POST /api/complete → appends to rancho-done-log.md

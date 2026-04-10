@@ -1,6 +1,6 @@
 # Rancho Moonrise — Project Context
 
-**Last updated:** 2026-04-09 (SEO/AEO Session 2 — schema rollout)
+**Last updated:** 2026-04-10 (Links tab + Voice tab added to improvement plan)
 
 ---
 
@@ -11,6 +11,7 @@ Advisory engagement for Rancho Moonrise — glamping, events, and retreat ranch 
 **Repo:** `AStyer8345/rancho-moonrise`, branch `main`, deploys to Vercel
 **Live site:** ranchomoonrise.com (BofillTech hosting — OLD, not editable by Claude)
 **New site:** rancho-moonrise.vercel.app (Vercel — all dev work happens here)
+**Improvement plan dashboard:** https://rancho-moonrise.vercel.app/improvement-plan.html
 
 ---
 
@@ -19,23 +20,35 @@ Advisory engagement for Rancho Moonrise — glamping, events, and retreat ranch 
 - **DNS cutover not done** — New Vercel site not live on main domain. ALL SEO/AEO impact blocked until this happens. This is the #1 unlock.
 - **GBP access** — Claude cannot edit GBP. Description fix, hours, Q&A seeding all require Ashley.
 - **Exhibit A missing** — Cannot model buyout without ownership percentages from Nancy/Ashley.
+- **GITHUB_TOKEN on Vercel is broad-scoped** — using `gh auth token` bootstrap. TODO: swap for fine-grained PAT scoped only to `AStyer8345/rancho-moonrise` contents:write.
 
 ## What's Next
 
 - Ashley: Fix GBP (description is a blog post, hours not set, reply to 9 unreplied reviews, seed Q&As)
 - Adam: DNS cutover from BofillTech to Vercel
+- Adam: Rotate GITHUB_TOKEN on Vercel to a fine-grained PAT (5 min)
 - Claude (auto): SEO/AEO prep work on Vercel site — Mon/Wed/Fri at 5 AM
-- Claude (auto): Weekly GBP posts — drafts saved to `brand/gbp-posts/` for Adam/Ashley to review and post manually
-  - Week 1 (April 9, 2026): Event announcement drafted — `brand/gbp-posts/2026-04-09-gbp-post.md`
-  - Rotation: Event → Property showcase → Special offer → Behind-the-scenes → repeat
+- Claude (auto): Weekly GBP posts — drafts saved to `brand/gbp-posts/` for Adam/Ashley to review
 
 ## Last Worked On
 
-- 2026-04-09 (Session 2): Added BreadcrumbList schema to all 13 subpages (5 blog posts + 8 nav pages)
-- 2026-04-09 (Session 2): Added CollectionPage + ItemList schema to blog.html listing all 5 posts
-- 2026-04-09 (Session 2): Fixed banned word "premier" in blog.html meta description + footer per voice guide
-- 2026-04-09 (Session 2): Verified homepage LodgingBusiness schema is complete (geo, priceRange, amenityFeature)
-- 2026-04-09 (Session 2): Committed + pushed schema work in one clean commit (6fb84e8)
+- 2026-04-10: Added **Links tab** and **Voice tab** to improvement-plan.html. Links tab is a mind-map-style grid of 8 category cards (Websites, Booking, Social, GBP, Reviews, OTAs, Wedding Directories, Internal) with status tags (Primary/Live/Gap/Verify) — doubles as a visible gap audit. Voice tab is a condensed render of `VOICE-GUIDE.md` (three words, tone table, key phrases, never-say table, writing patterns, Instagram voice, personas, brand details). Tab order now: Plan · Metrics · Audits · Intel · Done · Links · Voice. Hash routing added for `#links` and `#voice`. 239/239 div balance verified.
+- 2026-04-10: Added Done tab to improvement-plan.html — completed tasks now physically relocate into `#done-tasks-container` (newest on top) rather than fading in place on the Plan tab. Backfilled tasks 4, 6, 10 moved at rest. Deploy live at commit 01319c8.
+- 2026-04-10: Built Option C grade progression calculator. Headline grade snaps to the highest phase where all required tasks for that area are complete; empty phases pass through without advancing the grade (so Operations stays at C until task #20 ships, not C+ just because P1/P2 are empty for Ops). Mini-progress "(X/Y toward <next grade>)" shows under each scorecard. Scorecards + Grade Trajectory table recompute on load and after every mark-done click.
+- 2026-04-10: Updated `rancho-apply-done` scheduled task SKILL.md to physically move task divs into the Done tab instead of just applying a class in place.
+- 2026-04-10: Source of truth for "is done?" is now DOM location (inside Done tab container). localStorage is just optimistic UI cache for the marking device until the server-side reconciler catches up.
+- 2026-04-09: Mark Done system shipped — `/api/complete` serverless function on Vercel writes to `rancho-done-log.md` via GitHub Contents API, auth via shared `BRIEFING_AUTH_TOKEN` (same as client-ops briefing page).
+
+---
+
+## Mark Done System — How It Works
+
+1. Adam clicks "Mark done" on a task at `/improvement-plan.html`
+2. Client POSTs to `/api/complete` with Bearer auth token (stored in localStorage, same secret as client-ops briefing)
+3. Serverless function appends a RESOLVED line to `rancho-done-log.md` via GitHub Contents API, commits as `rancho-mark-done` bot
+4. Client optimistically moves the task div into `#done-tasks-container` and recomputes grades
+5. `rancho-apply-done` scheduled task (daily 5:33 AM local) reconciles log → HTML, physically moving any task divs that are still on the Plan tab into the Done tab container, then commits + pushes
+6. Vercel redeploys on push → all devices converge on the same state
 
 ---
 
@@ -54,6 +67,7 @@ Advisory engagement for Rancho Moonrise — glamping, events, and retreat ranch 
 | AI engine citations | NOT cited (0/10) |
 | Google indexed pages (old site) | ~10 |
 | Next metrics update | April 16, 2026 |
+| Improvement tasks done | 3/35 (#4, #6, #10 — backfilled) |
 
 ---
 
@@ -79,7 +93,9 @@ Advisory engagement for Rancho Moonrise — glamping, events, and retreat ranch 
 
 ## Key Files
 
+- `api/complete.js` — Mark Done serverless function (Vercel, Node 20.x)
+- `rancho-done-log.md` — append-only log, source of truth for done state
+- `site/improvement-plan.html` — 35 task cards + Plan/Metrics/Audits/Intel/Done tabs
 - `brand/2026-04-09-metrics-baseline.md` — live-verified platform data
-- `brand/2026-04-09-rancho-moonrise-improvement-plan.html` — 35 tasks, 4 phases + SEO/AEO
 - `tasks/seo-aeo/` — autonomous SEO/AEO agent workspace
 - `site/` — Vercel site (new build, not yet live on main domain)

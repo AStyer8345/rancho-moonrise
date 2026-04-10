@@ -1,5 +1,34 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-10 — Links Tab + Voice Tab Added to Improvement Plan
+- Added two new tabs to `site/improvement-plan.html`: **Links** (mind-map-style category grid of every Rancho Moonrise URL) and **Voice** (condensed brand voice guide)
+- Links tab groups all URLs into 8 category cards: Websites, Booking & Reservations, Social Media, Google Business Profile, Review Platforms, OTA Listings, Wedding Directories, Internal & Source
+- Each link pill carries a status tag: `Primary` (customer-facing), `Live` (active), `Gap` (missing/unclaimed/broken), `Verify` (URL needs confirmation) — same component doubles as a visible gap audit
+- Gaps flagged: YouTube channel (doesn't exist — Task 23), TripAdvisor (unclaimed), Hipcamp (0 reviews), WeddingWire (not listed), Zola (not listed)
+- Voice tab renders: Who We Are (one breath), Voice in Three Words, Tone by Context, Key Phrases, Things We Never Say, Writing Patterns, Instagram Voice, Audience Personas, Brand Details quick-reference — full source lives at `VOICE-GUIDE.md` on GitHub
+- Tab order (left → right): Plan · Metrics · Audits · Intel · Done · Links · **Voice** (Voice all the way right per request)
+- Hash-link routing added for `#links` and `#voice`
+- HTML balance verified: 239 open/239 close `<div>`, 7 tab buttons matching 7 tab-content divs, 35 task cards preserved
+
+## 2026-04-10 — Done Tab + Option C Grade Progression (commit 01319c8)
+- Added Done tab to improvement-plan.html with `#done-tasks-container` — completed tasks physically relocate into the Done tab (newest on top) instead of fading in place on the Plan tab
+- Backfilled tasks #4 (GBP secondary categories), #6 (Instagram link-in-bio), #10 (weekly GBP posting) moved from Plan tab to Done tab at rest in the HTML
+- Built phase-gated grade calculator (Option C): headline grade snaps to the highest phase where all required tasks for that area are complete; empty phases pass through without advancing the grade so Operations stays at C until task #20 ships (not C+ just because phases 1-2 have no Operations tasks)
+- Mini-progress "(X/Y toward <next grade>)" displays under each of the 8 scorecards
+- Scorecards + Grade Trajectory table recompute on page load AND after every successful mark-done click (no page refresh needed)
+- Done tab button shows a live count badge; empty-state placeholder displays when Done tab is empty
+- Source of truth for "is done?" is now DOM location (task inside `#done-tasks-container`); localStorage is optimistic UI cache only
+- Updated `rancho-apply-done` scheduled task SKILL.md: now physically moves task divs into the Done tab container instead of just applying a class in place — keeps multi-device state in sync on next deploy
+
+## 2026-04-10 — Mark Done System Shipped + Smoke Tested (commits 5ef5db0, e38a812)
+- New Vercel serverless function `/api/complete` (Node 20.x, 256MB, 10s maxDuration) — Bearer auth via shared `BRIEFING_AUTH_TOKEN` (same secret as client-ops briefing page), appends RESOLVED lines to `rancho-done-log.md` via GitHub Contents API, idempotent on id
+- New append-only log `rancho-done-log.md` — backfilled with the 3 tasks already marked done (#4, #6, #10)
+- Added `data-item-id` + `data-item-title` + `data-item-system` attributes to all 35 task divs with stable kebab-slug IDs
+- Added Mark Done button CSS + click handler + auth gear icon + auth modal + toast notifications, all styled to the Rancho amber palette
+- Set `BRIEFING_AUTH_TOKEN` + `GITHUB_TOKEN` on Vercel `rancho-moonrise` project (production scope)
+- Smoke test verified: clicked Mark Done on test task, commit `5ef5db0` landed in GitHub from the `rancho-mark-done` bot, round-trip working end-to-end
+- Known issue: `GITHUB_TOKEN` is currently Adam's broad-scoped `gh auth token` — TODO to rotate to a fine-grained PAT scoped only to `AStyer8345/rancho-moonrise` contents:write
+
 ## 2026-04-09 — SEO/AEO Session 2: Schema Rollout
 - Added CollectionPage + ItemList schema to blog.html (5 posts)
 - Added BreadcrumbList schema to all 13 subpages on Vercel site
