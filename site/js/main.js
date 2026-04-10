@@ -58,8 +58,8 @@
         }
     }
 
-    // ---------- Fade-in on scroll ----------
-    var fadeEls = document.querySelectorAll('.fade-in');
+    // ---------- Fade-in / reveal on scroll ----------
+    var fadeEls = document.querySelectorAll('.fade-in, .reveal');
     if (fadeEls.length && 'IntersectionObserver' in window) {
         var observer = new IntersectionObserver(function (entries) {
             entries.forEach(function (entry) {
