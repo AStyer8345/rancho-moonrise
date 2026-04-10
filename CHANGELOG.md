@@ -1,5 +1,12 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-10 — Daily SEO Run: Blog #6, SpeakableSpecification, AggregateRating Fix
+- Published blog article #6: `site/pages/ranch-wedding-texas.html` — "Planning a Ranch Wedding in Texas — What Austin Couples Need to Know". Targets "ranch wedding Texas", "ranch wedding near Austin", "planning a ranch wedding". ~1,500 words with AEO block (4 direct-answer Q&As), BlogPosting + BreadcrumbList schema, full OG/Twitter tags, cross-links to weddings/accommodations/contact pages.
+- Blog index updated: 6th post card added to `site/pages/blog.html`; CollectionPage ItemList schema updated to position 6.
+- SpeakableSpecification schema added to homepage (`index.html`) as WebPage schema — identifies `.hero__title`, `.hero__subtitle`, `.section h2`, `.aeo-block p` for AI/voice engine consumption. Completes S4 (BreadcrumbList done 2026-04-09, Speakable now done).
+- AggregateRating reviewCount corrected 122→125 in `index.html` and `pages/accommodations.html` (confirmed from 2026-04-09 baseline).
+- Sitemap updated: added `/blog/ranch-wedding-texas/`, updated `/` and `/blog/` lastmod to 2026-04-10.
+
 ## 2026-04-10 — Links Tab + Voice Tab Added to Improvement Plan
 - Added two new tabs to `site/improvement-plan.html`: **Links** (mind-map-style category grid of every Rancho Moonrise URL) and **Voice** (condensed brand voice guide)
 - Links tab groups all URLs into 8 category cards: Websites, Booking & Reservations, Social Media, Google Business Profile, Review Platforms, OTA Listings, Wedding Directories, Internal & Source

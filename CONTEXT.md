@@ -1,6 +1,6 @@
 # Rancho Moonrise — Project Context
 
-**Last updated:** 2026-04-10 (Links tab + Voice tab added to improvement plan)
+**Last updated:** 2026-04-10 (daily SEO run: blog #6, SpeakableSpecification, AggregateRating fix)
 
 ---
 
@@ -32,6 +32,7 @@ Advisory engagement for Rancho Moonrise — glamping, events, and retreat ranch 
 
 ## Last Worked On
 
+- 2026-04-10 (SEO run): Published blog #6 (`ranch-wedding-texas.html` — "Planning a Ranch Wedding in Texas"). Added SpeakableSpecification schema to homepage. Fixed AggregateRating count 122→125 (homepage + accommodations). Updated sitemap with new entry + lastmods. Blog index now shows 6 published articles.
 - 2026-04-10: Added **Links tab** and **Voice tab** to improvement-plan.html. Links tab is a mind-map-style grid of 8 category cards (Websites, Booking, Social, GBP, Reviews, OTAs, Wedding Directories, Internal) with status tags (Primary/Live/Gap/Verify) — doubles as a visible gap audit. Voice tab is a condensed render of `VOICE-GUIDE.md` (three words, tone table, key phrases, never-say table, writing patterns, Instagram voice, personas, brand details). Tab order now: Plan · Metrics · Audits · Intel · Done · Links · Voice. Hash routing added for `#links` and `#voice`. 239/239 div balance verified.
 - 2026-04-10: Added Done tab to improvement-plan.html — completed tasks now physically relocate into `#done-tasks-container` (newest on top) rather than fading in place on the Plan tab. Backfilled tasks 4, 6, 10 moved at rest. Deploy live at commit 01319c8.
 - 2026-04-10: Built Option C grade progression calculator. Headline grade snaps to the highest phase where all required tasks for that area are complete; empty phases pass through without advancing the grade (so Operations stays at C until task #20 ships, not C+ just because P1/P2 are empty for Ops). Mini-progress "(X/Y toward <next grade>)" shows under each scorecard. Scorecards + Grade Trajectory table recompute on load and after every mark-done click.

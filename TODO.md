@@ -21,8 +21,8 @@ Last updated: 2026-04-10
 - [x] Split blog posts into individual pages with URLs (S1) — already done previously
 - [ ] Add answer-first H2 summaries to key pages (S2)
 - [ ] Build topical authority clusters with internal linking (S3)
-- [~] Add BreadcrumbList + SpeakableSpecification schema (S4) — Breadcrumbs DONE 2026-04-09, Speakable still pending
-- [ ] Add Review/AggregateRating schema to homepage (accommodations.html already has it)
+- [x] Add BreadcrumbList + SpeakableSpecification schema (S4) — BreadcrumbList DONE 2026-04-09, SpeakableSpecification DONE 2026-04-10 (homepage)
+- [x] Add Review/AggregateRating schema to homepage (done, count corrected to 125 on 2026-04-10)
 
 ## Next (after DNS cutover)
 - [ ] Google Search Console setup + sitemap submission (S6)
