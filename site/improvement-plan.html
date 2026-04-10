@@ -104,6 +104,181 @@
   .tab-content { display: none; }
   .tab-content.active { display: block; }
   @media (max-width: 440px) { .tab-btn { padding: 10px 16px; font-size: 0.85rem; } }
+
+  /* ------- Mark Done buttons + completed state (improvement plan) ------- */
+  .task[data-item-id] {
+    padding-right: 7rem;
+    transition: opacity 0.2s ease;
+  }
+  .task[data-item-id].completed .task-title,
+  .task[data-item-id].completed .task-desc {
+    text-decoration: line-through;
+    opacity: 0.5;
+  }
+  .task[data-item-id].completed { opacity: 0.72; }
+  .mark-done-btn {
+    position: absolute;
+    top: 0.85rem;
+    right: 0.85rem;
+    background: #0D0D0D;
+    border: 1px solid #2A1F14;
+    color: #D4A574;
+    padding: 0.28rem 0.65rem;
+    font-family: inherit;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .mark-done-btn:hover {
+    background: #2A1F14;
+    color: #E8C89A;
+    border-color: #D4A574;
+  }
+  .mark-done-btn:disabled { cursor: wait; opacity: 0.6; }
+  .task[data-item-id].completed .mark-done-btn {
+    background: #1A2A1A;
+    border-color: #31735A;
+    color: #7DB87D;
+  }
+  .tag-done {
+    background: #1A2A1A;
+    color: #7DB87D;
+    border: 1px solid #31735A;
+  }
+
+  /* ------- Auth gear icon ------- */
+  .auth-gear {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 50%;
+    background: #1A1A1A;
+    border: 1px solid #2A1F14;
+    color: #8B7D6B;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    transition: all 0.15s ease;
+    font-family: inherit;
+  }
+  .auth-gear:hover {
+    background: #2A1F14;
+    color: #D4A574;
+    border-color: #D4A574;
+  }
+  .auth-gear.authed { color: #7DB87D; border-color: #31735A; }
+
+  /* ------- Auth modal ------- */
+  .auth-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+  }
+  .auth-modal.open { display: flex; }
+  .auth-modal-inner {
+    background: #1A1A1A;
+    border: 1px solid #2A1F14;
+    border-radius: 10px;
+    padding: 1.75rem;
+    width: min(440px, 90vw);
+    font-size: 0.9rem;
+  }
+  .auth-modal-inner h3 {
+    margin: 0 0 0.85rem;
+    color: #D4A574;
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.25rem;
+    padding: 0;
+    border: none;
+  }
+  .auth-modal-inner p {
+    color: #A89F94;
+    margin: 0 0 1.1rem;
+    font-size: 0.82rem;
+    line-height: 1.55;
+  }
+  .auth-modal-inner p code {
+    background: #0D0D0D;
+    color: #D4A574;
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-size: 0.78rem;
+  }
+  .auth-modal-inner input {
+    width: 100%;
+    background: #0D0D0D;
+    border: 1px solid #333;
+    color: #E8E0D4;
+    padding: 0.6rem 0.8rem;
+    font-family: inherit;
+    font-size: 0.88rem;
+    border-radius: 4px;
+    margin-bottom: 0.9rem;
+    box-sizing: border-box;
+  }
+  .auth-modal-inner input:focus {
+    outline: none;
+    border-color: #D4A574;
+  }
+  .auth-modal-btns { display: flex; gap: 0.6rem; justify-content: flex-end; }
+  .auth-modal-btns button {
+    background: #0D0D0D;
+    border: 1px solid #2A1F14;
+    color: #A89F94;
+    padding: 0.5rem 1rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .auth-modal-btns button.primary {
+    background: #2A1F14;
+    border-color: #D4A574;
+    color: #D4A574;
+  }
+  .auth-modal-btns button:hover { background: #2A1F14; color: #D4A574; }
+  .auth-modal-btns button.primary:hover { background: #D4A574; color: #0D0D0D; }
+
+  /* ------- Toast ------- */
+  .rmr-toast {
+    position: fixed;
+    bottom: 4.5rem;
+    right: 1rem;
+    background: #1A2A1A;
+    border: 1px solid #31735A;
+    color: #7DB87D;
+    padding: 0.7rem 1.1rem;
+    border-radius: 6px;
+    font-size: 0.82rem;
+    font-family: inherit;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.25s ease;
+    z-index: 150;
+    max-width: 340px;
+  }
+  .rmr-toast.show { opacity: 1; transform: translateY(0); }
+  .rmr-toast.error {
+    background: #2A1515;
+    border-color: #B6603F;
+    color: #D4714E;
+  }
 </style>
 </head>
 <body>
@@ -144,14 +319,14 @@
 <p class="phase-dates">April 9–15, 2026 &middot; 7 days &middot; Items that take under 2 hours each</p>
 <p class="section-intro">Everything here is either free, fast, or both. These are the highest-impact items relative to effort. Most move the needle on GBP and Reviews — the two worst-graded areas.</p>
 
-<div class="task">
+<div class="task" data-item-id="rancho-p1-01-reply-google-reviews" data-item-title="Reply to all unreplied Google reviews" data-item-system="rancho-plan">
   <div class="task-header"><span class="task-num">1</span><span class="task-title">Reply to all unreplied Google reviews</span></div>
   <div class="task-meta"><span class="tag tag-owner-ashley">Ashley</span><span class="tag tag-manual">Manual</span><span class="tag tag-audit">GBP: D → B</span></div>
   <p class="task-desc"><strong style="color:#4ECDC4;">Verified April 9:</strong> 9 of last 10 reviews are unreplied. Only one reply exists ("Thank you!!" to The Train Quest LLC). Each response should reference something specific from the review — not generic. Positive reviews: thank them and mention something about their stay. Negative reviews: acknowledge, explain what's changed, invite them back. Aim for all replies done in one sitting.</p>
   <p class="task-impact">Impact: Directly improves local search ranking + shows future guests the business is engaged.</p>
 </div>
 
-<div class="task">
+<div class="task" data-item-id="rancho-p1-02-gbp-amenities-hours-description" data-item-title="Complete GBP hotel amenities, description, and hours" data-item-system="rancho-plan">
   <div class="task-header"><span class="task-num">2</span><span class="task-title">Complete GBP hotel amenities, description, and hours</span></div>
   <div class="task-meta"><span class="tag tag-owner-ashley">Ashley</span><span class="tag tag-manual">Manual</span><span class="tag tag-audit">GBP: D → B</span></div>
   <p class="task-desc"><strong style="color:#4ECDC4;">Verified April 9:</strong> Some amenities are now showing (Breakfast, Free parking, Accessible, Outdoor pool, Pet-friendly, Fitness center) but many categories remain unanswered. <strong style="color:#D4714E;">CRITICAL:</strong> The "From the owner" description currently contains a full blog post about glamping near Austin — this is NOT a business description and needs immediate replacement. Hours are still NOT set anywhere.</p>
@@ -165,32 +340,32 @@
   </ul>
 </div>
 
-<div class="task">
+<div class="task" data-item-id="rancho-p1-03-gbp-qa-seed-faqs" data-item-title="Answer Q&A + seed 10 FAQs on GBP" data-item-system="rancho-plan">
   <div class="task-header"><span class="task-num">3</span><span class="task-title">Answer Q&A + seed 10 FAQs on GBP</span></div>
   <div class="task-meta"><span class="tag tag-owner-adam">Adam</span><span class="tag tag-owner-claude">Claude</span><span class="tag tag-audit">GBP: D → B</span></div>
   <p class="task-desc">One question sitting unanswered ("Do you do day passes for the pool?"). Answer it, then seed 10 common questions and answer them from the business account: pet policy, check-in/out times, events schedule, booking process, alcohol policy, pricing ranges, kids allowed?, parking, directions from Austin, cancellation policy.</p>
   <p class="task-impact">Claude will draft all 10 Q&A pairs. Ashley or Adam posts them to GBP.</p>
 </div>
 
-<div class="task">
-  <div class="task-header"><span class="task-num">4</span><span class="task-title" style="text-decoration: line-through; opacity: 0.5;">Add 2-4 secondary categories to GBP</span> <span style="color:#4ECDC4; font-size: 0.85rem;">✅ DONE</span></div>
-  <div class="task-meta"><span class="tag tag-owner-ashley">Ashley</span><span class="tag tag-manual">Manual</span><span class="tag tag-audit">GBP: D → B</span></div>
-  <p class="task-desc" style="opacity: 0.5;"><strong style="color:#4ECDC4;">Verified April 9:</strong> Already set — Hotel (primary), Campground, Event venue, Resort hotel, Wedding venue. Secondary categories don't display publicly but influence which searches surface the listing.</p>
+<div class="task completed" data-item-id="rancho-p1-04-gbp-secondary-categories" data-item-title="Add 2-4 secondary categories to GBP" data-item-system="rancho-plan">
+  <div class="task-header"><span class="task-num">4</span><span class="task-title">Add 2-4 secondary categories to GBP</span></div>
+  <div class="task-meta"><span class="tag tag-owner-ashley">Ashley</span><span class="tag tag-manual">Manual</span><span class="tag tag-audit">GBP: D → B</span><span class="tag tag-done">✓ Done</span></div>
+  <p class="task-desc"><strong style="color:#4ECDC4;">Verified April 9:</strong> Already set — Hotel (primary), Campground, Event venue, Resort hotel, Wedding venue. Secondary categories don't display publicly but influence which searches surface the listing.</p>
 </div>
 
-<div class="task">
+<div class="task" data-item-id="rancho-p1-05-tripadvisor-weddingwire" data-item-title="Claim TripAdvisor listing + optimize WeddingWire listing" data-item-system="rancho-plan">
   <div class="task-header"><span class="task-num">5</span><span class="task-title">Claim TripAdvisor listing + optimize WeddingWire listing</span></div>
   <div class="task-meta"><span class="tag tag-owner-ashley">Ashley</span><span class="tag tag-owner-nancy">Nancy</span><span class="tag tag-manual">Manual</span><span class="tag tag-audit">Reviews: F → D</span></div>
   <p class="task-desc"><strong style="color:#4ECDC4;">Verified April 9:</strong> TripAdvisor confirmed — 0 reviews, 0 photos, NOT claimed ("Is this your business?" link visible). This is the single biggest review platform gap. Claim it, add photos, write description. WeddingWire listing DOES exist (audit was wrong) — optimize it with updated photos and descriptions.</p>
 </div>
 
-<div class="task">
-  <div class="task-header"><span class="task-num">6</span><span class="task-title" style="text-decoration: line-through; opacity: 0.5;">Set up Instagram link-in-bio page</span> <span style="color:#4ECDC4; font-size: 0.85rem;">✅ DONE</span></div>
-  <div class="task-meta"><span class="tag tag-owner-adam">Adam</span><span class="tag tag-owner-claude">Claude</span><span class="tag tag-audit">Social: B- → B+</span></div>
-  <p class="task-desc" style="opacity: 0.5;"><strong style="color:#4ECDC4;">Verified April 9:</strong> Linktree already set up (linktr.ee/ranchomoonrise) with Book A Room, Weddings, Events Calendar, Day Pool Pass, and merch shop. Bio reads: "Austin, TX 🌙 Glamping + Events Ranch / Cabins · Live music · Weddings · Pool" with 13.3K followers.</p>
+<div class="task completed" data-item-id="rancho-p1-06-instagram-link-in-bio" data-item-title="Set up Instagram link-in-bio page" data-item-system="rancho-plan">
+  <div class="task-header"><span class="task-num">6</span><span class="task-title">Set up Instagram link-in-bio page</span></div>
+  <div class="task-meta"><span class="tag tag-owner-adam">Adam</span><span class="tag tag-owner-claude">Claude</span><span class="tag tag-audit">Social: B- → B+</span><span class="tag tag-done">✓ Done</span></div>
+  <p class="task-desc"><strong style="color:#4ECDC4;">Verified April 9:</strong> Linktree already set up (linktr.ee/ranchomoonrise) with Book A Room, Weddings, Events Calendar, Day Pool Pass, and merch shop. Bio reads: "Austin, TX 🌙 Glamping + Events Ranch / Cabins · Live music · Weddings · Pool" with 13.3K followers.</p>
 </div>
 
-<div class="task">
+<div class="task" data-item-id="rancho-p1-07-gbp-social-links" data-item-title="Verify social profile links on GBP" data-item-system="rancho-plan">
   <div class="task-header"><span class="task-num">7</span><span class="task-title">Verify social profile links on GBP</span></div>
   <div class="task-meta"><span class="tag tag-owner-ashley">Ashley</span><span class="tag tag-manual">Manual</span><span class="tag tag-audit">GBP: D → B</span></div>
   <p class="task-desc">Google auto-added Instagram (@rancho_moonrise) and TikTok (@rancho_moonrise). Verify these are correct. Add Facebook page link if one exists.</p>
@@ -203,27 +378,27 @@
 <p class="phase-dates">April 16–29, 2026 &middot; 14 days &middot; Build the systems that run on autopilot</p>
 <p class="section-intro">Phase 2 is about building the machines that do the work going forward. Review collection, inquiry follow-up, GBP posting, and the website launch. Most of these have a "Claude builds it, Ashley activates it" pattern.</p>
 
-<div class="task">
+<div class="task" data-item-id="rancho-p2-08-review-request-system" data-item-title="Build post-stay/post-event review request system" data-item-system="rancho-plan">
   <div class="task-header"><span class="task-num">8</span><span class="task-title">Build post-stay/post-event review request system</span></div>
   <div class="task-meta"><span class="tag tag-owner-adam">Adam</span><span class="tag tag-owner-claude">Claude</span><span class="tag tag-auto">AUTO</span><span class="tag tag-audit">Reviews: F → C</span></div>
   <p class="task-desc">Build an automated email/text sequence triggered after checkout. Route by stay type: wedding guests → The Knot + Google, glamping guests → Hipcamp + TripAdvisor, event attendees → Google + Facebook. Include direct review links. Send 48 hours after checkout.</p>
   <p class="task-impact">Could 3x review count across platforms in 6 months. This is the #1 fix for the F grade on Reviews.</p>
 </div>
 
-<div class="task">
+<div class="task" data-item-id="rancho-p2-09-inquiry-response-sequence" data-item-title="Build automated inquiry response sequence" data-item-system="rancho-plan">
   <div class="task-header"><span class="task-num">9</span><span class="task-title">Build automated inquiry response sequence</span></div>
   <div class="task-meta"><span class="tag tag-owner-adam">Adam</span><span class="tag tag-owner-claude">Claude</span><span class="tag tag-auto">AUTO</span><span class="tag tag-audit">Booking: C+ → B+</span></div>
   <p class="task-desc">When someone fills out the website contact form, they currently get nothing. Build a 3-email sequence: (1) Instant confirmation with what to expect, (2) 24hr follow-up with Calendly tour link + FAQ, (3) 72hr gentle nudge if no response. This is where leads are dying.</p>
   <p class="task-impact">Even a 10% improvement in inquiry-to-tour conversion = multiple additional bookings per month.</p>
 </div>
 
-<div class="task">
-  <div class="task-header"><span class="task-num">10</span><span class="task-title" style="text-decoration: line-through; opacity: 0.5;">Launch weekly GBP posting schedule</span> <span style="color:#4ECDC4; font-size: 0.85rem;">✅ DONE</span></div>
-  <div class="task-meta"><span class="tag tag-owner-claude">Claude</span><span class="tag tag-auto">AUTO</span><span class="tag tag-audit">GBP: D → A</span></div>
-  <p class="task-desc" style="opacity: 0.5;"><strong style="color:#4ECDC4;">Verified April 9:</strong> Scheduled task "rancho-gbp-weekly-post" running every Monday at 9 AM. Posts confirmed visible on GBP — latest post "16 mins ago" and another "a day ago". Working as intended.</p>
+<div class="task completed" data-item-id="rancho-p2-10-weekly-gbp-posting" data-item-title="Launch weekly GBP posting schedule" data-item-system="rancho-plan">
+  <div class="task-header"><span class="task-num">10</span><span class="task-title">Launch weekly GBP posting schedule</span></div>
+  <div class="task-meta"><span class="tag tag-owner-claude">Claude</span><span class="tag tag-auto">AUTO</span><span class="tag tag-audit">GBP: D → A</span><span class="tag tag-done">✓ Done</span></div>
+  <p class="task-desc"><strong style="color:#4ECDC4;">Verified April 9:</strong> Scheduled task "rancho-gbp-weekly-post" running every Monday at 9 AM. Posts confirmed visible on GBP — latest post "16 mins ago" and another "a day ago". Working as intended.</p>
 </div>
 
-<div class="task">
+<div class="task" data-item-id="rancho-p2-11-website-launch-dns" data-item-title="Launch new website on main domain" data-item-system="rancho-plan">
   <div class="task-header"><span class="task-num">11</span><span class="task-title">Launch new website on main domain</span></div>
   <div class="task-meta"><span class="tag tag-owner-adam">Adam</span><span class="tag tag-owner-ashley">Ashley</span><span class="tag tag-audit">Website: D → A</span></div>
   <p class="task-desc">The new build (rancho-moonrise.vercel.app) is better in every way. Steps remaining:</p>
@@ -238,25 +413,25 @@
   </ul>
 </div>
 
-<div class="task">
+<div class="task" data-item-id="rancho-p2-12-hipcamp-listing-fix" data-item-title="Fix the Hipcamp listing" data-item-system="rancho-plan">
   <div class="task-header"><span class="task-num">12</span><span class="task-title">Fix the Hipcamp listing</span></div>
   <div class="task-meta"><span class="tag tag-owner-ashley">Ashley</span><span class="tag tag-owner-claude">Claude</span><span class="tag tag-audit">Booking: C+ → B+</span></div>
   <p class="task-desc">Current listing says "no showers" and "shared toilet" — reads like a bare campsite, not a luxury glamping ranch. Claude rewrites the copy and photo captions. Ashley updates on Hipcamp: fix amenity list (showers, private bathrooms if applicable, AC, linens), upload best property photos, rewrite description to match brand voice.</p>
 </div>
 
-<div class="task">
+<div class="task" data-item-id="rancho-p2-13-cloudbeds-url-fix" data-item-title="Fix the broken Cloudbeds booking URL" data-item-system="rancho-plan">
   <div class="task-header"><span class="task-num">13</span><span class="task-title">Fix the broken Cloudbeds booking URL</span></div>
   <div class="task-meta"><span class="tag tag-owner-ashley">Ashley</span><span class="tag tag-manual">Manual</span><span class="tag tag-audit">Booking: C+ → B+</span></div>
   <p class="task-desc">The direct Cloudbeds URL found in search results returns a 404. This means people searching for Rancho Moonrise bookings are hitting a dead end. Check Cloudbeds settings, fix the URL, and ensure the "Book Now" button on the website points to a working link.</p>
 </div>
 
-<div class="task">
+<div class="task" data-item-id="rancho-p2-14-pool-pass-promotion" data-item-title="Add pool pass promotion across all channels" data-item-system="rancho-plan">
   <div class="task-header"><span class="task-num">14</span><span class="task-title">Add pool pass promotion across all channels</span></div>
   <div class="task-meta"><span class="tag tag-owner-adam">Adam</span><span class="tag tag-owner-claude">Claude</span><span class="tag tag-audit">Revenue</span></div>
   <p class="task-desc">Pool passes (ResortPass) are high-margin, low-effort revenue currently buried. Make it a primary CTA: add to GBP products/services, Instagram bio link-in-bio page, website hero section, and Facebook page. Consider dynamic pricing (weekends higher, weekday specials).</p>
 </div>
 
-<div class="task">
+<div class="task" data-item-id="rancho-p2-15-gbp-chat" data-item-title="Enable Google Chat on GBP" data-item-system="rancho-plan">
   <div class="task-header"><span class="task-num">15</span><span class="task-title">Enable Google Chat on GBP</span></div>
   <div class="task-meta"><span class="tag tag-owner-ashley">Ashley</span><span class="tag tag-manual">Manual</span><span class="tag tag-audit">GBP: D → A</span></div>
   <p class="task-desc">Chat is not set up. For a hospitality/events property, Google Chat captures booking inquiries directly from search. Enable it and connect to a monitored number or Ashley's phone.</p>
@@ -269,32 +444,32 @@
 <p class="phase-dates">April 30 – May 20, 2026 &middot; 3 weeks &middot; Build new revenue channels and upgrade client experience</p>
 <p class="section-intro">Phase 3 targets the revenue opportunities and HoneyBook gaps identified in the audit. These take more effort but have the biggest dollar impact.</p>
 
-<div class="task">
+<div class="task" data-item-id="rancho-p3-16-corporate-retreat-page" data-item-title="Build corporate retreat landing page + HoneyBook flow" data-item-system="rancho-plan">
   <div class="task-header"><span class="task-num">16</span><span class="task-title">Build corporate retreat landing page + HoneyBook flow</span></div>
   <div class="task-meta"><span class="tag tag-owner-adam">Adam</span><span class="tag tag-owner-claude">Claude</span><span class="tag tag-audit">HoneyBook: B → A</span><span class="tag tag-audit">Revenue</span></div>
   <p class="task-desc">No dedicated marketing for corporate events. Austin is a massive corporate events market. Build: (1) landing page on the new website targeting corporate event planners, (2) HoneyBook flow for corporate retreats with packages, policies, and booking steps, (3) LinkedIn company page content targeting corporate planners.</p>
   <p class="task-impact">A single corporate retreat at $15K = 3 weekends of glamping revenue.</p>
 </div>
 
-<div class="task">
+<div class="task" data-item-id="rancho-p3-17-honeybook-flows" data-item-title="Build HoneyBook flows for private events + intimate events + retreats" data-item-system="rancho-plan">
   <div class="task-header"><span class="task-num">17</span><span class="task-title">Build HoneyBook flows for private events + intimate events + retreats</span></div>
   <div class="task-meta"><span class="tag tag-owner-adam">Adam</span><span class="tag tag-owner-claude">Claude</span><span class="tag tag-audit">HoneyBook: B → A</span></div>
   <p class="task-desc">Only weddings have a HoneyBook flow. Private events (46% of revenue!) have nothing. Build branded flows for: private events, intimate events, wellness/yoga retreats, and glamping packages. Each should have pricing, policies, vendor options, and next steps — matching the quality of the wedding flow.</p>
 </div>
 
-<div class="task">
+<div class="task" data-item-id="rancho-p3-18-build-experience-addons" data-item-title="Build Build Your Experience add-on booking flow" data-item-system="rancho-plan">
   <div class="task-header"><span class="task-num">18</span><span class="task-title">Build "Build Your Experience" add-on booking flow</span></div>
   <div class="task-meta"><span class="tag tag-owner-adam">Adam</span><span class="tag tag-owner-claude">Claude</span><span class="tag tag-audit">Revenue</span></div>
   <p class="task-desc">Horseback riding, yoga, tomahawk throwing, hat making, line dance lessons — these exist as vendor options but aren't priced or bookable online. Build an add-on experience page on the website with pricing and a way to add to any booking. Even $50/person average on add-ons is significant.</p>
 </div>
 
-<div class="task">
+<div class="task" data-item-id="rancho-p3-19-breakfast-upsell" data-item-title="Build breakfast taco/morning-after upsell for all stay types" data-item-system="rancho-plan">
   <div class="task-header"><span class="task-num">19</span><span class="task-title">Build breakfast taco/morning-after upsell for all stay types</span></div>
   <div class="task-meta"><span class="tag tag-owner-ashley">Ashley</span><span class="tag tag-owner-claude">Claude</span><span class="tag tag-audit">Revenue</span></div>
   <p class="task-desc">Currently offered in the wedding flow at $600/50 guests. Extend to ALL overnight stays (glamping, retreats, corporate). Add as a checkbox at booking time. $15/person breakfast add-on for 50 guests/week = $39K/year.</p>
 </div>
 
-<div class="task">
+<div class="task" data-item-id="rancho-p3-20-conversion-tracking" data-item-title="Set up conversion tracking + UTM parameters" data-item-system="rancho-plan">
   <div class="task-header"><span class="task-num">20</span><span class="task-title">Set up conversion tracking + UTM parameters</span></div>
   <div class="task-meta"><span class="tag tag-owner-adam">Adam</span><span class="tag tag-owner-claude">Claude</span><span class="tag tag-audit">Operations: C → B</span></div>
   <p class="task-desc">Can't optimize what you can't measure. Set up: Google Analytics 4 events on all form submissions, UTM parameters on all marketing links (social, email, GBP), conversion tracking on "Book Now" clicks, and a basic dashboard showing which channels drive inquiries.</p>
@@ -307,43 +482,43 @@
 <p class="phase-dates">May 21 – July 8, 2026 &middot; 7 weeks &middot; Turn everything into a machine</p>
 <p class="section-intro">Phase 4 is about making the whole operation run without single points of failure. CRM, SOPs, and ongoing content.</p>
 
-<div class="task">
+<div class="task" data-item-id="rancho-p4-21-crm-lead-tracking" data-item-title="Implement a CRM for lead tracking" data-item-system="rancho-plan">
   <div class="task-header"><span class="task-num">21</span><span class="task-title">Implement a CRM for lead tracking</span></div>
   <div class="task-meta"><span class="tag tag-owner-adam">Adam</span><span class="tag tag-owner-ashley">Ashley</span><span class="tag tag-audit">Operations: C → A</span></div>
   <p class="task-desc">Everything lives in Ashley's email and head. If she's out for a week, leads go cold. Options: (1) HoneyBook CRM features (already paying for it), (2) Simple Supabase pipeline board Adam can build, (3) Airtable. Every inquiry, every follow-up, every status update should be tracked. This is the single biggest operational risk in the business.</p>
 </div>
 
-<div class="task">
+<div class="task" data-item-id="rancho-p4-22-sops-ashley" data-item-title="Build SOPs for Ashley's critical processes" data-item-system="rancho-plan">
   <div class="task-header"><span class="task-num">22</span><span class="task-title">Build SOPs for Ashley's critical processes</span></div>
   <div class="task-meta"><span class="tag tag-owner-adam">Adam</span><span class="tag tag-owner-ashley">Ashley</span><span class="tag tag-audit">Operations: C → A</span></div>
   <p class="task-desc">Document the top 10 processes only Ashley knows: inquiry handling, event setup checklist, vendor coordination, day-of operations, post-event cleanup, booking management, guest communication templates. These SOPs mean anyone can step in if Ashley is unavailable.</p>
 </div>
 
-<div class="task">
+<div class="task" data-item-id="rancho-p4-23-youtube-channel" data-item-title="Build YouTube channel with venue walkthrough videos" data-item-system="rancho-plan">
   <div class="task-header"><span class="task-num">23</span><span class="task-title">Build YouTube channel with venue walkthrough videos</span></div>
   <div class="task-meta"><span class="tag tag-owner-ashley">Ashley</span><span class="tag tag-owner-adam">Adam</span><span class="tag tag-audit">Social: B- → A</span></div>
   <p class="task-desc">No YouTube presence for a visual property is a major miss. Venue walkthroughs are what brides, event planners, and glamping guests search for. Start with 3 videos: (1) full property walkthrough, (2) wedding day setup timelapse, (3) glamping tent tour. These also embed in the website and GBP.</p>
 </div>
 
-<div class="task">
+<div class="task" data-item-id="rancho-p4-24-facebook-channel" data-item-title="Launch Facebook as a real channel (not just cross-posts)" data-item-system="rancho-plan">
   <div class="task-header"><span class="task-num">24</span><span class="task-title">Launch Facebook as a real channel (not just cross-posts)</span></div>
   <div class="task-meta"><span class="tag tag-owner-claude">Claude</span><span class="tag tag-auto">AUTO</span><span class="tag tag-audit">Social: B- → A</span></div>
   <p class="task-desc">~500 followers and only cross-posts from Instagram. Brides' parents and corporate event planners live on Facebook. Build a dedicated content strategy: event albums, testimonials, local community engagement, Facebook Events for public events. Claude can auto-generate and schedule weekly Facebook-specific posts.</p>
 </div>
 
-<div class="task">
+<div class="task" data-item-id="rancho-p4-25-neighbor-noise" data-item-title="Address the neighbor noise issue" data-item-system="rancho-plan">
   <div class="task-header"><span class="task-num">25</span><span class="task-title">Address the neighbor noise issue</span></div>
   <div class="task-meta"><span class="tag tag-owner-nancy">Nancy</span><span class="tag tag-owner-ashley">Ashley</span><span class="tag tag-audit">Reviews</span></div>
   <p class="task-desc">Critical The Knot review mentions a neighboring property playing loud amplified music that was "impossible to sleep through." This is a dealbreaker for weddings. Actions: (1) develop a disclosure script for tours so couples aren't blindsided, (2) explore noise mitigation options, (3) draft a response to the review acknowledging it and explaining steps taken, (4) consider event scheduling coordination with the neighbor.</p>
 </div>
 
-<div class="task">
+<div class="task" data-item-id="rancho-p4-26-weekday-utilization" data-item-title="Launch weekday utilization program" data-item-system="rancho-plan">
   <div class="task-header"><span class="task-num">26</span><span class="task-title">Launch weekday utilization program</span></div>
   <div class="task-meta"><span class="tag tag-owner-ashley">Ashley</span><span class="tag tag-owner-adam">Adam</span><span class="tag tag-audit">Revenue</span></div>
   <p class="task-desc">Property is likely empty Mon-Thu. Target: corporate day retreats, yoga/wellness workshops, photography shoots (engagement, maternity, branding), small private dinners, team-building events. Build a weekday-specific page on the website with lower pricing. Even at $500-1K per weekday event booked 2x/week = $100K+/year.</p>
 </div>
 
-<div class="task">
+<div class="task" data-item-id="rancho-p4-27-gbp-owner-photos" data-item-title="Upload 10+ owner photos to GBP across all categories" data-item-system="rancho-plan">
   <div class="task-header"><span class="task-num">27</span><span class="task-title">Upload 10+ owner photos to GBP across all categories</span></div>
   <div class="task-meta"><span class="tag tag-owner-ashley">Ashley</span><span class="tag tag-manual">Manual</span><span class="tag tag-audit">GBP: D → A</span></div>
   <p class="task-desc"><strong style="color:#4ECDC4;">Verified April 9:</strong> Photos exist across categories (Latest, Videos, Rooms, Exterior, Amenities, Food & drink, From visitors, By owner). Verify coverage is balanced — Google rewards having owner photos in EVERY category. Add drone/aerial shots if missing.</p>
@@ -357,49 +532,49 @@
 <p class="phase-dates">Starts immediately &middot; Ongoing weekly &middot; Accelerates after DNS cutover</p>
 <p class="section-intro">Rancho Moonrise does NOT rank for any non-brand search query. "Best glamping near Austin," "wedding venues Austin TX ranch," "pool day pass Austin" — zero presence. AI answer engines (ChatGPT, Perplexity, Google AI Overviews) don't cite Rancho Moonrise at all. The Vercel site has good schema and page structure — but it's not live yet. Launching the new site on the main domain is the single biggest SEO/AEO unlock.</p>
 
-<div class="task">
+<div class="task" data-item-id="rancho-seo-s1-blog-individual-urls" data-item-title="Split blog posts into individual pages with unique URLs" data-item-system="rancho-seo">
   <div class="task-header"><span class="task-num">S1</span><span class="task-title">Split blog posts into individual pages with unique URLs</span></div>
   <div class="task-meta"><span class="tag tag-owner-claude">Claude</span><span class="tag tag-audit">SEO: F → C</span></div>
   <p class="task-desc">All 6 blog posts live on a single blog.html page — Google can't index them individually. Each post needs its own HTML file in site/blog/ with Article schema, canonical URL, meta description, and links back to the blog index. Blog index gets CollectionPage schema. This is a prerequisite for any blog SEO.</p>
 </div>
 
-<div class="task">
+<div class="task" data-item-id="rancho-seo-s2-h2-summaries" data-item-title="Add answer-first H2 summaries to key pages" data-item-system="rancho-seo">
   <div class="task-header"><span class="task-num">S2</span><span class="task-title">Add answer-first H2 summaries to key pages</span></div>
   <div class="task-meta"><span class="tag tag-owner-claude">Claude</span><span class="tag tag-audit">AEO</span></div>
   <p class="task-desc">AI engines extract the first sentence after each H2. Currently, page content buries the answer. Add a direct, extractable answer in the first sentence of every H2 section on: glamping page, weddings page, corporate retreat page, accommodations page. Example: "Rancho Moonrise is a 34-acre glamping ranch 20 minutes from downtown Austin with luxury safari tents, cabins, a pool, and event spaces for up to 200 guests."</p>
 </div>
 
-<div class="task">
+<div class="task" data-item-id="rancho-seo-s3-topical-clusters" data-item-title="Build topical authority clusters with internal linking" data-item-system="rancho-seo">
   <div class="task-header"><span class="task-num">S3</span><span class="task-title">Build topical authority clusters with internal linking</span></div>
   <div class="task-meta"><span class="tag tag-owner-claude">Claude</span><span class="tag tag-audit">SEO + AEO</span></div>
   <p class="task-desc">Pages exist but don't interlink deeply. Build three clusters: (1) Glamping cluster: glamping page ↔ packing guide ↔ glamping vs camping ↔ Austin outdoor activities, (2) Wedding cluster: weddings ↔ ranch wedding tips ↔ wedding venues near Austin ↔ bachelorette, (3) Events cluster: events ↔ corporate retreats ↔ host your event ↔ things to do Manor TX. Each page should link to 3-5 related pages with contextual anchor text.</p>
 </div>
 
-<div class="task">
+<div class="task" data-item-id="rancho-seo-s4-schema-breadcrumb-speakable" data-item-title="Add BreadcrumbList + SpeakableSpecification schema" data-item-system="rancho-seo">
   <div class="task-header"><span class="task-num">S4</span><span class="task-title">Add BreadcrumbList + SpeakableSpecification schema</span></div>
   <div class="task-meta"><span class="tag tag-owner-claude">Claude</span><span class="tag tag-audit">AEO</span></div>
   <p class="task-desc">Add BreadcrumbList schema to all subpages (Home > Glamping > ...). Add SpeakableSpecification to homepage, glamping, weddings, and corporate pages — this tells AI engines exactly which text blocks are quotable answers. Also add AggregateRating schema pulling from the 125 Google reviews (4.9★).</p>
 </div>
 
-<div class="task">
+<div class="task" data-item-id="rancho-seo-s5-pool-pass-page" data-item-title="Create Pool Day Pass Austin dedicated page" data-item-system="rancho-seo">
   <div class="task-header"><span class="task-num">S5</span><span class="task-title">Create "Pool Day Pass Austin" dedicated page</span></div>
   <div class="task-meta"><span class="tag tag-owner-claude">Claude</span><span class="tag tag-audit">SEO + Revenue</span></div>
   <p class="task-desc">ResortPass already ranks for "pool day pass Austin" with a Rancho Moonrise listing. Own this query directly with a dedicated page on the new site — pricing, hours (10AM-6PM), what's included, photos, link to ResortPass booking. This is high-margin, low-effort revenue with search demand.</p>
 </div>
 
-<div class="task">
+<div class="task" data-item-id="rancho-seo-s6-gsc-sitemap" data-item-title="Post-launch: Google Search Console + sitemap + indexing" data-item-system="rancho-seo">
   <div class="task-header"><span class="task-num">S6</span><span class="task-title">Post-launch: Google Search Console + sitemap + indexing</span></div>
   <div class="task-meta"><span class="tag tag-owner-adam">Adam</span><span class="tag tag-owner-claude">Claude</span><span class="tag tag-audit">SEO: F → B</span></div>
   <p class="task-desc">After DNS cutover: (1) Set up Google Search Console for ranchomoonrise.com, (2) Submit XML sitemap, (3) Request indexing of all key pages, (4) Set up redirect map from old BofillTech URLs, (5) Monitor indexing weekly — all pages should be indexed within 14 days. This is the moment everything built above starts working.</p>
 </div>
 
-<div class="task">
+<div class="task" data-item-id="rancho-seo-s7-aeo-baseline" data-item-title="AEO baseline + monthly tracking" data-item-system="rancho-seo">
   <div class="task-header"><span class="task-num">S7</span><span class="task-title">AEO baseline + monthly tracking</span></div>
   <div class="task-meta"><span class="tag tag-owner-claude">Claude</span><span class="tag tag-auto">AUTO</span><span class="tag tag-audit">AEO</span></div>
   <p class="task-desc">Baseline (April 9, 2026): Rancho Moonrise is NOT cited in any AI answer engine for non-brand queries. Monthly task: query ChatGPT, Perplexity, and Google AI Overviews for all 10 target keywords and log whether Rancho Moonrise appears. Track competitors who DO appear. Target: cited in at least 3 of 10 queries within 90 days of site launch.</p>
 </div>
 
-<div class="task">
+<div class="task" data-item-id="rancho-seo-s8-blog-to-gbp" data-item-title="Blog-to-GBP automation" data-item-system="rancho-seo">
   <div class="task-header"><span class="task-num">S8</span><span class="task-title">Blog-to-GBP automation</span></div>
   <div class="task-meta"><span class="tag tag-owner-claude">Claude</span><span class="tag tag-auto">AUTO</span><span class="tag tag-audit">GBP + SEO</span></div>
   <p class="task-desc">Every new blog post should automatically generate a GBP post with a summary + link back to the full article. Build as a scheduled task or n8n workflow that monitors the blog directory for new files and creates a GBP post within 24 hours of publishing.</p>
@@ -672,7 +847,193 @@ function switchTab(tabName) {
 if (window.location.hash === '#metrics') { switchTab('metrics'); }
 if (window.location.hash === '#audits') { switchTab('audits'); }
 if (window.location.hash === '#intel') { switchTab('intel'); }
+
+// ===== Mark Done system — improvement plan =====
+// Click "Mark done" on any task → POST /api/complete → appends to rancho-done-log.md
+// via GitHub API. Auth token stored in localStorage (briefingAuthToken — same key as the
+// client-ops briefing page so the same secret works on both). Completed state also
+// reconciled by the rancho-apply-done scheduled task which reads the log.
+
+const AUTH_KEY = 'briefingAuthToken';
+const COMPLETED_KEY = 'ranchoPlanCompletedItems'; // { ids: ["id1","id2", ...] }
+
+function getToken() {
+  try { return localStorage.getItem(AUTH_KEY) || ''; } catch (e) { return ''; }
+}
+function setToken(t) {
+  try { localStorage.setItem(AUTH_KEY, t); } catch (e) {}
+}
+function clearToken() {
+  try { localStorage.removeItem(AUTH_KEY); } catch (e) {}
+}
+function getCompleted() {
+  try {
+    const raw = localStorage.getItem(COMPLETED_KEY);
+    if (!raw) return { ids: [] };
+    const obj = JSON.parse(raw);
+    if (!obj || !Array.isArray(obj.ids)) return { ids: [] };
+    return obj;
+  } catch (e) { return { ids: [] }; }
+}
+function saveCompleted(obj) {
+  try { localStorage.setItem(COMPLETED_KEY, JSON.stringify(obj)); } catch (e) {}
+}
+function markCompletedLocal(id) {
+  const obj = getCompleted();
+  if (!obj.ids.includes(id)) obj.ids.push(id);
+  saveCompleted(obj);
+}
+function isCompletedLocal(id) {
+  return getCompleted().ids.includes(id);
+}
+
+function showToast(msg, isError) {
+  let el = document.getElementById('rmr-toast');
+  if (!el) {
+    el = document.createElement('div');
+    el.id = 'rmr-toast';
+    el.className = 'rmr-toast';
+    document.body.appendChild(el);
+  }
+  el.textContent = msg;
+  el.classList.toggle('error', !!isError);
+  el.classList.add('show');
+  clearTimeout(el._hideT);
+  el._hideT = setTimeout(() => el.classList.remove('show'), 2800);
+}
+
+// Auth modal
+function openAuthModal(prefill) {
+  const modal = document.getElementById('auth-modal');
+  const input = document.getElementById('auth-input');
+  input.value = prefill || getToken() || '';
+  modal.classList.add('open');
+  setTimeout(() => input.focus(), 50);
+}
+function closeAuthModal() {
+  document.getElementById('auth-modal').classList.remove('open');
+}
+function saveAuthFromModal() {
+  const v = document.getElementById('auth-input').value.trim();
+  if (!v) { clearToken(); } else { setToken(v); }
+  updateGearState();
+  closeAuthModal();
+  showToast(v ? 'Auth token saved' : 'Auth token cleared');
+}
+function updateGearState() {
+  const gear = document.getElementById('auth-gear');
+  if (!gear) return;
+  gear.classList.toggle('authed', !!getToken());
+  gear.title = getToken() ? 'Auth token set — click to change' : 'No auth token — click to set';
+}
+
+async function postComplete({ id, title, system }) {
+  const token = getToken();
+  if (!token) {
+    openAuthModal();
+    throw new Error('No auth token — enter one in the gear menu');
+  }
+  const r = await fetch('/api/complete', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + token,
+    },
+    body: JSON.stringify({ id, title, system }),
+  });
+  if (r.status === 401) {
+    clearToken();
+    updateGearState();
+    throw new Error('Unauthorized — token cleared, set a new one');
+  }
+  if (!r.ok) {
+    let msg = 'HTTP ' + r.status;
+    try { const j = await r.json(); msg = j.error || msg; } catch (e) {}
+    throw new Error(msg);
+  }
+  return r.json();
+}
+
+function injectMarkDoneButtons() {
+  const tasks = document.querySelectorAll('.task[data-item-id]');
+  tasks.forEach(task => {
+    if (task.querySelector('.mark-done-btn')) return; // already injected
+    const id = task.dataset.itemId;
+    const title = task.dataset.itemTitle || '';
+    const system = task.dataset.itemSystem || 'rancho-plan';
+
+    // Seed completed state from localStorage OR from a pre-existing ✅ DONE marker
+    // (so backfilled tasks 4/6/10 with inline line-through styling show as completed
+    // immediately on first load, even if this device has never marked anything).
+    const hasExistingDoneMark = task.querySelector('.task-title[style*="line-through"]') !== null;
+    if (isCompletedLocal(id) || hasExistingDoneMark) task.classList.add('completed');
+
+    const btn = document.createElement('button');
+    btn.className = 'mark-done-btn';
+    btn.type = 'button';
+    btn.textContent = task.classList.contains('completed') ? '✓ Done' : 'Mark done';
+
+    btn.addEventListener('click', async (ev) => {
+      ev.stopPropagation();
+      if (task.classList.contains('completed')) return; // no unmark
+      btn.disabled = true;
+      const prevText = btn.textContent;
+      btn.textContent = '…';
+      try {
+        await postComplete({ id, title, system });
+        task.classList.add('completed');
+        btn.textContent = '✓ Done';
+        markCompletedLocal(id);
+        showToast('Logged: ' + (title || id));
+      } catch (err) {
+        btn.textContent = prevText;
+        btn.disabled = false;
+        showToast(err.message || String(err), true);
+      }
+    });
+
+    task.appendChild(btn);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  updateGearState();
+  injectMarkDoneButtons();
+
+  const gear = document.getElementById('auth-gear');
+  if (gear) gear.addEventListener('click', () => openAuthModal());
+
+  const saveBtn = document.getElementById('auth-save');
+  const cancelBtn = document.getElementById('auth-cancel');
+  if (saveBtn) saveBtn.addEventListener('click', saveAuthFromModal);
+  if (cancelBtn) cancelBtn.addEventListener('click', closeAuthModal);
+
+  const modal = document.getElementById('auth-modal');
+  if (modal) modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeAuthModal();
+  });
+
+  const input = document.getElementById('auth-input');
+  if (input) input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') saveAuthFromModal();
+    if (e.key === 'Escape') closeAuthModal();
+  });
+});
 </script>
+
+<!-- Mark Done auth UI -->
+<button id="auth-gear" class="auth-gear" type="button" aria-label="Auth token">⚙</button>
+<div id="auth-modal" class="auth-modal" role="dialog" aria-modal="true">
+  <div class="auth-modal-inner">
+    <h3>Auth token</h3>
+    <p>Paste the shared secret from Vercel env var <code>BRIEFING_AUTH_TOKEN</code>. Stored in localStorage — set once per device. Same token used by the daily briefing page.</p>
+    <input id="auth-input" type="password" placeholder="auth token" autocomplete="off" spellcheck="false">
+    <div class="auth-modal-btns">
+      <button id="auth-cancel" type="button">Cancel</button>
+      <button id="auth-save" class="primary" type="button">Save</button>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>

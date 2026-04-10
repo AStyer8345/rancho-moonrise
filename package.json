@@ -1,0 +1,9 @@
+{
+  "name": "rancho-moonrise",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Rancho Moonrise venue site + serverless API for marking improvement-plan tasks done",
+  "engines": {
+    "node": "20.x"
+  }
+}
