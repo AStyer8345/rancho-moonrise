@@ -76,10 +76,11 @@ All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms. Li
 
 ### CLAUDE (autonomous — scheduled task handles these)
 - [x] Split blog posts into individual pages with URLs (S1) — already done previously
-- [ ] Add answer-first H2 summaries to key pages (S2)
-- [ ] Build topical authority clusters with internal linking (S3)
-- [x] Add BreadcrumbList + SpeakableSpecification schema (S4) — BreadcrumbList DONE 2026-04-09, SpeakableSpecification DONE 2026-04-10 (homepage)
+- [x] Add answer-first H2 summaries / AEO blocks to key pages (S2) — accommodations DONE (prior run), weddings DONE 2026-04-11, host-your-event DONE 2026-04-11
+- [ ] Build topical authority clusters with internal linking (S3) — blog cross-links in place; deeper hub-and-spoke pass still pending
+- [x] Add BreadcrumbList + SpeakableSpecification schema (S4) — BreadcrumbList DONE 2026-04-09, SpeakableSpecification: homepage DONE 2026-04-10, accommodations + weddings + host-your-event DONE 2026-04-11
 - [x] Add Review/AggregateRating schema to homepage (done, count corrected to 125 on 2026-04-10)
+- [x] Blog post #7 — "Best Weekend Getaways Near Austin Texas" — DONE 2026-04-11
 
 ## Next (after DNS cutover)
 - [ ] Google Search Console setup + sitemap submission (S6)

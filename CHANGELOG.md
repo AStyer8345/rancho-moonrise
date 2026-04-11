@@ -1,5 +1,18 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-11 — Daily SEO Run: SpeakableSpecification, AEO Expansion, Blog #7
+- **SpeakableSpecification schema added to `accommodations.html` and `weddings.html`.** WebPage schema with cssSelector targeting the page hero, AEO section headings, and paragraph text — tells Google SGE and Perplexity which content to surface for direct-answer extraction.
+- **AEO direct-answer block added to `weddings.html`.** New `<section class="aeo-block">` before the FAQ accordion answering "What is a ranch wedding venue near Austin?" in direct-answer paragraph format. Targets AI engine queries like "ranch wedding venue Austin TX", "wedding venue near Austin with overnight stays". CTA → contact page with `?intent=wedding`.
+- **FAQPage schema added to `host-your-event.html`.** Five Q&A pairs covering event types, distance from Austin, overnight stays, capacity, and what's included. Enables Google FAQ rich results for corporate retreat and private event queries.
+- **SpeakableSpecification schema added to `host-your-event.html`.** Targets hero, narrow container headings, and `.aeo-faq` accordion answer text.
+- **Visible AEO FAQ accordion section added to `host-your-event.html`.** Five FAQ items using existing `.faq-item` accordion markup (main.js picks them up automatically). Includes internal CTA back to inquiry form.
+- **Blog post #7 published: `weekend-getaways-near-austin.html`.** Target queries: "weekend getaways near Austin Texas", "best Austin weekend trips", "day trips from Austin". ~1,400 words. Curated guide format covering glamping at Rancho Moonrise (20 min), Lockhart BBQ (30 min), Bastrop State Park (35 min), Wimberley (1 hr), San Marcos (45 min). AEO block with 4 direct-answer Q&A paragraphs. BlogPosting + BreadcrumbList schema. Full OG/Twitter meta. Cross-links to accommodations, events, glamping guide, things-to-do-manor-tx.
+- **`blog.html` updated.** ItemList schema position 7 added; new post card added to blog grid.
+- **`sitemap.xml` updated.** `/blog/weekend-getaways-near-austin/` added (priority 0.8, monthly). `/` and `/blog/` lastmod updated to 2026-04-11.
+
+## 2026-04-11
+- rancho-apply-done: no changes needed — 3/4 log entries already in Done tab; `test-smoke-live` has no matching task div (smoke test entry, skipped as expected).
+
 ## 2026-04-10 — Responsive Image Pipeline (Option C): Fix Soft Photos on Vercel
 - **Root cause diagnosis.** Adam flagged that photos on `rancho-moonrise.vercel.app` looked noticeably worse than `ranchomoonrise.com`. Investigation found the Vercel build was shipping single-size WebP files (often 1600px or smaller) into CSS `background-image`, which has no srcset support. A phone and a 4K desktop were fetching the same file, sized wrong for both: phones got a file too big that then got visually crushed, desktops got a file too small that got upscaled and muddy. WordPress auto-generates responsive images by default — the static Vercel build didn't.
 - **`scripts/generate-responsive-images.sh` (new).** Idempotent WebP ladder generator. FULL tier = 480/1024/1920/2560/3840 px, MEDIUM tier = 400/800/1200 px (blog assets). Runs cwebp at `-q 88` — the "middle ground between great quality and fast speed" Adam asked for, biased toward quality because wedding photos are conversion-critical. Never upscales (skips widths larger than the source). Regenerates from JPG sources in `site/images/`. Script is safe to rerun any time new photos are dropped in.
