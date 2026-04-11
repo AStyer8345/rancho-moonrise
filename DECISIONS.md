@@ -2,6 +2,21 @@
 
 ---
 
+## 2026-04-10 — Responsive Image Pipeline: Quality-Biased Middle Ground (Option C)
+
+**Decision:** Generate a full WebP responsive ladder (480/1024/1920/2560/3840 for full tier, 400/800/1200 for medium/blog tier) at `cwebp -q 88`, and serve it via `<img srcset>` + `sizes` everywhere that matters. Hero slides and CTA banners refactored from `div[style=background-image]` to real `<img>` elements so they can actually pick up srcset. Pipeline is two idempotent scripts: `scripts/generate-responsive-images.sh` (ladder generator, never upscales) and `scripts/apply-srcset.py` (HTML sweep that rewrites bare `<img src>` tags).
+
+**Over:**
+- **Option A — Single higher-quality file.** One `-q 90` WebP per image. Simple, but a phone still fetches the same bytes as a 4K desktop. Doesn't solve the bandwidth problem for mobile, and doesn't solve the "source image too small for desktop" problem either.
+- **Option B — Speed-biased srcset.** Same ladder idea but at `-q 75` or `-q 80`. Smaller files, faster LCP, but visibly softer — especially on the weddings page where the bride audience is the most quality-sensitive visitor on the site.
+- **Status quo** — let WordPress-style automagic handle it. Not available: the Vercel site is a static build, there's no image-transformation layer in front of the repo, and `background-image` can't take a srcset even if there were.
+
+**Why:** Adam's complaint was specifically that the Vercel site's photos looked worse than the old `ranchomoonrise.com` WordPress site — bad enough to be noticeable to him on the homepage. His framing ("very good quality photos, especially for brides") put quality above speed as the tiebreaker, but he also asked for a middle ground rather than max quality. `q=88` hits that middle: generally indistinguishable from `q=92+` at normal viewing distance on real devices, noticeably smaller byte-for-byte than `q=92`, and noticeably sharper than `q=75-80` on detailed textures (canvas tent fabric, sunset gradients, the barn's wood grain). The full ladder means a phone gets a 480 or 1024w variant, a laptop gets 1920w, and a 4K desktop gets 2560 or 3840w — each device gets the file it actually needs. The CSS-to-`<img>` refactor is the non-obvious cost but is mandatory: CSS `background-image` will never support srcset, and trying to work around it via media-query-swapped background URLs is both fragile and worse-performing than the native solution.
+
+**Context:** Shipped in commit `547abfa`. Ladder generator and sweep script committed. Vercel deploy `dpl_948R6gNKCNUeDSuosKZjvczyJ8oz` READY. Data blocker surfaced and logged: 8 source JPGs are too low-res to fill the full ladder and need re-uploaded originals — see CONTEXT.md "Low-res source JPGs" section. The code is done; the ceiling now is asset quality.
+
+---
+
 ## 2026-04-10 — Buttons Must Be Self-Contained, Not Context-Assumed
 
 **Decision:** `.btn--primary` and `.btn--outline` carry their own solid fill color, text color, and border. They no longer assume they are sitting on a dark hero-background where a transparent fill + white text would be readable.
