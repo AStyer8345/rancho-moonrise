@@ -19,7 +19,11 @@
     <meta name="twitter:title" content="Wedding Venue Near Austin TX — Up to 200 Guests | Rancho Moonrise">
     <meta name="twitter:description" content="Exclusive ranch weddings 20 minutes from downtown Austin. Full-ranch access, unlimited ceremony layouts, overnight accommodations, and 200+ guest capacity.">
     <meta name="twitter:image" content="https://ranchomoonrise.com/images/wedding-hero.jpg">
-    <link rel="preload" as="image" type="image/webp" href="../images/wedding-hero.webp">
+    <link rel="preload" as="image" type="image/webp"
+          imagesrcset="../images/wedding-hero-480.webp 480w, ../images/wedding-hero-1024.webp 1024w, ../images/wedding-hero-1920.webp 1920w, ../images/wedding-hero-2560.webp 2560w"
+          imagesizes="100vw"
+          href="../images/wedding-hero-1920.webp"
+          fetchpriority="high">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Overpass:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
@@ -167,7 +171,9 @@
 
 <!-- Hero -->
 <section class="hero" style="min-height: 70vh;" aria-label="Rancho Moonrise Weddings">
-    <div class="hero__bg" style="background-image: url('../images/wedding-hero.webp');" role="img" aria-label="Romantic outdoor wedding ceremony with string lights and a golden Texas sunset at Rancho Moonrise ranch venue near Austin"></div>
+    <div class="hero__bg">
+        <img src="../images/wedding-hero-1920.webp" srcset="../images/wedding-hero-480.webp 480w, ../images/wedding-hero-1024.webp 1024w, ../images/wedding-hero-1920.webp 1920w, ../images/wedding-hero-2560.webp 2560w" sizes="100vw" alt="Romantic outdoor wedding ceremony with string lights and a golden Texas sunset at Rancho Moonrise ranch venue near Austin" fetchpriority="high" decoding="async">
+    </div>
     <div class="hero__content">
         <span class="hero__label">Weddings at Rancho Moonrise</span>
         <h1 class="hero__title">Your Dream Ranch Wedding</h1>
@@ -226,7 +232,7 @@
 
         <div class="split fade-in">
             <div class="split__image">
-                <img src="../images/wedding-ceremony-corral.webp" alt="Wedding ceremony in the rustic circular horse corral surrounded by wildflowers at Rancho Moonrise" width="800" height="600" loading="lazy">
+                <img src="../images/wedding-ceremony-corral-1920.webp" srcset="../images/wedding-ceremony-corral-480.webp 480w, ../images/wedding-ceremony-corral-1024.webp 1024w, ../images/wedding-ceremony-corral-1920.webp 1920w, ../images/wedding-ceremony-corral-2560.webp 2560w" sizes="(min-width: 900px) 50vw, 100vw" alt="Wedding ceremony in the rustic circular horse corral surrounded by wildflowers at Rancho Moonrise" width="800" height="600" loading="lazy" decoding="async">
             </div>
             <div class="split__content">
                 <h3>Rustic Corral</h3>
@@ -236,7 +242,7 @@
 
         <div class="split split--reverse fade-in" style="margin-top: var(--space-lg);">
             <div class="split__image">
-                <img src="../images/wedding-event-barn.webp" alt="Modern Event Barn interior set up for a wedding reception with string lights, long tables, and elegant decor at Rancho Moonrise" width="800" height="600" loading="lazy">
+                <img src="../images/wedding-event-barn-1024.webp" srcset="../images/wedding-event-barn-480.webp 480w, ../images/wedding-event-barn-1024.webp 1024w" sizes="(min-width: 900px) 50vw, 100vw" alt="Modern Event Barn interior set up for a wedding reception with string lights, long tables, and elegant decor at Rancho Moonrise" width="800" height="600" loading="lazy" decoding="async">
             </div>
             <div class="split__content">
                 <h3>Event Barn</h3>
@@ -246,7 +252,7 @@
 
         <div class="split fade-in" style="margin-top: var(--space-lg);">
             <div class="split__image">
-                <img src="../images/wedding-poolside.webp" alt="Poolside wedding ceremony at sunset with lounge chairs and tropical landscaping at Rancho Moonrise" width="800" height="600" loading="lazy">
+                <img src="../images/wedding-poolside-1920.webp" srcset="../images/wedding-poolside-480.webp 480w, ../images/wedding-poolside-1024.webp 1024w, ../images/wedding-poolside-1920.webp 1920w, ../images/wedding-poolside-2560.webp 2560w, ../images/wedding-poolside-3840.webp 3840w" sizes="(min-width: 900px) 50vw, 100vw" alt="Poolside wedding ceremony at sunset with lounge chairs and tropical landscaping at Rancho Moonrise" width="800" height="600" loading="lazy" decoding="async">
             </div>
             <div class="split__content">
                 <h3>Poolside &amp; Open Fields</h3>
@@ -492,7 +498,9 @@
 
 <!-- CTA -->
 <section class="cta-banner" aria-label="Schedule a wedding tour">
-    <div class="cta-banner__bg" style="background-image: url('../images/wedding-cta-sunset.webp');" role="img" aria-label="Bride and groom silhouetted against a golden Texas sunset at Rancho Moonrise wedding venue"></div>
+    <div class="cta-banner__bg">
+        <img src="../images/wedding-cta-sunset-1920.webp" srcset="../images/wedding-cta-sunset-480.webp 480w, ../images/wedding-cta-sunset-1024.webp 1024w, ../images/wedding-cta-sunset-1920.webp 1920w, ../images/wedding-cta-sunset-2560.webp 2560w" sizes="100vw" alt="Bride and groom silhouetted against a golden Texas sunset at Rancho Moonrise wedding venue" loading="lazy" decoding="async">
+    </div>
     <div class="cta-banner__content fade-in">
         <span class="section-label reveal">See It In Person</span>
         <h2 style="color: var(--color-white); margin-bottom: var(--space-sm);">Walk the Ranch Before You Commit</h2>

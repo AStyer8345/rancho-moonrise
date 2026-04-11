@@ -113,12 +113,22 @@
         var autoplayInterval = null;
         var autoplayDelay = 5000;
 
-        // Lazy-load slide background images on first display
+        // Lazy-load slide images on first display. The slides are stacked at
+        // inset:0 so the browser treats them all as "in viewport" — native
+        // loading="lazy" won't defer them. We keep the srcset/src in data-*
+        // attributes and promote them to real attrs when a slide first shows.
         function loadSlide(slide) {
-            var bg = slide.getAttribute('data-bg');
-            if (bg) {
-                slide.style.backgroundImage = "url('" + bg + "')";
-                slide.removeAttribute('data-bg');
+            var img = slide.querySelector('.hero__img');
+            if (!img) return;
+            var dsSrcset = img.getAttribute('data-srcset');
+            var dsSrc = img.getAttribute('data-src');
+            if (dsSrcset) {
+                img.setAttribute('srcset', dsSrcset);
+                img.removeAttribute('data-srcset');
+            }
+            if (dsSrc) {
+                img.setAttribute('src', dsSrc);
+                img.removeAttribute('data-src');
             }
         }
 
