@@ -379,3 +379,6 @@
 - Updated CONTEXT.md with full "Operating Agreement — Key Findings" section and deal implications
 - Updated TODO.md: added Exhibit A as top priority, added post-Exhibit-A deal modeling tasks
 - Updated Active Blockers: operating agreement now reviewed, Exhibit A flagged as new blocker
+
+## 2026-04-12 — rancho-apply-done reconciliation
+- rancho-apply-done: no changes — 3/4 log entries already in Done tab; test-smoke-live skipped (no matching task div, smoke test entry).
