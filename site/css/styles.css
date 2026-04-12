@@ -851,77 +851,231 @@ p { margin-bottom: 1em; }
     .testimonial-marquee__track { animation-duration: 35s; }
 }
 
-/* ---------- Events Grid ---------- */
-.events-grid {
+/* ---------- Events Timeline ---------- */
+.events-timeline-section {
+    position: relative;
+    padding-top: var(--space-lg);
+}
+
+.events-timeline-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at top left, rgba(222, 133, 86, 0.18), transparent 32%),
+        radial-gradient(circle at top right, rgba(141, 155, 121, 0.12), transparent 28%);
+    pointer-events: none;
+}
+
+.events-timeline-intro {
+    position: relative;
     display: grid;
-    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+    align-items: end;
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid rgba(182, 96, 63, 0.16);
+}
+
+.events-timeline-intro__eyebrow,
+.events-month__eyebrow {
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    color: #ab6447;
+    margin-bottom: var(--space-xs);
+}
+
+.events-timeline-intro p,
+.events-month__header p {
+    max-width: 36rem;
+    color: var(--color-text-muted);
+    margin-bottom: 0;
+}
+
+.events-timeline {
+    display: grid;
+    gap: var(--space-xl);
+}
+
+.events-month {
+    display: grid;
     gap: var(--space-md);
 }
 
+.events-month__header {
+    position: relative;
+    padding-bottom: var(--space-sm);
+    border-bottom: 1px solid rgba(182, 96, 63, 0.16);
+}
+
+.events-month__list {
+    position: relative;
+    display: grid;
+    gap: var(--space-sm);
+}
+
+.events-month__list::before {
+    content: "";
+    position: absolute;
+    left: 47px;
+    top: 8px;
+    bottom: 8px;
+    width: 1px;
+    background: linear-gradient(to bottom, rgba(171, 100, 71, 0.28), rgba(136, 199, 178, 0.18));
+}
+
 .event-card {
-    background: linear-gradient(180deg, rgba(252, 247, 239, 0.98), rgba(247, 239, 226, 0.98));
-    border: 1px solid rgba(106, 75, 54, 0.12);
-    border-radius: 14px;
-    padding: 0;
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-sm);
+    align-items: start;
+    background: rgba(250, 247, 242, 0.92);
+    border: 1px solid rgba(182, 96, 63, 0.14);
+    border-radius: 24px;
+    padding: 18px;
+    box-shadow: 0 12px 32px rgba(74, 76, 77, 0.06);
     transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
     overflow: hidden;
-    box-shadow: 0 18px 34px rgba(43, 28, 20, 0.08);
 }
+
 .event-card:hover {
-    border-color: var(--color-border);
-    transform: translateY(-4px);
-    box-shadow: 0 22px 44px rgba(43, 28, 20, 0.14);
+    border-color: rgba(171, 100, 71, 0.34);
+    transform: translateY(-3px);
+    box-shadow: 0 18px 42px rgba(74, 76, 77, 0.1);
+}
+
+.event-card--timeline::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 47px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #88c7b2;
+    border: 3px solid var(--color-bg);
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 0 3px rgba(136, 199, 178, 0.18);
+}
+
+.event-card__date-badge {
+    position: relative;
+    z-index: 1;
+    min-width: 58px;
+    padding: 12px 8px;
+    border-radius: 18px;
+    background: linear-gradient(180deg, #ab6447 0%, #c98366 100%);
+    color: var(--color-white);
+    text-align: center;
+    box-shadow: 0 10px 24px rgba(171, 100, 71, 0.22);
+}
+
+.event-card__date-day,
+.event-card__date-month {
+    display: block;
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+}
+
+.event-card__date-number {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    line-height: 1;
+    margin: 6px 0;
+}
+
+.event-card__body {
+    display: grid;
+    gap: 10px;
+    align-content: start;
+    min-width: 0;
+}
+
+.event-card__topline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 12px;
+    align-items: center;
+}
+
+.event-card__tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 7px 12px;
+    border-radius: 999px;
+    background: rgba(171, 100, 71, 0.12);
+    color: #874f38;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+}
+
+.event-card__tag--sage {
+    background: rgba(136, 199, 178, 0.22);
+    color: #31735A;
+}
+
+.event-card__tag--free {
+    background: rgba(237, 169, 130, 0.2);
+    color: #a86246;
+}
+
+.event-card__date {
+    font-family: var(--font-body);
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #ab6447;
+    margin-bottom: 0;
+}
+
+.event-card__title {
+    font-size: clamp(1.45rem, 2.4vw, 2rem);
+    margin-bottom: 0;
+}
+
+.event-card__desc {
+    font-size: 0.98rem;
+    color: var(--color-text-muted);
+    margin-bottom: 0;
+    max-width: 42rem;
+}
+
+.event-card__link {
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #ab6447;
 }
 
 .event-card__img {
+    width: min(100%, 310px);
+    justify-self: end;
+    align-self: stretch;
     aspect-ratio: 1 / 1;
+    border-radius: 20px;
     overflow: hidden;
+    background: var(--color-cream-dark);
 }
+
 .event-card__img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.6s var(--ease);
 }
+
 .event-card:hover .event-card__img img { transform: scale(1.05); }
-
-.event-card__body {
-    padding: var(--space-md);
-}
-
-/* Event cards without images keep internal padding */
-.event-card:not(:has(.event-card__img)) {
-    padding: var(--space-md);
-}
-
-.event-card__date {
-    font-family: var(--font-body);
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--color-orange);
-    margin-bottom: var(--space-xs);
-}
-
-.event-card__title {
-    font-size: 1.2rem;
-    margin-bottom: var(--space-xs);
-}
-
-.event-card__desc {
-    font-size: 0.9rem;
-    color: var(--color-text-muted);
-    margin-bottom: var(--space-sm);
-}
-
-.event-card__link {
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--color-orange);
-}
 
 /* ---------- Venue Showcase (two-up side-by-side) ---------- */
 .venue-duo {
@@ -1930,9 +2084,12 @@ p { margin-bottom: 1em; }
     .footer__grid { gap: var(--space-md); }
     .footer__social { flex-wrap: wrap; }
 
-    /* Events grid: full width cards */
-    .events-grid { gap: var(--space-sm); }
-    .event-card__img { aspect-ratio: 16 / 9; }
+    /* Events timeline */
+    .events-timeline { gap: var(--space-lg); }
+    .events-month__list::before { left: 41px; }
+    .event-card--timeline::before { left: 41px; }
+    .event-card { padding: 16px; }
+    .event-card__img { width: 100%; aspect-ratio: 16 / 10; }
 
     /* Accommodations */
     .accom-grid { gap: var(--space-md); }
@@ -1959,6 +2116,60 @@ p { margin-bottom: 1em; }
     .hero__content { margin-bottom: 78px; }
     .nav__logo-img { height: 64px; padding: 5px; margin-top: 16px; }
     .nav--scrolled .nav__logo-img { height: 64px; padding: 5px; margin-top: 16px; }
+}
+
+
+@media (min-width: 900px) {
+    .events-timeline-intro {
+        grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+    }
+
+    .events-month {
+        grid-template-columns: minmax(200px, 260px) minmax(0, 1fr);
+        align-items: start;
+        gap: var(--space-lg);
+    }
+
+    .events-month__header {
+        position: sticky;
+        top: 110px;
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    .event-card {
+        grid-template-columns: auto minmax(0, 1fr) minmax(220px, 300px);
+        gap: var(--space-md);
+        align-items: center;
+    }
+}
+
+@media (max-width: 899px) {
+    .events-timeline-intro {
+        margin-bottom: var(--space-md);
+    }
+
+    .events-month__list::before {
+        display: none;
+    }
+
+    .event-card--timeline::before {
+        display: none;
+    }
+
+    .event-card {
+        grid-template-columns: 1fr;
+    }
+
+    .event-card__date-badge {
+        width: fit-content;
+        min-width: 72px;
+    }
+
+    .event-card__img {
+        justify-self: stretch;
+        order: 3;
+    }
 }
 
 /* ---------- Events View Toggle ---------- */
