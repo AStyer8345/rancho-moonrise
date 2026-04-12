@@ -24,6 +24,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Overpass:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Overpass:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"></noscript>
     <link rel="stylesheet" href="../css/styles.css?v=11">
+    <link rel="icon" href="/images/favicon.png" type="image/png">
 
     <script type="application/ld+json">
     [{
@@ -417,8 +418,11 @@
     var toggleBtns = document.querySelectorAll('.events-view-toggle__btn');
     var listView = document.getElementById('eventsListView');
     var calView = document.getElementById('eventsCalendarView');
+    var toggleWrap = document.querySelector('.events-view-toggle');
 
     function setView(view) {
+        var topBefore = toggleWrap ? toggleWrap.getBoundingClientRect().top : 0;
+
         toggleBtns.forEach(function (btn) {
             var isActive = btn.getAttribute('data-view') === view;
             btn.classList.toggle('is-active', isActive);
@@ -431,6 +435,13 @@
             listView.classList.remove('is-active');
             calView.classList.add('is-active');
         }
+
+        if (toggleWrap) {
+            requestAnimationFrame(function () {
+                var topAfter = toggleWrap.getBoundingClientRect().top;
+                window.scrollBy(0, topAfter - topBefore);
+            });
+        }
     }
 
     toggleBtns.forEach(function (btn) {
@@ -439,8 +450,9 @@
         });
     });
 
-    // Default: list on mobile, calendar on desktop
-    if (window.innerWidth >= 960) {
+    // Default to list view for a richer first impression; allow direct
+    // linking to the calendar with #calendar when needed.
+    if (window.location.hash === '#calendar') {
         setView('calendar');
     }
 

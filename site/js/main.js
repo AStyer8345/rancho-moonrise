@@ -284,96 +284,281 @@
         }
     }
 
-    // ---------- Calendly Placeholder Handler ----------
-    // When Calendly is connected, replace href="#" with real Calendly URLs
-    // For now, show a helpful message
+    // ---------- Inquiry / Scheduling fallbacks ----------
     document.querySelectorAll('.calendly-placeholder').forEach(function (link) {
-        link.addEventListener('click', function (e) {
+        var type = link.getAttribute('data-calendly');
+        var fallbackHref = '/pages/contact.html?intent=general';
+
+        if (type === 'tour' || type === 'virtual') {
+            fallbackHref = '/pages/contact.html?intent=wedding';
+        } else if (type === 'call') {
+            fallbackHref = 'tel:+17372911260';
+        }
+
+        if (!link.getAttribute('href') || link.getAttribute('href') === '#') {
+            link.setAttribute('href', fallbackHref);
+        }
+
+        if (fallbackHref.indexOf('tel:') === 0) {
+            link.removeAttribute('target');
+            link.removeAttribute('rel');
+        }
+    });
+
+    document.querySelectorAll('form[action="#"]').forEach(function (form) {
+        form.addEventListener('submit', function (e) {
             e.preventDefault();
-            var type = this.getAttribute('data-calendly');
-            var msg = '';
-            if (type === 'tour') {
-                msg = 'Venue tour scheduling will be available soon! For now, call 737-291-1260 to schedule your visit.';
-            } else if (type === 'virtual') {
-                msg = 'Virtual tour scheduling coming soon! Call 737-291-1260 to arrange a video walkthrough.';
-            } else {
-                msg = 'Call scheduling coming soon! Reach us at 737-291-1260.';
+
+            if (typeof form.reportValidity === 'function' && !form.reportValidity()) {
+                return;
             }
-            alert(msg);
+
+            var data = new FormData(form);
+            var inquiryType = (data.get('inquiry_type') || 'general').toString();
+            var name = (data.get('name') || '').toString().trim();
+            var email = (data.get('email') || '').toString().trim();
+            var phone = (data.get('phone') || '').toString().trim();
+            var labelByType = {
+                wedding: 'Wedding Inquiry',
+                event: 'Private Event Inquiry',
+                general: 'General Question'
+            };
+            var lines = [
+                'New ' + (labelByType[inquiryType] || 'Inquiry') + ' from ranchomoonrise.com',
+                '',
+                'Name: ' + (name || 'Not provided'),
+                'Email: ' + (email || 'Not provided')
+            ];
+
+            if (phone) lines.push('Phone: ' + phone);
+
+            Array.from(form.elements).forEach(function (field) {
+                if (!field.name || field.type === 'hidden' || field.type === 'submit' || field.type === 'button') {
+                    return;
+                }
+
+                var value = data.get(field.name);
+                if (value == null) return;
+
+                value = value.toString().trim();
+                if (!value) return;
+
+                if (field.name === 'name' || field.name === 'email' || field.name === 'phone') {
+                    return;
+                }
+
+                var label = form.querySelector('label[for="' + field.id + '"]');
+                var labelText = label ? label.textContent.replace(/\s+/g, ' ').trim() : field.name;
+                lines.push(labelText + ': ' + value);
+            });
+
+            var subjectPrefix = labelByType[inquiryType] || 'Rancho Moonrise Inquiry';
+            var subject = subjectPrefix + (name ? ' — ' + name : '');
+            var mailto = 'mailto:events@ranchomoonrise.com?subject=' +
+                encodeURIComponent(subject) +
+                '&body=' + encodeURIComponent(lines.join('\n'));
+
+            var status = form.querySelector('.form-status');
+            if (!status) {
+                status = document.createElement('p');
+                status.className = 'form-status';
+                form.appendChild(status);
+            }
+            status.innerHTML = 'Opening your email app to send this inquiry. If nothing opens, email <a href="mailto:events@ranchomoonrise.com">events@ranchomoonrise.com</a> or call <a href="tel:+17372911260">737-291-1260</a>.';
+
+            window.location.href = mailto;
         });
     });
 
     // ---------- AI Chat Widget ----------
     (function () {
         // Knowledge base — trained on all Rancho Moonrise content
+        //
+        // Each entry has a `section` tag ('wedding' | 'stay' | 'event' | 'pool' |
+        // 'policy' | 'info') used by the topic-override logic in findAnswer() to
+        // bias scoring when a query is dominantly about one topic. Without the
+        // tag, queries like "how much are weddings?" score highest on the
+        // generic `price` entry (matches "how much") and the user gets a
+        // room-rates answer instead of a wedding answer. See topicOverride().
         var KB = [
             // Location & Contact
-            { keywords: ['where', 'location', 'address', 'directions', 'far', 'drive', 'distance', 'manor'],
-              answer: 'Rancho Moonrise is located at <strong>20117 Lockwood Road, Manor, TX 78653</strong> — about 20 minutes east of downtown Austin. <a href="https://www.google.com/maps/place/20117+Lockwood+Rd,+Manor,+TX+78653" target="_blank">Get directions &rarr;</a>' },
-            { keywords: ['phone', 'call', 'number', 'reach'],
+            { section: 'info', keywords: ['where', 'location', 'address', 'directions', 'far', 'drive', 'distance'],
+              answer: 'Rancho Moonrise is located at <strong>20117 Lockwood Road, 78653</strong> — about 20 minutes east of downtown Austin. <a href="https://www.google.com/maps/place/20117+Lockwood+Rd,+Manor,+TX+78653" target="_blank">Get directions &rarr;</a>' },
+            { section: 'info', keywords: ['phone', 'call', 'number', 'reach'],
               answer: 'You can reach us at <a href="tel:+17372911260"><strong>737-291-1260</strong></a>. We\'re happy to help with any questions!' },
-            { keywords: ['hours', 'check-in', 'check in', 'checkout', 'check out', 'time'],
-              answer: 'Check-in is <strong>4:00 PM – 8:00 PM daily</strong>. Checkout is by 11:00 AM. If you need early check-in or late checkout, give us a call and we\'ll do our best to accommodate you.' },
+            { section: 'info', keywords: ['hours', 'check-in', 'check in', 'checkout', 'check out', 'time'],
+              answer: 'Check-in is <strong>3:00 PM – 5:00 PM daily</strong>, with late arrival available if you let us know in advance. Checkout is by 11:00 AM.' },
 
             // Weddings
-            { keywords: ['wedding', 'ceremony', 'reception', 'bride', 'groom', 'marry', 'engaged', 'engagement'],
+            { section: 'wedding', keywords: ['wedding', 'weddings', 'ceremony', 'reception', 'bride', 'groom', 'marry', 'engaged', 'engagement', 'elope', 'elopement'],
               answer: 'We\'d love to host your wedding! Rancho Moonrise offers <strong>exclusive full-ranch access</strong> for weddings — no outside guests on the property. We offer unlimited ceremony options across the property, capacity for 200+ guests, and on-site accommodations for 50 overnight guests. <a href="/pages/contact.html?intent=wedding">Start your wedding inquiry &rarr;</a>' },
-            { keywords: ['wedding package', 'wedding price', 'wedding cost', 'how much wedding', 'wedding pricing', 'wedding rate'],
+            { section: 'wedding', keywords: ['wedding package', 'wedding price', 'wedding cost', 'how much wedding', 'wedding pricing', 'wedding rate', 'wedding budget', 'cost of wedding', 'price of wedding', 'wedding quote'],
               answer: 'Wedding packages include full exclusive ranch access, unlimited ceremony options, the Event Barn, and accommodations for up to 50 overnight guests. For specific pricing, <a href="/pages/contact.html?intent=wedding">submit a wedding inquiry</a> or call <a href="tel:+17372911260">737-291-1260</a> — we\'ll send you a detailed package within 2 hours.' },
-            { keywords: ['ceremony site', 'ceremony option', 'where ceremony', 'venue option'],
+            { section: 'wedding', keywords: ['ceremony site', 'ceremony option', 'where ceremony', 'venue option'],
               answer: 'We offer <strong>unlimited ceremony options</strong> across the property — from the Rustic Corral surrounded by wildflowers, to the Event Barn (modern, climate-controlled), to poolside, to open Texas fields with panoramic views. Each creates a completely different atmosphere. <a href="/pages/weddings.html#ceremony-sites">Learn more &rarr;</a>' },
-            { keywords: ['capacity', 'how many', 'guest count', 'guests', 'max', 'maximum', 'seat'],
+            { section: 'wedding', keywords: ['capacity', 'how many', 'guest count', 'guests', 'max', 'maximum', 'seat'],
               answer: 'We can accommodate <strong>200+ guests</strong> for weddings and events, with <strong>50 overnight guests</strong> across our cabins and safari tents. The Event Barn, pool deck, and outdoor spaces all offer flexible layouts.' },
-            { keywords: ['tour', 'visit', 'see the ranch', 'come see', 'walk through', 'schedule tour'],
+            { section: 'wedding', keywords: ['tour', 'visit', 'see the ranch', 'come see', 'walk through', 'schedule tour'],
               answer: 'We\'d love to show you around! We offer <strong>in-person venue tours (60 min)</strong> and <strong>virtual tours (30 min)</strong>. Call <a href="tel:+17372911260">737-291-1260</a> to schedule, or <a href="/pages/contact.html?intent=wedding">submit an inquiry</a> and we\'ll set one up.' },
 
             // Accommodations
-            { keywords: ['cabin', 'tent', 'glamping', 'stay', 'overnight', 'accommodation', 'sleep', 'room', 'lodge'],
-              answer: 'We offer <strong>cabins and safari tents</strong>: <strong>Cabins</strong> (queen bed, A/C, heat, covered deck), <strong>Family Safari Tents</strong> (queen + bunks, sleeps 4), and <strong>Premium Safari Tents</strong> (king bed, private ensuite). All have A/C and heat, with fire pits throughout the property. <a href="https://hotels.cloudbeds.com/en/reservation/5tzv1r" target="_blank">Check availability &rarr;</a>' },
-            { keywords: ['book', 'reservation', 'reserve', 'availability', 'available'],
+            { section: 'stay', keywords: ['cabin', 'tent', 'glamping', 'stay', 'overnight', 'accommodation', 'sleep', 'room', 'lodge'],
+              answer: 'We offer <strong>cabins and safari tents</strong>: <strong>Cabins</strong> (queen bed, A/C, heat, covered deck), <strong>Family Safari Tents</strong> (queen + bunks, sleeps 4), and <strong>Premium Safari Tents</strong> (king bed, private ensuite). All have A/C and heat, with fire pits across the property. <a href="https://hotels.cloudbeds.com/en/reservation/5tzv1r" target="_blank">Check availability &rarr;</a>' },
+            { section: 'stay', keywords: ['book', 'reservation', 'reserve', 'availability', 'available'],
               answer: 'You can check real-time availability and book directly: <a href="https://hotels.cloudbeds.com/en/reservation/5tzv1r" target="_blank"><strong>Book your stay &rarr;</strong></a>. For weddings and events, <a href="/pages/contact.html">contact us</a> for custom availability.' },
-            { keywords: ['price', 'cost', 'rate', 'per night', 'nightly', 'how much', 'pricing'],
+            { section: 'stay', keywords: ['price', 'cost', 'rate', 'per night', 'nightly', 'how much', 'pricing'],
               answer: 'Nightly rates vary by accommodation type and season. Check current pricing and availability on our <a href="https://hotels.cloudbeds.com/en/reservation/5tzv1r" target="_blank">booking page</a>. For wedding and event pricing, <a href="/pages/contact.html">contact our team</a> — we\'ll send details within 2 hours.' },
 
             // Events
-            { keywords: ['event', 'corporate', 'retreat', 'birthday', 'party', 'conference', 'festival', 'host'],
+            { section: 'event', keywords: ['event', 'corporate', 'retreat', 'birthday', 'party', 'conference', 'festival', 'host'],
               answer: 'We host all types of events: corporate retreats, birthday parties, conferences, private parties, festivals, and wellness retreats. Available for <strong>hourly rental or full ranch buyout</strong>. <a href="/pages/contact.html?intent=event">Submit an event inquiry &rarr;</a>' },
-            { keywords: ['event barn', 'barn', 'indoor', 'climate control'],
+            { section: 'event', keywords: ['event barn', 'barn', 'indoor', 'climate control'],
               answer: 'The <strong>Event Barn</strong> is our modern, climate-controlled indoor venue. Flexible layout for presentations, seated dinners, cocktail receptions, and dance floors. Beautiful ranch aesthetic with all the infrastructure you need.' },
-            { keywords: ['bar', 'drinks', 'cocktail', 'lounge'],
+            { section: 'event', keywords: ['bar', 'drinks', 'cocktail', 'lounge'],
               answer: 'The Lodge serves beer, wine, and other beverages on-site — perfect for a drink by the pool or after a day on the ranch. For private events, bar service can be arranged as part of your package.' },
-            { keywords: ['upcoming event', 'what\'s happening', 'next event', 'calendar', 'schedule'],
+            { section: 'event', keywords: ['upcoming event', 'what\'s happening', 'next event', 'calendar', 'schedule'],
               answer: 'Check out our upcoming events — live music, yoga, crawfish boils, and more: <a href="/pages/events.html"><strong>View upcoming events &rarr;</strong></a>' },
 
             // Pool
-            { keywords: ['pool', 'swim', 'pool pass', 'day pass', 'resort pass'],
+            { section: 'pool', keywords: ['pool', 'swim', 'pool pass', 'day pass', 'resort pass'],
               answer: 'Our resort-style pool is available to guests and day visitors! <strong>Pool passes</strong> are available through ResortPass. Plus, the <strong>last Friday of every month is Free Friday</strong> — free pool access with advance RSVP. <a href="https://www.resortpass.com/hotels/rancho-moonrise" target="_blank">Get a pool pass &rarr;</a>' },
 
             // Policies
-            { keywords: ['pet', 'dog', 'animal', 'pet friendly', 'pet-friendly'],
+            { section: 'policy', keywords: ['pet', 'dog', 'animal', 'pet friendly', 'pet-friendly'],
               answer: 'Yes! Rancho Moonrise is <strong>pet-friendly</strong>. Well-behaved dogs are welcome at designated sleeping sites. We love four-legged guests! Just let us know when booking.' },
-            { keywords: ['kid', 'child', 'children', 'family', 'family friendly', 'family-friendly', 'baby'],
+            { section: 'policy', keywords: ['kid', 'child', 'children', 'family', 'family friendly', 'family-friendly', 'baby'],
               answer: 'Absolutely — we are <strong>kid and family friendly</strong>! We have kid-friendly spaces to play and family safari tents that sleep 2 adults + 2 children. Everyone is welcome at the ranch.' },
-            { keywords: ['caterer', 'catering', 'food', 'bring own', 'vendor', 'byob', 'outside vendor'],
+            { section: 'policy', keywords: ['caterer', 'catering', 'food', 'bring own', 'vendor', 'byob', 'outside vendor'],
               answer: 'We work with both preferred vendors and outside vendors. For weddings and events, we can share our <strong>preferred vendor list</strong> and discuss catering policies during your consultation. <a href="/pages/contact.html?intent=wedding">Inquire for details &rarr;</a>' },
-            { keywords: ['cancel', 'cancellation', 'refund', 'policy', 'policies'],
+            { section: 'policy', keywords: ['cancel', 'cancellation', 'refund', 'policy', 'policies'],
               answer: 'For accommodation cancellation policies, check your booking confirmation. For wedding and event cancellation terms, these are outlined in your event contract. Questions? Call <a href="tel:+17372911260">737-291-1260</a> or see our <a href="/pages/policies.html">policies page</a>.' },
 
             // About & Misc
-            { keywords: ['about', 'who', 'owner', 'story', 'ranch', 'property', 'acre', 'acres'],
+            { section: 'info', keywords: ['about', 'who', 'owner', 'story', 'ranch', 'property', 'acre', 'acres'],
               answer: 'Rancho Moonrise is Austin\'s glamping and events ranch — <strong>36 acres</strong>, just 20 minutes from downtown Austin. We offer glamping, weddings, private events, and community gatherings with authentic Texas hospitality.' },
-            { keywords: ['social', 'instagram', 'facebook', 'tiktok', 'follow'],
+            { section: 'info', keywords: ['social', 'instagram', 'facebook', 'tiktok', 'follow'],
               answer: 'Follow us! <a href="https://www.instagram.com/rancho_moonrise/" target="_blank">Instagram</a> · <a href="https://www.facebook.com/RanchoMoonrise/" target="_blank">Facebook</a> · <a href="https://www.tiktok.com/@rancho_moonrise" target="_blank">TikTok</a> · <a href="https://www.linkedin.com/company/rancho-moonrise/" target="_blank">LinkedIn</a>' },
-            { keywords: ['review', 'rating', 'stars', 'google review', 'testimonial'],
+            { section: 'info', keywords: ['review', 'rating', 'stars', 'google review', 'testimonial'],
               answer: 'We\'re proud of our <strong>4.9-star rating across 125 Google Reviews</strong>! Our guests consistently highlight the beautiful property, amazing hospitality, and unique ranch experience.' },
-            { keywords: ['wifi', 'internet', 'wi-fi'],
+            { section: 'info', keywords: ['wifi', 'internet', 'wi-fi'],
               answer: 'Yes, WiFi is available on the property. It\'s great for staying connected, though we do encourage unplugging and enjoying the ranch experience!' },
-            { keywords: ['fire pit', 'firepit', 'campfire', 'bonfire', 's\'more'],
-              answer: '<strong>Fire pits are available throughout the property</strong> — perfect for s\'mores, stargazing, and Texas evenings. Firewood is available for purchase at The Lodge.' },
+            { section: 'info', keywords: ['fire pit', 'firepit', 'campfire', 'bonfire', 's\'more'],
+              answer: '<strong>Fire pits are available across the property</strong> — perfect for s\'mores, stargazing, and Texas evenings. Firewood is available for purchase at The Lodge.' },
         ];
 
         // Default / fallback
         var FALLBACK = 'I\'m not sure about that one — but our team can help! Call <a href="tel:+17372911260">737-291-1260</a> or <a href="/pages/contact.html">send us a message</a>. We respond within 2 hours.';
+
+        // ---- Query normalization ----
+        // Simple stemmer: strips plural/gerund/possessive suffixes so
+        // "weddings" → "wedding", "pricing" → "price", "booking" → "book".
+        // Keeps the rules short on purpose — a full Porter stemmer is
+        // overkill for a 25-entry KB.
+        function stem(word) {
+            if (word.length <= 3) return word;
+            if (word.slice(-3) === 'ies') return word.slice(0, -3) + 'y';  // "ceremonies" → "ceremony"
+            if (word.slice(-3) === 'ing') return word.slice(0, -3);        // "pricing" → "pric" (close enough)
+            if (word.slice(-2) === 'es') return word.slice(0, -2);         // "rates" → "rat"
+            if (word.slice(-2) === "'s") return word.slice(0, -2);
+            if (word.slice(-1) === 's') return word.slice(0, -1);          // "weddings" → "wedding"
+            return word;
+        }
+
+        function tokenize(q) {
+            return q.toLowerCase()
+                    .replace(/[?!.,;:'"()]/g, ' ')
+                    .split(/\s+/)
+                    .filter(Boolean)
+                    .map(stem);
+        }
+
+        // Gap-tolerant ordered subsequence match: does `needleTokens` appear
+        // inside `haystackTokens` in order, possibly with other words between?
+        // So ["how", "much", "wedding"] matches "how much is a wedding" but
+        // NOT "wedding is how much" (order matters).
+        function orderedSubsequence(needleTokens, haystackTokens) {
+            var ni = 0;
+            for (var hi = 0; hi < haystackTokens.length && ni < needleTokens.length; hi++) {
+                if (haystackTokens[hi] === needleTokens[ni]) ni++;
+            }
+            return ni === needleTokens.length;
+        }
+
+        // Tag → sections the user is dominantly asking about.
+        // `wedding` wins over `price` when both are present because "how much
+        // are weddings" is a wedding question, not a room-rate question.
+        //
+        // TODO(adam): fill in the override rules below. This is the one
+        // design choice I want your call on because it shapes the bot's
+        // personality. See the chat for trade-offs.
+        //
+        // Contract:
+        //   Input:  queryTokens (array of stemmed lowercase words)
+        //   Return: one of:
+        //     null          — no override, score every entry normally
+        //     'wedding'     — only consider entries with section === 'wedding'
+        //     'stay'        — only consider section === 'stay'
+        //     'event'       — only consider section === 'event'
+        //     'pool'        — only consider section === 'pool'
+        //
+        // Suggested starting logic (uncomment + edit to taste):
+        //
+        //   var has = function (w) { return queryTokens.indexOf(w) > -1; };
+        //   var priceWord = has('price') || has('cost') || has('rate')
+        //                || has('pricing') || has('budget')
+        //                || (has('how') && has('much'));
+        //
+        //   // Wedding wins: if any wedding word appears AND a price word
+        //   // appears, force the wedding-pricing answer — don't fall back
+        //   // to generic room rates.
+        //   if (priceWord && (has('wedding') || has('bride') || has('groom')
+        //                  || has('ceremony') || has('reception'))) {
+        //       return 'wedding';
+        //   }
+        //
+        //   // Event pricing same logic
+        //   if (priceWord && (has('event') || has('corporate') || has('retreat')
+        //                  || has('party') || has('conference'))) {
+        //       return 'event';
+        //   }
+        //
+        //   return null;
+        //
+        // Questions to answer before you write it:
+        //   1. Should "can dogs come to weddings?" override to 'wedding'
+        //      (force a wedding answer) or return null (let the pet policy
+        //      win)? I'd argue null — answer the actual question asked.
+        //   2. If the query has "wedding" but no price/event word, should
+        //      we still override? Probably not — the generic scorer will
+        //      pick the right wedding entry anyway with the stemming fix.
+        //   3. Does "elope" / "elopement" count as a wedding trigger?
+        //      (I've added them to the wedding KB's keyword list already.)
+        function topicOverride(queryTokens) {
+            var has = function (w) { return queryTokens.indexOf(w) > -1; };
+            var hasAny = function (words) {
+                for (var i = 0; i < words.length; i++) {
+                    if (has(words[i])) return true;
+                }
+                return false;
+            };
+
+            var priceWord = hasAny(['price', 'cost', 'rate', 'pricing', 'budget', 'quote']) || (has('how') && has('much'));
+            var weddingWord = hasAny(WEDDING_TRIGGERS);
+            var eventWord = hasAny(['event', 'corporate', 'retreat', 'birthday', 'party', 'conference', 'festival', 'host']);
+            var stayWord = hasAny(['stay', 'cabin', 'tent', 'glamping', 'overnight', 'accommodation', 'book', 'reservation', 'availability']);
+            var poolWord = hasAny(['pool', 'swim', 'resort', 'day']) && hasAny(['pass', 'pool', 'swim']);
+
+            if (priceWord && weddingWord) return 'wedding';
+            if (priceWord && eventWord) return 'event';
+            if ((has('tour') || has('venue')) && weddingWord) return 'wedding';
+            if ((has('package') || has('packages')) && weddingWord) return 'wedding';
+            if ((has('package') || has('packages')) && eventWord) return 'event';
+            if (poolWord) return 'pool';
+            if (stayWord && !weddingWord && !eventWord) return 'stay';
+            return null;
+        }
+
+        var WEDDING_TRIGGERS = ['wedding', 'bride', 'groom', 'ceremony', 'reception', 'elope', 'elopement', 'marry', 'engaged', 'engagement'];
 
         var GREETING = 'Hey there! 👋 I\'m the Rancho Moonrise virtual concierge. Ask me anything about weddings, events, accommodations, pool passes, or the ranch — I\'m here to help!';
 
@@ -387,27 +572,55 @@
         ];
 
         function findAnswer(query) {
-            var q = query.toLowerCase().replace(/[?!.,]/g, '');
-            var words = q.split(/\s+/);
+            var queryTokens = tokenize(query);
+            if (queryTokens.length === 0) return FALLBACK;
+
+            // Topic-override decides whether to restrict scoring to one
+            // section — this is what stops "how much are weddings?" from
+            // falling into the generic room-rate bucket.
+            var forcedSection = topicOverride(queryTokens);
+
             var bestMatch = null;
             var bestScore = 0;
 
             for (var i = 0; i < KB.length; i++) {
+                var entry = KB[i];
+
+                // Hard filter: if topicOverride returned a section, ignore
+                // every entry that isn't in that section.
+                if (forcedSection && entry.section !== forcedSection) continue;
+
                 var score = 0;
-                for (var j = 0; j < KB[i].keywords.length; j++) {
-                    var kw = KB[i].keywords[j];
-                    // Check for multi-word keyword match
+                for (var j = 0; j < entry.keywords.length; j++) {
+                    var kw = entry.keywords[j];
+
                     if (kw.indexOf(' ') > -1) {
-                        if (q.indexOf(kw) > -1) score += 3;
+                        // Multi-word key — gap-tolerant ordered match.
+                        // Each matched multi-word phrase scores 4 (was 3)
+                        // so that a specific phrase beats two generic words.
+                        var kwTokens = tokenize(kw);
+                        if (orderedSubsequence(kwTokens, queryTokens)) score += 4;
                     } else {
-                        for (var w = 0; w < words.length; w++) {
-                            if (words[w] === kw || words[w].indexOf(kw) === 0) score += 2;
+                        // Single-word key — exact stem match, 2 points each.
+                        var kwStem = stem(kw);
+                        for (var w = 0; w < queryTokens.length; w++) {
+                            if (queryTokens[w] === kwStem) { score += 2; break; }
                         }
                     }
                 }
+
+                // Section affinity bonus: if the query mentions a wedding
+                // trigger word, nudge wedding entries up by 1 point so
+                // they break ties against generic entries.
+                if (entry.section === 'wedding') {
+                    for (var t = 0; t < WEDDING_TRIGGERS.length; t++) {
+                        if (queryTokens.indexOf(WEDDING_TRIGGERS[t]) > -1) { score += 1; break; }
+                    }
+                }
+
                 if (score > bestScore) {
                     bestScore = score;
-                    bestMatch = KB[i];
+                    bestMatch = entry;
                 }
             }
 
