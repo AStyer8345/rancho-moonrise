@@ -2659,7 +2659,6 @@ p { margin-bottom: 1em; }
     overflow: hidden;
     border-radius: 8px;
     background: var(--color-cream, #F2E9DB);
-    border: 1px dashed rgba(182, 96, 63, 0.4);
     display: flex;
     align-items: center;
     justify-content: center;
