@@ -102,6 +102,9 @@ All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms. Li
 - [x] Add BreadcrumbList + SpeakableSpecification schema (S4) — BreadcrumbList DONE 2026-04-09, SpeakableSpecification: homepage DONE 2026-04-10, accommodations + weddings + host-your-event DONE 2026-04-11
 - [x] Add Review/AggregateRating schema to homepage (done, count corrected to 125 on 2026-04-10)
 - [x] Blog post #7 — "Best Weekend Getaways Near Austin Texas" — DONE 2026-04-11
+- [x] faqs.html SpeakableSpecification schema — DONE 2026-04-12
+- [x] S3 topical authority cluster pass — blog cross-links added to 6 landing pages — DONE 2026-04-12
+- [x] Blog post #8 — "Austin Pool Day Pass Guide" — DONE 2026-04-12
 
 ## Next (after DNS cutover)
 - [ ] Google Search Console setup + sitemap submission (S6)

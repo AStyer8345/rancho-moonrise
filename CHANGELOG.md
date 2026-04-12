@@ -1,5 +1,12 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-12 — Daily SEO Run: SpeakableSpecification (FAQs), S3 Internal Linking, Blog #8
+- **SpeakableSpecification added to `faqs.html`.** WebPage schema targeting `.faq-question` and `.faq-answer__inner p` — tells AI engines to extract FAQ answers for direct-answer results.
+- **S3 topical authority cluster pass.** Added "Related Reading" blog cross-link sections to 6 pages that were missing them: `glamping-near-austin-texas.html`, `bachelorette-party-austin-texas.html`, `ranch-wedding-texas.html`, `wedding-venues-near-austin.html`, `corporate-retreat-near-austin.html`, `things-to-do-manor-tx.html`. Each gets 3–4 contextually relevant blog cross-links. Hub-and-spoke clusters now wired: glamping, wedding, events/corporate.
+- **Blog post #8 published: `pool-day-pass-austin.html`.** Targets "pool day pass Austin", "Austin pool day pass", "day pass pool Austin Texas", "resort pool access Austin". ~1,100 words, AEO Q&A block, ResortPass booking CTA, cross-links to accommodations/events/glamping guide/weekend-getaways. Mobile CTA routes to ResortPass (not Cloudbeds) since primary conversion is the day pass.
+- **`blog.html` updated.** ItemList schema position 8 added. Post #8 card added to blog grid with pool image.
+- **`sitemap.xml` updated.** `/blog/pool-day-pass-austin/` added (priority 0.8, monthly). Homepage and `/blog/` lastmod bumped to 2026-04-12.
+
 ## 2026-04-11 — Color Revert: Restore Orange Header + Cream Backgrounds
 - **Reverted Codex's dark-brown restyle in `site/css/styles.css` while preserving the functional audit fixes.** Adam reviewed commit `4ca2778` ("fix(site): improve audit findings and mobile UX") and rejected the visual half — the nav had been swapped from terracotta orange to near-black, section backgrounds from cream to dark brown, page headers from cream to dark brown gradient, mobile menu from white to dark brown, hero added a glass card overlay, event cards wrapped in linear-gradient+shadow. Brand identity was lost.
 - **Root CSS variables restored.** `--color-bg: #f3eadc → #F2E9DB` (exact White Denim brand-guide hex), `--color-bg-alt: #e8ddcb → #ebe3d5`, `--color-bg-card: #fbf6ee → #faf7f2`, `--color-surface: #efe4d3 → #f0ead9`, `--color-heading: #231b18 → #2a2520`, `--color-footer-bg: #16110f → #1e1b16`.
