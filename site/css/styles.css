@@ -1323,20 +1323,23 @@ p { margin-bottom: 1em; }
 .page-header--hero {
     position: relative;
     overflow: hidden;
+    color: var(--color-cream);
 }
+.page-header--hero h1 { color: var(--color-white); }
+.page-header--hero p { color: rgba(255, 255, 255, 0.85); }
+.page-header--hero .section-label { color: var(--color-orange-light); }
 .page-header--hero .page-header__bg {
     position: absolute;
     inset: 0;
     background-size: cover;
     background-position: center;
-    opacity: 0.26;
     z-index: 0;
 }
 .page-header--hero::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(182, 96, 63, 0.15), rgba(182, 96, 63, 0.30));
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.45));
     z-index: 0;
 }
 .page-header--hero .container {
