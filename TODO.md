@@ -1,5 +1,26 @@
 # Rancho Moonrise — TODO
-Last updated: 2026-04-10 (Responsive image pipeline shipped — Option C: WebP ladder + srcset sweep)
+Last updated: 2026-04-11 (Color revert — restored orange header + cream backgrounds after Codex audit commit)
+
+## ✅ DONE 2026-04-11 — Color revert on Codex audit commit
+
+Adam rejected the visual half of commit `4ca2778` ("fix(site): improve audit findings and mobile UX"). Codex had swapped the nav from terracotta orange to near-black, repainted `.section--dark` and every `.page-header` from cream `--color-bg-alt` to a dark brown gradient, turned the mobile menu dark, wrapped the hero copy in a glass card, and restyled event cards / events toggle / mobile CTA with gradients and heavy shadows. All color/visual changes were surgically reverted inside `site/css/styles.css` — NO `git revert` — so the real bug fixes underneath stay in place.
+
+**Restored to pre-4ca2778 state:** `--color-bg #F2E9DB`, `--color-bg-alt #ebe3d5`, `--color-bg-card #faf7f2`, `--color-heading #2a2520`, `--color-footer-bg #1e1b16`, body background to noise SVG only, `.section--dark` to `background: var(--color-bg-alt)`, `.nav` to `rgba(182, 96, 63, 0.78)` terracotta, `.nav--scrolled` to `rgba(182, 96, 63, 0.92)`, `.nav__logo-img` to solid white plate, nav "Book Now" button to white with terracotta text, mobile menu to white, hero `align-items: center` with no glass card panel, hero overlay back to stock `rgba(0,0,0,0.10/0.20/0.50)`, `.page-header` to `background: var(--color-bg-alt)`, `.page-header--hero::before` opacity `0.26 → 0.15` (dropped the extra `::after` darkener), events view toggle to cream, event cards to `--color-bg-card`, events calendar grid + cells + events to original flat styling, event popup to white, mobile CTA to flat terracotta, footer dropped the inset shadow.
+
+**Preserved from Codex's commit** (real bug fixes, not visual):
+- Mobile hero sizing clamps in `@media (max-width: 480px)` — `.hero__title { font-size: clamp(1.45rem, 6.2vw, 2.05rem); max-width: 11ch }`, `.hero__content { width: calc(100vw - 24px); margin: 0 12px 84px; padding: 22px 16px 24px }` — this was a genuine mobile-layout bug fix.
+- `text-wrap: balance` on `.hero__title`, `max-width: 34rem` on `.hero__subtitle`.
+- `.form-status` utility class.
+- `topicOverride()` fix in `site/js/main.js` — concierge no longer misroutes wedding/event pricing questions.
+- Inquiry/contact form `mailto:events@ranchomoonrise.com` fallback (replaces dead `action="#"`).
+- `site/pages/accessibility.html` (new page — fixes broken footer link).
+- Favicon and OG image reference fixes across pages.
+
+**Verified locally** via preview at `http://localhost:8080`:
+- Homepage: orange terracotta nav strip, white logo plate, hero has no glass card overlay, cream body background.
+- Events page: cream page header with dark text, cream event cards with subtle borders, cream events view toggle with flat-orange active state.
+
+**Still NEEDS ADAM on inquiry forms** — the mailto fallback is a safety net, not a backend. A real handler (Formspree / Netlify Forms / Vercel serverless → email + Salesforce `create_lead`) is still the right answer and should land on the DNS cutover checklist. Same item already tracked under "Wedding inquiry form backend" below.
 
 ## ✅ DONE 2026-04-10 — Responsive image pipeline (Option C)
 
