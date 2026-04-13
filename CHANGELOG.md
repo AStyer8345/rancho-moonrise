@@ -1,5 +1,18 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-13 — Weekly Competitive Intelligence Run
+
+- **SERP research completed** across 14 keyword clusters (glamping, wedding, corporate retreat, pool day pass, things to do, weekend getaway).
+- **4 new Austin glamping competitors identified** since April 6 baseline: Udoscape (Lago Vista eco-pods), Camposanto ATX (Lake Travis yurts), Cameron Ranch Glamping (Lake Bastrop mirror houses), Safari for the Soul (riverfront safari tents, Spicewood/Marble Falls).
+- **Lucky Arrow Retreat threat elevated:** Added safari tents as new accommodation type; confirmed on ResortPass for "pool day pass austin" — only non-hotel glamping retreat in that SERP.
+- **competitive-intelligence.md replaced** with full April 13 report: SERP table (14 keywords), competitor highlights, content gap analysis, quick wins, recommendations.
+- **Intel tab card inserted** into `site/improvement-plan.html` above the April 6 baseline card.
+- **TODO.md updated** with 3 quick wins: `/safari-tents-near-austin/` landing page (Claude), Glamping Hub submission (Adam), ResortPass onboarding (Adam).
+- **CONTEXT.md updated:** What's Next section adds safari tent page as urgent item.
+
+## 2026-04-13 — rancho-apply-done: No changes
+- rancho-apply-done reconciliation: 0 tasks newly moved to Done tab. All 3 resolved tasks already in Done tab (#4, #6, #10). `test-smoke-live` skipped (no matching task div). Total task cards: 35.
+
 ## 2026-04-12 — Daily SEO Run: SpeakableSpecification (FAQs), S3 Internal Linking, Blog #8
 - **SpeakableSpecification added to `faqs.html`.** WebPage schema targeting `.faq-question` and `.faq-answer__inner p` — tells AI engines to extract FAQ answers for direct-answer results.
 - **S3 topical authority cluster pass.** Added "Related Reading" blog cross-link sections to 6 pages that were missing them: `glamping-near-austin-texas.html`, `bachelorette-party-austin-texas.html`, `ranch-wedding-texas.html`, `wedding-venues-near-austin.html`, `corporate-retreat-near-austin.html`, `things-to-do-manor-tx.html`. Each gets 3–4 contextually relevant blog cross-links. Hub-and-spoke clusters now wired: glamping, wedding, events/corporate.

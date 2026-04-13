@@ -105,6 +105,11 @@ All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms. Li
 - [x] faqs.html SpeakableSpecification schema — DONE 2026-04-12
 - [x] S3 topical authority cluster pass — blog cross-links added to 6 landing pages — DONE 2026-04-12
 - [x] Blog post #8 — "Austin Pool Day Pass Guide" — DONE 2026-04-12
+- [ ] Build `/safari-tents-near-austin/` landing page — "safari tent austin" keyword urgency elevated (Safari for the Soul now owns brand-keyword; Lucky Arrow added safari tents). AEO block, accommodation specs, JSON-LD, BreadcrumbList, cross-link from accommodations + glamping blog post. Ship before DNS cutover.
+
+### NEEDS ADAM — Competitive intel quick wins (from 2026-04-13 intel run)
+- [ ] Submit Glamping Hub listing — free, 15 min at glampinghub.com/list-your-property. Three new competitors gained discovery this week while Rancho Moonrise stays absent.
+- [ ] Get on ResortPass — Lucky Arrow is the only glamping retreat in Austin on ResortPass; Rancho Moonrise pool is a stronger day-use story than most downtown hotels. Contact resortpass.com/list-property.
 
 ## Next (after DNS cutover)
 - [ ] Google Search Console setup + sitemap submission (S6)
