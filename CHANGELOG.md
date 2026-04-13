@@ -1,5 +1,14 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-13 — Daily SEO Run: Safari Tents Landing Page + Cross-Links
+
+- **`/safari-tents-near-austin/` landing page built and published** (`site/pages/safari-tents-near-austin.html`). Targets "safari tents near Austin", "safari tent Austin TX" — keyword urgency elevated after Safari for the Soul claimed "safari tent austin" brand-keyword and Lucky Arrow added safari tents April 2026. Page includes: AEO direct-answer block (SpeakableSpecification pointing to `.aeo-block`), LodgingBusiness + BreadcrumbList JSON-LD, three tent-type cards (Premium/Double/Family), `.split--reverse` What's Included section (mobile-safe), social proof section, hero with `fetchpriority="high"` image, mobile sticky CTA.
+- **`sitemap.xml` updated.** `/safari-tents-near-austin/` added at priority 0.9 (above blog posts — core accommodation page), lastmod 2026-04-13.
+- **`blog.html` updated.** ItemList schema position 9 added. Post #9 card added to blog grid (April 13, 2026).
+- **Cross-links added:**
+  - `glamping-near-austin-texas.html` Related Reading → "Safari Tents Near Austin, Texas — What to Expect"
+  - `accommodations.html` Safari Tents card → "Learn More About Safari Tents" secondary CTA button
+
 ## 2026-04-13 — Weekly Competitive Intelligence Run
 
 - **SERP research completed** across 14 keyword clusters (glamping, wedding, corporate retreat, pool day pass, things to do, weekend getaway).
