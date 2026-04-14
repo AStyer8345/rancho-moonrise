@@ -30,29 +30,19 @@
     [{
         "@context": "https://schema.org",
         "@type": "Event",
-        "name": "Lone Star Party",
-        "startDate": "2026-04-11T17:00:00-05:00",
-        "endDate": "2026-04-11T22:00:00-05:00",
+        "name": "Free Friday at the Pool",
+        "startDate": "2026-04-24T10:00:00-05:00",
+        "endDate": "2026-04-24T18:00:00-05:00",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
         "location": {
             "@type": "Place",
             "name": "Rancho Moonrise",
             "address": {"@type": "PostalAddress", "streetAddress": "20117 Lockwood Road", "addressLocality": "Manor", "addressRegion": "TX", "postalCode": "78653"}
         },
-        "description": "Live music by Chasen Wayne, crawfish by East Side Boilers, cold drinks, and pop-up experiences.",
-        "organizer": {"@type": "Organization", "name": "Rancho Moonrise", "url": "https://ranchomoonrise.com"}
-    },
-    {
-        "@context": "https://schema.org",
-        "@type": "Event",
-        "name": "Bridal Sip & See — Venue Tours",
-        "startDate": "2026-04-12T12:00:00-05:00",
-        "endDate": "2026-04-12T16:00:00-05:00",
-        "location": {
-            "@type": "Place",
-            "name": "Rancho Moonrise",
-            "address": {"@type": "PostalAddress", "streetAddress": "20117 Lockwood Road", "addressLocality": "Manor", "addressRegion": "TX", "postalCode": "78653"}
-        },
-        "description": "Mimosa service with property tours including cabins and tents. Wedding package discounts available."
+        "description": "Last Friday of the month — free pool access with advanced RSVP. No outside beverages.",
+        "organizer": {"@type": "Organization", "name": "Rancho Moonrise", "url": "https://ranchomoonrise.com"},
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock"}
     },
     {
         "@context": "https://schema.org",
@@ -60,13 +50,62 @@
         "name": "Yoga & Bottomless Mimosas",
         "startDate": "2026-04-26T10:30:00-05:00",
         "endDate": "2026-04-26T14:00:00-05:00",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
         "location": {
             "@type": "Place",
             "name": "Rancho Moonrise",
             "address": {"@type": "PostalAddress", "streetAddress": "20117 Lockwood Road", "addressLocality": "Manor", "addressRegion": "TX", "postalCode": "78653"}
         },
-        "description": "Vinyasa yoga class under the Texas sky followed by bottomless mimosas poolside."
+        "description": "Vinyasa yoga class under the wide Texas sky followed by bottomless mimosas poolside. Monthly series.",
+        "organizer": {"@type": "Organization", "name": "Rancho Moonrise", "url": "https://ranchomoonrise.com"}
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "Rancho Rodeo: Sun Series",
+        "startDate": "2026-05-02T14:00:00-05:00",
+        "endDate": "2026-05-02T23:00:00-05:00",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "location": {
+            "@type": "Place",
+            "name": "Rancho Moonrise",
+            "address": {"@type": "PostalAddress", "streetAddress": "20117 Lockwood Road", "addressLocality": "Manor", "addressRegion": "TX", "postalCode": "78653"}
+        },
+        "description": "Monthly honky-tonk party with pool activities, live music, and the best vibes in the Austin area.",
+        "organizer": {"@type": "Organization", "name": "Rancho Moonrise", "url": "https://ranchomoonrise.com"}
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "Mother's Day Retreat",
+        "startDate": "2026-05-10T10:00:00-05:00",
+        "endDate": "2026-05-10T15:00:00-05:00",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "location": {
+            "@type": "Place",
+            "name": "Rancho Moonrise",
+            "address": {"@type": "PostalAddress", "streetAddress": "20117 Lockwood Road", "addressLocality": "Manor", "addressRegion": "TX", "postalCode": "78653"}
+        },
+        "description": "A wellness experience for Mom — featuring rest, beauty services, and social connection on the ranch.",
+        "organizer": {"@type": "Organization", "name": "Rancho Moonrise", "url": "https://ranchomoonrise.com"}
     }]
+    </script>
+
+    <!-- Schema: SpeakableSpecification — targets AEO answer blocks for AI engines -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "RM Events — Live Music, Yoga & Ranch Events Near Austin TX | Rancho Moonrise",
+        "url": "https://ranchomoonrise.com/events/",
+        "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": [".page-header h1", ".page-header p", ".aeo-block h2", ".aeo-block p"]
+        }
+    }
     </script>
 
     <!-- Schema: BreadcrumbList -->
@@ -148,6 +187,15 @@
         <p>Live music, yoga, crawfish boils, wellness retreats, and seasonal celebrations — all on the ranch.</p>
     </div>
 </header>
+
+<!-- AEO Direct-Answer Block -->
+<section class="section aeo-block" aria-label="What events happen at Rancho Moonrise">
+    <div class="container container--narrow">
+        <h2>What Kinds of Events Happen at Rancho Moonrise Near Austin?</h2>
+        <p>Rancho Moonrise hosts public ranch events year-round on its 36-acre property 20 minutes from downtown Austin, TX. The regular lineup includes live music nights, yoga and bottomless mimosas poolside, crawfish boils, monthly honky-tonk parties (the Rancho Rodeo Sun Series), seasonal dinner parties under the stars, and holiday celebrations. Events are open to the public — you don't need to be a ranch guest to attend, but booking a cabin or safari tent turns any event into a full ranch weekend.</p>
+        <p>In addition to the public event calendar, Rancho Moonrise is available for private events including weddings (up to 200 guests), corporate retreats, bachelorette parties, and milestone celebrations. Private events have exclusive full-ranch access with no overlap with public programming.</p>
+    </div>
+</section>
 
 <!-- View Toggle -->
 <section class="section" style="padding-top: var(--space-lg); padding-bottom: 0;" aria-label="Event view options">
@@ -432,6 +480,22 @@
     <p class="calendar-event-detail__desc" id="eventDetailDesc"></p>
     <a class="calendar-event-detail__link" id="eventDetailLink" target="_blank" rel="noopener"></a>
 </div>
+
+<!-- Blog Cross-Links -->
+<section class="section" aria-label="Related articles">
+    <div class="container container--narrow">
+        <div class="blog-related">
+            <h3>Related Reading</h3>
+            <ul>
+                <li><a href="/pages/things-to-do-manor-tx.html">Things to Do Near Austin, TX</a></li>
+                <li><a href="/pages/weekend-getaways-near-austin.html">Best Weekend Getaways Near Austin, Texas</a></li>
+                <li><a href="/pages/glamping-near-austin-texas.html">Glamping Near Austin, Texas — What to Know</a></li>
+                <li><a href="/pages/pool-day-pass-austin.html">Austin Pool Day Pass Guide</a></li>
+                <li><a href="/pages/blog.html">More from the Rancho Moonrise Blog</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
 
 <!-- Stay + Attend CTA -->
 <section class="cta-banner" aria-label="Stay and attend events">
