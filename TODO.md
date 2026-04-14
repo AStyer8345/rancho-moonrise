@@ -75,6 +75,12 @@ All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms. Li
 
 ## Now (this week — April 9-15)
 
+### CLAUDE (next task to build) — Re-verify gate for Rancho
+- [ ] **Create `rancho-review-monitor` scheduled task** — mirror `acr-review-monitor` pattern, own Rancho GBP review-reply state as a live claim. Use the shared gate at `/Users/adamstyer/Documents/client-ops/templates/re-verify-before-report.md`. Verification path: public GBP page scrape or Places API `place.reviews[].reply` presence. First-run responsibility: re-verify every live-claim finding currently in CONTEXT.md Active Blockers + improvement-plan.html Plan-tab task cards, auto-resolve stale ones into `rancho-done-log.md`. Expected ~30 min fork of acr SKILL.md.
+- [ ] **Add Re-Verify Gate to `rancho-site-daily` SKILL** — same runbook, for SERP/indexing claims it currently surfaces without re-checking.
+- [ ] **Add Re-Verify Gate to `rancho-competitive-weekly` SKILL** — same runbook, for competitor-state claims.
+
+
 ### NEEDS ADAM — GBP work (newly unblocked, he has Manager access)
 - [ ] Reply to all 9 unreplied Google reviews — Claude drafts, Adam pastes (Task 1 — DRAFT→POST)
 - [ ] Replace blog post in GBP "From the owner" with real business description — Claude drafts, Adam pastes (Task 2 — CRITICAL — DRAFT→POST)
