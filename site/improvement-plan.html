@@ -287,6 +287,38 @@
     border-color: #31735A;
     color: #7DB87D;
   }
+
+  /* Copy-prompt button (ported from briefing.html) */
+  .copy-prompt-btn {
+    position: absolute;
+    top: 0.85rem;
+    right: 6.25rem; /* left of mark-done-btn */
+    background: #0D0D0D;
+    border: 1px solid #3d3426;
+    color: #C9A84C;
+    padding: 0.28rem 0.65rem;
+    font-family: inherit;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+  }
+  .copy-prompt-btn:hover {
+    background: #2a230e;
+    border-color: #5d4f29;
+    color: #e8c870;
+  }
+  .copy-prompt-btn.copied {
+    background: #1b2e1b;
+    border-color: #2d5a2d;
+    color: #7fd07f;
+  }
+  .task[data-item-id].completed .copy-prompt-btn { display: none; }
+  #done-tasks-container .task[data-item-id] .copy-prompt-btn { display: none; }
   .tag-done {
     background: #1A2A1A;
     color: #7DB87D;
@@ -645,6 +677,21 @@
     background: #F4ECD8;
     color: #6B4017;
     border-color: #8B5A2B;
+  }
+  [data-theme="light"] .copy-prompt-btn {
+    background: #FFFDF6;
+    border-color: #E0C880;
+    color: #8B6914;
+  }
+  [data-theme="light"] .copy-prompt-btn:hover {
+    background: #F5EAD0;
+    border-color: #C9A84C;
+    color: #6B5010;
+  }
+  [data-theme="light"] .copy-prompt-btn.copied {
+    background: #E8F5E8;
+    border-color: #7FB57F;
+    color: #2D5A2D;
   }
   [data-theme="light"] .task[data-item-id].completed .mark-done-btn {
     background: #E2EFE2;
@@ -1958,6 +2005,100 @@ function moveTaskToDone(task) {
   container.insertBefore(task, container.firstChild);
 }
 
+// ─── Copy-prompt button (ported from briefing.html, adapted for plan tasks) ───
+// Single button; the generated prompt tells Claude to append either RESOLVED
+// (full done) or PROGRESS {pct}% (partial) to rancho-done-log.md based on what
+// actually got done. Same pattern the rancho-site-daily task already uses.
+
+const DONE_LOG_PATH = '/Users/adamstyer/Documents/rancho-moonrise/rancho-done-log.md';
+const REPO_PATH     = '/Users/adamstyer/Documents/rancho-moonrise';
+
+async function copyToClipboard(text) {
+  if (navigator.clipboard && window.isSecureContext) {
+    await navigator.clipboard.writeText(text);
+    return;
+  }
+  const ta = document.createElement('textarea');
+  ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+  document.body.appendChild(ta); ta.select();
+  try { document.execCommand('copy'); } finally { document.body.removeChild(ta); }
+}
+
+function buildPromptForPlanTask(task) {
+  const id     = task.dataset.itemId;
+  const title  = task.dataset.itemTitle || (task.querySelector('.task-title')?.textContent || '').trim();
+  const system = task.dataset.itemSystem || 'rancho-plan';
+  const desc   = (task.querySelector('.task-desc')?.innerText || '').trim();
+  const impact = (task.querySelector('.task-impact')?.innerText || '').trim();
+  const checklist = Array.from(task.querySelectorAll('.checklist li'))
+    .map(li => '- ' + li.innerText.trim().replace(/\s+/g, ' '))
+    .join('\n');
+  const stamp = new Date().toISOString().slice(0, 16).replace('T', ' ');
+
+  return [
+    `# Improvement plan — ${title}`,
+    ``,
+    `Task ID: \`${id}\``,
+    `System: \`${system}\``,
+    `Repo: ${REPO_PATH}`,
+    `Done log: ${DONE_LOG_PATH}`,
+    ``,
+    `## Context`,
+    desc,
+    impact ? `\n${impact}` : '',
+    checklist ? `\n### Checklist\n${checklist}` : '',
+    ``,
+    `## Your task`,
+    `1. Read ${REPO_PATH}/CONTEXT.md and ${REPO_PATH}/GOALS.md before starting. If this task conflicts with active goals, stop and log it to TODO.md under NEEDS ADAM.`,
+    `2. Do the work. If the checklist above has specific items, work through them in order.`,
+    `3. Append ONE line to ${DONE_LOG_PATH} based on how far you got:`,
+    `   - If you fully completed the task, append:`,
+    `     \`[${stamp}] [${system}] ${id} — RESOLVED | <one-line summary of what you did>\``,
+    `   - If you made progress but couldn't finish (blocker, needs Adam's approval, needs Ashley, etc.), append:`,
+    `     \`[${stamp}] [${system}] ${id} — PROGRESS <pct>% | <what you did and what's left>\``,
+    `     Use your best-estimate percentage. Later PROGRESS lines for the same id overwrite earlier ones.`,
+    `4. Commit in the repo:`,
+    `   \`cd ${REPO_PATH} && git add -A && git commit -m "plan: ${id} — <summary>" && git push\``,
+    `5. Report back: what you did, what files changed, and any blockers. If you wrote PROGRESS, explain what needs to happen to get to RESOLVED.`,
+    ``,
+    `Only append RESOLVED if the task is genuinely complete — "drafted but not approved" is PROGRESS, not RESOLVED.`,
+  ].filter(Boolean).join('\n');
+}
+
+function injectCopyPromptButtons() {
+  const tasks = document.querySelectorAll('.task[data-item-id]');
+  tasks.forEach(task => {
+    if (task.querySelector('.copy-prompt-btn')) return;
+    if (task.classList.contains('completed')) return;
+    if (task.closest('#done-tasks-container')) return;
+
+    const btn = document.createElement('button');
+    btn.className = 'copy-prompt-btn';
+    btn.type = 'button';
+    btn.title = 'Copy a Claude Code prompt that does this task and appends RESOLVED or PROGRESS to the done-log';
+    btn.textContent = 'Copy prompt';
+
+    btn.addEventListener('click', async (ev) => {
+      ev.stopPropagation();
+      const prompt = buildPromptForPlanTask(task);
+      try {
+        await copyToClipboard(prompt);
+        btn.classList.add('copied');
+        btn.textContent = '✓ Copied';
+        showToast('Prompt copied — paste into Claude Code');
+        setTimeout(() => {
+          btn.classList.remove('copied');
+          btn.textContent = 'Copy prompt';
+        }, 2500);
+      } catch (err) {
+        showToast('Clipboard blocked: ' + (err.message || String(err)), true);
+      }
+    });
+
+    task.appendChild(btn);
+  });
+}
+
 function injectMarkDoneButtons() {
   const tasks = document.querySelectorAll('.task[data-item-id]');
   tasks.forEach(task => {
@@ -2105,6 +2246,7 @@ function initThemeToggle() {
 document.addEventListener('DOMContentLoaded', () => {
   initThemeToggle();
   updateGearState();
+  injectCopyPromptButtons();
   injectMarkDoneButtons();
   injectTaskNotes();
   upgradeChecklists();
