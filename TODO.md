@@ -97,15 +97,17 @@ All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms. Li
 
 ### CLAUDE (autonomous — scheduled task handles these)
 - [x] Split blog posts into individual pages with URLs (S1) — already done previously
-- [x] Add answer-first H2 summaries / AEO blocks to key pages (S2) — accommodations DONE (prior run), weddings DONE 2026-04-11, host-your-event DONE 2026-04-11
-- [ ] Build topical authority clusters with internal linking (S3) — blog cross-links in place; deeper hub-and-spoke pass still pending
-- [x] Add BreadcrumbList + SpeakableSpecification schema (S4) — BreadcrumbList DONE 2026-04-09, SpeakableSpecification: homepage DONE 2026-04-10, accommodations + weddings + host-your-event DONE 2026-04-11
+- [x] Add answer-first H2 summaries / AEO blocks to key pages (S2) — accommodations DONE (prior run), weddings DONE 2026-04-11, host-your-event DONE 2026-04-11, events DONE 2026-04-14
+- [x] Build topical authority clusters with internal linking (S3) — blog cross-links on 6 landing pages DONE 2026-04-12; weddings → wedding blog posts DONE 2026-04-14; events → related content DONE 2026-04-14; glamping guide updated 2026-04-14
+- [x] Add BreadcrumbList + SpeakableSpecification schema (S4) — BreadcrumbList DONE 2026-04-09, SpeakableSpecification: homepage DONE 2026-04-10, accommodations + weddings + host-your-event DONE 2026-04-11, faqs DONE 2026-04-12, events DONE 2026-04-14
 - [x] Add Review/AggregateRating schema to homepage (done, count corrected to 125 on 2026-04-10)
 - [x] Blog post #7 — "Best Weekend Getaways Near Austin Texas" — DONE 2026-04-11
 - [x] faqs.html SpeakableSpecification schema — DONE 2026-04-12
 - [x] S3 topical authority cluster pass — blog cross-links added to 6 landing pages — DONE 2026-04-12
 - [x] Blog post #8 — "Austin Pool Day Pass Guide" — DONE 2026-04-12
-- [x] Build `/safari-tents-near-austin/` landing page — DONE 2026-04-13. AEO block, LodgingBusiness + BreadcrumbList + SpeakableSpecification JSON-LD, three tent-type cards, `.split--reverse` amenities section, cross-links from accommodations + glamping guide, sitemap at priority 0.9.
+- [x] Build `/safari-tents-near-austin/` landing page — DONE 2026-04-13
+- [x] Blog post #10 — "Glamping vs Camping: What's the Difference?" — DONE 2026-04-14. AEO block, FAQPage schema (4 Q&A), SpeakableSpecification, BlogPosting schema, FAQ accordion.
+- [ ] Blog post #11 candidates: "What to Do Near Austin With Kids", "Corporate Retreat Planning Guide Texas"
 
 ### NEEDS ADAM — Competitive intel quick wins (from 2026-04-13 intel run)
 - [ ] Submit Glamping Hub listing — free, 15 min at glampinghub.com/list-your-property. Three new competitors gained discovery this week while Rancho Moonrise stays absent.

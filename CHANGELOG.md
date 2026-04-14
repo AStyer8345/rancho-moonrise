@@ -1,5 +1,18 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-14 — Daily SEO Run: Events AEO + Schema Refresh, Cross-Links, Blog #10
+
+- **`events.html` Event schema refreshed.** Removed past events (April 11 Lone Star Party, April 12 Bridal Sip & See — both passed). Added 4 upcoming events with full schema fields: Free Friday at the Pool (Apr 24, free offer markup), Yoga & Bottomless Mimosas (Apr 26), Rancho Rodeo Sun Series (May 2), Mother's Day Retreat (May 10). Added `eventStatus` and `eventAttendanceMode` fields to all entries.
+- **`events.html` SpeakableSpecification schema added.** WebPage schema targeting `.page-header h1`, `.page-header p`, `.aeo-block h2`, `.aeo-block p`.
+- **`events.html` AEO direct-answer block added.** New `.aeo-block` section before the view toggle answering "What kinds of events happen at Rancho Moonrise near Austin?" — covers public event types and private event distinction. Targets AI engine queries about Austin events and things to do.
+- **`events.html` Related Reading cross-links added.** 5 links: things-to-do-manor-tx, weekend-getaways-near-austin, glamping-near-austin-texas, pool-day-pass-austin, blog index.
+- **`weddings.html` Related Reading cross-links added.** 5 links: ranch-wedding-texas, wedding-venues-near-austin, bachelorette-party-austin-texas, accommodations, blog index. Completes the pending "service page cross-linking from weddings.html → wedding blog posts" item from CONTEXT.md.
+- **Blog post #10 published: `glamping-vs-camping.html`.** Targets "glamping vs camping", "what is glamping", "difference between glamping and camping", "glamping near Austin Texas". ~1,400 words. AEO direct-answer block, FAQPage schema (4 Q&A: what's the difference, is it worth it, what to bring, glamping near Austin), SpeakableSpecification, BlogPosting schema. FAQ accordion section (4 items, existing main.js handler). Related Reading cross-links. CTA banner.
+- **`glamping-near-austin-texas.html`** Related Reading updated to include glamping-vs-camping link.
+- **`blog.html`** ItemList position 10 added; post #10 card added to grid.
+- **`sitemap.xml`** glamping-vs-camping URL added (priority 0.8, monthly). lastmod bumped: `/` → 2026-04-14, `/blog/` → 2026-04-14, `/weddings/` → 2026-04-14, `/events/` → 2026-04-14.
+- **Commit `f18668c`** — 6 files changed, 594 insertions.
+
 ## 2026-04-13 — Daily SEO Run: Safari Tents Landing Page + Cross-Links
 
 - **`/safari-tents-near-austin/` landing page built and published** (`site/pages/safari-tents-near-austin.html`). Targets "safari tents near Austin", "safari tent Austin TX" — keyword urgency elevated after Safari for the Soul claimed "safari tent austin" brand-keyword and Lucky Arrow added safari tents April 2026. Page includes: AEO direct-answer block (SpeakableSpecification pointing to `.aeo-block`), LodgingBusiness + BreadcrumbList JSON-LD, three tent-type cards (Premium/Double/Family), `.split--reverse` What's Included section (mobile-safe), social proof section, hero with `fetchpriority="high"` image, mobile sticky CTA.

@@ -1,6 +1,8 @@
 # Rancho Moonrise — Project Context
 
-**Last updated:** 2026-04-13 (daily SEO run — `/safari-tents-near-austin/` landing page built, sitemap + blog index + cross-links updated)
+**Last updated:** 2026-04-14 (daily SEO run — events.html AEO block + schema refresh; wedding/events Related Reading cross-links; blog #10 "Glamping vs Camping" published)
+
+**GBP posting status:** Week 1 (Event Announcement) drafted 2026-04-09. Week 2 (Property Showcase — pool, cabins, safari tents, Lodge, donkeys) drafted 2026-04-13. Awaiting Adam/Ashley manual post. Next rotation: Week 3 (Special Offer / Package) due ~2026-04-20.
 
 ---
 
@@ -27,7 +29,7 @@ Advisory engagement for Rancho Moonrise — glamping, events, and retreat ranch 
 
 ## What's Next
 
-- **Next SEO run:** events.html Event schema for individual upcoming events (needs real dates from Ashley — flag remains open). Blog post #10 candidates: "Glamping vs Camping: What's the Difference?", "What to Do Near Austin With Kids". Service page cross-linking from `weddings.html` → wedding blog posts still pending.
+- **Next SEO run:** Blog post #11 candidates: "What to Do Near Austin With Kids", "Corporate Retreat Planning Guide Texas". Contact page AEO treatment (no SpeakableSpecification or AEO block yet). Keep refreshing events.html Event schema as dates pass.
 - Adam: Re-upload the 8 low-res source JPGs at 2560px+ width (especially `feature-wedding.jpg` — bride-critical) so the responsive ladder can generate 1920/2560/3840 variants. See "Low-res source JPGs" below.
 - Adam: Wire up a backend handler for the wedding inquiry forms on both contact.html and weddings.html (Formspree / Netlify Forms / Vercel serverless → email + Salesforce create_lead). Both currently `action="#"`. Flag on the DNS cutover checklist.
 - Adam: Curate real-wedding photo set to replace weddings.html gallery placeholder (6 tiles, aria-hidden, "photos coming soon" note live now)
