@@ -159,7 +159,7 @@ p { margin-bottom: 1em; }
 .section--charcoal h3 { color: var(--color-cream); }
 .section--charcoal .section-label { color: var(--color-orange-light); }
 .section--charcoal .split__content p,
-.section--charcoal .event-card__desc { color: rgba(245, 240, 232, 0.7); }
+.section--charcoal .event-card__desc { color: rgba(245, 240, 232, 0.92); }
 
 .section--sage { background: var(--color-sage); color: var(--color-white); }
 .section--sage h2, .section--sage h3 { color: var(--color-white); }
@@ -169,22 +169,25 @@ p { margin-bottom: 1em; }
 .section--pine { background: var(--color-pine); color: var(--color-white); }
 .section--pine h2, .section--pine h3 { color: var(--color-white); }
 .section--pine .section-label { color: var(--color-orange-light); }
-.section--pine p, .section--pine .event-card__desc, .section--pine .split__content p { color: rgba(255, 255, 255, 0.85); }
+.section--pine p, .section--pine .event-card__desc, .section--pine .split__content p { color: rgba(255, 255, 255, 0.96); }
 
 .section--terracotta { background: var(--color-terracotta); color: var(--color-white); }
 .section--terracotta h2, .section--terracotta h3 { color: var(--color-white); }
 .section--terracotta .section-label { color: var(--color-cream-dark); }
-.section--terracotta p, .section--terracotta .split__content p { color: rgba(255, 255, 255, 0.85); }
+.section--terracotta p, .section--terracotta .split__content p { color: rgba(255, 255, 255, 0.96); }
 
 /* ---------- Buttons — Outline style with fill hover ---------- */
 .btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     font-family: var(--font-body);
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     font-weight: 700;
-    letter-spacing: 3px;
+    letter-spacing: 2.5px;
     text-transform: uppercase;
     padding: 14px 32px;
+    min-height: 44px;
     border: 1px solid;
     border-radius: 0;
     background: transparent;
@@ -1415,12 +1418,13 @@ p { margin-bottom: 1em; }
 .form-group textarea,
 .form-group select {
     width: 100%;
-    padding: 12px 16px;
+    padding: 14px 16px;
     background: var(--color-bg);
     border: 1px solid #d4cfc7;
     color: var(--color-text);
     font-family: var(--font-body);
-    font-size: 0.95rem;
+    font-size: 1rem; /* 16px — prevents iOS Safari auto-zoom on focus */
+    min-height: 44px;
     transition: border-color var(--transition);
 }
 
@@ -2045,8 +2049,8 @@ p { margin-bottom: 1em; }
     .hero__subtitle { font-size: 0.95rem; margin-bottom: var(--space-md); }
     .hero__label { font-size: 0.65rem; letter-spacing: 3px; }
 
-    /* Buttons don't crowd */
-    .btn { padding: 12px 24px; font-size: 0.75rem; }
+    /* Buttons don't crowd — keep 44px tap target and readable label */
+    .btn { padding: 14px 24px; font-size: 0.8rem; min-height: 48px; letter-spacing: 2px; }
     .btn-group { gap: 10px; }
 
     /* Feature cards: single column with less height */
@@ -2485,7 +2489,7 @@ p { margin-bottom: 1em; }
 /* ---------- Mobile Responsiveness Improvements ---------- */
 @media (max-width: 600px) {
     /* Better touch targets for buttons */
-    .btn { padding: 16px 28px; min-height: 48px; font-size: 0.72rem; }
+    .btn { padding: 16px 28px; min-height: 48px; font-size: 0.82rem; letter-spacing: 2px; }
 
     /* Tighter hero on mobile */
     .hero {
@@ -2556,51 +2560,56 @@ p { margin-bottom: 1em; }
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     color: var(--color-white, #fff);
-    border: 1px solid rgba(255,255,255,0.35);
-    background: transparent;
-    transition: background var(--transition), transform var(--transition), border-color var(--transition);
+    border: 1px solid transparent;
+    background: var(--color-terracotta, #B6603F);
+    transition: background var(--transition), transform var(--transition);
 }
 .nav__social:hover,
 .nav__social:focus-visible {
-    background: var(--color-terracotta, #B6603F);
-    border-color: var(--color-terracotta, #B6603F);
+    background: #9a4f33; /* darker Clay */
     transform: translateY(-1px);
     outline: none;
 }
 .nav__social--primary {
-    background: var(--color-terracotta, #B6603F);
-    border-color: var(--color-terracotta, #B6603F);
+    background: var(--color-orange, #C9842B);
 }
 .nav__social--primary:hover,
 .nav__social--primary:focus-visible {
-    background: var(--color-amber, #C9842B);
-    border-color: var(--color-amber, #C9842B);
+    background: var(--color-orange-dark, #a67832);
 }
 
-/* Mobile social row (inside slide-out nav) */
+/* Mobile social row (inside slide-out nav — white-bg overlay) */
 .nav__mobile-social {
     display: flex;
-    gap: 1rem;
+    gap: 14px;
     flex-wrap: wrap;
     justify-content: center;
     margin-top: var(--space-md, 1.5rem);
     padding-top: var(--space-md, 1.5rem);
-    border-top: 1px solid rgba(255,255,255,0.15);
+    border-top: 1px solid rgba(0,0,0,0.08);
 }
 .nav__mobile-social a {
-    font-family: var(--font-body);
-    font-size: 0.85rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--color-terracotta, #B6603F);
     color: var(--color-white, #fff);
     text-decoration: none;
-    padding: 0.4rem 0.75rem;
-    border: 1px solid rgba(255,255,255,0.35);
-    border-radius: 999px;
+    transition: background var(--transition), transform var(--transition);
+}
+.nav__mobile-social a:hover,
+.nav__mobile-social a:focus-visible {
+    background: #9a4f33;
+    color: var(--color-white, #fff);
+    transform: translateY(-1px);
+    outline: none;
 }
 
 /* ---------- Instagram Feed Grid (homepage) ---------- */
