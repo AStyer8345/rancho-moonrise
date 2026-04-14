@@ -1,5 +1,5 @@
 # Rancho Moonrise — TODO
-Last updated: 2026-04-11 (Color revert — restored orange header + cream backgrounds after Codex audit commit)
+Last updated: 2026-04-14 (GBP baseline filled on improvement-plan from March 2026 email; GSC rows pending)
 
 ## ✅ DONE 2026-04-11 — Color revert on Codex audit commit
 
@@ -90,6 +90,11 @@ All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms. Li
 - [ ] Verify social profile links on GBP (Task 7 — MANUAL)
 - [ ] Enable Google Chat on GBP (Task 15 — MANUAL)
 - [ ] Upload 10+ owner photos to GBP across all categories (Task 27 — MANUAL)
+
+### NEEDS ADAM — Improvement plan data sources
+- [ ] **Fill GSC rows on improvement-plan.html** (impressions / clicks / CTR / avg position / pages indexed) — grab from [search.google.com/search-console](https://search.google.com/search-console) last-28-days view, paste numbers to Claude, or greenlight the n8n workflow option below. GSC has no access gating, unlike GBP.
+- [ ] **Decide: automate GBP + GSC monthly pull?** Option = n8n workflow. GBP side = Gmail trigger on the monthly performance email from `Howdy@ranchomoonrise.com` → parse → Supabase → Vercel rebuild. GSC side = weekly cron pulling the Search Console API. One-time ~2hr build, replaces manual paste forever.
+- [ ] **Pull Photo views + Bookings from GBP dashboard** — not in the monthly email; need a one-time manual grab from business.google.com until GBP API access lands.
 
 ### NEEDS ADAM — Infrastructure
 - [ ] DNS cutover from BofillTech to Vercel — THE #1 unlock for all SEO/AEO

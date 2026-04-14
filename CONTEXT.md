@@ -1,6 +1,6 @@
 # Rancho Moonrise — Project Context
 
-**Last updated:** 2026-04-14 (daily SEO run — events.html AEO block + schema refresh; wedding/events Related Reading cross-links; blog #10 "Glamping vs Camping" published)
+**Last updated:** 2026-04-14 (improvement-plan GBP baseline fill from March 2026 email — Search impressions 6,967, profile views 15,053, clicks 554, directions 513, calls 44; GSC rows still pending)
 
 **GBP posting status:** Week 1 (Event Announcement) drafted 2026-04-09. Week 2 (Property Showcase — pool, cabins, safari tents, Lodge, donkeys) drafted 2026-04-13. Awaiting Adam/Ashley manual post. Next rotation: Week 3 (Special Offer / Package) due ~2026-04-20.
 

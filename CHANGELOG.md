@@ -1,5 +1,14 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-14 — Improvement Plan: GBP Baseline Filled
+
+- **`site/improvement-plan.html` GBP Performance rows populated** from March 2026 monthly GBP email (`brand/2026-04-06-ranchomoonrise-gbp-performance-report-march.txt`). Search impressions 6,967, profile views (total) 15,053, website clicks 554, direction requests 513, phone calls 44. Baseline = current for now (single data point); delta stays flat until April's email lands ~May 6.
+- **Row rename:** "Map views" → "Profile views (total)" to match what the monthly email actually reports (GBP email doesn't split map views from search views).
+- **Photo views + Bookings** flagged as "Dashboard only" — not in monthly email, need manual pull from business.google.com or GBP API (still gated on access approval).
+- **Footer updated** — "Last metrics update: April 14, 2026 — GBP baseline sourced from March 2026 monthly performance email. GSC rows pending."
+- **GSC rows (impressions / clicks / CTR / position / pages indexed) still empty.** No access gating — can be filled manually from Search Console or wired via GSC API through n8n (follow-up).
+- **Commit `4e0eab7`** pushed to main; Vercel auto-deploy triggered.
+
 ## 2026-04-14 — Daily SEO Run: Events AEO + Schema Refresh, Cross-Links, Blog #10
 
 - **`events.html` Event schema refreshed.** Removed past events (April 11 Lone Star Party, April 12 Bridal Sip & See — both passed). Added 4 upcoming events with full schema fields: Free Friday at the Pool (Apr 24, free offer markup), Yoga & Bottomless Mimosas (Apr 26), Rancho Rodeo Sun Series (May 2), Mother's Day Retreat (May 10). Added `eventStatus` and `eventAttendanceMode` fields to all entries.
