@@ -1,5 +1,13 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-15 — Weekly Content Run: Blog #12 + Social Snippets
+
+- **Blog post #12 published: `corporate-retreat-planning-guide-texas.html`.** Targets "corporate retreat planning guide Texas", "how to plan a corporate retreat", "corporate retreat planning tips", "team retreat Texas". ~1,600 words. AEO direct-answer block, FAQPage schema (4 Q&A), SpeakableSpecification, BlogPosting schema, BreadcrumbList. FAQ accordion section (4 items). Distinct angle from post #3 (corporate-retreat-near-austin) — that page pitches the venue; this page is the planning guide for organizers researching how to run a retreat. Cross-links back to post #3 and host-your-event.html.
+- **`blog.html`** ItemList position 12 added; post #12 card added to grid.
+- **`sitemap.xml`** `/blog/corporate-retreat-planning-guide-texas/` added (priority 0.8, monthly). lastmod 2026-04-15.
+- **Cross-link added:** `corporate-retreat-near-austin.html` Related Reading now includes link to new planning guide post.
+- **Social snippets saved** to `brand/gbp-posts/2026-04-15-blog12-social-snippets.md` — Instagram caption (Style 1, short + vibes), GBP post draft (content/thought-leadership format), LinkedIn caption (corporate persona targeting).
+
 ## 2026-04-15 — Grade Targets: 5-stop stepper + clickable progress → task links
 
 - **Scorecards in `site/improvement-plan.html` now show the full grade journey.** Under each area label, a five-dot stepper renders baseline → phase1 → phase2 → phase3 → target with filled dots for completed phases, an amber "now" marker for the current stop, and a partial-fill connecting line showing progress within the active phase. Replaces the bare `D → A` chips (which remain visible — the stepper is additive).
