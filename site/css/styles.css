@@ -301,24 +301,25 @@ p { margin-bottom: 1em; }
 
 .nav__logo-img {
     /* Taller than the 56px nav so it hangs into the hero below */
-    height: 104px;
+    height: 120px;
     width: auto;
     flex-shrink: 0;
-    background: white;
-    border-radius: 14px;
-    padding: 8px;
-    border: 1px solid rgba(182, 96, 63, 0.12);
-    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28), 0 2px 8px rgba(0, 0, 0, 0.14);
+    background: transparent;
+    border: 0;
+    padding: 0;
+    border-radius: 0;
+    filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.32));
     /* Push logo down so more of it extends into the hero than clips above */
-    margin-top: 30px;
+    margin-top: 28px;
 }
 
 .nav--scrolled .nav__logo-img {
-    /* Keep the logo identical on scroll — no resize */
-    height: 104px;
-    padding: 8px;
-    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28), 0 2px 8px rgba(0, 0, 0, 0.14);
-    margin-top: 30px;
+    height: 120px;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.32));
+    margin-top: 28px;
 }
 
 .nav__links {
