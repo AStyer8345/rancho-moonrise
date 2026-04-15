@@ -1,5 +1,12 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-14 — n8n Metrics Pull: Design Spec
+
+- **`brand/n8n-metrics-pull-spec.md` written.** Scopes two n8n workflows for populating `improvement-plan.html` automatically: (1) GSC Weekly Pull — Monday 07:00 CT cron, Search Console API, 7-day aggregation, writes to new `rancho_gsc_weekly` Supabase table; (2) GBP Monthly Email Auto-Parse — Gmail trigger on Google's monthly performance email, regex/LLM parse, writes to new `rancho_gbp_monthly` table.
+- **Sequencing decided:** GSC first (no access gating, higher leverage), GBP email second (wait for April email ~May 6 to tune parser against real HTML).
+- **TODO.md updated** — marked the "automate GBP + GSC monthly pull?" decision as greenlit with pointer to the spec.
+- **Build deferred** to a dedicated n8n session.
+
 ## 2026-04-14 — Improvement Plan: Per-Task Copy-Prompt Button
 
 - **Copy-prompt button added to every task card** in `site/improvement-plan.html` (option A — per-task button, not a global one). Each card gets its own "Copy prompt" action that writes a tailored Claude Code prompt to the clipboard for that specific task.

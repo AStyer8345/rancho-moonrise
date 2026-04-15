@@ -93,7 +93,7 @@ All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms. Li
 
 ### NEEDS ADAM — Improvement plan data sources
 - [ ] **Fill GSC rows on improvement-plan.html** (impressions / clicks / CTR / avg position / pages indexed) — grab from [search.google.com/search-console](https://search.google.com/search-console) last-28-days view, paste numbers to Claude, or greenlight the n8n workflow option below. GSC has no access gating, unlike GBP.
-- [ ] **Decide: automate GBP + GSC monthly pull?** Option = n8n workflow. GBP side = Gmail trigger on the monthly performance email from `Howdy@ranchomoonrise.com` → parse → Supabase → Vercel rebuild. GSC side = weekly cron pulling the Search Console API. One-time ~2hr build, replaces manual paste forever.
+- [x] **Decide: automate GBP + GSC monthly pull?** ✅ 2026-04-14 — greenlit. Design spec landed at `brand/n8n-metrics-pull-spec.md`. Build in next n8n session: GSC weekly workflow first (no gating, ~1.5 hr), GBP email parser second (after the April email lands ~May 6, ~45 min).
 - [ ] **Pull Photo views + Bookings from GBP dashboard** — not in the monthly email; need a one-time manual grab from business.google.com until GBP API access lands.
 
 ### NEEDS ADAM — Infrastructure
