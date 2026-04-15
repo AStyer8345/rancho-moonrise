@@ -1,6 +1,6 @@
 # Rancho Moonrise — Project Context
 
-**Last updated:** 2026-04-14 (improvement-plan GBP baseline fill from March 2026 email — Search impressions 6,967, profile views 15,053, clicks 554, directions 513, calls 44; GSC rows still pending)
+**Last updated:** 2026-04-15 (rancho-review-monitor run #1: TripAdvisor + Hipcamp live-verified at 0 reviews; Google unreplied claim cleared — task RESOLVED by Adam 2026-04-14; Airbnb listing existence flagged for Adam to verify)
 
 **GBP posting status:** Week 1 (Event Announcement) drafted 2026-04-09. Week 2 (Property Showcase — pool, cabins, safari tents, Lodge, donkeys) drafted 2026-04-13. Awaiting Adam/Ashley manual post. Next rotation: Week 3 (Special Offer / Package) due ~2026-04-20.
 
@@ -98,7 +98,7 @@ Once re-uploaded: rerun `./scripts/generate-responsive-images.sh` and commit —
 
 | Metric | Value |
 |--------|-------|
-| Google reviews | ~125 (4.9★) — 9/10 unreplied |
+| Google reviews | ~127 (4.9★) — replies done (RESOLVED 2026-04-14 per done-log; live count STALE:2026-04-09) |
 | GBP views | 50,500 |
 | Instagram | ~13K followers, 279 posts |
 | Facebook | 864 followers, 5 reviews (100%) |

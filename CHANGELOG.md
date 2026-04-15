@@ -1,5 +1,13 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-15 — rancho-review-monitor: First Run (baseline seed)
+
+- **First run of rancho-review-monitor scheduled task.** Seeded `brand/review-aggregate.json` and `site/admin/dashboard-state.json`. Created `tasks/review-monitor/BLOCKERS.md` and `tasks/review-monitor/session-log.md`.
+- **Re-Verify Gate ran on all persistent live claims.** TripAdvisor live-scraped: still 0 reviews, unclaimed. Hipcamp live-scraped: still 0 reviews. Expedia 8.0 and Facebook 5-review/100% confirmed via search. Google data STALE (JS-rendered, no API key).
+- **Stale claim cleared:** "9/10 unreplied Google reviews" removed from CONTEXT.md Key Metrics — task `rancho-p1-01-reply-google-reviews` was marked RESOLVED by Adam on 2026-04-14 per done-log. Live verification blocked, but done-log provides strong first-party signal.
+- **FLAG_FOR_ADAM:** Search surfaced a possible Airbnb listing at `/rooms/1284193976615696223` ("Glamping Safari Tent 25 mins from downtown Austin, Manor TX") — baseline said no listing. Couldn't access page (403). Adam should verify if this is a Rancho Moonrise listing.
+- **No new reviews detected** on any platform. No response drafts produced.
+
 ## 2026-04-14 — n8n Metrics Pull: Design Spec
 
 - **`brand/n8n-metrics-pull-spec.md` written.** Scopes two n8n workflows for populating `improvement-plan.html` automatically: (1) GSC Weekly Pull — Monday 07:00 CT cron, Search Console API, 7-day aggregation, writes to new `rancho_gsc_weekly` Supabase table; (2) GBP Monthly Email Auto-Parse — Gmail trigger on Google's monthly performance email, regex/LLM parse, writes to new `rancho_gbp_monthly` table.

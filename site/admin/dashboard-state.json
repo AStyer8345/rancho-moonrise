@@ -1,0 +1,19 @@
+{
+  "review_monitor": {
+    "last_run": "2026-04-15T11:30:00Z",
+    "status": "pending",
+    "status_reason": "Google review data is STALE (JS-rendered, no API) — current unreplied count unconfirmed live. Task rancho-p1-01-reply-google-reviews RESOLVED by Adam 2026-04-14. Airbnb listing existence unverified (possible new listing found, could not access).",
+    "new_reviews_pending_response": 0,
+    "total_reviews_tracked": 132,
+    "unreplied_by_platform": {
+      "google": 0,
+      "expedia": 0,
+      "hipcamp": 0,
+      "tripadvisor": 0,
+      "facebook": 0
+    },
+    "stale_platforms": ["google"],
+    "flags": ["airbnb-listing-existence-unverified"],
+    "run_number": 1
+  }
+}
