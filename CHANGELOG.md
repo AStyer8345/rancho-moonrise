@@ -1,5 +1,12 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-14 — Improvement Plan: Per-Task Copy-Prompt Button
+
+- **Copy-prompt button added to every task card** in `site/improvement-plan.html` (option A — per-task button, not a global one). Each card gets its own "Copy prompt" action that writes a tailored Claude Code prompt to the clipboard for that specific task.
+- **Button position refined:** initial placement was awkward in the card grid; moved below the mark-done control so the two action buttons stack cleanly in the 2-col layout.
+- **Backs the canonical `_shared/plan-actions` wiring** that also landed in the client-ops fork source (`templates/improvement-plan.html`) same day — new client-ops forks inherit the Copy-prompt UX automatically.
+- **Commits:** `5c684a1` (initial per-task button), `0fc8647` (2-col card layout fix).
+
 ## 2026-04-14 — Improvement Plan: GBP Baseline Filled
 
 - **`site/improvement-plan.html` GBP Performance rows populated** from March 2026 monthly GBP email (`brand/2026-04-06-ranchomoonrise-gbp-performance-report-march.txt`). Search impressions 6,967, profile views (total) 15,053, website clicks 554, direction requests 513, phone calls 44. Baseline = current for now (single data point); delta stays flat until April's email lands ~May 6.
@@ -433,3 +440,8 @@
 
 ## 2026-04-12 — rancho-apply-done reconciliation
 - rancho-apply-done: no changes — 3/4 log entries already in Done tab; test-smoke-live skipped (no matching task div, smoke test entry).
+
+## 2026-04-14 — Mobile UX audit + homepage fixes
+
+- Audit pass (commit 95c523f): btn min-height 44-48px, body alpha 0.92-0.96 for WCAG AA, form inputs 16px + 44px min-height, nav social icons → 36x36 circular terracotta with white SVG, mobile menu social → 48x48 solid terracotta circles across 19 pages
+- Homepage pass (commit 82616f0): Primary_Clay logo swap (fallback Secondary), Instagram + Call Now 44x44 nav icons, removed "20 Minutes" label, hero title scales at 768/390 breakpoints, full-width 56px-min CTAs, venue-duo text-shadow + stronger overlay, .section--pine darkened to #1f4d3a, review marquee 120s/80s with touch-pause 3s resume, Instagram grid → horizontal scroll-snap filmstrip <=640px
