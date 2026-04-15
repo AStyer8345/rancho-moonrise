@@ -1,5 +1,13 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-15 — GBP Task #2 RESOLVED (description, hours, amenities, category swap)
+
+- **Claude drafted every profile field** at `brand/gbp-posts/2026-04-15-gbp-profile-fields.md`: 738-char "From the owner" description (replacing a blog post that had been auto-syndicated into the field), full Mon–Sun hours table (Mon/Tue closed, Wed–Sun 9–8), category-by-category amenity checklist with corrections (Fitness Center flagged as a bad auto-accept — no gym on property), opening date (2024), HTTPS website flip, phone verify.
+- **Adam swapped GBP primary category: Hotel → Event venue.** Hotel category blocked the "From the owner" description field outright — Event venue + Wedding venue (Wedding venue stays secondary) is a truer match for how the property actually books revenue (46% private events vs 31% rooms in 2025). Hotel stays as a secondary category so lodging queries still hit the knowledge panel.
+- **Adam posted all drafts to GBP.** Description replaced, hours set, opening date added, website flipped to HTTPS, phone verified, amenity sweep complete.
+- **`site/improvement-plan.html`** task #2 card physically relocated into `#done-tasks-container` with `completed` class + `✓ Done` tag. `rancho-apply-done` scheduled task will be a no-op on this one at next run (log entry will already match DOM state).
+- **`TODO.md`** checklist updated — 4 GBP #2 sub-items checked off, primary-category swap logged as its own line for context.
+
 ## 2026-04-15 — Weekly Content Run: Blog #12 + Social Snippets
 
 - **Blog post #12 published: `corporate-retreat-planning-guide-texas.html`.** Targets "corporate retreat planning guide Texas", "how to plan a corporate retreat", "corporate retreat planning tips", "team retreat Texas". ~1,600 words. AEO direct-answer block, FAQPage schema (4 Q&A), SpeakableSpecification, BlogPosting schema, BreadcrumbList. FAQ accordion section (4 items). Distinct angle from post #3 (corporate-retreat-near-austin) — that page pitches the venue; this page is the planning guide for organizers researching how to run a retreat. Cross-links back to post #3 and host-your-event.html.

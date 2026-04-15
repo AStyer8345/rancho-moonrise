@@ -83,10 +83,11 @@ All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms. Li
 
 ### NEEDS ADAM — GBP work (newly unblocked, he has Manager access)
 - [x] Reply to all 9 unreplied Google reviews — DONE 2026-04-14 per done-log (RESOLVED by Adam)
-- [ ] Replace blog post in GBP "From the owner" with real business description — **DRAFT READY** at `brand/gbp-posts/2026-04-15-gbp-profile-fields.md` § 1 (Task 2 — CRITICAL — DRAFT→POST)
-- [ ] Set business hours on GBP — **VALUES READY** at `brand/gbp-posts/2026-04-15-gbp-profile-fields.md` § 2 (Mon/Tue closed, Wed–Sun 9–8) (Task 2 — MANUAL)
-- [ ] Answer remaining hotel amenity categories on GBP — **CHECKLIST READY** at `brand/gbp-posts/2026-04-15-gbp-profile-fields.md` § 3 (Task 2 — MANUAL)
-- [ ] Add GBP opening date (2024) + switch website URL to HTTPS + verify phone — `brand/gbp-posts/2026-04-15-gbp-profile-fields.md` §§ 4–5
+- [x] Replace blog post in GBP "From the owner" with real business description — DONE 2026-04-15 (Task 2)
+- [x] Set business hours on GBP — DONE 2026-04-15 (Mon/Tue closed, Wed–Sun 9–8)
+- [x] Answer remaining amenity categories on GBP — DONE 2026-04-15
+- [x] Add opening date + HTTPS website + phone verify — DONE 2026-04-15
+- [x] **GBP primary category swap Hotel → Event venue** — Adam 2026-04-15. Hotel category blocked the "From the owner" description field entirely; Event venue + Wedding venue is a truer match for how the property actually books revenue (46% private events, 31% rooms). Hotel stays on as a secondary category so lodging queries still hit.
 - [ ] Answer the unanswered pool day pass Q&A + seed 10 FAQ Q&As on GBP — Claude drafts, Adam pastes (Task 3 — DRAFT→POST)
 - [ ] Verify social profile links on GBP (Task 7 — MANUAL)
 - [ ] Enable Google Chat on GBP (Task 15 — MANUAL)
