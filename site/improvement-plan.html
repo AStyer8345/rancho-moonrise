@@ -769,6 +769,46 @@
   [data-theme="light"] [style*="color:#D4714E"],
   [data-theme="light"] [style*="color: #D4714E"] { color: #B04A2C !important; }
   [data-theme="light"] [style*="background:#0F1419"] { background: #FAF6EA !important; }
+
+  /* ===== Grade stepper (mirror of client-ops/_shared/grade-progress.css) ===== */
+  .sc-card .grade-stepper {
+    display: flex; align-items: center; gap: 0; margin-top: 8px;
+    width: 100%; min-width: 0; font-size: 0.64rem; letter-spacing: 0.02em;
+    --gs-line-color: #2A2E3A; --gs-line-done: #4ECDC4;
+    --gs-dot-pending: #2A2E3A; --gs-dot-done: #4ECDC4; --gs-dot-now: #D4A574;
+    --gs-text-pending: #5E6470; --gs-text-done: #7FD6CE; --gs-text-now: #E8C89A;
+  }
+  .gs-stop { display: flex; flex-direction: column; align-items: center; flex: 0 0 auto; gap: 2px; min-width: 20px; }
+  .gs-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--gs-dot-pending); border: 2px solid var(--gs-line-color); box-sizing: border-box; transition: all 0.2s ease; }
+  .gs-stop.done .gs-dot { background: var(--gs-dot-done); border-color: var(--gs-dot-done); }
+  .gs-stop.now .gs-dot { background: var(--gs-dot-now); border-color: var(--gs-dot-now); box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.18); }
+  .gs-grade { font-weight: 700; font-size: 0.72rem; color: var(--gs-text-pending); line-height: 1; }
+  .gs-stop.done .gs-grade { color: var(--gs-text-done); }
+  .gs-stop.now  .gs-grade { color: var(--gs-text-now); }
+  .gs-line { flex: 1 1 auto; height: 2px; background: var(--gs-line-color); position: relative; margin: 0 2px; margin-bottom: 10px; overflow: hidden; border-radius: 1px; }
+  .gs-line.done { background: var(--gs-line-done); }
+  .gs-line.partial::after { content: ''; position: absolute; top: 0; left: 0; height: 100%; width: var(--fill, 0%); background: var(--gs-line-done); transition: width 0.3s ease; }
+  .sc-progress.clickable { cursor: pointer; text-decoration: underline; text-decoration-color: rgba(78, 205, 196, 0.4); text-underline-offset: 2px; transition: color 0.15s ease, text-decoration-color 0.15s ease; }
+  .sc-progress.clickable:hover { color: #7FD6CE; text-decoration-color: #4ECDC4; }
+  .task[data-item-id].highlight-from-grade { animation: gradeHighlight 2.2s ease-out; }
+  @keyframes gradeHighlight {
+    0%   { box-shadow: 0 0 0 0 rgba(78, 205, 196, 0.0); }
+    15%  { box-shadow: 0 0 0 4px rgba(78, 205, 196, 0.55); }
+    100% { box-shadow: 0 0 0 0 rgba(78, 205, 196, 0.0); }
+  }
+  [data-theme="light"] .sc-card .grade-stepper {
+    --gs-line-color: #D8CFBD; --gs-line-done: #1F8E89;
+    --gs-dot-pending: #D8CFBD; --gs-dot-done: #1F8E89; --gs-dot-now: #8B5A2B;
+    --gs-text-pending: #9A8F7A; --gs-text-done: #1F6B45; --gs-text-now: #6B4017;
+  }
+  [data-theme="light"] .sc-progress.clickable { text-decoration-color: rgba(31, 142, 137, 0.4); }
+  [data-theme="light"] .sc-progress.clickable:hover { color: #1F6B45; text-decoration-color: #1F8E89; }
+  [data-theme="light"] .task[data-item-id].highlight-from-grade { animation: gradeHighlightLight 2.2s ease-out; }
+  @keyframes gradeHighlightLight {
+    0%   { box-shadow: 0 0 0 0 rgba(31, 142, 137, 0.0); }
+    15%  { box-shadow: 0 0 0 4px rgba(31, 142, 137, 0.45); }
+    100% { box-shadow: 0 0 0 0 rgba(31, 142, 137, 0.0); }
+  }
 </style>
 <script>
   // FOUC prevention: set theme on <html> before body parses.
@@ -2303,50 +2343,10 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 
 <!-- ============================================================= -->
-<!-- Grade-stepper module (inlined from client-ops/_shared/grade-progress.{css,js}) -->
-<!-- Sovereign rancho duplicates to avoid cross-origin dependency. -->
-<!-- If you edit this, mirror changes to /clients/_shared/grade-progress.* -->
+<!-- Grade-stepper module JS (mirror of client-ops/_shared/grade-progress.js) -->
+<!-- Styles live in <head>. If you edit either half, mirror changes to -->
+<!-- /clients/_shared/grade-progress.{css,js} in client-ops. -->
 <!-- ============================================================= -->
-<style>
-.sc-card .grade-stepper {
-  display: flex; align-items: center; gap: 0; margin-top: 8px;
-  width: 100%; min-width: 0; font-size: 0.64rem; letter-spacing: 0.02em;
-  --gs-line-color: #2A2E3A; --gs-line-done: #4ECDC4;
-  --gs-dot-pending: #2A2E3A; --gs-dot-done: #4ECDC4; --gs-dot-now: #D4A574;
-  --gs-text-pending: #5E6470; --gs-text-done: #7FD6CE; --gs-text-now: #E8C89A;
-}
-.gs-stop { display: flex; flex-direction: column; align-items: center; flex: 0 0 auto; gap: 2px; min-width: 20px; }
-.gs-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--gs-dot-pending); border: 2px solid var(--gs-line-color); box-sizing: border-box; transition: all 0.2s ease; }
-.gs-stop.done .gs-dot { background: var(--gs-dot-done); border-color: var(--gs-dot-done); }
-.gs-stop.now .gs-dot { background: var(--gs-dot-now); border-color: var(--gs-dot-now); box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.18); }
-.gs-grade { font-weight: 700; font-size: 0.72rem; color: var(--gs-text-pending); line-height: 1; }
-.gs-stop.done .gs-grade { color: var(--gs-text-done); }
-.gs-stop.now  .gs-grade { color: var(--gs-text-now); }
-.gs-line { flex: 1 1 auto; height: 2px; background: var(--gs-line-color); position: relative; margin: 0 2px; margin-bottom: 10px; overflow: hidden; border-radius: 1px; }
-.gs-line.done { background: var(--gs-line-done); }
-.gs-line.partial::after { content: ''; position: absolute; top: 0; left: 0; height: 100%; width: var(--fill, 0%); background: var(--gs-line-done); transition: width 0.3s ease; }
-.sc-progress.clickable { cursor: pointer; text-decoration: underline; text-decoration-color: rgba(78, 205, 196, 0.4); text-underline-offset: 2px; transition: color 0.15s ease, text-decoration-color 0.15s ease; }
-.sc-progress.clickable:hover { color: #7FD6CE; text-decoration-color: #4ECDC4; }
-.task[data-item-id].highlight-from-grade { animation: gradeHighlight 2.2s ease-out; }
-@keyframes gradeHighlight {
-  0%   { box-shadow: 0 0 0 0 rgba(78, 205, 196, 0.0); }
-  15%  { box-shadow: 0 0 0 4px rgba(78, 205, 196, 0.55); }
-  100% { box-shadow: 0 0 0 0 rgba(78, 205, 196, 0.0); }
-}
-[data-theme="light"] .sc-card .grade-stepper {
-  --gs-line-color: #D8CFBD; --gs-line-done: #1F8E89;
-  --gs-dot-pending: #D8CFBD; --gs-dot-done: #1F8E89; --gs-dot-now: #8B5A2B;
-  --gs-text-pending: #9A8F7A; --gs-text-done: #1F6B45; --gs-text-now: #6B4017;
-}
-[data-theme="light"] .sc-progress.clickable { text-decoration-color: rgba(31, 142, 137, 0.4); }
-[data-theme="light"] .sc-progress.clickable:hover { color: #1F6B45; text-decoration-color: #1F8E89; }
-[data-theme="light"] .task[data-item-id].highlight-from-grade { animation: gradeHighlightLight 2.2s ease-out; }
-@keyframes gradeHighlightLight {
-  0%   { box-shadow: 0 0 0 0 rgba(31, 142, 137, 0.0); }
-  15%  { box-shadow: 0 0 0 4px rgba(31, 142, 137, 0.45); }
-  100% { box-shadow: 0 0 0 0 rgba(31, 142, 137, 0.0); }
-}
-</style>
 <script>
 (function () {
   'use strict';
