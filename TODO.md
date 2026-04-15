@@ -83,9 +83,10 @@ All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms. Li
 
 ### NEEDS ADAM — GBP work (newly unblocked, he has Manager access)
 - [x] Reply to all 9 unreplied Google reviews — DONE 2026-04-14 per done-log (RESOLVED by Adam)
-- [ ] Replace blog post in GBP "From the owner" with real business description — Claude drafts, Adam pastes (Task 2 — CRITICAL — DRAFT→POST)
-- [ ] Set business hours on GBP (Task 2 — MANUAL)
-- [ ] Answer remaining hotel amenity categories on GBP (Task 2 — MANUAL)
+- [ ] Replace blog post in GBP "From the owner" with real business description — **DRAFT READY** at `brand/gbp-posts/2026-04-15-gbp-profile-fields.md` § 1 (Task 2 — CRITICAL — DRAFT→POST)
+- [ ] Set business hours on GBP — **VALUES READY** at `brand/gbp-posts/2026-04-15-gbp-profile-fields.md` § 2 (Mon/Tue closed, Wed–Sun 9–8) (Task 2 — MANUAL)
+- [ ] Answer remaining hotel amenity categories on GBP — **CHECKLIST READY** at `brand/gbp-posts/2026-04-15-gbp-profile-fields.md` § 3 (Task 2 — MANUAL)
+- [ ] Add GBP opening date (2024) + switch website URL to HTTPS + verify phone — `brand/gbp-posts/2026-04-15-gbp-profile-fields.md` §§ 4–5
 - [ ] Answer the unanswered pool day pass Q&A + seed 10 FAQ Q&As on GBP — Claude drafts, Adam pastes (Task 3 — DRAFT→POST)
 - [ ] Verify social profile links on GBP (Task 7 — MANUAL)
 - [ ] Enable Google Chat on GBP (Task 15 — MANUAL)

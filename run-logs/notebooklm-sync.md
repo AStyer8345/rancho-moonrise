@@ -1,0 +1,67 @@
+2026-04-10 00:09 | ERROR adding: 2023-10-24-styer-business-plan-for-rancho-moonrise.txt
+2026-04-10 00:09 | ERROR adding: 2023-11-20-ranchomoonrise-pricing.txt
+2026-04-10 00:09 | ERROR adding: 2023-11-30-springer-site-plan.txt
+2026-04-10 00:09 | ERROR adding: 2024-02-14-tittle-rancho-moonrise-utilities-permits.txt
+2026-04-10 00:10 | ERROR adding: 2024-05-03-donnelly-frontier-bank.txt
+2026-04-10 00:10 | ERROR adding: 2025-05-01-styer-business-plan-draft.txt
+2026-04-10 00:10 | ERROR adding: 2025-05-01-styer-rancho-projections.txt
+2026-04-10 00:10 | ERROR adding: 2026-04-06-styer-google-drive-folder.txt
+2026-04-10 00:10 | ERROR adding: 2026-04-07-ranchomoonrise-bar-packages.txt
+2026-04-10 00:10 | ERROR adding: 2026-04-07-ranchomoonrise-private-wedding-contract.txt
+2026-04-10 00:10 | ERROR adding: 2026-04-07-ranchomoonrise-wedding-vendor-guidelines.txt
+2026-04-10 00:10 | ERROR adding: 2026-04-06-ranchomoonrise-gbp-performance-report-march.txt
+2026-04-10 00:10 | ERROR adding: 2026-04-06-styer-new-website-pitch.txt
+2026-04-10 00:10 | ERROR adding: 2026-04-07-ranchomoonrise-bofilltech-website-report.txt
+2026-04-10 00:10 | ERROR adding: 2026-04-07-ranchomoonrise-rancho-info.txt
+2026-04-10 00:10 | ERROR adding: 2026-04-08-ranchomoonrise-brand-pack-website-feedback.txt
+2026-04-10 00:12 | scanned=62 added=16 replaced=0 skipped=3 errors=16 (note: all errors are txt files with email/short format — content issue, not network)
+  ^ NOTE: 16 new files uploaded but all returned error status. Files with 'Source: Google Drive' header format sync successfully; raw email headers/very short files do not.
+2026-04-10 04:07 | scanned=65 added=0 replaced=0 skipped=3 errors=0
+2026-04-10 08:07 | scanned=62 added=0 replaced=0 skipped=3 errors=0
+2026-04-10 12:08 | scanned=63 added=1 replaced=2 skipped=0 errors=0
+
+### 2026-04-10 16:08 — sync run
+- **replaced**: CLAUDE-CODE-WEBSITE-UPDATE-PROMPT.md (deleted 7c72686c, uploaded 89a56df6)
+
+2026-04-10 16:08 | scanned=62 added=0 replaced=1 skipped=0 errors=0
+2026-04-10 20:07 | ERROR: 2026-04-09-review-report.md — {
+  "source": {
+    "id": "7f7d5ad8-0698-4b36-955b-02ef96266daa",
+    "title": "2026-04-09-review-report.md",
+    "type": "SourceType.UNKNOWN",
+    "url": null
+  }
+}
+2026-04-10 20:07 | ADDED: 2026-04-09-gbp-post.md
+2026-04-10 20:07 | ERROR: Monotype Font Software End User License Agreement.html — upload failed
+2026-04-10 20:08 | ADDED: 2026-04-09-review-report.md
+2026-04-10 20:08 | ERROR: Monotype Font Software End User License Agreement.html — 400 Bad Request (HTML rejected by NotebookLM)
+2026-04-10 20:08 | scanned=69 added=2 replaced=0 skipped=0 errors=1
+2026-04-11 00:08 | scanned=69 added=0 replaced=0 skipped=1 errors=1 | Monotype EULA HTML: delete+re-upload attempted, 400 error (HTML unsupported by NLM)
+2026-04-11 04:07 | scanned=63 added=0 replaced=0 skipped=3 errors=0
+2026-04-11 08:07 | scanned=63 added=0 replaced=0 skipped=3 errors=0
+2026-04-11 12:07 | scanned=63 added=0 replaced=0 skipped=3 errors=0
+2026-04-11 16:07 | scanned=59 added=0 replaced=0 skipped=3 errors=0
+2026-04-11 20:07 | scanned=63 added=0 replaced=0 skipped=3 errors=0
+2026-04-12 00:07 | scanned=63 added=0 replaced=0 skipped=3 errors=0
+2026-04-12 04:07 | scanned=66 added=0 replaced=0 skipped=3 errors=0 | SKIPPED (>10MB): PRIVATE EVENTS AT RANCHO MOONRISE.pdf (29M), INTIMATE EVENTS AT RM.pdf (21M), ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf (37M)
+2026-04-12 08:08 | scanned=66 added=0 replaced=0 skipped=3 (large: PRIVATE EVENTS, INTIMATE EVENTS, ALL INCLUSIVE RETREATS) errors=0
+2026-04-12 12:08 | scanned=63 added=0 replaced=0 skipped=3 errors=0
+2026-04-12 16:07 | scanned=66 added=0 replaced=0 skipped=3 errors=0
+2026-04-12 20:07 | scanned=63 added=0 replaced=0 skipped=3 errors=0
+2026-04-13 00:07 | scanned=63 added=0 replaced=0 skipped=3 errors=0
+2026-04-13 04:07 | scanned=66 added=0 replaced=0 skipped=3 errors=0
+WARN: Skipped 3 oversized files (>10MB): PRIVATE EVENTS AT RANCHO MOONRISE.pdf (30MB), INTIMATE EVENTS AT RM.pdf (21MB), ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf (38MB)
+2026-04-13 08:07 | scanned=66 added=0 replaced=0 skipped=3 errors=0
+2026-04-13 12:08 | scanned=63 added=0 replaced=0 skipped=3 errors=0
+2026-04-13 16:07 | scanned=66 added=0 replaced=0 skipped=3 errors=0
+2026-04-13 20:07 | scanned=66 added=0 replaced=0 skipped=3 errors=0
+2026-04-14 00:07 | scanned=63 added=0 replaced=0 skipped=3 errors=0
+2026-04-14 04:07 | scanned=66 added=0 replaced=0 skipped=3 errors=0 | WARN: 3 new PDFs exceed 10MB (PRIVATE EVENTS AT RANCHO MOONRISE.pdf ~30MB, INTIMATE EVENTS AT RM.pdf ~21MB, ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf ~39MB)
+2026-04-14 08:07 | scanned=66 added=0 replaced=0 skipped=3 errors=0 | no changes detected; 3 oversized PDFs skipped (PRIVATE EVENTS, INTIMATE EVENTS, ALL INCLUSIVE RETREATS)
+2026-04-14 12:08 | scanned=63 added=0 replaced=0 skipped=3 errors=0
+2026-04-14 16:07 | scanned=66 added=0 replaced=0 skipped=3 errors=0 | no changes detected; 3 oversized PDFs skipped (PRIVATE EVENTS ~29MB, INTIMATE EVENTS ~21MB, ALL INCLUSIVE RETREATS ~37MB)
+2026-04-14 20:07 | scanned=63 added=0 replaced=0 skipped=3 errors=0
+2026-04-15 00:08 | scanned=64 added=1 replaced=0 skipped=3 errors=0 | added: n8n-metrics-pull-spec.md | skipped_size: PRIVATE EVENTS AT RANCHO MOONRISE.pdf, INTIMATE EVENTS AT RM.pdf, ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf
+2026-04-15 04:08 | scanned=67 added=0 replaced=0 skipped=3 errors=0 | no changes; skipped_size: PRIVATE EVENTS AT RANCHO MOONRISE.pdf (~29MB), INTIMATE EVENTS AT RM.pdf (~21MB), ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf (~37MB)
+2026-04-15 08:07 | scanned=63 added=0 replaced=0 skipped=3 errors=0

@@ -1,5 +1,14 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-15 — Grade Targets: 5-stop stepper + clickable progress → task links
+
+- **Scorecards in `site/improvement-plan.html` now show the full grade journey.** Under each area label, a five-dot stepper renders baseline → phase1 → phase2 → phase3 → target with filled dots for completed phases, an amber "now" marker for the current stop, and a partial-fill connecting line showing progress within the active phase. Replaces the bare `D → A` chips (which remain visible — the stepper is additive).
+- **`.sc-progress` "(N/M toward X)" text is now a clickable teal-underlined link.** Clicking switches to the Plan tab, scrolls the first undone task in the next phase into view with `block: 'center'`, and plays a 2.2s box-shadow pulse via `@keyframes gradeHighlight`. Keyboard accessible (role=link, tabindex=0, Enter/Space).
+- **Built in `client-ops/clients/_shared/grade-progress.{css,js}` first.** Shared module auto-wires via `window.AREA_PLAN` + `window.isTaskDone` + `window.computeAreaProgress` globals and listens for a `gradesRecomputed` custom event. Styer Mortgage, client-ops rancho mirror, and `templates/improvement-plan.html` all load it — new clients inherit automatically.
+- **Sovereign rancho inlines the same module.** CSS lives in the main `<head>` `<style>` block; JS lives at end-of-body. Mirror-edit rule: changes to either half must land in both repos (`client-ops/clients/_shared/grade-progress.*` and `rancho-moonrise/site/improvement-plan.html`).
+- **Dedupe rule for trailing grades** (`['D','B','A-','A','A']` → `['D','B','A-','A']`) prevents redundant target stops. Partial-fill-line position is approximate for areas with empty early phases (e.g., `website-current` with phase 1 empty) — cosmetic only, text caption stays accurate.
+- Commits: client-ops `8207995`, rancho-moonrise `dccfbc7` + `81cb9f2` (head-block polish).
+
 ## 2026-04-15 — Daily SEO Run: Contact AEO + SpeakableSpec, Blog #11
 
 - **`contact.html` SpeakableSpecification schema added.** WebPage schema targeting `.page-header h1`, `.page-header p`, `.aeo-block h2`, `.aeo-block p`. Completes S4 schema pass across all major pages.
