@@ -166,7 +166,10 @@ p { margin-bottom: 1em; }
 .section--sage .section-label { color: var(--color-cream-dark); }
 .section--sage p, .section--sage .split__content p { color: var(--color-text); }
 
-.section--pine { background: var(--color-pine); color: var(--color-white); }
+/* Darker, richer forest green — better contrast for white body text than the
+   brand-palette mid-pine (#31735A). Reserved for broad section backgrounds;
+   --color-pine remains the brand token for smaller accents. */
+.section--pine { background: #1f4d3a; color: var(--color-white); }
 .section--pine h2, .section--pine h3 { color: var(--color-white); }
 .section--pine .section-label { color: var(--color-orange-light); }
 .section--pine p, .section--pine .event-card__desc, .section--pine .split__content p { color: rgba(255, 255, 255, 0.96); }
@@ -766,11 +769,14 @@ p { margin-bottom: 1em; }
 .testimonial-marquee__track {
     display: flex;
     gap: var(--space-md);
-    animation: marquee-scroll 50s linear infinite;
+    /* Slowed from 50s → 120s so reviews stay on screen long enough to read.
+       Mobile override below further tunes for smaller card width. */
+    animation: marquee-scroll 120s linear infinite;
     width: max-content;
 }
 
-.testimonial-marquee:hover .testimonial-marquee__track {
+.testimonial-marquee:hover .testimonial-marquee__track,
+.testimonial-marquee.is-touch-paused .testimonial-marquee__track {
     animation-play-state: paused;
 }
 
@@ -835,7 +841,8 @@ p { margin-bottom: 1em; }
 
 @media (max-width: 600px) {
     .testimonial-marquee__card { flex: 0 0 280px; }
-    .testimonial-marquee__track { animation-duration: 35s; }
+    /* Slowed from 35s → 80s so mobile readers have time to finish a review. */
+    .testimonial-marquee__track { animation-duration: 80s; }
 }
 
 /* ---------- Events Timeline ---------- */
@@ -1096,19 +1103,26 @@ p { margin-bottom: 1em; }
     flex-direction: column;
     justify-content: flex-end;
     padding: var(--space-md);
-    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%);
+    /* Stronger gradient so white text reads clearly on bright image regions */
+    background: linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.35) 55%, rgba(0,0,0,0.15) 100%);
 }
 
 .venue-duo__overlay h3 {
     font-size: clamp(1.4rem, 3vw, 1.8rem);
     color: var(--color-white);
     margin-bottom: 6px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.75), 0 1px 3px rgba(0,0,0,0.9);
 }
 
 .venue-duo__overlay p {
-    font-size: 0.9rem;
-    color: rgba(255,255,255,0.8);
+    font-size: 0.95rem;
+    color: #ffffff;
     margin-bottom: var(--space-sm);
+    text-shadow: 0 2px 8px rgba(0,0,0,0.75), 0 1px 3px rgba(0,0,0,0.9);
+}
+
+.venue-duo__overlay .btn {
+    text-shadow: none;
 }
 
 @media (min-width: 960px) {
@@ -2688,4 +2702,124 @@ p { margin-bottom: 1em; }
     text-align: center;
     margin-top: var(--space-sm, 1rem);
     font-style: italic;
+}
+
+/* ============================================================
+   Mobile UX homepage pass (2026-04-14)
+   Items 2, 4, 5, 9 from the homepage fix brief.
+   ============================================================ */
+
+/* Item 2 — Nav quick-action cluster (Instagram + Call Now) visible beside
+   the hamburger on mobile, hidden on desktop where full nav appears. */
+.nav__mobile-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
+    margin-right: 8px;
+}
+@media (min-width: 960px) {
+    /* Desktop uses the full .nav__links row; hide the compact mobile cluster. */
+    .nav__mobile-cta { display: none; }
+}
+.nav__icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--color-white, #fff);
+    color: var(--color-terracotta, #B6603F);
+    border: none;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+    transition: background var(--transition), transform var(--transition), color var(--transition);
+}
+.nav__icon-btn:hover,
+.nav__icon-btn:focus-visible {
+    background: var(--color-orange, #C9842B);
+    color: var(--color-white, #fff);
+    transform: translateY(-1px);
+    outline: none;
+}
+.nav__icon-btn--call {
+    /* "Call Now" feels action-y — give it the amber fill to stand apart from
+       Instagram's neutral white pill. */
+    background: var(--color-orange, #C9842B);
+    color: var(--color-white, #fff);
+}
+.nav__icon-btn--call:hover,
+.nav__icon-btn--call:focus-visible {
+    background: var(--color-orange-dark, #a67832);
+}
+
+/* Hide the nav mobile-CTA cluster on very narrow screens if space is tight —
+   still keep both icons visible at 375px, only collapse if <340px. */
+@media (max-width: 339px) {
+    .nav__icon-btn { width: 40px; height: 40px; }
+    .nav__mobile-cta { gap: 6px; margin-right: 4px; }
+}
+
+/* Item 4 — Hero headline: make it dominant on mobile. The base clamp
+   (2.5rem – 4rem) was being overridden to 1.45–2.05rem below 600px, which
+   hides the value prop. Bump the mobile floor up significantly. */
+@media (max-width: 768px) {
+    .hero__title {
+        font-size: clamp(2.25rem, 8.5vw, 3rem);
+        line-height: 1.02;
+        max-width: 14ch;
+    }
+}
+@media (max-width: 390px) {
+    .hero__title {
+        font-size: clamp(2rem, 10vw, 2.6rem);
+        line-height: 1.02;
+        max-width: 12ch;
+    }
+}
+
+/* Item 5 — Hero CTA buttons: make the labels fill the button. These are the
+   .btn-group buttons in .hero__content specifically, not every .btn on the
+   page — we keep smaller buttons in, e.g., the venue overlays. */
+@media (max-width: 768px) {
+    .hero__content .btn-group .btn {
+        font-size: 1rem;
+        letter-spacing: 2px;
+        padding: 18px 28px;
+        min-height: 56px;
+        width: 100%;
+    }
+    .hero__content .btn-group {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+}
+
+/* Item 9 — Instagram feed: collapse vertical footprint into a horizontal
+   filmstrip on mobile. Uniform square tiles (136px), momentum scroll,
+   hidden scrollbar. Desktop grid layout preserved above 640px. */
+@media (max-width: 640px) {
+    .instagram-grid {
+        display: flex;
+        grid-template-columns: none; /* override the 2-col fallback above */
+        gap: 10px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        padding: 4px 16px 12px; /* inner padding so first/last tile don't hug edges */
+        scrollbar-width: none;       /* Firefox */
+        -ms-overflow-style: none;    /* IE/Edge legacy */
+    }
+    .instagram-grid::-webkit-scrollbar { display: none; } /* Chrome/Safari */
+    .instagram-grid__tile {
+        flex: 0 0 136px;
+        width: 136px;
+        height: 136px;
+        aspect-ratio: 1 / 1;
+        scroll-snap-align: start;
+        border-radius: 10px;
+    }
 }

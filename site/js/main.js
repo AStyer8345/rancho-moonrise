@@ -227,6 +227,28 @@
         startEventAutoplay();
     }
 
+    // ---------- Review marquee: touch-pause so mobile users can finish reading ----------
+    // The marquee itself is CSS-driven (`animation: marquee-scroll 120s linear`).
+    // CSS handles `:hover` pause for desktop. Mobile has no hover, so we toggle
+    // `.is-touch-paused` on touchstart and remove it 3 seconds after touchend.
+    // That 3s delay lets users tap, read, and release without the track jumping
+    // back into motion the instant their finger lifts.
+    var reviewMarquee = document.querySelector('.testimonial-marquee');
+    if (reviewMarquee) {
+        var resumeTimer = null;
+        reviewMarquee.addEventListener('touchstart', function () {
+            if (resumeTimer) { clearTimeout(resumeTimer); resumeTimer = null; }
+            reviewMarquee.classList.add('is-touch-paused');
+        }, { passive: true });
+        reviewMarquee.addEventListener('touchend', function () {
+            if (resumeTimer) clearTimeout(resumeTimer);
+            resumeTimer = setTimeout(function () {
+                reviewMarquee.classList.remove('is-touch-paused');
+                resumeTimer = null;
+            }, 3000);
+        }, { passive: true });
+    }
+
     // ---------- Smooth scroll for anchor links ----------
     document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
         anchor.addEventListener('click', function (e) {
