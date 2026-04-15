@@ -118,7 +118,8 @@ All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms. Li
 - [x] Blog post #8 — "Austin Pool Day Pass Guide" — DONE 2026-04-12
 - [x] Build `/safari-tents-near-austin/` landing page — DONE 2026-04-13
 - [x] Blog post #10 — "Glamping vs Camping: What's the Difference?" — DONE 2026-04-14. AEO block, FAQPage schema (4 Q&A), SpeakableSpecification, BlogPosting schema, FAQ accordion.
-- [ ] Blog post #11 candidates: "What to Do Near Austin With Kids", "Corporate Retreat Planning Guide Texas"
+- [x] Blog post #11 — "Things to Do Near Austin With Kids" — DONE 2026-04-15
+- [ ] Blog post #12 candidate: "Corporate Retreat Planning Guide Texas"
 
 ### NEEDS ADAM — Review monitor flags (from 2026-04-15 rancho-review-monitor run)
 - [ ] **Verify possible Airbnb listing** — search surfaced `/rooms/1284193976615696223` ("Glamping Safari Tent 25 mins from downtown Austin, Manor TX"). April 9 baseline said no Airbnb listing. Confirm if this is a Rancho Moonrise listing — if yes, add to review coverage scope. (Page returned 403 when fetched by agent.)

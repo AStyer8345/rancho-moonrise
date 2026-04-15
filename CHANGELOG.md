@@ -1,5 +1,13 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-15 — Daily SEO Run: Contact AEO + SpeakableSpec, Blog #11
+
+- **`contact.html` SpeakableSpecification schema added.** WebPage schema targeting `.page-header h1`, `.page-header p`, `.aeo-block h2`, `.aeo-block p`. Completes S4 schema pass across all major pages.
+- **`contact.html` AEO direct-answer block added.** New `.aeo-block` section answering "How to Reach Rancho Moonrise" — covers phone, form, AI concierge, address, check-in, booking paths (Cloudbeds + ResortPass). Completes S2 AEO treatment across all major pages.
+- **Blog post #11 published: `things-to-do-near-austin-with-kids.html`.** Targets "things to do near Austin with kids", "family activities near Austin Texas", "kid-friendly things to do near Austin". ~1,500 words. AEO direct-answer block, FAQPage schema (4 Q&A), SpeakableSpecification, BlogPosting schema. FAQ accordion (4 items). Covers McKinney Falls, Bastrop, Hamilton Pool, Blue Hole Wimberley, and Rancho Moonrise as the base. CTA to book family stay.
+- **`blog.html`** ItemList position 11 added; post #11 card added to grid.
+- **`sitemap.xml`** `/blog/things-to-do-near-austin-with-kids/` added (priority 0.8, monthly). lastmod 2026-04-15.
+
 ## 2026-04-15 — rancho-review-monitor: First Run (baseline seed)
 
 - **First run of rancho-review-monitor scheduled task.** Seeded `brand/review-aggregate.json` and `site/admin/dashboard-state.json`. Created `tasks/review-monitor/BLOCKERS.md` and `tasks/review-monitor/session-log.md`.
