@@ -2096,11 +2096,30 @@ p { margin-bottom: 1em; }
     .accom-grid { gap: var(--space-md); }
 
     /* Nav: ensure logo + hamburger don't collide */
-    .nav { height: 52px; padding: 0; }
-    .nav--scrolled { height: 52px; padding: 0; }
+    .nav { height: 56px; padding: 0; }
+    .nav--scrolled { height: 56px; padding: 0; }
     .nav__inner { padding: 0 var(--space-sm); }
-    .nav__logo-img { height: 70px; padding: 5px; margin-top: 18px; }
-    .nav--scrolled .nav__logo-img { height: 70px; padding: 5px; margin-top: 18px; }
+    /* Larger, frameless logo so the wordmark is legible on mobile */
+    .nav__logo-img {
+        height: 110px;
+        width: auto;
+        padding: 0;
+        margin-top: 24px;
+        background: transparent;
+        border: 0;
+        box-shadow: none;
+        border-radius: 0;
+        filter: drop-shadow(0 4px 10px rgba(0,0,0,0.22));
+    }
+    .nav--scrolled .nav__logo-img {
+        height: 110px;
+        padding: 0;
+        margin-top: 24px;
+        background: transparent;
+        border: 0;
+        box-shadow: none;
+        filter: drop-shadow(0 4px 10px rgba(0,0,0,0.22));
+    }
 
     /* Mobile menu: breathing room */
     .nav__mobile a { font-size: 1.3rem; }
@@ -2115,8 +2134,24 @@ p { margin-bottom: 1em; }
     .btn-group .btn { width: 100%; }
     .hero__title { font-size: 1.62rem; }
     .hero__content { margin-bottom: 78px; }
-    .nav__logo-img { height: 64px; padding: 5px; margin-top: 16px; }
-    .nav--scrolled .nav__logo-img { height: 64px; padding: 5px; margin-top: 16px; }
+    .nav__logo-img {
+        height: 96px;
+        padding: 0;
+        margin-top: 20px;
+        background: transparent;
+        border: 0;
+        box-shadow: none;
+        filter: drop-shadow(0 4px 10px rgba(0,0,0,0.22));
+    }
+    .nav--scrolled .nav__logo-img {
+        height: 96px;
+        padding: 0;
+        margin-top: 20px;
+        background: transparent;
+        border: 0;
+        box-shadow: none;
+        filter: drop-shadow(0 4px 10px rgba(0,0,0,0.22));
+    }
 }
 
 @media (min-width: 900px) {
