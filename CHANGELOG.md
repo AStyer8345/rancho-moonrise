@@ -1,5 +1,21 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-16 — SEO Run: AEO + Schema Pass on Glamping and Bachelorette Pages
+
+- **Re-Verify Gate ran:** sitemap.xml confirmed 200. No stale live-claims found in CONTEXT.md Active Blockers. Ran coverage audit across all 15 content pages — found 6 with zero AEO/FAQPage/SpeakableSpec coverage.
+- **`site/pages/glamping-near-austin-texas.html`** (primary keyword page — "glamping near Austin"):
+  - Added **FAQPage schema** (4 Q&A: what is glamping near Austin, how far, pet-friendly, pool).
+  - Added **SpeakableSpecification schema** targeting `.aeo-block`, `.page-header h1`, `.page-header p`.
+  - Added **`.aeo-block` direct-answer section** with 4 H3 questions + answers before the "Ready to Book?" CTA, wrapped in `<hr class="blog-divider">` dividers.
+  - `dateModified` updated to 2026-04-16.
+- **`site/pages/bachelorette-party-austin-texas.html`**:
+  - Added **FAQPage schema** (4 Q&A extracted from the existing "AEO: Quick Answers" paragraph content).
+  - Added **SpeakableSpecification schema** targeting `.aeo-block`.
+  - **Restructured existing AEO inline Q&A** from `<p><strong>Q?</strong> A</p>` paragraphs into proper `.aeo-block` div with `<h3>` question headings — CSS styling and AI engine selectors now pick it up correctly.
+  - `dateModified` updated to 2026-04-16.
+- Commit `6fb90b0` pushed to main → Vercel deploy triggered.
+- **4 remaining zero-coverage pages queued** for next run: `wedding-venues-near-austin.html`, `corporate-retreat-near-austin.html`, `ranch-wedding-texas.html`, `things-to-do-manor-tx.html`.
+
 ## 2026-04-15 — GBP Task #2 RESOLVED (description, hours, amenities, category swap)
 
 - **Claude drafted every profile field** at `brand/gbp-posts/2026-04-15-gbp-profile-fields.md`: 738-char "From the owner" description (replacing a blog post that had been auto-syndicated into the field), full Mon–Sun hours table (Mon/Tue closed, Wed–Sun 9–8), category-by-category amenity checklist with corrections (Fitness Center flagged as a bad auto-accept — no gym on property), opening date (2024), HTTPS website flip, phone verify.

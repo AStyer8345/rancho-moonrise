@@ -1,6 +1,6 @@
 # Rancho Moonrise — Project Context
 
-**Last updated:** 2026-04-15 (Weekly content run: Blog #12 published — "Corporate Retreat Planning Guide Texas". Social snippets at `brand/gbp-posts/2026-04-15-blog12-social-snippets.md`.)
+**Last updated:** 2026-04-16 (SEO run: AEO block + FAQPage + SpeakableSpec added to `glamping-near-austin-texas.html` and `bachelorette-party-austin-texas.html`. 4 remaining zero-coverage landing pages queued for next run.)
 
 **GBP posting status:** Week 1 (Event Announcement) drafted 2026-04-09. Week 2 (Property Showcase — pool, cabins, safari tents, Lodge, donkeys) drafted 2026-04-13. Awaiting Adam/Ashley manual post. Next rotation: Week 3 (Special Offer / Package) due ~2026-04-20.
 
@@ -29,7 +29,7 @@ Advisory engagement for Rancho Moonrise — glamping, events, and retreat ranch 
 
 ## What's Next
 
-- **Next SEO run:** Blog post #12 done. Next candidates: refresh events.html Event schema as April 24 / April 26 events pass (Free Friday at Pool + Yoga & Mimosas). Consider a "summer glamping guide" or "bachelorette weekend near Austin" follow-up post. Accommodate page internal link to kids blog post still pending.
+- **Next SEO run:** AEO pass on 4 remaining zero-coverage landing pages: `wedding-venues-near-austin.html`, `corporate-retreat-near-austin.html`, `ranch-wedding-texas.html`, `things-to-do-manor-tx.html`. Also refresh events.html Event schema as April 24/26 events approach (Free Friday at Pool + Yoga & Mimosas). Blog #13 candidate: "Summer Glamping Near Austin" or "Austin Bachelorette Weekend vs Bar Crawl".
 - Adam: Re-upload the 8 low-res source JPGs at 2560px+ width (especially `feature-wedding.jpg` — bride-critical) so the responsive ladder can generate 1920/2560/3840 variants. See "Low-res source JPGs" below.
 - Adam: Wire up a backend handler for the wedding inquiry forms on both contact.html and weddings.html (Formspree / Netlify Forms / Vercel serverless → email + Salesforce create_lead). Both currently `action="#"`. Flag on the DNS cutover checklist.
 - Adam: Curate real-wedding photo set to replace weddings.html gallery placeholder (6 tiles, aria-hidden, "photos coming soon" note live now)
