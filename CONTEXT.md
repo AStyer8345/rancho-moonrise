@@ -97,22 +97,28 @@ Once re-uploaded: rerun `./scripts/generate-responsive-images.sh` and commit —
 
 ---
 
-## Key Metrics (confirmed April 9, 2026 — baseline week)
+## Key Metrics (updated April 15, 2026 — week 1 vs. baseline)
 
-| Metric | Value |
-|--------|-------|
-| Google reviews | ~127 (4.9★) — replies done (RESOLVED 2026-04-14 per done-log; live count STALE:2026-04-09) |
-| GBP views | 50,500 |
-| Instagram | ~13K followers, 279 posts |
-| Facebook | 864 followers, 5 reviews (100%) |
-| TikTok | 1,408 followers |
-| TripAdvisor | 0 reviews, NOT claimed |
-| Expedia | 8.0 rating |
-| Google ranking (non-brand) | NOT ranking (0/10 keywords) |
-| AI engine citations | NOT cited (0/10) |
-| Google indexed pages (old site) | ~10 |
-| Next metrics update | April 16, 2026 |
-| Improvement tasks done | 3/35 (#4, #6, #10 — backfilled) |
+| Metric | Value | Delta vs. Apr 9 |
+|--------|-------|-----------------|
+| Google reviews | 125 (4.9★) (unverified) | Flat |
+| GBP views | 50,500 (stale — March email) | Awaiting April email |
+| GBP search impressions | 6,967 | Baseline filled Apr 14 |
+| GBP profile views | 15,053 | Baseline filled Apr 14 |
+| GBP clicks | 554 | Baseline filled Apr 14 |
+| GBP directions | 513 | Baseline filled Apr 14 |
+| GBP calls | 44 | Baseline filled Apr 14 |
+| Instagram | ~13K followers | Flat |
+| Facebook | 864 followers, 5 reviews | Flat |
+| TikTok | 1,408 followers | Flat |
+| LinkedIn | **106 followers** | NEW — was "Page exists" |
+| TripAdvisor | 0 reviews, NOT claimed | Flat |
+| Expedia | 8.0 rating | Flat |
+| Google ranking (non-brand) | NOT ranking (0/10 keywords) | Flat |
+| AI engine citations | NOT cited (0/10) | Flat |
+| Google indexed pages (old site) | ~10 | Flat — new site not live |
+| Next metrics update | April 22, 2026 | |
+| Improvement tasks done | 3/35 (#4, #6, #10) | Flat |
 
 ---
 

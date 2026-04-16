@@ -1,5 +1,19 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-15 — Weekly Metrics Pull (rancho-metrics-weekly)
+
+- All 10 SEO keywords checked — rankings flat vs. April 9 baseline. No movement on any tracked term.
+- AEO citations: still 0/10 on non-brand queries. Brand queries return results but non-brand (glamping, wedding venue, etc.) show zero citations.
+- Social: Instagram ~13K, Facebook 864, TikTok 1,408 — all flat. **LinkedIn now tracked at 106 followers** (was "Page exists" placeholder).
+- Reviews: Google 125 (4.9★), Facebook 5, Hipcamp 4.8, Yelp 4.5 — all flat (unverified, scraped via web search).
+- Google indexed pages: ~10, unchanged (new site not live yet, DNS cutover still pending).
+- GBP: baseline performance data from March email still current (search impressions 6,967, profile views 15,053, clicks 554, directions 513, calls 44). No new monthly email received yet.
+- Updated both HTML copies (brand/ and site/), committed, pushed. Vercel auto-deploy triggered.
+
+## 2026-04-16 — Bi-weekly Audit: Skipped
+
+- `rancho-biweekly-audit`: skipped — last audit was 7 days ago (2026-04-09). Next audit due on or after 2026-04-22.
+
 ## 2026-04-16 — Review Monitor RUN_002
 
 - `rancho-review-monitor`: scraped 5 platforms, 0 new reviews found on any platform. All unreplied=0 confirmed via done-log. Dashboard status upgraded `pending` → `ok`. Google count/rating still STALE (JS-blocked, run 2 of 3 before BLOCKERS threshold). 0 response drafts produced.
