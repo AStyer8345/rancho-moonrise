@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Videos — See Rancho Moonrise in Action | Rancho Moonrise</title>
+    <meta name="description" content="Watch videos of Rancho Moonrise — Austin's glamping and events ranch. See our safari tents, cabins, pool, weddings, and live events through guest and creator videos.">
+
+    <link rel="canonical" href="https://ranchomoonrise.com/pages/videos.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Videos — See Rancho Moonrise in Action">
+    <meta property="og:description" content="Watch videos of Rancho Moonrise — glamping, weddings, pool days, live music, and more on 36 acres near Austin.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ranchomoonrise.com/pages/videos.html">
+    <meta property="og:image" content="https://ranchomoonrise.com/images/og-image.jpg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Overpass:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Overpass:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"></noscript>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../css/styles.css?v=11">
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <style>
+        /* ---- Video Gallery Page Styles ---- */
+        .video-hero {
+            padding: var(--space-xl) 0 var(--space-lg);
+            text-align: center;
+            background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-alt) 100%);
+        }
+        .video-hero h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            color: var(--color-heading);
+            margin-bottom: 0.5em;
+        }
+        .video-hero p {
+            font-family: var(--font-accent);
+            font-style: italic;
+            color: var(--color-text-muted);
+            font-size: 1.15rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Filter tabs */
+        .video-filters {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            padding: var(--space-sm) var(--space-sm) var(--space-md);
+        }
+        .video-filters button {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            padding: 10px 22px;
+            border: 2px solid var(--color-border);
+            border-radius: 40px;
+            background: transparent;
+            color: var(--color-text-muted);
+            cursor: pointer;
+            transition: all var(--transition);
+        }
+        .video-filters button:hover {
+            border-color: var(--color-orange);
+            color: var(--color-orange);
+        }
+        .video-filters button.active {
+            background: var(--color-terracotta);
+            border-color: var(--color-terracotta);
+            color: #fff;
+        }
+
+        /* Grid */
+        .video-grid {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--space-sm) var(--space-xl);
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 28px;
+        }
+        @media (max-width: 400px) {
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Card */
+        .video-card {
+            background: var(--color-bg-card);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            transition: transform var(--transition), box-shadow var(--transition);
+        }
+        .video-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 28px rgba(0,0,0,0.1);
+        }
+        .video-card__embed {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 */
+            background: #1a1a1a;
+        }
+        .video-card__embed iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        /* Lazy load: show placeholder until in view */
+        .video-card__embed[data-src] {
+            cursor: pointer;
+        }
+        .video-card__embed[data-src]::after {
+            content: '▶';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            color: rgba(255,255,255,0.8);
+            text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+            pointer-events: none;
+        }
+        .video-card__info {
+            padding: 16px 20px 20px;
+        }
+        .video-card__title {
+            font-family: var(--font-heading);
+            font-size: 1.05rem;
+            color: var(--color-heading);
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+        .video-card__meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.82rem;
+            color: var(--color-text-muted);
+        }
+        .video-card__platform {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+        .video-card__platform--youtube {
+            background: rgba(255, 0, 0, 0.08);
+            color: #c00;
+        }
+        .video-card__platform--tiktok {
+            background: rgba(0, 0, 0, 0.06);
+            color: #333;
+        }
+        .video-card__platform--facebook {
+            background: rgba(24, 119, 242, 0.08);
+            color: #1877f2;
+        }
+        .video-card__creator {
+            font-family: var(--font-accent);
+            font-style: italic;
+        }
+
+        /* TikTok embeds need a taller ratio */
+        .video-card__embed--vertical {
+            padding-bottom: 177%; /* 9:16 */
+            max-height: 580px;
+        }
+
+        /* External link cards (for TikTok/FB that don't embed cleanly) */
+        .video-card__link-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(26,26,26,0.85) 0%, rgba(74,76,77,0.9) 100%);
+            text-decoration: none;
+            gap: 12px;
+        }
+        .video-card__link-overlay svg {
+            width: 48px;
+            height: 48px;
+            fill: #fff;
+            opacity: 0.9;
+        }
+        .video-card__link-overlay span {
+            color: #fff;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.03em;
+            opacity: 0.9;
+        }
+        .video-card__link-overlay:hover svg,
+        .video-card__link-overlay:hover span {
+            opacity: 1;
+        }
+
+        /* CTA section */
+        .video-cta {
+            text-align: center;
+            padding: var(--space-lg) var(--space-sm) var(--space-xl);
+            background: var(--color-bg-alt);
+        }
+        .video-cta h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            color: var(--color-heading);
+            margin-bottom: 0.5em;
+        }
+        .video-cta p {
+            color: var(--color-text-muted);
+            margin-bottom: 1.5em;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .video-cta .btn {
+            display: inline-block;
+            margin: 0 8px 8px;
+        }
+    </style>
+
+    <!-- Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Rancho Moonrise Videos",
+        "description": "Video gallery showcasing Rancho Moonrise — glamping, weddings, events, and the ranch experience near Austin, TX.",
+        "url": "https://ranchomoonrise.com/pages/videos.html",
+        "isPartOf": { "@type": "WebSite", "name": "Rancho Moonrise", "url": "https://ranchomoonrise.com" }
+    }
+    </script>
+</head>
+<body>
+
+<!-- Accessibility -->
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<!-- ============ NAVIGATION ============ -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+        <a href="/" class="nav__logo" aria-label="Rancho Moonrise — Home">
+            <img src="/images/brand/logos/untextured/tertiary/RanchoMoonrise_Logo_RGB_Tertiary_Clay@2x.png" alt="Rancho Moonrise" class="nav__logo-img" width="88" height="88">
+        </a>
+        <div class="nav__mobile-cta" aria-label="Quick actions">
+            <a href="https://www.instagram.com/rancho_moonrise/" class="nav__icon-btn" target="_blank" rel="noopener" aria-label="Instagram">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="tel:+17372911260" class="nav__icon-btn nav__icon-btn--call" aria-label="Call">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.92.39 1.82.78 2.65a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.43-1.35a2 2 0 0 1 2.11-.45c.83.39 1.73.65 2.65.78A2 2 0 0 1 22 16.92z"/></svg>
+            </a>
+        </div>
+        <ul class="nav__links">
+            <li><a href="/pages/accommodations.html">Accommodations</a></li>
+            <li><a href="/pages/weddings.html">Weddings</a></li>
+            <li><a href="/pages/events.html">RM Events</a></li>
+            <li><a href="/pages/host-your-event.html">Private Events</a></li>
+            <li><a href="/pages/contact.html">Contact</a></li>
+            <li><a href="https://hotels.cloudbeds.com/en/reservation/5tzv1r" class="btn btn--primary" target="_blank" rel="noopener">Book Now</a></li>
+            <li><a href="https://www.resortpass.com/hotels/rancho-moonrise" class="btn btn--primary" target="_blank" rel="noopener">Pool Passes</a></li>
+        </ul>
+        <button class="nav__toggle" aria-label="Open navigation menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="nav__mobile" id="mobileMenu" role="dialog" aria-label="Mobile navigation">
+    <button class="nav__close" aria-label="Close navigation menu">&times;</button>
+    <a href="/">Home</a>
+    <a href="/pages/accommodations.html">Accommodations</a>
+    <a href="/pages/weddings.html">Weddings</a>
+    <a href="/pages/events.html">RM Events</a>
+    <a href="/pages/host-your-event.html">Private Events</a>
+    <a href="/pages/contact.html">Contact</a>
+    <a href="https://hotels.cloudbeds.com/en/reservation/5tzv1r" class="btn btn--primary" target="_blank" rel="noopener">Book Now</a>
+    <a href="https://www.resortpass.com/hotels/rancho-moonrise" class="btn btn--primary" target="_blank" rel="noopener">Pool Passes</a>
+</div>
+
+<!-- ============ MAIN ============ -->
+<main id="main">
+
+    <!-- Hero -->
+    <section class="video-hero">
+        <div class="container">
+            <h1>See the Ranch in Action</h1>
+            <p>From glamping tours to wedding celebrations, pool days to live music nights — experience Rancho Moonrise through video.</p>
+        </div>
+    </section>
+
+    <!-- Filter Tabs -->
+    <div class="video-filters" role="tablist" aria-label="Filter videos by platform">
+        <button class="active" data-filter="all" role="tab" aria-selected="true">All Videos</button>
+        <button data-filter="youtube" role="tab" aria-selected="false">YouTube</button>
+        <button data-filter="tiktok" role="tab" aria-selected="false">TikTok</button>
+        <button data-filter="facebook" role="tab" aria-selected="false">Facebook</button>
+    </div>
+
+    <!-- Video Grid -->
+    <section class="video-grid" aria-label="Video gallery">
+
+        <!-- ====== YOUTUBE — FEATURED ====== -->
+
+        <!-- 1. RealNotRender full video -->
+        <div class="video-card" data-platform="youtube">
+            <div class="video-card__embed" data-src="https://www.youtube.com/embed/rHz9c8DbgQA">
+                <img src="https://img.youtube.com/vi/rHz9c8DbgQA/hqdefault.jpg" alt="Rancho Moonrise in Manor TX video thumbnail" loading="lazy" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;">
+            </div>
+            <div class="video-card__info">
+                <p class="video-card__title">Rancho Moonrise in Manor, TX — #RealNotRender</p>
+                <div class="video-card__meta">
+                    <span class="video-card__platform video-card__platform--youtube">YouTube</span>
+                    <span class="video-card__creator">Rancho Moonrise</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Escape to Rancho Moonrise Short -->
+        <div class="video-card" data-platform="youtube">
+            <div class="video-card__embed" data-src="https://www.youtube.com/embed/_klefu2vTwM">
+                <img src="https://img.youtube.com/vi/_klefu2vTwM/hqdefault.jpg" alt="Escape to Rancho Moonrise glamping ranch video" loading="lazy" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;">
+            </div>
+            <div class="video-card__info">
+                <p class="video-card__title">Escape to Rancho Moonrise — Austin's Luxury Glamping Ranch</p>
+                <div class="video-card__meta">
+                    <span class="video-card__platform video-card__platform--youtube">YouTube</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Texas Getaway Short -->
+        <div class="video-card" data-platform="youtube">
+            <div class="video-card__embed" data-src="https://www.youtube.com/embed/l-tOXqwDHAI">
+                <img src="https://img.youtube.com/vi/l-tOXqwDHAI/hqdefault.jpg" alt="Texas getaway at Rancho Moonrise video" loading="lazy" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;">
+            </div>
+            <div class="video-card__info">
+                <p class="video-card__title">Save This for Your Next Texas Getaway</p>
+                <div class="video-card__meta">
+                    <span class="video-card__platform video-card__platform--youtube">YouTube Short</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. Rancho Moonrise Short -->
+        <div class="video-card" data-platform="youtube">
+            <div class="video-card__embed" data-src="https://www.youtube.com/embed/IouPSeoTC5I">
+                <img src="https://img.youtube.com/vi/IouPSeoTC5I/hqdefault.jpg" alt="Rancho Moonrise video tour" loading="lazy" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;">
+            </div>
+            <div class="video-card__info">
+                <p class="video-card__title">Rancho Moonrise</p>
+                <div class="video-card__meta">
+                    <span class="video-card__platform video-card__platform--youtube">YouTube Short</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ====== TIKTOK — OWN ACCOUNT ====== -->
+
+        <div class="video-card" data-platform="tiktok">
+            <div class="video-card__embed">
+                <a href="https://www.tiktok.com/@rancho_moonrise/video/7593032913021685022" target="_blank" rel="noopener" class="video-card__link-overlay" aria-label="Watch on TikTok: Experience Glamping at Rancho Moonrise">
+                    <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.84-.1z"/></svg>
+                    <span>Watch on TikTok</span>
+                </a>
+            </div>
+            <div class="video-card__info">
+                <p class="video-card__title">Experience Glamping at Rancho Moonrise</p>
+                <div class="video-card__meta">
+                    <span class="video-card__platform video-card__platform--tiktok">TikTok</span>
+                    <span class="video-card__creator">@rancho_moonrise</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="video-card" data-platform="tiktok">
+            <div class="video-card__embed">
+                <a href="https://www.tiktok.com/@rancho_moonrise/video/7610777676067917086" target="_blank" rel="noopener" class="video-card__link-overlay" aria-label="Watch on TikTok: Rancho Romance Wedding">
+                    <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.84-.1z"/></svg>
+                    <span>Watch on TikTok</span>
+                </a>
+            </div>
+            <div class="video-card__info">
+                <p class="video-card__title">Rancho Romance — Wedding Celebration for Haven & Louis</p>
+                <div class="video-card__meta">
+                    <span class="video-card__platform video-card__platform--tiktok">TikTok</span>
+                    <span class="video-card__creator">@rancho_moonrise</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="video-card" data-platform="tiktok">
+            <div class="video-card__embed">
+                <a href="https://www.tiktok.com/@rancho_moonrise/video/7608960366479019294" target="_blank" rel="noopener" class="video-card__link-overlay" aria-label="Watch on TikTok: Quick dip at the pool">
+                    <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.84-.1z"/></svg>
+                    <span>Watch on TikTok</span>
+                </a>
+            </div>
+            <div class="video-card__info">
+                <p class="video-card__title">Quick Dip at the Pool</p>
+                <div class="video-card__meta">
+                    <span class="video-card__platform video-card__platform--tiktok">TikTok</span>
+                    <span class="video-card__creator">@rancho_moonrise</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="video-card" data-platform="tiktok">
+            <div class="video-card__embed">
+                <a href="https://www.tiktok.com/@rancho_moonrise/video/7594143334726126878" target="_blank" rel="noopener" class="video-card__link-overlay" aria-label="Watch on TikTok: Horses at Rancho Moonrise">
+                    <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.84-.1z"/></svg>
+                    <span>Watch on TikTok</span>
+                </a>
+            </div>
+            <div class="video-card__info">
+                <p class="video-card__title">Experience the Charm of Horses at Rancho Moonrise</p>
+                <div class="video-card__meta">
+                    <span class="video-card__platform video-card__platform--tiktok">TikTok</span>
+                    <span class="video-card__creator">@rancho_moonrise</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ====== TIKTOK — UGC ====== -->
+
+        <div class="video-card" data-platform="tiktok">
+            <div class="video-card__embed">
+                <a href="https://www.tiktok.com/@ej.eventsco/video/7626568252247788830" target="_blank" rel="noopener" class="video-card__link-overlay" aria-label="Watch on TikTok: Super cute glamping and event space">
+                    <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.84-.1z"/></svg>
+                    <span>Watch on TikTok</span>
+                </a>
+            </div>
+            <div class="video-card__info">
+                <p class="video-card__title">Super Cute Glamping & Event Space in Manor, TX</p>
+                <div class="video-card__meta">
+                    <span class="video-card__platform video-card__platform--tiktok">TikTok</span>
+                    <span class="video-card__creator">@ej.eventsco</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="video-card" data-platform="tiktok">
+            <div class="video-card__embed">
+                <a href="https://www.tiktok.com/@texas_explorer/video/7502430918523505963" target="_blank" rel="noopener" class="video-card__link-overlay" aria-label="Watch on TikTok: A Perfect Texas Getaway">
+                    <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.84-.1z"/></svg>
+                    <span>Watch on TikTok</span>
+                </a>
+            </div>
+            <div class="video-card__info">
+                <p class="video-card__title">Explore Rancho Moonrise — A Perfect Texas Getaway</p>
+                <div class="video-card__meta">
+                    <span class="video-card__platform video-card__platform--tiktok">TikTok</span>
+                    <span class="video-card__creator">@texas_explorer</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="video-card" data-platform="tiktok">
+            <div class="video-card__embed">
+                <a href="https://www.tiktok.com/@thedailykara/video/7622719212259183903" target="_blank" rel="noopener" class="video-card__link-overlay" aria-label="Watch on TikTok: Staycation Ideas">
+                    <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.84-.1z"/></svg>
+                    <span>Watch on TikTok</span>
+                </a>
+            </div>
+            <div class="video-card__info">
+                <p class="video-card__title">Staycation Ideas — Rancho Moonrise</p>
+                <div class="video-card__meta">
+                    <span class="video-card__platform video-card__platform--tiktok">TikTok</span>
+                    <span class="video-card__creator">@thedailykara</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="video-card" data-platform="tiktok">
+            <div class="video-card__embed">
+                <a href="https://www.tiktok.com/@gabbyly/video/7476307088055258414" target="_blank" rel="noopener" class="video-card__link-overlay" aria-label="Watch on TikTok: Experience Glamping Near Austin">
+                    <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.84-.1z"/></svg>
+                    <span>Watch on TikTok</span>
+                </a>
+            </div>
+            <div class="video-card__info">
+                <p class="video-card__title">Experience Glamping at Rancho Moonrise Near Austin</p>
+                <div class="video-card__meta">
+                    <span class="video-card__platform video-card__platform--tiktok">TikTok</span>
+                    <span class="video-card__creator">@gabbyly</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ====== FACEBOOK ====== -->
+
+        <div class="video-card" data-platform="facebook">
+            <div class="video-card__embed">
+                <a href="https://www.facebook.com/100077751260174/videos/979687074020129/" target="_blank" rel="noopener" class="video-card__link-overlay" aria-label="Watch on Facebook: First Glamping Ranch Near Austin">
+                    <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                    <span>Watch on Facebook</span>
+                </a>
+            </div>
+            <div class="video-card__info">
+                <p class="video-card__title">First Glamping & Events Ranch Near Austin, TX</p>
+                <div class="video-card__meta">
+                    <span class="video-card__platform video-card__platform--facebook">Facebook</span>
+                    <span class="video-card__creator">@texas.explorer</span>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- CTA -->
+    <section class="video-cta">
+        <div class="container">
+            <h2>Ready to Experience It Yourself?</h2>
+            <p>Book a glamping stay, grab a pool day pass, or plan your next event at the ranch.</p>
+            <a href="https://hotels.cloudbeds.com/en/reservation/5tzv1r" class="btn btn--primary" target="_blank" rel="noopener">Book Your Stay</a>
+            <a href="https://www.resortpass.com/hotels/rancho-moonrise" class="btn btn--secondary" target="_blank" rel="noopener">Pool Passes</a>
+        </div>
+    </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer" role="contentinfo">
+    <div class="container">
+        <div class="footer__grid">
+            <div>
+                <p class="footer__brand">Rancho Moonrise</p>
+                <p class="footer__desc">Austin's glamping and events ranch. 36 acres of safari tents, cabins, weddings, and live events — 20 minutes from downtown Austin.</p>
+                <div class="footer__social">
+                    <a href="https://www.instagram.com/rancho_moonrise/" target="_blank" rel="noopener">Instagram</a>
+                    <a href="https://www.facebook.com/RanchoMoonrise/" target="_blank" rel="noopener">Facebook</a>
+                    <a href="https://www.tiktok.com/@rancho_moonrise" target="_blank" rel="noopener">TikTok</a>
+                    <a href="https://www.youtube.com/@ranchomoonrise" target="_blank" rel="noopener">YouTube</a>
+                </div>
+            </div>
+            <div>
+                <p class="footer__heading">Stay</p>
+                <ul class="footer__links">
+                    <li><a href="/pages/accommodations.html">Accommodations</a></li>
+                    <li><a href="https://hotels.cloudbeds.com/en/reservation/5tzv1r" target="_blank" rel="noopener">Book Now</a></li>
+                    <li><a href="https://www.resortpass.com/hotels/rancho-moonrise" target="_blank" rel="noopener">Pool Pass</a></li>
+                    <li><a href="/pages/faqs.html">FAQs</a></li>
+                </ul>
+            </div>
+            <div>
+                <p class="footer__heading">Celebrate</p>
+                <ul class="footer__links">
+                    <li><a href="/pages/weddings.html">Weddings</a></li>
+                    <li><a href="/pages/host-your-event.html">Private Events</a></li>
+                    <li><a href="/pages/events.html">RM Events</a></li>
+                    <li><a href="/pages/blog.html">Blog</a></li>
+                    <li><a href="/pages/videos.html">Videos</a></li>
+                </ul>
+            </div>
+            <div>
+                <p class="footer__heading">Contact</p>
+                <div class="footer__contact">
+                    <p><a href="tel:+17372911260">737-291-1260</a></p>
+                    <p>20117 Lockwood Road<br>Manor, TX 78653</p>
+                    <p><a href="/pages/contact.html">Send a Message</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p>&copy; 2026 Rancho Moonrise. All rights reserved.</p>
+            <div>
+                <a href="/pages/policies.html">Policies</a> &middot;
+                <a href="/pages/accessibility.html">Accessibility</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- ============ SCRIPTS ============ -->
+<script src="../js/main.js" defer></script>
+
+<!-- Lazy-load YouTube embeds on click -->
+<script>
+document.querySelectorAll('.video-card__embed[data-src]').forEach(function(el) {
+    el.addEventListener('click', function() {
+        var src = el.getAttribute('data-src');
+        if (!src) return;
+        var iframe = document.createElement('iframe');
+        iframe.src = src + '?autoplay=1&rel=0';
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+        iframe.allowFullscreen = true;
+        iframe.title = el.closest('.video-card').querySelector('.video-card__title').textContent;
+        // Remove thumbnail and play button
+        el.innerHTML = '';
+        el.removeAttribute('data-src');
+        el.appendChild(iframe);
+    });
+});
+</script>
+
+<!-- Filter tabs -->
+<script>
+(function() {
+    var buttons = document.querySelectorAll('.video-filters button');
+    var cards = document.querySelectorAll('.video-card');
+    buttons.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var filter = btn.getAttribute('data-filter');
+            buttons.forEach(function(b) { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+            btn.classList.add('active');
+            btn.setAttribute('aria-selected', 'true');
+            cards.forEach(function(card) {
+                if (filter === 'all' || card.getAttribute('data-platform') === filter) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+})();
+</script>
+
+<!-- Scroll Reveal -->
+<script>
+(function() {
+    var cards = document.querySelectorAll('.video-card');
+    if (!cards.length || !('IntersectionObserver' in window)) return;
+    cards.forEach(function(c, i) {
+        c.style.opacity = '0';
+        c.style.transform = 'translateY(20px)';
+        c.style.transition = 'opacity 0.5s ease ' + (i % 3) * 0.1 + 's, transform 0.5s ease ' + (i % 3) * 0.1 + 's';
+    });
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, { threshold: 0.1 });
+    cards.forEach(function(c) { observer.observe(c); });
+})();
+</script>
+
+<!-- Mobile Sticky CTA -->
+<div class="mobile-cta">
+    <a href="https://hotels.cloudbeds.com/en/reservation/5tzv1r" target="_blank" rel="noopener">Book Your Stay</a>
+</div>
+
+</body>
+</html>

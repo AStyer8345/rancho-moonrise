@@ -59,6 +59,66 @@ FULL_LADDER=(
   feature-pool
   feature-safari-tent
   feature-wedding
+  # --- April 2026 visitor-photos batch ---
+  # Lodge
+  lodge-fireplace-lounge
+  lodge-snacks-icecream
+  lodge-fireplace-alt
+  lodge-bull-painting
+  lodge-shop-textiles
+  lodge-shop-merch
+  lodge-dining-area
+  lodge-shop-slot-machine
+  lodge-window-view
+  # Accommodations
+  accom-cabin-gable-golden
+  accom-tiny-cabin
+  accom-cabin-row
+  accom-cabin-dusk
+  accom-cabin-porch
+  accom-cabin-mural-bed
+  accom-cabin-interior-clean
+  accom-cabin-interior-bench
+  accom-cabin-bed-window-view
+  accom-safari-tent-cedar
+  accom-safari-tent-bright
+  accom-safari-tent-cowhide
+  accom-safari-tent-bunks
+  accom-safari-tent-exterior
+  accom-safari-tent-lounge
+  accom-outdoor-bath
+  accom-firepit-adirondack
+  # Pool
+  pool-thunderbird-empty
+  pool-daytime-overview
+  pool-yellow-umbrella
+  pool-tree-umbrellas
+  pool-duck-float-mural
+  pool-striped-umbrella-guests
+  # Weddings
+  wedding-longtable-sunset
+  wedding-longtable-dusk
+  wedding-wishbone-chairs
+  wedding-invitation-flatlay
+  wedding-lodge-porch-veil
+  # Event Barn / Corral / Ranch
+  event-barn-dusk-neon
+  corral-hank-willie
+  corral-waylon-texas
+  mural-thunderbird-wide
+  mural-be-here-now-night
+  event-rm-exterior-firepit
+  event-rm-pm-logo
+  event-rm-prickly-pear
+  event-porch-yellow-umbrella
+  event-picnic-thunderbird
+  event-fringe-pergola
+  event-outdoor-bar-disco
+  # Hero / Landscape
+  hero-sunset-gravel
+  hero-tent-sunset
+  hero-sunset-roses
+  hero-ranch-overview
 )
 FULL_WIDTHS=(480 1024 1920 2560 3840)
 
