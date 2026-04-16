@@ -6,8 +6,10 @@
     "tiktok_own": 4,
     "tiktok_ugc": 4,
     "facebook": 2,
-    "instagram_reels": 0,
-    "total": 15
+    "instagram_reels_own": 17,
+    "instagram_reels_ugc": 6,
+    "instagram_reels_featured": 10,
+    "total": 38
   },
   "youtube": {
     "channel": "https://www.youtube.com/@ranchomoonrise",
@@ -112,7 +114,44 @@
   },
   "instagram": {
     "profile": "https://www.instagram.com/rancho_moonrise/",
-    "note": "50 posts scraped via #ranchomoonrise hashtag — all were images/carousels, no Reels found in hashtag search. Instagram Reels are posted to @rancho_moonrise profile but require profile-level scraping to extract video URLs.",
-    "reels_url": "https://www.instagram.com/rancho_moonrise/reels/"
+    "reels_url": "https://www.instagram.com/rancho_moonrise/reels/",
+    "total_reels_scraped": 23,
+    "featured_on_site": [
+      {"title": "Live Music, Two-Step & Burgers This Friday", "shortCode": "DRpJn3bkTDO", "url": "https://www.instagram.com/reel/DRpJn3bkTDO/", "creator": "@rancho_moonrise", "plays": 12525},
+      {"title": "A Lovely Weekend Escape", "shortCode": "DQoup0tETDr", "url": "https://www.instagram.com/reel/DQoup0tETDr/", "creator": "@desertmidmod.atx", "plays": 10562},
+      {"title": "Save This for Your Next Texas Staycation", "shortCode": "DWeh11VAPqV", "url": "https://www.instagram.com/reel/DWeh11VAPqV/", "creator": "@thedailykara", "plays": 10209},
+      {"title": "It's the Simple Things — Weekend at Rancho Moonrise", "shortCode": "DPPPxyDEWJo", "url": "https://www.instagram.com/reel/DPPPxyDEWJo/", "creator": "@megframpton", "plays": 9199},
+      {"title": "Haven + Louie Intimate Wedding — Super 8 Film", "shortCode": "DRm0uFGDT5R", "url": "https://www.instagram.com/reel/DRm0uFGDT5R/", "creator": "@mapandcompassphoto", "plays": 4524},
+      {"title": "Easter at Rancho Moonrise", "shortCode": "DWmn4erkg9o", "url": "https://www.instagram.com/reel/DWmn4erkg9o/", "creator": "@rancho_moonrise", "plays": 4208},
+      {"title": "Valentine's Rancho Rodeo — Two-Step Night", "shortCode": "DUbXI28EoSl", "url": "https://www.instagram.com/reel/DUbXI28EoSl/", "creator": "@nativetexantwostep", "plays": 3924},
+      {"title": "Always a Good Time — Two-Step at the Ranch", "shortCode": "DVPJbA8ksPv", "url": "https://www.instagram.com/reel/DVPJbA8ksPv/", "creator": "@nativetexantwostep", "plays": 3106},
+      {"title": "Resort-Level Amenities with Texas Charm", "shortCode": "DNQUskfREV2", "url": "https://www.instagram.com/reel/DNQUskfREV2/", "creator": "@rancho_moonrise", "plays": 2651},
+      {"title": "Why Not Jump Into the Pool on Your Wedding Day?", "shortCode": "DO7AiWBAZrr", "url": "https://www.instagram.com/reel/DO7AiWBAZrr/", "creator": "@rancho_moonrise", "plays": 1705}
+    ],
+    "all_reels": [
+      {"shortCode": "DRpJn3bkTDO", "plays": 12525, "likes": 284, "creator": "@rancho_moonrise", "date": "2025-11-29"},
+      {"shortCode": "DQoup0tETDr", "plays": 10562, "likes": 160, "creator": "@desertmidmod.atx", "date": "2025-11-04"},
+      {"shortCode": "DWeh11VAPqV", "plays": 10209, "likes": 160, "creator": "@thedailykara", "date": "2026-03-29"},
+      {"shortCode": "DPPPxyDEWJo", "plays": 9199, "likes": 332, "creator": "@megframpton", "date": "2025-09-30"},
+      {"shortCode": "DRm0uFGDT5R", "plays": 4524, "likes": 125, "creator": "@mapandcompassphoto", "date": "2025-11-28"},
+      {"shortCode": "DWmn4erkg9o", "plays": 4208, "likes": 42, "creator": "@rancho_moonrise", "date": "2026-04-01"},
+      {"shortCode": "DUbXI28EoSl", "plays": 3924, "likes": 72, "creator": "@nativetexantwostep", "date": "2026-02-06"},
+      {"shortCode": "DQOt-ibEeIw", "plays": 3322, "likes": 181, "creator": "@rancho_moonrise", "date": "2025-10-25"},
+      {"shortCode": "DVPJbA8ksPv", "plays": 3106, "likes": 83, "creator": "@nativetexantwostep", "date": "2026-02-26"},
+      {"shortCode": "DNQUskfREV2", "plays": 2651, "likes": 85, "creator": "@rancho_moonrise", "date": "2025-08-12"},
+      {"shortCode": "DQ-MmOTkhG8", "plays": 2629, "likes": 85, "creator": "@rancho_moonrise", "date": "2025-11-12"},
+      {"shortCode": "DWZ__a-kXkT", "plays": 2471, "likes": 50, "creator": "@rancho_moonrise", "date": "2026-03-27"},
+      {"shortCode": "DURbIArkoCk", "plays": 2246, "likes": 64, "creator": "@rancho_moonrise", "date": "2026-02-02"},
+      {"shortCode": "DO4ZDScknoZ", "plays": 1740, "likes": 53, "creator": "@rancho_moonrise", "date": "2025-09-21"},
+      {"shortCode": "DRZeWnNkd-B", "plays": 1735, "likes": 41, "creator": "@rancho_moonrise", "date": "2025-11-23"},
+      {"shortCode": "DO7AiWBAZrr", "plays": 1705, "likes": 34, "creator": "@rancho_moonrise", "date": "2025-09-22"},
+      {"shortCode": "DNS-ItjxyuA", "plays": 1677, "likes": 52, "creator": "@rancho_moonrise", "date": "2025-08-13"},
+      {"shortCode": "DWJURJrx-ee", "plays": 1639, "likes": 30, "creator": "@rancho_moonrise", "date": "2026-03-21"},
+      {"shortCode": "DQjaWQvkZqJ", "plays": 1625, "likes": 46, "creator": "@rancho_moonrise", "date": "2025-11-02"},
+      {"shortCode": "DShl4TtDhgR", "plays": 1569, "likes": 28, "creator": "@rancho_moonrise", "date": "2025-12-20"},
+      {"shortCode": "DOrjocSEukY", "plays": 1391, "likes": 44, "creator": "@rancho_moonrise", "date": "2025-09-16"},
+      {"shortCode": "DSFRKFCDQhv", "plays": 1204, "likes": 32, "creator": "@rancho_moonrise", "date": "2025-12-10"},
+      {"shortCode": "DWUt8DVgeWT", "plays": 1094, "likes": 33, "creator": "@rancho_moonrise", "date": "2026-03-25"}
+    ]
   }
 }
