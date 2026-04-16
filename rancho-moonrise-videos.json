@@ -1,0 +1,118 @@
+{
+  "generated": "2026-04-16",
+  "description": "Rancho Moonrise video content found across social platforms and YouTube",
+  "summary": {
+    "youtube": 5,
+    "tiktok_own": 4,
+    "tiktok_ugc": 4,
+    "facebook": 2,
+    "instagram_reels": 0,
+    "total": 15
+  },
+  "youtube": {
+    "channel": "https://www.youtube.com/@ranchomoonrise",
+    "channel_stats": "4 subscribers, 3 videos",
+    "videos": [
+      {
+        "title": "Rancho Moonrise in Manor, TX | #RealNotRender",
+        "url": "https://www.youtube.com/watch?v=rHz9c8DbgQA",
+        "type": "standard"
+      },
+      {
+        "title": "Rancho Moonrise Pool",
+        "url": "https://www.youtube.com/@ranchomoonrise",
+        "type": "standard",
+        "views": 22,
+        "age": "~2 years"
+      },
+      {
+        "title": "Rancho Moonrise 2023",
+        "url": "https://www.youtube.com/@ranchomoonrise",
+        "type": "standard",
+        "views": 89,
+        "age": "~2 years"
+      },
+      {
+        "title": "Escape to Rancho Moonrise: Austin's luxury glamping ranch",
+        "url": "https://www.youtube.com/shorts/_klefu2vTwM",
+        "type": "short"
+      },
+      {
+        "title": "SAVE this for your next Texas getaway — RANCHO MOONRISE",
+        "url": "https://www.youtube.com/shorts/l-tOXqwDHAI",
+        "type": "short"
+      },
+      {
+        "title": "RANCHO MOONRISE",
+        "url": "https://www.youtube.com/shorts/IouPSeoTC5I",
+        "type": "short"
+      }
+    ]
+  },
+  "tiktok": {
+    "own_account": {
+      "profile": "https://www.tiktok.com/@rancho_moonrise",
+      "stats": "1,462 followers, 13.2K likes",
+      "videos": [
+        {
+          "title": "Experience Glamping at Rancho Moonrise",
+          "url": "https://www.tiktok.com/@rancho_moonrise/video/7593032913021685022"
+        },
+        {
+          "title": "Rancho Romance Wedding Celebration for Haven & Louis",
+          "url": "https://www.tiktok.com/@rancho_moonrise/video/7610777676067917086"
+        },
+        {
+          "title": "Quick dip! — glamping, camping, wedding venue, Austin",
+          "url": "https://www.tiktok.com/@rancho_moonrise/video/7608960366479019294"
+        },
+        {
+          "title": "Experience the Charm of Horses at Rancho Moonrise",
+          "url": "https://www.tiktok.com/@rancho_moonrise/video/7594143334726126878"
+        }
+      ]
+    },
+    "ugc_videos": [
+      {
+        "title": "Rancho Moonrise in Manor, TX — Super cute glamping & event space",
+        "url": "https://www.tiktok.com/@ej.eventsco/video/7626568252247788830",
+        "creator": "@ej.eventsco"
+      },
+      {
+        "title": "Explore Rancho Moonrise: A Perfect Texas Getaway",
+        "url": "https://www.tiktok.com/@texas_explorer/video/7502430918523505963",
+        "creator": "@texas_explorer"
+      },
+      {
+        "title": "Staycation Ideas — @RANCHO MOONRISE",
+        "url": "https://www.tiktok.com/@thedailykara/video/7622719212259183903",
+        "creator": "@thedailykara"
+      },
+      {
+        "title": "Experience Glamping at Rancho Moonrise Near Austin",
+        "url": "https://www.tiktok.com/@gabbyly/video/7476307088055258414",
+        "creator": "@gabbyly"
+      }
+    ],
+    "discovery_pages": [
+      "https://www.tiktok.com/discover/rancho-moonrise",
+      "https://www.tiktok.com/discover/rancho-moonrise-manor-tx",
+      "https://www.tiktok.com/discover/rancho-moonrise-austin"
+    ]
+  },
+  "facebook": {
+    "page_videos": "https://www.facebook.com/100083582071947/videos/",
+    "videos": [
+      {
+        "title": "FIRST GLAMPING & EVENTS RANCH NEAR AUSTIN, TX — Rancho Moonrise is the cutest glamping ranch ever!",
+        "url": "https://www.facebook.com/100077751260174/videos/first-glamping-events-ranch-near-austin-tx-rancho-moonrise-is-the-cutest-glampin/979687074020129/",
+        "creator": "texas.explorer"
+      }
+    ]
+  },
+  "instagram": {
+    "profile": "https://www.instagram.com/rancho_moonrise/",
+    "note": "50 posts scraped via #ranchomoonrise hashtag — all were images/carousels, no Reels found in hashtag search. Instagram Reels are posted to @rancho_moonrise profile but require profile-level scraping to extract video URLs.",
+    "reels_url": "https://www.instagram.com/rancho_moonrise/reels/"
+  }
+}
