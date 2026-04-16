@@ -1,5 +1,10 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-16 — Review Monitor RUN_002
+
+- `rancho-review-monitor`: scraped 5 platforms, 0 new reviews found on any platform. All unreplied=0 confirmed via done-log. Dashboard status upgraded `pending` → `ok`. Google count/rating still STALE (JS-blocked, run 2 of 3 before BLOCKERS threshold). 0 response drafts produced.
+- GBP tasks #3 (Q&A + 10 seed FAQs) and #7 (social links verified) RESOLVED by Adam overnight — noted in session-log.
+
 ## 2026-04-16 — SEO Run: AEO + Schema Pass on Glamping and Bachelorette Pages
 
 - **Re-Verify Gate ran:** sitemap.xml confirmed 200. No stale live-claims found in CONTEXT.md Active Blockers. Ran coverage audit across all 15 content pages — found 6 with zero AEO/FAQPage/SpeakableSpec coverage.

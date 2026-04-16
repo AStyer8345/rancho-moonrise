@@ -1,6 +1,6 @@
 # Rancho Moonrise — Project Context
 
-**Last updated:** 2026-04-16 (SEO run: AEO block + FAQPage + SpeakableSpec added to `glamping-near-austin-texas.html` and `bachelorette-party-austin-texas.html`. 4 remaining zero-coverage landing pages queued for next run.)
+**Last updated:** 2026-04-16 (review-monitor RUN_002: no new reviews on any platform, all unreplied=0 confirmed via done-log, dashboard status pending→ok. GBP tasks #3 Q&A/FAQs and #7 social links RESOLVED by Adam overnight. Google count still STALE/JS-blocked run 2 of 3. SEO run: AEO block + FAQPage + SpeakableSpec added to `glamping-near-austin-texas.html` and `bachelorette-party-austin-texas.html`. 4 remaining zero-coverage landing pages queued for next run.)
 
 **GBP posting status:** Week 1 (Event Announcement) drafted 2026-04-09. Week 2 (Property Showcase — pool, cabins, safari tents, Lodge, donkeys) drafted 2026-04-13. Awaiting Adam/Ashley manual post. Next rotation: Week 3 (Special Offer / Package) due ~2026-04-20.
 

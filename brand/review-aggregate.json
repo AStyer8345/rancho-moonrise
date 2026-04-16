@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-04-15T11:30:00Z",
-  "run_number": 1,
-  "note": "First-run baseline seed. Google live scrape BLOCKED (JS-rendered, no Places API key) — count and rating carry forward from 2026-04-09 baseline, marked STALE. Unreplied count treated as 0: task rancho-p1-01-reply-google-reviews was RESOLVED by Adam on 2026-04-14 17:47 per rancho-done-log.md. TripAdvisor and Hipcamp live-scraped via WebFetch. Expedia and Facebook confirmed via WebSearch.",
+  "last_updated": "2026-04-16T06:30:00Z",
+  "run_number": 2,
+  "note": "RUN_002. No new reviews on any platform. Google count/rating still STALE (JS-rendered, 2nd consecutive scrape failure — not yet at 3-run BLOCKERS threshold). Unreplied=0 confirmed via done-log (rancho-review-replies RESOLVED 2026-04-15 22:12; rancho-p1-01-reply-google-reviews RESOLVED 2026-04-14). TripAdvisor and Hipcamp live-scraped: still 0 reviews each. Facebook confirmed 5/100% via WebSearch. Hotels.com direct fetch timed out (2nd consecutive — 1 away from BLOCKERS threshold). Airbnb still 403 (2nd consecutive).",
   "platforms": {
     "google": {
       "count": 127,
@@ -9,23 +9,25 @@
       "unreplied": 0,
       "stale": true,
       "stale_since": "2026-04-09",
-      "unreplied_note": "Live verification blocked (Google Maps JS-rendered, no API key). Unreplied count set to 0 based on done-log: rancho-p1-01-reply-google-reviews RESOLVED by Adam 2026-04-14 17:47.",
+      "stale_run_count": 2,
+      "unreplied_note": "Live verification blocked (Google Maps JS-rendered, no API key). Unreplied=0 confirmed via done-log: rancho-review-replies RESOLVED by Adam 2026-04-15 22:12; rancho-p1-01-reply-google-reviews RESOLVED 2026-04-14 17:47.",
       "last_scrape": null,
       "last_known": "2026-04-09"
     },
     "airbnb": {
       "count": null,
       "rating": null,
-      "note": "Search result found possible listing at /rooms/1284193976615696223 ('Glamping Safari Tent 25 mins from downtown Austin, Manor TX'). Could not access page (403). Baseline said no listing. FLAG_FOR_ADAM: verify if this is a Rancho Moonrise listing or a different property.",
+      "note": "Search result confirmed possible listing at /rooms/1284193976615696223 ('Glamping Safari Tent 25 mins from downtown Austin, Manor TX'). 403 on direct fetch — 2nd consecutive failure. FLAG_FOR_ADAM still open.",
       "last_scrape": null,
-      "flag": "NEEDS_ADAM_VERIFY"
+      "flag": "NEEDS_ADAM_VERIFY",
+      "flag_run_count": 2
     },
     "hipcamp": {
       "count": 0,
       "rating": null,
       "unreplied": 0,
       "stale": false,
-      "last_scrape": "2026-04-15T11:30:00Z",
+      "last_scrape": "2026-04-16T06:30:00Z",
       "note": "Live verified via WebFetch. Page shows 'Be the first to review' — zero reviews confirmed."
     },
     "expedia": {
@@ -33,8 +35,9 @@
       "rating": 8.0,
       "stale": false,
       "last_scrape": null,
-      "last_confirmed": "2026-04-15",
-      "note": "Rating 8.0 confirmed via WebSearch (Hotels.com cross-listed). Direct page fetch timed out (429). No count available."
+      "last_confirmed": "2026-04-16",
+      "hotels_com_timeout_count": 2,
+      "note": "Rating 8.0 last confirmed 2026-04-09. Hotels.com direct fetch timed out again (2nd consecutive — 1 away from BLOCKERS.md threshold). WebSearch confirms listing still active with last guest review Dec 2025."
     },
     "facebook": {
       "count": 5,
@@ -42,7 +45,7 @@
       "recommend_pct": 100,
       "stale": false,
       "last_scrape": null,
-      "last_confirmed": "2026-04-15",
+      "last_confirmed": "2026-04-16",
       "note": "5 reviews, 100% recommend — confirmed via WebSearch. Direct page load blocked (JS-rendered)."
     },
     "tripadvisor": {
@@ -50,7 +53,7 @@
       "count": 0,
       "rating": null,
       "stale": false,
-      "last_scrape": "2026-04-15T11:30:00Z",
+      "last_scrape": "2026-04-16T06:30:00Z",
       "note": "Live verified via WebFetch. 'Own or manage this property? Claim your listing for free' visible. Zero reviews confirmed."
     }
   }

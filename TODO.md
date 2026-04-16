@@ -89,7 +89,7 @@ All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms. Li
 - [x] Add opening date + HTTPS website + phone verify — DONE 2026-04-15
 - [x] **GBP primary category swap Hotel → Event venue** — Adam 2026-04-15. Hotel category blocked the "From the owner" description field entirely; Event venue + Wedding venue is a truer match for how the property actually books revenue (46% private events, 31% rooms). Hotel stays on as a secondary category so lodging queries still hit.
 - [x] Answer the unanswered pool day pass Q&A on GBP — DONE 2026-04-15 (Adam answered directly). 10 seed FAQs added to faqs.html instead (GBP Q&A seeding UI unavailable). Task 3 RESOLVED.
-- [ ] Verify social profile links on GBP (Task 7 — MANUAL)
+- [x] Verify social profile links on GBP (Task 7 — MANUAL) — DONE 2026-04-16 per done-log
 - [ ] Enable Google Chat on GBP (Task 15 — MANUAL)
 - [ ] Upload 10+ owner photos to GBP across all categories (Task 27 — MANUAL)
 
