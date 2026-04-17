@@ -1,5 +1,14 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-17 — SEO Daily: AEO pass on 4 remaining landing pages
+
+- **`wedding-venues-near-austin.html`**: Added FAQPage schema (4 Q&A), SpeakableSpecification, and new `aeo-block` section (was the only page with no AEO content at all). Q&As target: best venues near Austin with overnight stays, how far in advance to book, overnight guest capacity, exclusive buyout.
+- **`corporate-retreat-near-austin.html`**: Added FAQPage schema (4 Q&A) + SpeakableSpecification to head. Restructured existing inline AEO Q&A from `<p><strong>` format into proper `<div class="aeo-block">` with `<h3>` headings and `<hr class="blog-divider">` separators.
+- **`ranch-wedding-texas.html`**: Same treatment — FAQPage (4 Q&A) + SpeakableSpec added; existing AEO paragraphs converted to proper aeo-block structure.
+- **`things-to-do-manor-tx.html`**: Same treatment — FAQPage (4 Q&A, including new "How far is Manor from Austin?" Q&A) + SpeakableSpec added; existing AEO paragraphs converted to proper aeo-block structure.
+- Commit `e570002`, Vercel deploy triggered. Completes S2 AEO pass across all key landing pages.
+- Re-verify gate: sitemap.xml → 200 ✓. DNS cutover still pending (STILL TRUE). SERP rankings unverifiable pre-cutover (expected).
+
 ## 2026-04-17 — Review Monitor RUN_003
 
 - `rancho-review-monitor`: scraped all platforms, 0 new reviews on any platform. Unreplied=0 maintained. Three verification paths hit 3-consecutive-failure threshold → logged to `tasks/review-monitor/BLOCKERS.md`: Google (JS-rendered, no API key), Hotels.com (60s timeout), Airbnb (403, listing existence still unverified for Adam). TripAdvisor confirmed 0 reviews / unclaimed (corrected listing URL d33307272). Hipcamp confirmed 0 reviews (corrected URL dw9hklej). Facebook 5/100% confirmed via WebSearch. Dashboard status remains "ok." 0 response drafts produced.

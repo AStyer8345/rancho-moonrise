@@ -1,6 +1,6 @@
 # Rancho Moonrise — Project Context
 
-**Last updated:** 2026-04-17 (review-monitor RUN_003: no new reviews on any platform, unreplied=0 maintained. 3 verification paths hit 3-consecutive-failure threshold — Google JS-blocked, Hotels.com timeout, Airbnb 403 — all logged to BLOCKERS.md. TripAdvisor and Hipcamp live-confirmed 0 reviews (corrected listing URLs). Facebook 5/100% confirmed via search.)
+**Last updated:** 2026-04-17 (rancho-site-daily: AEO pass completed on final 4 landing pages — wedding-venues-near-austin, corporate-retreat-near-austin, ranch-wedding-texas, things-to-do-manor-tx. FAQPage + SpeakableSpecification + proper aeo-block on each. S2 task RESOLVED. Commit e570002, Vercel deploy triggered.)
 
 **GBP posting status:** Week 1 (Event Announcement) drafted 2026-04-09. Week 2 (Property Showcase — pool, cabins, safari tents, Lodge, donkeys) drafted 2026-04-13. Awaiting Adam/Ashley manual post. Next rotation: Week 3 (Special Offer / Package) due ~2026-04-20.
 
@@ -29,7 +29,7 @@ Advisory engagement for Rancho Moonrise — glamping, events, and retreat ranch 
 
 ## What's Next
 
-- **Next SEO run:** AEO pass on 4 remaining zero-coverage landing pages: `wedding-venues-near-austin.html`, `corporate-retreat-near-austin.html`, `ranch-wedding-texas.html`, `things-to-do-manor-tx.html`. Also refresh events.html Event schema as April 24/26 events approach (Free Friday at Pool + Yoga & Mimosas). Blog #13 candidate: "Summer Glamping Near Austin" or "Austin Bachelorette Weekend vs Bar Crawl".
+- **Next SEO run:** Refresh events.html Event schema as April 24/26 events approach (Free Friday at Pool + Yoga & Mimosas). Blog #13 candidate: "Summer Glamping Near Austin" or "Austin Bachelorette Weekend vs Bar Crawl". S2 (AEO pass) is now RESOLVED across all key landing pages.
 - Adam: Re-upload the 8 low-res source JPGs at 2560px+ width (especially `feature-wedding.jpg` — bride-critical) so the responsive ladder can generate 1920/2560/3840 variants. See "Low-res source JPGs" below.
 - Adam: Wire up a backend handler for the wedding inquiry forms on both contact.html and weddings.html (Formspree / Netlify Forms / Vercel serverless → email + Salesforce create_lead). Both currently `action="#"`. Flag on the DNS cutover checklist.
 - Adam: Curate real-wedding photo set to replace weddings.html gallery placeholder (6 tiles, aria-hidden, "photos coming soon" note live now)
@@ -62,6 +62,7 @@ Once re-uploaded: rerun `./scripts/generate-responsive-images.sh` and commit —
 
 ## Last Worked On
 
+- 2026-04-17 (SEO daily): **S2 RESOLVED.** AEO pass complete on final 4 landing pages (wedding-venues-near-austin, corporate-retreat-near-austin, ranch-wedding-texas, things-to-do-manor-tx). FAQPage schema (4 Q&A each), SpeakableSpecification, and proper `aeo-block` with h3/p/hr.blog-divider structure on all 4. Pages 2-4 had inline AEO Q&A in plain paragraph format — converted to proper block. Page 1 had no AEO at all — new block created. Commit `e570002`.
 - 2026-04-15 (GBP profile): **Task #2 RESOLVED.** Claude drafted all profile fields in `brand/gbp-posts/2026-04-15-gbp-profile-fields.md`. Adam swapped **primary business category Hotel → Event venue** (Hotel category blocked the "From the owner" description field entirely; Event venue + Wedding venue is a truer match for the 46% private-events revenue mix — Hotel kept as secondary so lodging queries still hit), replaced the embarrassing blog post with the 738-char description, set hours (Mon/Tue closed, Wed–Sun 9–8), added opening date, flipped website to HTTPS, verified phone, completed amenity sweep. Task card moved into Done tab on `improvement-plan.html`.
 - 2026-04-15 (weekly content): **Blog #12 published** — `corporate-retreat-planning-guide-texas.html`. Planning-guide angle (distinct from venue-pitch post #3). ~1,600 words. AEO block, FAQPage schema (4 Q&A), SpeakableSpecification, BlogPosting schema. Blog card + ItemList schema added to `blog.html`. Sitemap updated. Cross-link added from `corporate-retreat-near-austin.html` Related Reading to new post. Social snippets: Instagram (Style 1), GBP post draft, LinkedIn — all at `brand/gbp-posts/2026-04-15-blog12-social-snippets.md`.
 - 2026-04-15 (grade-stepper UX): Shipped 5-stop grade journey visual + clickable progress links on every scorecard in `site/improvement-plan.html`. Module lives canonically at `client-ops/clients/_shared/grade-progress.{css,js}` and is mirrored inline in sovereign rancho (CSS in `<head>`, JS before `</body>`) to avoid cross-origin dependency — same pattern as `plan-actions`. Styer + client-ops rancho mirror + `templates/improvement-plan.html` load the shared file so future clients inherit. Clicking "(N/M toward X)" jumps to first undone task with a 2.2s highlight pulse. Commits: rancho `dccfbc7` + `81cb9f2`, client-ops `8207995`. If you edit either half, mirror changes to both repos.

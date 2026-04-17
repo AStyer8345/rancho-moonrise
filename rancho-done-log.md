@@ -8,6 +8,8 @@ and read by `rancho-apply-done` scheduled task to apply strike-through styling i
 - `[YYYY-MM-DD HH:mm] [system] {id} — RESOLVED | {note}`
 - `[YYYY-MM-DD HH:mm] [system] {id} — PROGRESS {pct}% | {note}`
 
+[2026-04-17 08:15] [rancho-site-daily] rancho-seo-s2-h2-summaries — RESOLVED | AEO pass complete across all key landing pages. Final 4 pages done today: wedding-venues-near-austin, corporate-retreat-near-austin, ranch-wedding-texas, things-to-do-manor-tx. FAQPage schema + SpeakableSpecification + proper aeo-block (h3/p, hr.blog-divider) on each. Commit e570002.
+
 RESOLVED moves the task to Done. PROGRESS updates the card's progress bar and status note
 without moving it. Later PROGRESS lines overwrite earlier ones (latest wins). A RESOLVED
 line supersedes all prior PROGRESS lines for the same id.

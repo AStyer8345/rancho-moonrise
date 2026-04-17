@@ -124,7 +124,7 @@ All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms. Li
 - [x] Blog post #12 — "Corporate Retreat Planning Guide Texas" — DONE 2026-04-15
 - [x] AEO block + FAQPage + SpeakableSpec on `glamping-near-austin-texas.html` — DONE 2026-04-16
 - [x] AEO block + FAQPage + SpeakableSpec on `bachelorette-party-austin-texas.html` — DONE 2026-04-16
-- [ ] AEO + schema pass on 4 remaining zero-coverage landing pages: `wedding-venues-near-austin.html`, `corporate-retreat-near-austin.html`, `ranch-wedding-texas.html`, `things-to-do-manor-tx.html`
+- [x] AEO + schema pass on 4 remaining zero-coverage landing pages: `wedding-venues-near-austin.html`, `corporate-retreat-near-austin.html`, `ranch-wedding-texas.html`, `things-to-do-manor-tx.html` — DONE 2026-04-17. FAQPage + SpeakableSpecification + aeo-block on all 4. Commit `e570002`.
 
 ### NEEDS ADAM — Review monitor flags (from 2026-04-15 rancho-review-monitor run)
 - [ ] **Verify possible Airbnb listing** — search surfaced `/rooms/1284193976615696223` ("Glamping Safari Tent 25 mins from downtown Austin, Manor TX"). April 9 baseline said no Airbnb listing. Confirm if this is a Rancho Moonrise listing — if yes, add to review coverage scope. (Page returned 403 when fetched by agent.)
