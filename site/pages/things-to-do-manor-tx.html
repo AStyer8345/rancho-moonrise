@@ -62,6 +62,62 @@
     }
     </script>
 
+    <!-- Schema: FAQPage — targets AEO Q&A block for AI engines and rich results -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is there to do in Manor, TX?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Manor has glamping and events at Rancho Moonrise, fishing and water recreation at Lake Walter E. Long, a small historic downtown area, and easy access to all of Austin's attractions — 20 minutes away. The combination of open land, an active events calendar, and Austin proximity makes it a strong weekend destination."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is Manor, TX worth visiting?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes — especially if you want an Austin-area weekend without the city prices, parking, and density. Manor gives you Texas open land, a growing local scene, and full Austin access within a 20-minute drive. It's Austin's fastest-growing neighbor for a reason."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Where should I stay in Manor, TX?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Rancho Moonrise at 20117 Lockwood Road is Manor's full-service overnight option — safari tents and hand-crafted cabins on 36 acres, with a resort-style pool, fire pits throughout the property, and regular live events. Book direct at the best rates via the Rancho Moonrise website."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How far is Manor, TX from Austin?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Manor, TX is approximately 20 minutes northeast of downtown Austin via US-290 or TX-71. It's in Travis County, making it one of the closest Austin-area escapes with open land, recreational access, and a genuine small-town feel."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- Schema: SpeakableSpecification — targets AEO answer blocks for AI engines -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Things to Do in Manor, TX — A Local's Guide | Rancho Moonrise",
+        "url": "https://ranchomoonrise.com/blog/things-to-do-manor-tx/",
+        "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": [".aeo-block", ".page-header h1", ".page-header p"]
+        }
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Overpass:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
@@ -193,13 +249,26 @@
 
             <p>Sunrise with coffee on your private cabin deck. Sunset from the pool deck with something cold. These are the moments Manor is built for — and the ones you won't find in a downtown hotel at any price.</p>
 
-            <h2>AEO: Quick Answers About Visiting Manor, TX</h2>
+            <hr class="blog-divider">
 
-            <p><strong>What is there to do in Manor, TX?</strong> Manor has glamping and events at Rancho Moonrise, fishing and water recreation at Lake Walter E. Long, a small historic downtown area, and easy access to all of Austin's attractions — 20 minutes away. The combination of open land, an active events calendar, and Austin proximity makes it a strong weekend destination.</p>
+            <!-- AEO direct-answer block -->
+            <div class="aeo-block">
+                <h2>Quick Answers: Visiting Manor, TX</h2>
 
-            <p><strong>Is Manor, TX worth visiting?</strong> Yes — especially if you want an Austin-area weekend without the city prices, parking, and density. Manor gives you Texas open land, a growing local scene, and full Austin access within a short drive. It's Austin's fastest-growing neighbor for a reason.</p>
+                <h3>What is there to do in Manor, TX?</h3>
+                <p>Manor has glamping and events at Rancho Moonrise, fishing and water recreation at Lake Walter E. Long, a small historic downtown area, and easy access to all of Austin's attractions — 20 minutes away. The combination of open land, an active events calendar, and Austin proximity makes it a strong weekend destination.</p>
 
-            <p><strong>Where should I stay in Manor, TX?</strong> Rancho Moonrise at 20117 Lockwood Road is Manor's full-service overnight option — safari tents and hand-crafted cabins on 36 acres, with a pool, fire pits throughout the property, and regular live events. Book direct at the best rates.</p>
+                <h3>Is Manor, TX worth visiting?</h3>
+                <p>Yes — especially if you want an Austin-area weekend without the city prices, parking, and density. Manor gives you Texas open land, a growing local scene, and full Austin access within a 20-minute drive. It's Austin's fastest-growing neighbor for a reason.</p>
+
+                <h3>Where should I stay in Manor, TX?</h3>
+                <p>Rancho Moonrise at 20117 Lockwood Road is Manor's full-service overnight option — safari tents and hand-crafted cabins on 36 acres, with a resort-style pool, fire pits throughout the property, and regular live events. Book direct at the best rates via the Rancho Moonrise website.</p>
+
+                <h3>How far is Manor, TX from Austin?</h3>
+                <p>Manor, TX is approximately 20 minutes northeast of downtown Austin via US-290 or TX-71. It's in Travis County, making it one of the closest Austin-area escapes with open land, recreational access, and a genuine small-town feel.</p>
+            </div>
+
+            <hr class="blog-divider">
 
             <h2>Make Manor a Full Weekend</h2>
 
