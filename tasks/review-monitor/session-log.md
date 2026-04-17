@@ -88,3 +88,41 @@ Claims enumerated from persistent surfaces and re-verified:
 **No review drafts produced** — no new reviews detected on any platform.
 
 ---
+
+## RUN_003 — 2026-04-17 06:30 CT
+
+**Summary:** Quiet run. No new reviews on any platform. Unreplied=0 maintained — no new review-related done-log entries since RUN_002. Three verification paths hit the 3-consecutive-failure threshold and logged to BLOCKERS.md: Google (JS-rendered), Hotels.com (60s timeout), Airbnb (403 — listing existence still unverified). TripAdvisor live-scraped with corrected URL (d33307272) — 0 reviews, unclaimed. Hipcamp live-scraped with corrected URL (dw9hklej) — 0 reviews, "Be the first to review." Facebook confirmed 5 reviews / 100% recommend via WebSearch. Dashboard status remains "ok."
+
+**Corrected URLs this run (no data change, same outcomes):**
+- TripAdvisor: `d25161855` → `d33307272` (prior runs fetched wrong listing ID, but result was identical)
+- Hipcamp: `h29qgcvg` → `dw9hklej` (prior URL returned JS-only shell; corrected URL successfully scraped)
+
+**Done-log review-adjacent entries since RUN_002:** none new
+
+**Re-verify log lines:**
+```
+[2026-04-17 11:38] re-verify google-reviews-count — stale (run 3, BLOCKER) — live=BLOCKED(JS) prior=127@4.9★ (last verified 2026-04-09)
+[2026-04-17 11:38] re-verify google-unreplied — still_true — live=0(no new done-log entries) prior=0
+[2026-04-17 11:38] re-verify tripadvisor-status — still_true — live=unclaimed/0reviews(WebFetch, corrected URL d33307272) prior=unclaimed/0reviews
+[2026-04-17 11:38] re-verify hipcamp-reviews — still_true — live=0reviews(WebFetch, corrected URL dw9hklej) prior=0reviews
+[2026-04-17 11:38] re-verify expedia-rating — stale (run 3, BLOCKER) — live=BLOCKED(Hotels.com 60s timeout) prior=8.0 (last verified 2026-04-09)
+[2026-04-17 11:38] re-verify facebook-reviews — still_true — live=5reviews/100%(WebSearch) prior=5reviews/100%
+[2026-04-17 11:38] re-verify airbnb-listing — unverified (403 run 3, BLOCKER) — live=BLOCKED prior=POSSIBLE_NEW_LISTING
+```
+
+**Failure counters — BLOCKERS.md threshold reached:**
+- `google-reviews-count` live scrape: 3 consecutive → logged to BLOCKERS.md
+- `hotels-com-direct-fetch`: 3 consecutive → logged to BLOCKERS.md
+- `airbnb-listing-existence`: 3 consecutive → logged to BLOCKERS.md (escalated from FLAG_FOR_ADAM)
+
+**Files written this run:**
+- `tasks/review-monitor/BLOCKERS.md` — 3 new blocker entries added
+- `brand/review-aggregate.json` — updated (run_number 2→3, corrected platform URLs, 3 claims marked blocker:true)
+- `site/admin/dashboard-state.json` — updated (run_number 2→3, flags + blockers arrays updated)
+- `tasks/review-monitor/session-log.md` — this entry
+- `CONTEXT.md` — Last Worked On line updated
+- `CHANGELOG.md` — one dated bullet appended
+
+**No review drafts produced** — no new reviews detected on any platform.
+
+---

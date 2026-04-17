@@ -1,5 +1,9 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-17 — Review Monitor RUN_003
+
+- `rancho-review-monitor`: scraped all platforms, 0 new reviews on any platform. Unreplied=0 maintained. Three verification paths hit 3-consecutive-failure threshold → logged to `tasks/review-monitor/BLOCKERS.md`: Google (JS-rendered, no API key), Hotels.com (60s timeout), Airbnb (403, listing existence still unverified for Adam). TripAdvisor confirmed 0 reviews / unclaimed (corrected listing URL d33307272). Hipcamp confirmed 0 reviews (corrected URL dw9hklej). Facebook 5/100% confirmed via WebSearch. Dashboard status remains "ok." 0 response drafts produced.
+
 ## 2026-04-15 — Weekly Metrics Pull (rancho-metrics-weekly)
 
 - All 10 SEO keywords checked — rankings flat vs. April 9 baseline. No movement on any tracked term.

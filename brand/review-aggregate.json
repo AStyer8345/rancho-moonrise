@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-04-16T06:30:00Z",
-  "run_number": 2,
-  "note": "RUN_002. No new reviews on any platform. Google count/rating still STALE (JS-rendered, 2nd consecutive scrape failure — not yet at 3-run BLOCKERS threshold). Unreplied=0 confirmed via done-log (rancho-review-replies RESOLVED 2026-04-15 22:12; rancho-p1-01-reply-google-reviews RESOLVED 2026-04-14). TripAdvisor and Hipcamp live-scraped: still 0 reviews each. Facebook confirmed 5/100% via WebSearch. Hotels.com direct fetch timed out (2nd consecutive — 1 away from BLOCKERS threshold). Airbnb still 403 (2nd consecutive).",
+  "last_updated": "2026-04-17T11:38:00Z",
+  "run_number": 3,
+  "note": "RUN_003. No new reviews on any platform. Unreplied=0 maintained (no done-log changes since RUN_002). Google count/rating STALE (JS-rendered, 3rd consecutive — now in BLOCKERS.md). Hotels.com timeout 3rd consecutive — now in BLOCKERS.md. Airbnb 403 3rd consecutive — now in BLOCKERS.md. TripAdvisor live-scraped: 0 reviews, unclaimed (correct URL confirmed: d33307272 — prior runs used wrong ID d25161855 but result was same). Hipcamp live-scraped: 0 reviews, 'Be the first to review' (corrected URL to dw9hklej). Facebook: 5 reviews / 100% recommend confirmed via WebSearch.",
   "platforms": {
     "google": {
       "count": 127,
@@ -9,35 +9,43 @@
       "unreplied": 0,
       "stale": true,
       "stale_since": "2026-04-09",
-      "stale_run_count": 2,
-      "unreplied_note": "Live verification blocked (Google Maps JS-rendered, no API key). Unreplied=0 confirmed via done-log: rancho-review-replies RESOLVED by Adam 2026-04-15 22:12; rancho-p1-01-reply-google-reviews RESOLVED 2026-04-14 17:47.",
+      "stale_run_count": 3,
+      "blocker": true,
+      "blocker_since": "2026-04-17",
+      "unreplied_note": "Live verification blocked (Google Maps JS-rendered, no API key). Unreplied=0 maintained — no new done-log review entries since RUN_002. Previously RESOLVED by Adam 2026-04-15 22:12.",
       "last_scrape": null,
       "last_known": "2026-04-09"
     },
     "airbnb": {
       "count": null,
       "rating": null,
-      "note": "Search result confirmed possible listing at /rooms/1284193976615696223 ('Glamping Safari Tent 25 mins from downtown Austin, Manor TX'). 403 on direct fetch — 2nd consecutive failure. FLAG_FOR_ADAM still open.",
+      "note": "Search result still shows possible listing at /rooms/1284193976615696223 ('Glamping Safari Tent 25 mins from downtown Austin, Manor TX'). 403 on direct fetch — 3rd consecutive failure. Escalated to BLOCKERS.md. FLAG_FOR_ADAM.",
       "last_scrape": null,
       "flag": "NEEDS_ADAM_VERIFY",
-      "flag_run_count": 2
+      "flag_run_count": 3,
+      "blocker": true,
+      "blocker_since": "2026-04-17"
     },
     "hipcamp": {
       "count": 0,
       "rating": null,
       "unreplied": 0,
       "stale": false,
-      "last_scrape": "2026-04-16T06:30:00Z",
-      "note": "Live verified via WebFetch. Page shows 'Be the first to review' — zero reviews confirmed."
+      "listing_url": "https://www.hipcamp.com/en-US/land/texas-rancho-moonrise-dw9hklej",
+      "last_scrape": "2026-04-17T11:38:00Z",
+      "note": "Live verified via WebFetch (corrected URL: dw9hklej, not h29qgcvg). Page shows 'Be the first to review' — zero reviews confirmed."
     },
     "expedia": {
       "count": null,
       "rating": 8.0,
-      "stale": false,
+      "stale": true,
+      "stale_since": "2026-04-09",
       "last_scrape": null,
-      "last_confirmed": "2026-04-16",
-      "hotels_com_timeout_count": 2,
-      "note": "Rating 8.0 last confirmed 2026-04-09. Hotels.com direct fetch timed out again (2nd consecutive — 1 away from BLOCKERS.md threshold). WebSearch confirms listing still active with last guest review Dec 2025."
+      "last_confirmed": "2026-04-09",
+      "hotels_com_timeout_count": 3,
+      "blocker": true,
+      "blocker_since": "2026-04-17",
+      "note": "Rating 8.0 last confirmed 2026-04-09. Hotels.com direct fetch timed out (3rd consecutive — now in BLOCKERS.md). Listing still active per WebSearch (most recent guest review Dec 2025)."
     },
     "facebook": {
       "count": 5,
@@ -45,16 +53,17 @@
       "recommend_pct": 100,
       "stale": false,
       "last_scrape": null,
-      "last_confirmed": "2026-04-16",
-      "note": "5 reviews, 100% recommend — confirmed via WebSearch. Direct page load blocked (JS-rendered)."
+      "last_confirmed": "2026-04-17",
+      "note": "5 reviews, 100% recommend — confirmed via WebSearch. Direct page load blocked (JS-rendered). No new reviews detected."
     },
     "tripadvisor": {
       "status": "unclaimed",
       "count": 0,
       "rating": null,
       "stale": false,
-      "last_scrape": "2026-04-16T06:30:00Z",
-      "note": "Live verified via WebFetch. 'Own or manage this property? Claim your listing for free' visible. Zero reviews confirmed."
+      "listing_url": "https://www.tripadvisor.com/Hotel_Review-g56224-d33307272-Reviews-Rancho_Moonrise-Manor_Texas.html",
+      "last_scrape": "2026-04-17T11:38:00Z",
+      "note": "Live verified via WebFetch. Correct URL confirmed: d33307272 (prior runs used d25161855 — same result, different ID). 'Own or manage this property? Claim your listing for free' visible. Zero reviews confirmed."
     }
   }
 }

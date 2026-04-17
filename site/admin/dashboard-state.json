@@ -1,8 +1,8 @@
 {
   "review_monitor": {
-    "last_run": "2026-04-16T06:30:00Z",
+    "last_run": "2026-04-17T11:38:00Z",
     "status": "ok",
-    "status_reason": "No pending replies (done-log confirms rancho-review-replies RESOLVED 2026-04-15 22:12). No new reviews on any platform. No rating drops. Google count still STALE (JS-rendered, 2nd consecutive scrape failure). Airbnb listing existence still unverified (403).",
+    "status_reason": "No new reviews on any platform. Unreplied=0 maintained. 3 verification paths now in BLOCKERS.md: Google (JS-blocked, 3rd run), Hotels.com (timeout, 3rd run), Airbnb (403, 3rd run). TripAdvisor and Hipcamp live-confirmed 0 reviews. Facebook 5 reviews/100% confirmed via search.",
     "new_reviews_pending_response": 0,
     "total_reviews_tracked": 132,
     "unreplied_by_platform": {
@@ -12,8 +12,17 @@
       "tripadvisor": 0,
       "facebook": 0
     },
-    "stale_platforms": ["google"],
-    "flags": ["airbnb-listing-existence-unverified"],
-    "run_number": 2
+    "stale_platforms": ["google", "expedia"],
+    "flags": [
+      "airbnb-listing-existence-unverified",
+      "google-live-scrape-blocked-3-runs",
+      "hotels-com-fetch-timeout-3-runs"
+    ],
+    "blockers": [
+      "google-reviews-count",
+      "hotels-com-direct-fetch",
+      "airbnb-listing-existence"
+    ],
+    "run_number": 3
   }
 }
