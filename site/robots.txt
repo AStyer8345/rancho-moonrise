@@ -3,8 +3,13 @@ Allow: /
 
 # Block internal/non-public files
 Disallow: /server.js
+Disallow: /improvement-plan.html
+Disallow: /brand-audit.html
+Disallow: /mockup-preview.html
 Disallow: /dashboard.html
 Disallow: /report.html
 Disallow: /competitive-intelligence.html
+Disallow: /audits/
+Disallow: /admin/
 
 Sitemap: https://ranchomoonrise.com/sitemap.xml

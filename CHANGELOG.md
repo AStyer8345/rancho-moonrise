@@ -1,5 +1,14 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-18 — Pre-launch SEO Safety: noindex + Sitemap Reconciliation
+
+- Added `<meta name="robots" content="noindex, nofollow">` to 7 internal/admin pages so they stay out of search results when DNS cuts over: `improvement-plan.html`, `brand-audit.html`, `mockup-preview.html`, `dashboard.html`, `report.html`, `competitive-intelligence.html`, `audits/2026-04-09-business-audit.html`.
+- `site/robots.txt` — added explicit `Disallow` entries for each internal page plus `Disallow: /audits/` and `Disallow: /admin/`. Kept existing Sitemap directive.
+- `vercel.json` — **reconciled sitemap.xml against actual file paths via rewrites (Option a)**. Canonical tags on all 22 customer-facing pages already point to clean URLs like `/weddings/` and `/blog/glamping-vs-camping/`, and the sitemap matches. But the Vercel deploy was 404ing on those paths because the `/pages/*.html` files had no corresponding rewrite (the existing `/(.*)` → `/$1` rule was a no-op). Added explicit rewrites that map each clean URL (with optional trailing segments via `:path*`) to the real `/pages/[slug].html` file. Chose rewrites over rewriting `sitemap.xml` because canonicals already declared the clean URLs as the source of truth — rewriting the sitemap would have forced either breaking the canonicals or editing public page markup (out of scope).
+- `vercel.json` — added `X-Robots-Tag: noindex, nofollow` response headers for the 7 internal pages + `/audits/*` as a belt-and-suspenders backup to the meta tags.
+- Live verification: homepage, `/weddings/`, `/accommodations/`, `/blog/glamping-vs-camping/` all returned 200 with correct content after deploy.
+- Note: `ranchomoonrise.com` is still served by the BofillTech legacy site. Canonicals on the new Vercel site point to `ranchomoonrise.com/*` — correct for post-cutover, no change needed now. Adam will decide DNS cutover sequencing separately.
+
 ## 2026-04-18 — SEO Daily: Blog #13 Published
 
 - **`summer-glamping-near-austin.html`** published — "Summer Glamping Near Austin, Texas — 2026 Guide". Targets "summer glamping near Austin" / "glamping near Austin Texas summer" seasonal keyword cluster. ~1,600 words. AEO block (direct-answer H2+2P at top), FAQPage schema (4 Q&A), SpeakableSpecification, BreadcrumbList, BlogPosting schema.
