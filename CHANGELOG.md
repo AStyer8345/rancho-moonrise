@@ -1,5 +1,23 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-18 — SEO Daily: Blog #13 Published
+
+- **`summer-glamping-near-austin.html`** published — "Summer Glamping Near Austin, Texas — 2026 Guide". Targets "summer glamping near Austin" / "glamping near Austin Texas summer" seasonal keyword cluster. ~1,600 words. AEO block (direct-answer H2+2P at top), FAQPage schema (4 Q&A), SpeakableSpecification, BreadcrumbList, BlogPosting schema.
+- Blog post card added to `blog.html` (post #13 at top of card list). ItemList schema updated to position 13.
+- Sitemap entry added: `https://ranchomoonrise.com/blog/summer-glamping-near-austin/` (priority 0.8).
+- Cross-link added from `glamping-near-austin-texas.html` Related Reading → new summer glamping post.
+- Event schema for April 24 (Free Friday at Pool) and April 26 (Yoga & Mimosas) verified current — no changes needed.
+- Re-verify gate: DNS cutover still pending (STILL TRUE — no live SERP verification possible pre-cutover).
+
+## 2026-04-17 — YouTube Video Metadata Fixes
+
+- Fixed metadata mismatch on 2 uploaded YouTube videos caused by wrong ID mapping in previous session:
+  - **WZi4_fqupn8** (filename `12-experience-the-magic.mp4`): Changed title from "Why Not Jump in the Pool on Your Wedding Day?" → "Experience the Magic of Rancho Moonrise | Austin TX Glamping Ranch". Updated description. Changed playlist from "Weddings & Events" → "The Rancho Moonrise Experience".
+  - **YK9U7oE_7wM** (filename `13-wedding-open-house.mp4`): Changed title from "Beautiful Ranch Florals & Event Decor" → "Wedding Open House at Rancho Moonrise | Tour Our Venue". Updated description.
+- All 10 uploaded videos (08-17) now have correct metadata, titles, descriptions, playlists, and audience settings.
+- Duplicate uploads identified: Fk17TEpGCFY (10-pool-wedding-day) and WTstKx2JVUo (11-ranch-flower-decorations) are duplicates — these exist alongside the corrected WZi4_fqupn8 and YK9U7oE_7wM. Adam should delete one set.
+- 7 videos (01-07) still pending upload — hit YouTube daily upload limit in previous session.
+
 ## 2026-04-17 — SEO Daily: AEO pass on 4 remaining landing pages
 
 - **`wedding-venues-near-austin.html`**: Added FAQPage schema (4 Q&A), SpeakableSpecification, and new `aeo-block` section (was the only page with no AEO content at all). Q&As target: best venues near Austin with overnight stays, how far in advance to book, overnight guest capacity, exclusive buyout.

@@ -125,9 +125,14 @@ All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms. Li
 - [x] AEO block + FAQPage + SpeakableSpec on `glamping-near-austin-texas.html` — DONE 2026-04-16
 - [x] AEO block + FAQPage + SpeakableSpec on `bachelorette-party-austin-texas.html` — DONE 2026-04-16
 - [x] AEO + schema pass on 4 remaining zero-coverage landing pages: `wedding-venues-near-austin.html`, `corporate-retreat-near-austin.html`, `ranch-wedding-texas.html`, `things-to-do-manor-tx.html` — DONE 2026-04-17. FAQPage + SpeakableSpecification + aeo-block on all 4. Commit `e570002`.
+- [x] Blog post #13 — "Summer Glamping Near Austin Texas" — DONE 2026-04-18. AEO block, FAQPage schema (4 Q&A), SpeakableSpecification, BlogPosting schema. Seasonal timing target: 6 weeks before peak summer demand.
 
 ### NEEDS ADAM — Review monitor flags (from 2026-04-15 rancho-review-monitor run)
 - [ ] **Verify possible Airbnb listing** — search surfaced `/rooms/1284193976615696223` ("Glamping Safari Tent 25 mins from downtown Austin, Manor TX"). April 9 baseline said no Airbnb listing. Confirm if this is a Rancho Moonrise listing — if yes, add to review coverage scope. (Page returned 403 when fetched by agent.)
+
+### NEEDS ADAM — YouTube channel
+- [ ] **Upload remaining 7 videos (01-07)** — hit YouTube daily upload limit. Try again tomorrow. Files are in `youtube-uploads/` folder with manifest spreadsheet.
+- [ ] **Delete duplicate videos** — Fk17TEpGCFY (10-pool-wedding-day) and WTstKx2JVUo (11-ranch-flower-decorations) are duplicates of the content that was correctly uploaded under different IDs. Pick which set to keep and delete the other.
 
 ### NEEDS ADAM — Competitive intel quick wins (from 2026-04-13 intel run)
 - [ ] Submit Glamping Hub listing — free, 15 min at glampinghub.com/list-your-property. Three new competitors gained discovery this week while Rancho Moonrise stays absent.
@@ -154,7 +159,7 @@ All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms. Li
 - [ ] Conversion tracking + UTM parameters (Task 20)
 - [ ] CRM implementation (Task 21)
 - [ ] SOPs for Ashley's processes (Task 22)
-- [ ] YouTube channel with walkthrough videos (Task 23)
+- [x] YouTube channel with walkthrough videos (Task 23) — PARTIALLY DONE 2026-04-17. 10 of 17 videos uploaded (08-17) with full metadata. 7 remaining (01-07) blocked by daily upload limit.
 - [ ] Facebook as a real channel (Task 24)
 - [ ] Address neighbor noise issue (Task 25)
 - [ ] Weekday utilization program (Task 26)
