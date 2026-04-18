@@ -1,5 +1,6 @@
 {
   "outputDirectory": "site",
+  "trailingSlash": true,
   "functions": {
     "api/complete.js": {
       "memory": 256,
