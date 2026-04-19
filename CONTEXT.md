@@ -1,6 +1,6 @@
 # Rancho Moonrise — Project Context
 
-**Last updated:** 2026-04-19 (review-monitor RUN_004: Quiet run — no new reviews on any platform. Unreplied=0 maintained. TripAdvisor + Hipcamp live-scraped (0 reviews each). Facebook 5/100% confirmed. All 3 BLOCKERS ongoing. Yelp + Agoda listings discovered — zero reviews, not added to scope.)
+**Last updated:** 2026-04-19 (SEO daily: Blog #14 published — "Austin Bachelorette Weekend: Ranch vs. Bar Crawl." Comparison/decision post, full AEO + schema suite. Commit `2a4837a`.)
 
 **GBP posting status:** Week 1 (Event Announcement) drafted 2026-04-09. Week 2 (Property Showcase — pool, cabins, safari tents, Lodge, donkeys) drafted 2026-04-13. Awaiting Adam/Ashley manual post. Next rotation: Week 3 (Special Offer / Package) due ~2026-04-20.
 
@@ -29,7 +29,7 @@ Advisory engagement for Rancho Moonrise — glamping, events, and retreat ranch 
 
 ## What's Next
 
-- **Next SEO run:** Blog #14 candidate: "Austin Bachelorette Weekend: Ranch vs Bar Crawl" — differentiation angle targeting bachelorette planners comparing options. S2 (AEO pass) RESOLVED. S1 (blog posts) at 13 posts — strong cluster built. April 24/26 events approaching — confirm RSVP links are live.
+- **Next SEO run:** Blog #15 candidate: "Corporate Retreat: Ranch vs Hotel Conference Room" — same comparison format, high-intent audience. Or improve pool-day-pass page with ReservePage schema. Events.html: update Event schema dates for April 24/26 events after they pass (May 30 Free Friday, May 31 Yoga & Mimosas). S1 now at 14 posts.
 - Adam: Re-upload the 8 low-res source JPGs at 2560px+ width (especially `feature-wedding.jpg` — bride-critical) so the responsive ladder can generate 1920/2560/3840 variants. See "Low-res source JPGs" below.
 - Adam: Wire up a backend handler for the wedding inquiry forms on both contact.html and weddings.html (Formspree / Netlify Forms / Vercel serverless → email + Salesforce create_lead). Both currently `action="#"`. Flag on the DNS cutover checklist.
 - Adam: Curate real-wedding photo set to replace weddings.html gallery placeholder (6 tiles, aria-hidden, "photos coming soon" note live now)
@@ -62,6 +62,7 @@ Once re-uploaded: rerun `./scripts/generate-responsive-images.sh` and commit —
 
 ## Last Worked On
 
+- 2026-04-19 (SEO daily): **Blog #14 published.** "Austin Bachelorette Weekend: Ranch vs. Bar Crawl" (`austin-bachelorette-ranch-vs-bar-crawl.html`). Comparison/decision post targeting bachelorette planners in active decision mode. AEO block, comparison table, decision framework, FAQPage (4 Q&A), SpeakableSpecification, BlogPosting, BreadcrumbList schema. Cross-link to bachelorette-party-austin-texas.html. blog.html card + ItemList (pos 14) + sitemap updated. Commit `2a4837a`.
 - 2026-04-18 (SEO daily): **Blog #13 published.** "Summer Glamping Near Austin, Texas — 2026 Guide" (`summer-glamping-near-austin.html`). Targets "summer glamping near Austin" keyword cluster — seasonal timing (6 weeks before peak season). AEO block, FAQPage (4 Q&A), SpeakableSpecification, BreadcrumbList, BlogPosting schema. blog.html card + ItemList schema updated. Sitemap entry added. Cross-link from glamping guide. Event schema Apr 24/26 verified current.
 - 2026-04-17 (SEO daily): **S2 RESOLVED.** AEO pass complete on final 4 landing pages (wedding-venues-near-austin, corporate-retreat-near-austin, ranch-wedding-texas, things-to-do-manor-tx). FAQPage schema (4 Q&A each), SpeakableSpecification, and proper `aeo-block` with h3/p/hr.blog-divider structure on all 4. Pages 2-4 had inline AEO Q&A in plain paragraph format — converted to proper block. Page 1 had no AEO at all — new block created. Commit `e570002`.
 - 2026-04-15 (GBP profile): **Task #2 RESOLVED.** Claude drafted all profile fields in `brand/gbp-posts/2026-04-15-gbp-profile-fields.md`. Adam swapped **primary business category Hotel → Event venue** (Hotel category blocked the "From the owner" description field entirely; Event venue + Wedding venue is a truer match for the 46% private-events revenue mix — Hotel kept as secondary so lodging queries still hit), replaced the embarrassing blog post with the 738-char description, set hours (Mon/Tue closed, Wed–Sun 9–8), added opening date, flipped website to HTTPS, verified phone, completed amenity sweep. Task card moved into Done tab on `improvement-plan.html`.

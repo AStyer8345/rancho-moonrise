@@ -1,5 +1,10 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-19 — SEO Daily: Blog #14 Published
+
+- **Blog #14** — `austin-bachelorette-ranch-vs-bar-crawl.html` published. Comparison post targeting bachelorette planners in active decision mode (ranch vs bar crawl). Full schema: BlogPosting, FAQPage (4 Q&A), SpeakableSpecification, BreadcrumbList. AEO block, side-by-side comparison table, decision framework. Cross-link added to bachelorette-party-austin-texas.html Related Reading. blog.html card (position 14) + sitemap entry added. Commit `2a4837a`.
+- Re-Verify Gate: sitemap 200 ✓, DNS cutover still_true (Flywheel/5.1.0), blog #13 schema confirmed live.
+
 ## 2026-04-19 — Review Monitor RUN_004
 
 - Quiet run. No new reviews on any platform. Unreplied=0 maintained (no done-log review entries since RUN_003 2026-04-17).
