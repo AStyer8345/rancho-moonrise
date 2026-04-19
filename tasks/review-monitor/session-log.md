@@ -126,3 +126,35 @@ Claims enumerated from persistent surfaces and re-verified:
 **No review drafts produced** — no new reviews detected on any platform.
 
 ---
+
+## RUN_004 — 2026-04-19 06:30 CT
+
+**Summary:** Quiet run. No new reviews detected on any platform. All unreplied counts remain 0 — no review-related done-log entries since RUN_003. All three BLOCKERS from RUN_003 remain open (Google JS-blocked, Hotels.com 60s timeout, Airbnb 403). Hotels.com timeout now 4th consecutive run; Google count stale 4th consecutive. TripAdvisor and Hipcamp live-scraped via WebFetch — both still 0 reviews. Facebook confirmed 5 reviews / 100% recommend via WebSearch. New: Yelp and Agoda listings for Rancho Moonrise discovered in search results — both unverifiable by this agent (Yelp 403, Agoda JS-rendered) and neither carries reviews at this time. No scope expansion needed; noted in aggregate.
+
+**Done-log review-adjacent entries since RUN_003:** none new
+
+**Re-verify log lines:**
+```
+[2026-04-19 06:30] re-verify google-reviews-count — stale (run 4, BLOCKER ongoing) — live=BLOCKED(JS-rendered) prior=127@4.9★ (last verified 2026-04-09)
+[2026-04-19 06:30] re-verify google-unreplied — still_true — live=0(no new done-log review entries since RUN_003) prior=0
+[2026-04-19 06:30] re-verify tripadvisor-status — still_true — live=unclaimed/0reviews(WebFetch) prior=unclaimed/0reviews
+[2026-04-19 06:30] re-verify hipcamp-reviews — still_true — live=0reviews(WebFetch,"Be the first to review") prior=0reviews
+[2026-04-19 06:30] re-verify expedia-rating — stale (run 4, BLOCKER ongoing) — live=BLOCKED(Hotels.com 60s timeout, 4th consecutive) prior=8.0 (last verified 2026-04-09)
+[2026-04-19 06:30] re-verify facebook-reviews — still_true — live=5reviews/100%(WebSearch) prior=5reviews/100%
+[2026-04-19 06:30] re-verify airbnb-listing — unverified (BLOCKER ongoing, no new fetch — 403 pattern established) prior=POSSIBLE_NEW_LISTING
+```
+
+**New platforms discovered (out of current scope, zero reviews):**
+- Yelp: listing active at `yelp.com/biz/rancho-moonrise-manor` — 403 on direct fetch, unverifiable. No reviews evident.
+- Agoda: listing active at `agoda.com/rancho-moonrise-h82700060/...` — JS-rendered shell only, no data. Not adding to scope.
+
+**Files written this run:**
+- `tasks/review-monitor/session-log.md` — this entry
+- `brand/review-aggregate.json` — updated (run_number 3→4, Hotels.com consecutive count 3→4, Yelp + Agoda noted, TripAdvisor + Hipcamp last_scrape refreshed)
+- `site/admin/dashboard-state.json` — updated (run_number 3→4, new_platforms_noted added)
+- `CONTEXT.md` — Last updated line updated
+- `CHANGELOG.md` — one dated bullet appended
+
+**No review drafts produced** — no new reviews detected on any platform.
+
+---

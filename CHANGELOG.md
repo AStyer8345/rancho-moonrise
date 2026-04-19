@@ -1,5 +1,14 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-19 — Review Monitor RUN_004
+
+- Quiet run. No new reviews on any platform. Unreplied=0 maintained (no done-log review entries since RUN_003 2026-04-17).
+- TripAdvisor live-scraped via WebFetch: 0 reviews, unclaimed — confirmed still_true.
+- Hipcamp live-scraped via WebFetch: 0 reviews, "Be the first to review" — confirmed still_true.
+- Facebook: 5 reviews / 100% recommend — confirmed via WebSearch.
+- All 3 existing BLOCKERS remain open: Google (JS-rendered, 4th consecutive), Hotels.com (60s timeout, 4th consecutive), Airbnb (403, FLAG_FOR_ADAM ongoing).
+- New: Yelp (`yelp.com/biz/rancho-moonrise-manor`) and Agoda (`agoda.com/rancho-moonrise-h82700060/...`) listings discovered in search results — both unverifiable by agent, zero reviews evident, not adding to monitored scope.
+
 ## 2026-04-18 — Pre-launch SEO Safety: noindex + Sitemap Reconciliation
 
 - Added `<meta name="robots" content="noindex, nofollow">` to 7 internal/admin pages so they stay out of search results when DNS cuts over: `improvement-plan.html`, `brand-audit.html`, `mockup-preview.html`, `dashboard.html`, `report.html`, `competitive-intelligence.html`, `audits/2026-04-09-business-audit.html`.

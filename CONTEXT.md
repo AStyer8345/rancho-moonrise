@@ -1,6 +1,6 @@
 # Rancho Moonrise — Project Context
 
-**Last updated:** 2026-04-18 (SEO daily: Blog #13 published — "Summer Glamping Near Austin Texas." AEO block, FAQPage schema (4 Q&A), SpeakableSpecification. blog.html card + ItemList updated. Sitemap updated. Cross-link added from glamping guide. Events schema for Apr 24/26 verified current.)
+**Last updated:** 2026-04-19 (review-monitor RUN_004: Quiet run — no new reviews on any platform. Unreplied=0 maintained. TripAdvisor + Hipcamp live-scraped (0 reviews each). Facebook 5/100% confirmed. All 3 BLOCKERS ongoing. Yelp + Agoda listings discovered — zero reviews, not added to scope.)
 
 **GBP posting status:** Week 1 (Event Announcement) drafted 2026-04-09. Week 2 (Property Showcase — pool, cabins, safari tents, Lodge, donkeys) drafted 2026-04-13. Awaiting Adam/Ashley manual post. Next rotation: Week 3 (Special Offer / Package) due ~2026-04-20.
 
