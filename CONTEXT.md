@@ -1,6 +1,6 @@
 # Rancho Moonrise — Project Context
 
-**Last updated:** 2026-04-19 (SEO daily: Blog #14 published — "Austin Bachelorette Weekend: Ranch vs. Bar Crawl." Comparison/decision post, full AEO + schema suite. Commit `2a4837a`.)
+**Last updated:** 2026-04-20 (competitive-weekly: April 20 intel run. 7 prior claims re-verified live. Lucky Arrow ResortPass has no active products through May 1 — time-sensitive window. Two new SERP entrants: The Yurtopian (16 yurts, Dripping Springs/Wimberley) and Spoon Mountain Glamping (Wimberley safari tents). Intel card dual-written to both improvement-plan files. competitive-intelligence.md replaced. DNS cutover urgency elevated — 6+ ranked competitors now active.)
 
 **GBP posting status:** Week 1 (Event Announcement) drafted 2026-04-09. Week 2 (Property Showcase — pool, cabins, safari tents, Lodge, donkeys) drafted 2026-04-13. Awaiting Adam/Ashley manual post. Next rotation: Week 3 (Special Offer / Package) due ~2026-04-20.
 
@@ -62,6 +62,7 @@ Once re-uploaded: rerun `./scripts/generate-responsive-images.sh` and commit —
 
 ## Last Worked On
 
+- 2026-04-20 (competitive-weekly): **April 20 intel run.** 7 prior claims re-verified live (all still true; Lucky Arrow ResortPass state change: listed but no active products until May 1). Two new SERP entrants found: The Yurtopian (16 yurts, 35 min from Austin) + Spoon Mountain Glamping (Wimberley safari tents). ResortPass 10-day window surfaced as top urgent action. Intel card dual-written. competitive-intelligence.md replaced. CHANGELOG + TODO + CONTEXT updated.
 - 2026-04-19 (SEO daily): **Blog #14 published.** "Austin Bachelorette Weekend: Ranch vs. Bar Crawl" (`austin-bachelorette-ranch-vs-bar-crawl.html`). Comparison/decision post targeting bachelorette planners in active decision mode. AEO block, comparison table, decision framework, FAQPage (4 Q&A), SpeakableSpecification, BlogPosting, BreadcrumbList schema. Cross-link to bachelorette-party-austin-texas.html. blog.html card + ItemList (pos 14) + sitemap updated. Commit `2a4837a`.
 - 2026-04-18 (SEO daily): **Blog #13 published.** "Summer Glamping Near Austin, Texas — 2026 Guide" (`summer-glamping-near-austin.html`). Targets "summer glamping near Austin" keyword cluster — seasonal timing (6 weeks before peak season). AEO block, FAQPage (4 Q&A), SpeakableSpecification, BreadcrumbList, BlogPosting schema. blog.html card + ItemList schema updated. Sitemap entry added. Cross-link from glamping guide. Event schema Apr 24/26 verified current.
 - 2026-04-17 (SEO daily): **S2 RESOLVED.** AEO pass complete on final 4 landing pages (wedding-venues-near-austin, corporate-retreat-near-austin, ranch-wedding-texas, things-to-do-manor-tx). FAQPage schema (4 Q&A each), SpeakableSpecification, and proper `aeo-block` with h3/p/hr.blog-divider structure on all 4. Pages 2-4 had inline AEO Q&A in plain paragraph format — converted to proper block. Page 1 had no AEO at all — new block created. Commit `e570002`.

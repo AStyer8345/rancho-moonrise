@@ -135,9 +135,10 @@ All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms. Li
 - [ ] **Upload remaining 7 videos (01-07)** — hit YouTube daily upload limit. Try again tomorrow. Files are in `youtube-uploads/` folder with manifest spreadsheet.
 - [ ] **Delete duplicate videos** — Fk17TEpGCFY (10-pool-wedding-day) and WTstKx2JVUo (11-ranch-flower-decorations) are duplicates of the content that was correctly uploaded under different IDs. Pick which set to keep and delete the other.
 
-### NEEDS ADAM — Competitive intel quick wins (from 2026-04-13 intel run)
-- [ ] Submit Glamping Hub listing — free, 15 min at glampinghub.com/list-your-property. Three new competitors gained discovery this week while Rancho Moonrise stays absent.
-- [ ] Get on ResortPass — Lucky Arrow is the only glamping retreat in Austin on ResortPass; Rancho Moonrise pool is a stronger day-use story than most downtown hotels. Contact resortpass.com/list-property.
+### NEEDS ADAM — Competitive intel quick wins (updated 2026-04-20)
+- [ ] **⚡ ResortPass — submit this week, window closes May 1.** Lucky Arrow's pool passes are currently INACTIVE (bar/kitchen closed through April 30). No active day pass products on their listing right now. If Rancho Moonrise submits to ResortPass before May 1, they'd be the only non-hotel glamping pool pass in Austin. Lucky Arrow reactivates May 1 — 10-day window. Contact: resortpass.com/list-property. Use pool day pass blog post copy as listing draft.
+- [ ] Submit Glamping Hub listing — free, 15 min at glampinghub.com/list-your-property. Now The Yurtopian, Udoscape, and others appear there while Rancho Moonrise stays absent.
+- [ ] **DNS cutover — urgency escalating.** Austin glamping SERP now has 6+ ranked individual properties (added The Yurtopian and Spoon Mountain this week). 14 blog posts + safari tent page + full schema suite waiting to index.
 
 ## Next (after DNS cutover)
 - [ ] Google Search Console setup + sitemap submission (S6)

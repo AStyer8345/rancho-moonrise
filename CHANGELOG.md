@@ -1,5 +1,14 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-20 — Weekly Competitive Intelligence
+
+- **SERP checks run** across glamping, safari tent, wedding venue, corporate retreat, and pool day pass keywords. Rancho Moonrise absent from all — DNS cutover remains the #1 unlock.
+- **Re-verify gate:** 7 prior claims checked live. All still true except Lucky Arrow ResortPass state change: listed but no active products (bar/kitchen closed through May 1 — time-sensitive window).
+- **New competitors:** The Yurtopian (16 yurts, 35 min from Austin — now in "glamping near austin tx" SERP) and Spoon Mountain Glamping (Wimberley safari tents with private pools — now in "safari tent austin" SERP). Austin glamping SERP now has 6+ individually-ranked properties.
+- **Intel card dual-written** to both `site/improvement-plan.html` and `client-ops/clients/rancho-moonrise/improvement-plan.html`.
+- **`site/competitive-intelligence.md`** replaced with April 20 full report.
+- **Highest urgency item surfaced:** ResortPass submission window closes May 1 when Lucky Arrow reactivates.
+
 ## 2026-04-19 — SEO Daily: Blog #14 Published
 
 - **Blog #14** — `austin-bachelorette-ranch-vs-bar-crawl.html` published. Comparison post targeting bachelorette planners in active decision mode (ranch vs bar crawl). Full schema: BlogPosting, FAQPage (4 Q&A), SpeakableSpecification, BreadcrumbList. AEO block, side-by-side comparison table, decision framework. Cross-link added to bachelorette-party-austin-texas.html Related Reading. blog.html card (position 14) + sitemap entry added. Commit `2a4837a`.
