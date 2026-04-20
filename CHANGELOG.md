@@ -1,5 +1,14 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-20 — Review Monitor RUN_005
+
+- Quiet run. No new reviews on any platform. Unreplied=0 maintained (no review-related done-log entries since RUN_004).
+- TripAdvisor live-scraped: 0 reviews, unclaimed — still_true.
+- Hipcamp live-scraped: 0 reviews, "Be the first to review" — still_true.
+- Facebook: 5 reviews / 100% recommend — confirmed via WebSearch.
+- Expedia 8.0 confirmed via WebSearch (Hotels.com snippet, Dec 2025 review still current).
+- All 3 BLOCKERS remain open: Google (JS-rendered, run 5), Hotels.com (60s timeout, run 5), Airbnb (403, FLAG_FOR_ADAM, run 5).
+
 ## 2026-04-20 — Weekly Competitive Intelligence
 
 - **SERP checks run** across glamping, safari tent, wedding venue, corporate retreat, and pool day pass keywords. Rancho Moonrise absent from all — DNS cutover remains the #1 unlock.

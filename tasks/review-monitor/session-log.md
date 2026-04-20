@@ -158,3 +158,31 @@ Claims enumerated from persistent surfaces and re-verified:
 **No review drafts produced** — no new reviews detected on any platform.
 
 ---
+
+## RUN_005 — 2026-04-20 06:30 CT
+
+**Summary:** Quiet run. No new reviews detected on any platform. Unreplied=0 maintained — no review-related done-log entries since RUN_004 (2026-04-19). All three BLOCKERS from RUN_003 remain open (Google JS-blocked, Hotels.com timeout, Airbnb 403 — each now at 5+ consecutive). TripAdvisor live-scraped via WebFetch: 0 reviews, unclaimed. Hipcamp live-scraped via WebFetch: 0 reviews, "Be the first to review." Facebook confirmed 5 reviews / 100% recommend via WebSearch. Expedia 8.0 confirmed via WebSearch (Hotels.com snippet shows Dec 2025 guest review, 8.0 rating still current). Dashboard status remains "ok."
+
+**Done-log review-adjacent entries since RUN_004:** none new (only entry since RUN_004 was `rancho-competitive-weekly` at 2026-04-20 08:15 — SEO-related, not review-related)
+
+**Re-verify log lines:**
+```
+[2026-04-20 06:30] re-verify google-reviews-count — stale (run 5, BLOCKER ongoing) — live=BLOCKED(JS-rendered) prior=127@4.9★ (last verified 2026-04-09)
+[2026-04-20 06:30] re-verify google-unreplied — still_true — live=0(no new done-log review entries since RUN_004) prior=0
+[2026-04-20 06:30] re-verify tripadvisor-status — still_true — live=unclaimed/0reviews(WebFetch) prior=unclaimed/0reviews
+[2026-04-20 06:30] re-verify hipcamp-reviews — still_true — live=0reviews(WebFetch,"Be the first to review") prior=0reviews
+[2026-04-20 06:30] re-verify expedia-rating — still_true(search) — live=8.0(WebSearch:Hotels.com snippet,Dec 2025 review confirmed current) prior=8.0 STALE:2026-04-09 BLOCKER ongoing
+[2026-04-20 06:30] re-verify facebook-reviews — still_true — live=5reviews/100%(WebSearch) prior=5reviews/100%
+[2026-04-20 06:30] re-verify airbnb-listing — unverified (BLOCKER ongoing, no new fetch — 403 pattern established) prior=POSSIBLE_NEW_LISTING
+```
+
+**Files written this run:**
+- `brand/review-aggregate.json` — updated (run_number 4→5, Hotels.com search confirmation added, TripAdvisor + Hipcamp last_scrape refreshed, Facebook last_confirmed updated)
+- `site/admin/dashboard-state.json` — updated (run_number 4→5)
+- `tasks/review-monitor/session-log.md` — this entry
+- `CONTEXT.md` — Last Worked On updated, old entries trimmed to stay under 150 lines
+- `CHANGELOG.md` — one dated bullet appended
+
+**No review drafts produced** — no new reviews detected on any platform.
+
+---

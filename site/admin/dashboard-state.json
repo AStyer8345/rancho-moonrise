@@ -1,8 +1,8 @@
 {
   "review_monitor": {
-    "last_run": "2026-04-19T06:30:00Z",
+    "last_run": "2026-04-20T06:30:00Z",
     "status": "ok",
-    "status_reason": "No new reviews on any platform. Unreplied=0 maintained. 3 verification paths in BLOCKERS.md remain open: Google (JS-blocked, run 4), Hotels.com (timeout, run 4), Airbnb (403, run 4). TripAdvisor and Hipcamp live-confirmed 0 reviews. Facebook 5 reviews/100% confirmed via search. Yelp and Agoda listings discovered — no reviews, not adding to scope.",
+    "status_reason": "No new reviews on any platform. Unreplied=0 maintained. 3 verification paths in BLOCKERS.md remain open: Google (JS-blocked, run 5), Hotels.com (timeout, run 5 — WebSearch confirms 8.0 still current), Airbnb (403, FLAG_FOR_ADAM, run 5). TripAdvisor and Hipcamp live-confirmed 0 reviews. Facebook 5 reviews/100% confirmed via search.",
     "new_reviews_pending_response": 0,
     "total_reviews_tracked": 132,
     "unreplied_by_platform": {
@@ -15,8 +15,8 @@
     "stale_platforms": ["google", "expedia"],
     "flags": [
       "airbnb-listing-existence-unverified",
-      "google-live-scrape-blocked-4-runs",
-      "hotels-com-fetch-timeout-4-runs"
+      "google-live-scrape-blocked-5-runs",
+      "hotels-com-fetch-timeout-5-runs"
     ],
     "blockers": [
       "google-reviews-count",
@@ -24,6 +24,6 @@
       "airbnb-listing-existence"
     ],
     "new_platforms_noted": ["yelp", "agoda"],
-    "run_number": 4
+    "run_number": 5
   }
 }
