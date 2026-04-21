@@ -514,7 +514,7 @@
             <h2>The Event Barn &amp; Corral</h2>
             <p style="max-width: 600px; margin: var(--space-sm) auto 0; color: var(--color-text-muted);">Murals, string lights, corral signs, and the firepit — a tour of the gathering spaces that make the ranch feel like home.</p>
         </div>
-        <div class="wedding-gallery" role="list">
+        <div class="wedding-gallery" role="list" data-gallery="events_barn">
             <div class="wedding-gallery__tile" role="listitem">
                 <img src="../images/event-barn-dusk-neon-1024.webp" srcset="../images/event-barn-dusk-neon-480.webp 480w, ../images/event-barn-dusk-neon-1024.webp 1024w" sizes="(min-width: 900px) 25vw, 33vw" alt="Event Barn at dusk with string lights and neon bronc sign at Rancho Moonrise" width="800" height="800" loading="lazy" decoding="async">
             </div>
@@ -950,6 +950,75 @@
         });
     })();
 
+})();
+</script>
+
+<!-- Gallery Hydrator (Supabase-backed, non-blocking) -->
+<script>
+(function () {
+    var SUPABASE_URL = 'https://uuqedsvjlkeszrbwzizl.supabase.co';
+    var SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV1cWVkc3ZqbGtlc3pyYnd6aXpsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI5ODcwMjYsImV4cCI6MjA4ODU2MzAyNn0.Wu1DKotPPigTpVpQvmdRMpa7NW9-WnEou6bTV3kakFM';
+
+    function deriveSrcset(url) {
+        // Derive -480.webp variant from -1024.webp for responsive srcset
+        if (url.indexOf('-1024.webp') !== -1) {
+            var small = url.replace('-1024.webp', '-480.webp');
+            return small + ' 480w, ' + url + ' 1024w';
+        }
+        if (url.indexOf('-1920.webp') !== -1) {
+            var medium = url.replace('-1920.webp', '-1024.webp');
+            var thumb = url.replace('-1920.webp', '-480.webp');
+            return thumb + ' 480w, ' + medium + ' 1024w, ' + url + ' 1920w';
+        }
+        return url + ' 1024w';
+    }
+
+    function buildTile(photo) {
+        var tile = document.createElement('div');
+        tile.className = 'wedding-gallery__tile';
+        tile.setAttribute('role', 'listitem');
+        var img = document.createElement('img');
+        img.src = photo.public_url;
+        img.srcset = deriveSrcset(photo.public_url);
+        img.sizes = '(min-width: 900px) 25vw, 33vw';
+        img.alt = photo.alt_text || photo.title || 'Rancho Moonrise photo';
+        img.width = 800;
+        img.height = 800;
+        img.loading = 'lazy';
+        img.decoding = 'async';
+        tile.appendChild(img);
+        return tile;
+    }
+
+    function hydrateGallery(el, section) {
+        var url = SUPABASE_URL + '/rest/v1/rancho_photos'
+                + '?section=eq.' + encodeURIComponent(section)
+                + '&is_active=eq.true'
+                + '&select=public_url,alt_text,title,sort_order'
+                + '&order=sort_order.asc';
+        if (!('fetch' in window)) return;
+        fetch(url, {
+            headers: {
+                'apikey': SUPABASE_ANON_KEY,
+                'Authorization': 'Bearer ' + SUPABASE_ANON_KEY
+            }
+        }).then(function (r) {
+            if (!r.ok) throw new Error('Supabase ' + r.status);
+            return r.json();
+        }).then(function (rows) {
+            if (!rows || !rows.length) return; // keep hardcoded fallback
+            el.innerHTML = '';
+            rows.forEach(function (row) { el.appendChild(buildTile(row)); });
+        }).catch(function (err) {
+            if (window.console) console.warn('[gallery:' + section + '] hydration failed:', err);
+        });
+    }
+
+    var galleries = document.querySelectorAll('[data-gallery]');
+    galleries.forEach(function (el) {
+        var section = el.getAttribute('data-gallery');
+        if (section) hydrateGallery(el, section);
+    });
 })();
 </script>
 

@@ -443,6 +443,7 @@
     <div class="tabs">
         <button class="tab-btn is-active" data-tab="events">Events</button>
         <button class="tab-btn" data-tab="photos">Photos</button>
+        <button class="tab-btn" data-tab="galleries">Galleries</button>
         <button class="tab-btn" data-tab="reviews">Reviews</button>
     </div>
 
@@ -462,6 +463,25 @@
             <button class="btn btn--primary" id="addPhotoBtn">+ Add Photo</button>
         </div>
         <div id="photosList" class="loading">Loading photos...</div>
+    </div>
+
+    <!-- GALLERIES TAB -->
+    <div class="tab-content" id="tab-galleries">
+        <div class="section-header">
+            <h2>Gallery Photos</h2>
+            <button class="btn btn--primary" id="addGalleryPhotoBtn">+ Add Photo</button>
+        </div>
+        <div class="form-group" style="margin-bottom: var(--space-md);">
+            <label for="gallerySelect">Gallery</label>
+            <select id="gallerySelect">
+                <option value="events_barn">Events Barn (events page)</option>
+                <option value="weddings">Weddings (weddings page)</option>
+                <option value="pool">Pool (pool day pass page)</option>
+                <option value="lodge">Inside The Lodge (accommodations page)</option>
+                <option value="ranch_tour">Around the Ranch (accommodations page)</option>
+            </select>
+        </div>
+        <div id="galleryList" class="loading">Loading gallery...</div>
     </div>
 
     <!-- REVIEWS TAB -->
@@ -554,6 +574,51 @@
             </div>
             <div class="modal__footer">
                 <button type="button" class="btn btn--secondary" onclick="closeModal('photoModal')">Cancel</button>
+                <button type="submit" class="btn btn--primary">Save Photo</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- ============ GALLERY PHOTO MODAL ============ -->
+<div class="modal-overlay" id="galleryModal">
+    <div class="modal">
+        <h2 id="galleryModalTitle">Add Gallery Photo</h2>
+        <div class="error-msg" id="galleryError"></div>
+        <form id="galleryForm">
+            <input type="hidden" id="galleryPhotoId">
+            <div class="form-group">
+                <label for="gallerySection">Gallery</label>
+                <select id="gallerySection" required>
+                    <option value="events_barn">Events Barn (events page)</option>
+                    <option value="weddings">Weddings (weddings page)</option>
+                    <option value="pool">Pool (pool day pass page)</option>
+                    <option value="lodge">Inside The Lodge (accommodations page)</option>
+                    <option value="ranch_tour">Around the Ranch (accommodations page)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="galleryTitle">Title</label>
+                <input type="text" id="galleryTitle" required placeholder="e.g. Sunset ceremony">
+            </div>
+            <div class="form-group">
+                <label for="galleryAlt">Alt Text (for accessibility)</label>
+                <input type="text" id="galleryAlt" placeholder="Describe the image for screen readers">
+            </div>
+            <div class="form-group">
+                <label>Photo</label>
+                <div class="file-upload" id="galleryFileUpload">
+                    <input type="file" accept="image/*" id="galleryFile">
+                    <p class="file-upload__label">Click or drag to upload photo</p>
+                    <img class="file-upload__preview" id="galleryFilePreview">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="galleryOrder">Sort Order</label>
+                <input type="number" id="galleryOrder" value="0" min="0">
+            </div>
+            <div class="modal__footer">
+                <button type="button" class="btn btn--secondary" onclick="closeModal('galleryModal')">Cancel</button>
                 <button type="submit" class="btn btn--primary">Save Photo</button>
             </div>
         </form>
@@ -681,6 +746,7 @@ function showDashboard(user) {
     $('#userEmail').textContent = user.email;
     loadEvents();
     loadPhotos();
+    loadGalleryPhotos();
     loadReviews();
 }
 
@@ -965,6 +1031,152 @@ $('#photoForm').addEventListener('submit', async function(e) {
     closeModal('photoModal');
     toast(id ? 'Photo updated!' : 'Photo added!');
     loadPhotos();
+});
+
+// ============================================================
+// GALLERIES (events_barn, weddings, pool, lodge, ranch_tour)
+// ============================================================
+var GALLERY_KEYS = ['events_barn', 'weddings', 'pool', 'lodge', 'ranch_tour'];
+
+async function loadGalleryPhotos() {
+    var container = $('#galleryList');
+    var key = $('#gallerySelect').value;
+    container.innerHTML = '<div class="loading">Loading ' + key + '...</div>';
+    var { data, error } = await sb.from('rancho_photos')
+        .select('*').eq('section', key).order('sort_order');
+
+    if (error) { container.innerHTML = '<p class="empty-state">Error loading gallery.</p>'; return; }
+    if (!data.length) { container.innerHTML = '<div class="empty-state"><p>No photos in this gallery yet.</p></div>'; return; }
+
+    container.innerHTML = data.map(function(ph) {
+        return '<div class="content-card">' +
+            '<img class="content-card__thumb" src="' + escapeHtml(ph.public_url) + '" alt="' + escapeHtml(ph.alt_text) + '">' +
+            '<div class="content-card__info">' +
+                '<h3>' + escapeHtml(ph.title) + ' <span class="badge ' + (ph.is_active ? 'badge--active' : 'badge--inactive') + '">' + (ph.is_active ? 'Active' : 'Hidden') + '</span></h3>' +
+                '<p style="color:var(--orange);font-size:0.8rem;font-weight:600;margin-bottom:4px;">Sort: ' + ph.sort_order + '</p>' +
+                '<p>' + escapeHtml(ph.alt_text || 'No alt text') + '</p>' +
+            '</div>' +
+            '<div class="content-card__actions">' +
+                '<button class="btn btn--secondary btn--sm" onclick="editGalleryPhoto(\'' + ph.id + '\')">Edit</button>' +
+                '<button class="btn btn--danger btn--sm" onclick="toggleGalleryPhoto(\'' + ph.id + '\',' + !ph.is_active + ')">' + (ph.is_active ? 'Hide' : 'Show') + '</button>' +
+                '<button class="btn btn--danger btn--sm" onclick="deleteGalleryPhoto(\'' + ph.id + '\')">Delete</button>' +
+            '</div>' +
+        '</div>';
+    }).join('');
+}
+
+$('#gallerySelect').addEventListener('change', loadGalleryPhotos);
+
+$('#addGalleryPhotoBtn').addEventListener('click', function() {
+    $('#galleryModalTitle').textContent = 'Add Gallery Photo';
+    $('#galleryForm').reset();
+    $('#galleryPhotoId').value = '';
+    $('#gallerySection').value = $('#gallerySelect').value;
+    $('#galleryFilePreview').style.display = 'none';
+    openModal('galleryModal');
+});
+
+async function editGalleryPhoto(id) {
+    var { data } = await sb.from('rancho_photos').select('*').eq('id', id).single();
+    if (!data) return;
+
+    $('#galleryModalTitle').textContent = 'Edit Gallery Photo';
+    $('#galleryPhotoId').value = data.id;
+    $('#gallerySection').value = data.section;
+    $('#galleryTitle').value = data.title;
+    $('#galleryAlt').value = data.alt_text || '';
+    $('#galleryOrder').value = data.sort_order;
+
+    var preview = $('#galleryFilePreview');
+    if (data.public_url) {
+        preview.src = data.public_url;
+        preview.style.display = 'block';
+    }
+
+    openModal('galleryModal');
+}
+
+async function toggleGalleryPhoto(id, active) {
+    await sb.from('rancho_photos').update({ is_active: active }).eq('id', id);
+    toast(active ? 'Photo shown on site' : 'Photo hidden from site');
+    loadGalleryPhotos();
+}
+
+async function deleteGalleryPhoto(id) {
+    if (!confirm('Delete this photo? This cannot be undone.')) return;
+    var { data: ph } = await sb.from('rancho_photos').select('storage_path').eq('id', id).single();
+    // Only clean up Supabase Storage files — legacy /images/ paths aren't in Storage
+    if (ph && ph.storage_path && !ph.storage_path.startsWith('legacy/')) {
+        await sb.storage.from('rancho-moonrise').remove([ph.storage_path]);
+    }
+    await sb.from('rancho_photos').delete().eq('id', id);
+    toast('Photo deleted');
+    loadGalleryPhotos();
+}
+
+$('#galleryForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    var errEl = $('#galleryError');
+    errEl.style.display = 'none';
+    var submitBtn = this.querySelector('[type="submit"]');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Saving...';
+
+    var id = $('#galleryPhotoId').value;
+    var file = $('#galleryFile').files[0];
+
+    var row = {
+        section: $('#gallerySection').value,
+        title: $('#galleryTitle').value.trim(),
+        alt_text: $('#galleryAlt').value.trim(),
+        sort_order: parseInt($('#galleryOrder').value) || 0,
+    };
+
+    if (file) {
+        if (id) {
+            var { data: old } = await sb.from('rancho_photos').select('storage_path').eq('id', id).single();
+            if (old && old.storage_path && !old.storage_path.startsWith('legacy/')) {
+                await sb.storage.from('rancho-moonrise').remove([old.storage_path]);
+            }
+        }
+        var path = 'galleries/' + row.section + '/' + Date.now() + '-' + file.name.replace(/[^a-zA-Z0-9.-]/g, '_');
+        var { error: upErr } = await sb.storage.from('rancho-moonrise').upload(path, file);
+        if (upErr) { errEl.textContent = 'Upload failed: ' + upErr.message; errEl.style.display = 'block'; submitBtn.disabled = false; submitBtn.textContent = 'Save Photo'; return; }
+        var { data: urlData } = sb.storage.from('rancho-moonrise').getPublicUrl(path);
+        row.public_url = urlData.publicUrl;
+        row.storage_path = path;
+    } else if (!id) {
+        errEl.textContent = 'Please select a photo to upload.';
+        errEl.style.display = 'block';
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Save Photo';
+        return;
+    }
+
+    var result;
+    if (id) {
+        result = await sb.from('rancho_photos').update(row).eq('id', id);
+    } else {
+        result = await sb.from('rancho_photos').insert(row);
+    }
+
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Save Photo';
+
+    if (result.error) {
+        errEl.textContent = result.error.message;
+        errEl.style.display = 'block';
+        return;
+    }
+
+    // If user added photo to a different gallery than the currently selected filter, switch to it
+    if (row.section && $('#gallerySelect').value !== row.section) {
+        $('#gallerySelect').value = row.section;
+    }
+
+    closeModal('galleryModal');
+    toast(id ? 'Photo updated!' : 'Photo added!');
+    loadGalleryPhotos();
 });
 
 // ============================================================
