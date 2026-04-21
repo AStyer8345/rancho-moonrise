@@ -700,7 +700,7 @@ $$('.tab-btn').forEach(function(btn) {
 async function loadEvents() {
     var container = $('#eventsList');
     var { data, error } = await sb.from('rancho_events')
-        .select('*').order('sort_order').order('event_date');
+        .select('*').order('event_date', { ascending: true }).order('sort_order', { ascending: true });
 
     if (error) { container.innerHTML = '<p class="empty-state">Error loading events.</p>'; return; }
     if (!data.length) { container.innerHTML = '<div class="empty-state"><p>No events yet.</p></div>'; return; }
