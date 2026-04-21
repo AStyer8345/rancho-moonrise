@@ -1,5 +1,33 @@
 # Rancho Moonrise — TODO
-Last updated: 2026-04-14 (GBP baseline filled on improvement-plan from March 2026 email; GSC rows pending)
+Last updated: 2026-04-21 (pre-DNS-cutover event sweep — DNS cutover scheduled tomorrow 2026-04-22)
+
+## ✅ DONE 2026-04-21 — Pre-DNS-cutover event sweep
+
+Triple workstream the day before the DNS cutover. All blocking items closed.
+
+1. **Ashley admin login verified** — Reset `aludkows@gmail.com` password directly via Supabase `auth.users` using `pgcrypto` (`crypt('...', gen_salt('bf', 10))`) — no service_role key needed. Verified login via `/auth/v1/token?grant_type=password` against the anon key — returned a valid access_token. Password reset email then sent to **howdy@ranchomoonrise.com** (not `aludkows@gmail.com` — per Adam's directive since Ashley has mailbox access to howdy@). First Outlook draft had a CDATA encoding bug — discarded and regenerated clean; Adam to send the second draft.
+2. **events.html cleaned + wired to Supabase** — Cross-referenced old WordPress `ranchomoonrise.com/events/list/` and verified no events missing. Added 130-line client-side hydration block in `events.html` (lines 797-925): JS fetches from Supabase REST `rancho_events` table with anon key, pulls `status=eq.published` and `event_date>=now()`, replaces hardcoded May/June/July/August grid while preserving hardcoded HTML as SEO fallback. Verified syntax with `node --check`. Data-events-month attributes confirmed at lines 231 (April), 280 (May), 389 (June).
+3. **Supabase data cleanup** — Fixed 4 title mismatches (WordPress canon vs. Supabase), inserted 2 missing events (Rancho Rodeo: Cinco De Mayo, Lone Star Party), assigned artwork_url to 2 NULL rows (Rosés Around the World → `hero-sunset-roses.jpg`, Sunday Funday → `event-free-friday-pool.webp`). Column name fix: `ticket_url` (singular), not `tickets_url`.
+4. **GBP event backlog cleared via Publer** — Root cause of "only 1 event posted yesterday": n8n workflow `QYxXYLx5WgKI9393` uses a 7-day lookahead, so on 2026-04-20 only Apr 26 Yoga was caught (Apr 24 Free Friday was already `gbp_posted=true`). Working as designed. Solution: bypass n8n, manually push backlog via bash + curl mirroring workflow logic. Built `/tmp/gbp-post/post-event.sh` — downloads image from Vercel, uploads to Publer with explicit `Content-Type: image/webp|jpeg|png` (Publer rejects `.bin` / missing MIME), schedules GBP post via `/api/v1/posts/schedule` with 15-min stagger starting at now+10min. Posted 12 events (May 02 through Aug 30) at 16:01Z–18:47Z UTC = 11:01 AM–1:47 PM CDT. All 12 rows marked `gbp_posted=true` in single SQL tx. `still_unposted=0` verified post-run. Inserted audit row into `n8n_run_logs` with `workflow='gbp-event-sync-manual'`.
+
+**Publer job_ids captured** (all @ 2026-04-21):
+- Cinco De Mayo 05-02 → `69e79cfddf0b0c07bbc36963` @ 16:01Z
+- Mother's Day Retreat 05-10 → `69e79d1078f5d69b2b037c66` @ 16:16Z
+- Sunday Funday 05-24 → `69e79d12a758d2afe1dce9dc` @ 16:31Z
+- Rosés Around the World 05-24 → `69e79d1ddf0b0c07bbc369c8` @ 16:46Z
+- Yoga & Mimosas 05-31 → `69e79d1f4691a4d56f9437ab` @ 17:01Z
+- Rancho Rodeo: Sun Series 06-06 → `69e79d20a758d2afe1dce9f7` @ 17:16Z
+- Paella Dinner Party 06-20 → `69e79d2a1e6e96dad0ebec8b` @ 17:32Z
+- Yoga & Mimosas 06-28 → `69e79d2c1e6e96dad0ebec91` @ 17:47Z
+- 4th of July Music Festival 07-04 → `69e79d2ddf0b0c07bbc36a13` @ 18:02Z
+- Lone Star Party 07-18 → `69e79d378dca9d3a132c7012` @ 18:17Z
+- Yoga & Mimosas 07-26 → `69e79d3878f5d69b2b037d02` @ 18:32Z
+- Yoga & Mimosas 08-30 → `69e79d398dca9d3a132c701f` @ 18:47Z
+
+**NEEDS ADAM follow-ups:**
+- [ ] Send clean Outlook draft #2 (password reset) to howdy@ranchomoonrise.com — discard the first one (CDATA bug)
+- [ ] Confirm Ashley can log in after she receives it
+- [ ] DNS cutover tomorrow — once live, re-test Supabase hydration + events.html loads from the final hostname
 
 ## ✅ DONE 2026-04-11 — Color revert on Codex audit commit
 
@@ -73,7 +101,12 @@ All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms. Li
 - [ ] **Deal file acreage reconciliation** (separate from website copy) — before buyout modeling is final, confirm whether 36 acres is the total operational footprint (rounded up from 31.6), includes land outside the three tracts, or is a different measurement basis. Not blocking website work.
 
 
-## Now (this week — April 9-15)
+## Now (this week — April 20-26)
+
+### 🚨 TOMORROW — DNS CUTOVER (2026-04-22)
+- [ ] **Adam:** trigger DNS cutover from BofillTech → Vercel. Once propagation starts, 14 blog posts + safari tent page + full schema suite will finally be crawlable at the production hostname.
+- [ ] **Ashley:** confirm admin login (howdy@ranchomoonrise.com Outlook draft #2 — discard draft #1 which has a CDATA bug)
+- [ ] **Post-cutover smoke test:** load `/pages/events.html` on the final hostname, verify Supabase hydration populates the month grids, verify no mixed-content / CORS errors, verify all 12 GBP posts scheduled today render correctly on the GBP listing over the next few days.
 
 ### CLAUDE (next task to build) — Re-verify gate for Rancho
 - [ ] **Create `rancho-review-monitor` scheduled task** — mirror `acr-review-monitor` pattern, own Rancho GBP review-reply state as a live claim. Use the shared gate at `/Users/adamstyer/Documents/client-ops/templates/re-verify-before-report.md`. Verification path: public GBP page scrape or Places API `place.reviews[].reply` presence. First-run responsibility: re-verify every live-claim finding currently in CONTEXT.md Active Blockers + improvement-plan.html Plan-tab task cards, auto-resolve stale ones into `rancho-done-log.md`. Expected ~30 min fork of acr SKILL.md.
@@ -99,7 +132,7 @@ All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms. Li
 - [ ] **Pull Photo views + Bookings from GBP dashboard** — not in the monthly email; need a one-time manual grab from business.google.com until GBP API access lands.
 
 ### NEEDS ADAM — Infrastructure
-- [ ] DNS cutover from BofillTech to Vercel — THE #1 unlock for all SEO/AEO
+- [ ] **DNS cutover from BofillTech to Vercel** — SCHEDULED 2026-04-22 (tomorrow). THE #1 unlock for all SEO/AEO. See the 🚨 TOMORROW section at the top of Now.
 - [ ] Rotate `GITHUB_TOKEN` on Vercel → fine-grained PAT scoped only to `AStyer8345/rancho-moonrise` contents:write (currently broad `gh auth token`, 5 min fix)
 - [ ] Get Exhibit A from Nancy/Ashley (ownership %, capital contributions)
 - [ ] Get QuickBooks access or P&L + Balance Sheet
