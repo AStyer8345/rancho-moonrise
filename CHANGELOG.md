@@ -609,3 +609,12 @@
 
 - Audit pass (commit 95c523f): btn min-height 44-48px, body alpha 0.92-0.96 for WCAG AA, form inputs 16px + 44px min-height, nav social icons → 36x36 circular terracotta with white SVG, mobile menu social → 48x48 solid terracotta circles across 19 pages
 - Homepage pass (commit 82616f0): Primary_Clay logo swap (fallback Secondary), Instagram + Call Now 44x44 nav icons, removed "20 Minutes" label, hero title scales at 768/390 breakpoints, full-width 56px-min CTAs, venue-duo text-shadow + stronger overlay, .section--pine darkened to #1f4d3a, review marquee 120s/80s with touch-pause 3s resume, Instagram grid → horizontal scroll-snap filmstrip <=640px
+
+## 2026-04-21 — SEO Daily: Blog #15 Committed + Blog #16 Published
+
+- **Blog #15 committed:** `corporate-retreat-ranch-vs-hotel.html` — existed locally as untracked (datePublished 2026-04-20), fully written with BlogPosting/FAQPage/SpeakableSpecification/BreadcrumbList schema. blog.html already had the card and schema position 15. File was never git-committed; rectified this run.
+- **Blog #16 published:** `mothers-day-near-austin.html` — seasonal post targeting "mother's day near austin" and related keywords. Mother's Day is May 11 (~3 weeks out). Three-tier content: pool day pass, yoga & mimosas Sunday morning tie-in, full overnight stay. AEO block, FAQPage (4 Q&A), SpeakableSpecification, BreadcrumbList, dual CTA.
+- **sitemap.xml updated:** both new blog entries added (corporate-retreat-ranch-vs-hotel, mothers-day-near-austin)
+- **blog.html updated:** schema position 16 + HTML card for Blog #16
+- S1 (blog posts): 16 of target count published
+- Re-Verify Gate: sitemap.xml 200 ✓, DNS still on Flywheel/BofillTech ✓ (still_true)

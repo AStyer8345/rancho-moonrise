@@ -1,6 +1,6 @@
 # Rancho Moonrise — Project Context
 
-**Last updated:** 2026-04-21 (review-monitor RUN_006: No new reviews on any platform. Unreplied=0 maintained. TripAdvisor/Hipcamp at 0. Facebook 5/100%. Expedia 8.0 confirmed via WebSearch. 3 BLOCKERS ongoing: Google JS-blocked run 6, Hotels.com timeout run 6, Airbnb 403 run 6.)
+**Last updated:** 2026-04-21 (SEO daily: Blog #15 committed (corporate-retreat-ranch-vs-hotel, was untracked). Blog #16 published: mothers-day-near-austin.html — seasonal target, Mother's Day May 11. S1 now at 16 posts. Sitemap updated. Re-Verify Gate: sitemap 200 ✓, DNS still on Flywheel ✓.)
 
 ---
 
@@ -27,7 +27,7 @@ Advisory engagement for Rancho Moonrise — glamping, events, and retreat ranch 
 
 ## What's Next
 
-- **Next SEO run:** Blog #15 candidate: "Corporate Retreat: Ranch vs Hotel Conference Room" — same comparison format, high-intent audience. Or improve pool-day-pass page with ReservePage schema. Events.html: update Event schema dates for April 24/26 events after they pass (May 30 Free Friday, May 31 Yoga & Mimosas). S1 now at 14 posts.
+- **Next SEO run:** Events.html: update Event schema startDate/endDate for April 24/26 events after they pass (May 30 Free Friday, May 31 Yoga & Mimosas) — do on/after April 27. Pool-day-pass: add ReservePage schema (ResortPass live, Lucky Arrow window expires May 1). Blog #17 candidate: "Yoga Retreat Near Austin Texas" or "Birthday Party Venue Near Austin". S1 now at 16 posts.
 - Adam: Re-upload the 8 low-res source JPGs at 2560px+ width (especially `feature-wedding.jpg` — bride-critical) so the responsive ladder can generate 1920/2560/3840 variants. See "Low-res source JPGs" below.
 - Adam: Wire up a backend handler for the wedding inquiry forms on both contact.html and weddings.html (Formspree / Netlify Forms / Vercel serverless → email + Salesforce create_lead). Both currently `action="#"`. Flag on the DNS cutover checklist.
 - Adam: Curate real-wedding photo set to replace weddings.html gallery placeholder (6 tiles, aria-hidden, "photos coming soon" note live now)
@@ -56,6 +56,7 @@ The 4 accommodation files are literally 340×340 thumbnails masquerading as cont
 
 ## Last Worked On
 
+- 2026-04-21 (SEO daily): **Blog #15 committed** (corporate-retreat-ranch-vs-hotel.html — was untracked). **Blog #16 published:** mothers-day-near-austin.html — seasonal post targeting Mother's Day May 11, 3 weeks out. AEO block, FAQPage (4 Q&A), SpeakableSpecification, BreadcrumbList. Cross-links to pool-day-pass, accommodations, events, faqs, weekend-getaways. Sitemap updated (both new entries). S1 now 16 posts. Re-Verify Gate: sitemap 200 ✓, DNS Flywheel ✓.
 - 2026-04-21 (review-monitor): **RUN_006.** No new reviews on any platform. Unreplied=0 maintained. TripAdvisor and Hipcamp live-verified at 0 reviews. Facebook 5/100% confirmed via WebSearch. Expedia 8.0 confirmed via WebSearch (Hotels.com snippet still active). 3 BLOCKERS ongoing: Google JS-blocked (run 6), Hotels.com timeout (run 6), Airbnb 403 (FLAG_FOR_ADAM). Dashboard status: ok.
 - 2026-04-20 (competitive-weekly): **April 20 intel run.** 7 prior claims re-verified live. Lucky Arrow ResortPass has no active products through May 1 — time-sensitive window. Two new SERP entrants: The Yurtopian (16 yurts, Dripping Springs/Wimberley) and Spoon Mountain Glamping (Wimberley safari tents). Intel card dual-written. DNS cutover urgency elevated.
 - 2026-04-19 (SEO daily): **Blog #14 published.** `austin-bachelorette-ranch-vs-bar-crawl.html`. Comparison post targeting bachelorette planners. AEO block, comparison table, FAQPage (4 Q&A), SpeakableSpecification. Commit `2a4837a`.

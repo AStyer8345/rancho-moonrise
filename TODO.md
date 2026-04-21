@@ -127,6 +127,8 @@ All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms. Li
 - [x] AEO + schema pass on 4 remaining zero-coverage landing pages: `wedding-venues-near-austin.html`, `corporate-retreat-near-austin.html`, `ranch-wedding-texas.html`, `things-to-do-manor-tx.html` — DONE 2026-04-17. FAQPage + SpeakableSpecification + aeo-block on all 4. Commit `e570002`.
 - [x] Blog post #13 — "Summer Glamping Near Austin Texas" — DONE 2026-04-18. AEO block, FAQPage schema (4 Q&A), SpeakableSpecification, BlogPosting schema. Seasonal timing target: 6 weeks before peak summer demand.
 - [x] Blog post #14 — "Austin Bachelorette Weekend: Ranch vs. Bar Crawl" — DONE 2026-04-19. Comparison/decision format. AEO block, comparison table, decision framework, FAQPage (4 Q&A), SpeakableSpecification, BlogPosting, BreadcrumbList. Cross-link from bachelorette guide. Commit `2a4837a`.
+- [x] Blog post #15 — "Corporate Retreat: Ranch vs. Hotel Conference Room" — COMMITTED 2026-04-21. File existed locally as untracked (created 2026-04-20, full schema). Committed and pushed this run.
+- [x] Blog post #16 — "Mother's Day Near Austin Texas" — DONE 2026-04-21. Seasonal target (Mother's Day May 11). AEO block, FAQPage (4 Q&A), SpeakableSpecification, BreadcrumbList. Three-tier content: pool day pass / Yoga & Mimosas / overnight stay.
 
 ### NEEDS ADAM — Review monitor flags (from 2026-04-15 rancho-review-monitor run)
 - [ ] **Verify possible Airbnb listing** — search surfaced `/rooms/1284193976615696223` ("Glamping Safari Tent 25 mins from downtown Austin, Manor TX"). April 9 baseline said no Airbnb listing. Confirm if this is a Rancho Moonrise listing — if yes, add to review coverage scope. (Page returned 403 when fetched by agent.)
