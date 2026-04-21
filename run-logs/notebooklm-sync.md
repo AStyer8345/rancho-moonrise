@@ -1,3 +1,4 @@
+2026-04-17 16:08 | scanned=64 added=0 replaced=0 skipped=3 errors=0
 2026-04-10 00:09 | ERROR adding: 2023-10-24-styer-business-plan-for-rancho-moonrise.txt
 2026-04-10 00:09 | ERROR adding: 2023-11-20-ranchomoonrise-pricing.txt
 2026-04-10 00:09 | ERROR adding: 2023-11-30-springer-site-plan.txt
@@ -65,3 +66,35 @@ WARN: Skipped 3 oversized files (>10MB): PRIVATE EVENTS AT RANCHO MOONRISE.pdf (
 2026-04-15 00:08 | scanned=64 added=1 replaced=0 skipped=3 errors=0 | added: n8n-metrics-pull-spec.md | skipped_size: PRIVATE EVENTS AT RANCHO MOONRISE.pdf, INTIMATE EVENTS AT RM.pdf, ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf
 2026-04-15 04:08 | scanned=67 added=0 replaced=0 skipped=3 errors=0 | no changes; skipped_size: PRIVATE EVENTS AT RANCHO MOONRISE.pdf (~29MB), INTIMATE EVENTS AT RM.pdf (~21MB), ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf (~37MB)
 2026-04-15 08:07 | scanned=63 added=0 replaced=0 skipped=3 errors=0
+2026-04-16 15:52 | scanned=64 added=0 replaced=0 skipped=1 errors=1 | WARN: 2026-04-09-rancho-moonrise-improvement-plan.html modified but HTML upload rejected 400 (NotebookLM does not support HTML); PDF version already in notebook. State updated.
+2026-04-16 20:07 | scanned=64 added=0 replaced=0 skipped=3 errors=0
+2026-04-17 00:08 | scanned=67 added=0 replaced=0 skipped=3 (large PDFs >10MB: PRIVATE EVENTS, INTIMATE EVENTS, ALL INCLUSIVE RETREATS) errors=0
+2026-04-17 04:07 | scanned=67 added=0 replaced=0 skipped=3 errors=0
+2026-04-17 08:08 | scanned=64 added=0 replaced=0 skipped=3 errors=0
+2026-04-17 12:07 | scanned=67 added=0 replaced=0 skipped=3 errors=0
+2026-04-17 21:13 | scanned=64 added=0 replaced=0 skipped=3 errors=0
+2026-04-18 02:30 | scanned=74 added=4 replaced=0 skipped=3 errors=1 (font-license HTML rejected 400)
+  added: 2026-04-15-gbp-profile-fields.md, 2026-04-15-gbp-qa-seed.md, 2026-04-13-gbp-post.md, 2026-04-15-blog12-social-snippets.md
+  error: "Monotype Font Software End User License Agreement.html" → 400 Bad Request (NotebookLM rejected HTML)
+  already-in-nb (no upload needed): 2026-04-09-review-report.md, 2026-04-09-gbp-post.md
+  skipped (>10MB): PRIVATE EVENTS AT RANCHO MOONRISE.pdf, INTIMATE EVENTS AT RM.pdf, ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf
+2026-04-18 04:51 | scanned=74 added=0 replaced=0 skipped=3 errors=0
+2026-04-18 09:50 | scanned=64 added=0 replaced=0 skipped=3 errors=0
+2026-04-18 12:08 | scanned=71 added=0 replaced=0 skipped=3 errors=0
+2026-04-18 16:08 | scanned=74 added=0 replaced=0 skipped=3 errors=0
+2026-04-18 20:08 | scanned=74 added=0 replaced=0 skipped=3 errors=0
+2026-04-19 00:08 | scanned=71 added=0 replaced=0 skipped=3 errors=0
+2026-04-19 04:09 | scanned=74 added=0 replaced=0 skipped=3 errors=0
+2026-04-19 08:09 | scanned=64 added=0 replaced=0 skipped=3 errors=0
+2026-04-19 12:09 | scanned=71 added=0 replaced=0 skipped=3 errors=0
+2026-04-19 16:08 | scanned=71 added=0 replaced=0 skipped=3 errors=0
+2026-04-19 20:08 | scanned=71 added=0 replaced=0 skipped=3 errors=0
+2026-04-20 00:08 | scanned=71 added=0 replaced=0 skipped=3 errors=0
+2026-04-20 04:08 | scanned=64 added=0 replaced=0 skipped=3 errors=0
+2026-04-20 08:37 | scanned=64 added=0 replaced=0 skipped=3 errors=0
+2026-04-20 12:08 | scanned=71 added=0 replaced=0 skipped=3 errors=0
+2026-04-20 16:08 | scanned=74 added=0 replaced=0 skipped=3 errors=0
+2026-04-20 20:08 | scanned=74 added=0 replaced=0 skipped=3 errors=0
+2026-04-21 00:08 | scanned=71 added=0 replaced=0 skipped=3 errors=0
+2026-04-21 04:08 | scanned=71 added=0 replaced=0 skipped=3 errors=0
+2026-04-21 08:08 | scanned=71 added=0 replaced=0 skipped=3 errors=0
