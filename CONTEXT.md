@@ -1,6 +1,6 @@
 # Rancho Moonrise — Project Context
 
-**Last updated:** 2026-04-20 (review-monitor RUN_005: No new reviews on any platform. Unreplied=0 maintained. TripAdvisor/Hipcamp at 0. Facebook 5/100%. Expedia 8.0 confirmed via WebSearch. 3 BLOCKERS ongoing.)
+**Last updated:** 2026-04-21 (review-monitor RUN_006: No new reviews on any platform. Unreplied=0 maintained. TripAdvisor/Hipcamp at 0. Facebook 5/100%. Expedia 8.0 confirmed via WebSearch. 3 BLOCKERS ongoing: Google JS-blocked run 6, Hotels.com timeout run 6, Airbnb 403 run 6.)
 
 ---
 
@@ -56,7 +56,7 @@ The 4 accommodation files are literally 340×340 thumbnails masquerading as cont
 
 ## Last Worked On
 
-- 2026-04-20 (review-monitor): **RUN_005.** No new reviews on any platform. Unreplied=0 maintained. TripAdvisor and Hipcamp live-verified at 0 reviews. Facebook 5/100% confirmed via WebSearch. Expedia 8.0 confirmed via WebSearch snippet (Hotels.com, Dec 2025 review still current). 3 BLOCKERS ongoing: Google JS-blocked (run 5), Hotels.com timeout (run 5), Airbnb 403 (FLAG_FOR_ADAM). Dashboard status: ok.
+- 2026-04-21 (review-monitor): **RUN_006.** No new reviews on any platform. Unreplied=0 maintained. TripAdvisor and Hipcamp live-verified at 0 reviews. Facebook 5/100% confirmed via WebSearch. Expedia 8.0 confirmed via WebSearch (Hotels.com snippet still active). 3 BLOCKERS ongoing: Google JS-blocked (run 6), Hotels.com timeout (run 6), Airbnb 403 (FLAG_FOR_ADAM). Dashboard status: ok.
 - 2026-04-20 (competitive-weekly): **April 20 intel run.** 7 prior claims re-verified live. Lucky Arrow ResortPass has no active products through May 1 — time-sensitive window. Two new SERP entrants: The Yurtopian (16 yurts, Dripping Springs/Wimberley) and Spoon Mountain Glamping (Wimberley safari tents). Intel card dual-written. DNS cutover urgency elevated.
 - 2026-04-19 (SEO daily): **Blog #14 published.** `austin-bachelorette-ranch-vs-bar-crawl.html`. Comparison post targeting bachelorette planners. AEO block, comparison table, FAQPage (4 Q&A), SpeakableSpecification. Commit `2a4837a`.
 - 2026-04-18 (SEO daily): **Blog #13 published.** `summer-glamping-near-austin.html`. Targets summer glamping keyword cluster — seasonal timing (6 weeks before peak season). AEO block, FAQPage, SpeakableSpecification, BreadcrumbList.

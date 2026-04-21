@@ -186,3 +186,31 @@ Claims enumerated from persistent surfaces and re-verified:
 **No review drafts produced** — no new reviews detected on any platform.
 
 ---
+
+## RUN_006 — 2026-04-21 06:30 CT
+
+**Summary:** Quiet run. No new reviews on any platform. Unreplied=0 maintained — no new done-log entries since 2026-04-17 (confirmed via git log: last done-log commit `98e89a1` on 2026-04-17). All three BLOCKERS from RUN_003 remain open (Google JS-blocked run 6, Hotels.com timeout run 6, Airbnb 403 run 6). TripAdvisor live-scraped via WebFetch: 0 reviews, unclaimed ("No reviews for this property yet"). Hipcamp live-scraped via WebFetch: 0 reviews, "Be the first to review." Facebook confirmed 5 reviews / 100% recommend via WebSearch. Expedia 8.0 confirmed via WebSearch (Hotels.com snippet still active). Dashboard status remains "ok."
+
+**Done-log entries since RUN_005:** none (last done-log commit 2026-04-17; confirmed no review/GBP/reply-related entries)
+
+**Re-verify log lines:**
+```
+[2026-04-21 11:30] re-verify google-reviews-count — stale (run 6, BLOCKER ongoing) — live=BLOCKED(JS-rendered) prior=127@4.9★ (last verified 2026-04-09)
+[2026-04-21 11:30] re-verify google-unreplied — still_true — live=0(no done-log entries since 2026-04-17; git log confirms) prior=0
+[2026-04-21 11:30] re-verify tripadvisor-status — still_true — live=unclaimed/0reviews(WebFetch) prior=unclaimed/0reviews
+[2026-04-21 11:30] re-verify hipcamp-reviews — still_true — live=0reviews(WebFetch,"Be the first to review") prior=0reviews
+[2026-04-21 11:30] re-verify expedia-rating — still_true(search) — live=8.0(WebSearch:Hotels.com snippet confirmed) prior=8.0 STALE:2026-04-09 BLOCKER ongoing
+[2026-04-21 11:30] re-verify facebook-reviews — still_true — live=5reviews/100%(WebSearch) prior=5reviews/100%
+[2026-04-21 11:30] re-verify airbnb-listing — unverified (BLOCKER ongoing, no new fetch — 403 pattern established) prior=POSSIBLE_NEW_LISTING
+```
+
+**Files written this run:**
+- `brand/review-aggregate.json` — updated (run_number 5→6, TripAdvisor + Hipcamp last_scrape refreshed, Google stale_run_count 5→6, Airbnb flag_run_count 5→6, Hotels.com timeout_count 5→6, Facebook + Expedia search_confirmed_date updated)
+- `site/admin/dashboard-state.json` — updated (run_number 5→6, flags updated to reflect run 6)
+- `tasks/review-monitor/session-log.md` — this entry
+- `CONTEXT.md` — Last Worked On updated
+- `CHANGELOG.md` — one dated bullet appended
+
+**No review drafts produced** — no new reviews detected on any platform.
+
+---

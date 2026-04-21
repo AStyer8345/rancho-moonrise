@@ -1,5 +1,14 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-21 — Review Monitor RUN_006
+
+- Quiet run. No new reviews on any platform. Unreplied=0 maintained (no done-log entries since 2026-04-17; confirmed via git log).
+- TripAdvisor live-scraped: 0 reviews, unclaimed — still_true.
+- Hipcamp live-scraped: 0 reviews, "Be the first to review" — still_true.
+- Facebook: 5 reviews / 100% recommend — confirmed via WebSearch.
+- Expedia 8.0 confirmed via WebSearch (Hotels.com snippet still active).
+- All 3 BLOCKERS remain open: Google (JS-rendered, run 6), Hotels.com (60s timeout, run 6), Airbnb (403, FLAG_FOR_ADAM, run 6).
+
 ## 2026-04-20 — Review Monitor RUN_005
 
 - Quiet run. No new reviews on any platform. Unreplied=0 maintained (no review-related done-log entries since RUN_004).
