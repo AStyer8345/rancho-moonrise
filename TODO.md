@@ -131,6 +131,10 @@ All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms. Li
 - [ ] **Add Re-Verify Gate to `rancho-competitive-weekly` SKILL** — same runbook, for competitor-state claims.
 
 
+### NEEDS ADAM — Weekly Strengthener Blockers (added 2026-04-22)
+- [ ] **Create approved testimonials list for website use.** `rancho-content-weekly` strengthener task needs real guest quotes tied to verified event dates to place on landing pages (weddings, accommodations, events, etc.). The review report has some snippets but none are verified or on an approved list. Curate 10–15 real quotes from Google/Knot reviews, note the event date, and save as `brand/approved-testimonials.md`. Required before the weekly strengthener can add social proof to any page.
+- [ ] **Decide: Adam or Ashley as named content author on website pages?** The weekly strengthener adds an author byline block to landing pages. It can't proceed without knowing who to attribute. Options: (a) Ashley as "your host" (authentic — she runs day-to-day), (b) Adam as "advisor/strategist" (if Adam writes the copy), (c) "The Rancho Moonrise Team" as a generic byline (no named person required). Save decision in GOALS.md under "Settled Decisions."
+
 ### NEEDS ADAM — GBP work (newly unblocked, he has Manager access)
 - [x] Reply to all 9 unreplied Google reviews — DONE 2026-04-14 per done-log (RESOLVED by Adam)
 - [x] Replace blog post in GBP "From the owner" with real business description — DONE 2026-04-15 (Task 2)

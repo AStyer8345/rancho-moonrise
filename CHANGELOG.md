@@ -1,5 +1,11 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-22 — Content Strengthener Run 1 (weddings.html — blocked)
+
+- **Strengthener queue initialized.** Created `run-logs/strengthener-queue.md` to track the weekly content strengthening rotation across 13 landing pages.
+- **weddings.html — no changes made.** Run hit two hard stops: (1) no approved testimonials list exists in the repo — cannot place a real guest quote without verified event dates; (2) author byline decision (Adam vs Ashley) not settled in GOALS.md. Both logged to TODO.md under NEEDS ADAM. Gallery placeholder noted as already resolved (Apr 21 Galleries build seeded 17 tiles into Supabase).
+- **Next run:** `accommodations.html` — queued as priority 2 (low-res accommodation card thumbnails).
+
 ## 2026-04-22 — SEO: ReservePage Schema + Blog #17 (Birthday Party Venue)
 
 - **ReservePage schema on pool-day-pass-austin.html.** Upgraded the SpeakableSpecification block to dual `@type: ["WebPage", "ReservePage"]` and added a `potentialAction` of type `ReserveAction` targeting the ResortPass booking URL. Signals to search engines that this page leads to a reservation — time-sensitive given Lucky Arrow's ResortPass window closing May 1.
