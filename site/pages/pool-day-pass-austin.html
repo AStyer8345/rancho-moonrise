@@ -104,16 +104,32 @@
     }
     </script>
 
-    <!-- Schema: SpeakableSpecification -->
+    <!-- Schema: SpeakableSpecification + ReservePage -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "WebPage",
+        "@type": ["WebPage", "ReservePage"],
         "speakable": {
             "@type": "SpeakableSpecification",
             "cssSelector": [".aeo-block h2", ".aeo-block h3", ".aeo-block p", ".page-header h1", ".page-header p"]
         },
-        "url": "https://ranchomoonrise.com/blog/pool-day-pass-austin/"
+        "url": "https://ranchomoonrise.com/blog/pool-day-pass-austin/",
+        "name": "Austin Pool Day Pass — Resort Pool Access Near Austin, TX",
+        "potentialAction": {
+            "@type": "ReserveAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://www.resortpass.com/hotels/rancho-moonrise",
+                "actionPlatform": [
+                    "http://schema.org/DesktopWebPlatform",
+                    "http://schema.org/MobileWebPlatform"
+                ]
+            },
+            "result": {
+                "@type": "LodgingReservation",
+                "name": "Pool Day Pass — Rancho Moonrise"
+            }
+        }
     }
     </script>
 

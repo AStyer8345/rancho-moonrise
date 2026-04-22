@@ -1,5 +1,11 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-22 — SEO: ReservePage Schema + Blog #17 (Birthday Party Venue)
+
+- **ReservePage schema on pool-day-pass-austin.html.** Upgraded the SpeakableSpecification block to dual `@type: ["WebPage", "ReservePage"]` and added a `potentialAction` of type `ReserveAction` targeting the ResortPass booking URL. Signals to search engines that this page leads to a reservation — time-sensitive given Lucky Arrow's ResortPass window closing May 1.
+- **Blog #17 published:** `birthday-party-venue-near-austin.html`. Targets "birthday party venue near Austin" keyword cluster — strong commercial intent, aligns with private events revenue (46% of RM revenue). AEO block, FAQPage (4 Q&A), SpeakableSpecification, BreadcrumbList, BlogPosting schema. CTAs lead to host-your-event.html (private events inquiry) and accommodations. Cross-links to pool-day-pass, host-your-event, weekend-getaways, glamping guide, events. S1 now 17 posts.
+- **Sitemap and blog.html updated.** Added blog #17 entry to sitemap.xml (lastmod 2026-04-22) and CollectionPage ItemList (position 17). Added blog card (Post 17) at top of blog.html grid.
+
 ## 2026-04-21 — Admin Galleries Build + 4-Page Photo Hydration
 
 - **Events admin sort.** Flipped `site/admin/index.html` events query from descending to ascending on `event_date` so Ashley sees the closest-date events at the top of the admin list. Shipped standalone as commit `c03cae7`.

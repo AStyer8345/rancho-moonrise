@@ -1,5 +1,22 @@
 # Rancho Moonrise — TODO
-Last updated: 2026-04-21 (pre-DNS-cutover event sweep — DNS cutover scheduled tomorrow 2026-04-22)
+Last updated: 2026-04-22 (SEO daily — ReservePage schema + Blog #17 birthday party venue)
+
+## ✅ DONE 2026-04-21 — Admin Galleries Build + 4-Page Photo Hydration
+
+Shipped the capstone of the admin panel refactor: Ashley can now CRUD photos directly from `/admin` without touching code.
+
+1. **Events admin auto-sorted by closest date first** — `site/admin/index.html` events list now ascending by `event_date` (upcoming on top, past at bottom).
+2. **New Galleries admin tab** — picker for 5 sections (`events_barn`, `weddings`, `pool`, `lodge`, `ranch_tour`), full CRUD: upload to `rancho-moonrise/galleries/` Supabase Storage bucket, edit alt_text/title/sort_order, toggle `is_active`, delete. Single Tab UI alongside existing Events and Photos (hero slideshow) tabs.
+3. **Expanded `rancho_photos.section` CHECK constraint to 9 values** — was 4, now includes the 5 new gallery sections.
+4. **Seeded 64 rows into `rancho_photos`** from the hardcoded HTML across the 4 public pages (legacy pattern: `storage_path='legacy/...'`, `public_url='/images/...'`).
+5. **Hydrated 4 public pages from Supabase:**
+   - `events.html` — `events_barn` (12 photos)
+   - `weddings.html` — `weddings` (17 photos) — lightbox preserved via event delegation + `gallery:hydrated` CustomEvent (tiles rebuilt as `<button>` with regenerated `data-lb-index`, lightbox re-runs `collectPhotos()` on event)
+   - `pool-day-pass-austin.html` — `pool` (6 photos)
+   - `accommodations.html` — `lodge` (9) + `ranch_tour` (20), single hydrator handles both via `querySelectorAll('[data-gallery]')`
+6. **All hydrators non-blocking** — hardcoded HTML stays as SEO fallback if fetch fails. Responsive srcset derived from `-1024.webp` / `-1920.webp` naming pattern.
+
+Commit `96f6f96`, pushed to origin. Vercel deploy `dpl_7XsYa1pg1u7XweUDZfYVG7v4Rg5H` state **READY** (build time ~19s, region iad1). Live on `rancho-moonrise.vercel.app`.
 
 ## ✅ DONE 2026-04-21 — Pre-DNS-cutover event sweep
 
@@ -162,6 +179,8 @@ All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms. Li
 - [x] Blog post #14 — "Austin Bachelorette Weekend: Ranch vs. Bar Crawl" — DONE 2026-04-19. Comparison/decision format. AEO block, comparison table, decision framework, FAQPage (4 Q&A), SpeakableSpecification, BlogPosting, BreadcrumbList. Cross-link from bachelorette guide. Commit `2a4837a`.
 - [x] Blog post #15 — "Corporate Retreat: Ranch vs. Hotel Conference Room" — COMMITTED 2026-04-21. File existed locally as untracked (created 2026-04-20, full schema). Committed and pushed this run.
 - [x] Blog post #16 — "Mother's Day Near Austin Texas" — DONE 2026-04-21. Seasonal target (Mother's Day May 11). AEO block, FAQPage (4 Q&A), SpeakableSpecification, BreadcrumbList. Three-tier content: pool day pass / Yoga & Mimosas / overnight stay.
+- [x] Blog post #17 — "Birthday Party Venue Near Austin Texas" — DONE 2026-04-22. High commercial intent (private events = 46% revenue). AEO block, FAQPage (4 Q&A), SpeakableSpec, BreadcrumbList. CTAs to host-your-event + accommodations.
+- [x] ReservePage schema on pool-day-pass-austin.html — DONE 2026-04-22. Dual type `["WebPage","ReservePage"]` + `ReserveAction` potentialAction → ResortPass URL. Time-sensitive (Lucky Arrow window closes May 1).
 
 ### NEEDS ADAM — Review monitor flags (from 2026-04-15 rancho-review-monitor run)
 - [ ] **Verify possible Airbnb listing** — search surfaced `/rooms/1284193976615696223` ("Glamping Safari Tent 25 mins from downtown Austin, Manor TX"). April 9 baseline said no Airbnb listing. Confirm if this is a Rancho Moonrise listing — if yes, add to review coverage scope. (Page returned 403 when fetched by agent.)
