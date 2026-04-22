@@ -855,6 +855,7 @@
   <button class="tab-btn" onclick="switchTab('audits')">Audits</button>
   <button class="tab-btn" onclick="switchTab('intel')">Intel</button>
   <button class="tab-btn" onclick="switchTab('done')">Done <span id="done-count-badge" class="done-count-badge">0</span></button>
+  <button class="tab-btn" onclick="switchTab('routines')">Routines</button>
   <button class="tab-btn" onclick="switchTab('links')">Links</button>
   <button class="tab-btn" onclick="switchTab('voice')">Voice</button>
 </div>
@@ -1446,6 +1447,154 @@
 
 </div><!-- /tab-done -->
 
+<div id="tab-routines" class="tab-content">
+<div class="divider"></div>
+
+<!-- ===== ROUTINES ===== -->
+<h2><span class="phase-label">Routines</span>What's Running in the Background</h2>
+<p class="tab-intro">Every automation touching Rancho Moonrise — Claude co-work agents (scheduled tasks) plus n8n workflows. If something on this page or the site moves without Adam or Ashley touching it, one of these did it. All times Central. Verified live from the scheduled-tasks API and n8n on <span id="routines-verified-date">April 22, 2026</span>.</p>
+
+<style>
+  .routine-legend { display: flex; flex-wrap: wrap; gap: 1rem; font-size: 0.85rem; color: #9BA3B0; margin: 1rem 0 1.5rem; }
+  .routine-legend > span { display: inline-flex; align-items: center; gap: 0.4rem; }
+  .routine-pill { display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
+  .routine-pill.ok { background: rgba(78, 205, 196, 0.15); color: #4ECDC4; border: 1px solid rgba(78, 205, 196, 0.4); }
+  .routine-pill.paused { background: rgba(139, 125, 107, 0.15); color: #8B7D6B; border: 1px solid rgba(139, 125, 107, 0.4); }
+  .routine-section-header { display: flex; align-items: baseline; justify-content: space-between; margin: 2rem 0 0.4rem; flex-wrap: wrap; gap: 0.5rem; }
+  .routine-section-header h3 { color: #E8E0D4; margin: 0; font-size: 1.15rem; }
+  .routine-section-count { font-size: 0.75rem; color: #8B7D6B; text-transform: uppercase; letter-spacing: 0.08em; }
+  .routine-section-intro { color: #9BA3B0; font-size: 0.9rem; margin: 0 0 1rem; max-width: 720px; }
+  .routine-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+  .routine-card { background: #0F1419; border: 1px solid #2A2E3A; border-radius: 10px; padding: 1rem 1.1rem; display: flex; flex-direction: column; gap: 0.5rem; }
+  .routine-card-head { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; }
+  .routine-name { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.88rem; color: #D4A574; font-weight: 600; word-break: break-word; }
+  .routine-freq { font-size: 0.78rem; color: #8B7D6B; text-transform: uppercase; letter-spacing: 0.06em; }
+  .routine-desc { color: #C9CDD4; font-size: 0.9rem; margin: 0; line-height: 1.45; }
+  .routine-meta { font-size: 0.75rem; color: #6B7280; margin-top: 0.25rem; }
+  [data-theme="light"] .routine-card { background: #FFFFFF; border-color: #E5DFD4; }
+  [data-theme="light"] .routine-name { color: #8B5A2B; }
+  [data-theme="light"] .routine-freq { color: #7A7060; }
+  [data-theme="light"] .routine-desc { color: #1A1A1A; }
+  [data-theme="light"] .routine-legend { color: #7A7060; }
+  [data-theme="light"] .routine-section-header h3 { color: #1A1A1A; }
+</style>
+
+<div class="routine-legend">
+  <span><span class="routine-pill ok">Active</span> Running on schedule</span>
+  <span><span class="routine-pill paused">Paused</span> Temporarily off — not deleted</span>
+</div>
+
+<div class="routine-section-header">
+  <h3>Claude Co-Work — Scheduled Tasks</h3>
+  <span class="routine-section-count">6 active</span>
+</div>
+<p class="routine-section-intro">Claude sessions that wake up on a cron, do a pre-defined job, and write results back into this repo or this page. Source of truth: the Claude Code scheduled-tasks API. These are the sessions doing most of the ongoing work on the site + GBP.</p>
+
+<div class="routine-grid">
+
+  <div class="routine-card">
+    <div class="routine-card-head">
+      <span class="routine-name">rancho-site-daily</span>
+      <span class="routine-pill ok">Active</span>
+    </div>
+    <div class="routine-freq">Daily · 8:00 AM CT</div>
+    <p class="routine-desc">Self-improving site optimizer. Audits SEO / AEO / conversion on the new-build site, ships surgical edits, and surfaces findings onto the Plan tab as new tasks.</p>
+  </div>
+
+  <div class="routine-card">
+    <div class="routine-card-head">
+      <span class="routine-name">rancho-content-weekly</span>
+      <span class="routine-pill ok">Active</span>
+    </div>
+    <div class="routine-freq">Weekly · Wednesday 9:00 AM CT</div>
+    <p class="routine-desc">Content <em>strengthener</em> — not writer. Picks one existing page per week and adds real photos, author byline, testimonials, and local specifics. Zero new URLs until asset inventory catches up.</p>
+  </div>
+
+  <div class="routine-card">
+    <div class="routine-card-head">
+      <span class="routine-name">rancho-competitive-weekly</span>
+      <span class="routine-pill ok">Active</span>
+    </div>
+    <div class="routine-freq">Weekly · Monday 6:00 AM CT</div>
+    <p class="routine-desc">Pulls SERP rankings for Manor / Austin wedding + glamping keywords, profiles competitor sites, and publishes a fresh card to the Intel tab.</p>
+  </div>
+
+  <div class="routine-card">
+    <div class="routine-card-head">
+      <span class="routine-name">rancho-review-monitor</span>
+      <span class="routine-pill ok">Active</span>
+    </div>
+    <div class="routine-freq">Daily · 6:30 AM CT</div>
+    <p class="routine-desc">Google Business Profile review monitor. Owns review-reply state as the <em>live claim</em> — kills stale "N of M unreplied" findings via the shared Re-Verify Gate so Ashley never sees a false flag.</p>
+  </div>
+
+  <div class="routine-card">
+    <div class="routine-card-head">
+      <span class="routine-name">rancho-apply-done</span>
+      <span class="routine-pill ok">Active</span>
+    </div>
+    <div class="routine-freq">Daily · 5:33 AM CT</div>
+    <p class="routine-desc">Done-log reconciler. Reads <code>rancho-done-log.md</code> and physically moves resolved task divs into this page's Done tab so multi-device "Mark done" clicks converge.</p>
+  </div>
+
+  <div class="routine-card">
+    <div class="routine-card-head">
+      <span class="routine-name">rancho-notebooklm-sync</span>
+      <span class="routine-pill ok">Active</span>
+    </div>
+    <div class="routine-freq">Every 4 hours</div>
+    <p class="routine-desc">Watches <code>deal/</code> and <code>brand/</code> folders for new or modified files and replaces stale sources in the Rancho NotebookLM so Q&amp;A stays accurate.</p>
+  </div>
+
+</div>
+
+<div class="routine-section-header">
+  <h3>n8n Workflows</h3>
+  <span class="routine-section-count">3 active</span>
+</div>
+<p class="routine-section-intro">Integration plumbing running on <a href="https://styer.app.n8n.cloud" target="_blank" rel="noopener" style="color:#4ECDC4;">styer.app.n8n.cloud</a>. These move data between the Supabase event table, Publer, and Google Business Profile.</p>
+
+<div class="routine-grid">
+
+  <div class="routine-card">
+    <div class="routine-card-head">
+      <span class="routine-name">Blog → GBP Post</span>
+      <span class="routine-pill ok">Active</span>
+    </div>
+    <div class="routine-freq">Scheduled trigger</div>
+    <p class="routine-desc">Takes a published blog post and reformats it into a GBP post, then schedules it through Publer. Keeps the Google Business Profile posting cadence alive without a human re-writing copy.</p>
+    <div class="routine-meta">n8n id: <code>s5JWQMZgKWOsyqZ7</code></div>
+  </div>
+
+  <div class="routine-card">
+    <div class="routine-card-head">
+      <span class="routine-name">GBP Event Sync</span>
+      <span class="routine-pill ok">Active</span>
+    </div>
+    <div class="routine-freq">Daily · 7:00 AM CT</div>
+    <p class="routine-desc">Reads the next 7 days of active events from <code>rancho_events</code>, formats a caption, downloads the artwork, schedules the GBP post via Publer, and marks the event posted in Supabase.</p>
+    <div class="routine-meta">n8n id: <code>QYxXYLx5WgKI9393</code></div>
+  </div>
+
+  <div class="routine-card">
+    <div class="routine-card-head">
+      <span class="routine-name">Stuck Events Audit</span>
+      <span class="routine-pill ok">Active</span>
+    </div>
+    <div class="routine-freq">Weekly · Monday 8:00 AM CT</div>
+    <p class="routine-desc">Catches active events whose date has passed without ever posting to GBP. Logs a warning to <code>n8n_run_logs</code> so the sync workflow can't silently miss events.</p>
+    <div class="routine-meta">n8n id: <code>kCS88EjWlP7R6yXm</code></div>
+  </div>
+
+</div>
+
+<div style="background:#0F1419; border:1px dashed #2A2E3A; border-radius:8px; padding:1.25rem 1.5rem; margin-top:1.75rem;">
+  <strong style="color:#8B7D6B; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em;">Admin shortcuts</strong>
+  <p style="margin: 0.5rem 0 0; color: #9BA3B0; font-size: 0.88rem;">Drive the content these routines read from in the <a href="/admin/" target="_blank" rel="noopener" style="color:#4ECDC4;">Rancho admin</a> — events, hero photos, galleries, reviews. Add a new event there and GBP Event Sync will pick it up on the next 7:00 AM run.</p>
+</div>
+
+</div><!-- /tab-routines -->
+
 <div id="tab-links" class="tab-content">
 <div class="divider"></div>
 
@@ -1726,6 +1875,7 @@ if (window.location.hash === '#intel') { switchTab('intel'); }
 if (window.location.hash === '#done') { switchTab('done'); }
 if (window.location.hash === '#links') { switchTab('links'); }
 if (window.location.hash === '#voice') { switchTab('voice'); }
+if (window.location.hash === '#routines') { switchTab('routines'); }
 
 // ===== Mark Done system — improvement plan =====
 // Click "Mark done" on any task → POST /api/complete → appends to rancho-done-log.md
