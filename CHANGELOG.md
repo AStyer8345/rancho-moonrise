@@ -1,5 +1,12 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-23 — Site Copy Editor + Event Sync
+
+- **Site copy editor shipped:** New `site_content` Supabase table (4 blocks seeded). Admin `/admin/` gains a "Site Copy" tab between Galleries and Reviews — Ashley can edit the events AEO block and homepage hero text without touching code. Changes go live on next page load, no deploy needed.
+- **AEO block relocated:** Moved from near the top of `events.html` (between hero and event list) to just above the CTA banner at the bottom. Better UX — visitors see the event list first. Schema markup (SpeakableSpecification CSS selectors) unaffected.
+- **Two missing events added to Supabase:** May 29 and June 26 "Free Friday Pool Day" — were on ranchomoonrise.com but missing from the Vercel site's `rancho_events` table.
+- **Commits:** `fdeb6df` (tab UI) → `1bd649d` (JS functions) → `8835686` (error path fix) → `54f63c5` (events.html) → `738fdc3` (index.html). All on main, deployed READY.
+
 ## 2026-04-23 — Bi-Weekly Business Audit (first since baseline)
 
 - **New audit file:** `site/audits/2026-04-23-business-audit.html`. Full 7-area audit grounded in CONTEXT / CHANGELOG through 04-22, review monitor RUN_007 (04-22), metrics baseline (04-09), GBP full pull (04-16), competitive intel (04-20), and live web verification.
