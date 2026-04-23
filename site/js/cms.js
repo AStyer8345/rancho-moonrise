@@ -74,7 +74,8 @@
         var slideshow = document.getElementById('eventSlideshow');
         var eventsGrid = document.querySelector('.events-grid');
 
-        query('rancho_events', 'is_active=eq.true&order=sort_order,event_date')
+        var today = new Date().toISOString().slice(0, 10);
+        query('rancho_events', 'is_active=eq.true&event_date=gte.' + today + '&order=event_date')
             .then(function (data) {
                 if (!data.length) return; // Keep hardcoded fallback
 

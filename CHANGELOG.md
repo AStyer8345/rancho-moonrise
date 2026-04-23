@@ -1,5 +1,13 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-23 — Voice Scrub + Homepage Events Query Fix
+
+- **Voice-guide scrub across customer-facing surfaces.** Hero alt on `index.html` no longer says "Texas Hill Country"; `videos.html` lead card no longer says "Luxury Glamping Ranch"; `events.html` Rosés card no longer says "curated"; chat widget KB in `main.js` no longer asserts "50 overnight guests" / "200+ guests" (replaced with soft phrasing per voice guide's ban on specific unit counts).
+- **Homepage events grid was showing 3× "Free Friday Pool Day".** Root cause: `cms.js` ordered `rancho_events` by `sort_order,event_date`, and three recurring Free Friday rows had `sort_order` in {0,0,3} which beat out other upcoming events. Fixed by adding `event_date >= today` filter and dropping `sort_order` from the sort — query is now self-correcting. Homepage now shows April 24 Free Friday, April 26 Yoga & Mimosas, May 2 Rancho Rodeo.
+- **Supabase `rancho_events` data fix:** "Rosés Around the World" description updated in place to remove "curated" (events.html grid is Supabase-hydrated, so HTML edit alone wasn't enough).
+- **Static HTML homepage events grid** also updated to April 24 / 26 / May 2 as the no-JS fallback (matches what the CMS now renders).
+- **Deferred with notes:** 5 `action="#"` forms (mailto fallback still works via `main.js`; real backend is its own project); hardcoded "2026" footer year across 28 files (correct for now); Instagram placeholder (needs real feed integration).
+
 ## 2026-04-23 — Site Copy Editor + Event Sync
 
 - **Site copy editor shipped:** New `site_content` Supabase table (4 blocks seeded). Admin `/admin/` gains a "Site Copy" tab between Galleries and Reviews — Ashley can edit the events AEO block and homepage hero text without touching code. Changes go live on next page load, no deploy needed.
