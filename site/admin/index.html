@@ -1241,7 +1241,11 @@ async function saveCopyBlock(key) {
     if (error) {
         btn.textContent = 'Error \u2014 try again';
         btn.style.background = 'var(--danger)';
-        btn.disabled = false;
+        setTimeout(function() {
+            btn.textContent = 'Save';
+            btn.style.background = '';
+            btn.disabled = false;
+        }, 2000);
     } else {
         btn.textContent = 'Saved \u2713';
         btn.style.background = 'var(--success)';
