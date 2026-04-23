@@ -184,14 +184,6 @@
     </div>
 </header>
 
-<!-- AEO Direct-Answer Block -->
-<section class="section aeo-block" aria-label="What events happen at Rancho Moonrise">
-    <div class="container container--narrow">
-        <h2>What Kinds of Events Happen at Rancho Moonrise Near Austin?</h2>
-        <p>Rancho Moonrise hosts public ranch events year-round on its 36-acre property 20 minutes from downtown Austin, TX. The regular lineup includes live music nights, yoga and bottomless mimosas poolside, crawfish boils, monthly honky-tonk parties (the Rancho Rodeo Sun Series), seasonal dinner parties under the stars, and holiday celebrations. Events are open to the public — you don't need to be a ranch guest to attend, but booking a cabin or safari tent turns any event into a full ranch weekend.</p>
-        <p>In addition to the public event calendar, Rancho Moonrise is available for private events including weddings (up to 200 guests), corporate retreats, bachelorette parties, and milestone celebrations. Private events have exclusive full-ranch access with no overlap with public programming.</p>
-    </div>
-</section>
 
 <!-- View Toggle -->
 <section class="section" style="padding-top: var(--space-lg); padding-bottom: 0;" aria-label="Event view options">
@@ -489,6 +481,17 @@
                 <li><a href="/pages/pool-day-pass-austin.html">Austin Pool Day Pass Guide</a></li>
                 <li><a href="/pages/blog.html">More from the Rancho Moonrise Blog</a></li>
             </ul>
+        </div>
+    </div>
+</section>
+
+<!-- About Events (AEO block — hydrated from site_content) -->
+<section class="section aeo-block" aria-label="What events happen at Rancho Moonrise">
+    <div class="container container--narrow">
+        <h2 data-copy-key="events_aeo_heading">What Kinds of Events Happen at Rancho Moonrise Near Austin?</h2>
+        <div data-copy-key="events_aeo_body">
+            <p>Rancho Moonrise hosts public ranch events year-round on its 36-acre property 20 minutes from downtown Austin, TX. The regular lineup includes live music nights, yoga and bottomless mimosas poolside, crawfish boils, monthly honky-tonk parties (the Rancho Rodeo Sun Series), seasonal dinner parties under the stars, and holiday celebrations. Events are open to the public — you don't need to be a ranch guest to attend, but booking a cabin or safari tent turns any event into a full ranch weekend.</p>
+            <p>In addition to the public event calendar, Rancho Moonrise is available for private events including weddings (up to 200 guests), corporate retreats, bachelorette parties, and milestone celebrations. Private events have exclusive full-ranch access with no overlap with public programming.</p>
         </div>
     </div>
 </section>
@@ -1038,6 +1041,36 @@
         });
     }, { threshold: 0.15 });
     reveals.forEach(function(el) { observer.observe(el); });
+})();
+</script>
+
+<!-- Site Copy Hydration (non-blocking — hardcoded text is SEO fallback) -->
+<script>
+(function() {
+    var SUPABASE_URL = 'https://uuqedsvjlkeszrbwzizl.supabase.co';
+    var SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV1cWVkc3ZqbGtlc3pyYnd6aXpsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI5ODcwMjYsImV4cCI6MjA4ODU2MzAyNn0.Wu1DKotPPigTpVpQvmdRMpa7NW9-WnEou6bTV3kakFM';
+    fetch(SUPABASE_URL + '/rest/v1/site_content?page=eq.events&select=block_key,body', {
+        headers: {
+            apikey: SUPABASE_ANON_KEY,
+            Authorization: 'Bearer ' + SUPABASE_ANON_KEY
+        }
+    })
+    .then(function(r) { return r.json(); })
+    .then(function(rows) {
+        rows.forEach(function(row) {
+            var el = document.querySelector('[data-copy-key="' + row.block_key + '"]');
+            if (!el || !row.body) return;
+            var tag = el.tagName;
+            if (tag === 'H1' || tag === 'H2' || tag === 'P') {
+                el.textContent = row.body;
+            } else {
+                el.innerHTML = row.body.split(/\n\n+/).map(function(p) {
+                    return '<p>' + p.trim() + '</p>';
+                }).join('');
+            }
+        });
+    })
+    .catch(function() {});
 })();
 </script>
 </body>
