@@ -1,6 +1,8 @@
 # Rancho Moonrise — Project Context
 
-**Last updated:** 2026-04-22 (SEO daily: ReservePage schema on pool-day-pass-austin.html; Blog #17 birthday-party-venue-near-austin.html published. S1 now 17 posts.)
+**Last updated:** 2026-04-23 (bi-weekly business audit — `site/audits/2026-04-23-business-audit.html`. Grades: Website B+, GBP B, Social B-, Reviews F, Booking B-, HoneyBook B, Operations B-. 4 areas up vs 04-09 baseline, 3 flat, 0 regressed.)
+
+**Latest audit:** 2026-04-23 — `site/audits/2026-04-23-business-audit.html`. Next audit: 2026-05-07.
 
 ---
 

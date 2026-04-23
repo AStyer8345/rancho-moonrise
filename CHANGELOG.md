@@ -1,5 +1,13 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-23 — Bi-Weekly Business Audit (first since baseline)
+
+- **New audit file:** `site/audits/2026-04-23-business-audit.html`. Full 7-area audit grounded in CONTEXT / CHANGELOG through 04-22, review monitor RUN_007 (04-22), metrics baseline (04-09), GBP full pull (04-16), competitive intel (04-20), and live web verification.
+- **Grade movement vs 04-09 baseline:** Website B → B+, GBP D → B, Social B- (flat), Reviews F (flat), Booking C+ → B-, HoneyBook B (flat), Operations C → B-. Four areas up, three flat, zero regressed.
+- **Audits tab card inserted** on `site/improvement-plan.html` and `brand/2026-04-09-rancho-moonrise-improvement-plan.html` above the April 9 baseline card (teal `#4ECDC4` border, baseline keeps its gold `#D4A574`).
+- **Surfaced for TODO:** DNS cutover still open; claim TripAdvisor; open WeddingWire listing; wire wedding inquiry form backend (still `action="#"`); submit to ResortPass before Lucky Arrow reactivates May 1; finish GBP tasks #3/#15/#27 (Q&A, Chat, photos); rotate GITHUB_TOKEN to fine-grained PAT.
+- **Next audit:** 2026-05-07 (bi-weekly cadence).
+
 ## 2026-04-22 — Content Strengthener Run 1 (weddings.html — blocked)
 
 - **Strengthener queue initialized.** Created `run-logs/strengthener-queue.md` to track the weekly content strengthening rotation across 13 landing pages.
