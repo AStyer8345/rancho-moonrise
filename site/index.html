@@ -212,8 +212,8 @@
     </div>
 
     <div class="hero__content">
-        <h1 class="hero__title">Austin's Glamping &amp; Events Ranch</h1>
-        <p class="hero__subtitle">Safari tents, hand-crafted cabins, destination weddings, and unforgettable events — all on 36 acres, 20 minutes from downtown Austin.</p>
+        <h1 class="hero__title" data-copy-key="home_hero_headline">Austin's Glamping &amp; Events Ranch</h1>
+        <p class="hero__subtitle" data-copy-key="home_hero_subtitle">Safari tents, hand-crafted cabins, destination weddings, and unforgettable events — all on 36 acres, 20 minutes from downtown Austin.</p>
         <div class="btn-group">
             <a href="https://hotels.cloudbeds.com/en/reservation/5tzv1r" class="btn btn--primary" target="_blank" rel="noopener">Book Your Stay</a>
             <a href="/pages/weddings.html" class="btn btn--outline">Plan a Wedding</a>
@@ -644,6 +644,36 @@
         });
     }, { threshold: 0.15 });
     reveals.forEach(function(el) { observer.observe(el); });
+})();
+</script>
+
+<!-- Site Copy Hydration (non-blocking — hardcoded text is SEO fallback) -->
+<script>
+(function() {
+    var SUPABASE_URL = 'https://uuqedsvjlkeszrbwzizl.supabase.co';
+    var SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV1cWVkc3ZqbGtlc3pyYnd6aXpsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI5ODcwMjYsImV4cCI6MjA4ODU2MzAyNn0.Wu1DKotPPigTpVpQvmdRMpa7NW9-WnEou6bTV3kakFM';
+    fetch(SUPABASE_URL + '/rest/v1/site_content?page=eq.home&select=block_key,body', {
+        headers: {
+            apikey: SUPABASE_ANON_KEY,
+            Authorization: 'Bearer ' + SUPABASE_ANON_KEY
+        }
+    })
+    .then(function(r) { return r.json(); })
+    .then(function(rows) {
+        rows.forEach(function(row) {
+            var el = document.querySelector('[data-copy-key="' + row.block_key + '"]');
+            if (!el || !row.body) return;
+            var tag = el.tagName;
+            if (tag === 'H1' || tag === 'H2' || tag === 'P') {
+                el.textContent = row.body;
+            } else {
+                el.innerHTML = row.body.split(/\n\n+/).map(function(p) {
+                    return '<p>' + p.trim() + '</p>';
+                }).join('');
+            }
+        });
+    })
+    .catch(function() {});
 })();
 </script>
 </body>
