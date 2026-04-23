@@ -122,3 +122,10 @@ WARN: Skipped 3 oversized files (>10MB): PRIVATE EVENTS AT RANCHO MOONRISE.pdf (
 
 2026-04-23 12:26 | scanned=71 added=0 replaced=0 skipped=3 errors=1
 2026-04-23 12:26 | scanned=71 added=0 replaced=0 skipped=3 errors=1
+
+---
+2026-04-23 16:09 | ERROR: 2026-04-09-rancho-moonrise-improvement-plan.html
+  Deleted stale source (ID: 2fe82552, status was "error")
+  Re-upload failed: 400 Bad Request — HTML files not accepted by NotebookLM API
+  File retained in state with old mtime; next run will retry deletion+upload
+2026-04-23 16:09 | scanned=64 added=0 replaced=0 skipped=4 errors=1
