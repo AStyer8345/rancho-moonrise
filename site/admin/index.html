@@ -758,6 +758,7 @@ function showDashboard(user) {
     loadEvents();
     loadPhotos();
     loadGalleryPhotos();
+    loadSiteCopy();
     loadReviews();
 }
 
@@ -1189,6 +1190,68 @@ $('#galleryForm').addEventListener('submit', async function(e) {
     toast(id ? 'Photo updated!' : 'Photo added!');
     loadGalleryPhotos();
 });
+
+// ============================================================
+// SITE COPY
+// ============================================================
+async function loadSiteCopy() {
+    var container = $('#siteCopyList');
+    var { data, error } = await sb.from('site_content')
+        .select('*').order('page').order('block_key');
+    if (error) {
+        container.innerHTML = '<p class="empty-state">Error loading site copy.</p>';
+        return;
+    }
+    if (!data.length) {
+        container.innerHTML = '<p class="empty-state">No content blocks found.</p>';
+        return;
+    }
+
+    var byPage = {};
+    data.forEach(function(row) {
+        if (!byPage[row.page]) byPage[row.page] = [];
+        byPage[row.page].push(row);
+    });
+
+    var html = '';
+    Object.keys(byPage).sort().forEach(function(page) {
+        var pageTitle = page.charAt(0).toUpperCase() + page.slice(1);
+        html += '<h3 style="margin: 24px 0 12px; color: var(--orange); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;">' + escapeHtml(pageTitle) + '</h3>';
+        byPage[page].forEach(function(row) {
+            html +=
+                '<div class="form-group" style="margin-bottom: 24px;">' +
+                    '<label style="display:block; margin-bottom:6px;">' + escapeHtml(row.label) + '</label>' +
+                    '<textarea id="copy-' + escapeHtml(row.block_key) + '" style="width:100%; min-height:80px; padding:10px; border:1px solid var(--border); border-radius:6px; font-family:inherit; font-size:0.9rem; resize:vertical;">' + escapeHtml(row.body) + '</textarea>' +
+                    '<button class="btn btn--primary" style="margin-top:8px;" onclick="saveCopyBlock(\'' + escapeHtml(row.block_key) + '\')">Save</button>' +
+                '</div>';
+        });
+    });
+    container.innerHTML = html;
+}
+
+async function saveCopyBlock(key) {
+    var textarea = document.getElementById('copy-' + key);
+    var btn = textarea.nextElementSibling;
+    var body = textarea.value;
+    btn.textContent = 'Saving\u2026';
+    btn.disabled = true;
+    var { error } = await sb.from('site_content')
+        .update({ body: body, updated_at: new Date().toISOString() })
+        .eq('block_key', key);
+    if (error) {
+        btn.textContent = 'Error \u2014 try again';
+        btn.style.background = 'var(--danger)';
+        btn.disabled = false;
+    } else {
+        btn.textContent = 'Saved \u2713';
+        btn.style.background = 'var(--success)';
+        setTimeout(function() {
+            btn.textContent = 'Save';
+            btn.style.background = '';
+            btn.disabled = false;
+        }, 2000);
+    }
+}
 
 // ============================================================
 // REVIEWS
