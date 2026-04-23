@@ -109,3 +109,16 @@ WARN: Skipped 3 oversized files (>10MB): PRIVATE EVENTS AT RANCHO MOONRISE.pdf (
 2026-04-22 20:08 | scanned=71 added=0 replaced=0 skipped=3 errors=0
 2026-04-23 00:08 | scanned=71 added=0 replaced=0 skipped=4 errors=0
 2026-04-23 04:07 | scanned=71 added=0 replaced=0 skipped=3 errors=0
+
+---
+## Run: 2026-04-23 12:26
+- Scanned: brand/ and deal/
+- Files tracked: 71 (3 skipped — oversized PDFs over 10MB)
+- Modified detected: 1 — `2026-04-09-rancho-moonrise-improvement-plan.html` (updated Apr 23 09:09, size 59527)
+- Action attempted: upload (no stale source in notebook to delete)
+- Result: ERROR — NotebookLM returned 400 Bad Request on HTML upload
+- Note: HTML files may not be accepted by the notebooklm CLI source add command
+- State file NOT updated — will retry on next run
+
+2026-04-23 12:26 | scanned=71 added=0 replaced=0 skipped=3 errors=1
+2026-04-23 12:26 | scanned=71 added=0 replaced=0 skipped=3 errors=1
