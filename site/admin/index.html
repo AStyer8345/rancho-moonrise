@@ -445,6 +445,7 @@
         <button class="tab-btn is-active" data-tab="events">Events</button>
         <button class="tab-btn" data-tab="photos">Photos</button>
         <button class="tab-btn" data-tab="galleries">Galleries</button>
+        <button class="tab-btn" data-tab="site-copy">Site Copy</button>
         <button class="tab-btn" data-tab="reviews">Reviews</button>
     </div>
 
@@ -483,6 +484,15 @@
             </select>
         </div>
         <div id="galleryList" class="loading">Loading gallery...</div>
+    </div>
+
+    <!-- SITE COPY TAB -->
+    <div class="tab-content" id="tab-site-copy">
+        <div class="section-header">
+            <h2>Site Copy</h2>
+        </div>
+        <p style="color: var(--text-muted); margin-bottom: var(--space-md); font-size: 0.9rem;">Edit text blocks on the public site. Changes go live immediately on next page load — no deploy needed.</p>
+        <div id="siteCopyList" class="loading">Loading site copy...</div>
     </div>
 
     <!-- REVIEWS TAB -->
