@@ -1,8 +1,8 @@
 {
   "review_monitor": {
-    "last_run": "2026-04-22T06:30:00Z",
+    "last_run": "2026-04-24T06:30:00Z",
     "status": "ok",
-    "status_reason": "No new reviews on any platform. Unreplied=0 maintained. 3 verification paths in BLOCKERS.md remain open: Google (JS-blocked, run 7), Hotels.com (timeout, run 7 — WebSearch confirms 8.0 still current), Airbnb (403, FLAG_FOR_ADAM, run 7). TripAdvisor and Hipcamp live-confirmed 0 reviews. Facebook 5 reviews/100% confirmed via search. Google search snippet shows 126 @ 4.9★ (prior stale baseline: 127) — within noise range, not a confirmed drop.",
+    "status_reason": "No new reviews on any platform. Unreplied=0 maintained. 3 verification paths in BLOCKERS.md remain open: Google (JS-blocked, run 8), Hotels.com (timeout, run 8 — Dec 2025 review still consistent from prior WebSearch), Airbnb (403, FLAG_FOR_ADAM, run 8). TripAdvisor and Hipcamp live-confirmed 0 reviews. Facebook 5 reviews/100% confirmed via search. Google search snippet stable at 126 @ 4.9★ (same as RUN_007). New observation: The Knot shows Feb 26, 2026 wedding review — not added to scope.",
     "new_reviews_pending_response": 0,
     "total_reviews_tracked": 132,
     "unreplied_by_platform": {
@@ -15,16 +15,17 @@
     "stale_platforms": ["google", "expedia"],
     "flags": [
       "airbnb-listing-existence-unverified",
-      "google-live-scrape-blocked-7-runs",
-      "hotels-com-fetch-timeout-7-runs",
-      "google-search-snippet-count-126-vs-prior-127-stale"
+      "google-live-scrape-blocked-8-runs",
+      "hotels-com-fetch-timeout-8-runs",
+      "google-search-snippet-stable-126-two-runs",
+      "the-knot-review-feb-2026-not-in-scope"
     ],
     "blockers": [
       "google-reviews-count",
       "hotels-com-direct-fetch",
       "airbnb-listing-existence"
     ],
-    "new_platforms_noted": ["yelp", "agoda"],
-    "run_number": 7
+    "new_platforms_noted": ["yelp", "agoda", "the_knot"],
+    "run_number": 8
   }
 }

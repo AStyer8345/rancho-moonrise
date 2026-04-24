@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-04-22T06:30:00Z",
-  "run_number": 7,
-  "note": "RUN_007. No new reviews on any platform. Unreplied=0 maintained (no done-log review entries since 2026-04-17; last done-log commit is blog-related). Google count/rating STALE (JS-rendered, 7th consecutive — BLOCKER ongoing). WebSearch snippet suggests 126 @ 4.9★ (prior stale baseline: 127 @ 4.9★ from 2026-04-09; CONTEXT.md metrics table says 125 unverified — snippet precision insufficient to call a confirmed count drop). Hotels.com timeout — BLOCKER ongoing (7th); WebSearch confirms 8.0 still current. Airbnb 403 — BLOCKER ongoing (FLAG_FOR_ADAM). TripAdvisor live-scraped: 0 reviews, unclaimed. Hipcamp live-scraped: 0 reviews, 'Be the first to review'. Facebook: 5 reviews / 100% recommend confirmed via WebSearch.",
+  "last_updated": "2026-04-24T06:30:00Z",
+  "run_number": 8,
+  "note": "RUN_008. No new reviews on any platform. Unreplied=0 maintained (no done-log review entries since 2026-04-22; last commit 9aef74f is site-strengthener/weddings queue, not review-related). Google count/rating STALE (JS-rendered, 8th consecutive — BLOCKER ongoing). WebSearch snippet consistent at 126 @ 4.9★ (same as RUN_007 — no change). Hotels.com timeout — BLOCKER ongoing (8th). Airbnb 403 — BLOCKER ongoing (run 8). TripAdvisor live-scraped: 0 reviews, unclaimed. Hipcamp live-scraped: 0 reviews, 'Be the first to review'. Facebook: 5 reviews / 100% recommend confirmed via WebSearch. New observation: The Knot has a Feb 26, 2026 wedding review (Haylee L.) — logged, not adding to scope.",
   "platforms": {
     "google": {
       "count": 127,
@@ -9,23 +9,23 @@
       "unreplied": 0,
       "stale": true,
       "stale_since": "2026-04-09",
-      "stale_run_count": 7,
+      "stale_run_count": 8,
       "blocker": true,
       "blocker_since": "2026-04-17",
       "search_snippet_count": 126,
-      "search_snippet_date": "2026-04-22",
-      "search_snippet_note": "WebSearch snippet showed 126 @ 4.9★. Prior stale baseline was 127; CONTEXT.md metrics says 125 unverified. Difference is within snippet-precision noise range — not enough confidence to flag as a confirmed count drop. Logged for Adam's awareness.",
-      "unreplied_note": "Live verification blocked (Google Maps JS-rendered, no API key). Unreplied=0 maintained — no new done-log review entries since 2026-04-17.",
+      "search_snippet_date": "2026-04-24",
+      "search_snippet_note": "WebSearch snippet shows 126 @ 4.9★ — consistent with RUN_007 (also 126). No change detected. Prior stale baseline 127 from 2026-04-09. Snippet precision insufficient to confirm drop; not logging as count change.",
+      "unreplied_note": "Live verification blocked (Google Maps JS-rendered, no API key). Unreplied=0 maintained — no new done-log review entries since 2026-04-22; rancho-review-replies RESOLVED 2026-04-15 remains the last review action.",
       "last_scrape": null,
       "last_known": "2026-04-09"
     },
     "airbnb": {
       "count": null,
       "rating": null,
-      "note": "Search result still shows possible listing at /rooms/1284193976615696223 ('Glamping Safari Tent 25 mins from downtown Austin, Manor TX'). 403 on direct fetch — BLOCKER since 2026-04-17. No new fetch attempted (403 pattern established). FLAG_FOR_ADAM.",
+      "note": "Search result still shows possible listing at /rooms/1284193976615696223 ('Glamping Safari Tent 25 mins from downtown Austin, Manor TX'). 403 on direct fetch — BLOCKER since 2026-04-17. No new fetch attempted (403 pattern established, run 8). FLAG_FOR_ADAM.",
       "last_scrape": null,
       "flag": "NEEDS_ADAM_VERIFY",
-      "flag_run_count": 7,
+      "flag_run_count": 8,
       "blocker": true,
       "blocker_since": "2026-04-17"
     },
@@ -35,7 +35,7 @@
       "unreplied": 0,
       "stale": false,
       "listing_url": "https://www.hipcamp.com/en-US/land/texas-rancho-moonrise-dw9hklej",
-      "last_scrape": "2026-04-22T06:30:00Z",
+      "last_scrape": "2026-04-24T06:30:00Z",
       "note": "Live verified via WebFetch. Page shows 'Be the first to review' — zero reviews confirmed."
     },
     "expedia": {
@@ -47,11 +47,11 @@
       "last_confirmed": "2026-04-09",
       "search_confirmed_rating": 8.0,
       "search_confirmed_date": "2026-04-22",
-      "search_confirmed_note": "WebSearch returned Hotels.com snippet confirming 8.0 rating and Dec 2025 guest review still current as of RUN_007.",
-      "hotels_com_timeout_count": 7,
+      "search_confirmed_note": "WebSearch from RUN_007 confirmed Hotels.com listing active with Dec 2025 guest review; rating 8.0 still current. Hotels.com direct fetch timed out 8th consecutive run — not re-verified live this run.",
+      "hotels_com_timeout_count": 8,
       "blocker": true,
       "blocker_since": "2026-04-17",
-      "note": "Rating 8.0 last confirmed direct-scrape 2026-04-09. Hotels.com direct fetch timed out (7th consecutive — BLOCKER ongoing). WebSearch confirms listing active and rating 8.0 still current."
+      "note": "Rating 8.0 last confirmed direct-scrape 2026-04-09. Hotels.com direct fetch timed out (8th consecutive — BLOCKER ongoing). Dec 2025 guest review still consistent per prior WebSearch."
     },
     "facebook": {
       "count": 5,
@@ -59,8 +59,8 @@
       "recommend_pct": 100,
       "stale": false,
       "last_scrape": null,
-      "last_confirmed": "2026-04-22",
-      "note": "5 reviews, 100% recommend — confirmed via WebSearch. Direct page load blocked (JS-rendered). No new reviews detected."
+      "last_confirmed": "2026-04-24",
+      "note": "5 reviews, 100% recommend — confirmed via WebSearch (site:facebook.com query returned '100% recommend rating based on 5 reviews'). Direct page load blocked (JS-rendered). No new reviews detected."
     },
     "tripadvisor": {
       "status": "unclaimed",
@@ -68,8 +68,8 @@
       "rating": null,
       "stale": false,
       "listing_url": "https://www.tripadvisor.com/Hotel_Review-g56224-d33307272-Reviews-Rancho_Moonrise-Manor_Texas.html",
-      "last_scrape": "2026-04-22T06:30:00Z",
-      "note": "Live verified via WebFetch. 0 reviews, unclaimed. 'Claim Your Listing' button visible — 'No reviews for this property yet'."
+      "last_scrape": "2026-04-24T06:30:00Z",
+      "note": "Live verified via WebFetch. 0 reviews, unclaimed. 'Claim Your Listing' button visible — 'No reviews for this property yet.' Travelers' Choice designation noted (category marker, not guest review earned)."
     },
     "yelp": {
       "status": "listing_exists",
@@ -77,7 +77,7 @@
       "rating": null,
       "listing_url": "https://www.yelp.com/biz/rancho-moonrise-manor",
       "in_scope": false,
-      "note": "Listing discovered in search results 2026-04-19. 403 on direct fetch — data unverifiable. No reviews apparent in search snippets. Not adding to monitored scope — no reviews to track yet."
+      "note": "Listing discovered in search results 2026-04-19. 403 on direct fetch — data unverifiable. No reviews apparent in search snippets. Not in monitored scope."
     },
     "agoda": {
       "status": "listing_exists",
@@ -85,7 +85,15 @@
       "rating": null,
       "listing_url": "https://www.agoda.com/rancho-moonrise-h82700060/hotel/manor-tx-us.html",
       "in_scope": false,
-      "note": "Listing discovered in search results 2026-04-19. JS-rendered — no data returned on fetch. Not adding to monitored scope — no reviews apparent."
+      "note": "Listing discovered in search results 2026-04-19. JS-rendered — no data returned on fetch. Not in monitored scope."
+    },
+    "the_knot": {
+      "status": "listing_exists",
+      "count": null,
+      "rating": null,
+      "listing_url": "https://www.theknot.com/marketplace/rancho-moonrise-manor-tx-2087722",
+      "in_scope": false,
+      "note": "Discovered in search results 2026-04-24 (RUN_008). Search snippet shows a Feb 26, 2026 review by Haylee L. The Knot is a curated wedding venue directory — not a standard OTA review platform. Not adding to monitored scope without Adam's decision. Logged for awareness."
     }
   }
 }

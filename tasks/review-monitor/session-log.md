@@ -244,3 +244,34 @@ Claims enumerated from persistent surfaces and re-verified:
 **No review drafts produced** — no new reviews detected on any platform.
 
 ---
+
+## RUN_008 — 2026-04-24 06:30 CT
+
+**Summary:** Quiet run. No new reviews detected on any platform. Unreplied=0 maintained — no review-related done-log entries since 2026-04-22 (last done-log commit `9aef74f` is site-strengthener/weddings queue init — not review-related; rancho-review-replies RESOLVED 2026-04-15 remains the last review action). All three BLOCKERS from RUN_003 remain open (Google JS-blocked run 8, Hotels.com timeout run 8, Airbnb 403 run 8). TripAdvisor live-scraped via WebFetch: 0 reviews, unclaimed. Hipcamp live-scraped via WebFetch: 0 reviews, "Be the first to review." Google WebSearch snippet: 126 @ 4.9★ — consistent with RUN_007, no change. Facebook 5 reviews/100% recommend confirmed via WebSearch. Expedia 8.0 still current — Hotels.com timeout 8th consecutive (BLOCKER ongoing; Dec 2025 guest review from prior WebSearch still consistent). Dashboard status remains "ok." New observation: The Knot shows a Feb 26, 2026 wedding review (Haylee L.) — not previously tracked. No scope change taken; logged for Adam's awareness.
+
+**Done-log review-adjacent entries since RUN_007:** none (last done-log commit `9aef74f` is site-strengthener related; no review/GBP/reply entries since 2026-04-22)
+
+**Re-verify log lines:**
+```
+[2026-04-24 06:30] re-verify google-reviews-count — stale (run 8, BLOCKER ongoing) — live=BLOCKED(JS-rendered) search-snippet=126@4.9★ (same as RUN_007) prior=127@4.9★ (last verified 2026-04-09)
+[2026-04-24 06:30] re-verify google-unreplied — still_true — live=0(no done-log review entries since 2026-04-22; last commit 9aef74f is site-strengthener, not review) prior=0
+[2026-04-24 06:30] re-verify tripadvisor-status — still_true — live=unclaimed/0reviews(WebFetch) prior=unclaimed/0reviews
+[2026-04-24 06:30] re-verify hipcamp-reviews — still_true — live=0reviews(WebFetch,"Be the first to review") prior=0reviews
+[2026-04-24 06:30] re-verify expedia-rating — stale (run 8, BLOCKER ongoing) — live=BLOCKED(Hotels.com 60s timeout, 8th consecutive) prior=8.0 (last verified 2026-04-09; Dec 2025 review still current per prior WebSearch)
+[2026-04-24 06:30] re-verify facebook-reviews — still_true — live=5reviews/100%(WebSearch confirmed) prior=5reviews/100%
+[2026-04-24 06:30] re-verify airbnb-listing — unverified (BLOCKER ongoing, no new fetch — 403 pattern established, run 8) prior=POSSIBLE_NEW_LISTING
+```
+
+**New platform noted (not added to scope):**
+- The Knot: search results surfaced a Feb 26, 2026 wedding review (Haylee L.) at `theknot.com/marketplace/rancho-moonrise-manor-tx-2087722`. Not adding to monitored scope unilaterally — The Knot is a curated venue directory, not a standard OTA review platform. Logged for Adam's awareness.
+
+**Files written this run:**
+- `brand/review-aggregate.json` — updated (run_number 7→8, TripAdvisor + Hipcamp last_scrape refreshed, Google stale_run_count 7→8, Airbnb flag_run_count 7→8, Hotels.com timeout_count 7→8, Facebook + Expedia confirmed dates updated, The Knot noted)
+- `site/admin/dashboard-state.json` — updated (run_number 7→8, last_run refreshed, flags updated)
+- `tasks/review-monitor/session-log.md` — this entry
+- `CONTEXT.md` — Last Worked On updated
+- `CHANGELOG.md` — one dated bullet appended
+
+**No review drafts produced** — no new reviews detected on any platform.
+
+---

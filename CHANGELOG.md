@@ -684,3 +684,7 @@
 ## 2026-04-22 — Review Monitor RUN_007
 
 - **rancho-review-monitor RUN_007:** Quiet run. Scraped 4 platforms live (TripAdvisor, Hipcamp, Facebook, Expedia via WebSearch) — 0 new reviews, unreplied=0 maintained. Google search snippet shows 126 @ 4.9★ (stale baseline was 127 — within noise range, not a confirmed drop). 3 BLOCKERS ongoing (Google JS-blocked run 7, Hotels.com timeout run 7, Airbnb 403 run 7). Dashboard status: ok.
+
+## 2026-04-24 — Review Monitor RUN_008
+
+- **rancho-review-monitor RUN_008:** Quiet run. Scraped TripAdvisor and Hipcamp live (0 reviews each confirmed). Facebook 5 reviews/100% and Google 126@4.9★ confirmed via WebSearch. Hotels.com timeout 8th consecutive (BLOCKER ongoing). 3 BLOCKERS from RUN_003 all open. No new reviews, unreplied=0 maintained. New: The Knot shows a Feb 26, 2026 wedding review (Haylee L.) — logged, not adding to scope. Dashboard status: ok.
