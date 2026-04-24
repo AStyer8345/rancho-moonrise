@@ -408,8 +408,8 @@
               answer: 'Rancho Moonrise is located at <strong>20117 Lockwood Road, 78653</strong> — about 20 minutes east of downtown Austin. <a href="https://www.google.com/maps/place/20117+Lockwood+Rd,+Manor,+TX+78653" target="_blank">Get directions &rarr;</a>' },
             { section: 'info', keywords: ['phone', 'call', 'number', 'reach'],
               answer: 'You can reach us at <a href="tel:+17372911260"><strong>737-291-1260</strong></a>. We\'re happy to help with any questions!' },
-            { section: 'info', keywords: ['hours', 'check-in', 'check in', 'checkout', 'check out', 'time'],
-              answer: 'Check-in is <strong>3:00 PM – 5:00 PM daily</strong>, with late arrival available if you let us know in advance. Checkout is by 11:00 AM.' },
+            { section: 'info', keywords: ['hours', 'check-in', 'check in', 'checkout', 'check out', 'time', 'arrive', 'arrival', 'front desk'],
+              answer: 'Check-in starts at <strong>4:00 PM</strong> at the Lodge front desk (open Wed–Sun, 9 AM–8 PM). Checkout is by <strong>11:00 AM</strong>. Drive to your site to unload, then move your car to the main lot — vehicles can\'t remain at sleeping sites overnight. Early check-in may be available with advance notice.' },
 
             // Weddings
             { section: 'wedding', keywords: ['wedding', 'weddings', 'ceremony', 'reception', 'bride', 'groom', 'marry', 'engaged', 'engagement', 'elope', 'elopement'],
@@ -419,13 +419,13 @@
             { section: 'wedding', keywords: ['ceremony site', 'ceremony option', 'where ceremony', 'venue option'],
               answer: 'We offer <strong>unlimited ceremony options</strong> across the property — from the Rustic Corral surrounded by wildflowers, to the Event Barn (modern, climate-controlled), to poolside, to open Texas fields with panoramic views. Each creates a completely different atmosphere. <a href="/pages/weddings.html#ceremony-sites">Learn more &rarr;</a>' },
             { section: 'wedding', keywords: ['capacity', 'how many', 'guest count', 'guests', 'max', 'maximum', 'seat'],
-              answer: 'We host weddings and events for large guest counts, with on-site accommodations across our cabins and safari tents. The Event Barn, pool deck, and outdoor spaces all offer flexible layouts — call <a href="tel:+17372911260">737-291-1260</a> for specifics for your date.' },
+              answer: 'Rancho Moonrise accommodates up to <strong>200 guests</strong> for weddings and events. The Event Barn seats 150 for a dinner; the Covered Pavilion holds 40; the Neon Moon Bar and Corral each hold up to 50. Events with 75+ vehicles require a shuttle service. <a href="/pages/contact.html?intent=wedding">Discuss your guest count &rarr;</a>' },
             { section: 'wedding', keywords: ['tour', 'visit', 'see the ranch', 'come see', 'walk through', 'schedule tour'],
               answer: 'We\'d love to show you around! We offer <strong>in-person venue tours (60 min)</strong> and <strong>virtual tours (30 min)</strong>. Call <a href="tel:+17372911260">737-291-1260</a> to schedule, or <a href="/pages/contact.html?intent=wedding">submit an inquiry</a> and we\'ll set one up.' },
 
             // Accommodations
             { section: 'stay', keywords: ['cabin', 'tent', 'glamping', 'stay', 'overnight', 'accommodation', 'sleep', 'room', 'lodge'],
-              answer: 'We offer <strong>cabins and safari tents</strong>: <strong>Cabins</strong> (queen bed, A/C, heat, covered deck), <strong>Family Safari Tents</strong> (queen + bunks, sleeps 4), and <strong>Premium Safari Tents</strong> (king bed, private ensuite). All have A/C and heat, with fire pits across the property. <a href="https://hotels.cloudbeds.com/en/reservation/5tzv1r" target="_blank">Check availability &rarr;</a>' },
+              answer: 'We offer <strong>cabins and safari tents</strong> — all with A/C, heat, real beds, linens, pool towels, mini-fridge, and coffee maker. <strong>Cabins</strong> (queen, sleeps 2), <strong>Family Safari Tents</strong> (queen + bunks, sleeps 4), <strong>Double Safari Tents</strong> (2 queens, sleeps 4), <strong>Premium Bath Tents</strong> (queen or king with private ensuite). Breakfast tacos served each morning in the Lodge. No gear required — just show up. <a href="https://hotels.cloudbeds.com/en/reservation/5tzv1r" target="_blank">Check availability &rarr;</a>' },
             { section: 'stay', keywords: ['book', 'reservation', 'reserve', 'availability', 'available'],
               answer: 'You can check real-time availability and book directly: <a href="https://hotels.cloudbeds.com/en/reservation/5tzv1r" target="_blank"><strong>Book your stay &rarr;</strong></a>. For weddings and events, <a href="/pages/contact.html">contact us</a> for custom availability.' },
             { section: 'stay', keywords: ['price', 'cost', 'rate', 'per night', 'nightly', 'how much', 'pricing'],
@@ -436,8 +436,8 @@
               answer: 'We host all types of events: corporate retreats, birthday parties, conferences, private parties, festivals, and wellness retreats. Available for <strong>hourly rental or full ranch buyout</strong>. <a href="/pages/contact.html?intent=event">Submit an event inquiry &rarr;</a>' },
             { section: 'event', keywords: ['event barn', 'barn', 'indoor', 'climate control'],
               answer: 'The <strong>Event Barn</strong> is our modern, climate-controlled indoor venue. Flexible layout for presentations, seated dinners, cocktail receptions, and dance floors. Beautiful ranch aesthetic with all the infrastructure you need.' },
-            { section: 'event', keywords: ['bar', 'drinks', 'cocktail', 'lounge'],
-              answer: 'The Lodge serves beer, wine, and other beverages on-site — perfect for a drink by the pool or after a day on the ranch. For private events, bar service can be arranged as part of your package.' },
+            { section: 'event', keywords: ['bar', 'drinks', 'cocktail', 'lounge', 'beverage', 'alcohol', 'beer', 'wine'],
+              answer: 'The Lodge serves beer, wine, and beverages for overnight guests and event attendees. For private events and weddings, all alcohol must be purchased through the venue — no outside alcohol. Bar packages start at <strong>$7/pp/hr</strong> (beer &amp; wine) up to <strong>$15/pp/hr</strong> (premium spirits). 20% gratuity applies. <a href="/pages/contact.html?intent=event">Get bar pricing &rarr;</a>' },
             { section: 'event', keywords: ['upcoming event', 'what\'s happening', 'next event', 'calendar', 'schedule'],
               answer: 'Check out our upcoming events — live music, yoga, crawfish boils, and more: <a href="/pages/events.html"><strong>View upcoming events &rarr;</strong></a>' },
 
@@ -466,6 +466,38 @@
               answer: 'Yes, WiFi is available on the property. It\'s great for staying connected, though we do encourage unplugging and enjoying the ranch experience!' },
             { section: 'info', keywords: ['fire pit', 'firepit', 'campfire', 'bonfire', 's\'more'],
               answer: '<strong>Fire pits are available across the property</strong> — perfect for s\'mores, stargazing, and Texas evenings. Firewood is available for purchase at The Lodge.' },
+
+            // Activities & amenities
+            { section: 'info', keywords: ['activity', 'activities', 'things to do', 'horseback', 'yoga', 'lawn game', 'cornhole', 'jenga', 'animal', 'donkey', 'horse', 'sound bath', 'dancing', 'two-step', 'entertainment'],
+              answer: 'Beyond the pool: <strong>fire pits</strong>, cornhole, giant Jenga, and 36 acres to roam. Say hello to the resident donkeys, cows, and horses. Add-on experiences include <strong>horseback riding</strong>, private yoga ($150), sound bath immersions ($300), paint &amp; sip ($55/person), and two-step dancing lessons. Live music events run regularly. <a href="/pages/contact.html">Ask about add-ons &rarr;</a>' },
+            { section: 'info', keywords: ['hot tub', 'jacuzzi', 'spa', 'hot tub'],
+              answer: 'There is <strong>no hot tub</strong> on the property. We do have a resort-style <strong>pool and pool bar</strong> available to overnight guests and day pass holders. <a href="https://www.resortpass.com/hotels/rancho-moonrise" target="_blank">Get a pool pass &rarr;</a>' },
+            { section: 'stay', keywords: ['included', 'amenities', 'amenity', 'linen', 'towel', 'coffee', 'breakfast', 'kitchen', 'fridge', 'what comes with'],
+              answer: 'All units include <strong>linens, pool towels, mini-fridge, and coffee maker</strong>. <strong>Breakfast tacos</strong> and hot coffee are served each morning in the Lodge. No full kitchen in units — a full Lodge kitchen rents for $50/hr or $200/day. No gear needed.' },
+
+            // Parking
+            { section: 'info', keywords: ['park', 'parking', 'car', 'vehicle', 'drive here', 'shuttle'],
+              answer: '<strong>Free on-site parking</strong> is available. Drive to your cabin or tent to unload, then move your car to the main general lot (cars can\'t stay at sleeping sites overnight). Events with 75+ vehicles require a shuttle service (30-person vehicles recommended). Wheelchair-accessible parking available.' },
+
+            // Noise / quiet hours
+            { section: 'policy', keywords: ['noise', 'loud', 'music curfew', 'quiet hours', 'quiet time', 'sound', 'curfew', 'neighbor'],
+              answer: 'Property-wide <strong>noise curfew is 9:30 PM</strong> for overnight guest comfort. Event music must end by <strong>11 PM Fri/Sat</strong>, 9 PM Mon–Thu, and 8 PM Sundays. All music must stay at 80 dB or lower with no amplified bass.' },
+
+            // Rehearsal dinner / early arrival
+            { section: 'wedding', keywords: ['rehearsal', 'rehearsal dinner', 'day before', 'early arrival', 'night before', 'day prior'],
+              answer: 'Rehearsal dinners aren\'t included in the standard wedding package (which starts at 11 AM on event day). You can add time at <strong>$500/hr</strong> for any hours outside your contracted window. All alcohol during pre-wedding gatherings must also be purchased through the venue. <a href="/pages/contact.html?intent=wedding">Inquire to add &rarr;</a>' },
+
+            // Preferred vendors
+            { section: 'wedding', keywords: ['vendor', 'preferred vendor', 'photographer', 'dj', 'caterer', 'planner', 'coordinator', 'food truck', 'florist'],
+              answer: 'We have <strong>72 preferred vendors</strong> across 16 categories. Top picks: caterers — La Pera, Vestals, Peached Tortilla; photographers — The Storie Collective, Julia Bonugli; DJs — Dart Collective, Texas Sun Music; planners — Betts &amp; Co., Epoch Co+ Events. Outside vendors must be pre-approved. <a href="/pages/contact.html?intent=wedding">Request the full vendor list &rarr;</a>' },
+
+            // Bar packages (wedding-specific)
+            { section: 'wedding', keywords: ['bar package', 'open bar', 'alcohol package', 'drinks package', 'bar option', 'beverage package'],
+              answer: 'Three open bar packages: <strong>Campfire ($7/pp/hr)</strong> — beer &amp; wine; <strong>Stargazer ($11/pp/hr)</strong> — adds house spirits and 2 signature cocktails; <strong>Moonrise Pour ($15/pp/hr)</strong> — premium spirits, expanded wine. Consumption bar also available. 20% gratuity on all. No outside alcohol permitted. <a href="/pages/contact.html?intent=wedding">Get full details &rarr;</a>' },
+
+            // Corporate retreat / buyout
+            { section: 'event', keywords: ['retreat', 'corporate retreat', 'buyout', 'all inclusive', 'overnight retreat', 'group rate', 'full ranch', 'exclusive'],
+              answer: 'Full-ranch buyouts for groups: <strong>$3,500/night Sun–Wed</strong> or <strong>$4,500/night Thu–Sat</strong>. Includes all 20 sleeping sites (sleeps 50), Event Barn, Lodge conference room, breakfast tacos, and coffee. Add yoga ($150), sound baths ($300), horseback riding, two-step lessons, and more. <a href="/pages/contact.html?intent=event">Inquire for retreat pricing &rarr;</a>' },
         ];
 
         // Default / fallback
