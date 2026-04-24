@@ -1,5 +1,13 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-24 — Blog #18: Yoga Retreat Near Austin Texas
+
+- **Blog #18 published:** `yoga-retreat-near-austin.html`. Targets "yoga retreat near Austin Texas" keyword cluster using the Yoga &amp; Mimosas event series (May 31, Jun 28, Jul 26, Aug 30) as the primary content hook. AEO block, FAQPage (4 Q&A), SpeakableSpecification, BreadcrumbList. Cross-links to events.html, pool-day-pass-austin.html, accommodations.html, bachelorette-party-austin-texas.html, weekend-getaways-near-austin.html.
+- **blog.html updated:** ItemList position 18 added in schema; Post 18 card inserted at top of grid with aerial ranch image.
+- **sitemap.xml updated:** New entry `https://ranchomoonrise.com/blog/yoga-retreat-near-austin/` with `2026-04-24` lastmod.
+- **Re-Verify Gate:** DNS still on Flywheel (BofillTech) — `x-fw-server: Flywheel/5.1.0` confirmed live. Active blocker still true.
+- S1 now at 18 posts.
+
 ## 2026-04-23 — Voice Scrub + Homepage Events Query Fix
 
 - **Voice-guide scrub across customer-facing surfaces.** Hero alt on `index.html` no longer says "Texas Hill Country"; `videos.html` lead card no longer says "Luxury Glamping Ranch"; `events.html` Rosés card no longer says "curated"; chat widget KB in `main.js` no longer asserts "50 overnight guests" / "200+ guests" (replaced with soft phrasing per voice guide's ban on specific unit counts).

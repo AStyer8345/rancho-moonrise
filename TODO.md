@@ -193,6 +193,7 @@ All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms. Li
 - [x] Blog post #15 — "Corporate Retreat: Ranch vs. Hotel Conference Room" — COMMITTED 2026-04-21. File existed locally as untracked (created 2026-04-20, full schema). Committed and pushed this run.
 - [x] Blog post #16 — "Mother's Day Near Austin Texas" — DONE 2026-04-21. Seasonal target (Mother's Day May 11). AEO block, FAQPage (4 Q&A), SpeakableSpecification, BreadcrumbList. Three-tier content: pool day pass / Yoga & Mimosas / overnight stay.
 - [x] Blog post #17 — "Birthday Party Venue Near Austin Texas" — DONE 2026-04-22. High commercial intent (private events = 46% revenue). AEO block, FAQPage (4 Q&A), SpeakableSpec, BreadcrumbList. CTAs to host-your-event + accommodations.
+- [x] Blog post #18 — "Yoga Retreat Near Austin Texas" — DONE 2026-04-24. Targets yoga/wellness keyword cluster using Yoga & Mimosas event series (May 31, Jun 28, Jul 26, Aug 30). AEO block, FAQPage (4 Q&A), SpeakableSpec, BreadcrumbList. CTAs to events + host-your-event. S1 now 18 posts.
 - [x] ReservePage schema on pool-day-pass-austin.html — DONE 2026-04-22. Dual type `["WebPage","ReservePage"]` + `ReserveAction` potentialAction → ResortPass URL. Time-sensitive (Lucky Arrow window closes May 1).
 
 ### NEEDS ADAM — Review monitor flags (from 2026-04-15 rancho-review-monitor run)
