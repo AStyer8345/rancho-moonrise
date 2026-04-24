@@ -365,7 +365,9 @@
             }
             status.innerHTML = 'Sending your inquiry…';
 
-            fetch('/api/inquiry', {
+            // Use trailing slash to match site-wide trailingSlash:true in
+            // vercel.json — avoids a 308 redirect round-trip on every submit.
+            fetch('/api/inquiry/', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload)
