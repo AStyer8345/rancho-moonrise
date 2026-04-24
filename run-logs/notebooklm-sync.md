@@ -148,3 +148,9 @@ WARN: Skipped 3 oversized files (>10MB): PRIVATE EVENTS AT RANCHO MOONRISE.pdf (
 2026-04-24 00:07 | scanned=64 added=0 replaced=0 skipped=3 errors=0
 2026-04-24 04:07 | scanned=64 added=0 replaced=0 skipped=3 errors=0
 2026-04-24 08:07 | scanned=67 added=0 replaced=0 skipped=3 errors=0
+
+## 2026-04-24 12:09
+- replaced: voice-guide.md (source ID was 4caa8c41, new: b40062c9)
+- skipped (>10MB): PRIVATE EVENTS AT RANCHO MOONRISE.pdf, INTIMATE EVENTS AT RM.pdf, ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf
+
+2026-04-24 12:09 | scanned=64 added=0 replaced=1 skipped=3 errors=0
