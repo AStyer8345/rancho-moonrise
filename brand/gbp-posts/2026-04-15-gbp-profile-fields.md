@@ -66,7 +66,7 @@ Family-owned and operated since 2024. Come see it for yourself — y'all are gon
 
 ### Activities
 - Outdoor pool — **YES** ✓ already set
-- Hot tub — **NO**
+- Hot tub — **YES**
 - Fitness center — the current YES is a data error; if you can change, set to **NO**. Rancho does not have a fitness center.
 - Fire pit — **YES**
 - Game room / lawn games — **YES** (cornhole, giant Jenga, etc. available)

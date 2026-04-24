@@ -470,8 +470,8 @@
             // Activities & amenities
             { section: 'info', keywords: ['activity', 'activities', 'things to do', 'horseback', 'yoga', 'lawn game', 'cornhole', 'jenga', 'animal', 'donkey', 'horse', 'sound bath', 'dancing', 'two-step', 'entertainment'],
               answer: 'Beyond the pool: <strong>fire pits</strong>, cornhole, giant Jenga, and 36 acres to roam. Say hello to the resident donkeys, cows, and horses. Add-on experiences include <strong>horseback riding</strong>, private yoga ($150), sound bath immersions ($300), paint &amp; sip ($55/person), and two-step dancing lessons. Live music events run regularly. <a href="/pages/contact.html">Ask about add-ons &rarr;</a>' },
-            { section: 'info', keywords: ['hot tub', 'jacuzzi', 'spa', 'hot tub'],
-              answer: 'There is <strong>no hot tub</strong> on the property. We do have a resort-style <strong>pool and pool bar</strong> available to overnight guests and day pass holders. <a href="https://www.resortpass.com/hotels/rancho-moonrise" target="_blank">Get a pool pass &rarr;</a>' },
+            { section: 'pool', keywords: ['hot tub', 'jacuzzi', 'spa'],
+              answer: 'Yes! We have a <strong>resort-style pool and hot tub</strong> on-site. Pool access is complimentary for overnight guests. Day passes are available through ResortPass. <a href="https://www.resortpass.com/hotels/rancho-moonrise" target="_blank">Get a pool pass &rarr;</a>' },
             { section: 'stay', keywords: ['included', 'amenities', 'amenity', 'linen', 'towel', 'coffee', 'breakfast', 'kitchen', 'fridge', 'what comes with'],
               answer: 'All units include <strong>linens, pool towels, mini-fridge, and coffee maker</strong>. <strong>Breakfast tacos</strong> and hot coffee are served each morning in the Lodge. No full kitchen in units — a full Lodge kitchen rents for $50/hr or $200/day. No gear needed.' },
 
