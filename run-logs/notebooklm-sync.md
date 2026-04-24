@@ -129,3 +129,19 @@ WARN: Skipped 3 oversized files (>10MB): PRIVATE EVENTS AT RANCHO MOONRISE.pdf (
   Re-upload failed: 400 Bad Request — HTML files not accepted by NotebookLM API
   File retained in state with old mtime; next run will retry deletion+upload
 2026-04-23 16:09 | scanned=64 added=0 replaced=0 skipped=4 errors=1
+
+---
+
+### 2026-04-23 20:08
+
+**Run summary:** scanned=67 added=0 replaced=0 skipped=3 errors=1
+
+**Details:**
+- Scanned brand/ and deal/ folders
+- 3 files skipped (>10MB): PRIVATE EVENTS AT RANCHO MOONRISE.pdf (28MB), INTIMATE EVENTS AT RM.pdf (20MB), ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf (36MB)
+- 1 file modified: `2026-04-09-rancho-moonrise-improvement-plan.html`
+  - Deleted old errored source (ID: 539817bd-f699-4d03-8ab8-8958b6f4043d)
+  - Re-upload failed: 400 Bad Request — HTML format not supported by NotebookLM
+  - State mtime updated to prevent repeated retry (manual action needed if HTML content must be in notebook — convert to PDF or txt)
+
+2026-04-23 20:08 | scanned=67 added=0 replaced=0 skipped=3 errors=1
