@@ -335,50 +335,20 @@
                 return;
             }
 
+            // Build a flat JSON object out of every named form field.
+            // Labels aren't included — the server doesn't need them; field names
+            // are contract and stable.
             var data = new FormData(form);
-            var inquiryType = (data.get('inquiry_type') || 'general').toString();
-            var name = (data.get('name') || '').toString().trim();
-            var email = (data.get('email') || '').toString().trim();
-            var phone = (data.get('phone') || '').toString().trim();
-            var labelByType = {
-                wedding: 'Wedding Inquiry',
-                event: 'Private Event Inquiry',
-                general: 'General Question'
-            };
-            var lines = [
-                'New ' + (labelByType[inquiryType] || 'Inquiry') + ' from ranchomoonrise.com',
-                '',
-                'Name: ' + (name || 'Not provided'),
-                'Email: ' + (email || 'Not provided')
-            ];
-
-            if (phone) lines.push('Phone: ' + phone);
-
+            var payload = {};
             Array.from(form.elements).forEach(function (field) {
-                if (!field.name || field.type === 'hidden' || field.type === 'submit' || field.type === 'button') {
-                    return;
-                }
-
+                if (!field.name) return;
+                if (field.type === 'submit' || field.type === 'button') return;
                 var value = data.get(field.name);
                 if (value == null) return;
-
-                value = value.toString().trim();
-                if (!value) return;
-
-                if (field.name === 'name' || field.name === 'email' || field.name === 'phone') {
-                    return;
-                }
-
-                var label = form.querySelector('label[for="' + field.id + '"]');
-                var labelText = label ? label.textContent.replace(/\s+/g, ' ').trim() : field.name;
-                lines.push(labelText + ': ' + value);
+                var str = value.toString().trim();
+                if (!str) return;
+                payload[field.name] = str;
             });
-
-            var subjectPrefix = labelByType[inquiryType] || 'Rancho Moonrise Inquiry';
-            var subject = subjectPrefix + (name ? ' — ' + name : '');
-            var mailto = 'mailto:events@ranchomoonrise.com?subject=' +
-                encodeURIComponent(subject) +
-                '&body=' + encodeURIComponent(lines.join('\n'));
 
             var status = form.querySelector('.form-status');
             if (!status) {
@@ -386,9 +356,48 @@
                 status.className = 'form-status';
                 form.appendChild(status);
             }
-            status.innerHTML = 'Opening your email app to send this inquiry. If nothing opens, email <a href="mailto:events@ranchomoonrise.com">events@ranchomoonrise.com</a> or call <a href="tel:+17372911260">737-291-1260</a>.';
 
-            window.location.href = mailto;
+            var submitBtn = form.querySelector('button[type="submit"]');
+            var submitBtnLabel = submitBtn ? submitBtn.textContent : null;
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Sending…';
+            }
+            status.innerHTML = 'Sending your inquiry…';
+
+            fetch('/api/inquiry', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            }).then(function (r) {
+                return r.json().catch(function () { return {}; }).then(function (j) {
+                    return { ok: r.ok, status: r.status, body: j };
+                });
+            }).then(function (result) {
+                if (result.ok) {
+                    status.innerHTML = 'Thanks! We got your inquiry and Ashley or Monet will reach out shortly. If you don\'t hear from us within a business day, call <a href="tel:+17372911260">737-291-1260</a>.';
+                    form.reset();
+                    if (submitBtn) {
+                        submitBtn.textContent = 'Sent ✓';
+                        // Keep disabled so they can't fire another on the reset form.
+                    }
+                } else {
+                    var msg = (result.body && result.body.error) ||
+                        'Something went wrong. Please call 737-291-1260 or email events@ranchomoonrise.com.';
+                    status.innerHTML = msg + ' <a href="tel:+17372911260">Call 737-291-1260</a> or <a href="mailto:events@ranchomoonrise.com">events@ranchomoonrise.com</a>.';
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = submitBtnLabel || 'Send';
+                    }
+                }
+            }).catch(function (err) {
+                console.error('inquiry submit failed', err);
+                status.innerHTML = 'We couldn\'t reach our inquiry system. Please call <a href="tel:+17372911260">737-291-1260</a> or email <a href="mailto:events@ranchomoonrise.com">events@ranchomoonrise.com</a>.';
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = submitBtnLabel || 'Send';
+                }
+            });
         });
     });
 

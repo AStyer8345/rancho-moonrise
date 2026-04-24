@@ -5,6 +5,10 @@
     "api/complete.js": {
       "memory": 256,
       "maxDuration": 10
+    },
+    "api/inquiry.js": {
+      "memory": 256,
+      "maxDuration": 10
     }
   },
   "rewrites": [
