@@ -80,6 +80,9 @@ Playfully and casually speak about the landscape when possible — it's part of 
 **Unit count:** Do NOT list a specific number of rooms/tents/cabins — inventory fluctuates (15 / 18 / 19). Say "safari tents and cabins" or "overnight accommodations".
 **Fire pits:** "Fire pits throughout the property" — NOT "private fire pit at every cabin" (only some have them).
 **Drinks:** "Margaritas, beer, wine, and more at the Lodge or bars" — specify event bars are event-only if the context risks confusing walk-in guests.
+**Hot tub:** Available, on-request (updated 2026-04-23 per Ashley — earlier copy said "no hot tub").
+**Sauna:** Being added — do not lead with it in copy yet; flag before writing about it.
+**Alcohol at events:** Sold through the venue, open bar per-person per-hour (mandatory as of 2026 — never imply BYOB).
 
 ---
 
@@ -91,6 +94,34 @@ Playfully and casually speak about the landscape when possible — it's part of 
 **Social Media:** Instagram voice = visual storytelling + short punchy captions. Facebook = slightly more detailed, community-oriented. LinkedIn = professional but still warm.
 **Website Copy:** Clear, scannable, warm. Short paragraphs. The site should feel like a conversation, not a brochure.
 **Meta Descriptions:** 150 chars, include location, lead with what makes it different. "Austin's glamping + events ranch — cabins, safari tents, pool, live music, weddings. 20 min from downtown."
+
+---
+
+## Inquiry Responses — Pricing Frames (added 2026-04-23, Ashley onsite)
+
+Pricing language in an inquiry response is not marketing copy — it sets an expectation Ashley has to honor. Wrong pricing frames cost bookings. Follow these rules.
+
+**Absolute don'ts:**
+- **Never quote a $3K package for a small daytime event.** Package pricing ($3K / $5K / $15K) is for full property buyouts with overnight stays. A 20-person daytime event at $3K will lose the inquiry.
+- **Never quote a specific package number without a tour.** Packages are not published online on purpose — the tour matches the prospect to the right tier.
+- **Never imply the bar is walk-in or à la carte.** Bars are event-only. Open bar is sold per person, per hour, as part of the event.
+
+**Do this instead:**
+
+*For small daytime events (graduations, birthdays, under ~50 people):*
+- Frame: barn rental at **~$75/hour** (Neon Moon Barn / event space hourly rate)
+- Bundle: alcohol sold through the venue (open bar per person, per hour) — this is mandatory, make it clear
+- Soft CTA: invite them to a tour to scope setup and timing
+
+*For larger parties / overnights / weddings:*
+- Frame: full property, overnight accommodations, open bar, catered — tiered packages
+- Soft CTA: tour required; package ranges only given on the tour
+
+**Why this matters:** The most profitable event profile is a private party of 100+ people with open bar and overnight stays (Ashley, 2026-04-23). Every inquiry response should either (a) qualify toward that profile, or (b) land a smaller event on the barn-rental + venue-alcohol frame so the operational math still works.
+
+**Source event:** Yelp lead (Cynthia, grad party, 20 people daytime) — Ashley's exact correction: "Never quote $3K for 20 people daytime — that's a barn rental at $75/hour. Buy alcohol through us."
+
+---
 
 ## Visual Brand (for reference — affects content layout)
 

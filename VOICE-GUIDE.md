@@ -1,6 +1,6 @@
 # Rancho Moonrise — Brand Voice Guide
 
-**Last updated:** 2026-04-10 (Ashley call corrections — brand facts, banned words, spaces rename)
+**Last updated:** 2026-04-23 (Ashley onsite — inquiry pricing frames, hot tub confirmed, alcohol mandatory-through-venue)
 
 ---
 
@@ -289,7 +289,7 @@ Follows a clear formula: hook → description → schedule details → CTA. Emoj
 
 **Spaces on property:**
 1. **Event Barn** — climate controlled, flexible layout
-2. **The Pool** — #1 revenue driver in summer; daily pool passes available to overnight guests; hot tub, pool bar
+2. **The Pool** — #1 revenue driver in summer; daily pool passes available to overnight guests; hot tub (operational, on-request), pool bar. **Sauna being added** (don't feature in copy until install complete).
 3. **The Lodge** — (formerly called "General Store" — never use that name). Drinks available here.
 4. **Safari tents + cabins** — overnight accommodations (don't list a count)
 5. **Neon Moon Barn Lounge** — EVENT-ONLY, not a walk-in bar. Do NOT feature as a standalone space.
@@ -316,3 +316,31 @@ Follows a clear formula: hook → description → schedule details → CTA. Emoj
 **Events page:** Rename to "RM Events" or "Rancho Moonrise Events". Default view is chronological list (one per row), calendar view available as toggle.
 
 **Venues page:** Renamed from "Our Venues" → "Our Spaces".
+
+---
+
+## Inquiry Responses — Pricing Frames (2026-04-23, Ashley onsite)
+
+Pricing language in an inquiry response sets an expectation Ashley has to honor. Wrong frames cost bookings. Follow these rules — the inquiry auto-responder (future build) must enforce them and hold any draft that violates them for human review.
+
+**Absolute don'ts:**
+- **Never quote a $3K package for a small daytime event.** Package pricing ($3K / $5K / $15K) is for full property buyouts with overnight stays. A 20-person daytime event at $3K loses the inquiry.
+- **Never quote a specific package number without a tour.** Packages are not published online on purpose — the tour matches the prospect to the right tier.
+- **Never imply the bar is walk-in or à la carte.** Bars are event-only. Open bar is sold per person, per hour, as part of the event.
+
+**Do this instead:**
+
+*Small daytime event (graduations, birthdays, under ~50 people):*
+- Frame: barn rental at **~$75/hour** (Neon Moon Barn / event space hourly rate)
+- Bundle: alcohol sold through the venue (open bar per person, per hour) — mandatory, make it clear
+- Soft CTA: invite to a tour to scope setup + timing
+
+*Larger parties / overnights / weddings:*
+- Frame: full property, overnight accommodations, open bar, catered — tiered packages
+- Soft CTA: tour required; package ranges only given on the tour
+
+**Alcohol is mandatory through the venue** as of 2026 — open bar per person per hour. Ordering is a full-time operation (25 distributors, minimums, tracking). Never imply BYOB.
+
+**Target event profile:** The most profitable event is a private party of 100+ people with open bar and overnight stays. Every inquiry response should either qualify toward that profile or land a smaller event on the barn-rental + venue-alcohol frame.
+
+**Source event:** Yelp lead 2026-04-23 (Cynthia, grad party, 20 people daytime). Ashley's exact correction: "Never quote $3K for 20 people daytime — that's a barn rental at $75/hour. Buy alcohol through us."

@@ -1,5 +1,5 @@
 # Rancho Moonrise — TODO
-Last updated: 2026-04-22 (SEO daily — ReservePage schema + Blog #17 birthday party venue)
+Last updated: 2026-04-23 (Ashley onsite meeting — see `/Users/adamstyer/Documents/Claude/Projects/Rancho Moonrise/meetings/2026-04-23-ashley-onsite.md`)
 
 ## ✅ DONE 2026-04-21 — Admin Galleries Build + 4-Page Photo Hydration
 
@@ -151,6 +151,39 @@ All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms. Li
 - [ ] **Fill GSC rows on improvement-plan.html** (impressions / clicks / CTR / avg position / pages indexed) — grab from [search.google.com/search-console](https://search.google.com/search-console) last-28-days view, paste numbers to Claude, or greenlight the n8n workflow option below. GSC has no access gating, unlike GBP.
 - [x] **Decide: automate GBP + GSC monthly pull?** ✅ 2026-04-14 — greenlit. Design spec landed at `brand/n8n-metrics-pull-spec.md`. Build in next n8n session: GSC weekly workflow first (no gating, ~1.5 hr), GBP email parser second (after the April email lands ~May 6, ~45 min).
 - [ ] **Pull Photo views + Bookings from GBP dashboard** — not in the monthly email; need a one-time manual grab from business.google.com until GBP API access lands.
+
+### NEEDS ADAM — From 2026-04-23 Ashley Onsite Meeting
+- [ ] **Respond to Cynthia on Yelp** (grad party, 20 people daytime) — barn rental at ~$75/hr + venue alcohol framing. **Do NOT quote $3K package.** Pricing rule codified in `brand/voice-guide.md` → "Inquiry Responses — Pricing Frames".
+- [x] ~~Fix hot tub listing on GBP~~ — DONE 2026-04-24 (commit `0bec5cf`). Chatbot KB + GBP profile fields doc updated.
+- [ ] **Re-report Scott Morgan 1★ review on Google Maps** — Ashley thought it was gone; it's still live. Try "low quality information" or "off topic" classification.
+- [ ] **Update Ashley's Gmail profile photo** — she called it out at the meeting.
+- [ ] **Document Paul/Donna step-away email + Ben/Robert counter** → send summary to Nancy. Material deal development. Donna still unilaterally renewing insurance.
+- [ ] **Business plan + projections for Christopher** — Ashley's call: realistic projections are the next move to close. Needed anyway for buyout modeling.
+- [ ] **Alternate path to QuickBooks access** — Beth (bookkeeper) is a Donna loyalist, cannot be used as a resource. Even Beth thinks Donna is unreasonable. Need a different path.
+
+### Ashley-requested website batch (small, safe to ship together)
+- [ ] Nav order: Happenings → Accommodations → Weddings → Private Events → Contact
+- [ ] Remove small floating text blocks at top of RM Events and Private Events pages
+- [ ] Replace wrong section photos — birthday section currently shows Lone Star (wrong); day retreats currently shows yoga mimosas (wrong)
+- [ ] Color/logo update: swap green to sage or stone; square logo → stone color
+- [ ] Mobile audit — some blocks still render wonky on phone
+- [ ] Add "Manor, TX" to location tags / schema / alt text (NOT body copy — Ashley refuses)
+
+### Major next project — Inquiry auto-responder
+- [ ] Set up shared inquiry inbox (`inquiries@ranchomoonrise.com` or similar) for Ashley + Monet
+- [ ] Build auto-responder: read inquiry → send customized response → start drip if no reply → hand off to human at tour/booking stage
+- [ ] Enforce pricing-frame rules from voice guide at draft-send time (hold for human review on violation)
+- [ ] Consider SMS follow-up in the drip
+- [ ] Feedback loop: Ashley corrects bad drafts, corrections refine the prompt
+- [ ] Current funnel math: ~100 inquiries → 10 replies → 2 tours → 1 booking. Target: raise reply rate with auto-response, raise tour rate with better qualifying questions.
+
+### Operational gap — Bar manager
+- [ ] Flag to Nancy: bar manager is effectively a full-time role with no one filling it. Alcohol ordering (25 distributors, minimums, tracking) is currently on Ashley on top of everything else. Biggest single operational risk.
+
+### Deprioritize / kill (per Ashley)
+- [x] ~~Blog pipeline (ongoing)~~ — PAUSED per Ashley 2026-04-23. Do not push new drafts until she has bandwidth to review. Does not apply to scheduled SEO daily runs that have already shipped.
+- [x] ~~WeddingWire paid placement~~ — Ashley skeptical after The Knot $1K/mo × 8–10 months = zero bookings. Open the free listing (already tracked) but don't spend.
+- [x] ~~Breakfast taco upsell~~ — killed (not sustainable without on-site food).
 
 ### NEEDS ADAM — From 2026-04-23 Bi-Weekly Audit
 - [ ] **Claim TripAdvisor listing** — 20 minutes, free. Still 0 reviews / unclaimed at audit time. Biggest multi-platform discoverability gap on the books.

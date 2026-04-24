@@ -1,6 +1,6 @@
 # Rancho Moonrise — Project Context
 
-**Last updated:** 2026-04-24 (SEO daily — Blog #18 yoga retreat near Austin)
+**Last updated:** 2026-04-24 (Ashley onsite debrief — strategic update across ownership, operations, voice guide, and next major build)
 
 **Latest audit:** 2026-04-23 — `site/audits/2026-04-23-business-audit.html`. Next audit: 2026-05-07.
 
@@ -21,9 +21,13 @@ Advisory engagement for Rancho Moonrise — glamping, events, and retreat ranch 
 
 ## Active Blockers
 
+- **Paul/Donna step-away in flight (2026-04-23)** — Paul and Donna emailed that they want to step away; Ben and Robert countered "hand over the books and financials, we're taking control." Donna hasn't replied and is still acting unilaterally (renewing insurance, micromanaging Ashley). Governance conflict in the open until Nancy weighs in. See `meetings/2026-04-23-ashley-onsite.md` in the Cowork workspace for the full record.
+- **Beth (bookkeeper) cannot be a QuickBooks channel** — she's a Donna loyalist, reports everything back to the Hirschmans. Even Beth thinks Donna is unreasonable. Need an alternate path to books/financials.
+- **Bar manager role unfilled** — effectively full-time (25 distributors, minimums, tracking). Currently on Ashley on top of events/laundry/design/inquiries/two babies. Biggest single operational risk.
+- **Inquiry handling is 100% manual** — funnel is ~100 inquiries → 10 replies → 2 tours → 1 booking/day. No CRM, Gmail reminders and copy-paste templates only. Inquiry auto-responder is promoted to the next major build.
 - **8 low-res source JPGs cap image quality** — see "Low-res source JPGs" section below. Responsive pipeline can't generate variants bigger than the source; 4 venue photos cap at 1024w and 4 accommodation photos cap at 480w (actually 340×340 thumbnails). Needs re-upload from Ashley's originals.
 - **DNS cutover not done** — New Vercel site not live on main domain. ALL SEO/AEO impact blocked until this happens. This is the #1 unlock.
-- **Exhibit A missing** — Cannot model buyout without ownership percentages from Nancy/Ashley.
+- **Exhibit A missing** — Cannot model buyout without ownership percentages. Cannot go through Beth; need an alternate path.
 - **GITHUB_TOKEN on Vercel is broad-scoped** — using `gh auth token` bootstrap. TODO: swap for fine-grained PAT scoped only to `AStyer8345/rancho-moonrise` contents:write.
 - ~~GBP access~~ ✅ **UNBLOCKED 2026-04-10** — Adam has Manager access. Tasks #1, #2, #3, #7, #15, #27 now owned by Adam, not Ashley.
 
@@ -59,6 +63,7 @@ The 4 accommodation files are literally 340×340 thumbnails masquerading as cont
 
 ## Last Worked On
 
+- 2026-04-23 (Ashley onsite meeting, 79 min): **Strategic update across ownership, operations, and marketing.** (1) **Ownership** — Paul/Donna sent a step-away email; Ben/Robert countered "hand over the books"; Donna silent but still acting in control. Beth (bookkeeper) is a Donna loyalist and cannot be used as a channel. Ashley floated a lowball buyout so remaining members could own outright. Christopher still hasn't said no — business plan with realistic projections is the next move. (2) **Operations** — bar manager role unfilled; alcohol ordering (25 distributors) is a full-time job currently on Ashley. Inquiry funnel is ~100→10→2→1 daily, 100% manual. (3) **Financials** — 2026 Q1 confirmed at $61K; target $500–650K; Ashley's "safe" number is $1M/year. Most profitable event profile = private party 100+ people, open bar, overnight stays. (4) **Alcohol shift** — mandatory through venue, open bar per-person per-hour, never BYOB. (5) **Voice guide updated** — new "Inquiry Responses — Pricing Frames" section: small daytime = barn rental ~$75/hr, packages never without a tour, no $3K quotes for small daytime events. (6) **Hot tub confirmed working** (fixed same day in commit `0bec5cf`). Sauna being added. (7) **Marketing wins** — Ashley graded website D→B+, GBP D→B. Loved competitive intel + GBP auto-posting. (8) **Ashley-requested website batch** — nav reorder, remove floating text blocks, fix wrong section photos, color/logo update (green → sage or stone), mobile audit, add "Manor, TX" to tags/schema only. (9) **Next major build: inquiry auto-responder** — shared inbox Ashley+Monet, AI handles steps 1–3, human takeover at tour/booking, pricing-frame rules enforced at draft-send. (10) **Killed/paused:** blog pipeline (Ashley no bandwidth), breakfast taco upsell (no on-site food), Knot paid placement (zero ROI after $1K/mo × 8–10 months). Full meeting record: `/Users/adamstyer/Documents/Claude/Projects/Rancho Moonrise/meetings/2026-04-23-ashley-onsite.md`.
 - 2026-04-23 (voice scrub + homepage events fix): **Customer-facing voice-guide violations scrubbed + homepage events query rewritten.** (1) `index.html:199` hero alt: "Texas Hill Country" → "outside Austin, Texas". (2) `videos.html:355` video title: "Austin's Luxury Glamping Ranch" → "A Glamping Ranch Outside Austin". (3) `events.html:325` Rosés card desc: removed "curated". (4) `main.js` chat KB (lines 416/418/422): removed "50 overnight guests" / "200+ guests" fabricated unit counts from three wedding answers — now uses "on-site accommodations for your wedding party" / "large guest counts". (5) **`cms.js` homepage events query fixed** — was ordered by `sort_order,event_date` which crowded out upcoming events with recurring Free Friday entries (three identical cards showing). Now filters `event_date >= today` and orders by `event_date` only → self-correcting, shows next 3 upcoming. (6) **Rosés row in `rancho_events` Supabase** updated to remove "curated selection" (was still rendering through events.html hydrator). (7) Static HTML homepage events grid also updated with April 24 / 26 / May 2 events as no-JS fallback. Verified in preview: homepage + events clean of `Hill Country` / `luxury` / `curated` / `50 overnight` in body text (2 "Hill Country" remain in a Google Review quote — left as verbatim customer testimonial, flag for Adam if that row is a placeholder). Forms (5 files still `action="#"`), hardcoded footer year (2026 across 28 files — correct for this year), and Instagram placeholder deferred as separate projects.
 - 2026-04-23 (site copy editor): **Admin Site Copy tab + AEO block relocation shipped.** New `site_content` Supabase table with 4 blocks (events AEO heading, events AEO body, homepage hero headline, homepage hero subtitle). Admin `/admin/` has new "Site Copy" tab between Galleries and Reviews — `loadSiteCopy()` + `saveCopyBlock()` backed by Supabase anon read / authenticated write. events.html AEO block moved from near-top to just above CTA banner (better UX, schema selectors unaffected). Non-blocking hydrators on events.html and index.html — hardcoded text stays as SEO fallback. Two missing Free Friday Pool Day events (May 29, June 26) inserted into `rancho_events`. Deployed READY (`738fdc3`).
 - 2026-04-21 (admin Galleries build): **Galleries now editable from /admin.** (1) Fixed events admin list to sort by closest date first (`.order('event_date', { ascending: true })`). (2) Added new "Galleries" admin tab with a gallery picker (events_barn, weddings, pool, lodge, ranch_tour) and full CRUD modal — upload to Supabase Storage under `galleries/<section>/<timestamp>-<filename>`, edit/toggle/delete with legacy storage-path skip for seeded rows. (3) Expanded `rancho_photos.section` CHECK constraint from 4 → 9 values via migration. (4) Seeded 64 rows from existing hardcoded HTML (12 events_barn + 17 weddings + 6 pool + 9 lodge + 20 ranch_tour), all `storage_path='legacy/...'` and `public_url='/images/...'`. (5) Hydrated all 4 public gallery pages — events.html (12 tiles), weddings.html (17 tiles, lightbox preserved via event delegation + gallery:hydrated custom event so tiles rebind), pool-day-pass-austin.html (6 tiles), accommodations.html (9 lodge + 20 ranch_tour). All hydrators are non-blocking with hardcoded HTML as SEO fallback. Ticket URL admin fix shipped separately earlier as commit c03cae7.
@@ -118,20 +123,27 @@ The 4 accommodation files are literally 340×340 thumbnails masquerading as cont
 - **3 tracts** in same LLC, free and clear (~$4.2M invested)
 - Tract I (9.9 ac) — improved, all operations
 - Tract II (11 ac) + III (10.7 ac) — vacant, landlocked
-- **Revenue:** 2025 = $350K, 2026 target $500-650K
+- **Revenue:** 2025 = $350K, 2026 target $500–650K, **Q1 2026 = $61K (on pace)**. Ashley's "safe" mental model is $1M/year.
 - Private events 46%, rooms 31%, POS/bar 22%
-- **Buyout:** Paul & Donna want out (~$2M invested). Blocked on Exhibit A.
-- **Christopher:** potential incoming partner, Adam running point
+- **Target event profile:** private party 100+ people, open bar, overnight stays (most profitable configuration per Ashley 2026-04-23)
+- **Alcohol:** mandatory through venue (open bar per-person per-hour) as of 2026. Never BYOB. Ordering is a full-time operation (25 distributors).
+- **Buyout:** Paul & Donna sent a step-away email 2026-04-23; Ben & Robert countered demanding books/financials; Donna silent but acting unilaterally. Blocked on Exhibit A. Ashley floated a lowball option so remaining members own outright.
+- **Christopher:** potential incoming partner, Adam running point. Per Ashley, business plan with realistic projections is the next move to close him.
 
 ## People
 
 | Who | Role |
 |-----|------|
-| Nancy | Co-owner |
-| Ashley | Runs everything — GBP access, operations |
-| Monet | Staff ($28/hr) |
+| Nancy | Co-owner. Deal decision-maker. Needs the Paul/Donna-exit summary. |
+| Ashley | Runs everything — GBP access, operations. Stretched thin. Target for inquiry-responder voice training. |
+| Monet | Staff ($28/hr). Target co-owner of shared inquiry inbox. |
 | Arlen | Maintenance ($170/day) |
 | Kylie | Part-time social ($18/hr) |
+| Britney Jo | Good fit for tours/inquiries per Ashley; has not committed |
+| Beth | Bookkeeper (hired via Brian/Paul). **Donna loyalist — do not use as a channel for books/financials.** Even Beth thinks Donna is unreasonable. |
+| Paul & Donna (Herchman) | Sent step-away email 2026-04-23. Donna still acting unilaterally. |
+| Ben & Robert | Countered Paul/Donna exit with demand for books. Willing to add capital if needed. |
+| Christopher | Adam's potential equity partner. Not yet in; needs business-plan pitch. |
 
 ## Key Files
 

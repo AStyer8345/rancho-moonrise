@@ -2,6 +2,21 @@
 
 ---
 
+## 2026-04-23 — Inquiry Pricing Frames: Barn-Rental vs. Package (Ashley Onsite)
+
+**Decision:** Inquiry responses price by event profile, not by a single pricing menu. Small daytime events (under ~50 people) get framed as **barn rental at ~$75/hour + alcohol sold through the venue** (open bar per person per hour, mandatory). Larger parties / overnights / weddings get the **tiered package** frame ($3K / $5K / $15K) but **only with a tour** — package numbers are never quoted in a first-touch response. The bar is event-only, never walk-in or à la carte. These rules are now enforced at the voice-guide level (both `brand/voice-guide.md` and `VOICE-GUIDE.md`) and the upcoming inquiry auto-responder must hold any draft that violates them for human review.
+
+**Over:**
+- **Option A — Unified package menu.** Quote the $3K / $5K / $15K tiers in every inquiry response regardless of event size. Simple, but catastrophic for small-event conversion (Ashley's framing: "Never quote $3K for 20 people daytime — that's a barn rental at $75/hour").
+- **Option B — Never quote any price before a tour.** Safest against mismatch, but loses inquiries that just want a rough rate to decide whether to tour. Small daytime events (graduations, birthdays) are price-first decisions.
+- **Option C — Let the AI figure it out from context.** Unbounded. Would drift toward the wrong frame over time. The pricing math only works if the frame is explicit.
+
+**Why:** The most profitable event profile is a private party of 100+ people with open bar and overnight stays. Every inquiry response should either (a) qualify toward that profile, or (b) land a smaller event on the barn-rental + venue-alcohol frame so the operational math still works. Quoting a package number for a small daytime event loses the inquiry twice — once because the price is wrong for the event, and again because it signals to the prospect that the venue doesn't understand what they're asking for. The barn-rental frame is honest about how small events actually book, and the mandatory-alcohol-through-venue rule captures the recent operational shift (open bar per person per hour is the revenue unlock for any event, regardless of size). Package pricing stays tour-gated on purpose — Ashley uses the tour to match the prospect to the right tier, and publishing tier numbers online undercuts that conversation.
+
+**Context:** Triggered by a live Yelp lead during the 2026-04-23 Ashley onsite meeting (Cynthia, grad party, 20 people daytime). Adam's draft response quoted a $3K package; Ashley corrected in real time. Rules added to both voice-guide files under "Inquiry Responses — Pricing Frames" sections. Inquiry auto-responder (next major build) must implement these rules as hard enforcement at draft-send time. Full meeting record: `/Users/adamstyer/Documents/Claude/Projects/Rancho Moonrise/meetings/2026-04-23-ashley-onsite.md`.
+
+---
+
 ## 2026-04-10 — Responsive Image Pipeline: Quality-Biased Middle Ground (Option C)
 
 **Decision:** Generate a full WebP responsive ladder (480/1024/1920/2560/3840 for full tier, 400/800/1200 for medium/blog tier) at `cwebp -q 88`, and serve it via `<img srcset>` + `sizes` everywhere that matters. Hero slides and CTA banners refactored from `div[style=background-image]` to real `<img>` elements so they can actually pick up srcset. Pipeline is two idempotent scripts: `scripts/generate-responsive-images.sh` (ladder generator, never upscales) and `scripts/apply-srcset.py` (HTML sweep that rewrites bare `<img src>` tags).

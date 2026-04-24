@@ -1,5 +1,15 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-24 — Ashley Onsite Meeting Debrief (meeting was 2026-04-23)
+
+- **Meeting record:** Full 79-minute onsite with Ashley captured at `/Users/adamstyer/Documents/Claude/Projects/Rancho Moonrise/meetings/2026-04-23-ashley-onsite.md` (Cowork workspace). Four tracks covered: deal/ownership, operations/financials, marketing wins, live Yelp lead demo.
+- **Voice guide updated** — both `brand/voice-guide.md` and root `VOICE-GUIDE.md`. New "Inquiry Responses — Pricing Frames" section captures Ashley's correction of the live Yelp draft: small daytime events get barn rental ~$75/hr + venue alcohol framing; package pricing ($3K/$5K/$15K) never without a tour; bar is event-only. Hot tub updated to "available, on-request" (fact correction). Sauna flagged as "being added — don't lead with it in copy yet." Alcohol-mandatory-through-venue codified.
+- **DECISIONS.md entry added** — "Inquiry Pricing Frames: Barn-Rental vs. Package" documents the reasoning, alternatives considered, and context for the voice-guide change. Inquiry auto-responder (next major build) must enforce these rules at draft-send time.
+- **CONTEXT.md rewrite** — new Active Blockers reflect the 2026-04-23 ownership shift (Paul/Donna step-away email, Ben/Robert counter-demand for books, Donna acting unilaterally), the bar-manager gap, the 100% manual inquiry funnel, and Beth's unusability as a books/financials channel. Property & Deal Summary adds the target event profile (100+ people, open bar, overnight) and the Q1 $61K actual. People table expanded to include Beth, Britney Jo, Paul/Donna, Ben/Robert, Christopher.
+- **TODO.md updated** — new `NEEDS ADAM — From 2026-04-23 Ashley Onsite Meeting` block (Cynthia Yelp response, Scott Morgan re-report, Gmail photo, deal summary to Nancy, business plan for Christopher, alt path to QuickBooks). New `Ashley-requested website batch` (nav reorder, floating text removal, photo swaps, green→sage/stone, mobile audit, Manor TX in tags only). New `Major next project — Inquiry auto-responder` block with funnel math. Blog pipeline marked paused per Ashley; Knot paid placement and breakfast taco upsell killed.
+- **Hot tub fix confirmed** — already shipped same day in commit `0bec5cf` (chatbot KB + GBP profile fields). Marked done in the Ashley-onsite TODO block so it doesn't get re-worked.
+- **No site code changed in this pass** — purely MD-file strategic update. Website batch items land in a separate commit when started.
+
 ## 2026-04-24 — Blog #18: Yoga Retreat Near Austin Texas
 
 - **Blog #18 published:** `yoga-retreat-near-austin.html`. Targets "yoga retreat near Austin Texas" keyword cluster using the Yoga &amp; Mimosas event series (May 31, Jun 28, Jul 26, Aug 30) as the primary content hook. AEO block, FAQPage (4 Q&A), SpeakableSpecification, BreadcrumbList. Cross-links to events.html, pool-day-pass-austin.html, accommodations.html, bachelorette-party-austin-texas.html, weekend-getaways-near-austin.html.
