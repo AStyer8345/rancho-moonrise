@@ -145,3 +145,4 @@ WARN: Skipped 3 oversized files (>10MB): PRIVATE EVENTS AT RANCHO MOONRISE.pdf (
   - State mtime updated to prevent repeated retry (manual action needed if HTML content must be in notebook — convert to PDF or txt)
 
 2026-04-23 20:08 | scanned=67 added=0 replaced=0 skipped=3 errors=1
+2026-04-24 00:07 | scanned=64 added=0 replaced=0 skipped=3 errors=0
