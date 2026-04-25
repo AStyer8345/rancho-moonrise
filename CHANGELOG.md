@@ -1,12 +1,15 @@
 # Rancho Moonrise — Changelog
 
-## 2026-04-25 — `/api/inquiry` rewritten to email events@ instead of POST CRM
+## 2026-04-25 — `/api/inquiry` reverted to direct CRM POST (Resend pivot rolled back)
 
-- **Architecture pivot:** webform submissions now relay as a WordPress-format email to `events@ranchomoonrise.com` via Resend, instead of POSTing directly to the CRM webhook. Gmail becomes the single canonical inflow path — the n8n Gmail Poller (`Ky5foSIFqMmYuny0`, in the `rancho-crm` repo) ingests, parses, and writes to Supabase, which then triggers the AI draft-reply workflow.
-- **Why:** Gmail is the durable inflow point. Every webform submission AND every direct email to events@ ends up in the same place. Single source of truth, no parallel-path duplication, Ashley sees everything where she already works. (See `rancho-crm/docs/superpowers/specs/2026-04-24-gmail-poller-design.md` for full architecture spec.)
-- **`api/inquiry.js`:** rewritten. Sends email via Resend HTTP API (zero new deps — uses built-in `fetch`). FROM defaults to `wordpress@ranchomoonrise.com` so it matches the Gmail Poller's `from:` filter exactly with no n8n changes needed. Body format mirrors the WordPress form-relay byte-for-byte (Name:, Tel:, Email:, # of Guests:, Desired Date #1:, Desired Date #2:, Traffic Source:, Message:, plus the trailing signature line) so the existing parser works unchanged. Reply-To is set to the lead's email so Ashley's reply lands at the lead, not back at events@. Field aliases support multiple form-field names (e.g., `guest_count_range` OR `# of Guests`) so the HTML form's field names don't have to match the parser's.
-- **`.env.example` created** documenting `RESEND_API_KEY`, `INQUIRY_FROM_EMAIL`, `INQUIRY_TO_EMAIL` plus the existing `BRIEFING_AUTH_TOKEN` / `GITHUB_TOKEN` for `/api/complete`.
-- **Adam pre-cutover setup needed:** verify `ranchomoonrise.com` in Resend (add SPF + DKIM TXT records — these don't conflict with the site's A/CNAME), set `RESEND_API_KEY` in Vercel for the marketing site project. Until then the function returns 502 and the form shows a friendly "please call" fallback. Pre-cutover, real traffic still goes through the OLD WordPress site, so this isn't a live blocker.
+- **Architecture decision:** rolled back the morning's pivot to "form → Resend email → events@ → Gmail Poller → CRM" and went with the simpler "form → CRM directly → CRM/n8n workflow sends notification email to events@ as a side effect." Both end states deliver an email to events@ (so Ashley's muscle memory is preserved) but the CRM is the canonical record, not Gmail.
+- **`api/inquiry.js`:** reverted to yesterday's version (POST `/api/crm/webhook/inquiry` with `x-rancho-api-key` header). No Resend dependency, no domain DKIM/SPF setup needed.
+- **`.env.example`:** trimmed back to `RANCHO_CRM_WEBHOOK_URL`, `RANCHO_API_KEY`, plus the existing `/api/complete` env vars (`BRIEFING_AUTH_TOKEN`, `GITHUB_TOKEN`).
+- **Where the notification email comes from now:** the n8n draft-reply workflow (`Cg9XfAepy6w7EyD9` in `rancho-crm`) now has a parallel "Build Notification Email" + "Send Inquiry Notification" branch added today — it sends a WordPress-format email to events@ from events@ as soon as the Supabase trigger fires on inquiry INSERT. Ashley's events@ inbox keeps looking like today's WordPress pattern. See `rancho-crm/CHANGELOG.md` for the n8n side.
+
+## 2026-04-25 — (earlier today, superseded) `/api/inquiry` rewritten to email events@ instead of POST CRM
+
+- (Rolled back later the same day — see entry above.) Webform submissions briefly relayed as Resend emails to events@ where the Gmail Poller would ingest them. Decision reversed in favor of CRM-canonical architecture with a notification-email side branch on the n8n workflow.
 
 ## 2026-04-25 — SEO daily: rotate past Free Friday Apr 24 → May 29
 
