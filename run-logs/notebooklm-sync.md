@@ -187,3 +187,4 @@ WARN: Skipped 3 oversized files (>10MB): PRIVATE EVENTS AT RANCHO MOONRISE.pdf (
 
 2026-04-25 12:08 | ERROR upload (400 Bad Request): Monotype Font Software End User License Agreement.html — deleted 2 prior errored copies; tracker updated to skip retry
 2026-04-25 12:08 | scanned=71 added=0 replaced=0 skipped=3 errors=1
+2026-04-25 16:07 | scanned=74 added=0 replaced=0 skipped=3 errors=0
