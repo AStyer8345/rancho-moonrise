@@ -1,5 +1,12 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-25 — SEO daily: rotate past Free Friday Apr 24 → May 29
+
+- **Event schema freshness fix.** April 24 "Free Friday at the Pool" passed yesterday. Static-HTML Event schema, static event card, and EVENTS JS array all rotated to next instance: 2026-05-29 (last Friday of May). April 26 Yoga & Mimosas left in place (still upcoming tomorrow).
+- **events.html changes:** schema startDate/endDate updated; April 24 card removed from April section (now shows only the Apr 26 Yoga card); new May 29 Free Friday card added to May section between Sunday Funday Memorial Weekend and May 31 Yoga & Mimosas; EVENTS array entry replaced. Card count: April section 1, May section 6.
+- **sitemap.xml lastmod for `/events/` bumped 2026-04-14 → 2026-04-25** (priority 0.8, weekly changefreq).
+- **Re-Verify Gate (this run):** DNS still on Flywheel (BofillTech) — `x-fw-server: Flywheel/5.1.0`. Vercel sitemap=200, live-domain sitemap=301. AEO patterns confirmed across events/weddings/host-your-event/accommodations/faqs/glamping-near-austin (mix of `aeo-block` + `aeo-faq` + h2-answer patterns; SpeakableSpecification on all). All five S2 claims `still_true` — none auto-resolved.
+
 ## 2026-04-25 — Review monitor RUN_009
 
 - Quiet run. No new reviews on any platform; unreplied=0 maintained. TripAdvisor (0/unclaimed) + Hipcamp (0/"Be the first to review", 1 booking) live-scraped fresh. Google snippet stable at 126 @ 4.9★ (3rd consecutive run — RUN_007/008/009). Facebook 5/100% confirmed via WebSearch. Expedia 8.0 + Dec 2025 review still active per WebSearch. 3 BLOCKERS ongoing (Google JS-blocked run 9, Hotels.com timeout run 9, Airbnb 403 run 9). Dashboard status: ok. No drafts produced.
