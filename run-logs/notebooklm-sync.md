@@ -159,3 +159,29 @@ WARN: Skipped 3 oversized files (>10MB): PRIVATE EVENTS AT RANCHO MOONRISE.pdf (
 2026-04-24 20:08 | scanned=64 added=0 replaced=0 skipped=3 errors=0
 2026-04-25 00:07 | scanned=64 added=0 replaced=0 skipped=4 errors=0
 2026-04-25 04:07 | scanned=64 added=0 replaced=0 skipped=3 errors=0
+2026-04-25 08:09 | scanned=77 added=0 replaced=6 skipped=6 errors=1
+
+<details>
+<summary>Run detail</summary>
+
+**New files synced (with stale copies replaced):**
+- brand/review-reports/2026-04-09-review-report.md (1 stale deleted)
+- brand/gbp-posts/2026-04-15-gbp-profile-fields.md (1 stale deleted)
+- brand/gbp-posts/2026-04-15-gbp-qa-seed.md (1 stale deleted)
+- brand/gbp-posts/2026-04-13-gbp-post.md (2 stale deleted)
+- brand/gbp-posts/2026-04-09-gbp-post.md (1 stale deleted)
+- brand/gbp-posts/2026-04-15-blog12-social-snippets.md (1 stale deleted)
+
+**Errors:**
+- brand/fonts/Monotype Font Software End User License Agreement.html — upload returned 400 Bad Request from notebooklm.google.com. Excluded from state file so next run will retry.
+
+**Skipped (size > 10 MB or unsupported ext):**
+- brand/PRIVATE EVENTS AT RANCHO MOONRISE.pdf (size)
+- brand/review-aggregate.json (ext)
+- brand/INTIMATE EVENTS AT RM.pdf (size)
+- brand/ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf (size)
+- brand/fonts/Americane-Black.otf (ext)
+- brand/fonts/Americane-Bold.otf (ext)
+
+</details>
+
