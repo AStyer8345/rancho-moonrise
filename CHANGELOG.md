@@ -1,5 +1,9 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-25 — Review monitor RUN_009
+
+- Quiet run. No new reviews on any platform; unreplied=0 maintained. TripAdvisor (0/unclaimed) + Hipcamp (0/"Be the first to review", 1 booking) live-scraped fresh. Google snippet stable at 126 @ 4.9★ (3rd consecutive run — RUN_007/008/009). Facebook 5/100% confirmed via WebSearch. Expedia 8.0 + Dec 2025 review still active per WebSearch. 3 BLOCKERS ongoing (Google JS-blocked run 9, Hotels.com timeout run 9, Airbnb 403 run 9). Dashboard status: ok. No drafts produced.
+
 ## 2026-04-24 — Ashley Onsite Meeting Debrief (meeting was 2026-04-23)
 
 - **Meeting record:** Full 79-minute onsite with Ashley captured at `/Users/adamstyer/Documents/Claude/Projects/Rancho Moonrise/meetings/2026-04-23-ashley-onsite.md` (Cowork workspace). Four tracks covered: deal/ownership, operations/financials, marketing wins, live Yelp lead demo.
