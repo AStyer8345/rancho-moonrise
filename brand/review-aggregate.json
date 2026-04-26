@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-04-25T11:38:00Z",
-  "run_number": 9,
-  "note": "RUN_009. No new reviews on any platform. Unreplied=0 maintained (no review-related done-log entries since 2026-04-22; rancho-review-replies RESOLVED 2026-04-15 remains the last review action). Google count/rating STALE (JS-rendered, 9th consecutive — BLOCKER ongoing). WebSearch snippet consistent at 126 @ 4.9★ (same as RUN_007 + RUN_008 — three runs stable, no change). Hotels.com timeout — BLOCKER ongoing (9th, no live attempt this run; search-confirmed 8.0 + Dec 2025 review still active). Airbnb 403 — BLOCKER ongoing (run 9). TripAdvisor live-scraped: 0 reviews, unclaimed. Hipcamp live-scraped: 0 reviews, 'Be the first to review' (1 booking, no review). Facebook: 5 reviews / 100% recommend confirmed via WebSearch. Dashboard status remains ok.",
+  "last_updated": "2026-04-26T13:59:00Z",
+  "run_number": 10,
+  "note": "RUN_010. No new reviews on any platform. Unreplied=0 maintained — only done-log entry since RUN_009 is `rancho-site-daily` SEO PROGRESS line at 2026-04-26 08:05 (not review-related). TripAdvisor live-scraped: 0 reviews, unclaimed (Travelers' Choice noted, no traveler photos). Hipcamp live-scraped: 0 reviews, 'Be the first to review' (1 booking, no review left). Facebook 5 reviews/100% recommend confirmed via WebSearch. Expedia 8.0 confirmed via WebSearch (Hotels.com listing still active). Google count/rating BLOCKER ongoing (10th consecutive — JS-rendered, no API key). Hotels.com timeout BLOCKER ongoing (10th, no live attempt this run). Airbnb 403 BLOCKER ongoing (10th, FLAG_FOR_ADAM). Dashboard status remains ok.",
   "platforms": {
     "google": {
       "count": 127,
@@ -9,23 +9,23 @@
       "unreplied": 0,
       "stale": true,
       "stale_since": "2026-04-09",
-      "stale_run_count": 9,
+      "stale_run_count": 10,
       "blocker": true,
       "blocker_since": "2026-04-17",
       "search_snippet_count": 126,
       "search_snippet_date": "2026-04-25",
-      "search_snippet_note": "WebSearch snippet shows 126 @ 4.9★ — consistent with RUN_007 + RUN_008 (now stable across 3 consecutive runs). Prior stale baseline 127 from 2026-04-09. Snippet precision insufficient to confirm drop; not logging as count change.",
-      "unreplied_note": "Live verification blocked (Google Maps JS-rendered, no API key). Unreplied=0 maintained — no new done-log review entries since 2026-04-22; rancho-review-replies RESOLVED 2026-04-15 remains the last review action.",
+      "search_snippet_note": "WebSearch snippet shows 126 @ 4.9★ — last fetched RUN_009. Not re-queried this run (consistent across RUN_007 + RUN_008 + RUN_009). Prior stale baseline 127 from 2026-04-09. Snippet precision insufficient to confirm drop; not logging as count change.",
+      "unreplied_note": "Live verification blocked (Google Maps JS-rendered, no API key). Unreplied=0 maintained — no new done-log review entries since 2026-04-22; rancho-review-replies RESOLVED 2026-04-15 remains the last review action. Only done-log entry since RUN_009 is SEO-related (rancho-seo-s4 PROGRESS at 2026-04-26 08:05).",
       "last_scrape": null,
       "last_known": "2026-04-09"
     },
     "airbnb": {
       "count": null,
       "rating": null,
-      "note": "Search result still shows possible listing at /rooms/1284193976615696223 ('Glamping Safari Tent 25 mins from downtown Austin, Manor TX'). 403 on direct fetch — BLOCKER since 2026-04-17. No new fetch attempted (403 pattern established, run 9). FLAG_FOR_ADAM.",
+      "note": "Search result still shows possible listing at /rooms/1284193976615696223 ('Glamping Safari Tent 25 mins from downtown Austin, Manor TX'). 403 on direct fetch — BLOCKER since 2026-04-17. No new fetch attempted (403 pattern established, run 10). FLAG_FOR_ADAM.",
       "last_scrape": null,
       "flag": "NEEDS_ADAM_VERIFY",
-      "flag_run_count": 9,
+      "flag_run_count": 10,
       "blocker": true,
       "blocker_since": "2026-04-17"
     },
@@ -35,7 +35,7 @@
       "unreplied": 0,
       "stale": false,
       "listing_url": "https://www.hipcamp.com/en-US/land/texas-rancho-moonrise-dw9hklej",
-      "last_scrape": "2026-04-25T11:38:00Z",
+      "last_scrape": "2026-04-26T13:59:00Z",
       "note": "Live verified via WebFetch. Page shows 'Be the first to review' — zero reviews confirmed. Listing notes 1 booking but no review left by that guest."
     },
     "expedia": {
@@ -46,12 +46,12 @@
       "last_scrape": null,
       "last_confirmed": "2026-04-09",
       "search_confirmed_rating": 8.0,
-      "search_confirmed_date": "2026-04-25",
-      "search_confirmed_note": "WebSearch confirmed Hotels.com listing still active with rating 8.0 and Dec 2025 guest review still surfacing. Hotels.com direct fetch not attempted this run (BLOCKER ongoing — 8 prior consecutive timeouts; search snippet provides degraded but consistent confirmation).",
-      "hotels_com_timeout_count": 9,
+      "search_confirmed_date": "2026-04-26",
+      "search_confirmed_note": "WebSearch confirmed Expedia/Hotels.com listing still active with rating 8.0 surfacing in snippet. Hotels.com direct fetch not attempted this run (BLOCKER ongoing — 9 prior consecutive timeouts; search snippet provides degraded but consistent confirmation).",
+      "hotels_com_timeout_count": 10,
       "blocker": true,
       "blocker_since": "2026-04-17",
-      "note": "Rating 8.0 last confirmed direct-scrape 2026-04-09. Hotels.com direct fetch BLOCKER ongoing (9th run). Dec 2025 guest review still consistent per WebSearch."
+      "note": "Rating 8.0 last confirmed direct-scrape 2026-04-09. Hotels.com direct fetch BLOCKER ongoing (10th run). Listing still active per WebSearch."
     },
     "facebook": {
       "count": 5,
@@ -59,8 +59,8 @@
       "recommend_pct": 100,
       "stale": false,
       "last_scrape": null,
-      "last_confirmed": "2026-04-25",
-      "note": "5 reviews, 100% recommend — confirmed via WebSearch (site:facebook.com query returned '100% recommend rating based on 5 reviews'). Direct page load blocked (JS-rendered). No new reviews detected."
+      "last_confirmed": "2026-04-26",
+      "note": "5 reviews, 100% recommend — confirmed via WebSearch (results returned consistent description 'Rancho Moonrise has a 100% recommendation rating with 5 reviews on Facebook'). Direct page load blocked (JS-rendered). No new reviews detected."
     },
     "tripadvisor": {
       "status": "unclaimed",
@@ -68,8 +68,8 @@
       "rating": null,
       "stale": false,
       "listing_url": "https://www.tripadvisor.com/Hotel_Review-g56224-d33307272-Reviews-Rancho_Moonrise-Manor_Texas.html",
-      "last_scrape": "2026-04-25T11:38:00Z",
-      "note": "Live verified via WebFetch. 0 reviews, unclaimed. 'Claim Your Listing' button visible — 'No reviews for this property yet.'"
+      "last_scrape": "2026-04-26T13:59:00Z",
+      "note": "Live verified via WebFetch. 0 reviews, unclaimed. 'No reviews for this property yet.' / 'Claim Your Listing' visible. Travelers' Choice award noted on page; no traveler photos uploaded."
     },
     "yelp": {
       "status": "listing_exists",

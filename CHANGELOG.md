@@ -786,3 +786,7 @@ Launch-blocker sweep and conversion sharpening across the primary pages, ahead o
 ## 2026-04-24 — Review Monitor RUN_008
 
 - **rancho-review-monitor RUN_008:** Quiet run. Scraped TripAdvisor and Hipcamp live (0 reviews each confirmed). Facebook 5 reviews/100% and Google 126@4.9★ confirmed via WebSearch. Hotels.com timeout 8th consecutive (BLOCKER ongoing). 3 BLOCKERS from RUN_003 all open. No new reviews, unreplied=0 maintained. New: The Knot shows a Feb 26, 2026 wedding review (Haylee L.) — logged, not adding to scope. Dashboard status: ok.
+
+## 2026-04-26 — Review Monitor RUN_010
+
+- **rancho-review-monitor RUN_010:** Quiet run. Scraped TripAdvisor and Hipcamp live via WebFetch (0 reviews each confirmed). Facebook 5 reviews/100% recommend and Expedia 8.0 confirmed via WebSearch. Hotels.com timeout 10th consecutive (BLOCKER ongoing, no live attempt this run). 3 BLOCKERS from RUN_003 all open (Google JS-blocked, Hotels.com timeout, Airbnb 403). No new reviews, unreplied=0 maintained — only done-log entry since RUN_009 is SEO-related (`rancho-seo-s4-schema-breadcrumb-speakable` PROGRESS at 08:05). Dashboard status remains ok.

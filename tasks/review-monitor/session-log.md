@@ -303,3 +303,31 @@ Claims enumerated from persistent surfaces and re-verified:
 **No review drafts produced** — no new reviews detected on any platform.
 
 ---
+
+## RUN_010 — 2026-04-26 08:59 CT
+
+**Summary:** Quiet run. No new reviews detected on any platform. Unreplied=0 maintained — only done-log entry since RUN_009 (2026-04-25) is `rancho-site-daily` `rancho-seo-s4-schema-breadcrumb-speakable` PROGRESS at 2026-04-26 08:05 (SEO-related, not review-related); rancho-review-replies RESOLVED 2026-04-15 remains the last review action. All three BLOCKERS from RUN_003 remain open (Google JS-blocked run 10, Hotels.com timeout run 10 — no live attempt this run, Airbnb 403 run 10). TripAdvisor live-scraped via WebFetch: 0 reviews, unclaimed, "No reviews for this property yet." (Travelers' Choice award noted; no traveler photos uploaded). Hipcamp live-scraped via WebFetch: 0 reviews, "Be the first to review" (1 booking, no review left). Facebook 5 reviews / 100% recommend confirmed via WebSearch ("Rancho Moonrise has a 100% recommendation rating with 5 reviews on Facebook"). Expedia 8.0 confirmed via WebSearch (Hotels.com listing still active in snippet). Dashboard status remains "ok."
+
+**Done-log review-adjacent entries since RUN_009:** none (only entry since RUN_009 is `rancho-site-daily` `rancho-seo-s4-schema-breadcrumb-speakable` PROGRESS at 2026-04-26 08:05 — SEO landing-page schema work, not review-related)
+
+**Re-verify log lines:**
+```
+[2026-04-26 08:59] re-verify google-reviews-count — stale (run 10, BLOCKER ongoing) — live=BLOCKED(JS-rendered) search-snippet=126@4.9★ (last fetched RUN_009, 3 runs stable) prior=127@4.9★ (last verified 2026-04-09)
+[2026-04-26 08:59] re-verify google-unreplied — still_true — live=0(no done-log review entries since 2026-04-22; only entry since RUN_009 is SEO PROGRESS line) prior=0
+[2026-04-26 08:59] re-verify tripadvisor-status — still_true — live=unclaimed/0reviews(WebFetch,"No reviews for this property yet."/"Claim Your Listing") prior=unclaimed/0reviews
+[2026-04-26 08:59] re-verify hipcamp-reviews — still_true — live=0reviews(WebFetch,"Be the first to review",1 booking no review) prior=0reviews
+[2026-04-26 08:59] re-verify expedia-rating — still_true(search) — live=8.0(WebSearch:Hotels.com listing still active) prior=8.0 STALE:2026-04-09 BLOCKER ongoing (run 10)
+[2026-04-26 08:59] re-verify facebook-reviews — still_true — live=5reviews/100%(WebSearch confirmed) prior=5reviews/100%
+[2026-04-26 08:59] re-verify airbnb-listing — unverified (BLOCKER ongoing, no new fetch — 403 pattern established, run 10) prior=POSSIBLE_NEW_LISTING
+```
+
+**Files written this run:**
+- `brand/review-aggregate.json` — updated (run_number 9→10, TripAdvisor + Hipcamp last_scrape refreshed to 2026-04-26T13:59:00Z, Google stale_run_count 9→10, Airbnb flag_run_count 9→10, Hotels.com timeout_count 9→10, Facebook + Expedia search_confirmed_date updated to 2026-04-26)
+- `site/admin/dashboard-state.json` — updated (run_number 9→10, last_run refreshed, flags updated to reflect run 10, status_reason refreshed)
+- `tasks/review-monitor/session-log.md` — this entry
+- `CONTEXT.md` — Last Worked On updated (review-monitor entry replaced)
+- `CHANGELOG.md` — one dated bullet appended
+
+**No review drafts produced** — no new reviews detected on any platform.
+
+---
