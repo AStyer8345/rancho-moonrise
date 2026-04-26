@@ -39,6 +39,27 @@
         return '★'.repeat(n);
     }
 
+    // Build the .event-card__img block from an event row. If the artwork URL
+    // looks like a responsive ladder member (`-800.webp`), derive a srcset
+    // pointing at the `-400.webp` companion so the browser can pick the right
+    // density. The onerror handler hides the wrapper div so a 404'd artwork
+    // shows a clean text-only card instead of a beige "blank box".
+    function buildArtworkBlock(ev) {
+        var url = ev.artwork_url;
+        if (!url) return '';
+        var safeUrl = escapeHtml(url);
+        var safeAlt = escapeHtml((ev.title || 'Event') + ' event artwork');
+        var srcsetAttr = '';
+        var match = /^(.*)-800\.webp$/i.exec(url);
+        if (match) {
+            var stem = escapeHtml(match[1]);
+            srcsetAttr = ' srcset="' + stem + '-400.webp 400w, ' + stem + '-800.webp 800w" sizes="(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw"';
+        }
+        return '<div class="event-card__img">' +
+            '<img src="' + safeUrl + '"' + srcsetAttr + ' alt="' + safeAlt + '" width="600" height="600" loading="lazy" decoding="async" onerror="this.parentElement.style.display=\'none\'">' +
+        '</div>';
+    }
+
     // ---- Load Testimonials into Marquee ----
     function loadTestimonials() {
         var track = document.querySelector('.testimonial-marquee__track');
@@ -105,9 +126,7 @@
                     var top3 = data.slice(0, 3);
                     eventsGrid.innerHTML = top3.map(function (ev) {
                         return '<div class="event-card fade-in is-visible">' +
-                            (ev.artwork_url
-                                ? '<div class="event-card__img"><img src="' + escapeHtml(ev.artwork_url) + '" alt="' + escapeHtml(ev.title) + ' event artwork" width="600" height="600" loading="lazy"></div>'
-                                : '') +
+                            buildArtworkBlock(ev) +
                             '<div class="event-card__body">' +
                                 '<p class="event-card__date">' + formatDate(ev.event_date) + '</p>' +
                                 '<h3 class="event-card__title">' + escapeHtml(ev.title) + '</h3>' +

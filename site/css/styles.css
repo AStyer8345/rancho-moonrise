@@ -331,6 +331,37 @@ p { margin-bottom: 1em; }
     z-index: 2;
 }
 
+/* Pre-logo nav link (e.g., Happenings) — sits to the left of the logo on
+   desktop. Hidden on mobile since the hamburger menu already lists it. */
+.nav__pre-link {
+    display: none;
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--color-white);
+    text-decoration: none;
+    padding: 6px 0;
+    position: relative;
+    transition: color var(--transition);
+    flex-shrink: 0;
+}
+.nav__pre-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: currentColor;
+    transition: width var(--transition);
+}
+.nav__pre-link:hover::after { width: 100%; }
+@media (min-width: 960px) {
+    .nav__pre-link { display: inline-flex; align-items: center; }
+}
+
 .nav__logo-img {
     /* Taller than the 56px nav so it hangs into the hero below */
     height: 104px;
@@ -958,7 +989,9 @@ p { margin-bottom: 1em; }
 .event-card {
     position: relative;
     display: grid;
-    grid-template-columns: auto 1fr;
+    /* `minmax(0, 310px)` caps the image column at 310px so the natural pixel
+       dimensions of large source images don't blow out the auto-track. */
+    grid-template-columns: minmax(0, 310px) minmax(0, 1fr);
     gap: var(--space-sm);
     align-items: start;
     background: rgba(250, 247, 242, 0.92);
@@ -1089,12 +1122,15 @@ p { margin-bottom: 1em; }
 .event-card__img {
     width: min(100%, 310px);
     justify-self: end;
-    align-self: stretch;
+    /* `align-self: start` keeps the image square per its aspect-ratio.
+       The timeline view overrides this to stretch and fill row height. */
+    align-self: start;
     aspect-ratio: 1 / 1;
     border-radius: 20px;
     overflow: hidden;
     background: var(--color-cream-dark);
 }
+.event-card--timeline .event-card__img { align-self: stretch; }
 
 .event-card__img img {
     width: 100%;
@@ -1533,6 +1569,17 @@ p { margin-bottom: 1em; }
 }
 
 /* ---------- Responsive ---------- */
+
+/* The base events-grid (homepage upcoming-events block). Stacks vertically
+   as full-width cards. The responsive `grid-template-columns` rules below are
+   dormant — they would only kick in if `display: grid` is added here. Kept
+   as a single-column stack since each card is wide enough to lay out
+   image-left + body-right comfortably. */
+.events-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
 
 /* Tablet */
 @media (min-width: 640px) {
@@ -2197,7 +2244,10 @@ p { margin-bottom: 1em; }
         padding-bottom: 0;
     }
 
-    .event-card {
+    /* Timeline-style cards on /events have 3 children (date-badge | body | image)
+       so they need a 3-column grid. The homepage events-grid uses the same
+       .event-card class with only 2 children — keep that scoped to its own rule. */
+    .event-card--timeline {
         grid-template-columns: auto minmax(0, 1fr) minmax(220px, 300px);
         gap: var(--space-md);
         align-items: center;
