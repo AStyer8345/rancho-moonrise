@@ -81,6 +81,48 @@
     }
     </script>
 
+    <!-- Schema: FAQPage — targets AEO Q&A block for AI engines and rich results -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is a safari tent?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A safari tent is a permanent canvas-walled lodging structure on a wooden platform, designed for glamping. It looks like a tent from the outside but functions like a hotel room inside — real bed, climate control, electric lighting, and weatherproofing. At Rancho Moonrise, every safari tent has a queen or king bed, air conditioning, heat, and a mini fridge. No gear, no setup, no sleeping bags."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How is a safari tent different from a regular camping tent?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A camping tent is portable gear you pitch yourself; a safari tent is a permanent structure built on a wooden deck with full furnishings and utilities. Safari tents at Rancho Moonrise include real beds with linens, climate control, lighting, mini fridges, and access to the resort pool, fire pits, and The Lodge. You arrive with a duffel and check in like a hotel."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Are safari tents heated and air-conditioned?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Every safari tent at Rancho Moonrise has both air conditioning and heating — comfortable year-round, including Texas summers and the occasional winter cold front. Real beds, towels, linens, and toiletries are included. The Premium Safari Tent adds a private ensuite bathroom; the Double and Family configurations use the on-site bathhouse."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Where can I find a safari tent near Austin, Texas?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Rancho Moonrise is the closest full-service safari tent destination to downtown Austin — about 20 minutes east via US-290 or TX-71, at 20117 Lockwood Road in Manor, TX 78653. The 36-acre property has multiple safari tent configurations, hand-crafted cabins, a resort-style pool, fire pits, and The Lodge on-site. Most other Texas glamping options are an hour or more out."
+                }
+            }
+        ]
+    }
+    </script>
+
     <!-- Schema: SpeakableSpecification — targets AEO answer blocks for AI engines -->
     <script type="application/ld+json">
     {
@@ -90,7 +132,7 @@
         "url": "https://ranchomoonrise.com/safari-tents-near-austin/",
         "speakable": {
             "@type": "SpeakableSpecification",
-            "cssSelector": [".aeo-block", ".page-header h1", ".page-header p"]
+            "cssSelector": [".aeo-block", ".page-header h1", ".page-header p", ".faq-question"]
         }
     }
     </script>
@@ -274,6 +316,50 @@
         <p>Rancho Moonrise sits on 36 acres at 20117 Lockwood Road — approximately 20 minutes east of downtown Austin via US-290 or TX-71. Close enough to pop into Austin for dinner, far enough that you actually feel like you've left.</p>
         <p>Most guests make it a full weekend. Arrive Friday evening, hit the pool Saturday, catch a live music event if one's on, and head back Sunday refreshed. The drive is short enough that you can do it on a whim.</p>
         <p style="margin-top: var(--space-sm);"><strong>Noise curfew:</strong> 9:30 PM &middot; <strong>Check-in:</strong> 3–5 PM &middot; <strong>Check-out:</strong> 11 AM</p>
+    </div>
+</section>
+
+<!-- FAQ — grounds the FAQPage schema in visible Q&A content -->
+<section class="section section--alt" aria-label="Common safari tent questions">
+    <div class="container container--narrow">
+        <span class="section-label reveal">Common Questions</span>
+        <h2>Safari Tents — Common Questions</h2>
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">What is a safari tent?</button>
+            <div class="faq-answer" role="region">
+                <div class="faq-answer__inner">
+                    <p>A safari tent is a permanent canvas-walled lodging structure on a wooden platform — it looks like a tent on the outside but functions like a hotel room inside. Real bed, climate control, electric lighting, and weatherproofing. At Rancho Moonrise, every safari tent comes with a queen or king bed, A/C, heat, and a mini fridge. No gear. No setup. No sleeping bags.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">How is a safari tent different from a regular camping tent?</button>
+            <div class="faq-answer" role="region">
+                <div class="faq-answer__inner">
+                    <p>A camping tent is portable gear you pitch yourself; a safari tent is a permanent structure built on a wooden deck with full furnishings and utilities. Our safari tents include real beds with linens, climate control, lighting, mini fridges, and access to the resort pool, fire pits, and The Lodge. You arrive with a duffel and check in like a hotel.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">Are safari tents heated and air-conditioned?</button>
+            <div class="faq-answer" role="region">
+                <div class="faq-answer__inner">
+                    <p>Yes — every safari tent has both A/C and heat. Comfortable year-round, including Texas summers and the occasional winter cold front. Real beds, towels, linens, and toiletries are included. The Premium Safari Tent adds a private ensuite bathroom; the Double and Family configurations use the on-site bathhouse.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">Where can I find a safari tent near Austin, Texas?</button>
+            <div class="faq-answer" role="region">
+                <div class="faq-answer__inner">
+                    <p>Rancho Moonrise is the closest full-service safari tent destination to downtown Austin — about 20 minutes east via US-290 or TX-71. We sit on 36 acres with multiple safari tent configurations, hand-crafted cabins, a resort-style pool, fire pits, and The Lodge on-site. Most other Texas glamping options are an hour or more out.</p>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 

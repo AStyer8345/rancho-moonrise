@@ -257,6 +257,7 @@ All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms. Li
 - [x] Blog post #18 — "Yoga Retreat Near Austin Texas" — DONE 2026-04-24. Targets yoga/wellness keyword cluster using Yoga & Mimosas event series (May 31, Jun 28, Jul 26, Aug 30). AEO block, FAQPage (4 Q&A), SpeakableSpec, BreadcrumbList. CTAs to events + host-your-event. S1 now 18 posts.
 - [x] ReservePage schema on pool-day-pass-austin.html — DONE 2026-04-22. Dual type `["WebPage","ReservePage"]` + `ReserveAction` potentialAction → ResortPass URL. Time-sensitive (Lucky Arrow window closes May 1).
 - [x] Rotate past Free Friday Apr 24 → May 29 — DONE 2026-04-25. events.html Event schema, static card, and EVENTS JS array all updated. sitemap lastmod bumped. Apr 26 Yoga & Mimosas left as-is (still upcoming).
+- [x] Add FAQPage schema + visible FAQ to safari-tents-near-austin.html — DONE 2026-04-26. Closes the only gap in the SEO cluster (other landing pages already had FAQPage). 4 questions, BlogPosting-style answers. Speakable cssSelector expanded. Sitemap lastmod bumped to 2026-04-26.
 
 ### NEEDS ADAM — Review monitor flags (from 2026-04-15 rancho-review-monitor run)
 - [ ] **Verify possible Airbnb listing** — search surfaced `/rooms/1284193976615696223` ("Glamping Safari Tent 25 mins from downtown Austin, Manor TX"). April 9 baseline said no Airbnb listing. Confirm if this is a Rancho Moonrise listing — if yes, add to review coverage scope. (Page returned 403 when fetched by agent.)

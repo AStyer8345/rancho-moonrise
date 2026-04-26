@@ -1,5 +1,14 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-26 (SEO daily) — FAQPage schema + visible FAQ on safari-tents
+
+- **`safari-tents-near-austin.html`** was the only landing page in the SEO cluster missing FAQPage schema. Audit surfaced this gap (vs. things-to-do-manor-tx, glamping-vs-camping, pool-day-pass-austin, things-to-do-near-austin-with-kids — all of which have it). Closing it before DNS cutover so the structured-data signal lands on first crawl.
+- **Added FAQPage JSON-LD** between BreadcrumbList and SpeakableSpecification blocks: 4 questions (`What is a safari tent?`, `How is a safari tent different from a regular camping tent?`, `Are safari tents heated and air-conditioned?`, `Where can I find a safari tent near Austin, Texas?`). Answers mirror the existing on-page copy — A/C + heat in every tent, queen/king bed, mini fridge, 36 acres, 20 min east of downtown via US-290 / TX-71, Manor TX 78653 (in schema body, not surface copy — per Ashley's preference). All 4 JSON-LD blocks parse clean (LodgingBusiness, BreadcrumbList, FAQPage, WebPage/Speakable).
+- **Added visible FAQ section** between the Location section and Social-Proof CTA, so the FAQPage schema is grounded in real on-page Q&A (Google's prerequisite for FAQ rich results — schema without visible content risks a manual action). Uses the standard `.faq-item` / `.faq-question` / `.faq-answer` markup; `main.js:80` already wires up the accordion toggle for it without any JS change.
+- **Speakable cssSelector expanded** from `[".aeo-block", ".page-header h1", ".page-header p"]` to also include `.faq-question`, so AI-engine speakable extraction picks up the new Q&A.
+- **`sitemap.xml`** — `safari-tents-near-austin/` lastmod bumped 2026-04-13 → 2026-04-26 to flag the structural change to crawlers.
+- **No HTML or content changes elsewhere.** Header/footer/nav untouched. No banned voice terms introduced ("luxury", "Hill Country", "Manor" as place descriptor in body copy — Manor only appears in the schema FAQPage answer per the agreed rule).
+
 ## 2026-04-25 (evening) — CRM-valid event_type mapping + Calendly URLs in static HTML
 
 - **`api/inquiry.js` event_type mapping** — replaced the old map that emitted `general` and `event_other` (both rejected by the CRM enum) with a normalizer that always lands on a CRM-valid value: `wedding | private_event | glamping | pool_day_pass | corporate | other`. Inquiry-type heuristics: `wedding`→wedding, `pool`→pool_day_pass, `accommodation/stay/glamping`→glamping, `event` + form dropdown (`corporate`/`conference`→corporate, `private`/`birthday`→private_event, `festival`/`retreat`/`other`/blank→private_event or other), unknown→other. Verified with a 17-case mapping test (17/17 pass).
