@@ -766,8 +766,10 @@ p { margin-bottom: 1em; }
     aspect-ratio: 1 / 1;
     overflow: hidden;
     border-radius: 8px;
-    /* Pine matches section--pine so any letterbox on non-square slides blends in */
-    background: var(--color-pine);
+    /* Teal-deep matches the wellness `section--teal` background so any
+       letterbox on non-square slides blends in (was pine when the section
+       used --color-pine). */
+    background: var(--color-teal-deep);
 }
 
 .event-slideshow__slide {
