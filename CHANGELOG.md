@@ -1,5 +1,13 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-25 (evening) — CRM-valid event_type mapping + Calendly URLs in static HTML
+
+- **`api/inquiry.js` event_type mapping** — replaced the old map that emitted `general` and `event_other` (both rejected by the CRM enum) with a normalizer that always lands on a CRM-valid value: `wedding | private_event | glamping | pool_day_pass | corporate | other`. Inquiry-type heuristics: `wedding`→wedding, `pool`→pool_day_pass, `accommodation/stay/glamping`→glamping, `event` + form dropdown (`corporate`/`conference`→corporate, `private`/`birthday`→private_event, `festival`/`retreat`/`other`/blank→private_event or other), unknown→other. Verified with a 17-case mapping test (17/17 pass).
+- **Calendly placeholders now have real `href` in static HTML** (no longer relying on JS to rewrite at runtime). 11 link instances updated across `weddings.html` (4), `contact.html` (5), `host-your-event.html` (2): `data-calendly="tour"` → `https://calendly.com/rancho_moonrise/connect`, `data-calendly="call"` → `https://calendly.com/monet-b30w/30min`, both with `target="_blank" rel="noopener"`. `data-calendly="virtual"` (no Calendly URL yet — NEEDS ADAM) routes to `/pages/contact.html?intent=wedding` (same fallback the JS handler used). The `main.js` handler is kept as defense-in-depth for any future placeholder added without an href.
+- Hidden `inquiry_type` audit — already-correct: `weddings.html` `wedding`, `host-your-event.html` `event`, `contact.html` wedding/event/general forms each tagged. No edits needed; CONTEXT had this fixed earlier today.
+- `form action="#"` left intentionally — the submit handler in `main.js` keys on `form[action="#"]` as its selector. Replacing it with a real action breaks the JS-side `/api/inquiry` submission.
+- **No commit** — changes left unstaged for Adam's review.
+
 ## 2026-04-25 — Pre-launch CRO/QA pass on the Vercel site
 
 Launch-blocker sweep and conversion sharpening across the primary pages, ahead of the DNS cutover from BofillTech to Vercel.

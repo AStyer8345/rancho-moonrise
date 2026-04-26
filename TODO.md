@@ -1,5 +1,10 @@
 # Rancho Moonrise — TODO
-Last updated: 2026-04-25 (pre-launch CRO/QA pass — Calendly wired, mobile CTAs page-specific, forms hardened, voice scrubbed, trust bar live)
+Last updated: 2026-04-25 (evening — CRM-valid inquiry mapping + Calendly URLs hard-wired into static HTML)
+
+## ✅ DONE 2026-04-25 (evening) — Routing + Calendly cleanup
+
+1. **`api/inquiry.js` event_type mapping rewritten** — no more CRM-invalid `general` / `event_other`. Always maps to one of `wedding | private_event | glamping | pool_day_pass | corporate | other`. 17/17 unit cases pass.
+2. **Calendly placeholder URLs hard-wired in HTML** across `weddings.html` (4), `contact.html` (5), `host-your-event.html` (2). `tour` → `calendly.com/rancho_moonrise/connect`, `call` → `calendly.com/monet-b30w/30min`, both with `target="_blank" rel="noopener"`. `virtual` still falls back to `/pages/contact.html?intent=wedding` until Adam supplies a Calendly URL. Crawlers and no-JS users now get correct destinations without depending on `main.js`.
 
 ## ✅ DONE 2026-04-25 — Pre-launch CRO/QA pass
 

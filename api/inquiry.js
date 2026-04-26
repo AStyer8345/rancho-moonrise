@@ -13,15 +13,44 @@
 const CRM_URL = () => process.env.RANCHO_CRM_WEBHOOK_URL;
 const CRM_KEY = () => process.env.RANCHO_API_KEY;
 
-// event_type on the CRM is a free-form text column, but we normalize the three
-// form types to stable values so reporting doesn't fracture.
+// CRM `event_type` is a free-form text column but the TypeScript types only
+// know wedding|private_event|glamping|pool_day_pass|corporate|other. Map every
+// form-side value into one of those so Pipeline/Today/reporting stay clean.
+const CRM_EVENT_TYPES = new Set([
+  'wedding',
+  'private_event',
+  'glamping',
+  'pool_day_pass',
+  'corporate',
+  'other',
+]);
+
+// Form dropdown values → CRM enum. Anything not in this map falls through to 'other'.
+const FORM_EVENT_TYPE_MAP = {
+  corporate:  'corporate',
+  conference: 'corporate',
+  private:    'private_event',
+  birthday:   'private_event',
+  festival:   'other',
+  retreat:    'other',
+  other:      'other',
+};
+
 function mapEventType(inquiryType, formEventType) {
   if (inquiryType === 'wedding') return 'wedding';
-  if (inquiryType === 'general') return 'general';
-  if (inquiryType === 'event') {
-    // Event form has its own dropdown — prefer the user's choice, fall back.
-    return (formEventType || '').trim() || 'event_other';
+  if (inquiryType === 'pool')    return 'pool_day_pass';
+  if (inquiryType === 'accommodation' || inquiryType === 'stay' || inquiryType === 'glamping') {
+    return 'glamping';
   }
+  if (inquiryType === 'event') {
+    const v = (formEventType || '').trim().toLowerCase();
+    if (FORM_EVENT_TYPE_MAP[v]) return FORM_EVENT_TYPE_MAP[v];
+    // Event inquiry without a dropdown choice — default to private_event (the
+    // most common bucket) instead of the old 'event_other' which the CRM rejects.
+    return 'private_event';
+  }
+  // Last-ditch: if a future form ever sends a CRM-valid value directly, honor it.
+  if (CRM_EVENT_TYPES.has(inquiryType)) return inquiryType;
   return 'other';
 }
 
