@@ -357,6 +357,10 @@ p { margin-bottom: 1em; }
     background: currentColor;
     transition: width var(--transition);
 }
+/* Override the global `a:hover { color: var(--color-orange-dark) }` so the
+   pre-link stays white on the terracotta nav bg instead of fading into it. */
+.nav__pre-link:hover,
+.nav__pre-link:focus { color: var(--color-white); }
 .nav__pre-link:hover::after { width: 100%; }
 @media (min-width: 960px) {
     .nav__pre-link { display: inline-flex; align-items: center; }
