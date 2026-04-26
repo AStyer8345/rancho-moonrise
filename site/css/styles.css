@@ -36,6 +36,8 @@
     --color-coral: #DE8556;          /* Coral — brand guide */
     --color-sage: #8D9B79;           /* Sage — brand guide */
     --color-pine: #31735A;           /* Pine — brand guide */
+    --color-teal: #1FA1B6;           /* Cerulean — brand guide (mood color, used for teal sections) */
+    --color-teal-deep: #0E6A7A;      /* Deeper Cerulean for broad section backgrounds — mirrors how --color-pine has a darker companion */
     --color-sunrise: #F9A67D;        /* Sunrise — brand guide */
     --color-cream: #F2E9DB;          /* White Denim */
     --color-cream-dark: #e4d9c8;
@@ -194,6 +196,20 @@ p { margin-bottom: 1em; }
 .section--terracotta h2, .section--terracotta h3 { color: var(--color-white); }
 .section--terracotta .section-label { color: var(--color-cream-dark); }
 .section--terracotta p, .section--terracotta .split__content p { color: rgba(255, 255, 255, 0.96); }
+
+/* Teal — Cerulean from the brand mood palette. Two depths so the homepage can
+   keep its visual hierarchy after Ashley swapped out the green:
+     .section--teal       → deep teal (companion to --color-pine's darker shade)
+     .section--cerulean   → mid-tone Cerulean (companion to --color-sage) */
+.section--teal { background: var(--color-teal-deep); color: var(--color-white); }
+.section--teal h2, .section--teal h3 { color: var(--color-white); }
+.section--teal .section-label { color: var(--color-orange-light); }
+.section--teal p, .section--teal .event-card__desc, .section--teal .split__content p { color: rgba(255, 255, 255, 0.96); }
+
+.section--cerulean { background: var(--color-teal); color: var(--color-white); }
+.section--cerulean h2, .section--cerulean h3 { color: var(--color-white); }
+.section--cerulean .section-label { color: var(--color-cream-dark); }
+.section--cerulean p, .section--cerulean .split__content p { color: var(--color-text); }
 
 /* ---------- Buttons — Outline style with fill hover ---------- */
 .btn {
