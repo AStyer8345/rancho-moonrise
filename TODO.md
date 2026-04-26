@@ -1,5 +1,28 @@
 # Rancho Moonrise — TODO
-Last updated: 2026-04-23 (Ashley onsite meeting — see `/Users/adamstyer/Documents/Claude/Projects/Rancho Moonrise/meetings/2026-04-23-ashley-onsite.md`)
+Last updated: 2026-04-25 (pre-launch CRO/QA pass — Calendly wired, mobile CTAs page-specific, forms hardened, voice scrubbed, trust bar live)
+
+## ✅ DONE 2026-04-25 — Pre-launch CRO/QA pass
+
+Launch-blocker sweep across the Vercel site ahead of DNS cutover. Full breakdown in CHANGELOG.md.
+
+1. **Calendly placeholders wired to real URLs** — `tour`→`calendly.com/rancho_moonrise/connect`, `call`→`calendly.com/monet-b30w/30min`. `virtual` (30-min walkthrough) has no URL yet — falls back to `/pages/contact.html?intent=wedding` (form + phone fallback intact).
+2. **Page-specific mobile sticky CTAs** — homepage "Plan an Event", weddings "Send a Wedding Inquiry", host-your-event "Send an Event Inquiry", accommodations + safari-tents "Check Availability", contact "Call 737-291-1260", pool already correct.
+3. **Form hardening** — phone required on wedding/event forms with auto-attached asterisk; `page_path` / `source_url` / `submitted_at` / `referrer` hidden fields stamped at submit; `host-your-event.html` form's missing `inquiry_type=event` hidden input added.
+4. **Risky claims softened** across contact, weddings, host-your-event — pricing-frame language replaces "we respond immediately" / "we'll send package details right away" / "within 2 hours" / hard bar pricing tiers ($7-$15/pp/hr).
+5. **Analytics scaffold** — `window.rmTrack` + click auto-binder for `cloudbeds_click` / `resortpass_click` / `calendly_click` / `phone_click` / `email_click` / `form_submit_success` / `form_submit_error` / `wedding_inquiry_submit` / `event_inquiry_submit` / `general_inquiry_submit`. Auto-tags by URL pattern so nav/footer Book Now links emit conversions site-wide. **NEEDS ADAM:** GA4 measurement ID or GTM container ID.
+6. **Voice scrub** on primary pages — all "50 overnight guests" / "Multiple Ceremony Sites" / "$3K bar package" specifics removed; replaced with "your wedding party" / "Unlimited Ceremony Layouts" / venue-mandatory bar policy from VOICE-GUIDE.
+7. **Stale event QA** — `index.html` static event grid Apr 24 Free Friday → May 29 (live Supabase hydrator unaffected, this is the no-JS / SEO fallback).
+8. **Phase 2 CRO improvements:**
+   - Homepage trust bar near top + hero CTAs reordered to lead "Plan an Event"
+   - Wedding page "What Drives Wedding Pricing" + bar-policy section
+   - Private events page "What Drives Event Pricing" + bar-policy section + dual hero CTAs
+   - Accommodations "Good to Know — Before You Book" objection-answers block (bathrooms, A/C, pool, parking, pets, check-in/out, alcohol, quiet hours)
+
+**Verified locally** at desktop + mobile (375×812) on homepage, weddings, host-your-event, accommodations, contact, events. No console errors. Calendly resolution confirmed via DOM eval. Phone-required + asterisk attachment confirmed. Local `/api/inquiry` returns 404 because `server.js` doesn't proxy serverless functions (production webhook only runs on Vercel) — intentional, no fake leads submitted.
+
+**NEEDS ADAM follow-ups (logged in CONTEXT.md "What's Next"):**
+- [ ] **Provide GA4 measurement ID or GTM container ID** — site already emits all conversion events through `window.rmTrack`. Wiring GA4/GTM is a single `<script>` in the page head.
+- [ ] **Provide Calendly URL for 30-min virtual wedding walkthrough** — once you have it, add the URL to `CALENDLY_URLS.virtual` in `site/js/main.js`. Two link instances will pick it up automatically (`weddings.html:450`, `contact.html:216`). No HTML edits required.
 
 ## ✅ DONE 2026-04-21 — Admin Galleries Build + 4-Page Photo Hydration
 

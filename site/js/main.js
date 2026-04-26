@@ -306,28 +306,115 @@
         }
     }
 
-    // ---------- Inquiry / Scheduling fallbacks ----------
+    // ---------- Analytics tracker ----------
+    // Single emit point for all conversion events. Pushes to dataLayer when
+    // GTM is loaded, calls gtag() when GA4 is loaded, and always console.debugs
+    // so events are visible during local QA. Safe with no analytics wired.
+    function rmTrack(event, props) {
+        try {
+            var payload = Object.assign({ event: event }, props || {});
+            if (window.dataLayer && typeof window.dataLayer.push === 'function') {
+                window.dataLayer.push(payload);
+            }
+            if (typeof window.gtag === 'function') {
+                window.gtag('event', event, props || {});
+            }
+            if (window.console && console.debug) {
+                console.debug('[rmTrack]', event, props || {});
+            }
+        } catch (err) { /* analytics must never break the page */ }
+    }
+    window.rmTrack = rmTrack;
+
+    // Auto-bind clicks on any element flagged with [data-event].
+    // Also auto-tag known link patterns (cloudbeds, resortpass, tel:, mailto:)
+    // so the nav/footer Book Now / Pool Pass / phone links emit conversions
+    // without us having to touch every page individually.
+    function inferEventName(el) {
+        var explicit = el.getAttribute('data-event');
+        if (explicit) return explicit;
+        var href = el.getAttribute('href') || '';
+        if (!href) return null;
+        if (href.indexOf('cloudbeds.com') !== -1) return 'cloudbeds_click';
+        if (href.indexOf('resortpass.com') !== -1) return 'resortpass_click';
+        if (href.indexOf('tel:') === 0) return 'phone_click';
+        if (href.indexOf('mailto:') === 0) return 'email_click';
+        return null;
+    }
+
+    document.addEventListener('click', function (e) {
+        var el = e.target.closest && e.target.closest('a, button, [data-event]');
+        if (!el) return;
+        var name = inferEventName(el);
+        if (!name) return;
+        var href = el.getAttribute('href') || '';
+        rmTrack(name, {
+            href: href,
+            label: (el.textContent || '').trim().slice(0, 80),
+            source: el.getAttribute('data-cta-source') || 'unknown'
+        });
+    }, true);
+
+    // ---------- Calendly link wiring ----------
+    // Real Calendly URLs (verified in environment). The 30-min virtual
+    // walkthrough does not yet have its own Calendly link — it falls back
+    // to the wedding inquiry form so couples still convert. See NEEDS ADAM
+    // in TODO.md to add a virtual-only Calendly URL when Ashley/Monet sets one up.
+    var CALENDLY_URLS = {
+        tour:    'https://calendly.com/rancho_moonrise/connect',
+        call:    'https://calendly.com/monet-b30w/30min',
+        virtual: '/pages/contact.html?intent=wedding'
+    };
+
     document.querySelectorAll('.calendly-placeholder').forEach(function (link) {
         var type = link.getAttribute('data-calendly');
-        var fallbackHref = '/pages/contact.html?intent=general';
-
-        if (type === 'tour' || type === 'virtual') {
-            fallbackHref = '/pages/contact.html?intent=wedding';
-        } else if (type === 'call') {
-            fallbackHref = 'tel:+17372911260';
-        }
+        var target = CALENDLY_URLS[type] || '/pages/contact.html?intent=general';
+        var isExternal = target.indexOf('http') === 0;
 
         if (!link.getAttribute('href') || link.getAttribute('href') === '#') {
-            link.setAttribute('href', fallbackHref);
+            link.setAttribute('href', target);
         }
 
-        if (fallbackHref.indexOf('tel:') === 0) {
+        if (isExternal) {
+            link.setAttribute('target', '_blank');
+            link.setAttribute('rel', 'noopener');
+        } else {
             link.removeAttribute('target');
             link.removeAttribute('rel');
+        }
+
+        // Attach analytics — skip the data-event auto-binder rewrite so each
+        // calendly type is reported with its slug.
+        if (!link.hasAttribute('data-event')) {
+            link.setAttribute('data-event', 'calendly_click');
+            link.setAttribute('data-calendly-type', type || 'unknown');
         }
     });
 
     document.querySelectorAll('form[action="#"]').forEach(function (form) {
+        // Stamp hidden attribution + timestamp fields once at submit time.
+        // Helps the CRM tell apart inquiries that came from the wedding page
+        // vs. a blog post vs. a paid landing page without needing a separate
+        // analytics tie-back.
+        var inquiryTypeInput = form.querySelector('input[name="inquiry_type"]');
+        var inquiryType = inquiryTypeInput ? inquiryTypeInput.value : 'general';
+
+        // Make phone required on wedding/event inquiries. Speed-to-lead is
+        // limited without a phone, and forms are already getting submitted
+        // without it.
+        if (inquiryType === 'wedding' || inquiryType === 'event') {
+            var phoneField = form.querySelector('input[name="phone"]');
+            if (phoneField && !phoneField.required) {
+                phoneField.required = true;
+                phoneField.setAttribute('aria-required', 'true');
+                var phoneLabel = form.querySelector('label[for="' + phoneField.id + '"]');
+                if (phoneLabel && phoneLabel.textContent.indexOf('*') === -1) {
+                    phoneLabel.innerHTML = phoneLabel.innerHTML +
+                        ' <span aria-hidden="true" style="color: var(--color-orange-dark);">*</span>';
+                }
+            }
+        }
+
         form.addEventListener('submit', function (e) {
             e.preventDefault();
 
@@ -349,6 +436,14 @@
                 if (!str) return;
                 payload[field.name] = str;
             });
+
+            // Attribution fields — added at submit time so they always reflect
+            // the page the user actually submitted from.
+            payload.page_path     = window.location.pathname;
+            payload.source_url    = window.location.href;
+            payload.submitted_at  = new Date().toISOString();
+            payload.referrer      = document.referrer || '';
+            if (!payload.inquiry_type) payload.inquiry_type = inquiryType;
 
             var status = form.querySelector('.form-status');
             if (!status) {
@@ -377,7 +472,9 @@
                 });
             }).then(function (result) {
                 if (result.ok) {
-                    status.innerHTML = 'Thanks! We got your inquiry and Ashley or Monet will reach out shortly. If you don\'t hear from us within a business day, call <a href="tel:+17372911260">737-291-1260</a>.';
+                    status.innerHTML = 'Thanks — we got your inquiry. Ashley or Monet will follow up shortly with availability and the right next steps. If you don\'t hear from us within a business day, call <a href="tel:+17372911260" data-event="phone_click">737-291-1260</a>.';
+                    rmTrack('form_submit_success', { inquiry_type: inquiryType });
+                    rmTrack(inquiryType + '_inquiry_submit', { page_path: payload.page_path });
                     form.reset();
                     if (submitBtn) {
                         submitBtn.textContent = 'Sent ✓';
@@ -385,8 +482,9 @@
                     }
                 } else {
                     var msg = (result.body && result.body.error) ||
-                        'Something went wrong. Please call 737-291-1260 or email events@ranchomoonrise.com.';
-                    status.innerHTML = msg + ' <a href="tel:+17372911260">Call 737-291-1260</a> or <a href="mailto:events@ranchomoonrise.com">events@ranchomoonrise.com</a>.';
+                        'Something went wrong on our side. Please call 737-291-1260 or email events@ranchomoonrise.com.';
+                    status.innerHTML = msg + ' <a href="tel:+17372911260" data-event="phone_click">Call 737-291-1260</a> or <a href="mailto:events@ranchomoonrise.com" data-event="email_click">events@ranchomoonrise.com</a>.';
+                    rmTrack('form_submit_error', { inquiry_type: inquiryType, status: result.status });
                     if (submitBtn) {
                         submitBtn.disabled = false;
                         submitBtn.textContent = submitBtnLabel || 'Send';
@@ -394,7 +492,8 @@
                 }
             }).catch(function (err) {
                 console.error('inquiry submit failed', err);
-                status.innerHTML = 'We couldn\'t reach our inquiry system. Please call <a href="tel:+17372911260">737-291-1260</a> or email <a href="mailto:events@ranchomoonrise.com">events@ranchomoonrise.com</a>.';
+                status.innerHTML = 'We couldn\'t reach our inquiry system. Please call <a href="tel:+17372911260" data-event="phone_click">737-291-1260</a> or email <a href="mailto:events@ranchomoonrise.com" data-event="email_click">events@ranchomoonrise.com</a>.';
+                rmTrack('form_submit_error', { inquiry_type: inquiryType, status: 'network' });
                 if (submitBtn) {
                     submitBtn.disabled = false;
                     submitBtn.textContent = submitBtnLabel || 'Send';
@@ -426,7 +525,7 @@
             { section: 'wedding', keywords: ['wedding', 'weddings', 'ceremony', 'reception', 'bride', 'groom', 'marry', 'engaged', 'engagement', 'elope', 'elopement'],
               answer: 'We\'d love to host your wedding. Rancho Moonrise offers <strong>exclusive full-ranch access</strong> for weddings — no outside guests on the property. Unlimited ceremony options across the ranch, room for large guest counts, and on-site accommodations for your wedding party. <a href="/pages/contact.html?intent=wedding">Start your wedding inquiry &rarr;</a>' },
             { section: 'wedding', keywords: ['wedding package', 'wedding price', 'wedding cost', 'how much wedding', 'wedding pricing', 'wedding rate', 'wedding budget', 'cost of wedding', 'price of wedding', 'wedding quote'],
-              answer: 'Wedding packages include full exclusive ranch access, unlimited ceremony options, the Event Barn, and on-site accommodations for your wedding party. For pricing, <a href="/pages/contact.html?intent=wedding">submit a wedding inquiry</a> or call <a href="tel:+17372911260">737-291-1260</a> — we\'ll send you a detailed package within 2 hours.' },
+              answer: 'Wedding pricing depends on date, guest count, bar package, lodging, and full-ranch access. The fastest way to get an accurate quote is a venue tour — we walk the property and match you to the right package. <a href="/pages/contact.html?intent=wedding">Send a wedding inquiry</a> or call <a href="tel:+17372911260">737-291-1260</a> and we\'ll follow up with availability and next steps.' },
             { section: 'wedding', keywords: ['ceremony site', 'ceremony option', 'where ceremony', 'venue option'],
               answer: 'We offer <strong>unlimited ceremony options</strong> across the property — from the Rustic Corral surrounded by wildflowers, to the Event Barn (modern, climate-controlled), to poolside, to open Texas fields with panoramic views. Each creates a completely different atmosphere. <a href="/pages/weddings.html#ceremony-sites">Learn more &rarr;</a>' },
             { section: 'wedding', keywords: ['capacity', 'how many', 'guest count', 'guests', 'max', 'maximum', 'seat'],
@@ -440,7 +539,7 @@
             { section: 'stay', keywords: ['book', 'reservation', 'reserve', 'availability', 'available'],
               answer: 'You can check real-time availability and book directly: <a href="https://hotels.cloudbeds.com/en/reservation/5tzv1r" target="_blank"><strong>Book your stay &rarr;</strong></a>. For weddings and events, <a href="/pages/contact.html">contact us</a> for custom availability.' },
             { section: 'stay', keywords: ['price', 'cost', 'rate', 'per night', 'nightly', 'how much', 'pricing'],
-              answer: 'Nightly rates vary by accommodation type and season. Check current pricing and availability on our <a href="https://hotels.cloudbeds.com/en/reservation/5tzv1r" target="_blank">booking page</a>. For wedding and event pricing, <a href="/pages/contact.html">contact our team</a> — we\'ll send details within 2 hours.' },
+              answer: 'Nightly rates vary by accommodation type and season. Check current pricing and availability on our <a href="https://hotels.cloudbeds.com/en/reservation/5tzv1r" target="_blank">booking page</a>. For wedding and event pricing, <a href="/pages/contact.html">send us an inquiry</a> and we\'ll follow up with details — a venue tour is the fastest way to get an accurate quote.' },
 
             // Events
             { section: 'event', keywords: ['event', 'corporate', 'retreat', 'birthday', 'party', 'conference', 'festival', 'host'],
@@ -448,7 +547,7 @@
             { section: 'event', keywords: ['event barn', 'barn', 'indoor', 'climate control'],
               answer: 'The <strong>Event Barn</strong> is our modern, climate-controlled indoor venue. Flexible layout for presentations, seated dinners, cocktail receptions, and dance floors. Beautiful ranch aesthetic with all the infrastructure you need.' },
             { section: 'event', keywords: ['bar', 'drinks', 'cocktail', 'lounge', 'beverage', 'alcohol', 'beer', 'wine'],
-              answer: 'The Lodge serves beer, wine, and beverages for overnight guests and event attendees. For private events and weddings, all alcohol must be purchased through the venue — no outside alcohol. Bar packages start at <strong>$7/pp/hr</strong> (beer &amp; wine) up to <strong>$15/pp/hr</strong> (premium spirits). 20% gratuity applies. <a href="/pages/contact.html?intent=event">Get bar pricing &rarr;</a>' },
+              answer: 'The Lodge serves drinks for overnight guests. For private events and weddings, alcohol is handled through the venue (open bar, per person, per hour) — no outside alcohol or BYOB. Bar packages are priced based on guest count and event length, and we\'ll walk through options on a tour or planning call. <a href="/pages/contact.html?intent=event">Send an event inquiry &rarr;</a>' },
             { section: 'event', keywords: ['upcoming event', 'what\'s happening', 'next event', 'calendar', 'schedule'],
               answer: 'Check out our upcoming events — live music, yoga, crawfish boils, and more: <a href="/pages/events.html"><strong>View upcoming events &rarr;</strong></a>' },
 

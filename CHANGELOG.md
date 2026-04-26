@@ -1,5 +1,46 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-25 — Pre-launch CRO/QA pass on the Vercel site
+
+Launch-blocker sweep and conversion sharpening across the primary pages, ahead of the DNS cutover from BofillTech to Vercel.
+
+- **Calendly placeholders wired to real URLs.** `site/js/main.js` now resolves `data-calendly="tour"` → `https://calendly.com/rancho_moonrise/connect`, `data-calendly="call"` → `https://calendly.com/monet-b30w/30min`. `data-calendly="virtual"` (30-min virtual walkthrough) has no Calendly URL yet — falls back to `/pages/contact.html?intent=wedding` (form + phone-fallback intact). Tracked in TODO under NEEDS ADAM.
+- **Page-specific mobile sticky CTAs** replacing the blanket "Book Your Stay":
+  - `index.html` → "Plan an Event at the Ranch" → `/pages/host-your-event.html`
+  - `weddings.html` → "Send a Wedding Inquiry" → `#wedding-inquiry`
+  - `host-your-event.html` → "Send an Event Inquiry" → `#inquiry-form`
+  - `accommodations.html`, `safari-tents-near-austin.html` → "Check Availability" → Cloudbeds (relabeled from "Book Your Stay")
+  - `contact.html` → "Call 737-291-1260" (phone CTA, since visitor is already on a contact-form page)
+  - `pool-day-pass-austin.html` left as-is (already correctly pointed at ResortPass).
+- **Form hardening (`site/js/main.js`):**
+  - Phone is now required on `inquiry_type=wedding` and `inquiry_type=event` forms; the label gets a visible asterisk on attach.
+  - Hidden attribution stamped at submit time: `page_path`, `source_url`, `submitted_at`, `referrer`, plus a default `inquiry_type` if missing.
+  - Success copy reworded — no longer overpromises "we respond immediately": now reads "we got your inquiry, Ashley or Monet will follow up shortly."
+  - `host-your-event.html` form was missing `<input type="hidden" name="inquiry_type" value="event">`. Added.
+- **Risky claims softened across `contact.html`, `weddings.html`, `host-your-event.html`:**
+  - "We respond immediately" → "AI concierge available 24/7 · Ashley or Monet follow up shortly"
+  - "we'll send you package details, pricing, and availability immediately" → pricing-frame language ("Pricing depends on date, guest count, bar package, lodging, and ranch access — a venue tour is the fastest way to get an accurate quote")
+  - "within 24 hours" promises softened to "we'll follow up shortly" on the events page CTA
+  - Contact AEO direct-answer block reworded to drop "everything you need right away" / "we respond to all form inquiries immediately"
+- **Analytics readiness (no provider wired yet — needs GA4 / GTM ID from Adam):**
+  - `window.rmTrack(event, props)` exposed on `main.js` — pushes to `dataLayer` for GTM, calls `gtag()` for GA4, and console.debugs always
+  - Click auto-binder on `<a>`/`<button>`/`[data-event]`. Auto-tags links by URL pattern (`cloudbeds_click`, `resortpass_click`, `phone_click`, `email_click`) so the nav/footer Book Now / Pool Pass / 737-291-1260 links emit conversions site-wide without per-page edits
+  - Form submit emits `form_submit_success` / `form_submit_error` plus a per-type event (`wedding_inquiry_submit`, `event_inquiry_submit`, `general_inquiry_submit`)
+  - Calendly placeholders auto-tagged `calendly_click` with `data-calendly-type` for the slug (`tour` / `call` / `virtual`)
+  - Hero CTAs and mobile sticky CTAs explicitly tagged with `data-event` + `data-cta-source` for slot-level attribution
+- **Stale event QA on `index.html`:** rotated past Apr 24 Free Friday static-fallback card to May 29 (the Supabase hydrator already shows live upcoming events; this protects no-JS / SEO crawls).
+- **Voice/fact scrub on primary pages** (in line with VOICE-GUIDE):
+  - `weddings.html`: "50 Overnight Guests" feature card → "Wedding Party Sleeps On-Site"; "Multiple Ceremony Sites" → "Unlimited Ceremony Layouts"; "overnight accommodations for up to 50 guests" → "on-site overnight accommodations for your wedding party" (3 instances incl. JSON-LD speakable text)
+  - `host-your-event.html`: "overnight accommodations for up to 50 guests on-site" / "for up to 50 guests in hand-crafted cabins" → "on-site overnight accommodations for your group"
+  - `accommodations.html`: removed the "Up to 50 overnight guests" line + "Up to 50 Guests" amenity bullet from the group-bookings card; replaced with "Adjacent Site Bookings" / "Group Gathering Spaces"
+  - `js/main.js` chatbot KB: removed "we'll send you a detailed package within 2 hours" (3 instances), and the hard `$7/pp/hr`–`$15/pp/hr` bar-pricing tier line replaced with the venue-mandatory + tour-required frame from VOICE-GUIDE
+- **Phase 2 conversion improvements:**
+  - **Homepage:** added a top-of-page trust bar — "4.9★ · 125+ Google reviews · 36 acres · 20 minutes from downtown Austin · Weddings · Private Events · Glamping Stays · Pool Day Passes". Hero CTAs reordered to lead with "Plan an Event" (primary) over "Book Your Stay" (secondary outline) so high-value event inquiries are the strongest path.
+  - **Weddings:** added a "What Drives Wedding Pricing" section above the inquiry form with the canonical pricing frame ("date, guest count, bar package, lodging, ranch access — a venue tour is the fastest way to get an accurate quote") + the venue-mandatory bar policy.
+  - **Private Events (`host-your-event.html`):** added "What Drives Event Pricing" pricing-frame section. Hero now has dual CTAs ("Send an Event Inquiry" + "Schedule a Planning Call"). Bar policy clarified (venue-handled, no BYOB) on the page itself, not just in fine print.
+  - **Accommodations:** new "Good to Know — Before You Book" objection-answers section above the booking CTA banner — bathrooms (private vs. shared), A/C and heat, pool access, parking/unloading, pet policy ($50, 60 lb, 1/reservation), check-in/check-out, no outside alcohol, quiet hours.
+- **Verification:** local `node site/server.js` + Claude Preview at port 8080. Walked homepage / weddings / host-your-event / accommodations / contact / events at desktop and mobile (375×812). No console errors on any page. All 5 Calendly placeholders on contact.html, all 5 on weddings.html resolve to the right URL or fall back to the wedding form. Wedding/event forms now have `phone.required = true` and the label asterisk attaches on load. The local static server doesn't proxy serverless functions, so `/api/inquiry` returns 404 locally — production webhook only exercises on Vercel deploy. No fake leads were submitted.
+
 ## 2026-04-25 — `/api/inquiry` reverted to direct CRM POST (Resend pivot rolled back)
 
 - **Architecture decision:** rolled back the morning's pivot to "form → Resend email → events@ → Gmail Poller → CRM" and went with the simpler "form → CRM directly → CRM/n8n workflow sends notification email to events@ as a side effect." Both end states deliver an email to events@ (so Ashley's muscle memory is preserved) but the CRM is the canonical record, not Gmail.

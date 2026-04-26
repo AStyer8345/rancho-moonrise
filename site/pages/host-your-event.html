@@ -184,9 +184,10 @@
     <div class="hero__content hero__content--centered">
         <span class="hero__label">Private Events</span>
         <h1 class="hero__title">Host Your Event at the Ranch</h1>
-        <p class="hero__subtitle hero__subtitle--small">Inspire your guests at Austin's first glamping and events ranch — where unique meeting spaces blend modern style, authentic hospitality, and the warmth of ranch life.</p>
+        <p class="hero__subtitle hero__subtitle--small">Corporate retreats, milestone birthdays, private parties, and full-ranch buyouts on 36 acres — 20 minutes from downtown Austin.</p>
         <div class="btn-group">
-            <a href="#inquiry-form" class="btn btn--primary">Inquire Today</a>
+            <a href="#inquiry-form" class="btn btn--primary" data-event="event_cta_click" data-cta-source="hero">Send an Event Inquiry</a>
+            <a href="#" class="btn btn--outline calendly-placeholder" data-calendly="call">Schedule a Planning Call</a>
         </div>
     </div>
 </section>
@@ -195,7 +196,7 @@
 <section class="section" style="padding-bottom: 0;" aria-label="About Rancho Moonrise as a private event venue">
     <div class="container--narrow">
         <h2 style="font-size: 1.5rem; margin-bottom: var(--space-sm);">A Private Event Venue Near Austin Worth Talking About</h2>
-        <p>Rancho Moonrise is a private event venue on 36 acres, 20 minutes east of downtown Austin. The property includes a climate-controlled Event Barn (up to 200 guests), a resort-style pool, and open pastures under the Texas sky. Available for hourly rentals or full ranch buyouts, with overnight accommodations for up to 50 guests on-site.</p>
+        <p>Rancho Moonrise is a private event venue on 36 acres, 20 minutes east of downtown Austin. The property includes a climate-controlled Event Barn (up to 200 guests), a resort-style pool, and open pastures under the Texas sky. Available for hourly rentals or full ranch buyouts, with on-site overnight accommodations for your group across cabins and safari tents.</p>
         <p style="margin-top: var(--space-sm);">What makes Rancho Moonrise different from a typical event venue near Austin: your guests never share the property with strangers. Whether you're hosting a corporate off-site for 30 or a private festival for 200, the entire ranch is yours for the day — or the weekend.</p>
     </div>
 </section>
@@ -294,23 +295,35 @@
     </div>
 </section>
 
+<!-- Pricing Frame -->
+<section class="section section--cream" aria-label="What to know about pricing">
+    <div class="container--narrow">
+        <span class="section-label reveal">What to Know</span>
+        <h2>What Drives Event Pricing</h2>
+        <p>Event pricing depends on date, guest count, bar package, lodging needs, and how much of the ranch you want for your event. Small daytime gatherings start with an hourly barn rental; larger parties move into per-person packages with bar service and overnight stays. <strong>Alcohol is handled through the venue (open bar, per person, per hour) — no outside alcohol or BYOB.</strong></p>
+        <p>A planning call or tour is the fastest way to get an accurate quote — we'll match you to the right setup based on what you're trying to pull off.</p>
+    </div>
+</section>
+
 <!-- Inquiry Form -->
 <section id="inquiry-form" class="section" aria-label="Event inquiry form">
     <div class="container--narrow">
         <div class="text-center" style="margin-bottom: var(--space-lg);">
             <span class="section-label reveal">Get Started</span>
             <h2>Tell Us About Your Event</h2>
-            <p style="color: var(--color-text-muted);">Fill out the form below and our events team will get back to you within 24 hours.</p>
+            <p style="color: var(--color-text-muted);">Tell us what you're planning and we'll follow up with availability and the right next step.</p>
         </div>
 
         <!-- Calendly CTA -->
         <div class="calendly-cta" style="margin-bottom: var(--space-lg);">
             <p class="calendly-cta__text"><strong>Want to discuss your event first?</strong></p>
             <a href="#" class="btn btn--primary calendly-placeholder" data-calendly="call" style="margin-top: var(--space-xs);">Schedule a Planning Call</a>
-            <p class="calendly-cta__note">Or fill out the form below and we'll respond within 24 hours.</p>
+            <p class="calendly-cta__note">Or fill out the form below and we'll follow up shortly.</p>
         </div>
 
         <form action="#" method="POST" aria-label="Event inquiry form">
+            <input type="hidden" name="inquiry_type" value="event">
+            <input type="hidden" name="source_page" value="host-your-event">
             <div class="form-group">
                 <label for="event-name">Full Name</label>
                 <input type="text" id="event-name" name="name" required autocomplete="name">
@@ -387,7 +400,7 @@
                 <button class="faq-question" aria-expanded="false">Can guests stay overnight after a private event?</button>
                 <div class="faq-answer" role="region">
                     <div class="faq-answer__inner">
-                        <p>Yes — Rancho Moonrise has on-site overnight accommodations for up to 50 guests in hand-crafted cabins and safari tents, all with A/C, heat, and real beds. For corporate retreats or private parties, this means your group can arrive, celebrate, and sleep on-site without coordinating hotel blocks or rides back into Austin.</p>
+                        <p>Yes — Rancho Moonrise has on-site overnight accommodations across hand-crafted cabins and safari tents, all with A/C, heat, and real beds. For corporate retreats or private parties, this means your group can arrive, celebrate, and sleep on-site without coordinating hotel blocks or rides back into Austin.</p>
                     </div>
                 </div>
             </div>
@@ -413,8 +426,8 @@
         </div>
 
         <div style="margin-top: var(--space-xl); text-align: center;">
-            <p style="color: var(--color-text-muted); margin-bottom: var(--space-md);">Ready to start planning? Our events team responds within 24 hours.</p>
-            <a href="#inquiry-form" class="btn btn--primary">Send an Inquiry</a>
+            <p style="color: var(--color-text-muted); margin-bottom: var(--space-md);">Ready to start planning? Send an inquiry and we'll follow up shortly.</p>
+            <a href="#inquiry-form" class="btn btn--primary" data-event="event_cta_click" data-cta-source="bottom-cta">Send an Inquiry</a>
         </div>
     </div>
 </section>
@@ -473,7 +486,7 @@
 
 <!-- Mobile Sticky CTA -->
 <div class="mobile-cta">
-    <a href="https://hotels.cloudbeds.com/en/reservation/5tzv1r" target="_blank" rel="noopener">Book Your Stay</a>
+    <a href="#inquiry-form" data-event="event_cta_click" data-cta-source="mobile-sticky">Send an Event Inquiry</a>
 </div>
 
 <!-- Scroll Reveal -->
