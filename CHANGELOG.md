@@ -1,5 +1,24 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-27 (SEO daily) — April rotation, AggregateRating expansion, sitemap freshness
+
+- **Re-Verify Gate** — DNS still on Flywheel (`x-fw-server: Flywheel/5.1.0` via `curl -I ranchomoonrise.com`). Vercel sitemap returns 200; old domain sitemap returns 301 (expected pre-cutover).
+- **April rotation** — past Apr 26 Yoga & Mimosas card removed from static `events.html`. April section replaced with full **July 2026** section (3 cards: 4th of July Music Festival 07-04, Lone Star Party 07-18, Yoga & Bottomless Mimosas 07-26). Picks up the GBP backlog already scheduled to Publer on 04-21 (job IDs in TODO.md).
+- **Event schema** — Apr 26 Yoga entry replaced with 4th of July Music Festival in the JSON-LD Event array. Static fallback now anchors at May Mother's Day → July Independence weekend.
+- **EVENTS JS array** — Apr 26 entry removed. Three July entries added (07-04, 07-18, 07-26) so the calendar view renders the new month. List view + calendar view stay in sync.
+- **AggregateRating expansion** — added `aggregateRating` (4.9 / 125 reviews / bestRating 5) to the `EventVenue` schema on `weddings.html` and `host-your-event.html`. Previously only homepage, accommodations, and safari-tents had AggregateRating; now wedding + private-event landing pages do too. Mirrors the homepage LodgingBusiness rating (same anchor count of 125; review-monitor RUN_011 flagged a possible jump to 175 but that's an unverified WebSearch snippet — owned by `rancho-review-monitor`, not this task).
+- **Sitemap freshness** — bumped 8 stale lastmod entries to match actual page edit dates:
+  - `/events/` 04-25 → **04-27** (today's rotation)
+  - `/weddings/` 04-14 → **04-27** (today's AggregateRating)
+  - `/host-your-event/` 04-08 → **04-27** (today's AggregateRating)
+  - `/blog/glamping-near-austin-texas/` 04-07 → **04-17** (AEO block added 04-16/17)
+  - `/blog/wedding-venues-near-austin/` 04-07 → **04-17**
+  - `/blog/corporate-retreat-near-austin/` 04-08 → **04-17**
+  - `/blog/things-to-do-manor-tx/` 04-08 → **04-17**
+  - `/blog/bachelorette-party-austin-texas/` 04-09 → **04-16**
+  - `/blog/ranch-wedding-texas/` 04-10 → **04-17**
+- **Validation** — all 11 JSON-LD blocks across the 3 edited pages parse cleanly via `python3 json.loads`. No type errors.
+
 ## 2026-04-27 — Review Monitor RUN_011
 
 - **rancho-review-monitor RUN_011:** Google WebSearch snippet jumped 126 → 175 reviews — first count change since RUN_007 broke a 3-run-stable pattern. +49 vs prior snippet, +48 vs Apr-9 baseline. Snippet precision insufficient for authoritative count, but jump too large to dismiss — logged as new FLAG_FOR_ADAM (live GBP page still JS-rendered, BLOCKER ongoing run 11). Unreplied=0 maintained on done-log signal (no review-related entries since RUN_010). TripAdvisor live-verified 0 reviews/unclaimed. Hipcamp live-verified 0 reviews ("Be the first to review", 1 booking no review, joined Hipcamp Mar 2024). Facebook 5/100% recommend confirmed. Hotels.com listing URL still active per WebSearch (rating snippet weak this run). 3 BLOCKERS from RUN_003 all open (Google JS-blocked run 11, Hotels.com timeout run 11, Airbnb 403 run 11). Dashboard status: ok.
