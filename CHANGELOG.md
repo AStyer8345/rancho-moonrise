@@ -1,5 +1,9 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-27 — Review Monitor RUN_011
+
+- **rancho-review-monitor RUN_011:** Google WebSearch snippet jumped 126 → 175 reviews — first count change since RUN_007 broke a 3-run-stable pattern. +49 vs prior snippet, +48 vs Apr-9 baseline. Snippet precision insufficient for authoritative count, but jump too large to dismiss — logged as new FLAG_FOR_ADAM (live GBP page still JS-rendered, BLOCKER ongoing run 11). Unreplied=0 maintained on done-log signal (no review-related entries since RUN_010). TripAdvisor live-verified 0 reviews/unclaimed. Hipcamp live-verified 0 reviews ("Be the first to review", 1 booking no review, joined Hipcamp Mar 2024). Facebook 5/100% recommend confirmed. Hotels.com listing URL still active per WebSearch (rating snippet weak this run). 3 BLOCKERS from RUN_003 all open (Google JS-blocked run 11, Hotels.com timeout run 11, Airbnb 403 run 11). Dashboard status: ok.
+
 ## 2026-04-27 (competitive-weekly) — April 27 intel run + Intel tab dual-write
 
 - **Re-Verify Gate** — 8 prior claims from April 20 checked live. 6 still true, 1 state change (Spoon Mountain Glamping unveiled private pools per tent — direct site copy: *"We're thrilled to unveil a sparkling new addition... Private pools for each of our luxury tents,"* heating $60/day add-on), 1 narrowed (Lucky Arrow ResortPass window 10 → 4 days as May 1 reactivation approaches). DNS still on Flywheel/BofillTech (`x-fw-server: Flywheel/5.1.0` confirmed).
