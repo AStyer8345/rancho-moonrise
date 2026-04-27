@@ -266,10 +266,11 @@ All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms. Li
 - [ ] **Upload remaining 7 videos (01-07)** — hit YouTube daily upload limit. Try again tomorrow. Files are in `youtube-uploads/` folder with manifest spreadsheet.
 - [ ] **Delete duplicate videos** — Fk17TEpGCFY (10-pool-wedding-day) and WTstKx2JVUo (11-ranch-flower-decorations) are duplicates of the content that was correctly uploaded under different IDs. Pick which set to keep and delete the other.
 
-### NEEDS ADAM — Competitive intel quick wins (updated 2026-04-20)
-- [ ] **⚡ ResortPass — submit this week, window closes May 1.** Lucky Arrow's pool passes are currently INACTIVE (bar/kitchen closed through April 30). No active day pass products on their listing right now. If Rancho Moonrise submits to ResortPass before May 1, they'd be the only non-hotel glamping pool pass in Austin. Lucky Arrow reactivates May 1 — 10-day window. Contact: resortpass.com/list-property. Use pool day pass blog post copy as listing draft.
-- [ ] Submit Glamping Hub listing — free, 15 min at glampinghub.com/list-your-property. Now The Yurtopian, Udoscape, and others appear there while Rancho Moonrise stays absent.
-- [ ] **DNS cutover — urgency escalating.** Austin glamping SERP now has 6+ ranked individual properties (added The Yurtopian and Spoon Mountain this week). 14 blog posts + safari tent page + full schema suite waiting to index.
+### NEEDS ADAM — Competitive intel quick wins (updated 2026-04-27)
+- [ ] **⚡ ResortPass — decide within 48 hours, window now 4 days.** Lucky Arrow's listing still shows "no active products at the moment" (verified live 2026-04-27); their site copy says full menu/bar resume **May 1, 2026**. Either submit this week (resortpass.com/list-property or supply team email) and beat the reactivation, or remove from this list. Waiting past Wednesday is effectively a "no."
+- [ ] **Build a corporate retreats landing page (Claude can draft).** The Yurtopian shipped `/corporate-retreats-in-texas-hill-country/` this week — Lucky Arrow, 7744 Ranch, Element Ranch, Sage Hill all already have one. Promote the strongest sections of the April 20 corporate-retreat blog post into `/pages/corporate-retreats.html` with capacity (300+), Ashley's pricing-frame language (open bar mandatory, never BYOB), inquiry CTA, full schema. 1–2 hour build. Ships before DNS cutover so it's already indexable.
+- [ ] Submit Glamping Hub listing — free, 15 min at glampinghub.com/list-your-property. The Yurtopian, Udoscape, Talula Mesa, Spoon Mountain (likely) all appear there while Rancho Moonrise stays absent.
+- [ ] **DNS cutover — urgency escalating, 7 ranked competitors now.** Live `curl -I ranchomoonrise.com` 2026-04-27 → `x-fw-server: Flywheel/5.1.0` (still BofillTech). Austin glamping SERP added The Retreat on the Hill this week (11 multi-format units). 18+ blog posts + safari tent page (FAQPage schema added Apr 26) + full AEO suite waiting to index.
 
 ## Next (after DNS cutover)
 - [ ] Google Search Console setup + sitemap submission (S6)

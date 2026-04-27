@@ -1,6 +1,6 @@
 # Rancho Moonrise — Project Context
 
-**Last updated:** 2026-04-26 (SEO daily — FAQPage schema + visible FAQ added to safari-tents-near-austin)
+**Last updated:** 2026-04-27 (competitive-weekly — April 27 intel run, Intel tab dual-write, TODO refreshed)
 
 **Latest audit:** 2026-04-23 — `site/audits/2026-04-23-business-audit.html`. Next audit: 2026-05-07.
 
@@ -64,6 +64,8 @@ The responsive image pipeline is live and working. But `scripts/generate-respons
 The 4 accommodation files are literally 340×340 thumbnails masquerading as content photos — re-upload priority is HIGH. Re-upload at 1600×1600+ minimum. Once re-uploaded: rerun `./scripts/generate-responsive-images.sh` and commit — no HTML changes needed.
 
 ## Last Worked On
+
+- 2026-04-27 (competitive-weekly): **April 27 intel run.** 8 prior claims re-verified live (6 still true, 1 state change, 1 narrowed). One new SERP entrant — The Retreat on the Hill (11 multi-format units, ~1 hr from Austin, safari tents + belle tents + tipis + star-gazing domes + mirror house + container suite + cliff house). One material competitor product launch — Spoon Mountain Glamping unveiled private pools per tent (heating $60/day). One content-gap widening — The Yurtopian shipped `/corporate-retreats-in-texas-hill-country/` (1–20+ guests, 10 yurts, indoor lodge, spa yurt, 45 min from Austin). Lucky Arrow ResortPass window narrowed from 10 → 4 days (May 1 reactivation imminent). DNS still on Flywheel (`x-fw-server: Flywheel/5.1.0` verified live). Full report at `site/competitive-intelligence.md`. Intel tab card dual-written to both `site/improvement-plan.html` (sovereign) and `client-ops/clients/rancho-moonrise/improvement-plan.html` (mirror). TODO "Competitive intel quick wins" block refreshed to 2026-04-27 — ResortPass decision now 48 hours, corporate retreats landing page added as Claude-draftable item.
 
 - 2026-04-26 (SEO daily): **FAQPage schema + visible FAQ added to `safari-tents-near-austin.html`.** Audit revealed it was the only landing page in the cluster missing FAQPage (others — things-to-do-manor-tx, glamping-vs-camping, pool-day-pass-austin, things-to-do-near-austin-with-kids — all have it). Added 4 Q&A: `What is a safari tent?`, `How is it different from a camping tent?`, `Are safari tents heated and A/C?`, `Where can I find a safari tent near Austin?`. Visible FAQ section uses standard `.faq-item` / `.faq-question` / `.faq-answer` markup; `main.js` already binds the accordion toggle. Speakable cssSelector expanded to include `.faq-question`. Sitemap lastmod bumped to 2026-04-26. All 4 JSON-LD blocks parse clean. Re-Verify Gate: DNS still on Flywheel/5.1.0 (BofillTech) — `curl -I` confirmed. Apr 26 Yoga & Mimosas left as-is (today's event, still upcoming this morning); rotate on next run after it passes.
 

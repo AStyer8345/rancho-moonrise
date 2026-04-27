@@ -1,5 +1,14 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-27 (competitive-weekly) — April 27 intel run + Intel tab dual-write
+
+- **Re-Verify Gate** — 8 prior claims from April 20 checked live. 6 still true, 1 state change (Spoon Mountain Glamping unveiled private pools per tent — direct site copy: *"We're thrilled to unveil a sparkling new addition... Private pools for each of our luxury tents,"* heating $60/day add-on), 1 narrowed (Lucky Arrow ResortPass window 10 → 4 days as May 1 reactivation approaches). DNS still on Flywheel/BofillTech (`x-fw-server: Flywheel/5.1.0` confirmed).
+- **New competitor entered the safari tent SERP** — The Retreat on the Hill (theretreatonthehill.com), 11 distinct multi-format units (safari tents, belle tents, tipis, star-gazing domes, mirror house, container suite, cliff house, treehouse-style Bird's Nest), about 1 hour from Austin between Lakes LBJ and Marble Falls. Most format-diverse competitor on the board.
+- **Content-gap widened** — The Yurtopian shipped a dedicated corporate retreats landing page at `/corporate-retreats-in-texas-hill-country/` (capacity 1–20+, 10 yurts on the Dripping Springs property, indoor lodge, covered pavilion, fire pits, spa yurt, 45 min from Austin). Rancho Moonrise has a corporate-retreat blog post (April 20) but no landing page; Lucky Arrow, 7744 Ranch, Element Ranch, Sage Hill, and now Yurtopian all have one. Filed as a TODO quick-win: 1–2 hour build of `/pages/corporate-retreats.html` from existing blog content.
+- **`site/competitive-intelligence.md` rewritten** for April 27 — full executive summary, re-verify gate table, SERP rankings table, competitor highlights (new entrants + updates), content gap matrix updated, 4-priority recommendations.
+- **Intel tab card dual-write** — new card inserted at the top of `tab-intel` in both `site/improvement-plan.html` (sovereign) and `client-ops/clients/rancho-moonrise/improvement-plan.html` (mirror). Card HTML byte-identical between files.
+- **TODO.md** — "Competitive intel quick wins" block updated to 2026-04-27. ResortPass urgency raised (4 days). Corporate retreats landing page added as Claude-draftable item.
+
 ## 2026-04-26 (SEO daily) — FAQPage schema + visible FAQ on safari-tents
 
 - **`safari-tents-near-austin.html`** was the only landing page in the SEO cluster missing FAQPage schema. Audit surfaced this gap (vs. things-to-do-manor-tx, glamping-vs-camping, pool-day-pass-austin, things-to-do-near-austin-with-kids — all of which have it). Closing it before DNS cutover so the structured-data signal lands on first crawl.
