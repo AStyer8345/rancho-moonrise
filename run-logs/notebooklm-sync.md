@@ -197,3 +197,20 @@ WARN: Skipped 3 oversized files (>10MB): PRIVATE EVENTS AT RANCHO MOONRISE.pdf (
 2026-04-27 00:07 | scanned=64 added=0 replaced=0 skipped=3 errors=0
 2026-04-27 04:07 | scanned=64 added=0 replaced=0 skipped=3 errors=0
 2026-04-27 08:12 | scanned=64 added=0 replaced=0 skipped=4 errors=0
+
+## 2026-04-27 13:35
+- scanned=71, to_sync=7, oversized=3
+  - SKIP oversize (28.8MB): PRIVATE EVENTS AT RANCHO MOONRISE.pdf
+  - SKIP oversize (20.7MB): INTIMATE EVENTS AT RM.pdf
+  - SKIP oversize (36.9MB): ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf
+- reconciled=6 (state-drift: notebook already had these; updated tracker without re-upload)
+  - RECONCILE: 2026-04-09-gbp-post.md
+  - RECONCILE: 2026-04-09-review-report.md
+  - RECONCILE: 2026-04-13-gbp-post.md
+  - RECONCILE: 2026-04-15-blog12-social-snippets.md
+  - RECONCILE: 2026-04-15-gbp-profile-fields.md
+  - RECONCILE: 2026-04-15-gbp-qa-seed.md
+- errors=1
+  - ERROR upload (400 Bad Request): Monotype Font Software End User License Agreement.html — left out of state, will retry next run
+
+2026-04-27 13:35 | scanned=71 added=0 replaced=0 reconciled=6 skipped=3 errors=1
