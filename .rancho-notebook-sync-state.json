@@ -1,282 +1,73 @@
 {
-  "2021-04-12-certificate-of-filing-sos.txt": {
-    "mtime": 1775681700.1456685,
-    "size": 1434
-  },
-  "2021-04-12-certificate-of-formation-sos.txt": {
-    "mtime": 1775681699.5984223,
-    "size": 1962
-  },
-  "2021-06-14-warranty-deed.txt": {
-    "mtime": 1775681142.8870196,
-    "size": 1424
-  },
-  "2022-02-22-certificate-of-amendment.txt": {
-    "mtime": 1775681154.2414172,
-    "size": 1433
-  },
-  "2022-02-22-certificate-of-formation.txt": {
-    "mtime": 1775681166.953746,
-    "size": 1539
-  },
-  "2022-02-22-llc-company-agreement.txt": {
-    "mtime": 1775681176.4671714,
-    "size": 2037
-  },
-  "2022-02-22-written-consent.txt": {
-    "mtime": 1775681162.3300207,
-    "size": 1634
-  },
-  "2022-brand-guidelines.txt": {
-    "mtime": 1775681166.9538236,
-    "size": 8922
-  },
-  "2023-10-24-styer-business-plan-for-rancho-moonrise.txt": {
-    "mtime": 1775681703.9685626,
-    "size": 1254
-  },
-  "2023-10-25-competitive-landscape.txt": {
-    "mtime": 1775681770.13218,
-    "size": 812
-  },
-  "2023-10-25-projections-spreadsheet.txt": {
-    "mtime": 1775681682.443253,
-    "size": 2288
-  },
-  "2023-10-25-rancho-moonrise-master-sheet.txt": {
-    "mtime": 1775681683.1952295,
-    "size": 7451
-  },
-  "2023-11-20-ranchomoonrise-pricing.txt": {
-    "mtime": 1775680057.4207115,
-    "size": 1158
-  },
-  "2023-11-30-springer-site-plan.txt": {
-    "mtime": 1775681706.4643931,
-    "size": 421
-  },
-  "2023-11-events-deck.txt": {
-    "mtime": 1775681756.517895,
-    "size": 2129
-  },
-  "2023-11-weddings-deck.txt": {
-    "mtime": 1775681757.8812146,
-    "size": 3565
-  },
-  "2024-01-pr-deck.txt": {
-    "mtime": 1775681755.5778022,
-    "size": 1700
-  },
-  "2024-01-retreats-deck.txt": {
-    "mtime": 1775681754.0,
-    "size": 1626
-  },
-  "2024-02-14-tittle-rancho-moonrise-utilities-permits.txt": {
-    "mtime": 1775680102.8379188,
-    "size": 649
-  },
-  "2024-02-26-styer-projections-to-christopher-gill.txt": {
-    "mtime": 1775681696.4692059,
-    "size": 1415
-  },
-  "2024-02-29-walton-rv-park-discussion-thread.txt": {
-    "mtime": 1775681737.5319269,
-    "size": 4790
-  },
-  "2024-03-21-rancho-moonrise-updated-projections.txt": {
-    "mtime": 1775681683.847314,
-    "size": 5156
-  },
-  "2024-05-03-donnelly-frontier-bank.txt": {
-    "mtime": 1775681733.1541224,
-    "size": 986
-  },
-  "2024-06-20-styer-update-hogg-eye-property.txt": {
-    "mtime": 1775681705.8778028,
-    "size": 3366
-  },
-  "2024-10-17-unknown-document.txt": {
-    "mtime": 1775681205.6250112,
-    "size": 2662
-  },
-  "2025-01-24-unknown-document.txt": {
-    "mtime": 1775681216.2623656,
-    "size": 3567
-  },
-  "2025-01-27-unknown-document.txt": {
-    "mtime": 1775681221.292244,
-    "size": 3269
-  },
-  "2025-02-12-hoefs-10-acre-tract-thread.txt": {
-    "mtime": 1775680360.706472,
-    "size": 2527
-  },
-  "2025-02-12-styer-10-acre-tract-rancho-moonrise.txt": {
-    "mtime": 1775680054.224388,
-    "size": 2173
-  },
-  "2025-03-25-cunningham-kimley-horn-manor-10ac.txt": {
-    "mtime": 1775680342.2087038,
-    "size": 2928
-  },
-  "2025-05-01-styer-business-plan-draft.txt": {
-    "mtime": 1775679984.3848147,
-    "size": 308
-  },
-  "2025-05-01-styer-rancho-projections.txt": {
-    "mtime": 1775681707.395712,
-    "size": 474
-  },
-  "2025-05-rancho-moonrise-events-sponsorship.txt": {
-    "mtime": 1775681227.5117106,
-    "size": 4286
-  },
-  "2026-04-06-ranchomoonrise-gbp-performance-report-march.txt": {
-    "mtime": 1775679940.8683386,
-    "size": 524
-  },
-  "2026-04-06-ranchomoonrise-inquiry-test.txt": {
-    "mtime": 1775679941.688988,
-    "size": 315
-  },
-  "2026-04-06-styer-google-drive-folder.txt": {
-    "mtime": 1775679983.577855,
-    "size": 1493
-  },
-  "2026-04-06-styer-new-website-pitch.txt": {
-    "mtime": 1775679942.9128737,
-    "size": 1090
-  },
-  "2026-04-07-ranchomoonrise-bar-packages.txt": {
-    "mtime": 1775679862.9298017,
-    "size": 366
-  },
-  "2026-04-07-ranchomoonrise-bofilltech-website-report.txt": {
-    "mtime": 1775679939.9879413,
-    "size": 628
-  },
-  "2026-04-07-ranchomoonrise-form-info.txt": {
-    "mtime": 1775679819.0,
-    "size": 2005
-  },
-  "2026-04-07-ranchomoonrise-items-needed-response.txt": {
-    "mtime": 1775679822.9292288,
-    "size": 3403
-  },
-  "2026-04-07-ranchomoonrise-private-wedding-contract.txt": {
-    "mtime": 1775679864.4389906,
-    "size": 503
-  },
-  "2026-04-07-ranchomoonrise-rancho-info.txt": {
-    "mtime": 1775679862.0771272,
-    "size": 1113
-  },
-  "2026-04-07-ranchomoonrise-wedding-vendor-guidelines.txt": {
-    "mtime": 1775679863.6392431,
-    "size": 382
-  },
-  "2026-04-07-rm-numbers.txt": {
-    "mtime": 1775681329.0630534,
-    "size": 1528
-  },
-  "2026-04-07-styer-items-needed.txt": {
-    "mtime": 1775679938.6923423,
-    "size": 3030
-  },
-  "2026-04-08-ashley-conversation-intel.txt": {
-    "mtime": 1775682149.0,
-    "size": 2628
-  },
-  "2026-04-08-pinterest-design-analysis.txt": {
-    "mtime": 1775684870.404302,
-    "size": 9683
-  },
-  "2026-04-08-rancho-moonrise-full-business-audit.html": {
-    "mtime": 1775702030.3648217,
-    "size": 25639
-  },
-  "2026-04-08-rancho-moonrise-full-business-audit.pdf": {
-    "mtime": 1775786454.0577905,
-    "size": 443292
-  },
-  "2026-04-08-rancho-moonrise-full-business-audit.txt": {
-    "mtime": 1775702051.0,
-    "size": 15743
-  },
-  "2026-04-08-ranchomoonrise-brand-pack-website-feedback.txt": {
-    "mtime": 1775679810.7849014,
-    "size": 1189
-  },
-  "2026-04-09-gbp-post.md": {
-    "mtime": 1775778258.9940732,
-    "size": 901
-  },
-  "2026-04-09-metrics-baseline.md": {
-    "mtime": 1775762045.0,
-    "size": 3947
-  },
-  "2026-04-09-rancho-moonrise-improvement-plan.html": {
-    "mtime": 1776953391.2203486,
-    "size": 59527
-  },
-  "2026-04-09-rancho-moonrise-improvement-plan.pdf": {
-    "mtime": 1775786463.0,
-    "size": 729448
-  },
-  "2026-04-09-review-report.md": {
-    "mtime": 1775783006.26471,
-    "size": 7966
-  },
-  "2026-04-13-gbp-post.md": {
-    "mtime": 1776107449.6862676,
-    "size": 887
-  },
-  "2026-04-15-blog12-social-snippets.md": {
-    "mtime": 1776262452.410241,
-    "size": 2537
-  },
-  "2026-04-15-gbp-profile-fields.md": {
-    "mtime": 1777044474.2177596,
-    "size": 6301
-  },
-  "2026-04-15-gbp-qa-seed.md": {
-    "mtime": 1776265428.2803578,
-    "size": 4655
-  },
-  "Adam Styer Test RM Alcohol_Private Ranch Wedding Contract - 1 - Contract.pdf": {
-    "mtime": 1775701257.5548995,
-    "size": 1380786
-  },
-  "BRAND-ASSETS.md": {
-    "mtime": 1775840354.1820397,
-    "size": 7163
-  },
-  "CLAUDE-CODE-WEBSITE-UPDATE-PROMPT.md": {
-    "mtime": 1775850530.2574039,
-    "size": 16492
-  },
-  "HoneyBook-Bar-Packages-Content.md": {
-    "mtime": 1775701257.0,
-    "size": 7752
-  },
-  "HoneyBook-Wedding-Flow-Content.md": {
-    "mtime": 1775701257.0,
-    "size": 18191
-  },
-  "RANCHO MAP.pdf": {
-    "mtime": 1775701257.5800521,
-    "size": 3522563
-  },
-  "_SOURCE-GUIDE.txt": {
-    "mtime": 1775682846.5835414,
-    "size": 5330
-  },
-  "n8n-metrics-pull-spec.md": {
-    "mtime": 1776222269.2568898,
-    "size": 5647
-  },
-  "voice-guide.md": {
-    "mtime": 1777046388.7661746,
-    "size": 8304
-  }
+  "2021-04-12-certificate-of-filing-sos.txt": 1775681700.1456685,
+  "2021-04-12-certificate-of-formation-sos.txt": 1775681699.5984223,
+  "2021-06-14-warranty-deed.txt": 1775681142.8870196,
+  "2022-02-22-certificate-of-amendment.txt": 1775681154.2414172,
+  "2022-02-22-certificate-of-formation.txt": 1775681166.953746,
+  "2022-02-22-llc-company-agreement.txt": 1775681176.4671714,
+  "2022-02-22-written-consent.txt": 1775681162.3300207,
+  "2022-brand-guidelines.txt": 1775681166.9538236,
+  "2023-10-24-styer-business-plan-for-rancho-moonrise.txt": 1775681703.9685626,
+  "2023-10-25-competitive-landscape.txt": 1775681770.13218,
+  "2023-10-25-projections-spreadsheet.txt": 1775681682.443253,
+  "2023-10-25-rancho-moonrise-master-sheet.txt": 1775681683.1952295,
+  "2023-11-20-ranchomoonrise-pricing.txt": 1775680057.4207115,
+  "2023-11-30-springer-site-plan.txt": 1775681706.4643931,
+  "2023-11-events-deck.txt": 1775681756.517895,
+  "2023-11-weddings-deck.txt": 1775681757.8812146,
+  "2024-01-pr-deck.txt": 1775681755.5778022,
+  "2024-01-retreats-deck.txt": 1775681754.0,
+  "2024-02-14-tittle-rancho-moonrise-utilities-permits.txt": 1775680102.8379188,
+  "2024-02-26-styer-projections-to-christopher-gill.txt": 1775681696.4692059,
+  "2024-02-29-walton-rv-park-discussion-thread.txt": 1775681737.5319269,
+  "2024-03-21-rancho-moonrise-updated-projections.txt": 1775681683.847314,
+  "2024-05-03-donnelly-frontier-bank.txt": 1775681733.1541224,
+  "2024-06-20-styer-update-hogg-eye-property.txt": 1775681705.8778028,
+  "2024-10-17-unknown-document.txt": 1775681205.6250112,
+  "2025-01-24-unknown-document.txt": 1775681216.2623656,
+  "2025-01-27-unknown-document.txt": 1775681221.292244,
+  "2025-02-12-hoefs-10-acre-tract-thread.txt": 1775680360.706472,
+  "2025-02-12-styer-10-acre-tract-rancho-moonrise.txt": 1775680054.224388,
+  "2025-03-25-cunningham-kimley-horn-manor-10ac.txt": 1775680342.2087038,
+  "2025-05-01-styer-business-plan-draft.txt": 1775679984.3848147,
+  "2025-05-01-styer-rancho-projections.txt": 1775681707.395712,
+  "2025-05-rancho-moonrise-events-sponsorship.txt": 1775681227.5117106,
+  "2026-04-06-ranchomoonrise-gbp-performance-report-march.txt": 1775679940.8683386,
+  "2026-04-06-ranchomoonrise-inquiry-test.txt": 1775679941.688988,
+  "2026-04-06-styer-google-drive-folder.txt": 1775679983.577855,
+  "2026-04-06-styer-new-website-pitch.txt": 1775679942.9128737,
+  "2026-04-07-ranchomoonrise-bar-packages.txt": 1775679862.9298017,
+  "2026-04-07-ranchomoonrise-bofilltech-website-report.txt": 1775679939.9879413,
+  "2026-04-07-ranchomoonrise-form-info.txt": 1775679819.0,
+  "2026-04-07-ranchomoonrise-items-needed-response.txt": 1775679822.9292288,
+  "2026-04-07-ranchomoonrise-private-wedding-contract.txt": 1775679864.4389906,
+  "2026-04-07-ranchomoonrise-rancho-info.txt": 1775679862.0771272,
+  "2026-04-07-ranchomoonrise-wedding-vendor-guidelines.txt": 1775679863.6392431,
+  "2026-04-07-rm-numbers.txt": 1775681329.0630534,
+  "2026-04-07-styer-items-needed.txt": 1775679938.6923423,
+  "2026-04-08-ashley-conversation-intel.txt": 1775682149.0,
+  "2026-04-08-pinterest-design-analysis.txt": 1775684870.404302,
+  "2026-04-08-rancho-moonrise-full-business-audit.html": 1775702030.3648217,
+  "2026-04-08-rancho-moonrise-full-business-audit.pdf": 1775786454.0577905,
+  "2026-04-08-rancho-moonrise-full-business-audit.txt": 1775702051.0,
+  "2026-04-08-ranchomoonrise-brand-pack-website-feedback.txt": 1775679810.7849014,
+  "2026-04-09-gbp-post.md": 1775778258.9940732,
+  "2026-04-09-metrics-baseline.md": 1775762045.0,
+  "2026-04-09-rancho-moonrise-improvement-plan.html": 1776953391.2203486,
+  "2026-04-09-rancho-moonrise-improvement-plan.pdf": 1775786463.0,
+  "2026-04-09-review-report.md": 1775783006.26471,
+  "2026-04-13-gbp-post.md": 1776107449.6862676,
+  "2026-04-15-blog12-social-snippets.md": 1776262452.410241,
+  "2026-04-15-gbp-profile-fields.md": 1777044474.2177596,
+  "2026-04-15-gbp-qa-seed.md": 1776265428.2803578,
+  "Adam Styer Test RM Alcohol_Private Ranch Wedding Contract - 1 - Contract.pdf": 1775701257.5548995,
+  "BRAND-ASSETS.md": 1775840354.1820397,
+  "CLAUDE-CODE-WEBSITE-UPDATE-PROMPT.md": 1775850530.2574039,
+  "HoneyBook-Bar-Packages-Content.md": 1775701257.0,
+  "HoneyBook-Wedding-Flow-Content.md": 1775701257.0,
+  "Monotype Font Software End User License Agreement.html": 1775840201.378644,
+  "RANCHO MAP.pdf": 1775701257.5800521,
+  "_SOURCE-GUIDE.txt": 1775682846.5835414,
+  "n8n-metrics-pull-spec.md": 1776222269.2568898,
+  "voice-guide.md": 1777046388.7661746
 }

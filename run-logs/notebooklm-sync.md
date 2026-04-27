@@ -214,3 +214,13 @@ WARN: Skipped 3 oversized files (>10MB): PRIVATE EVENTS AT RANCHO MOONRISE.pdf (
   - ERROR upload (400 Bad Request): Monotype Font Software End User License Agreement.html — left out of state, will retry next run
 
 2026-04-27 13:35 | scanned=71 added=0 replaced=0 reconciled=6 skipped=3 errors=1
+
+## 2026-04-27 16:08
+- Scanned 74 files in brand/ + deal/
+- Skipped 3 oversized PDFs (>10MB): PRIVATE EVENTS AT RANCHO MOONRISE.pdf (30MB), INTIMATE EVENTS AT RM.pdf (21MB), ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf (38MB)
+- 1 new file detected: Monotype Font Software End User License Agreement.html
+- Found stale errored source for Monotype EULA in notebook (id d388a7d2...). Deleted.
+- Re-upload failed: 400 Bad Request from NotebookLM upload endpoint. NotebookLM appears to reject this specific HTML file. Logging and exiting cleanly per safety rules.
+- State file updated to record the file as tracked (mtime stored) so future runs don't loop on it.
+
+2026-04-27 16:08 | scanned=74 added=0 replaced=0 skipped=3 errors=1
