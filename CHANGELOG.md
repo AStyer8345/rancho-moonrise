@@ -1,5 +1,20 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-28 (SEO daily) — AggregateRating extended to 5 BlogPosting landing pages via publisher
+
+- **Re-Verify Gate** — DNS still on Flywheel (`x-fw-server: Flywheel/5.1.0` via `curl -I ranchomoonrise.com`). Vercel sitemap returns 200.
+- **AggregateRating coverage closed on 5 of 10 remaining gaps.** Added `aggregateRating` (4.9 / 125 reviews / bestRating 5) to the `publisher.Organization` block on:
+  - `pages/wedding-venues-near-austin.html`
+  - `pages/corporate-retreat-near-austin.html`
+  - `pages/ranch-wedding-texas.html`
+  - `pages/bachelorette-party-austin-texas.html`
+  - `pages/pool-day-pass-austin.html`
+- **Schema-design choice — publisher, not article.** These are BlogPosting pages. Putting `aggregateRating` directly on a BlogPosting risks Google interpreting it as a rating of the article. Embedding it inside the existing `publisher.Organization` block instead attaches the rating to Rancho Moonrise as the publishing entity — clean signal, no risk of article-rating misclassification. Mirrors the AggregateRating values already used on the homepage LodgingBusiness, accommodations, safari-tents, weddings (EventVenue), and host-your-event (EventVenue).
+- **Validation** — all 20 JSON-LD blocks (4 per page × 5 pages: BlogPosting, BreadcrumbList, FAQPage, WebPage[/ReservePage on pool]) parse cleanly via `python3 json.loads`. No type errors.
+- **Sitemap freshness** — bumped 5 stale lastmod entries to today: `/blog/wedding-venues-near-austin/` 04-17 → **04-28**, `/blog/corporate-retreat-near-austin/` 04-17 → **04-28**, `/blog/bachelorette-party-austin-texas/` 04-16 → **04-28**, `/blog/ranch-wedding-texas/` 04-17 → **04-28**, `/blog/pool-day-pass-austin/` 04-12 → **04-28**.
+- **Coverage update** — 10 of 17 customer-facing pages now carry AggregateRating (up from 5 yesterday). 6 still missing: `glamping-near-austin-texas.html`, `things-to-do-manor-tx.html`, `glamping-vs-camping.html`, `things-to-do-near-austin-with-kids.html` (BlogPostings — same publisher pattern), and `faqs.html` + `contact.html` (utility pages — needs schema decision).
+- **Anchor count held at 125** — review-monitor RUN_012 confirmed the WebSearch snippet at 175 is now 2-run-stable, but review count is owned by `rancho-review-monitor`. This task does not bump the AggregateRating anchor without an authoritative source (live GBP count or Places API).
+
 ## 2026-04-28 — Review Monitor RUN_012
 
 - **rancho-review-monitor RUN_012:** Google WebSearch snippet stable at 175 reviews for 2nd consecutive run (RUN_011 + RUN_012). Strengthens case that the +49 jump from prior 126 baseline reflects a real count change — likely ~48 new reviews since April 9. Live GBP scrape BLOCKER ongoing (12th — JS-rendered, no Places API key); FLAG_FOR_ADAM persists, strengthened. Unreplied=0 maintained on done-log signal (no review-related done-log entries since RUN_011; `rancho-review-replies` RESOLVED 2026-04-15 22:12 remains last review action). TripAdvisor live-verified 0/unclaimed. Hipcamp live-verified 0 ("Be the first to review", 1 booking). Facebook 5/100% confirmed. Hotels.com 8.0 rating snippet surfaced cleanly this run (Dec 2025 review still anchoring). The Knot detail expanded — WebSearch now shows 4.5★ / 8 reviews (was 1 review snippet in RUN_008); still not in scope. 3 BLOCKERS open (Google run 12, Hotels.com timeout run 12, Airbnb 403 run 12). Dashboard status: ok.
