@@ -1,5 +1,17 @@
 # Rancho Moonrise — TODO
-Last updated: 2026-04-25 (evening — CRM-valid inquiry mapping + Calendly URLs hard-wired into static HTML)
+Last updated: 2026-04-28 (scroll effects shipped — parallax, reveals, sticky split, horizontal drag gallery, nav .scrolled state)
+
+## ✅ DONE 2026-04-28 — Scroll effects (5 patterns from grandladyaustin.com)
+
+Added `site/js/scroll-effects.js` (vanilla JS, no libs) + ~150 lines of CSS at the end of `site/css/styles.css`. CSS bumped to `?v=15` on `index.html`.
+
+1. **Parallax hero** — `.parallax-hero` on hero bg div(s) of `index.html` (5 slideshow slides), `weddings.html`, `host-your-event.html`, `accommodations.html`. JS does `translate3d(0, scrollY * 0.4, 0)` via rAF. Skipped on touch + reduced-motion.
+2. **Stagger reveals** — `.reveal-stagger` on the venue-duo quad and events-grid on `index.html`; children fade-up with 0.15s stagger. Coexists with main.js's `.reveal` handler (no double-binding).
+3. **Nav `.scrolled` state at 80px** — independent of main.js's `.nav--scrolled` (60px). Past 80px nav background swaps to `var(--color-footer-bg)` at 95% with `backdrop-filter: blur(10px)`.
+4. **Sticky text + scrolling images** — new "Entirely Yours" section on `index.html`. Pure CSS sticky on `min-width: 900px`; stacks on mobile.
+5. **Horizontal drag gallery** — new "From Our Guests" section on `index.html` using 20 photos from `site/visitor-photos/visitor-photo-01.jpg` through `-20.jpg` (copied from repo-root `visitor-photos/`). Mouse + touch drag, scrollbar hidden, 420px desktop / 280px mobile.
+
+**Verified in preview (port 8080):** zero console errors. Parallax transform fires (`translate3d(0, 160px, 0)` at scrollY 400 on weddings.html). `.nav.scrolled` resolves to `rgba(30, 27, 22, 0.95)` + blur. Drag gallery overflows correctly (scrollWidth 7315 vs clientWidth 1265). Sticky H2 renders Americane 40px on cream. Existing main.js `.fade-in` / `.reveal` / `.nav--scrolled` / FAQ accordion all still firing.
 
 ## ✅ DONE 2026-04-25 (evening) — Routing + Calendly cleanup
 

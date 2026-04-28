@@ -3166,3 +3166,154 @@ p { margin-bottom: 1em; }
         gap: 10px;
     }
 }
+
+/* ============================================================
+   Scroll Effects (parallax, stagger, sticky split, drag gallery)
+   Paired with site/js/scroll-effects.js
+   ============================================================ */
+
+/* ---------- Parallax hero ----------
+   The hero containers are already overflow: hidden; pulling the bg div
+   beyond its bounds gives the parallax room to translate without exposing
+   gaps at the top/bottom. JS sets transform; CSS just defines the canvas. */
+/* Doubled selector raises specificity above existing
+   .hero--slideshow .hero__slide and .hero__bg rules (0,2,0). */
+.parallax-hero.parallax-hero {
+    position: absolute;
+    inset: -25%;
+    will-change: transform;
+}
+@media (prefers-reduced-motion: reduce) {
+    .parallax-hero.parallax-hero {
+        inset: 0;
+        will-change: auto;
+        transform: none !important;
+    }
+}
+
+/* ---------- Reveal stagger ----------
+   Container marker; children are the animated elements so we can stagger
+   their delays in JS. Pairs with .reveal (handled by main.js) where
+   sequencing isn't needed. */
+.reveal-stagger > * {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+.reveal-stagger > *.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ---------- Nav .scrolled state (80px threshold) ----------
+   Independent from .nav--scrolled (60px, terracotta deepen). After 80px
+   the nav swaps to dark footer-bg for stronger contrast over light pages. */
+.nav.scrolled {
+    background: rgba(30, 27, 22, 0.95); /* var(--color-footer-bg) at 95% */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: background 0.4s ease, backdrop-filter 0.4s ease;
+}
+
+/* ---------- Sticky scroll section ----------
+   Desktop: left text column sticks while right images scroll past.
+   Mobile: stacks normally. */
+.sticky-scroll {
+    background: var(--color-bg);
+    padding: var(--space-xl) 0;
+}
+.sticky-scroll__inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+}
+.sticky-scroll__images {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+.sticky-scroll__images img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+}
+.sticky-scroll__text h2 {
+    margin-top: var(--space-xs);
+}
+@media (min-width: 900px) {
+    .sticky-scroll__inner {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-xl);
+        align-items: start;
+    }
+    .sticky-scroll__text {
+        position: sticky;
+        top: 120px;
+        align-self: start;
+    }
+}
+
+/* ---------- Horizontal drag gallery ---------- */
+.drag-gallery-section {
+    background: var(--color-footer-bg);
+    padding: var(--space-xl) 0 var(--space-lg);
+    overflow: hidden;
+}
+.drag-gallery-section__header {
+    text-align: center;
+    margin-bottom: var(--space-md);
+    padding: 0 var(--space-md);
+}
+.drag-gallery-section__label {
+    display: inline-block;
+    font-family: var(--font-accent);
+    color: var(--color-orange);
+    font-size: 0.95rem;
+    font-style: italic;
+    letter-spacing: 1px;
+    margin-bottom: var(--space-xs);
+}
+.drag-gallery-section__title {
+    color: var(--color-white);
+    font-family: var(--font-heading);
+    margin: 0 0 var(--space-xs);
+}
+.drag-gallery-section__subtitle {
+    color: rgba(255, 255, 255, 0.65);
+    margin: 0;
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.drag-gallery {
+    display: flex;
+    gap: var(--space-sm);
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: var(--space-sm) var(--space-md);
+    cursor: grab;
+    scroll-behavior: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+    user-select: none;
+}
+.drag-gallery::-webkit-scrollbar { display: none; }
+.drag-gallery.is-dragging { cursor: grabbing; }
+.drag-gallery__item {
+    flex: 0 0 auto;
+    height: 420px;
+}
+.drag-gallery__item img {
+    height: 100%;
+    width: auto;
+    display: block;
+    border-radius: 4px;
+    pointer-events: none;
+    object-fit: cover;
+}
+@media (max-width: 899px) {
+    .drag-gallery__item { height: 280px; }
+    .drag-gallery-section { padding: var(--space-lg) 0 var(--space-md); }
+}

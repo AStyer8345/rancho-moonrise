@@ -42,7 +42,7 @@
     <noscript><link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Overpass:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"></noscript>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="css/styles.css?v=14">
+    <link rel="stylesheet" href="css/styles.css?v=15">
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
     <!-- Schema: LodgingBusiness + EventVenue -->
@@ -195,19 +195,19 @@
 <!-- ============ HERO ============ -->
 <main id="main">
 <section class="hero hero--slideshow" aria-label="Welcome to Rancho Moonrise">
-    <div class="hero__slide is-active" aria-hidden="false">
+    <div class="hero__slide parallax-hero is-active" aria-hidden="false">
         <img class="hero__img" src="images/hero-ranch-sunset-1920.webp" srcset="images/hero-ranch-sunset-480.webp 480w, images/hero-ranch-sunset-1024.webp 1024w, images/hero-ranch-sunset-1920.webp 1920w, images/hero-ranch-sunset-2560.webp 2560w, images/hero-ranch-sunset-3840.webp 3840w" sizes="100vw" alt="Sunset over Rancho Moonrise ranch outside Austin, Texas" fetchpriority="high" decoding="async">
     </div>
-    <div class="hero__slide" data-pos="center" aria-hidden="true">
+    <div class="hero__slide parallax-hero" data-pos="center" aria-hidden="true">
         <img class="hero__img" data-src="images/feature-pool-1920.webp" data-srcset="images/feature-pool-480.webp 480w, images/feature-pool-1024.webp 1024w, images/feature-pool-1920.webp 1920w, images/feature-pool-2560.webp 2560w" sizes="100vw" alt="Poolside at Rancho Moonrise under Texas evening sky" decoding="async">
     </div>
-    <div class="hero__slide" aria-hidden="true">
+    <div class="hero__slide parallax-hero" aria-hidden="true">
         <img class="hero__img" data-src="images/feature-music-1920.webp" data-srcset="images/feature-music-480.webp 480w, images/feature-music-1024.webp 1024w, images/feature-music-1920.webp 1920w, images/feature-music-2560.webp 2560w, images/feature-music-3840.webp 3840w" sizes="100vw" alt="Live music night at Rancho Moonrise venue barn" decoding="async">
     </div>
-    <div class="hero__slide" aria-hidden="true">
+    <div class="hero__slide parallax-hero" aria-hidden="true">
         <img class="hero__img" data-src="images/about-ranch-aerial-1024.webp" data-srcset="images/about-ranch-aerial-480.webp 480w, images/about-ranch-aerial-1024.webp 1024w" sizes="100vw" alt="Aerial view of the 36-acre Rancho Moonrise property" decoding="async">
     </div>
-    <div class="hero__slide" aria-hidden="true">
+    <div class="hero__slide parallax-hero" aria-hidden="true">
         <img class="hero__img" data-src="images/feature-safari-tent-1024.webp" data-srcset="images/feature-safari-tent-480.webp 480w, images/feature-safari-tent-1024.webp 1024w" sizes="100vw" alt="Safari tent interior at Rancho Moonrise with queen bed and string lights" decoding="async">
     </div>
 
@@ -272,7 +272,7 @@
             <span class="section-label reveal">Our Spaces</span>
             <h2>Room to Gather, Celebrate &amp; Roam</h2>
         </div>
-        <div class="venue-duo venue-duo--quad">
+        <div class="venue-duo venue-duo--quad reveal-stagger">
             <a href="/pages/host-your-event.html" class="venue-duo__card fade-in">
                 <img src="/images/venue-event-barn-1024.webp" srcset="/images/venue-event-barn-480.webp 480w, /images/venue-event-barn-1024.webp 1024w" sizes="(min-width: 900px) 50vw, 100vw" alt="Rancho Moonrise Event Barn set up for dinner with long tables and ranch decor" width="800" height="600" loading="lazy" decoding="async">
                 <div class="venue-duo__overlay">
@@ -370,6 +370,57 @@
                 </div>
             </div>
         </div>
+    </div>
+</section>
+
+<!-- ============ ENTIRELY YOURS — STICKY TEXT + SCROLLING IMAGES ============ -->
+<section class="section sticky-scroll" aria-label="Entirely yours — full-ranch experience">
+    <div class="container">
+        <div class="sticky-scroll__inner">
+            <div class="sticky-scroll__text">
+                <span class="section-label reveal">Entirely Yours</span>
+                <h2>The Whole Ranch, Just for You</h2>
+                <p>Full-property buyouts mean no other guests on the grounds. Your wedding party, your retreat, your family weekend — 36 acres, the pool, the Event Barn, the Lodge, every cabin and safari tent. All yours.</p>
+                <p>Wake up where you fell asleep. Walk to coffee in your slippers. Stay up late at the campfire without anyone asking you to keep it down. The whole place runs on your schedule.</p>
+                <a href="/pages/host-your-event.html" class="btn btn--outline-gold" style="margin-top: var(--space-sm);">Plan a Full-Ranch Buyout</a>
+            </div>
+            <div class="sticky-scroll__images">
+                <img src="/images/feature-pool-1024.webp" srcset="/images/feature-pool-480.webp 480w, /images/feature-pool-1024.webp 1024w" sizes="(min-width: 900px) 50vw, 100vw" alt="Resort-style pool at Rancho Moonrise under the Texas evening sky" width="800" height="500" loading="lazy" decoding="async">
+                <img src="/images/venue-event-barn-1024.webp" srcset="/images/venue-event-barn-480.webp 480w, /images/venue-event-barn-1024.webp 1024w" sizes="(min-width: 900px) 50vw, 100vw" alt="Event Barn set up for a private dinner with long tables and string lights" width="800" height="600" loading="lazy" decoding="async">
+                <img src="/images/accom-campfire-evening-1024.webp" srcset="/images/accom-campfire-evening-480.webp 480w, /images/accom-campfire-evening-1024.webp 1024w" sizes="(min-width: 900px) 50vw, 100vw" alt="Campfire ring at twilight surrounded by safari tents" width="800" height="600" loading="lazy" decoding="async">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ VISITOR PHOTO STRIP — HORIZONTAL DRAG GALLERY ============ -->
+<section class="drag-gallery-section" aria-label="Photos from our guests">
+    <div class="drag-gallery-section__header">
+        <span class="drag-gallery-section__label">From Our Guests</span>
+        <h2 class="drag-gallery-section__title" style="color: var(--color-white);">Real Moments at the Ranch</h2>
+        <p class="drag-gallery-section__subtitle">Drag to scroll. Real photos from real visitors — weddings, weekends, sunsets, donkeys, all of it.</p>
+    </div>
+    <div class="drag-gallery" role="list" aria-label="Visitor photo gallery">
+        <div class="drag-gallery__item" role="listitem"><img src="/visitor-photos/visitor-photo-01.jpg" alt="" loading="lazy" decoding="async" draggable="false"></div>
+        <div class="drag-gallery__item" role="listitem"><img src="/visitor-photos/visitor-photo-02.jpg" alt="" loading="lazy" decoding="async" draggable="false"></div>
+        <div class="drag-gallery__item" role="listitem"><img src="/visitor-photos/visitor-photo-03.jpg" alt="" loading="lazy" decoding="async" draggable="false"></div>
+        <div class="drag-gallery__item" role="listitem"><img src="/visitor-photos/visitor-photo-04.jpg" alt="" loading="lazy" decoding="async" draggable="false"></div>
+        <div class="drag-gallery__item" role="listitem"><img src="/visitor-photos/visitor-photo-05.jpg" alt="" loading="lazy" decoding="async" draggable="false"></div>
+        <div class="drag-gallery__item" role="listitem"><img src="/visitor-photos/visitor-photo-06.jpg" alt="" loading="lazy" decoding="async" draggable="false"></div>
+        <div class="drag-gallery__item" role="listitem"><img src="/visitor-photos/visitor-photo-07.jpg" alt="" loading="lazy" decoding="async" draggable="false"></div>
+        <div class="drag-gallery__item" role="listitem"><img src="/visitor-photos/visitor-photo-08.jpg" alt="" loading="lazy" decoding="async" draggable="false"></div>
+        <div class="drag-gallery__item" role="listitem"><img src="/visitor-photos/visitor-photo-09.jpg" alt="" loading="lazy" decoding="async" draggable="false"></div>
+        <div class="drag-gallery__item" role="listitem"><img src="/visitor-photos/visitor-photo-10.jpg" alt="" loading="lazy" decoding="async" draggable="false"></div>
+        <div class="drag-gallery__item" role="listitem"><img src="/visitor-photos/visitor-photo-11.jpg" alt="" loading="lazy" decoding="async" draggable="false"></div>
+        <div class="drag-gallery__item" role="listitem"><img src="/visitor-photos/visitor-photo-12.jpg" alt="" loading="lazy" decoding="async" draggable="false"></div>
+        <div class="drag-gallery__item" role="listitem"><img src="/visitor-photos/visitor-photo-13.jpg" alt="" loading="lazy" decoding="async" draggable="false"></div>
+        <div class="drag-gallery__item" role="listitem"><img src="/visitor-photos/visitor-photo-14.jpg" alt="" loading="lazy" decoding="async" draggable="false"></div>
+        <div class="drag-gallery__item" role="listitem"><img src="/visitor-photos/visitor-photo-15.jpg" alt="" loading="lazy" decoding="async" draggable="false"></div>
+        <div class="drag-gallery__item" role="listitem"><img src="/visitor-photos/visitor-photo-16.jpg" alt="" loading="lazy" decoding="async" draggable="false"></div>
+        <div class="drag-gallery__item" role="listitem"><img src="/visitor-photos/visitor-photo-17.jpg" alt="" loading="lazy" decoding="async" draggable="false"></div>
+        <div class="drag-gallery__item" role="listitem"><img src="/visitor-photos/visitor-photo-18.jpg" alt="" loading="lazy" decoding="async" draggable="false"></div>
+        <div class="drag-gallery__item" role="listitem"><img src="/visitor-photos/visitor-photo-19.jpg" alt="" loading="lazy" decoding="async" draggable="false"></div>
+        <div class="drag-gallery__item" role="listitem"><img src="/visitor-photos/visitor-photo-20.jpg" alt="" loading="lazy" decoding="async" draggable="false"></div>
     </div>
 </section>
 
@@ -471,7 +522,7 @@
             <h2>Upcoming Events</h2>
         </div>
 
-        <div class="events-grid">
+        <div class="events-grid reveal-stagger">
             <div class="event-card fade-in">
                 <div class="event-card__img">
                     <img src="/images/event-free-friday-pool-800.webp" srcset="/images/event-free-friday-pool-400.webp 400w, /images/event-free-friday-pool-800.webp 800w" sizes="(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw" alt="Free Friday at the pool event at Rancho Moonrise" width="600" height="600" loading="lazy" decoding="async">
@@ -636,6 +687,7 @@
 <!-- ============ SCRIPTS ============ -->
 <script src="js/main.js" defer></script>
 <script src="js/cms.js" defer></script>
+<script src="js/scroll-effects.js" defer></script>
 
 
 <!-- Mobile Sticky CTA -->

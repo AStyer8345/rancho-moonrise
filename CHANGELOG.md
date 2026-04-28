@@ -1,5 +1,18 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-28 (scroll effects) — Five new scroll behaviors on the Vercel site
+
+Pulled in the five scroll patterns from grandladyaustin.com as vanilla JS / CSS — no new libraries, all degrade gracefully with JS off.
+
+- **New file:** `site/js/scroll-effects.js` — single IIFE handling parallax, stagger reveals, nav `.scrolled` state at 80px, and horizontal drag gallery. All scroll listeners use `requestAnimationFrame` and `{ passive: true }`. Touch devices and `prefers-reduced-motion` skip parallax.
+- **Parallax hero** — `.parallax-hero` class on each `.hero__slide` (index.html, 5 slides), `.hero__bg` (weddings.html, host-your-event.html), `.page-header__bg` (accommodations.html). CSS sets `position: absolute; inset: -25%; will-change: transform;` (doubled selector to win specificity over existing `.hero--slideshow .hero__slide` and `.hero__bg`). JS translates `translate3d(0, scrollY * 0.4, 0)`.
+- **Stagger reveals** — new `.reveal-stagger` class added to the venue-duo quad and events-grid on index.html. Children animate in sequence (0.15s increments). Pairs with existing `.reveal` (still owned by main.js) — no double-binding.
+- **Nav `.scrolled` state** — independent of the existing `.nav--scrolled` (60px terracotta deepen). Past 80px the nav also gets `.scrolled` → `rgba(30, 27, 22, 0.95)` (footer-bg) + `backdrop-filter: blur(10px)`. Both classes coexist; main.js untouched.
+- **Sticky text + scrolling images** — new "Entirely Yours — The Whole Ranch, Just for You" section on index.html with sticky left text + 3 stacked right-column images (pool, event barn, campfire). Pure CSS sticky on `min-width: 900px`; stacks normally on mobile.
+- **Horizontal drag gallery** — new "From Our Guests · Real Moments at the Ranch" section after the sticky-scroll. 20 visitor photos (`visitor-photos/visitor-photo-01.jpg` through `-20.jpg`, copied into `site/visitor-photos/`). Footer-bg background, amber Lora label, 420px image height (280px on mobile). Mouse drag + touch scroll; scrollbar hidden; click-after-drag suppressed so any links inside don't fire on a drag-release.
+- **Affected HTML** — `index.html`, `pages/weddings.html`, `pages/host-your-event.html`, `pages/accommodations.html` (each gets `<script src="...js/scroll-effects.js" defer></script>` next to existing main.js).
+- **Verified in preview** at port 8080: zero console errors, parallax transforms (e.g. `translate3d(0, 160px, 0)` at scrollY 400 on weddings), `.nav.scrolled` background = `rgba(30, 27, 22, 0.95)` and `backdrop-filter: blur(10px)`, drag gallery `scrollWidth` 7315 > `clientWidth` 1265 with `cursor: grab`, sticky-scroll H2 styled as Americane 40px on cream. Existing `.fade-in` / `.reveal` / `.nav--scrolled` / FAQ accordion all still firing.
+
 ## 2026-04-28 (SEO daily) — AggregateRating extended to 5 BlogPosting landing pages via publisher
 
 - **Re-Verify Gate** — DNS still on Flywheel (`x-fw-server: Flywheel/5.1.0` via `curl -I ranchomoonrise.com`). Vercel sitemap returns 200.
