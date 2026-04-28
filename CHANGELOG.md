@@ -1,5 +1,9 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-28 — Review Monitor RUN_012
+
+- **rancho-review-monitor RUN_012:** Google WebSearch snippet stable at 175 reviews for 2nd consecutive run (RUN_011 + RUN_012). Strengthens case that the +49 jump from prior 126 baseline reflects a real count change — likely ~48 new reviews since April 9. Live GBP scrape BLOCKER ongoing (12th — JS-rendered, no Places API key); FLAG_FOR_ADAM persists, strengthened. Unreplied=0 maintained on done-log signal (no review-related done-log entries since RUN_011; `rancho-review-replies` RESOLVED 2026-04-15 22:12 remains last review action). TripAdvisor live-verified 0/unclaimed. Hipcamp live-verified 0 ("Be the first to review", 1 booking). Facebook 5/100% confirmed. Hotels.com 8.0 rating snippet surfaced cleanly this run (Dec 2025 review still anchoring). The Knot detail expanded — WebSearch now shows 4.5★ / 8 reviews (was 1 review snippet in RUN_008); still not in scope. 3 BLOCKERS open (Google run 12, Hotels.com timeout run 12, Airbnb 403 run 12). Dashboard status: ok.
+
 ## 2026-04-27 (SEO daily) — April rotation, AggregateRating expansion, sitemap freshness
 
 - **Re-Verify Gate** — DNS still on Flywheel (`x-fw-server: Flywheel/5.1.0` via `curl -I ranchomoonrise.com`). Vercel sitemap returns 200; old domain sitemap returns 301 (expected pre-cutover).

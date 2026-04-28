@@ -367,3 +367,46 @@ Claims enumerated from persistent surfaces and re-verified:
 **No review drafts produced** — no new reviews detected on any platform this run.
 
 ---
+
+## RUN_012 — 2026-04-28 06:38 CT
+
+**Summary:** Quiet run on done-log signal, with **Google WebSearch snippet stable at 175 for 2nd consecutive run** (RUN_011 + RUN_012 both 175). Strengthens the case that the +49 jump from prior 126 baseline reflects a real count change — though live-scrape verification still BLOCKER (12th consecutive, JS-rendered, no Places API key). FLAG_FOR_ADAM persists. No review-related done-log entries since RUN_011 (last review action remains `rancho-review-replies` RESOLVED 2026-04-15 22:12; most recent done-log entry is 2026-04-26 08:05 SEO PROGRESS, already counted in RUN_010). Unreplied=0 maintained on done-log signal — caveat: if 175 reflects ~48 new reviews since April 9, some may be unreplied; unverifiable without live access. TripAdvisor live-scraped via WebFetch: 0 reviews, unclaimed, "No reviews for this property yet." (Travelers' Choice still noted; "Claim Your Listing" CTA still visible). Hipcamp live-scraped via WebFetch: 0 reviews, "Be the first to review" (still 1 booking, no review left, joined Mar 2024). Facebook 5/100% recommend confirmed via WebSearch ("Rancho Moonrise has a 100% recommend rating with 5 reviews"). Expedia/Hotels.com listing URL `ho2867109568` still active per WebSearch snippet; 8.0 rating surfaced cleanly this run with Dec 2025 guest review still anchoring snippet. Hotels.com direct fetch BLOCKER ongoing (12th, no live attempt). Airbnb 403 BLOCKER ongoing (12th, no live attempt). Dashboard status remains "ok."
+
+**The Knot side-note (still not in scope):** WebSearch RUN_012 surfaced richer detail than RUN_008's single-review snippet — "The Knot shows 4.5 out of 5 stars with 8 reviews." Up from prior known signal of 1 review. Still not adding to monitored scope without Adam's decision (The Knot is a curated wedding venue directory, not a standard OTA review platform). Logged for awareness — Adam may want to fold this into review coverage or claim/optimize the listing per existing improvement-plan task #5.
+
+**Done-log review-adjacent entries since RUN_011:** none (no new entries appended to `rancho-done-log.md` since 2026-04-26 08:05 SEO PROGRESS line, which preceded RUN_011 and was already counted)
+
+**Re-Verify Gate against persistent surfaces:**
+- `CONTEXT.md` Active Blockers: no review-related claims to re-verify; "Google reviews 125 (4.9★) (unverified)" line in Key Metrics table is a frozen baseline snapshot, not a live claim. No action.
+- `improvement-plan.html`: contains stale narrative copy ("127 reviews at 4.9★", "9/10 recent reviews unreplied" on lines 1737/1744; "4.9★ / 127 reviews" line 1917; "9 of last 10 reviews are unreplied" task-desc line 889). Per SKILL scope, this task does not own HTML mutation — `rancho-apply-done` owns task-card moves; static narrative copy edits are outside the gate's scope. Logged here as observed staleness; no edits made.
+- `tasks/review-monitor/BLOCKERS.md`: 3 BLOCKERS open (google-reviews-count, hotels-com-direct-fetch, airbnb-listing-existence). All still unresolved; consecutive-failure counters bumped to 12.
+
+**Re-verify log lines:**
+```
+[2026-04-28 11:38] re-verify google-reviews-count — stale (run 12, BLOCKER ongoing) — live=BLOCKED(JS-rendered) search-snippet=175(2nd consecutive run stable; was 126 across RUN_007-009; 127 baseline 2026-04-09) prior=175(snippet RUN_011) — FLAG_FOR_ADAM persists
+[2026-04-28 11:38] re-verify google-unreplied — still_true(degraded) — live=0(no done-log review entries since RUN_011; rancho-review-replies RESOLVED 2026-04-15 remains last review action) prior=0 — caveat: 2-run-stable snippet at 175 implies ~48 new reviews since April 9, some may be unreplied, unverifiable
+[2026-04-28 11:38] re-verify tripadvisor-status — still_true — live=unclaimed/0reviews(WebFetch,"No reviews for this property yet."/"Claim Your Listing") prior=unclaimed/0reviews
+[2026-04-28 11:38] re-verify hipcamp-reviews — still_true — live=0reviews(WebFetch,"Be the first to review",1 booking,joined Mar 2024) prior=0reviews
+[2026-04-28 11:38] re-verify expedia-rating — still_true(search) — live=8.0(WebSearch:Hotels.com snippet still active, Dec 2025 review surfacing) prior=8.0 STALE:2026-04-09 BLOCKER ongoing (run 12)
+[2026-04-28 11:38] re-verify facebook-reviews — still_true — live=5reviews/100%(WebSearch confirmed) prior=5reviews/100%
+[2026-04-28 11:38] re-verify airbnb-listing — unverified (BLOCKER ongoing, no new fetch — 403 pattern established, run 12) prior=POSSIBLE_NEW_LISTING
+```
+
+**Failure counters (BLOCKERS open):**
+- `google-reviews-count` live scrape: 12 consecutive
+- `hotels-com-direct-fetch`: 12 consecutive (no live attempt this run)
+- `airbnb-listing-existence`: 12 consecutive (no live attempt this run)
+
+**Files written this run:**
+- `brand/review-aggregate.json` — updated (run_number 11→12; TripAdvisor + Hipcamp last_scrape refreshed to 2026-04-28T11:38:00Z; Google search_snippet_count 175 confirmed 2-run-stable; stale_run_count 11→12; Airbnb flag_run_count 11→12; Hotels.com timeout_count 11→12; Facebook + Expedia search_confirmed_date 2026-04-28; The Knot detail expanded — 8 reviews / 4.5★)
+- `site/admin/dashboard-state.json` — updated (run_number 11→12, last_run refreshed, flags updated to reflect 2-run-stable snippet at 175, status_reason refreshed)
+- `tasks/review-monitor/session-log.md` — this entry
+- `CONTEXT.md` — Last Worked On updated (review-monitor entry replaced)
+- `CHANGELOG.md` — one dated bullet appended
+
+**FLAG_FOR_ADAM (carried from RUN_011, now strengthened):**
+> Google WebSearch snippet for "Rancho Moonrise" returned **175 reviews for the 2nd consecutive run** (RUN_011 + RUN_012). That's +49 vs the previously-stable 126 snippet (RUN_007/008/009) and +48 vs the April 9 verified baseline of 127. Two consecutive runs at 175 makes a one-time anomaly unlikely — it's probably real. If true, ~48 new reviews have come in since April 9, and based on the prior reply pattern, several may be unreplied. The live GBP page is still JS-rendered so this agent can't verify directly. Two paths: (a) check the GBP dashboard to confirm the live count and whether anything is unreplied, or (b) provide a Google Places API key so this agent can start authoritative live counts via `places.googleapis.com/v1/places/{placeId}?fields=reviews,rating,userRatingCount`. Path (a) takes 60 seconds. Path (b) is the durable fix.
+
+**No review drafts produced** — no new reviews detected on any platform this run.
+
+---
