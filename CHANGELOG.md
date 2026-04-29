@@ -1,5 +1,20 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-29 (SEO daily) — AggregateRating extended to remaining 4 BlogPosting landing pages
+
+- **Re-Verify Gate** — DNS still on Flywheel/5.1.0 (BofillTech) per `curl -I ranchomoonrise.com`. Vercel sitemap returns 200. All S2/S3/S4 SEO claims still_true.
+- **AggregateRating coverage** closes the BlogPosting half of yesterday's 6-page gap. Added `aggregateRating` (4.9 / 125 / bestRating 5) to the `publisher.Organization` block on:
+  - `pages/glamping-near-austin-texas.html`
+  - `pages/things-to-do-manor-tx.html`
+  - `pages/glamping-vs-camping.html`
+  - `pages/things-to-do-near-austin-with-kids.html`
+- **Pattern**: same `publisher.Organization`-anchored AggregateRating used on the 5 commercial-intent BlogPostings 2026-04-28. Keeps the rating signaled against the venue entity rather than the article body.
+- **dateModified** bumped to 2026-04-29 on each of the 4 BlogPosting JSON-LD blocks.
+- **Sitemap freshness**: 4 lastmods bumped to **2026-04-29** (`/blog/glamping-near-austin-texas/` 04-17→04-29, `/blog/things-to-do-manor-tx/` 04-17→04-29, `/blog/glamping-vs-camping/` 04-14→04-29, `/blog/things-to-do-near-austin-with-kids/` 04-15→04-29).
+- **Validation**: all 16 JSON-LD blocks (4 per page × 4 pages) parse via `python3 json.loads`. No type errors.
+- **Coverage now**: 14 of 17 customer-facing pages carry AggregateRating (up from 10 yesterday). Remaining 2 are `faqs.html` + `contact.html` — utility pages with no `Organization` schema today; next-run decision is stand-alone `Organization` JSON-LD block (with aggregateRating) vs. skip.
+- **Did NOT bump** the review count beyond 125 — review-count claims belong to `rancho-review-monitor` and require Adam confirmation or a Places API key.
+
 ## 2026-04-28 (scroll effects) — Five new scroll behaviors on the Vercel site
 
 Pulled in the five scroll patterns from grandladyaustin.com as vanilla JS / CSS — no new libraries, all degrade gracefully with JS off.
