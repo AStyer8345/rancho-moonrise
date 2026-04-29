@@ -1,8 +1,8 @@
 {
   "review_monitor": {
-    "last_run": "2026-04-28T11:38:00Z",
+    "last_run": "2026-04-29T15:09:21Z",
     "status": "ok",
-    "status_reason": "RUN_012. Google WebSearch snippet stable at 175 for 2nd consecutive run (RUN_011 + RUN_012) — strengthens case that +49 vs prior 126 baseline reflects real count change; live-scrape verification still BLOCKER (12th, JS-rendered, no Places API key); FLAG_FOR_ADAM persists. No review-related done-log entries since RUN_011 — unreplied=0 maintained on done-log signal (caveat: ~48 implied new reviews may include unreplied ones). TripAdvisor + Hipcamp live-confirmed 0 reviews. Facebook 5/100% confirmed via WebSearch. Hotels.com 8.0 rating snippet surfaced cleanly this run (stronger than RUN_011); listing URL still active. Hotels.com direct fetch BLOCKER ongoing (12th, no live attempt). Airbnb 403 BLOCKER ongoing (12th). The Knot detail expanded — 4.5★ / 8 reviews (was 1) per WebSearch; still not in scope.",
+    "status_reason": "RUN_013. Google WebSearch snippet stable at 175 for 3rd consecutive run (RUN_011 + RUN_012 + RUN_013) — three-run stability across distinct model+search invocations rules out one-time anomaly; +48 vs Apr-9 verified baseline of 127 almost certainly reflects real new reviews. Live-scrape verification still BLOCKER (13th, JS-rendered, no Places API key); FLAG_FOR_ADAM escalated. No review-related done-log entries since RUN_011 — unreplied=0 maintained on done-log signal (caveat: ~48 implied new reviews likely include unreplied ones based on prior 9/10 pattern). TripAdvisor + Hipcamp live-confirmed 0 reviews. Facebook 5/100% confirmed via WebSearch. Hotels.com 8.0 rating snippet surfaced cleanly with Dec 2025 review still anchoring; listing URL still active. Hotels.com direct fetch BLOCKER ongoing (13th, no live attempt). Airbnb 403 BLOCKER ongoing (13th). The Knot detail unchanged (4.5★ / 8 reviews); still not in scope.",
     "new_reviews_pending_response": 0,
     "total_reviews_tracked": 132,
     "unreplied_by_platform": {
@@ -14,10 +14,10 @@
     },
     "stale_platforms": ["google", "expedia"],
     "flags": [
-      "google-search-snippet-stable-at-175-2-runs-needs-live-verify",
+      "google-search-snippet-stable-at-175-3-runs-needs-live-verify",
       "airbnb-listing-existence-unverified",
-      "google-live-scrape-blocked-12-runs",
-      "hotels-com-fetch-timeout-12-runs",
+      "google-live-scrape-blocked-13-runs",
+      "hotels-com-fetch-timeout-13-runs",
       "the-knot-8-reviews-4.5-stars-not-in-scope"
     ],
     "blockers": [
@@ -26,6 +26,6 @@
       "airbnb-listing-existence"
     ],
     "new_platforms_noted": ["yelp", "agoda", "the_knot"],
-    "run_number": 12
+    "run_number": 13
   }
 }

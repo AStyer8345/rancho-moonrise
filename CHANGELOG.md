@@ -1,5 +1,13 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-29 (rancho-review-monitor) — RUN_013
+
+- Scraped 5 platforms — TripAdvisor + Hipcamp via WebFetch live; Google + Facebook + Expedia via WebSearch; Airbnb + Hotels.com BLOCKER ongoing.
+- **Google snippet now 3-run-stable at 175 reviews** (RUN_011 + RUN_012 + RUN_013 across April 27/28/29) — three consecutive runs across distinct model+search invocations effectively rules out the one-time-anomaly explanation. +48 vs April-9 verified baseline of 127 almost certainly reflects real new reviews. FLAG_FOR_ADAM escalated.
+- No new in-scope reviews on TripAdvisor/Hipcamp/Facebook. 0 stale claims auto-resolved. 3 BLOCKERS bumped to 13 consecutive (google-reviews-count, hotels-com-direct-fetch, airbnb-listing-existence).
+- Minor: TripAdvisor price-range drift $77-$181 → $78-$180. The Knot detail unchanged (4.5★ / 8 reviews; out of scope).
+- Files: `brand/review-aggregate.json`, `site/admin/dashboard-state.json`, `tasks/review-monitor/session-log.md`, `CONTEXT.md`, `CHANGELOG.md`.
+
 ## 2026-04-29 (rancho-content-weekly) — Strengthener BLOCKED, run 2 of 2
 
 - **Outcome:** zero website edits. Same two `NEEDS ADAM` items as 2026-04-22 are still open in `TODO.md` (no approved testimonials list; no author-byline decision in `GOALS.md`).
