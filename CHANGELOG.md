@@ -1,5 +1,16 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-29 (rancho-content-weekly) — Strengthener BLOCKED, run 2 of 2
+
+- **Outcome:** zero website edits. Same two `NEEDS ADAM` items as 2026-04-22 are still open in `TODO.md` (no approved testimonials list; no author-byline decision in `GOALS.md`).
+- **Page attempted:** `accommodations.html` (next in queue, low-res thumbnails are a separate data blocker on Ashley).
+- **Blockers re-verified:**
+  - `brand/approved-testimonials.md` does not exist; `brand/review-aggregate.json` RUN_012 still has Google count stale-snippet-only (175 unverified vs. 127 Apr-9 baseline) — no curation to event dates has happened.
+  - `GOALS.md` last-updated 2026-04-20, no "Settled Decisions" entry, no Adam/Ashley/Team byline call.
+- **Spec gate:** task requires ≥3 of (photos, author block, testimonial, local detail). With items 2 and 3 blocked, only 2 are achievable → cannot satisfy spec → exit per hard stops.
+- **Recommendation in TODO.md** updated: settle both this week OR pause `rancho-content-weekly` in `GOALS.md` → "Paused Workstreams" so it stops producing noise.
+- **Run log:** `run-logs/strengthener-queue.md` 2026-04-29 entry.
+
 ## 2026-04-29 (SEO daily) — AggregateRating extended to remaining 4 BlogPosting landing pages
 
 - **Re-Verify Gate** — DNS still on Flywheel/5.1.0 (BofillTech) per `curl -I ranchomoonrise.com`. Vercel sitemap returns 200. All S2/S3/S4 SEO claims still_true.
