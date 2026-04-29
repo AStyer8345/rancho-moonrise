@@ -232,3 +232,39 @@ WARN: Skipped 3 oversized files (>10MB): PRIVATE EVENTS AT RANCHO MOONRISE.pdf (
 2026-04-28 16:13 | scanned=64 added=0 replaced=0 skipped=4 errors=0
 2026-04-28 20:07 | scanned=64 added=0 replaced=0 skipped=4 errors=0
 2026-04-29 09:54 | scanned=64 added=0 replaced=0 skipped=3 errors=0
+2026-04-29 16:08 | ERROR delete | 2026-04-09-review-report.md | Usage: notebooklm source delete [OPTIONS] SOURCE_ID
+Try 'notebooklm source delete --help' for help.
+
+Error: No such option: --json
+2026-04-29 16:08 | ERROR delete | 2026-04-15-gbp-profile-fields.md | Usage: notebooklm source delete [OPTIONS] SOURCE_ID
+Try 'notebooklm source delete --help' for help.
+
+Error: No such option: --json
+2026-04-29 16:08 | ERROR delete | 2026-04-15-gbp-qa-seed.md | Usage: notebooklm source delete [OPTIONS] SOURCE_ID
+Try 'notebooklm source delete --help' for help.
+
+Error: No such option: --json
+2026-04-29 16:08 | ERROR delete | 2026-04-13-gbp-post.md | Usage: notebooklm source delete [OPTIONS] SOURCE_ID
+Try 'notebooklm source delete --help' for help.
+
+Error: No such option: --json
+2026-04-29 16:08 | ERROR delete | 2026-04-09-gbp-post.md | Usage: notebooklm source delete [OPTIONS] SOURCE_ID
+Try 'notebooklm source delete --help' for help.
+
+Error: No such option: --json
+2026-04-29 16:08 | ERROR delete | 2026-04-15-blog12-social-snippets.md | Usage: notebooklm source delete [OPTIONS] SOURCE_ID
+Try 'notebooklm source delete --help' for help.
+
+Error: No such option: --json
+2026-04-29 16:08 | ERROR upload | Monotype Font Software End User License Agreement.html | 
+2026-04-29 16:08 | replaced | 2026-04-09-review-report.md
+2026-04-29 16:08 | replaced | 2026-04-15-gbp-profile-fields.md
+2026-04-29 16:08 | replaced | 2026-04-15-gbp-qa-seed.md
+2026-04-29 16:08 | replaced | 2026-04-13-gbp-post.md
+2026-04-29 16:08 | replaced | 2026-04-09-gbp-post.md
+2026-04-29 16:08 | replaced | 2026-04-15-blog12-social-snippets.md
+2026-04-29 16:08 | ERROR upload | Monotype Font Software End User License Agreement.html | {
+  "error": true,
+  "code": "ERROR",
+  "message": "Client error '400 Bad Request' for url 'https://notebooklm.google.com/upload/_/?authuser=0'\nFor more information check: https://developer.mozilla.o
+2026-04-29 16:09 | scanned=74 added=0 replaced=6 skipped=7 errors=1
