@@ -1,5 +1,17 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-30 (rancho-site-daily) — DNS CUTOVER LIVE + AggregateRating closes utility-page gap
+
+- **🚀 DNS CUTOVER VERIFIED LIVE.** `curl -I https://ranchomoonrise.com/` returns `server: Vercel`, 307 → `https://www.ranchomoonrise.com/`. Yesterday's run (2026-04-29) confirmed `x-fw-server: Flywheel/5.1.0`. Vercel is now the production origin. The #1 SEO blocker that's been gating every workstream since the new site shipped is RESOLVED. Auto-resolved `rancho-p2-11-website-launch-dns` in `rancho-done-log.md`.
+- **AggregateRating extended to the 2 remaining utility pages — `faqs.html` + `contact.html`.** Closes the venue-rating coverage gap that was queued in CONTEXT.md.
+  - `contact.html`: extended the existing nested `LocalBusiness` (under `mainEntity` of the `ContactPage` block) with `aggregateRating` 4.9 / 125 / bestRating 5 — no new top-level block, just one nested addition. Cleanest schema shape.
+  - `faqs.html`: added a stand-alone `LocalBusiness` JSON-LD block (FAQPage has no `publisher` slot to nest into) with the same rating shape + full address + phone, mirroring `contact.html`.
+- **Validation**: all 7 JSON-LD blocks across the 2 pages parse via `python3 json.loads` (3 in contact, 4 in faqs).
+- **Sitemap freshness**: `/contact/` lastmod 2026-04-07 → 2026-04-30; `/faqs/` lastmod 2026-04-08 → 2026-04-30. Both stale by 3+ weeks pre-bump.
+- **Coverage now**: 16 of 17 customer-facing pages carry AggregateRating (up from 14 yesterday). `rancho-seo-s4-schema-breadcrumb-speakable` now PROGRESS 95% in done-log.
+- **NEW NEEDS ADAM (post-cutover canonical strategy):** all page canonicals + every sitemap URL point to apex (`https://ranchomoonrise.com/...`), but the live apex 307s to `www.ranchomoonrise.com`. The canonical-vs-served-host mismatch is suboptimal — Google may still consolidate via the redirect, but a 307 (temporary) is weaker than a 301 (permanent) for link-equity transfer, and the canonical/host disagreement creates a self-conflict signal. Two clean paths: **(A)** in Vercel, set the apex `ranchomoonrise.com` as the primary domain (no app code changes; redirects flip to `www → apex`); **(B)** rewrite all canonicals + sitemap URLs to `https://www.ranchomoonrise.com/...` and let `www` be primary. Either is fine; Adam's call. Until then, indexing will work but the canonical signal isn't crisp.
+- **Re-Verify Gate**: DNS state flipped (this is the resolution event itself, not a still-true claim). Vercel sitemap returns 200 on both `rancho-moonrise.vercel.app` and `www.ranchomoonrise.com`. Safari-tents page returns 200 on production. All S4 (BreadcrumbList + SpeakableSpec) claims still_true.
+
 ## 2026-04-30 (rancho-review-monitor) — RUN_014
 
 - Scraped 5 platforms — TripAdvisor + Hipcamp via WebFetch live; Google + Facebook + Expedia via WebSearch; Airbnb + Hotels.com BLOCKER ongoing (run 14).

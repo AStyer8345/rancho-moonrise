@@ -1,5 +1,16 @@
 # Rancho Moonrise — TODO
-Last updated: 2026-04-28 (scroll effects shipped — parallax, reveals, sticky split, horizontal drag gallery, nav .scrolled state)
+Last updated: 2026-04-30 (🚀 **DNS cutover verified LIVE on Vercel** + AggregateRating coverage now 16/17 — utility pages closed)
+
+## ✅ DONE 2026-04-30 — DNS cutover live + AggregateRating utility-page closure
+
+1. **🚀 DNS cutover verified live.** `curl -I https://ranchomoonrise.com/` returns `server: Vercel` + 307 → `https://www.ranchomoonrise.com/` (HTTP 200, `x-vercel-cache: HIT`). The #1 SEO blocker since the new site shipped is RESOLVED. Auto-resolved `rancho-p2-11-website-launch-dns` in `rancho-done-log.md`.
+2. **AggregateRating extended to the 2 remaining utility pages.** `contact.html` got it nested into the existing `LocalBusiness` under `mainEntity` of the `ContactPage` block (cleanest schema — no new top-level block). `faqs.html` got a stand-alone `LocalBusiness` JSON-LD (FAQPage has no `publisher` slot to nest into). Both use the site's standard 4.9 / 125 / bestRating 5 anchor. Coverage now 16 of 17 customer-facing pages.
+3. **Sitemap freshness**: `/contact/` lastmod 04-07 → 04-30; `/faqs/` lastmod 04-08 → 04-30. All 7 JSON-LD blocks across both pages validate.
+
+**NEW NEEDS ADAM (post-cutover):**
+- [ ] **Canonical strategy decision (apex vs www).** All canonicals + sitemap URLs use apex (`https://ranchomoonrise.com/...`) but apex 307s to www. Pick: **(A)** Vercel → set apex as primary domain (no code change; redirects flip to www → apex). **(B)** Rewrite all canonicals + sitemap URLs to www. Recommendation: A — fastest, matches existing canonicals.
+- [ ] **GSC sitemap submit (rancho-seo-s6).** Once canonical decision is made, submit `/sitemap.xml` to Search Console. This was blocked on cutover; now actionable.
+
 
 ## ✅ DONE 2026-04-28 — Scroll effects (5 patterns from grandladyaustin.com)
 
@@ -160,10 +171,10 @@ All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms. Li
 
 ## Now (this week — April 20-26)
 
-### 🚨 TOMORROW — DNS CUTOVER (2026-04-22)
-- [ ] **Adam:** trigger DNS cutover from BofillTech → Vercel. Once propagation starts, 14 blog posts + safari tent page + full schema suite will finally be crawlable at the production hostname.
-- [ ] **Ashley:** confirm admin login (howdy@ranchomoonrise.com Outlook draft #2 — discard draft #1 which has a CDATA bug)
-- [ ] **Post-cutover smoke test:** load `/pages/events.html` on the final hostname, verify Supabase hydration populates the month grids, verify no mixed-content / CORS errors, verify all 12 GBP posts scheduled today render correctly on the GBP listing over the next few days.
+### ✅ DNS CUTOVER LIVE (verified 2026-04-30)
+- [x] DNS cutover from BofillTech → Vercel — verified live 2026-04-30 (`server: Vercel`, www host serves HTTP 200)
+- [ ] **Post-cutover smoke test (NEEDS ADAM or next interactive run):** load `/pages/events.html` on `www.ranchomoonrise.com`, verify Supabase hydration populates the month grids, verify no mixed-content / CORS errors, verify all 12 GBP posts scheduled 04-21 render correctly on the GBP listing over the next few days.
+- [ ] **Ashley:** confirm admin login (howdy@ranchomoonrise.com Outlook draft #2)
 
 ### CLAUDE (next task to build) — Re-verify gate for Rancho
 - [ ] **Create `rancho-review-monitor` scheduled task** — mirror `acr-review-monitor` pattern, own Rancho GBP review-reply state as a live claim. Use the shared gate at `/Users/adamstyer/Documents/client-ops/templates/re-verify-before-report.md`. Verification path: public GBP page scrape or Places API `place.reviews[].reply` presence. First-run responsibility: re-verify every live-claim finding currently in CONTEXT.md Active Blockers + improvement-plan.html Plan-tab task cards, auto-resolve stale ones into `rancho-done-log.md`. Expected ~30 min fork of acr SKILL.md.
@@ -236,7 +247,7 @@ All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms. Li
 - [ ] **Rewrite Hipcamp listing first paragraph + OTA listings (Expedia, Hotels.com, Agoda)** — lead with "glamping + shared-bath cabin option, private-bath safari tent option" so amenities surface honestly. Addresses Alison's 4★ feedback from 04-16.
 
 ### NEEDS ADAM — Infrastructure
-- [ ] **DNS cutover from BofillTech to Vercel** — SCHEDULED 2026-04-22 (tomorrow). THE #1 unlock for all SEO/AEO. See the 🚨 TOMORROW section at the top of Now.
+- [x] **DNS cutover from BofillTech to Vercel** — DONE, verified live 2026-04-30 (Vercel server header, www host serves HTTP 200). #1 SEO unlock complete. Next: GSC submit + canonical strategy (apex vs www).
 - [ ] Rotate `GITHUB_TOKEN` on Vercel → fine-grained PAT scoped only to `AStyer8345/rancho-moonrise` contents:write (currently broad `gh auth token`, 5 min fix)
 - [ ] Get Exhibit A from Nancy/Ashley (ownership %, capital contributions)
 - [ ] Get QuickBooks access or P&L + Balance Sheet
@@ -274,7 +285,7 @@ All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms. Li
 - [x] Rotate past Apr 26 Yoga & Mimosas → July section + AggregateRating on weddings.html / host-your-event.html + sitemap freshness sweep — DONE 2026-04-27. April section replaced with July (4 events). Event JSON-LD updated. EVENTS JS array updated. EventVenue schemas on weddings + host-your-event now carry AggregateRating (4.9 / 125). 9 sitemap lastmod entries bumped (3 to 04-27, 6 to 04-16/17 to match actual AEO-block edit dates). All 11 JSON-LD blocks validate.
 - [x] Extend AggregateRating to wedding-venues, corporate-retreat, ranch-wedding, bachelorette, pool-day-pass — DONE 2026-04-28. Embedded in `publisher.Organization` (BlogPosting pages — keeps rating off the article and on the venue entity). Sitemap lastmod bumped on all 5. All 20 JSON-LD blocks validate.
 - [x] Extend AggregateRating to remaining 4 BlogPosting landing pages — `glamping-near-austin-texas`, `things-to-do-manor-tx`, `glamping-vs-camping`, `things-to-do-near-austin-with-kids` — DONE 2026-04-29. Same `publisher.Organization` pattern (4.9 / 125 / bestRating 5). dateModified + sitemap lastmod bumped to 2026-04-29 on all 4. All 16 JSON-LD blocks validate. Coverage now 14 of 17 customer-facing pages.
-- [ ] Decide AggregateRating treatment for the 2 remaining utility pages (`faqs.html` + `contact.html`) — they don't have an `Organization` schema today. Options: (a) add a stand-alone `Organization` JSON-LD block with `aggregateRating`, (b) skip (low rich-result upside on utility pages). Next SEO run.
+- [x] AggregateRating treatment for the 2 remaining utility pages (`faqs.html` + `contact.html`) — DONE 2026-04-30. `contact.html` extended its existing nested `LocalBusiness` (under `mainEntity` of `ContactPage`) with `aggregateRating`. `faqs.html` got a stand-alone `LocalBusiness` JSON-LD with the rating + full address + phone. Coverage now 16/17 customer-facing pages.
 
 ### NEEDS ADAM — Review monitor flags (from 2026-04-15 rancho-review-monitor run)
 - [ ] **Verify possible Airbnb listing** — search surfaced `/rooms/1284193976615696223` ("Glamping Safari Tent 25 mins from downtown Austin, Manor TX"). April 9 baseline said no Airbnb listing. Confirm if this is a Rancho Moonrise listing — if yes, add to review coverage scope. (Page returned 403 when fetched by agent.)
@@ -287,7 +298,7 @@ All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms. Li
 - [ ] **⚡ ResortPass — decide within 48 hours, window now 4 days.** Lucky Arrow's listing still shows "no active products at the moment" (verified live 2026-04-27); their site copy says full menu/bar resume **May 1, 2026**. Either submit this week (resortpass.com/list-property or supply team email) and beat the reactivation, or remove from this list. Waiting past Wednesday is effectively a "no."
 - [ ] **Build a corporate retreats landing page (Claude can draft).** The Yurtopian shipped `/corporate-retreats-in-texas-hill-country/` this week — Lucky Arrow, 7744 Ranch, Element Ranch, Sage Hill all already have one. Promote the strongest sections of the April 20 corporate-retreat blog post into `/pages/corporate-retreats.html` with capacity (300+), Ashley's pricing-frame language (open bar mandatory, never BYOB), inquiry CTA, full schema. 1–2 hour build. Ships before DNS cutover so it's already indexable.
 - [ ] Submit Glamping Hub listing — free, 15 min at glampinghub.com/list-your-property. The Yurtopian, Udoscape, Talula Mesa, Spoon Mountain (likely) all appear there while Rancho Moonrise stays absent.
-- [ ] **DNS cutover — urgency escalating, 7 ranked competitors now.** Live `curl -I ranchomoonrise.com` 2026-04-27 → `x-fw-server: Flywheel/5.1.0` (still BofillTech). Austin glamping SERP added The Retreat on the Hill this week (11 multi-format units). 18+ blog posts + safari tent page (FAQPage schema added Apr 26) + full AEO suite waiting to index.
+- [x] **DNS cutover** — DONE, verified live 2026-04-30 (Vercel server header). 18+ blog posts + safari tent page + full AEO suite are now crawlable at the production hostname.
 
 ## Next (after DNS cutover)
 - [ ] Google Search Console setup + sitemap submission (S6)
