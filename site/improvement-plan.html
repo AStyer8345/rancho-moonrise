@@ -847,7 +847,7 @@
     <span>A human has to click, verify, configure, or decide. Claude cannot move this forward alone.</span>
   </div>
 </div>
-<p id="last-updated" style="font-size: 0.8rem; color: #4ECDC4; margin-top: 0;">Last updated: April 15, 2026 — weekly metrics pull. Rankings, AEO, social, reviews all flat vs. baseline. LinkedIn followers now tracked at 106. GBP + GSC still need dashboard export.</p>
+<p id="last-updated" style="font-size: 0.8rem; color: #4ECDC4; margin-top: 0;">Last updated: April 30, 2026 — weekly metrics pull. 🚀 DNS cutover to Vercel verified live (apex serves Vercel headers, 307→www, HTTP 200). Schema coverage now 16/17 customer-facing pages; 18 individual blog URLs. Rankings, AEO, social, reviews all still flat — no organic lift yet (expected; cutover just landed). GBP + GSC still need dashboard export.</p>
 
 <div class="tab-bar">
   <button class="tab-btn active" onclick="switchTab('plan')">Plan</button>
@@ -1202,31 +1202,31 @@
   <div class="metric-card">
     <div class="metric-label">Google Reviews</div>
     <div class="metric-value">125 (4.9★)</div>
-    <div class="metric-change flat">April 15 — flat (unverified)</div>
+    <div class="metric-change flat">April 30 — flat (unverified; snippet variance)</div>
   </div>
   <div class="metric-card">
     <div class="metric-label">Instagram Followers</div>
     <div class="metric-value">13,000</div>
-    <div class="metric-change flat">April 15 — flat (unverified)</div>
+    <div class="metric-change flat">April 30 — flat (~13K)</div>
   </div>
   <div class="metric-card">
     <div class="metric-label">Facebook Followers</div>
     <div class="metric-value">864</div>
-    <div class="metric-change flat">April 15 — flat (unverified)</div>
+    <div class="metric-change flat">April 30 — flat</div>
   </div>  <div class="metric-card">
     <div class="metric-label">TikTok Followers</div>
     <div class="metric-value">1,408</div>
-    <div class="metric-change flat">April 15 — flat (unverified)</div>
+    <div class="metric-change flat">April 30 — flat</div>
   </div>
   <div class="metric-card">
     <div class="metric-label">AI Engine Citations</div>
     <div class="metric-value" style="color: #D4714E;">0 / 10</div>
-    <div class="metric-change flat">Non-brand queries — April 9</div>
+    <div class="metric-change flat">April 30 — still zero on non-brand queries</div>
   </div>
   <div class="metric-card">
     <div class="metric-label">Google Indexed Pages</div>
     <div class="metric-value">~10</div>
-    <div class="metric-change flat">Old site only — April 9</div>
+    <div class="metric-change flat">April 30 — old site URLs; Vercel reindex pending post-cutover</div>
   </div>
 </div>
 
@@ -1264,7 +1264,7 @@
 <tr><td>Perplexity citations</td><td class="baseline-col"><span class="search-rank rank-none">0 / 10</span></td><td class="current-col"><span class="search-rank rank-none">0 / 10</span></td><td class="delta-flat">—</td><td>3 / 10</td></tr>
 <tr><td>Google AI Overviews</td><td class="baseline-col"><span class="search-rank rank-none">0 / 10</span></td><td class="current-col"><span class="search-rank rank-none">0 / 10</span></td><td class="delta-flat">—</td><td>2 / 10</td></tr>
 
-<tr><td colspan="5" class="metrics-cat">GBP Performance (Monthly)</td></tr>
+<tr><td colspan="5" class="metrics-cat">GBP Performance (Monthly) — Requires GBP/GSC dashboard access — ask Adam to export</td></tr>
 <tr><td><strong>Search impressions</strong></td><td class="baseline-col">6,967</td><td class="current-col">6,967</td><td class="delta-flat">—</td><td>Track trend</td></tr>
 <tr><td><strong>Profile views (total)</strong></td><td class="baseline-col">15,053</td><td class="current-col">15,053</td><td class="delta-flat">—</td><td>Track trend</td></tr>
 <tr><td>Website clicks (from GBP)</td><td class="baseline-col">554</td><td class="current-col">554</td><td class="delta-flat">—</td><td>Track trend</td></tr>
@@ -1273,7 +1273,7 @@
 <tr><td>Photo views</td><td class="baseline-col">—</td><td class="current-col">—</td><td class="delta-flat">—</td><td>Dashboard only</td></tr>
 <tr><td>Bookings (from GBP)</td><td class="baseline-col">—</td><td class="current-col">—</td><td class="delta-flat">—</td><td>Dashboard only</td></tr>
 
-<tr><td colspan="5" class="metrics-cat">Google Search Console</td></tr>
+<tr><td colspan="5" class="metrics-cat">Google Search Console — Requires GBP/GSC dashboard access — ask Adam to export</td></tr>
 <tr><td><strong>Total impressions (28d)</strong></td><td class="baseline-col">—</td><td class="current-col">—</td><td class="delta-flat">—</td><td>Track trend</td></tr>
 <tr><td><strong>Total clicks (28d)</strong></td><td class="baseline-col">—</td><td class="current-col">—</td><td class="delta-flat">—</td><td>Track trend</td></tr>
 <tr><td>Average CTR</td><td class="baseline-col">—</td><td class="current-col">—</td><td class="delta-flat">—</td><td>&gt;3%</td></tr>
@@ -1281,19 +1281,19 @@
 <tr><td>Pages indexed</td><td class="baseline-col">—</td><td class="current-col">—</td><td class="delta-flat">—</td><td>14+</td></tr>
 
 <tr><td colspan="5" class="metrics-cat">GBP Health</td></tr>
-<tr><td>Description</td><td class="baseline-col" style="color:#D4714E;">Blog post (wrong)</td><td class="current-col" style="color:#D4714E;">Blog post (wrong)</td><td class="delta-flat">—</td><td>Proper business desc</td></tr>
-<tr><td>Hours set</td><td class="baseline-col" style="color:#D4714E;">No</td><td class="current-col" style="color:#D4714E;">No</td><td class="delta-flat">—</td><td>Yes</td></tr>
+<tr><td>Description</td><td class="baseline-col" style="color:#D4714E;">Blog post (wrong)</td><td class="current-col" style="color:#D4714E;">Blog post (wrong) (unverified)</td><td class="delta-flat">—</td><td>Proper business desc</td></tr>
+<tr><td>Hours set</td><td class="baseline-col" style="color:#D4714E;">No</td><td class="current-col" style="color:#D4714E;">No (unverified)</td><td class="delta-flat">—</td><td>Yes</td></tr>
 <tr><td>Q&amp;As posted</td><td class="baseline-col">0</td><td class="current-col">0</td><td class="delta-flat">—</td><td>10</td></tr>
-<tr><td>Weekly posts active</td><td class="baseline-col" style="color:#D4714E;">No</td><td class="current-col" style="color:#D4714E;">No</td><td class="delta-flat">—</td><td>Yes (automated)</td></tr>
+<tr><td>Weekly posts active</td><td class="baseline-col" style="color:#D4714E;">No</td><td class="current-col" style="color:#4ECDC4;">Yes (Publer auto)</td><td class="delta-up">Fixed</td><td>Yes (automated)</td></tr>
 <tr><td>Google Chat enabled</td><td class="baseline-col" style="color:#D4714E;">No</td><td class="current-col" style="color:#D4714E;">No</td><td class="delta-flat">—</td><td>Yes</td></tr>
 <tr><td colspan="5" class="metrics-cat">Website</td></tr>
-<tr><td><strong>DNS cutover to new site</strong></td><td class="baseline-col" style="color:#D4714E;">Not done</td><td class="current-col" style="color:#D4714E;">Not done</td><td class="delta-flat">—</td><td>Complete</td></tr>
-<tr><td>Schema markup (new site)</td><td class="baseline-col" style="color:#4ECDC4;">12 / 14 pages</td><td class="current-col" style="color:#4ECDC4;">12 / 14</td><td class="delta-flat">—</td><td>14 / 14</td></tr>
-<tr><td>Blog individual URLs</td><td class="baseline-col" style="color:#D4714E;">No (single page)</td><td class="current-col" style="color:#D4714E;">No</td><td class="delta-flat">—</td><td>6 individual pages</td></tr>
+<tr><td><strong>DNS cutover to new site</strong></td><td class="baseline-col" style="color:#D4714E;">Not done</td><td class="current-col" style="color:#4ECDC4;">✅ Live (4/30)</td><td class="delta-up">Fixed</td><td>Complete</td></tr>
+<tr><td>Schema markup (new site)</td><td class="baseline-col" style="color:#4ECDC4;">12 / 14 pages</td><td class="current-col" style="color:#4ECDC4;">16 / 17</td><td class="delta-up">+4</td><td>17 / 17</td></tr>
+<tr><td>Blog individual URLs</td><td class="baseline-col" style="color:#D4714E;">No (single page)</td><td class="current-col" style="color:#4ECDC4;">Yes (18 posts)</td><td class="delta-up">Fixed</td><td>6 individual pages</td></tr>
 </table>
 
 <p style="font-size: 0.75rem; color: #5A5A5A; margin-top: 8px;">* "Wedding venue Manor TX" — The Knot listing for Rancho Moonrise appears at ~#9, but the direct site does not rank. Asterisk denotes third-party listing only.</p>
-<p style="font-size: 0.75rem; color: #5A5A5A;">Metrics updated by the <strong style="color:#4ECDC4;">rancho-metrics-weekly</strong> scheduled task. Last metrics update: April 15, 2026 — flat week vs. baseline, LinkedIn now tracked at 106 followers. Several cards marked (unverified) pending GBP + GSC dashboard export. Next update: April 22, 2026.</p>
+<p style="font-size: 0.75rem; color: #5A5A5A;">Metrics updated by the <strong style="color:#4ECDC4;">rancho-metrics-weekly</strong> scheduled task. Last metrics update: April 30, 2026 — DNS cutover live (apex now serves Vercel), schema coverage 12→16 of 17, blog individual URLs 0→18, GBP weekly posts now active via Publer. Rankings, AEO, social, reviews still flat (no organic lift yet — expected). GBP Performance + GSC require dashboard access — ask Adam to export. Next update: May 7, 2026.</p>
 
 
 </div><!-- /tab-metrics -->
