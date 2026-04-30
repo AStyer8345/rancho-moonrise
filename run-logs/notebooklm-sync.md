@@ -268,3 +268,4 @@ Error: No such option: --json
   "code": "ERROR",
   "message": "Client error '400 Bad Request' for url 'https://notebooklm.google.com/upload/_/?authuser=0'\nFor more information check: https://developer.mozilla.o
 2026-04-29 16:09 | scanned=74 added=0 replaced=6 skipped=7 errors=1
+2026-04-30 00:07 | scanned=64 added=0 replaced=0 skipped=4 errors=0
