@@ -1,5 +1,13 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-30 (rancho-review-monitor) — RUN_014
+
+- Scraped 5 platforms — TripAdvisor + Hipcamp via WebFetch live; Google + Facebook + Expedia via WebSearch; Airbnb + Hotels.com BLOCKER ongoing (run 14).
+- **Google WebSearch snippet flipped 175 → 126 @ 4.9★** — directly contradicts RUN_011/012/013's 3-run-stable 175 and matches the older RUN_007/008/009 stable baseline. Snippet history now 126→175→126 across 14 runs. FLAG_FOR_ADAM **deescalated** — prior "almost certainly real ~48 new reviews" hypothesis weakened; the variance argues 175 was a search-cache or 3rd-party-aggregator artifact, not a real count change.
+- No new in-scope reviews on TripAdvisor/Hipcamp/Facebook. 0 stale claims auto-resolved. 3 BLOCKERS bumped to 14 consecutive (google-reviews-count, hotels-com-direct-fetch, airbnb-listing-existence).
+- Minor: TripAdvisor price-range drift $78-$180 → $79-$180 ($1 floor change, no other state change).
+- Files: `brand/review-aggregate.json`, `site/admin/dashboard-state.json`, `tasks/review-monitor/session-log.md`, `CONTEXT.md`, `CHANGELOG.md`.
+
 ## 2026-04-29 (rancho-review-monitor) — RUN_013
 
 - Scraped 5 platforms — TripAdvisor + Hipcamp via WebFetch live; Google + Facebook + Expedia via WebSearch; Airbnb + Hotels.com BLOCKER ongoing.
