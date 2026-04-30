@@ -1,5 +1,16 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-30 (rancho-metrics-weekly) — Weekly metrics update
+
+- **DNS cutover verified live** in metrics dashboard — Website row flipped "Not done" → "✅ Live (4/30)". Schema markup row 12/14 → **16/17**. Blog individual URLs row "No (single page)" → **Yes (18 posts)**. GBP "Weekly posts active" row "No" → **Yes (Publer auto)** to reflect the 12-event Publer backlog clear from 2026-04-21.
+- Headline cards updated with April 30 date stamps. Google Reviews held at **125 (4.9★)** with `(unverified; snippet variance)` — the WebSearch snippet flip-flopped 175 → 126 → 107 across recent runs; review-count claims belong to `rancho-review-monitor`.
+- Search rankings: re-checked all 10 target keywords. Rancho Moonrise still **not ranked** for any non-brand query (top-10 dominated by Hipcamp aggregator, Talula Mesa, Walden Retreats, Safari for the Soul, Spoon Mountain Glamping, Yurtopian, Camp Lucy). Expected — DNS cutover landed today; reindex + ranking lift typically 4–8 weeks out.
+- AEO citations: 0/10 across ChatGPT/Perplexity/Google AI Overviews on non-brand queries — flat. Direct AI-engine queries weren't run this cycle (snippet-only proxy was negative).
+- Social: Instagram ~13K, Facebook 864, TikTok 1,408, LinkedIn 106, YouTube no channel — all flat.
+- Reviews: Facebook 5/100%, Expedia 8.0, TripAdvisor still listed unclaimed/0 reviews, Hipcamp listed 0 reviews, The Knot present, Yelp listed — all flat.
+- GBP Performance + Search Console rows annotated **"Requires GBP/GSC dashboard access — ask Adam to export."** Numbers held at April 14 backfill values (search impressions 6,967 / profile views 15,053 / clicks 554 / directions 513 / calls 44).
+- Files updated: `brand/2026-04-09-rancho-moonrise-improvement-plan.html` + `site/improvement-plan.html` (now identical for the metrics tab). Committed + pushed as `e0c2d8b`. Vercel auto-deploy triggered.
+
 ## 2026-04-30 (rancho-site-daily) — DNS CUTOVER LIVE + AggregateRating closes utility-page gap
 
 - **🚀 DNS CUTOVER VERIFIED LIVE.** `curl -I https://ranchomoonrise.com/` returns `server: Vercel`, 307 → `https://www.ranchomoonrise.com/`. Yesterday's run (2026-04-29) confirmed `x-fw-server: Flywheel/5.1.0`. Vercel is now the production origin. The #1 SEO blocker that's been gating every workstream since the new site shipped is RESOLVED. Auto-resolved `rancho-p2-11-website-launch-dns` in `rancho-done-log.md`.
