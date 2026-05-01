@@ -107,7 +107,7 @@
                 "name": "What is the maximum capacity for private events?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Rancho Moonrise accommodates up to 200 guests for private events. The Event Barn handles seated dinners and indoor receptions; outdoor spaces expand capacity for cocktail-style and festival-format events. For corporate retreats and day retreats, the property works well for groups as small as 20."
+                    "text": "Rancho Moonrise accommodates up to 1,000+ guests for private events and festivals. The Event Barn handles seated dinners and indoor receptions up to 200; outdoor spaces expand capacity for cocktail-style and festival-format events. Corporate retreats work well for groups as small as 20."
                 }
             }
         ]
@@ -201,9 +201,9 @@
 <!-- AEO: Direct-answer content for "private event venue near Austin" queries -->
 <section class="section" style="padding-bottom: 0;" aria-label="About Rancho Moonrise as a private event venue">
     <div class="container--narrow">
-        <h2 style="font-size: 1.5rem; margin-bottom: var(--space-sm);">A Private Event Venue Near Austin Worth Talking About</h2>
-        <p>Rancho Moonrise is a private event venue on 36 acres, 20 minutes east of downtown Austin. The property includes a climate-controlled Event Barn (up to 200 guests), a resort-style pool, and open pastures under the Texas sky. Available for hourly rentals or full ranch buyouts, with on-site overnight accommodations for your group across cabins and safari tents.</p>
-        <p style="margin-top: var(--space-sm);">What makes Rancho Moonrise different from a typical event venue near Austin: your guests never share the property with strangers. Whether you're hosting a corporate off-site for 30 or a private festival for 200, the entire ranch is yours for the day — or the weekend.</p>
+        <h2 style="font-size: 1.5rem; margin-bottom: var(--space-sm);">An Event Venue Near Austin Built for What You're Planning</h2>
+        <p>Rancho Moonrise is a 36-acre event property 20 minutes east of downtown Austin. The climate-controlled Event Barn holds up to 200 guests, with a resort-style pool and open pastures under the Texas sky. Available for hourly rentals, partial bookings, or full ranch buyouts — with on-site overnight accommodations across cabins and safari tents.</p>
+        <p style="margin-top: var(--space-sm);">Whether you're hosting a corporate off-site for 30 or a festival for 200, we'll build the setup around your event.</p>
     </div>
 </section>
 
@@ -306,7 +306,7 @@
     <div class="container--narrow">
         <span class="section-label reveal">What to Know</span>
         <h2>What Drives Event Pricing</h2>
-        <p>Event pricing depends on date, guest count, bar package, lodging needs, and how much of the ranch you want for your event. Small daytime gatherings start with an hourly barn rental; larger parties move into per-person packages with bar service and overnight stays. <strong>Alcohol is handled through the venue (open bar, per person, per hour) — no outside alcohol or BYOB.</strong></p>
+        <p>Event pricing depends on date, guest count, bar package, lodging needs, and how much of the ranch you want for your event. Small daytime gatherings start with an hourly barn rental; larger parties move into per-person packages with bar service and overnight stays. Bar service is available through the venue with flexible packages to fit your event — reach out and we'll walk you through options.</p>
         <p>A planning call or tour is the fastest way to get an accurate quote — we'll match you to the right setup based on what you're trying to pull off.</p>
     </div>
 </section>
@@ -331,28 +331,28 @@
             <input type="hidden" name="inquiry_type" value="event">
             <input type="hidden" name="source_page" value="host-your-event">
             <div class="form-group">
-                <label for="event-name">Full Name</label>
+                <label for="event-name">Full Name *</label>
                 <input type="text" id="event-name" name="name" required autocomplete="name">
             </div>
             <div class="form-group">
-                <label for="event-phone">Phone</label>
-                <input type="tel" id="event-phone" name="phone" autocomplete="tel">
+                <label for="event-phone">Phone *</label>
+                <input type="tel" id="event-phone" name="phone" required autocomplete="tel">
             </div>
             <div class="form-group">
-                <label for="event-email">Email</label>
+                <label for="event-email">Email *</label>
                 <input type="email" id="event-email" name="email" required autocomplete="email">
             </div>
             <div class="form-group">
-                <label for="event-guests">Estimated Guest Count</label>
-                <input type="number" id="event-guests" name="guests" min="1" max="500">
+                <label for="event-guests">Estimated Guest Count *</label>
+                <input type="number" id="event-guests" name="guests" required min="1" max="1000" placeholder="1000+ for larger events">
             </div>
             <div class="form-group">
-                <label for="event-dates">Preferred Date(s)</label>
-                <input type="text" id="event-dates" name="dates" placeholder="e.g. June 15, 2026 or flexible">
+                <label for="event-dates">Preferred Date(s) *</label>
+                <input type="text" id="event-dates" name="dates" required placeholder="e.g. June 15, 2026 or flexible">
             </div>
             <div class="form-group">
-                <label for="event-type">Event Type</label>
-                <select id="event-type" name="event_type">
+                <label for="event-type">Event Type *</label>
+                <select id="event-type" name="event_type" required>
                     <option value="">Select one...</option>
                     <option value="corporate">Corporate Retreat / Off-Site</option>
                     <option value="birthday">Birthday Party</option>
@@ -362,6 +362,10 @@
                     <option value="retreat">Day Retreat / Wellness</option>
                     <option value="other">Other</option>
                 </select>
+            </div>
+            <div class="form-group">
+                <label for="event-budget">Estimated Budget *</label>
+                <input type="text" id="event-budget" name="budget" required placeholder="e.g. $10,000 or a range">
             </div>
             <div class="form-group">
                 <label for="event-details">Tell Us More</label>
@@ -415,7 +419,7 @@
                 <button class="faq-question" aria-expanded="false">What is the maximum capacity?</button>
                 <div class="faq-answer" role="region">
                     <div class="faq-answer__inner">
-                        <p>Up to 200 guests for private events. The Event Barn handles seated dinners and indoor receptions; outdoor spaces expand capacity for cocktail-style and festival-format events. For corporate retreats and day retreats, the property works well for groups as small as 20.</p>
+                        <p>Up to 1,000+ guests for private events and festivals. The Event Barn handles seated dinners and indoor receptions up to 200; outdoor spaces expand capacity for cocktail-style and festival-format events. Corporate retreats work well for groups as small as 20.</p>
                     </div>
                 </div>
             </div>

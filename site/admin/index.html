@@ -712,6 +712,8 @@ function escapeHtml(str) {
 
 function closeModal(id) {
     $('#' + id).classList.remove('is-open');
+    var fileInputs = $('#' + id).querySelectorAll('input[type="file"]');
+    fileInputs.forEach(function (input) { input.value = ''; });
 }
 
 function openModal(id) {
@@ -814,6 +816,9 @@ $('#addEventBtn').addEventListener('click', function() {
 async function editEvent(id) {
     var { data } = await sb.from('rancho_events').select('*').eq('id', id).single();
     if (!data) return;
+
+    $('#eventForm').reset();
+    $('#eventArtworkFile').value = '';
 
     $('#eventModalTitle').textContent = 'Edit Event';
     $('#eventId').value = data.id;

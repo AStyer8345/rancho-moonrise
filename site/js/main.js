@@ -472,7 +472,7 @@
                 });
             }).then(function (result) {
                 if (result.ok) {
-                    status.innerHTML = 'Thanks — we got your inquiry. Ashley or Monet will follow up shortly with availability and the right next steps. If you don\'t hear from us within a business day, call <a href="tel:+17372911260" data-event="phone_click">737-291-1260</a>.';
+                    status.innerHTML = 'Thanks — we got your inquiry. Our team will follow up shortly with availability and the right next steps. If you don\'t hear from us within a business day, call <a href="tel:+17372911260" data-event="phone_click">737-291-1260</a>.';
                     rmTrack('form_submit_success', { inquiry_type: inquiryType });
                     rmTrack(inquiryType + '_inquiry_submit', { page_path: payload.page_path });
                     form.reset();
