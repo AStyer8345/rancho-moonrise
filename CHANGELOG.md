@@ -1,5 +1,17 @@
 # Rancho Moonrise — Changelog
 
+## 2026-05-01 (post-repair SEO/analytics verify) — Canonical + analytics state confirmed; both NEEDS ADAM items still open
+
+Post-repair verification pass after 2026-04-30 canonical fix. **No code changes shipped — no GA4/GTM ID was found anywhere, and per task guardrail no fake IDs were invented.**
+
+- **Live host check:** `https://ranchomoonrise.com/` returns `200` from Vercel (HSTS header present); `https://www.ranchomoonrise.com/` returns `308` → `https://ranchomoonrise.com/`. Apex remains canonical, www → apex permanent redirect intact.
+- **Sitemap reachability:** `https://ranchomoonrise.com/sitemap.xml` returns `200` with valid XML (apex `<loc>` URLs, includes new `/corporate-retreats/`). Ready for GSC submission.
+- **GSC submission of `/sitemap.xml`:** still **NOT done**. Submitting requires interactive Google Search Console (browser-tier "read" in computer-use; Chrome MCP needs `request_access` user approval). Both are blocked in unsupervised runs. Logged as NEEDS ADAM (already in CONTEXT.md and TODO.md from the 2026-04-30 repair).
+- **GA4 / GTM ID search:** searched `site/`, `.env`, `.env.example`, `.env.local`, `vercel.json`, repo `git log -S` for `gtag` / `googletagmanager` / `G-` / `GTM-`, all `*.md` / `*.html` / `*.txt` in repo and Cowork workspace, and Outlook ("GA4 measurement ID Rancho Moonrise", "Google Analytics ranchomoonrise"). **Zero matches.** Only narrative mention is the 2026-04-08 audit ("Google Analytics is on the site") about the old BofillTech site — no ID captured.
+- **Site code state (unchanged):** `site/js/main.js` lines 312–315 still hold the placeholder `window.RANCHO_ANALYTICS_CONFIG = { ga4MeasurementId: '', gtmContainerId: '' }`. `window.rmTrack` event abstraction at line 320 is preserved and emits to `dataLayer` / `gtag` if either ever loads, plus `console.debug` for QA. Until an ID is wired, the page emits no analytics traffic — by design.
+- **Static validation:** `npm run validate:site` → "Site validation passed." `node --check site/js/main.js` → OK.
+- **Both NEEDS ADAM items still open** in CONTEXT.md and TODO.md: (1) Submit `https://ranchomoonrise.com/sitemap.xml` in GSC, and (2) Provide a GA4 measurement ID (`G-XXXXXXXXXX`) or GTM container ID (`GTM-XXXXXXX`) for `RANCHO_ANALYTICS_CONFIG`.
+
 ## 2026-05-01 (rancho-site-daily) — `/corporate-retreats/` landing page shipped
 
 Closes the dedicated-corporate-retreats-page gap surfaced by the 2026-04-27 competitive-weekly run. The Yurtopian, Lucky Arrow, 7744 Ranch, Element Ranch, and Sage Hill all already have one; Rancho Moonrise had only blog posts on the topic.
