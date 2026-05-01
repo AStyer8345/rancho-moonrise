@@ -306,3 +306,4 @@ Skipped (>10 MB):
 Note: `notebooklm source delete` does not accept --json (skill doc lists `--yes --json`); used `-y` only.
 
 2026-05-01 08:10 | scanned=71 added=0 replaced=7 skipped=3 errors=0
+2026-05-01 15:19 | scanned=67 added=0 replaced=0 skipped=3 errors=0 | pruned-from-state=7
