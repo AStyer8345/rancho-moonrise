@@ -284,3 +284,25 @@ Error: No such option: --json
   - SKIP: oversize INTIMATE EVENTS AT RM.pdf (21684507 bytes)
   - SKIP: oversize ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf (38700910 bytes)
 2026-05-01 04:08 | scanned=64 added=0 replaced=0 skipped=5 errors=0  (3 oversize PDFs, 1 hidden, 1 unsupported ext)
+
+## 2026-05-01 08:10
+
+Replaced 7 source files in NotebookLM (state file was incomplete from prior runs; existing notebook entries cleaned up + freshly re-uploaded).
+
+Replaced (delete + re-add):
+- 2026-04-09-review-report.md
+- 2026-04-15-gbp-profile-fields.md
+- 2026-04-15-gbp-qa-seed.md
+- 2026-04-13-gbp-post.md
+- 2026-04-09-gbp-post.md
+- 2026-04-15-blog12-social-snippets.md
+- Monotype Font Software End User License Agreement.html (also collapsed a duplicate)
+
+Skipped (>10 MB):
+- PRIVATE EVENTS AT RANCHO MOONRISE.pdf (28.8 MB)
+- INTIMATE EVENTS AT RM.pdf (20.7 MB)
+- ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf (36.9 MB)
+
+Note: `notebooklm source delete` does not accept --json (skill doc lists `--yes --json`); used `-y` only.
+
+2026-05-01 08:10 | scanned=71 added=0 replaced=7 skipped=3 errors=0
