@@ -1,5 +1,18 @@
 # Rancho Moonrise — Changelog
 
+## 2026-05-01 (rancho-site-daily) — `/corporate-retreats/` landing page shipped
+
+Closes the dedicated-corporate-retreats-page gap surfaced by the 2026-04-27 competitive-weekly run. The Yurtopian, Lucky Arrow, 7744 Ranch, Element Ranch, and Sage Hill all already have one; Rancho Moonrise had only blog posts on the topic.
+
+- **New file:** `site/pages/corporate-retreats.html`. Mirrors the safari-tents-near-austin landing-page template — hero with primary/outline CTA, AEO direct-answer block, 3-card "What's On Site" feature grid, on-site lodging split section, "What Drives Pricing" section, group-size guidance, FAQ accordion (6 Q&A), social-proof closer, blog cross-links, mobile sticky CTA.
+- **Schema (4 JSON-LD blocks, all parse via `python3 json.loads`):** EventVenue (with `maximumAttendeeCapacity: 200`, full amenity feature list, AggregateRating 4.9 / 125), BreadcrumbList (Home → Private Events → Corporate Retreats), FAQPage (6 Q&A: location, group size, pricing, lodging, bar/catering, package contents), SpeakableSpecification.
+- **Routing:** clean route `/corporate-retreats/` → `/pages/corporate-retreats.html` rewrite added to `vercel.json` (matches the existing 28-entry pattern).
+- **Sitemap:** new entry at `/corporate-retreats/` with priority 0.9 / changefreq monthly / lastmod 2026-05-01.
+- **Voice/policy compliance:** pricing frame is "tour required" — no hard $ figures; bar service called out as venue-mandatory + per-person per-hour, no outside alcohol (Ashley 2026-04-23 rule); group sizes 20–200 (matches blog-post source); "Manor, TX" appears only in schema/alt text per Ashley's directive. No banned terms (no "luxury", no "Hill Country", no specific overnight count claims).
+- **Footer:** added Corporate Retreats link to the "Celebrate" group (alongside Weddings + Private Events). Main nav unchanged for now — Adam's call whether to promote to top-level nav.
+- **Validation:** `npm run validate:site` passes (JSON-LD parse, local asset references, sitemap rewrite coverage, apex canonical, stale-claim patterns, clean-route hygiene). Local preview verified on `localhost:8080`: H1 + hero render correctly, 6 FAQ items, 9 main sections, 0 broken images, 0 console errors. All 6 buttons resolve to expected destinations (Schedule a Tour → `/contact/?intent=corporate`, View Private Events → `/host-your-event/`, Book Now → Cloudbeds, Pool Passes → ResortPass).
+- **Re-Verify Gate:** DNS still live on Vercel (`server: Vercel` header confirmed). Sitemap apex 200, www 308 (per yesterday's apex-primary fix). Corporate-retreats path returned 404 pre-shipping; will be 200 post-deploy. All S2/S3/S4 SEO claims still_true.
+
 ## 2026-04-30 (adversarial site repair) — Canonical, crawlability, conversion tracking prep
 
 - **Vercel/domain:** flipped project domain settings so `ranchomoonrise.com` is primary and `www.ranchomoonrise.com` permanently redirects to apex with 308. Checked project firewall config via Vercel API; no active/draft challenge rule was present.

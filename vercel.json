@@ -22,6 +22,7 @@
     { "source": "/accessibility/", "destination": "/pages/accessibility.html" },
     { "source": "/videos/", "destination": "/pages/videos.html" },
     { "source": "/safari-tents-near-austin/", "destination": "/pages/safari-tents-near-austin.html" },
+    { "source": "/corporate-retreats/", "destination": "/pages/corporate-retreats.html" },
     { "source": "/blog/", "destination": "/pages/blog.html" },
     { "source": "/blog/glamping-near-austin-texas/", "destination": "/pages/glamping-near-austin-texas.html" },
     { "source": "/blog/wedding-venues-near-austin/", "destination": "/pages/wedding-venues-near-austin.html" },

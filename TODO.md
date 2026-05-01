@@ -1,5 +1,5 @@
 # Rancho Moonrise — TODO
-Last updated: 2026-04-30 (canonical/crawlability repair shipped — apex primary, clean sitemap rewrites, static validation added)
+Last updated: 2026-05-01 (corporate-retreats landing page shipped — closes competitive gap vs. Yurtopian/Lucky Arrow)
 
 ## ✅ DONE 2026-04-30 — Adversarial site repair: canonical, crawlability, conversion tracking prep
 
@@ -311,7 +311,7 @@ All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms. Li
 
 ### NEEDS ADAM — Competitive intel quick wins (updated 2026-04-27)
 - [ ] **⚡ ResortPass — decide within 48 hours, window now 4 days.** Lucky Arrow's listing still shows "no active products at the moment" (verified live 2026-04-27); their site copy says full menu/bar resume **May 1, 2026**. Either submit this week (resortpass.com/list-property or supply team email) and beat the reactivation, or remove from this list. Waiting past Wednesday is effectively a "no."
-- [ ] **Build a corporate retreats landing page (Claude can draft).** The Yurtopian shipped `/corporate-retreats-in-texas-hill-country/` this week — Lucky Arrow, 7744 Ranch, Element Ranch, Sage Hill all already have one. Promote the strongest sections of the April 20 corporate-retreat blog post into `/pages/corporate-retreats.html` with capacity (300+), Ashley's pricing-frame language (open bar mandatory, never BYOB), inquiry CTA, full schema. 1–2 hour build. Ships before DNS cutover so it's already indexable.
+- [x] **Build a corporate retreats landing page** — DONE 2026-05-01. `/pages/corporate-retreats.html` shipped with EventVenue + BreadcrumbList + FAQPage (6 Q&A) + SpeakableSpecification schema. Clean route `/corporate-retreats/` wired in `vercel.json`. Sitemap entry added with priority 0.9. Voice-guide-clean (no banned terms; pricing-frame language matches Ashley's tour-required + venue-mandatory bar policy). Closes the competitive gap vs. Yurtopian / Lucky Arrow / 7744 Ranch / Element Ranch / Sage Hill. 4 JSON-LD blocks parse, `npm run validate:site` passes, local preview verified clean (6 FAQ items, 9 sections, 0 broken images, 0 console errors).
 - [ ] Submit Glamping Hub listing — free, 15 min at glampinghub.com/list-your-property. The Yurtopian, Udoscape, Talula Mesa, Spoon Mountain (likely) all appear there while Rancho Moonrise stays absent.
 - [x] **DNS cutover** — DONE, verified live 2026-04-30 (Vercel server header). 18+ blog posts + safari tent page + full AEO suite are now crawlable at the production hostname.
 
