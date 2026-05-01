@@ -399,12 +399,34 @@
             display: none;
         }
 
+        /* Page-grouped Site Copy accordion */
+        .page-group { margin-bottom: 16px; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--bg-card); }
+        .page-group > summary { padding: 14px 18px; cursor: pointer; font-weight: 700; color: var(--orange); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; user-select: none; display: flex; align-items: center; justify-content: space-between; list-style: none; }
+        .page-group > summary::-webkit-details-marker { display: none; }
+        .page-group__count { background: var(--bg); color: var(--text-muted); padding: 2px 10px; border-radius: 999px; font-size: 0.7rem; font-weight: 600; }
+        .page-group__body { padding: 16px 18px 8px; border-top: 1px solid var(--border); }
+        .copy-block { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+        .copy-block:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+        .copy-block__label { display: block; font-size: 0.85rem; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+        .copy-block__body { width: 100%; min-height: 80px; padding: 10px 14px; border: 1px solid var(--border); border-radius: 6px; font-family: inherit; font-size: 0.95rem; resize: vertical; background: var(--bg); }
+        .copy-block__actions { display: flex; align-items: center; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+        .copy-block__key { font-family: ui-monospace, 'SF Mono', monospace; font-size: 0.7rem; color: var(--text-muted); margin-right: auto; }
+
+        .tabs { -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+        .tabs::-webkit-scrollbar { display: none; }
+
         @media (max-width: 600px) {
             .content-card { grid-template-columns: 1fr; }
             .content-card__thumb { width: 100%; height: 160px; }
-            .content-card__actions { flex-direction: row; }
-            .tabs { overflow-x: auto; }
+            .content-card__actions { flex-direction: row; flex-wrap: wrap; }
+            .tabs { overflow-x: auto; flex-wrap: nowrap; }
+            .tab-btn { padding: 12px 14px; white-space: nowrap; }
+            .tab-content { padding: 20px 16px; }
             .modal { padding: 20px; }
+            .topbar__user span#userEmail { display: none; }
+            .topbar__user a.btn { display: none; }
+            .copy-block__key { width: 100%; margin-bottom: 4px; order: -1; }
+            .section-header { flex-wrap: wrap; gap: 12px; }
         }
     </style>
 </head>
@@ -490,8 +512,9 @@
     <div class="tab-content" id="tab-site-copy">
         <div class="section-header">
             <h2>Site Copy</h2>
+            <button class="btn btn--primary" id="addCopyBlockBtn">+ Add Copy Block</button>
         </div>
-        <p style="color: var(--text-muted); margin-bottom: var(--space-md); font-size: 0.9rem;">Edit text blocks on the public site. Changes go live immediately on next page load — no deploy needed.</p>
+        <p style="color: var(--text-muted); margin-bottom: 16px; font-size: 0.9rem;">Edit text blocks on the public site — grouped by page. Changes go live immediately on next page reload — no deploy needed.</p>
         <div id="siteCopyList" class="loading">Loading site copy...</div>
     </div>
 
@@ -671,6 +694,47 @@
     </div>
 </div>
 
+<!-- ============ ADD COPY BLOCK MODAL ============ -->
+<div class="modal-overlay" id="copyBlockModal">
+    <div class="modal">
+        <h2>Add New Copy Block</h2>
+        <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:16px;">Adds a new editable text block. Adam needs to add a matching <code>data-copy-key="..."</code> tag in the HTML for it to appear on the live site.</p>
+        <div class="error-msg" id="copyBlockError"></div>
+        <form id="copyBlockForm">
+            <div class="form-group">
+                <label for="copyBlockPage">Page</label>
+                <select id="copyBlockPage" required>
+                    <option value="home">Homepage</option>
+                    <option value="accommodations">Accommodations</option>
+                    <option value="weddings">Weddings</option>
+                    <option value="events">Events</option>
+                    <option value="host_event">Host Your Event</option>
+                    <option value="pool">Pool Day Pass</option>
+                    <option value="contact">Contact</option>
+                    <option value="faqs">FAQs</option>
+                    <option value="global">Site-wide (footer/header)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="copyBlockKey">Block Key (lowercase, underscores only — e.g. <code>weddings_packages_intro</code>)</label>
+                <input type="text" id="copyBlockKey" required pattern="[a-z0-9_]+" placeholder="weddings_packages_intro">
+            </div>
+            <div class="form-group">
+                <label for="copyBlockLabel">Label (shown in admin)</label>
+                <input type="text" id="copyBlockLabel" required placeholder="Weddings — packages section intro">
+            </div>
+            <div class="form-group">
+                <label for="copyBlockBody">Content</label>
+                <textarea id="copyBlockBody" placeholder="Paste your text here..." style="min-height: 120px;"></textarea>
+            </div>
+            <div class="modal__footer">
+                <button type="button" class="btn btn--secondary" onclick="closeModal('copyBlockModal')">Cancel</button>
+                <button type="submit" class="btn btn--primary">Add Block</button>
+            </div>
+        </form>
+    </div>
+</div>
+
 <!-- Toast -->
 <div class="toast" id="toast"></div>
 
@@ -708,6 +772,37 @@ function starsHtml(n) {
 function escapeHtml(str) {
     if (!str) return '';
     return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}
+
+// Resize large images client-side before upload — capped at 2000px on the long
+// edge, re-encoded as JPEG q0.85. Files under 250KB or non-images pass through.
+async function compressImage(file, maxDim, quality) {
+    if (!file || !file.type || !file.type.startsWith('image/')) return file;
+    if (file.size < 250 * 1024) return file;
+    return new Promise(function (resolve) {
+        var img = new Image();
+        var url = URL.createObjectURL(file);
+        img.onload = function () {
+            var w = img.width, h = img.height;
+            if (w > maxDim || h > maxDim) {
+                var ratio = Math.min(maxDim / w, maxDim / h);
+                w = Math.round(w * ratio);
+                h = Math.round(h * ratio);
+            }
+            var canvas = document.createElement('canvas');
+            canvas.width = w;
+            canvas.height = h;
+            canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+            canvas.toBlob(function (blob) {
+                URL.revokeObjectURL(url);
+                if (!blob) { resolve(file); return; }
+                var name = file.name.replace(/\.[^.]+$/, '') + '.jpg';
+                resolve(new File([blob], name, { type: 'image/jpeg' }));
+            }, 'image/jpeg', quality);
+        };
+        img.onerror = function () { URL.revokeObjectURL(url); resolve(file); };
+        img.src = url;
+    });
 }
 
 function closeModal(id) {
@@ -867,7 +962,8 @@ $('#eventForm').addEventListener('submit', async function(e) {
     submitBtn.textContent = 'Saving...';
 
     var id = $('#eventId').value;
-    var file = $('#eventArtworkFile').files[0];
+    var origFile = $('#eventArtworkFile').files[0];
+    var file = origFile ? await compressImage(origFile, 2000, 0.85) : null;
 
     var row = {
         title: $('#eventTitle').value.trim(),
@@ -998,7 +1094,8 @@ $('#photoForm').addEventListener('submit', async function(e) {
     submitBtn.textContent = 'Saving...';
 
     var id = $('#photoId').value;
-    var file = $('#photoFile').files[0];
+    var origFile = $('#photoFile').files[0];
+    var file = origFile ? await compressImage(origFile, 2000, 0.85) : null;
 
     var row = {
         title: $('#photoTitle').value.trim(),
@@ -1140,7 +1237,8 @@ $('#galleryForm').addEventListener('submit', async function(e) {
     submitBtn.textContent = 'Saving...';
 
     var id = $('#galleryPhotoId').value;
-    var file = $('#galleryFile').files[0];
+    var origFile = $('#galleryFile').files[0];
+    var file = origFile ? await compressImage(origFile, 2000, 0.85) : null;
 
     var row = {
         section: $('#gallerySection').value,
@@ -1199,6 +1297,24 @@ $('#galleryForm').addEventListener('submit', async function(e) {
 // ============================================================
 // SITE COPY
 // ============================================================
+var PAGE_LABELS = {
+    home: 'Homepage',
+    accommodations: 'Accommodations',
+    weddings: 'Weddings',
+    events: 'Events',
+    host_event: 'Host Your Event',
+    pool: 'Pool Day Pass',
+    contact: 'Contact',
+    faqs: 'FAQs',
+    global: 'Site-wide (footer/header)'
+};
+
+function pageSortRank(p) {
+    var order = ['home','accommodations','weddings','events','host_event','pool','contact','faqs','global'];
+    var idx = order.indexOf(p);
+    return idx === -1 ? 100 + p.charCodeAt(0) : idx;
+}
+
 async function loadSiteCopy() {
     var container = $('#siteCopyList');
     var { data, error } = await sb.from('site_content')
@@ -1208,7 +1324,7 @@ async function loadSiteCopy() {
         return;
     }
     if (!data.length) {
-        container.innerHTML = '<p class="empty-state">No content blocks found.</p>';
+        container.innerHTML = '<p class="empty-state">No content blocks yet. Click "+ Add Copy Block" to create one.</p>';
         return;
     }
 
@@ -1218,49 +1334,95 @@ async function loadSiteCopy() {
         byPage[row.page].push(row);
     });
 
+    var pages = Object.keys(byPage).sort(function(a, b) {
+        return pageSortRank(a) - pageSortRank(b);
+    });
+
     var html = '';
-    Object.keys(byPage).sort().forEach(function(page) {
-        var pageTitle = page.charAt(0).toUpperCase() + page.slice(1);
-        html += '<h3 style="margin: 24px 0 12px; color: var(--orange); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;">' + escapeHtml(pageTitle) + '</h3>';
+    pages.forEach(function(page) {
+        var label = PAGE_LABELS[page] || (page.charAt(0).toUpperCase() + page.slice(1));
+        html += '<details class="page-group" open>' +
+            '<summary>' + escapeHtml(label) + ' <span class="page-group__count">' + byPage[page].length + '</span></summary>' +
+            '<div class="page-group__body">';
         byPage[page].forEach(function(row) {
-            html +=
-                '<div class="form-group" style="margin-bottom: 24px;">' +
-                    '<label style="display:block; margin-bottom:6px;">' + escapeHtml(row.label) + '</label>' +
-                    '<textarea id="copy-' + escapeHtml(row.block_key) + '" style="width:100%; min-height:80px; padding:10px; border:1px solid var(--border); border-radius:6px; font-family:inherit; font-size:0.9rem; resize:vertical;">' + escapeHtml(row.body) + '</textarea>' +
-                    '<button class="btn btn--primary" style="margin-top:8px;" onclick="saveCopyBlock(\'' + escapeHtml(row.block_key) + '\')">Save</button>' +
-                '</div>';
+            var safeKey = escapeHtml(row.block_key);
+            html += '<div class="copy-block">' +
+                '<label class="copy-block__label">' + escapeHtml(row.label) + '</label>' +
+                '<textarea class="copy-block__body" data-key="' + safeKey + '">' + escapeHtml(row.body) + '</textarea>' +
+                '<div class="copy-block__actions">' +
+                    '<span class="copy-block__key">' + safeKey + '</span>' +
+                    '<button class="btn btn--danger btn--sm" onclick="deleteCopyBlock(\'' + safeKey + '\')">Delete</button>' +
+                    '<button class="btn btn--primary btn--sm" onclick="saveCopyBlock(\'' + safeKey + '\', this)">Save</button>' +
+                '</div>' +
+            '</div>';
         });
+        html += '</div></details>';
     });
     container.innerHTML = html;
 }
 
-async function saveCopyBlock(key) {
-    var textarea = document.getElementById('copy-' + key);
-    var btn = textarea.nextElementSibling;
+async function saveCopyBlock(key, btn) {
+    var textarea = document.querySelector('textarea.copy-block__body[data-key="' + key + '"]');
+    if (!textarea) return;
     var body = textarea.value;
-    btn.textContent = 'Saving\u2026';
     btn.disabled = true;
+    btn.textContent = 'Saving\u2026';
     var { error } = await sb.from('site_content')
         .update({ body: body, updated_at: new Date().toISOString() })
         .eq('block_key', key);
     if (error) {
-        btn.textContent = 'Error \u2014 try again';
+        btn.textContent = 'Error';
         btn.style.background = 'var(--danger)';
-        setTimeout(function() {
-            btn.textContent = 'Save';
-            btn.style.background = '';
-            btn.disabled = false;
-        }, 2000);
     } else {
         btn.textContent = 'Saved \u2713';
         btn.style.background = 'var(--success)';
-        setTimeout(function() {
-            btn.textContent = 'Save';
-            btn.style.background = '';
-            btn.disabled = false;
-        }, 2000);
     }
+    setTimeout(function() {
+        btn.textContent = 'Save';
+        btn.style.background = '';
+        btn.disabled = false;
+    }, 2000);
 }
+
+async function deleteCopyBlock(key) {
+    if (!confirm('Delete copy block "' + key + '"?\n\nMake sure no page is referencing it. This cannot be undone.')) return;
+    var { error } = await sb.from('site_content').delete().eq('block_key', key);
+    if (error) { toast('Delete failed: ' + error.message, 'error'); return; }
+    toast('Block deleted');
+    loadSiteCopy();
+}
+
+$('#addCopyBlockBtn').addEventListener('click', function() {
+    $('#copyBlockForm').reset();
+    $('#copyBlockError').style.display = 'none';
+    openModal('copyBlockModal');
+});
+
+$('#copyBlockForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    var errEl = $('#copyBlockError');
+    errEl.style.display = 'none';
+    var btn = this.querySelector('[type="submit"]');
+    btn.disabled = true;
+    btn.textContent = 'Adding\u2026';
+    var row = {
+        page: $('#copyBlockPage').value,
+        block_key: $('#copyBlockKey').value.trim().toLowerCase(),
+        label: $('#copyBlockLabel').value.trim(),
+        body: $('#copyBlockBody').value
+    };
+    var { error } = await sb.from('site_content').insert(row);
+    btn.disabled = false;
+    btn.textContent = 'Add Block';
+    if (error) {
+        errEl.textContent = error.message;
+        errEl.style.display = 'block';
+        return;
+    }
+    closeModal('copyBlockModal');
+    toast('Block added! Add data-copy-key="' + row.block_key + '" to the HTML to make it appear.');
+    loadSiteCopy();
+});
 
 // ============================================================
 // REVIEWS

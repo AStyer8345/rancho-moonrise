@@ -222,11 +222,44 @@
         init();
     }
 
+    // ---- Load Site Copy (page-scoped + global) ----
+    // Reads <body data-page="..."> and hydrates any element with a matching
+    // data-copy-key attribute. Global blocks (footer/header chrome) live in
+    // page="global" and load on every page.
+    function loadSiteCopy() {
+        var pageSlug = document.body.getAttribute('data-page');
+        var pages = pageSlug ? '(' + pageSlug + ',global)' : '(global)';
+        query('site_content', 'page=in.' + pages)
+            .then(function (rows) {
+                rows.forEach(applyCopyBlock);
+            });
+    }
+
+    function applyCopyBlock(row) {
+        var els = document.querySelectorAll('[data-copy-key="' + row.block_key + '"]');
+        if (!els.length || !row.body) return;
+        els.forEach(function (el) {
+            // data-copy-attr="href" lets a block control an attribute (link URL, src, etc.)
+            var attr = el.getAttribute('data-copy-attr');
+            if (attr) { el.setAttribute(attr, row.body); return; }
+            var tag = el.tagName;
+            if (tag === 'H1' || tag === 'H2' || tag === 'H3' || tag === 'H4' || tag === 'P' || tag === 'SPAN' || tag === 'A' || tag === 'LI') {
+                el.textContent = row.body;
+            } else {
+                // Container element — split blank-line paragraphs
+                el.innerHTML = row.body.split(/\n\n+/).map(function(p) {
+                    return '<p>' + p.trim() + '</p>';
+                }).join('');
+            }
+        });
+    }
+
     function init() {
         // Delay CMS load slightly so hardcoded content renders first (fallback)
         setTimeout(function () {
             loadTestimonials();
             loadEvents();
+            loadSiteCopy();
             // Hero photos: only load from CMS if photos have Supabase storage URLs
             // (currently seeded with local paths, so skip until Ashley uploads new ones)
             // loadHeroPhotos();
