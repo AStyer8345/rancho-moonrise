@@ -891,7 +891,7 @@
             var parts = mk.split('-');
             var label = monthNames[parseInt(parts[1], 10) - 1] + ' ' + parts[0];
             var cards = byMonth[mk].map(renderCardFromRow).join('');
-            return '<section class="events-month fade-in" aria-label="' + label + ' events">' +
+            return '<section class="events-month is-visible" aria-label="' + label + ' events">' +
                      '<div class="events-month__header"><h2>' + label + '</h2></div>' +
                      '<div class="events-month__list" data-events-month="' + mk + '">' + cards + '</div>' +
                    '</section>';
