@@ -279,3 +279,7 @@ Error: No such option: --json
 - skipped (>10MB): PRIVATE EVENTS AT RANCHO MOONRISE.pdf, INTIMATE EVENTS AT RM.pdf, ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf
 
 2026-04-30 20:10 | scanned=64 added=0 replaced=1 skipped=3 errors=0
+2026-05-01 00:07 | scanned=64 added=0 replaced=0 skipped=3 errors=0 deferred=0
+  - SKIP: oversize PRIVATE EVENTS AT RANCHO MOONRISE.pdf (30172840 bytes)
+  - SKIP: oversize INTIMATE EVENTS AT RM.pdf (21684507 bytes)
+  - SKIP: oversize ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf (38700910 bytes)
