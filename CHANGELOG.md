@@ -927,3 +927,7 @@ Launch-blocker sweep and conversion sharpening across the primary pages, ahead o
 ## 2026-04-26 — Review Monitor RUN_010
 
 - **rancho-review-monitor RUN_010:** Quiet run. Scraped TripAdvisor and Hipcamp live via WebFetch (0 reviews each confirmed). Facebook 5 reviews/100% recommend and Expedia 8.0 confirmed via WebSearch. Hotels.com timeout 10th consecutive (BLOCKER ongoing, no live attempt this run). 3 BLOCKERS from RUN_003 all open (Google JS-blocked, Hotels.com timeout, Airbnb 403). No new reviews, unreplied=0 maintained — only done-log entry since RUN_009 is SEO-related (`rancho-seo-s4-schema-breadcrumb-speakable` PROGRESS at 08:05). Dashboard status remains ok.
+
+## 2026-05-01 — Review Monitor RUN_015
+
+- **rancho-review-monitor RUN_015:** Quiet run. Google WebSearch snippet flipped back to 175 @ 4.9★ after RUN_014's 126 — snippet history now 126→175→126→175 across 15 runs (4-state ping-pong confirmed). Snippet is conclusively unreliable as authoritative count; FLAG_FOR_ADAM stays deescalated. TripAdvisor live-scraped 0 reviews/unclaimed (price drifted $79-$180 → $77-$178). Hipcamp live-scraped 0 reviews. Facebook 5/100% and Expedia 8.0 confirmed via WebSearch. 3 BLOCKERS ongoing (Google JS-blocked, Hotels.com timeout, Airbnb 403) — all 15 consecutive runs. No review-related done-log entries since RUN_011, unreplied=0 maintained. Dashboard status: ok.
