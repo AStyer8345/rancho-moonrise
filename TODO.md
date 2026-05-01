@@ -1,5 +1,20 @@
 # Rancho Moonrise — TODO
-Last updated: 2026-04-30 (🚀 **DNS cutover verified LIVE on Vercel** + AggregateRating coverage now 16/17 — utility pages closed)
+Last updated: 2026-04-30 (canonical/crawlability repair shipped — apex primary, clean sitemap rewrites, static validation added)
+
+## ✅ DONE 2026-04-30 — Adversarial site repair: canonical, crawlability, conversion tracking prep
+
+1. **Canonical host resolved.** Vercel project domain settings now make `https://ranchomoonrise.com` primary and permanently redirect `https://www.ranchomoonrise.com` → apex with 308. Project firewall config checked via Vercel API; no active/draft challenge rules were present.
+2. **Sitemap rewrite gaps closed.** Added clean public rewrites for the five sitemap blog URLs that previously had no `vercel.json` route: bachelorette ranch vs bar crawl, corporate retreat ranch vs hotel, Mother's Day, birthday party venue, and yoga retreat.
+3. **Clean-route internal links.** Customer-facing internal links now use public routes instead of `/pages/*.html` wherever a rewrite exists.
+4. **Broken assets and stale claims fixed.** Corrected Lone Star Party image names, removed the missing 1024w safari-tent bright reference, scrubbed specific 50-overnight/Hill Country/$3K/breakfast-taco claims, kept review count at 125, and renamed virtual-tour CTAs so they do not promise a real booking URL yet.
+5. **Analytics placeholder centralized.** `window.RANCHO_ANALYTICS_CONFIG` documents the future GA4/GTM slot without fake IDs; `window.rmTrack` remains the event abstraction.
+6. **Static validation added.** `npm run validate:site` now checks JSON-LD parsing, local asset references, sitemap URL rewrite coverage, apex host consistency, stale/risky claim patterns, and clean-route link hygiene.
+
+**NEEDS ADAM follow-ups:**
+- [ ] **Submit apex sitemap in GSC:** `https://ranchomoonrise.com/sitemap.xml`.
+- [ ] **Provide GA4 measurement ID or GTM container ID.** Site-side placeholder is ready; no fake analytics ID was installed.
+- [ ] **Provide a dedicated virtual walkthrough booking URL** if that should become a real scheduling CTA.
+- [ ] **Defer static partials/templates refactor** to a later branch. This repair stayed framework-free by design.
 
 ## ✅ DONE 2026-04-30 — DNS cutover live + AggregateRating utility-page closure
 
@@ -8,8 +23,8 @@ Last updated: 2026-04-30 (🚀 **DNS cutover verified LIVE on Vercel** + Aggrega
 3. **Sitemap freshness**: `/contact/` lastmod 04-07 → 04-30; `/faqs/` lastmod 04-08 → 04-30. All 7 JSON-LD blocks across both pages validate.
 
 **NEW NEEDS ADAM (post-cutover):**
-- [ ] **Canonical strategy decision (apex vs www).** All canonicals + sitemap URLs use apex (`https://ranchomoonrise.com/...`) but apex 307s to www. Pick: **(A)** Vercel → set apex as primary domain (no code change; redirects flip to www → apex). **(B)** Rewrite all canonicals + sitemap URLs to www. Recommendation: A — fastest, matches existing canonicals.
-- [ ] **GSC sitemap submit (rancho-seo-s6).** Once canonical decision is made, submit `/sitemap.xml` to Search Console. This was blocked on cutover; now actionable.
+- [x] **Canonical strategy decision (apex vs www).** Resolved 2026-04-30: apex is canonical and Vercel primary domain; `www` redirects to apex.
+- [ ] **GSC sitemap submit (rancho-seo-s6).** Submit `https://ranchomoonrise.com/sitemap.xml` to Search Console. This was blocked on cutover; now actionable.
 
 
 ## ✅ DONE 2026-04-28 — Scroll effects (5 patterns from grandladyaustin.com)

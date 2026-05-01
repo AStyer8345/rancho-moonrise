@@ -34,7 +34,12 @@
     { "source": "/blog/weekend-getaways-near-austin/", "destination": "/pages/weekend-getaways-near-austin.html" },
     { "source": "/blog/pool-day-pass-austin/", "destination": "/pages/pool-day-pass-austin.html" },
     { "source": "/blog/glamping-vs-camping/", "destination": "/pages/glamping-vs-camping.html" },
-    { "source": "/blog/summer-glamping-near-austin/", "destination": "/pages/summer-glamping-near-austin.html" }
+    { "source": "/blog/summer-glamping-near-austin/", "destination": "/pages/summer-glamping-near-austin.html" },
+    { "source": "/blog/austin-bachelorette-ranch-vs-bar-crawl/", "destination": "/pages/austin-bachelorette-ranch-vs-bar-crawl.html" },
+    { "source": "/blog/corporate-retreat-ranch-vs-hotel/", "destination": "/pages/corporate-retreat-ranch-vs-hotel.html" },
+    { "source": "/blog/mothers-day-near-austin/", "destination": "/pages/mothers-day-near-austin.html" },
+    { "source": "/blog/birthday-party-venue-near-austin/", "destination": "/pages/birthday-party-venue-near-austin.html" },
+    { "source": "/blog/yoga-retreat-near-austin/", "destination": "/pages/yoga-retreat-near-austin.html" }
   ],
   "headers": [
     {

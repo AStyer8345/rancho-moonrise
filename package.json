@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "description": "Rancho Moonrise venue site + serverless API for marking improvement-plan tasks done",
+  "scripts": {
+    "validate:site": "python3 scripts/validate-site.py"
+  },
   "engines": {
     "node": "20.x"
   }

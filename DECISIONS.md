@@ -2,6 +2,18 @@
 
 ---
 
+## 2026-04-30 — Apex Domain Is Canonical Production Host
+
+**Decision:** `https://ranchomoonrise.com` is the canonical production host. Vercel project domain settings should keep the apex as primary and permanently redirect `https://www.ranchomoonrise.com` to apex.
+
+**Over:** making `www.ranchomoonrise.com` the canonical host or rewriting sitemap/schema/canonicals to `www`.
+
+**Why:** The public site already used apex URLs in canonicals, sitemap, Open Graph, schema, and robots. Flipping Vercel to apex preserves those signals, avoids a broad URL rewrite, and gives crawlers one consistent host with a permanent redirect from `www`.
+
+**Context:** Implemented during the 2026-04-30 adversarial repair batch. Vercel API set `ranchomoonrise.com` redirect to null and `www.ranchomoonrise.com` redirect to `ranchomoonrise.com` with status 308. Follow-up: submit `https://ranchomoonrise.com/sitemap.xml` in Google Search Console.
+
+---
+
 ## 2026-04-23 — Inquiry Pricing Frames: Barn-Rental vs. Package (Ashley Onsite)
 
 **Decision:** Inquiry responses price by event profile, not by a single pricing menu. Small daytime events (under ~50 people) get framed as **barn rental at ~$75/hour + alcohol sold through the venue** (open bar per person per hour, mandatory). Larger parties / overnights / weddings get the **tiered package** frame ($3K / $5K / $15K) but **only with a tour** — package numbers are never quoted in a first-touch response. The bar is event-only, never walk-in or à la carte. These rules are now enforced at the voice-guide level (both `brand/voice-guide.md` and `VOICE-GUIDE.md`) and the upcoming inquiry auto-responder must hold any draft that violates them for human review.

@@ -1,5 +1,13 @@
 # Rancho Moonrise — Changelog
 
+## 2026-04-30 (adversarial site repair) — Canonical, crawlability, conversion tracking prep
+
+- **Vercel/domain:** flipped project domain settings so `ranchomoonrise.com` is primary and `www.ranchomoonrise.com` permanently redirects to apex with 308. Checked project firewall config via Vercel API; no active/draft challenge rule was present.
+- **SEO/AEO routing:** kept apex URLs as canonical source of truth, added the five missing sitemap blog rewrites, and converted customer-facing `/pages/*.html` links to clean public routes.
+- **Broken assets/stale claims:** fixed Lone Star Party and safari-tent bright image references; scrubbed specific 50-overnight, "Hill Country", hard `$3K`, breakfast taco, and virtual-tour booking claims from customer-facing pages and JS KB. Review count remains 125.
+- **Conversion/analytics:** preserved event-first CTA hierarchy; added `window.RANCHO_ANALYTICS_CONFIG` as the single GA4/GTM placeholder without fake IDs; kept `window.rmTrack` as the event abstraction.
+- **Validation:** added `npm run validate:site` covering JSON-LD parse checks, local asset references, sitemap rewrite coverage, apex host consistency, stale/risky claim patterns, and clean-route link hygiene.
+
 ## 2026-04-30 (rancho-metrics-weekly) — Weekly metrics update
 
 - **DNS cutover verified live** in metrics dashboard — Website row flipped "Not done" → "✅ Live (4/30)". Schema markup row 12/14 → **16/17**. Blog individual URLs row "No (single page)" → **Yes (18 posts)**. GBP "Weekly posts active" row "No" → **Yes (Publer auto)** to reflect the 12-event Publer backlog clear from 2026-04-21.
