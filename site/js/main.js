@@ -504,6 +504,58 @@
 
     // ---------- AI Chat Widget ----------
     (function () {
+        // Session logging — POSTs each message to n8n; sends a `session_end`
+        // beacon on page hide so we get one email digest per visitor session.
+        var CHAT_WEBHOOK = 'https://styer.app.n8n.cloud/webhook/rancho-chat';
+        var sessionId = (function () {
+            try {
+                var k = 'rmChatSessionId';
+                var existing = sessionStorage.getItem(k);
+                if (existing) return existing;
+                var id = (crypto && crypto.randomUUID) ? crypto.randomUUID()
+                    : Date.now().toString(36) + Math.random().toString(36).slice(2);
+                sessionStorage.setItem(k, id);
+                return id;
+            } catch (e) {
+                return Date.now().toString(36) + Math.random().toString(36).slice(2);
+            }
+        })();
+        var messageCount = 0;
+        function logMessage(userText, botText) {
+            messageCount++;
+            try {
+                fetch(CHAT_WEBHOOK, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        event: 'message',
+                        session_id: sessionId,
+                        page_url: location.pathname + location.search,
+                        user_message: userText,
+                        bot_answer: botText,
+                        user_agent: navigator.userAgent
+                    }),
+                    keepalive: true
+                }).catch(function () {});
+            } catch (e) {}
+        }
+        var sessionEnded = false;
+        function endSession() {
+            if (sessionEnded || messageCount === 0) return;
+            sessionEnded = true;
+            var payload = JSON.stringify({ event: 'session_end', session_id: sessionId });
+            try {
+                if (navigator.sendBeacon) {
+                    navigator.sendBeacon(CHAT_WEBHOOK, new Blob([payload], { type: 'application/json' }));
+                } else {
+                    fetch(CHAT_WEBHOOK, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: payload, keepalive: true }).catch(function () {});
+                }
+            } catch (e) {}
+        }
+        window.addEventListener('pagehide', endSession);
+        document.addEventListener('visibilitychange', function () {
+            if (document.visibilityState === 'hidden') endSession();
+        });
         // Knowledge base — trained on all Rancho Moonrise content
         //
         // Each entry has a `section` tag ('wedding' | 'stay' | 'event' | 'pool' |
@@ -845,9 +897,11 @@
             function handleUserMessage(text) {
                 addMessage(text, 'user');
                 suggestionsEl.innerHTML = '';
+                var answer = findAnswer(text);
+                logMessage(text, answer);
                 // Small delay to feel natural
                 setTimeout(function () {
-                    addMessage(findAnswer(text), 'bot');
+                    addMessage(answer, 'bot');
                 }, 400);
             }
 
