@@ -668,8 +668,9 @@
     var calTitle = document.getElementById('calTitle');
     var calPrev = document.getElementById('calPrev');
     var calNext = document.getElementById('calNext');
-    var currentYear = 2026;
-    var currentMonth = 3; // April (0-indexed)
+    var _today = new Date();
+    var currentYear = _today.getFullYear();
+    var currentMonth = _today.getMonth();
 
     function getEventsForDate(year, month, day) {
         var dateStr = year + '-' + String(month + 1).padStart(2, '0') + '-' + String(day).padStart(2, '0');
