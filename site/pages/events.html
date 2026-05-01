@@ -877,23 +877,24 @@
 
     function hydrateListFromSupabase(rows) {
         var byMonth = {};
+        var monthOrder = [];
         rows.forEach(function (r) {
             var mk = r.event_date.slice(0, 7);
-            if (!byMonth[mk]) byMonth[mk] = [];
+            if (!byMonth[mk]) { byMonth[mk] = []; monthOrder.push(mk); }
             byMonth[mk].push(r);
         });
-        var monthEls = document.querySelectorAll('[data-events-month]');
-        monthEls.forEach(function (el) {
-            var mk = el.getAttribute('data-events-month');
-            var list = byMonth[mk];
-            if (list && list.length) {
-                el.innerHTML = list.map(renderCardFromRow).join('');
-            } else {
-                // No events from Supabase for this month — hide the entire month section
-                var section = el.closest('.events-month');
-                if (section) section.style.display = 'none';
-            }
-        });
+        var timeline = document.querySelector('.events-timeline');
+        if (!timeline) return;
+        var monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+        timeline.innerHTML = monthOrder.map(function (mk) {
+            var parts = mk.split('-');
+            var label = monthNames[parseInt(parts[1], 10) - 1] + ' ' + parts[0];
+            var cards = byMonth[mk].map(renderCardFromRow).join('');
+            return '<section class="events-month fade-in" aria-label="' + label + ' events">' +
+                     '<div class="events-month__header"><h2>' + label + '</h2></div>' +
+                     '<div class="events-month__list" data-events-month="' + mk + '">' + cards + '</div>' +
+                   '</section>';
+        }).join('');
     }
 
     function hydrateEvents(rows) {
