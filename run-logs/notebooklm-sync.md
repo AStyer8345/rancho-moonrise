@@ -310,3 +310,19 @@ Note: `notebooklm source delete` does not accept --json (skill doc lists `--yes 
 2026-05-01 16:10 | scanned=64 added=0 replaced=0 skipped=4 errors=0
 2026-05-01 20:07 | scanned=64 added=0 replaced=0 skipped=3 errors=0
 2026-05-02 00:07 | scanned=64 added=0 replaced=0 skipped=4 errors=0
+2026-05-02 00:10 | push failed: ssh connection closed by github (commit f3dd113 staged locally, will push on next run)
+
+## 2026-05-02 04:10
+
+- replaced: 2026-04-09-review-report.md
+- replaced: 2026-04-15-gbp-profile-fields.md
+- replaced: 2026-04-15-gbp-qa-seed.md
+- replaced: 2026-04-13-gbp-post.md
+- replaced: 2026-04-09-gbp-post.md
+- replaced: 2026-04-15-blog12-social-snippets.md
+- replaced (uploaded as text after file-mode 400): Monotype Font Software End User License Agreement.html
+
+Note: `source delete` does not accept `--json` in this CLI version — task spec is out of date there.
+Note: HTML files fail with 400 on `--type file`; `--type text` works (stored as pasted text, title strips extension).
+
+2026-05-02 04:10 | scanned=71 added=0 replaced=7 skipped=6 errors=0
