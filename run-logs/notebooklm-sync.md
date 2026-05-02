@@ -326,3 +326,6 @@ Note: `source delete` does not accept `--json` in this CLI version — task spec
 Note: HTML files fail with 400 on `--type file`; `--type text` works (stored as pasted text, title strips extension).
 
 2026-05-02 04:10 | scanned=71 added=0 replaced=7 skipped=6 errors=0
+2026-05-02 08:07 | scanned=71 added=0 replaced=0 skipped=6 errors=0
+  └─ commit failed: another git process holds the index lock; staged change left for next run
+2026-05-02 12:07 | scanned=64 added=0 replaced=0 skipped=3 errors=0
