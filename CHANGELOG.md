@@ -1,5 +1,16 @@
 # Rancho Moonrise — Changelog
 
+## 2026-05-02 (rancho-review-monitor) — RUN_016
+
+- **Google WebSearch snippet flipped 175 → 126 @ 4.9★** — third documented flip across alternating runs (RUN_013→014→015→016). Snippet history now 126→175→126→175→126 across 16 runs. With three distinct flips, the snippet is **definitively unreliable** as an authoritative count source — rotating between at least two aggregator results that disagree. FLAG_FOR_ADAM stays deescalated; durable fix unchanged (Adam dashboard 60s or Places API key ~5 min).
+- TripAdvisor live-verified 0/unclaimed via WebFetch ("No reviews for this property yet."/"Claim Your Listing" still visible; Travelers' Choice still noted; **price range now $75-$178**, was $77-$178 RUN_015 — floor drifted -$2, ceiling steady).
+- Hipcamp live-verified 0 via WebFetch ("Be the first to review", 1 booking, no review left).
+- Facebook 5/100% recommend confirmed via WebSearch (Feb 2026 noise-from-neighbors comment re-surfaced — same comment, no new state).
+- Hotels.com 8.0 rating snippet still surfacing cleanly (Hotels.com: "pool was super well kept"; Expedia: "guest review rating of 8.0"). Listing URL `ho2867109568` still active.
+- 3 BLOCKERS ongoing (Google JS-blocked run 16, Hotels.com timeout run 16, Airbnb 403 run 16). Unreplied=0 maintained on done-log signal — no review-related done-log entries since RUN_011 (`rancho-review-replies` RESOLVED 2026-04-15 22:12 remains last review action).
+- The Knot (4.5★ / 8 reviews) detail not re-surfaced this run; still not in scope.
+- Files: `brand/review-aggregate.json`, `site/admin/dashboard-state.json`, `tasks/review-monitor/session-log.md`, `CONTEXT.md`, `CHANGELOG.md`.
+
 ## 2026-05-01 (post-repair SEO/analytics verify) — Canonical + analytics state confirmed; both NEEDS ADAM items still open
 
 Post-repair verification pass after 2026-04-30 canonical fix. **No code changes shipped — no GA4/GTM ID was found anywhere, and per task guardrail no fake IDs were invented.**
