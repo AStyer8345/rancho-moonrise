@@ -1,5 +1,20 @@
 # Rancho Moonrise — TODO
-Last updated: 2026-05-01 (corporate-retreats landing page shipped — closes competitive gap vs. Yurtopian/Lucky Arrow)
+Last updated: 2026-05-02 (internal-link pass to /corporate-retreats/ — 7 inbound links across 6 source pages)
+
+## ✅ DONE 2026-05-02 — Internal-link pass to `/corporate-retreats/`
+
+Yesterday's new landing page launched with 0 internal inbound links. Today's pass wires it into the topical cluster so it inherits link equity from established hub pages.
+
+1. **Edits (6 files):**
+   - `site/index.html` About Split paragraph — inline anchor on "corporate retreat".
+   - `site/pages/host-your-event.html` Corporate Retreats feature card — href flipped from `/blog/corporate-retreat-near-austin/` to `/corporate-retreats/`. Better conversion-intent match.
+   - `site/pages/weddings.html` Related Reading list — added `/corporate-retreats/` item.
+   - `site/pages/corporate-retreat-near-austin.html` — 2 inbound links (Related Reading top + replaced duplicate `/host-your-event/` feature card with the canonical venue page); also added cross-link to `/blog/corporate-retreat-ranch-vs-hotel/`.
+   - `site/pages/corporate-retreat-planning-guide-texas.html` Related Reading — top-of-list link + ranch-vs-hotel cross-link.
+   - `site/pages/corporate-retreat-ranch-vs-hotel.html` "More on Corporate Retreats" — top-of-list link.
+2. **Sitemap freshness**: 7 lastmod entries bumped to 2026-05-02 (`/`, `/weddings/`, `/host-your-event/`, `/corporate-retreats/`, and the 3 corp-retreat blog posts).
+3. **Validation**: `npm run validate:site` passes.
+4. **Final inbound count**: index 1, host-your-event 1, weddings 1, corporate-retreat-near-austin 2, corp-retreat-planning-guide-texas 1, corp-retreat-ranch-vs-hotel 1 = **7 links from 6 sources**.
 
 ## ✅ DONE 2026-04-30 — Adversarial site repair: canonical, crawlability, conversion tracking prep
 

@@ -1,5 +1,21 @@
 # Rancho Moonrise — Changelog
 
+## 2026-05-02 (rancho-site-daily) — Internal-link pass to `/corporate-retreats/`
+
+- **Goal:** give yesterday's new `/corporate-retreats/` landing page inbound link equity from day 1. Pre-pass count: 0 internal inbound links from any candidate source. Post-pass: 7 inbound links across 6 high-value source pages.
+- Edits:
+  - `site/index.html` — About Split paragraph: inline `<a href="/corporate-retreats/">corporate retreat</a>` on the "destination wedding, a corporate retreat, or a weekend escape" sentence. (Could not link the Event Barn duo card — its parent is already an `<a>`; nested anchors are invalid HTML.)
+  - `site/pages/host-your-event.html` — Corporate Retreats feature card href: `/blog/corporate-retreat-near-austin/` → `/corporate-retreats/`. Better conversion-intent match: a "Corporate Retreats" card click should land on the venue page, not a blog post.
+  - `site/pages/weddings.html` — Related Reading list: added "Corporate Retreats at Rancho Moonrise" item.
+  - `site/pages/corporate-retreat-near-austin.html` — 2 inbound links: top of Related Reading + the "Plan Your Event" feature card (was a duplicate `/host-your-event/` link, now points to canonical venue page). Also added a `/blog/corporate-retreat-ranch-vs-hotel/` cross-link to the same Related Reading list for cluster strengthening.
+  - `site/pages/corporate-retreat-planning-guide-texas.html` — Related Reading: added top-of-list `/corporate-retreats/` link + ranch-vs-hotel cross-link.
+  - `site/pages/corporate-retreat-ranch-vs-hotel.html` — "More on Corporate Retreats" list: added top-of-list `/corporate-retreats/` link.
+- Sitemap freshness: 7 lastmod entries bumped to 2026-05-02 (`/`, `/weddings/`, `/host-your-event/`, `/corporate-retreats/`, and the 3 corp-retreat blog posts).
+- Validation: `npm run validate:site` passes (JSON-LD parse, local asset references, sitemap rewrite coverage, apex canonical, stale-claim patterns, clean-route hygiene).
+- Verification — final inbound link count via `grep '"/corporate-retreats/"'`: index 1, host-your-event 1, weddings 1, corporate-retreat-near-austin 2, corporate-retreat-planning-guide-texas 1, corporate-retreat-ranch-vs-hotel 1 = **7 links from 6 sources**.
+- Re-Verify Gate: live curl confirms `https://ranchomoonrise.com/` → 200 + `server: Vercel` + `x-vercel-cache: HIT`; `/corporate-retreats/` → 200; sitemap → 200; `www.` host 308-redirects to apex. All DNS/canonical/SEO claims still_true.
+- Files: `site/index.html`, `site/pages/host-your-event.html`, `site/pages/weddings.html`, `site/pages/corporate-retreat-near-austin.html`, `site/pages/corporate-retreat-planning-guide-texas.html`, `site/pages/corporate-retreat-ranch-vs-hotel.html`, `site/sitemap.xml`, `CONTEXT.md`, `TODO.md`, `CHANGELOG.md`, `rancho-done-log.md`.
+
 ## 2026-05-02 (rancho-review-monitor) — RUN_016
 
 - **Google WebSearch snippet flipped 175 → 126 @ 4.9★** — third documented flip across alternating runs (RUN_013→014→015→016). Snippet history now 126→175→126→175→126 across 16 runs. With three distinct flips, the snippet is **definitively unreliable** as an authoritative count source — rotating between at least two aggregator results that disagree. FLAG_FOR_ADAM stays deescalated; durable fix unchanged (Adam dashboard 60s or Places API key ~5 min).
