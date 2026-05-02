@@ -308,3 +308,4 @@ Note: `notebooklm source delete` does not accept --json (skill doc lists `--yes 
 2026-05-01 08:10 | scanned=71 added=0 replaced=7 skipped=3 errors=0
 2026-05-01 15:19 | scanned=67 added=0 replaced=0 skipped=3 errors=0 | pruned-from-state=7
 2026-05-01 16:10 | scanned=64 added=0 replaced=0 skipped=4 errors=0
+2026-05-01 20:07 | scanned=64 added=0 replaced=0 skipped=3 errors=0
