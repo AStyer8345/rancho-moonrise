@@ -94,13 +94,24 @@
     }]
     </script>
 
-    <!-- Schema: SpeakableSpecification — targets AEO answer blocks for AI engines -->
+    <!-- Schema: SpeakableSpecification + publisher.Organization aggregateRating — targets AEO answer blocks for AI engines, anchors venue rating to RM org -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "WebPage",
         "name": "RM Events — Live Music, Yoga & Ranch Events Near Austin TX | Rancho Moonrise",
         "url": "https://ranchomoonrise.com/events/",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Rancho Moonrise",
+            "url": "https://ranchomoonrise.com",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": "125",
+                "bestRating": "5"
+            }
+        },
         "speakable": {
             "@type": "SpeakableSpecification",
             "cssSelector": [".page-header h1", ".page-header p", ".aeo-block h2", ".aeo-block p"]

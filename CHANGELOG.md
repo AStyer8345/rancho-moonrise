@@ -1,5 +1,16 @@
 # Rancho Moonrise — Changelog
 
+## 2026-05-03 (rancho-site-daily) — AggregateRating closure on `/events/` (last customer-facing landing-page gap)
+
+- **Coverage 17 / 17 customer-facing landing pages.** Today's run closed the only remaining AggregateRating gap on a customer-facing navigation page: `/events/` (`site/pages/events.html`). Pattern used: extended the existing `WebPage` JSON-LD block (the SpeakableSpecification block) with `publisher.Organization` carrying `aggregateRating` 4.9 / 125 / bestRating 5 — same `publisher.Organization` pattern adopted on 2026-04-29 for the 4 BlogPosting landing pages (`glamping-near-austin-texas`, `things-to-do-manor-tx`, `glamping-vs-camping`, `things-to-do-near-austin-with-kids`). Keeps the rating on the venue Organization entity, off the WebPage entity. No new top-level JSON-LD block created.
+- **Validation**: all 3 JSON-LD blocks on `/events/` parse (`python3 json.loads`): block 1 = array of 4 `Event` items (May 29 Free Friday, July 4 Music Festival, May 2 Rancho Rodeo, May 10 Mother's Day Retreat); block 2 = `WebPage` with `publisher.aggregateRating 4.9/125` + `SpeakableSpecification`; block 3 = `BreadcrumbList`. `npm run validate:site` passes.
+- **Sitemap freshness**: `/events/` lastmod 2026-04-27 → 2026-05-03.
+- **Re-Verify Gate (live)** — pre-edit verification:
+  - apex `https://ranchomoonrise.com/` → 200, `server: Vercel`, `x-vercel-cache: HIT` (DNS still on Vercel — still_true)
+  - www → 308 to apex (canonical redirect still_true)
+  - `/sitemap.xml`, `/corporate-retreats/`, `/weddings/`, `/host-your-event/`, `/faqs/`, `/contact/` all 200
+  - All S2/S3/S4 SEO claims still_true. No stale claims auto-resolved this run.
+
 ## 2026-05-03 (rancho-review-monitor) — RUN_017
 
 - **Google WebSearch snippet held at 126 @ 4.9★** today (matches RUN_016) — first repeat since the ping-pong started at RUN_011. History now 126→175→126→175→126→126 across 17 runs. The repeat does **not** establish stability given three documented flips on alternating runs (RUN_013→014→015→016) already proved the snippet rotates between at least two disagreeing aggregator sources. FLAG_FOR_ADAM stays deescalated; durable fix unchanged (Adam dashboard 60s or Places API key ~5 min).

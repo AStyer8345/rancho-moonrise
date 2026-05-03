@@ -1,5 +1,14 @@
 # Rancho Moonrise — TODO
-Last updated: 2026-05-02 (internal-link pass to /corporate-retreats/ — 7 inbound links across 6 source pages)
+Last updated: 2026-05-03 (`/events/` AggregateRating closure — coverage now 17 / 17 customer-facing landing pages)
+
+## ✅ DONE 2026-05-03 — `/events/` AggregateRating closure (last customer-facing landing-page gap)
+
+`/events/` was the only customer-facing landing page still missing `aggregateRating` (the 4-30 closure on faqs+contact got 16/17). Today's edit closes it.
+
+1. **Schema edit** (`site/pages/events.html`): existing `WebPage` JSON-LD block (the SpeakableSpecification block) extended with `publisher.Organization` carrying `aggregateRating` 4.9 / 125 / bestRating 5. Same `publisher.Organization` shape adopted 2026-04-29 for the 4 BlogPosting landing pages — keeps the rating on the venue Organization entity and off the WebPage entity. No new top-level JSON-LD block.
+2. **Validation**: all 3 JSON-LD blocks parse via `python3 json.loads` (Event[4], WebPage with publisher.aggregateRating + speakable, BreadcrumbList). `npm run validate:site` passes.
+3. **Sitemap freshness**: `/events/` lastmod 2026-04-27 → 2026-05-03.
+4. **Re-Verify Gate**: pre-edit live curl confirmed apex 200 + Vercel server + cache HIT, www 308 → apex, sitemap + 5 critical landing pages all 200. No stale claims to auto-resolve.
 
 ## ✅ DONE 2026-05-02 — Internal-link pass to `/corporate-retreats/`
 
