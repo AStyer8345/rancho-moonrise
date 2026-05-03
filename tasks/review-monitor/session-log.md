@@ -580,3 +580,42 @@ Claims enumerated from persistent surfaces and re-verified:
 **No review drafts produced** — no new reviews detected on any in-scope live-verifiable platform this run.
 
 ---
+
+## RUN_017 — 2026-05-03 06:30 CT
+
+**Summary:** Quiet run. **Google WebSearch snippet held at 126 @ 4.9★ today** — first repeat (no flip) since the ping-pong started at RUN_011. History is now 126→175→126→175→126→126 across 17 runs. Today's repeat doesn't establish stability given three documented flips on alternating runs (RUN_013→014→015→016) — could be the same aggregator answering the same query within 24h. Snippet remains conclusively unreliable as authoritative count; **FLAG_FOR_ADAM stays deescalated**. The only durable fix remains (a) Adam dashboard check (60s) or (b) Places API key (~5 min). Live-scrape verification still BLOCKER (17th consecutive, JS-rendered, no Places API key). No review-related done-log entries since RUN_011 — `rancho-review-replies` RESOLVED 2026-04-15 22:12 remains the last review action; today's only new git activity is multiple `notebooklm run` sync commits (`fb01dd1` 2026-05-03 00:20, plus three `2026-05-02` syncs from after RUN_016), all non-review. Unreplied=0 maintained on done-log signal. TripAdvisor live-scraped via WebFetch: 0 reviews, unclaimed, "No reviews for this property yet." / "Claim Your Listing" visible (Travelers' Choice still noted; price range now **$74–$175**, was $75-$178 RUN_016 — floor drifted -$1, ceiling drifted -$3, **largest single-run ceiling drop yet**). Hipcamp live-scraped via WebFetch: 0 reviews, "Be the first to review" (still 1 booking, no review left, joined March 2024). Facebook 5/100% recommend confirmed via WebSearch ("100% recommendation rating on Facebook with 5 reviews"; Feb 2026 noise-from-neighbors comment re-surfaced in snippet — same comment, no new state). Expedia/Hotels.com listing URL `ho2867109568` still active per WebSearch snippet; 8.0 rating surfaced cleanly (Expedia: "guest review rating of 8.0"; Hotels.com: "pool was super well kept"). Hotels.com direct fetch BLOCKER ongoing (17th, no live attempt). Airbnb 403 BLOCKER ongoing (17th, no live attempt). Dashboard status remains "ok."
+
+**The Knot side-note (still not in scope):** WebSearch RUN_017 surfaced the listing URL but did not re-surface the count detail (4.5★ / 8 reviews from RUN_012/013 still our last hard data; RUN_014/015/016/017 all listing-without-count). No state change. Still not in monitored scope without Adam's decision.
+
+**Done-log review-adjacent entries since RUN_016:** none. New git activity is notebooklm sync commits only (`fb01dd1`, `dd61928`, `fcb5d87`, `57fa8ae`), no review actions.
+
+**Re-verifications:**
+
+```
+[2026-05-03 11:30] re-verify google-reviews-count — stale (run 17, BLOCKER ongoing) — live=BLOCKED(JS-rendered) search-snippet=126@4.9★ (HELD: matches RUN_016's 126; first repeat since ping-pong started at RUN_011; was 175 RUN_015; was 126 RUN_014; was 175 RUN_011-013; was 126 RUN_007-009; pattern still 126↔175 with three documented flips — repeat doesn't establish stability) prior=126(snippet RUN_016) — FLAG_FOR_ADAM stays deescalated, snippet still unreliable
+[2026-05-03 11:30] re-verify google-unreplied — still_true — live=0(no review-related done-log entries since RUN_011; rancho-review-replies RESOLVED 2026-04-15 remains last review action) prior=0
+[2026-05-03 11:30] re-verify hipcamp-reviews — still_true — live=0reviews/1booking(WebFetch confirmed "Be the first to review", joined Mar 2024) prior=0reviews/1booking
+[2026-05-03 11:30] re-verify tripadvisor-claim-status — still_true — live=unclaimed/0reviews/Travelers'Choice/$74-$175(WebFetch confirmed "No reviews for this property yet", "Claim Your Listing" visible, Travelers' Choice noted; price drift floor -$1 / ceiling -$3 vs RUN_016's $75-$178 — largest single-run ceiling drop) prior=unclaimed/0reviews/$75-$178
+[2026-05-03 11:30] re-verify expedia-rating — still_true(search) — live=8.0(WebSearch:Hotels.com listing ho2867109568 active, Expedia snippet "guest review rating of 8.0", Hotels.com snippet "pool was super well kept") prior=8.0 STALE:2026-04-09 BLOCKER ongoing (run 17)
+[2026-05-03 11:30] re-verify facebook-reviews — still_true — live=5reviews/100%(WebSearch confirmed "100% recommendation rating on Facebook with 5 reviews") prior=5reviews/100%
+[2026-05-03 11:30] re-verify airbnb-listing — unverified (BLOCKER ongoing, no new fetch — 403 pattern established, run 17) prior=POSSIBLE_NEW_LISTING
+```
+
+**Failure counters (BLOCKERS open):**
+- `google-reviews-count` live scrape: 17 consecutive
+- `hotels-com-direct-fetch`: 17 consecutive (no live attempt this run)
+- `airbnb-listing-existence`: 17 consecutive (no live attempt this run)
+
+**Files written this run:**
+- `brand/review-aggregate.json` — updated (run_number 16→17; TripAdvisor + Hipcamp last_scrape refreshed to 2026-05-03T11:30:00Z; Google search_snippet_count held at 126, search_snippet_runs_stable 1→2, history extended; stale_run_count 16→17; Airbnb flag_run_count 16→17; Hotels.com timeout_count 16→17; Facebook + Expedia search_confirmed_date 2026-05-03; TripAdvisor price range refreshed to $74-$175)
+- `site/admin/dashboard-state.json` — updated (run_number 16→17, last_run refreshed, flags updated to reflect held-not-flipped state, status_reason refreshed)
+- `tasks/review-monitor/session-log.md` — this entry
+- `CONTEXT.md` — Last Worked On updated (review-monitor entry replaced)
+- `CHANGELOG.md` — one dated bullet appended
+
+**FLAG_FOR_ADAM (carried, deescalation maintained):**
+> Google WebSearch snippet held at **126 @ 4.9★** today (matches RUN_016). This is the first repeat since the ping-pong started at RUN_011, but it does NOT establish stability — three documented flips across consecutive runs (RUN_013→014→015→016) already proved the snippet rotates between at least two aggregator sources that disagree. A single repeat within a 24h window could just be the same aggregator answering twice. **The true count remains unknown.** Resolution paths unchanged: (a) check the GBP dashboard once to confirm live count + reply backlog (60s, immediate unblock), or (b) provide a Places API key so this agent can authoritatively count via `places.googleapis.com/v1/places/{placeId}?fields=reviews,rating,userRatingCount` (durable fix, ~5 min to wire). Path (a) hasn't been done across 7 runs of asking.
+
+**No review drafts produced** — no new reviews detected on any in-scope live-verifiable platform this run.
+
+---

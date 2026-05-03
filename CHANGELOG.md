@@ -1,5 +1,16 @@
 # Rancho Moonrise — Changelog
 
+## 2026-05-03 (rancho-review-monitor) — RUN_017
+
+- **Google WebSearch snippet held at 126 @ 4.9★** today (matches RUN_016) — first repeat since the ping-pong started at RUN_011. History now 126→175→126→175→126→126 across 17 runs. The repeat does **not** establish stability given three documented flips on alternating runs (RUN_013→014→015→016) already proved the snippet rotates between at least two disagreeing aggregator sources. FLAG_FOR_ADAM stays deescalated; durable fix unchanged (Adam dashboard 60s or Places API key ~5 min).
+- TripAdvisor live-verified 0/unclaimed via WebFetch ("No reviews for this property yet."/"Claim Your Listing" still visible; Travelers' Choice still noted; **price range now $74-$175**, was $75-$178 RUN_016 — floor drifted -$1, ceiling drifted -$3, **largest single-run ceiling drop yet** in the 17-run history).
+- Hipcamp live-verified 0 via WebFetch ("Be the first to review", 1 booking, no review left, joined Mar 2024).
+- Facebook 5/100% recommend confirmed via WebSearch (Feb 2026 noise-from-neighbors comment re-surfaced — same comment, no new state).
+- Hotels.com 8.0 rating snippet still surfacing cleanly (Hotels.com: "pool was super well kept"; Expedia: "guest review rating of 8.0"). Listing URL `ho2867109568` still active.
+- 3 BLOCKERS ongoing (Google JS-blocked run 17, Hotels.com timeout run 17, Airbnb 403 run 17). Unreplied=0 maintained on done-log signal — no review-related done-log entries since RUN_011 (`rancho-review-replies` RESOLVED 2026-04-15 22:12 remains last review action; today's only new git activity is `notebooklm run` sync commits).
+- The Knot (4.5★ / 8 reviews) detail not re-surfaced this run (4th consecutive RUN_014→017 listing-without-count); still not in scope.
+- Files: `brand/review-aggregate.json`, `site/admin/dashboard-state.json`, `tasks/review-monitor/session-log.md`, `CONTEXT.md`, `CHANGELOG.md`.
+
 ## 2026-05-02 (rancho-site-daily) — Internal-link pass to `/corporate-retreats/`
 
 - **Goal:** give yesterday's new `/corporate-retreats/` landing page inbound link equity from day 1. Pre-pass count: 0 internal inbound links from any candidate source. Post-pass: 7 inbound links across 6 high-value source pages.

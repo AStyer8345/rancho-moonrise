@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-05-02T11:30:00Z",
-  "run_number": 16,
-  "note": "RUN_016. **Google WebSearch snippet flipped back to 126 today** — directly contradicts RUN_015's 175 and reverts to RUN_014/RUN_007-009's value. Snippet history is now 126→175→126→175→126 across 16 runs (5-state ping-pong, three full flips on alternating runs RUN_013→014→015→016). The unreliability hypothesis from RUN_014/RUN_015 is now overwhelmingly supported: the snippet is rotating between at least two distinct aggregator results that disagree, and we cannot adjudicate which (if either) reflects the true GBP count without live access. FLAG_FOR_ADAM remains deescalated — surfacing the snippet count in either direction would be wrong; the only durable fix remains (a) Adam dashboard check (60s) or (b) Places API key (~5 min). Live-scrape verification still BLOCKER (16th consecutive, JS-rendered, no Places API key). No review-related done-log entries since RUN_011 — `rancho-review-replies` RESOLVED 2026-04-15 22:12 remains the last review action; today's only new git activity is `ce8f4c3 sync: notebooklm run 2026-05-02 04:10`, non-review. Unreplied=0 maintained on done-log signal. TripAdvisor live-scraped via WebFetch: 0 reviews, unclaimed (Travelers' Choice noted; 'No reviews for this property yet.'; 'Claim Your Listing' visible; price range now $75-$178, was $77-$178 RUN_015 — floor drifted -$2, ceiling steady). Hipcamp live-scraped via WebFetch: 0 reviews, 'Be the first to review' (1 booking, no review left, joined March 2024). Facebook 5/100% recommend confirmed via WebSearch ('100% recommendation rating from 5 reviews'). Expedia/Hotels.com listing URL ho2867109568 still active; 8.0 rating snippet surfacing cleanly (Expedia: 'a guest review rating of 8.0'; Hotels.com: 'pool was super well kept'). Hotels.com direct fetch BLOCKER ongoing (16th, no live attempt). Airbnb 403 BLOCKER ongoing (16th, no live attempt). The Knot detail not re-surfaced this run (listing not in result snippet); still not in scope. Dashboard status remains ok.",
+  "last_updated": "2026-05-03T11:30:00Z",
+  "run_number": 17,
+  "note": "RUN_017. **Google WebSearch snippet held at 126 @ 4.9★** today — first repeat (no flip) since the ping-pong started at RUN_011. History is now 126→175→126→175→126→126 across 17 runs. The repeat doesn't establish stability given the three documented flips on consecutive runs (RUN_013→014→015→016) — could be the same aggregator answering the same query twice within 24h. Snippet remains conclusively unreliable as authoritative count; FLAG_FOR_ADAM stays deescalated. Live-scrape verification still BLOCKER (17th consecutive, JS-rendered, no Places API key). No review-related done-log entries since RUN_011 — `rancho-review-replies` RESOLVED 2026-04-15 22:12 remains the last review action; today's only new git activity is multiple `notebooklm run` sync commits (2026-05-02 12:07/16:07/20:35 + 2026-05-03 00:20), all non-review. Unreplied=0 maintained on done-log signal. TripAdvisor live-scraped via WebFetch: 0 reviews, unclaimed, 'No reviews for this property yet.' / 'Claim Your Listing' visible; Travelers' Choice still noted; **price range now $74-$175**, was $75-$178 RUN_016 — floor drifted -$1, ceiling drifted -$3 (largest single-run ceiling drop yet). Hipcamp live-scraped via WebFetch: 0 reviews, 'Be the first to review' (1 booking, no review left, joined March 2024). Facebook 5/100% recommend confirmed via WebSearch ('100% recommendation rating on Facebook with 5 reviews'; Feb 2026 noise-from-neighbors comment re-surfaced — same comment, no new state). Expedia/Hotels.com listing URL ho2867109568 still active; 8.0 rating snippet still surfacing cleanly (Expedia: 'guest review rating of 8.0'; Hotels.com: 'pool was super well kept'). Hotels.com direct fetch BLOCKER ongoing (17th, no live attempt). Airbnb 403 BLOCKER ongoing (17th). The Knot detail not re-surfaced this run (listing not in result snippet); still not in scope. Dashboard status remains ok.",
   "platforms": {
     "google": {
       "count": 127,
@@ -9,26 +9,26 @@
       "unreplied": 0,
       "stale": true,
       "stale_since": "2026-04-09",
-      "stale_run_count": 16,
+      "stale_run_count": 17,
       "blocker": true,
       "blocker_since": "2026-04-17",
       "search_snippet_count": 126,
-      "search_snippet_prior": 175,
-      "search_snippet_date": "2026-05-02",
-      "search_snippet_runs_stable": 1,
-      "search_snippet_history": "RUN_007/008/009: 126 (stable 3 runs). RUN_010: not re-queried. RUN_011/012/013: 175 (stable 3 runs across April 27/28/29). RUN_014: 126 (flipped back). RUN_015: 175 (flipped again). RUN_016: 126 (flipped a third time). Pattern is now a 3-flip alternation 126→175→126→175→126 across consecutive runs — definitively confirmed unreliable.",
-      "search_snippet_note": "Today's WebSearch snippet returned **126 reviews @ 4.9★** via the standard '\"Rancho Moonrise\" Manor Texas Google reviews count rating' query — directly contradicts yesterday's 175 and now flips for the THIRD consecutive run. With three documented flips across alternating runs (RUN_013→014→015→016), the snippet is conclusively unreliable as an authoritative count source — it is rotating between at least two distinct aggregator results that disagree. Cannot adjudicate from snippets alone. FLAG_FOR_ADAM still deescalated; the only durable fix remains a Places API key or a one-time Adam dashboard check.",
-      "unreplied_note": "Live verification blocked. Unreplied=0 maintained on done-log signal (rancho-review-replies RESOLVED 2026-04-15 22:12 remains last review action; no review-related done-log entries since RUN_011). Today's snippet flip back to 126 reinforces snippet unreliability — either 126 OR 175 could be the true count; cannot confirm or refute from snippets. True count remains unknown without live access.",
+      "search_snippet_prior": 126,
+      "search_snippet_date": "2026-05-03",
+      "search_snippet_runs_stable": 2,
+      "search_snippet_history": "RUN_007/008/009: 126 (stable 3 runs). RUN_010: not re-queried. RUN_011/012/013: 175 (stable 3 runs across April 27/28/29). RUN_014: 126 (flipped back). RUN_015: 175 (flipped again). RUN_016: 126 (flipped a third time). RUN_017: 126 (held — first repeat since ping-pong started). Pattern is 126→175→126→175→126→126 across consecutive runs — three documented flips in alternating runs make the snippet conclusively unreliable. Today's repeat at 126 doesn't establish stability; could just be the same aggregator answering twice within 24h.",
+      "search_snippet_note": "Today's WebSearch snippet returned **126 reviews @ 4.9★** — same as RUN_016's 126. First repeat since the ping-pong started at RUN_011. Doesn't establish stability given three documented flips in alternating runs (RUN_013→014→015→016); the underlying source rotation issue is unchanged. FLAG_FOR_ADAM stays deescalated; the only durable fix remains a Places API key or a one-time Adam dashboard check.",
+      "unreplied_note": "Live verification blocked. Unreplied=0 maintained on done-log signal (rancho-review-replies RESOLVED 2026-04-15 22:12 remains last review action; no review-related done-log entries since RUN_011). Today's snippet held at 126; either 126 OR 175 could still be the true count — cannot confirm or refute from snippets. True count remains unknown without live access.",
       "last_scrape": null,
       "last_known": "2026-04-09"
     },
     "airbnb": {
       "count": null,
       "rating": null,
-      "note": "Search result still shows possible listing at /rooms/1284193976615696223 ('Glamping Safari Tent 25 mins from downtown Austin, Manor TX'). 403 on direct fetch — BLOCKER since 2026-04-17. No new fetch attempted (403 pattern established, run 16). FLAG_FOR_ADAM.",
+      "note": "Search result still shows possible listing at /rooms/1284193976615696223 ('Glamping Safari Tent 25 mins from downtown Austin, Manor TX'). 403 on direct fetch — BLOCKER since 2026-04-17. No new fetch attempted (403 pattern established, run 17). FLAG_FOR_ADAM.",
       "last_scrape": null,
       "flag": "NEEDS_ADAM_VERIFY",
-      "flag_run_count": 16,
+      "flag_run_count": 17,
       "blocker": true,
       "blocker_since": "2026-04-17"
     },
@@ -38,8 +38,8 @@
       "unreplied": 0,
       "stale": false,
       "listing_url": "https://www.hipcamp.com/en-US/land/texas-rancho-moonrise-dw9hklej",
-      "last_scrape": "2026-05-02T11:30:00Z",
-      "note": "Live verified via WebFetch. Page shows 'Be the first to review' — zero reviews confirmed. Listing notes 1 booking but no review left by that guest. Joined Hipcamp March 2024."
+      "last_scrape": "2026-05-03T11:30:00Z",
+      "note": "Live verified via WebFetch. Page shows 'Be the first to review' — zero reviews confirmed. Listing notes 1 booking but no review left by that guest. Joined Hipcamp March 2024. No change vs RUN_016."
     },
     "expedia": {
       "count": null,
@@ -49,12 +49,12 @@
       "last_scrape": null,
       "last_confirmed": "2026-04-09",
       "search_confirmed_rating": 8.0,
-      "search_confirmed_date": "2026-05-02",
-      "search_confirmed_note": "WebSearch RUN_016 confirmed Hotels.com listing URL ho2867109568 still active and 8.0 rating surfaced cleanly (Expedia snippet: 'a guest review rating of 8.0 on Expedia'; Hotels.com snippet: 'The pool was super well kept and pretty chill'). Hotels.com direct fetch not attempted this run (BLOCKER ongoing — 15 prior consecutive timeouts).",
-      "hotels_com_timeout_count": 16,
+      "search_confirmed_date": "2026-05-03",
+      "search_confirmed_note": "WebSearch RUN_017 confirmed Hotels.com listing URL ho2867109568 still active and 8.0 rating surfaced cleanly (Expedia snippet: 'a guest review rating of 8.0'; Hotels.com snippet: 'The pool was super well kept and pretty chill'). Hotels.com direct fetch not attempted this run (BLOCKER ongoing — 16 prior consecutive timeouts).",
+      "hotels_com_timeout_count": 17,
       "blocker": true,
       "blocker_since": "2026-04-17",
-      "note": "Rating 8.0 last confirmed direct-scrape 2026-04-09; last confirmed via search snippet 2026-05-02. Hotels.com direct fetch BLOCKER ongoing (16th run). Listing URL still active per WebSearch."
+      "note": "Rating 8.0 last confirmed direct-scrape 2026-04-09; last confirmed via search snippet 2026-05-03. Hotels.com direct fetch BLOCKER ongoing (17th run). Listing URL still active per WebSearch."
     },
     "facebook": {
       "count": 5,
@@ -62,8 +62,8 @@
       "recommend_pct": 100,
       "stale": false,
       "last_scrape": null,
-      "last_confirmed": "2026-05-02",
-      "note": "5 reviews, 100% recommend — confirmed via WebSearch RUN_016 ('Rancho Moonrise has a 100% recommendation rating on Facebook with 5 reviews'). Direct page load blocked (JS-rendered). No new reviews detected. The Feb 2026 noise-from-neighbors mixed-feedback comment surfaced again in this run's WebSearch snippet ('A neighboring property played extremely loud amplified music, and the venue has no ability to control or prevent this') — same comment, no escalation, no new state. Not drafting a response (existing review, unknown reply state without live access; voice-guide says draft only for unreplied ≤4★ where text is fetchable)."
+      "last_confirmed": "2026-05-03",
+      "note": "5 reviews, 100% recommend — confirmed via WebSearch RUN_017 ('Rancho Moonrise has a 100% recommendation rating on Facebook with 5 reviews'). Direct page load blocked (JS-rendered). No new reviews detected. The Feb 2026 noise-from-neighbors mixed-feedback comment surfaced again in this run's WebSearch snippet ('one review that mentioned concerns about noise from a neighboring property that wasn't disclosed prior to booking') — same comment, no escalation, no new state. Not drafting a response (existing review, unknown reply state without live access; voice-guide says draft only for unreplied ≤4★ where text is fetchable)."
     },
     "tripadvisor": {
       "status": "unclaimed",
@@ -71,8 +71,8 @@
       "rating": null,
       "stale": false,
       "listing_url": "https://www.tripadvisor.com/Hotel_Review-g56224-d33307272-Reviews-Rancho_Moonrise-Manor_Texas.html",
-      "last_scrape": "2026-05-02T11:30:00Z",
-      "note": "Live verified via WebFetch. 0 reviews, unclaimed. 'No reviews for this property yet.' / 'Claim Your Listing' visible. Travelers' Choice award still noted on page. Price range now $75-$178/night (was $77-$178 RUN_015, $79-$180 RUN_014, $78-$180 RUN_013, $77-$181 RUN_012 — floor drifted -$2 vs RUN_015, ceiling steady; floor now matches RUN_012-prior-floor)."
+      "last_scrape": "2026-05-03T11:30:00Z",
+      "note": "Live verified via WebFetch. 0 reviews, unclaimed. 'No reviews for this property yet.' / 'Claim Your Listing' visible. Travelers' Choice award still noted on page. Price range now $74-$175/night (was $75-$178 RUN_016, $77-$178 RUN_015, $79-$180 RUN_014, $78-$180 RUN_013, $77-$181 RUN_012 — floor drifted -$1 vs RUN_016, ceiling drifted -$3 vs RUN_016. Largest single-run ceiling drop yet)."
     },
     "yelp": {
       "status": "listing_exists",
@@ -96,7 +96,7 @@
       "rating": 4.5,
       "listing_url": "https://www.theknot.com/marketplace/rancho-moonrise-manor-tx-2087722",
       "in_scope": false,
-      "note": "Discovered in search results 2026-04-24 (RUN_008) with one Feb 26 2026 review by Haylee L. RUN_012 + RUN_013 WebSearch surfaced 4.5★ / 8 reviews. RUN_014 + RUN_015 + RUN_016 did not re-surface the count detail (listing surfaced but count not in snippet). Still not adding to monitored scope without Adam's decision (curated wedding venue directory, not a standard OTA review platform)."
+      "note": "Discovered in search results 2026-04-24 (RUN_008) with one Feb 26 2026 review by Haylee L. RUN_012 + RUN_013 WebSearch surfaced 4.5★ / 8 reviews. RUN_014 + RUN_015 + RUN_016 + RUN_017 did not re-surface the count detail (listing surfaced but count not in snippet). Still not adding to monitored scope without Adam's decision (curated wedding venue directory, not a standard OTA review platform)."
     }
   }
 }
