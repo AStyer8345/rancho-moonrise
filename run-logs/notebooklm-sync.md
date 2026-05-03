@@ -330,3 +330,4 @@ Note: HTML files fail with 400 on `--type file`; `--type text` works (stored as 
   └─ commit failed: another git process holds the index lock; staged change left for next run
 2026-05-02 12:07 | scanned=64 added=0 replaced=0 skipped=3 errors=0
 2026-05-02 16:07 | scanned=64 added=0 replaced=0 skipped=4 errors=0
+2026-05-02 20:35 | scanned=64 added=0 replaced=0 skipped=4 errors=0
