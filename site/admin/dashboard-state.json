@@ -1,8 +1,8 @@
 {
   "review_monitor": {
-    "last_run": "2026-05-03T11:30:00Z",
+    "last_run": "2026-05-04T11:30:00Z",
     "status": "ok",
-    "status_reason": "RUN_017. Google WebSearch snippet held at 126 @ 4.9★ today (matches RUN_016) — first repeat since the ping-pong started at RUN_011. History now 126→175→126→175→126→126 across 17 runs. The repeat doesn't establish stability given three documented flips in alternating runs (RUN_013→014→015→016); snippet remains conclusively unreliable as authoritative count. FLAG_FOR_ADAM stays deescalated — durable fix unchanged (Adam dashboard 60s or Places API key ~5 min). Live-scrape verification still BLOCKER (17th, JS-rendered, no Places API key). No review-related done-log entries since RUN_011 — unreplied=0 maintained on done-log signal. TripAdvisor + Hipcamp live-confirmed 0 reviews (TripAdvisor still unclaimed, 'Travelers' Choice' still noted). Facebook 5/100% confirmed via WebSearch (Feb 2026 noise-from-neighbors comment re-surfaced — same comment, no new state). Hotels.com 8.0 rating snippet still surfacing cleanly; listing URL still active. Hotels.com direct fetch BLOCKER ongoing (17th, no live attempt). Airbnb 403 BLOCKER ongoing (17th). The Knot detail not re-surfaced this run (listing not in snippet); still not in scope. TripAdvisor price drift $75-$178 → $74-$175 (-$1 floor, -$3 ceiling — largest single-run ceiling drop yet).",
+    "status_reason": "RUN_018. Google WebSearch snippet at 126 @ 4.9★ for the third consecutive run (RUN_016/017/018) — longest stable stretch since the ping-pong started at RUN_011. Three earlier documented flips (RUN_013→014→015→016) keep this lower-confidence stable rather than authoritative; the aggregator could simply be sticking on one answer for now. FLAG_FOR_ADAM stays deescalated — durable fix unchanged (Adam dashboard 60s or Places API key ~5 min). Live-scrape verification still BLOCKER (18th, JS-rendered, no Places API key). No review-related done-log entries since RUN_011 — unreplied=0 maintained on done-log signal. TripAdvisor + Hipcamp live-confirmed 0 reviews (TripAdvisor still unclaimed, Travelers' Choice still noted). Facebook 5/100% NOT surfaced inline this run — first observability dip since RUN_010, no state change either way. Hotels.com 8.0 rating snippet still surfacing cleanly; listing URL still active; snippet noted 'last rating from December 2025'. Hotels.com direct fetch BLOCKER ongoing (18th, no live attempt). Airbnb 403 BLOCKER ongoing (18th). The Knot listing not surfaced in either query this run; still not in scope. TripAdvisor price drift $74-$175 → $73-$175 (-$1 floor, ceiling steady at $175). 7-run drift floor $77→$73 / ceiling $181→$175 — slow downward drift on both, not jitter.",
     "new_reviews_pending_response": 0,
     "total_reviews_tracked": 132,
     "unreplied_by_platform": {
@@ -14,11 +14,12 @@
     },
     "stale_platforms": ["google", "expedia"],
     "flags": [
-      "google-search-snippet-held-126-but-three-prior-flips-still-unreliable",
+      "google-search-snippet-126-three-stable-runs-but-three-prior-flips",
       "airbnb-listing-existence-unverified",
-      "google-live-scrape-blocked-17-runs",
-      "hotels-com-fetch-timeout-17-runs",
-      "the-knot-8-reviews-4.5-stars-not-in-scope"
+      "google-live-scrape-blocked-18-runs",
+      "hotels-com-fetch-timeout-18-runs",
+      "facebook-snippet-not-surfaced-inline-this-run-observability-dip",
+      "the-knot-listing-not-surfaced-this-run"
     ],
     "blockers": [
       "google-reviews-count",
@@ -26,6 +27,6 @@
       "airbnb-listing-existence"
     ],
     "new_platforms_noted": ["yelp", "agoda", "the_knot"],
-    "run_number": 17
+    "run_number": 18
   }
 }
