@@ -1,5 +1,20 @@
 # Rancho Moonrise — Changelog
 
+## 2026-05-04 (rancho-site-daily) — Meta-description CTR sweep (18 pages)
+
+- **Why this run picked CTR over more schema work.** S4 schema-breadcrumb-speakable hit 17/17 yesterday; the next bottleneck is "Google hasn't crawled apex yet" (NEEDS ADAM — GSC submit). What I *can* do autonomously today: raise SERP CTR for the eventual reindex. Audited every customer-facing page's `<meta name="description">` and found 18 over Google's ~160-char desktop truncation point, including 4 of the 5 highest-priority navigation pages. Truncated descriptions waste the most valuable real estate in the SERP.
+- **Edits (18 files):** rendered description tightened to 129–155 chars across `site/index.html`, `site/pages/weddings.html`, `events.html`, `corporate-retreats.html`, `pool-day-pass-austin.html`, `glamping-near-austin-texas.html`, `corporate-retreat-near-austin.html`, `ranch-wedding-texas.html`, `bachelorette-party-austin-texas.html`, `glamping-vs-camping.html`, `things-to-do-near-austin-with-kids.html`, `summer-glamping-near-austin.html`, `corporate-retreat-ranch-vs-hotel.html`, `mothers-day-near-austin.html`, `birthday-party-venue-near-austin.html`, `yoga-retreat-near-austin.html`, `weekend-getaways-near-austin.html`, `corporate-retreat-planning-guide-texas.html`. Voice-guide-clean — no banned terms; preserved keyword leading and Austin/20-minutes anchor on every page where it was already there.
+- **Bonus voice cleanup:** `ranch-wedding-texas.html` was using "Rancho Moonrise in Manor, TX" in its meta description (visible in SERP body copy). Per Ashley's directive — "Manor, TX" only in schema/alt text, NOT body copy — that's a violation. Rewritten to drop the Manor reference.
+- **OG/Twitter descriptions left alone** — they're already separate, distinct strings on every page; truncation thresholds differ (OG has no hard cutoff, Twitter ~200). Editing them risked breaking the existing share-card framing for no SERP benefit.
+- **Sitemap freshness**: 18 lastmod entries bumped to 2026-05-04 to nudge re-crawl when Google next visits the apex sitemap.
+- **Validation**: `npm run validate:site` passes (JSON-LD parsing, local asset references, sitemap rewrite coverage, apex canonical, stale-claim patterns, clean-route hygiene). Diff scope: 19 files, 36 insertions, 36 deletions — surgical.
+- **Re-Verify Gate (live)** — pre-edit verification:
+  - apex `https://ranchomoonrise.com/` → 200, `server: Vercel`, `x-vercel-cache: HIT` (DNS still on Vercel — still_true)
+  - www → 308 to apex (canonical redirect still_true)
+  - `/sitemap.xml`, `/corporate-retreats/`, `/safari-tents-near-austin/`, `/events/`, `/weddings/`, `/faqs/` all 200
+  - `/robots.txt` sane (apex sitemap reference, internal admin/dashboard pages disallowed)
+  - All DNS/canonical/sitemap claims still_true. No stale claims auto-resolved this run.
+
 ## 2026-05-04 (rancho-biweekly-audit) — skipped, gate not satisfied
 
 - rancho-biweekly-audit skipped — last audit (2026-04-23) was 11 days ago; gate requires ≥13 days. Next eligible Thursday: 2026-05-07.

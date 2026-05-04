@@ -1,5 +1,5 @@
 # Rancho Moonrise — TODO
-Last updated: 2026-05-04 (rancho-competitive-weekly — May 4 intel run; ResortPass window extended past 5/1; Green Acres ATX surfacing as closest geographic competitor)
+Last updated: 2026-05-04 (rancho-site-daily — meta-description CTR sweep on 18 pages, all now 129–155 chars rendered; sitemap lastmod bumped on 18 URLs)
 
 ## 🔥 NEEDS ADAM (highest leverage this week)
 
@@ -14,6 +14,17 @@ Last updated: 2026-05-04 (rancho-competitive-weekly — May 4 intel run; ResortP
 - **Per-unit accommodation pages remain blocked on low-res source JPGs** (Adam re-upload). The Retreat on the Hill (11) + Green Acres (8) + Lucky Arrow (5+) all reinforce the multi-URL pattern.
 
 
+
+## ✅ DONE 2026-05-04 — Meta-description CTR sweep (18 pages)
+
+S4 schema-breadcrumb-speakable hit 17/17 yesterday; next SEO bottleneck is GSC indexing (NEEDS ADAM, owned at top of file). Today's autonomous lever: raise SERP CTR for the eventual reindex.
+
+1. **18 meta descriptions tightened** to 129–155 chars rendered (was 161–210). Pages: index, weddings, events, corporate-retreats, pool-day-pass-austin, glamping-near-austin-texas, corporate-retreat-near-austin, ranch-wedding-texas, bachelorette-party-austin-texas, glamping-vs-camping, things-to-do-near-austin-with-kids, summer-glamping-near-austin, corporate-retreat-ranch-vs-hotel, mothers-day-near-austin, birthday-party-venue-near-austin, yoga-retreat-near-austin, weekend-getaways-near-austin, corporate-retreat-planning-guide-texas. Voice-guide-clean — no banned terms; keyword-leading + Austin/20-minutes anchor preserved on every page where it was already there.
+2. **Voice cleanup bonus.** `/blog/ranch-wedding-texas/` was using "Rancho Moonrise in Manor, TX" in its meta description. Per Ashley's directive (Manor, TX = schema/alt text only, not body copy), this was a SERP-visible violation. Rewrite drops the Manor reference.
+3. **OG/Twitter descriptions left alone.** Each page already had distinct OG and Twitter description strings; truncation thresholds are different (OG no hard cutoff, Twitter ~200). Editing them risked breaking existing share-card framing for no SERP benefit.
+4. **Sitemap freshness**: 18 lastmod entries bumped to 2026-05-04 to nudge re-crawl when Google next visits the apex sitemap.
+5. **Validation**: `npm run validate:site` passes. Diff: 19 files, 36 insertions, 36 deletions — surgical.
+6. **Re-Verify Gate (live)**: apex 200 + `server: Vercel` + `x-vercel-cache: HIT`; www 308 → apex; `/sitemap.xml`, `/corporate-retreats/`, `/safari-tents-near-austin/`, `/events/`, `/weddings/`, `/faqs/` all 200. All DNS/canonical claims still_true.
 
 ## ✅ DONE 2026-05-03 — `/events/` AggregateRating closure (last customer-facing landing-page gap)
 
