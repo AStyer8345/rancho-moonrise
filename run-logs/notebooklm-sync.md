@@ -346,3 +346,21 @@ Note: HTML files fail with 400 on `--type file`; `--type text` works (stored as 
 2026-05-04 00:08 | scanned=67 added=0 replaced=0 skipped=3 errors=0
 2026-05-04 04:08 | scanned=0 added=0 replaced=0 skipped=0 errors=1 | auth-expired (notebooklm login required; back-to-back failure pattern returning)
 2026-05-04 08:18 | scanned=0 added=0 replaced=0 skipped=0 errors=1 | auth-expired again after 2026-05-04 00:08 successful run; `notebooklm login` required
+
+## 2026-05-04 12:15 — AUTH FAILURE
+NotebookLM CLI returned 'Authentication expired or invalid'. Run `notebooklm login` to re-auth.
+Skipped sync entirely. State file NOT updated so deferred files will be picked up on next successful run.
+
+Pending sync (10 new, 0 modified):
+- PRIVATE EVENTS AT RANCHO MOONRISE.pdf
+- INTIMATE EVENTS AT RM.pdf
+- ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf
+- brand/review-reports/2026-04-09-review-report.md
+- brand/gbp-posts/2026-04-15-gbp-profile-fields.md
+- brand/gbp-posts/2026-04-15-gbp-qa-seed.md
+- brand/gbp-posts/2026-04-13-gbp-post.md
+- brand/gbp-posts/2026-04-09-gbp-post.md
+- brand/gbp-posts/2026-04-15-blog12-social-snippets.md
+- brand/fonts/Monotype Font Software End User License Agreement.html
+
+2026-05-04 12:15 | scanned=74 added=0 replaced=0 skipped=10 errors=1 (auth)
