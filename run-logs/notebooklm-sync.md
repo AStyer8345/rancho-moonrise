@@ -345,3 +345,4 @@ Note: HTML files fail with 400 on `--type file`; `--type text` works (stored as 
 2026-05-03 20:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1 | auth-expired (5th consecutive run; `notebooklm login` required)
 2026-05-04 00:08 | scanned=67 added=0 replaced=0 skipped=3 errors=0
 2026-05-04 04:08 | scanned=0 added=0 replaced=0 skipped=0 errors=1 | auth-expired (notebooklm login required; back-to-back failure pattern returning)
+2026-05-04 08:18 | scanned=0 added=0 replaced=0 skipped=0 errors=1 | auth-expired again after 2026-05-04 00:08 successful run; `notebooklm login` required
