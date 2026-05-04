@@ -342,3 +342,4 @@ Note: HTML files fail with 400 on `--type file`; `--type text` works (stored as 
 2026-05-03 08:06 | scanned=0 added=0 replaced=0 skipped=0 errors=1 | auth-expired
 2026-05-03 12:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1 | auth-expired
 2026-05-03 16:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1 | NotebookLM auth expired — run 'notebooklm login' to re-authenticate; sync skipped
+2026-05-03 20:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1 | auth-expired (5th consecutive run; `notebooklm login` required)
