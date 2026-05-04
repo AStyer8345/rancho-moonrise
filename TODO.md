@@ -1,5 +1,19 @@
 # Rancho Moonrise — TODO
-Last updated: 2026-05-03 (`/events/` AggregateRating closure — coverage now 17 / 17 customer-facing landing pages)
+Last updated: 2026-05-04 (rancho-competitive-weekly — May 4 intel run; ResortPass window extended past 5/1; Green Acres ATX surfacing as closest geographic competitor)
+
+## 🔥 NEEDS ADAM (highest leverage this week)
+
+1. **GSC sitemap submit (Priority 1).** With DNS live and `/corporate-retreats/` published, Google's crawl queue is the next bottleneck. Submit `https://ranchomoonrise.com/sitemap.xml` in Search Console and request indexing on `/corporate-retreats/`, `/safari-tents-near-austin/`, and apex.
+2. **ResortPass extended-window decision.** Lucky Arrow has not reactivated 3 days past their projected May 1 resumption. Either submit Rancho Moonrise this week or formally kill the idea. The April 27 "decide within 48 hours" framing was wrong.
+3. **Glamping Hub submission.** 3 weeks running. Free, 15 min, glampinghub.com/list-your-property.
+
+## 📌 Competitive intel quick wins (refreshed 2026-05-04)
+
+- **Track Green Acres ATX (Elgin) as the closest geographic competitor.** Press footprint in U.S. News / Dwell / Apartment Therapy / Austin Monthly suggests the April 6 press-pitch action item needs a different angle.
+- **Walden + Safari for the Soul are now SERP-dominant on safari tent queries** with explicit unit counts in their snippets. `/safari-tents-near-austin/` indexability is GSC-dependent (see #1 above).
+- **Per-unit accommodation pages remain blocked on low-res source JPGs** (Adam re-upload). The Retreat on the Hill (11) + Green Acres (8) + Lucky Arrow (5+) all reinforce the multi-URL pattern.
+
+
 
 ## ✅ DONE 2026-05-03 — `/events/` AggregateRating closure (last customer-facing landing-page gap)
 
