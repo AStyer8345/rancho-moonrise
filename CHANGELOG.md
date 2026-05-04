@@ -1,5 +1,9 @@
 # Rancho Moonrise — Changelog
 
+## 2026-05-04 (rancho-biweekly-audit) — skipped, gate not satisfied
+
+- rancho-biweekly-audit skipped — last audit (2026-04-23) was 11 days ago; gate requires ≥13 days. Next eligible Thursday: 2026-05-07.
+
 ## 2026-05-04 (rancho-competitive-weekly) — May 4 intel run
 
 - **Re-Verify Gate (live):** 7 prior claims from April 27 re-verified live. 6 still_true. 1 partial-change: branded "Rancho Moonrise" SERP now shows ranchomoonrise.com as #1 (Vercel-hosted) — first concrete post-DNS-cutover external signal. Pre-existing DNS-on-Flywheel claim was already RESOLVED 2026-04-30; not re-verified again this run. No stale claims auto-resolved.
