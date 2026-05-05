@@ -369,3 +369,8 @@ Pending sync (10 new, 0 modified):
 - NotebookLM authentication expired. Run `notebooklm login` to re-authenticate.
 - Detected via `notebooklm use <id>` output: "Authentication expired or invalid. Redirected to: https://accounts.google.co..."
 - No file scan performed; state file untouched. Sync deferred until auth restored.
+
+2026-05-05 09:30 | scanned=0 added=0 replaced=0 skipped=0 errors=1 (auth)
+- NotebookLM authentication still expired (3rd consecutive failure since 2026-05-04 12:15).
+- Run `notebooklm login` to re-authenticate.
+- State file untouched; deferred files will be picked up on next successful run.
