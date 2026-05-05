@@ -364,3 +364,8 @@ Pending sync (10 new, 0 modified):
 - brand/fonts/Monotype Font Software End User License Agreement.html
 
 2026-05-04 12:15 | scanned=74 added=0 replaced=0 skipped=10 errors=1 (auth)
+
+2026-05-04 18:37 | scanned=0 added=0 replaced=0 skipped=0 errors=1 (auth)
+- NotebookLM authentication expired. Run `notebooklm login` to re-authenticate.
+- Detected via `notebooklm use <id>` output: "Authentication expired or invalid. Redirected to: https://accounts.google.co..."
+- No file scan performed; state file untouched. Sync deferred until auth restored.
