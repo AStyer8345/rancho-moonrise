@@ -1,5 +1,5 @@
 # Rancho Moonrise — TODO
-Last updated: 2026-05-04 (rancho-site-daily — meta-description CTR sweep on 18 pages, all now 129–155 chars rendered; sitemap lastmod bumped on 18 URLs)
+Last updated: 2026-05-05 (rancho-site-daily — title-tag CTR sweep on 10 pages, rendered titles down from 72–101 chars to 49–61 chars; sitemap lastmod bumped on 10 URLs)
 
 ## 🔥 NEEDS ADAM (highest leverage this week)
 
@@ -14,6 +14,16 @@ Last updated: 2026-05-04 (rancho-site-daily — meta-description CTR sweep on 18
 - **Per-unit accommodation pages remain blocked on low-res source JPGs** (Adam re-upload). The Retreat on the Hill (11) + Green Acres (8) + Lucky Arrow (5+) all reinforce the multi-URL pattern.
 
 
+
+## ✅ DONE 2026-05-05 — Title-tag CTR sweep (10 pages)
+
+Yesterday closed the meta-description gap; the next strongest SERP CTR lever is the `<title>` tag. Audit found 14 customer-facing pages with rendered titles over 65 chars (Google truncates around 600px ≈ 55–60 chars). Worst offenders were 100–101 chars on the two `vs.` comparison blog posts — clearly truncating. Edited the 10 with rendered titles ≥72 chars.
+
+1. **10 titles tightened** to 49–61 chars rendered (was 72–101). Pages: `austin-bachelorette-ranch-vs-bar-crawl` (101→58), `corporate-retreat-ranch-vs-hotel` (100→58), `yoga-retreat-near-austin` (88→61), `birthday-party-venue-near-austin` (87→57), `mothers-day-near-austin` (85→61), `host-your-event` (85→52), `corporate-retreat-near-austin` (86→57), `events` (78→56), `corporate-retreat-planning-guide-texas` (75→49), `wedding-venues-near-austin` (72→54). Keyword-leading on every page; `| Rancho Moonrise` brand suffix preserved on every page that already had it; `(2026 Guide)` retained on the two seasonal CTR-magnet titles.
+2. **OG/Twitter titles deliberately untouched.** Same logic as yesterday's description sweep — different surfaces, different truncation thresholds. Several pages already had distinct, deliberate OG/Twitter title strings; editing them risked breaking working share-card framing for no SERP benefit.
+3. **Sitemap freshness**: 10 lastmod entries bumped to 2026-05-05.
+4. **Validation**: `npm run validate:site` passes. Diff: 11 files, 20 insertions, 20 deletions — surgical.
+5. **Re-Verify Gate (live)**: apex 200 + `server: Vercel` + `x-vercel-cache: HIT`; www 308 → apex; `/sitemap.xml`, `/corporate-retreats/`, `/safari-tents-near-austin/`, `/events/`, `/weddings/`, `/faqs/`, `/host-your-event/` all 200. All DNS/canonical/sitemap claims still_true; no stale claims auto-resolved this run.
 
 ## ✅ DONE 2026-05-04 — Meta-description CTR sweep (18 pages)
 

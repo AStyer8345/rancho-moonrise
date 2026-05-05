@@ -1,5 +1,18 @@
 # Rancho Moonrise — Changelog
 
+## 2026-05-05 (rancho-site-daily) — Title-tag CTR sweep (10 pages)
+
+- **Why this run picked title CTR.** Yesterday closed the meta-description gap; the next strongest SERP CTR lever is the `<title>` tag, which Google truncates around 600 pixels (~55-60 chars). Audit found 14 pages over 65 chars rendered, with the worst at 100-101 chars (clearly truncating). Title is a stronger CTR signal than description because it's the clickable text. Ten pages had rendered titles ≥72 chars and were edited.
+- **Edits (10 files):** rendered title tightened to 49–61 chars across `site/pages/austin-bachelorette-ranch-vs-bar-crawl.html` (101 → 58), `corporate-retreat-ranch-vs-hotel.html` (100 → 58), `yoga-retreat-near-austin.html` (88 → 61), `birthday-party-venue-near-austin.html` (87 → 57), `mothers-day-near-austin.html` (85 → 61), `host-your-event.html` (85 → 52), `corporate-retreat-near-austin.html` (86 → 57), `events.html` (78 → 56), `corporate-retreat-planning-guide-texas.html` (75 → 49), `wedding-venues-near-austin.html` (72 → 54). Keyword-leading on every page; brand suffix `| Rancho Moonrise` preserved where it already existed (`corporate-retreat-planning-guide-texas` keeps its no-suffix pattern). Year `(2026 Guide)` retained on the two seasonal pages where it was already a CTR signal.
+- **OG/Twitter titles left alone** — same logic as yesterday's description sweep. Social cards have more generous truncation (OG no hard cutoff, Twitter ~70 in preview), and the existing per-page strings were already deliberate. Editing them risked breaking working share-card framing for no SERP benefit.
+- **Sitemap freshness**: 10 lastmod entries bumped to 2026-05-05 to nudge re-crawl when Google next visits the apex sitemap.
+- **Validation**: `npm run validate:site` passes (JSON-LD parsing, local asset references, sitemap rewrite coverage, apex canonical, stale-claim patterns, clean-route hygiene). Diff scope: 11 files, 20 insertions, 20 deletions — surgical.
+- **Re-Verify Gate (live)** — pre-edit verification:
+  - apex `https://ranchomoonrise.com/` → 200, `server: Vercel`, `x-vercel-cache: HIT` (DNS still on Vercel — still_true)
+  - www → 308 to apex (canonical redirect still_true)
+  - `/sitemap.xml`, `/corporate-retreats/`, `/safari-tents-near-austin/`, `/events/`, `/weddings/`, `/faqs/`, `/host-your-event/` all 200
+  - All DNS/canonical/sitemap claims still_true. No stale claims auto-resolved this run.
+
 ## 2026-05-04 (rancho-site-daily) — Meta-description CTR sweep (18 pages)
 
 - **Why this run picked CTR over more schema work.** S4 schema-breadcrumb-speakable hit 17/17 yesterday; the next bottleneck is "Google hasn't crawled apex yet" (NEEDS ADAM — GSC submit). What I *can* do autonomously today: raise SERP CTR for the eventual reindex. Audited every customer-facing page's `<meta name="description">` and found 18 over Google's ~160-char desktop truncation point, including 4 of the 5 highest-priority navigation pages. Truncated descriptions waste the most valuable real estate in the SERP.
