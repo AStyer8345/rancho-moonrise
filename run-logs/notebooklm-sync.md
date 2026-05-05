@@ -380,3 +380,10 @@ Pending sync (10 new, 0 modified):
 - Scan ran successfully against state file: 0 new, 0 modified — no sync work needed this run regardless.
 - 3 oversized PDFs persistently skipped (>10MB): PRIVATE EVENTS / INTIMATE EVENTS / ALL INCLUSIVE RETREATS.
 - Run `notebooklm login` to re-authenticate. Until then, any new file in brand/ or deal/ won't sync.
+
+2026-05-05 12:35 | scanned=64 added=0 replaced=0 skipped=3 errors=1 (auth)
+- NotebookLM auth still expired (5th consecutive failure since 2026-05-04 12:15). `notebooklm use <id>` returns "Authentication expired or invalid. Run 'notebooklm login' to re-authenticate."
+- mtime drift detected: 64 files now show modified vs state file (state last written 2026-05-02 16:07). Likely a git pull or file-touch operation reset timestamps. Not uploading because auth is broken anyway — once auth is restored, next run will reconcile (deletes + re-uploads ~64 files unless state is manually refreshed first).
+- State file intentionally NOT updated this run — keep deferred until a real sync can run.
+- 3 oversized PDFs persistently skipped (>10MB): PRIVATE EVENTS / INTIMATE EVENTS / ALL INCLUSIVE RETREATS.
+- ACTION NEEDED: run `notebooklm login` to re-authenticate. Consider whether to refresh the state file from current mtimes after re-auth to avoid a 64-file mass re-upload.
