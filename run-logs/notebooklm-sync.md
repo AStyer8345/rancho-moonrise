@@ -374,3 +374,9 @@ Pending sync (10 new, 0 modified):
 - NotebookLM authentication still expired (3rd consecutive failure since 2026-05-04 12:15).
 - Run `notebooklm login` to re-authenticate.
 - State file untouched; deferred files will be picked up on next successful run.
+
+2026-05-05 13:42 | scanned=64 added=0 replaced=0 skipped=3 errors=1 (auth)
+- NotebookLM auth still expired (4th consecutive failure since 2026-05-04 12:15).
+- Scan ran successfully against state file: 0 new, 0 modified — no sync work needed this run regardless.
+- 3 oversized PDFs persistently skipped (>10MB): PRIVATE EVENTS / INTIMATE EVENTS / ALL INCLUSIVE RETREATS.
+- Run `notebooklm login` to re-authenticate. Until then, any new file in brand/ or deal/ won't sync.
