@@ -1,5 +1,19 @@
 # Rancho Moonrise — Changelog
 
+## 2026-05-06 (rancho-site-daily) — Image-alt-text audit + Instagram-grid SEO recovery
+
+- **Audit summary**: scanned 207 `<img>` tags across 27 customer-facing pages (`site/index.html` + 26 `site/pages/*.html`). Filtered out 1 false-positive class (brand-wordmark logo `alt="Rancho Moonrise"` is correct accessibility practice for a wordmark image — left as-is on all 26 occurrences) and 1 false-positive case (the `<img class="lightbox__img" alt="">` on `weddings.html` is populated by JS at click time — `site/pages/weddings.html:413` paired with the `collectPhotos()` setter at line 720+). Real issues: 9 empty alts in the homepage Instagram grid + 3 alts over 125 chars.
+- **9 Instagram-grid alts populated** (`site/index.html` lines 555–579). Each `<a aria-label="View on Instagram">` containing an `<img alt="">` had the alt populated with descriptive, location-keyword-rich text (e.g., "Resort-style pool at Rancho Moonrise glamping ranch near Austin, Texas" / "Safari tent interior with queen bed and string lights at Rancho Moonrise" / "Outdoor wedding ceremony at Rancho Moonrise ranch wedding venue near Austin"). Pure SEO win, **zero accessibility cost** — when a parent `<a>` has `aria-label`, the link's accessible-name calculation uses the aria-label and ignores contained image alts, so screen-reader announcement is unchanged. Google Image Search now indexes 9 previously-invisible Rancho photos.
+- **3 long alts trimmed** to under 125 chars (Google/W3C alt-text recommended cap):
+  - `site/index.html:293` lodge-fireplace-lounge: 127 → 95 chars (dropped "in the social heart of the ranch" tail).
+  - `site/pages/weddings.html:279` wedding-event-barn: 127 → 95 chars (dropped "elegant decor" — vague + not a search term).
+  - `site/pages/accommodations.html:161` accom-cabin-exterior: 131 → 102 chars (dropped "overlooking the ranch" + " TX" tail).
+- **Voice-guide-clean**: no "luxury", no "Hill Country", no "General Store", no specific overnight count — alts use plain descriptive copy + "Rancho Moonrise" + "Austin" / "Texas" anchors.
+- **Sitemap freshness**: 3 lastmod entries bumped to 2026-05-06 (`/`, `/accommodations/`, `/weddings/`). Note: `/accommodations/` was at `2026-04-08` — its lastmod hadn't moved since the original launch despite intervening edits; this run also catches that staleness up.
+- **Validation**: `npm run validate:site` passes. Diff: 4 files, 15 insertions, 15 deletions — surgical.
+- **Why this run picked image SEO over more meta CTR**: 5/3 closed S4 schema (17/17), 5/4 closed meta-description CTR (18 pages), 5/5 closed title-tag CTR (10 pages). Every text-surface SERP CTR lever for the customer-facing nav cluster has now been pulled. Today's run extends the same "pre-position for the eventual GSC indexing" theme into Google **Image** Search — for a glamping/wedding venue, image-search bookings are non-trivial. Adam-side bottleneck (GSC submit) is unchanged.
+- **Re-Verify Gate (live)**: apex 200 + `server: Vercel` + cache HIT, www 308 → apex, sitemap 200, `/corporate-retreats/` 200. All DNS/canonical/sitemap claims still_true; no stale claims auto-resolved this run.
+
 ## 2026-05-06 (rancho-review-monitor) — RUN_020 quiet hold, no state mutations
 
 - **Live verification (5 platforms scraped/searched, 3 BLOCKERS skipped):**

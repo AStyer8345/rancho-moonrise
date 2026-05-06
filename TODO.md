@@ -1,5 +1,5 @@
 # Rancho Moonrise — TODO
-Last updated: 2026-05-05 (rancho-site-daily — title-tag CTR sweep on 10 pages, rendered titles down from 72–101 chars to 49–61 chars; sitemap lastmod bumped on 10 URLs)
+Last updated: 2026-05-06 (rancho-site-daily — image alt-text audit + 9 Instagram-grid alts populated on index.html + 3 long alts trimmed under 125 chars; sitemap lastmod bumped on 3 URLs)
 
 ## 🔥 NEEDS ADAM (highest leverage this week)
 
@@ -14,6 +14,26 @@ Last updated: 2026-05-05 (rancho-site-daily — title-tag CTR sweep on 10 pages,
 - **Per-unit accommodation pages remain blocked on low-res source JPGs** (Adam re-upload). The Retreat on the Hill (11) + Green Acres (8) + Lucky Arrow (5+) all reinforce the multi-URL pattern.
 
 
+
+## ✅ DONE 2026-05-06 — Image alt-text audit + Instagram-grid SEO recovery
+
+Text-CTR levers (S4 schema 5/3, meta 5/4, titles 5/5) all closed for the customer-facing nav cluster. Today extends the same "pre-position for the eventual GSC indexing" theme into Google Image Search.
+
+1. **Audit scope**: 207 `<img>` tags scanned across 27 customer-facing pages (`site/index.html` + 26 `site/pages/*.html`). Two false-positive classes filtered: brand-wordmark logo `alt="Rancho Moonrise"` (correct W3C practice for a wordmark image — left as-is on 26 occurrences), lightbox `<img class="lightbox__img" alt="">` (JS-populated at click time per `weddings.html:720+`).
+2. **9 Instagram-grid alts populated** on `site/index.html:555-579`. Each `<a aria-label="View on Instagram">` containing an empty-alt image got a descriptive + location-keyword alt. Per ARIA accessible-name rules the link's aria-label wins for SR announcement, so populating the contained image alts is **pure SEO win, zero a11y cost**. Examples: "Resort-style pool at Rancho Moonrise glamping ranch near Austin, Texas" / "Safari tent interior with queen bed and string lights at Rancho Moonrise" / "Outdoor wedding ceremony at Rancho Moonrise ranch wedding venue near Austin".
+3. **3 long alts trimmed** to under 125 chars (Google/W3C cap):
+   - `index.html:293` lodge-fireplace-lounge: 127 → 95 chars
+   - `weddings.html:279` wedding-event-barn: 127 → 95 chars
+   - `accommodations.html:161` accom-cabin-exterior: 131 → 102 chars (also caught a "Manor TX" body-tag tail — replaced with brand+Austin anchor)
+4. **Sitemap freshness**: 3 lastmod entries bumped to 2026-05-06 (`/`, `/accommodations/`, `/weddings/`). `/accommodations/` was at 2026-04-08 — caught up that staleness too.
+5. **Validation**: `npm run validate:site` passes. Diff: 4 files, 15 insertions, 15 deletions — surgical.
+6. **Re-Verify Gate (live)**: apex 200 + `server: Vercel` + cache HIT, www 308 → apex, sitemap 200, `/corporate-retreats/` 200. All DNS/canonical claims still_true; no stale claims auto-resolved.
+
+**Future autonomous candidates** (in priority order):
+- AEO baseline measurement (rancho-seo-s7) — query AI engines for the 10 target keywords once apex is indexed
+- Promote `/corporate-retreats/` into main nav (currently footer only) — needs Adam confirm
+- Author Person schema for BlogPosting JSON-LD — BLOCKED on `NEEDS ADAM` author-byline decision (Adam vs. Ashley vs. team byline)
+- Broader site-wide alt-text sweep on blog posts if any have similar gaps (today was nav cluster only)
 
 ## ✅ DONE 2026-05-05 — Title-tag CTR sweep (10 pages)
 
