@@ -1,5 +1,12 @@
 # Rancho Moonrise — Changelog
 
+## 2026-05-06 (rancho-content-weekly) — Strengthener BLOCKED run 3 / 3
+
+- **No website edits.** Third consecutive blocked run of `rancho-content-weekly` — same two NEEDS ADAM blockers from 2026-04-22 and 2026-04-29. Re-verified both before logging (per `feedback_stale_flags.md`): `find brand/ -name "*testimonial*" -o -name "*approved*"` returns zero, GOALS.md has no Settled Decisions section / no byline mention. Both prereqs are <30 min of Adam time combined.
+- Tightened recommendation from A/B menu to single ask with deadline: pick (a) settle both decisions in 2026-05-11 GOALS.md update OR (b) pause the task in `GOALS.md → Paused Workstreams`. If neither happens by 5/11, the 5/13 run will default to recommending pause.
+- `run-logs/strengthener-queue.md` — run 3 entry appended; queue table `accommodations.html` last touch bumped to 2026-05-06.
+- `TODO.md` — NEEDS ADAM Weekly Strengthener Blockers section header updated to "3rd consecutive blocked run", status note tightened.
+
 ## 2026-05-06 (rancho-site-daily) — Image-alt-text audit + Instagram-grid SEO recovery
 
 - **Audit summary**: scanned 207 `<img>` tags across 27 customer-facing pages (`site/index.html` + 26 `site/pages/*.html`). Filtered out 1 false-positive class (brand-wordmark logo `alt="Rancho Moonrise"` is correct accessibility practice for a wordmark image — left as-is on all 26 occurrences) and 1 false-positive case (the `<img class="lightbox__img" alt="">` on `weddings.html` is populated by JS at click time — `site/pages/weddings.html:413` paired with the `collectPhotos()` setter at line 720+). Real issues: 9 empty alts in the homepage Instagram grid + 3 alts over 125 chars.

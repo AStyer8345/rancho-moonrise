@@ -10,7 +10,7 @@ Priority: broken/placeholder assets first, then highest-impression landing pages
 | Page | Last Touch | Status |
 |------|-----------|--------|
 | `weddings.html` | 2026-04-22 | BLOCKED — see run log below |
-| `accommodations.html` | 2026-04-29 | BLOCKED — same two NEEDS ADAM items (run 2) |
+| `accommodations.html` | 2026-05-06 | BLOCKED — same two NEEDS ADAM items (run 3, no movement) |
 | `host-your-event.html` | — | Pending |
 | `events.html` | — | Pending |
 | `pool-day-pass-austin.html` | — | Pending |
@@ -62,3 +62,25 @@ Priority: broken/placeholder assets first, then highest-impression landing pages
 **Result:** No changes to accommodations.html or any other landing page. Queue remains as-is.
 
 **Next run:** Same priority order — re-attempt accommodations.html if blockers resolve. Otherwise this entry becomes run 3 of the same NEEDS ADAM.
+
+---
+
+### 2026-05-06 — accommodations.html — BLOCKED (third consecutive blocked run)
+
+**Attempted:** accommodations.html (priority 2, holdover from run 2).
+
+**Re-verified blockers (per `feedback_stale_flags.md` — required before re-surfacing):**
+
+1. **Testimonials list still does not exist.** `find /Users/adamstyer/Documents/rancho-moonrise/brand -name "*testimonial*" -o -name "*approved*"` returns zero results. No `brand/approved-testimonials.md`. Latest `brand/review-aggregate.json` (RUN_020, 2026-05-06) confirms Google snippet is at 126 @ 4.9★ for the fifth consecutive run — still no curation of individual quotes to verified event dates. → Still NEEDS ADAM.
+
+2. **Author byline decision still not in GOALS.md.** GOALS.md (week of April 20, last updated 2026-04-20 — same week as run 2) has no "Settled Decisions" section and no Adam/Ashley/team byline mention. The week marker has not advanced for 16 days. → Still NEEDS ADAM.
+
+**16-day pattern:** Three runs (4/22, 4/29, 5/06), zero website edits produced. Both prereqs are <30 minutes of Adam time. The task is structurally non-productive until one of two things happens:
+  - (a) Adam creates `brand/approved-testimonials.md` AND adds a Settled Decisions section to GOALS.md with the byline pick, OR
+  - (b) Adam pauses `rancho-content-weekly` in GOALS.md → "Paused Workstreams" so this slot stops firing weekly with no output.
+
+**Recommendation tightened to single ask (not A/B menu):** Adam, pick (a) or (b) by next Monday's GOALS.md update (2026-05-11). If neither is done by 5/11, run 4 will be the same blocked entry.
+
+**Result:** No changes to any landing page. No HTML edits. No commits to site/. Queue unchanged.
+
+**Next run:** 2026-05-13. If still blocked, the next run will recommend pausing the task by default rather than running again.
