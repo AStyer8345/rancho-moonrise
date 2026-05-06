@@ -391,3 +391,4 @@ Pending sync (10 new, 0 modified):
 2026-05-05 20:08 | scanned=72 added=0 replaced=0 skipped=0 errors=1 (notebooklm auth expired — run 'notebooklm login')
 2026-05-06 00:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1 — NotebookLM auth expired (run `notebooklm login` to re-authenticate); state file untouched
 2026-05-06 04:07 | ERROR: notebooklm authentication expired - 'notebooklm login' required. Skipped sync this run. scanned=0 added=0 replaced=0 skipped=0 errors=1
+2026-05-06 08:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1 — auth_expired (run 'notebooklm login' to re-authenticate)
