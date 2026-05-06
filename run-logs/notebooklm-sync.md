@@ -389,3 +389,4 @@ Pending sync (10 new, 0 modified):
 - ACTION NEEDED: run `notebooklm login` to re-authenticate. Consider whether to refresh the state file from current mtimes after re-auth to avoid a 64-file mass re-upload.
 2026-05-05 16:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1 — NotebookLM auth expired; needs `notebooklm login` to re-authenticate
 2026-05-05 20:08 | scanned=72 added=0 replaced=0 skipped=0 errors=1 (notebooklm auth expired — run 'notebooklm login')
+2026-05-06 00:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1 — NotebookLM auth expired (run `notebooklm login` to re-authenticate); state file untouched
