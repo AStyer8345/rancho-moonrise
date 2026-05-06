@@ -1,5 +1,19 @@
 # Rancho Moonrise — Changelog
 
+## 2026-05-06 (rancho-review-monitor) — RUN_020 quiet hold, no state mutations
+
+- **Live verification (5 platforms scraped/searched, 3 BLOCKERS skipped):**
+  - **Google** — WebSearch snippet 126 @ 4.9★, **fifth consecutive stable run** (RUN_016/017/018/019/020). Longest stretch since the RUN_011 ping-pong started by a margin (prior longest was 3). Three earlier flips keep this 'lower-confidence stable' — aggregator may just be sticking on one answer for now. Live scrape BLOCKER ongoing (run 20, JS-rendered, no Places API key).
+  - **TripAdvisor** — WebFetch confirms 0 reviews, unclaimed, "Claim Your Listing" visible, Travelers' Choice still noted. **Price drifted $71-$175 → $68-$174** (-$3 floor, -$1 ceiling). First ceiling move in 4 runs. 9-run drift: floor $77→$68 / ceiling $181→$174 — both rails creeping downward, floor accelerating slightly.
+  - **Hipcamp** — WebFetch confirms 0 reviews ("Be the first to review"), 1 booking, joined March 2024 — identical to RUN_019.
+  - **Expedia** — WebSearch surfaced explicit "solid guest review rating of 8.0 on Expedia" inline. **RUN_019's one-run observability dip on the rating value resolved.** Hotels.com listing ho2867109568 still active. Hotels.com direct fetch BLOCKER ongoing (run 20).
+  - **Facebook** — WebSearch surfaced "100% recommendation rate based on 5 reviews" inline. Stable for second consecutive run after RUN_018 one-run dip.
+  - **Airbnb** — 403 BLOCKER ongoing (run 20, no live attempt).
+- **Re-Verify Gate:** 8 claims checked. 6 still_true, 2 unverified-but-blocker-tagged. **0 stale claims auto-resolved** (no done-log writes — nothing changed state).
+- **Unreplied=0 maintained on done-log signal.** No review-related done-log entries since RUN_011; `rancho-review-replies` RESOLVED 2026-04-15 22:12 remains the last review action. New git activity since RUN_019 is the 2026-05-05 title-tag CTR sweep — non-review.
+- **No new reviews on any 0-count platform; no response drafts written; no FLAG_FOR_ADAM escalations.**
+- **Files written:** `brand/review-aggregate.json` (run_number 19→20), `site/admin/dashboard-state.json` (status remains ok), `tasks/review-monitor/session-log.md` (RUN_020 entry), `CONTEXT.md` (Last worked on review-monitor line replaced), this CHANGELOG bullet.
+
 ## 2026-05-05 (rancho-site-daily) — Title-tag CTR sweep (10 pages)
 
 - **Why this run picked title CTR.** Yesterday closed the meta-description gap; the next strongest SERP CTR lever is the `<title>` tag, which Google truncates around 600 pixels (~55-60 chars). Audit found 14 pages over 65 chars rendered, with the worst at 100-101 chars (clearly truncating). Title is a stronger CTR signal than description because it's the clickable text. Ten pages had rendered titles ≥72 chars and were edited.
