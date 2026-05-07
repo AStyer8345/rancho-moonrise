@@ -401,3 +401,9 @@ Sync skipped this run. No source operations attempted.
 2026-05-06 20:06 | scanned=0 added=0 replaced=0 skipped=0 errors=1 (auth_expired)
 
 2026-05-07 00:08 | ERROR: NotebookLM auth expired — run `notebooklm login` to re-authenticate. Sync skipped this run.
+
+## 2026-05-07 04:07 — Auth expired, sync skipped
+- `notebooklm use` returned: "Authentication expired or invalid. Run 'notebooklm login' to re-authenticate."
+- No file scan or upload performed this run.
+- ACTION NEEDED: run `notebooklm login` from terminal to refresh auth.
+- 2026-05-07 04:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1
