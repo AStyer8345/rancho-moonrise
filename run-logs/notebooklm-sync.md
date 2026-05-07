@@ -394,3 +394,8 @@ Pending sync (10 new, 0 modified):
 2026-05-06 08:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1 — auth_expired (run 'notebooklm login' to re-authenticate)
 2026-05-06 10:15 | scanned=0 added=0 replaced=0 skipped=0 errors=1 — auth_expired (run 'notebooklm login' to re-authenticate); state file untouched
 2026-05-06 16:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1 — auth_expired (run 'notebooklm login' to re-authenticate); state file untouched
+
+## 2026-05-06 20:06 — AUTH EXPIRED
+NotebookLM CLI returned: "Authentication expired or invalid. Run 'notebooklm login' to re-authenticate."
+Sync skipped this run. No source operations attempted.
+2026-05-06 20:06 | scanned=0 added=0 replaced=0 skipped=0 errors=1 (auth_expired)
