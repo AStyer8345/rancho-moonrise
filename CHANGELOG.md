@@ -1,5 +1,19 @@
 # Rancho Moonrise — Changelog
 
+## 2026-05-07 (rancho-review-monitor) — RUN_021 quiet hold, no state mutations
+
+- **Live verification (5 platforms scraped/searched, 3 BLOCKERS skipped):**
+  - **Google** — WebSearch snippet 126 @ 4.9★, **sixth consecutive stable run** (RUN_016/017/018/019/020/021). Six-run stable stretch is now 2x the prior longest since the RUN_011 ping-pong started, but three documented prior flips (RUN_013→014→015→016) keep this 'lower-confidence stable' rather than authoritative. Live scrape BLOCKER ongoing (run 21, JS-rendered, no Places API key).
+  - **TripAdvisor** — WebFetch confirms 0 reviews, unclaimed, "Claim your listing for free" visible, Travelers' Choice still noted. **Price drifted $68-$174 → $67-$174** (-$1 floor, ceiling steady at $174 for 1 run after RUN_020's first ceiling move in 4). 10-run drift: floor $77→$67 / ceiling $181→$174 — floor still creeping downward (-$10 over 10 runs).
+  - **Hipcamp** — WebFetch confirms 0 reviews ("Be the first to review"), 1 booking, joined March 2024 — identical to RUN_020.
+  - **Expedia** — WebSearch did NOT surface explicit 8.0 rating value inline this run — observability dip similar to RUN_019. Hotels.com listing ho2867109568 still active and confirmed in results, December 2025 "pool was super well kept and pretty chill" snippet still present. Carrying RUN_020's confirmation forward. Hotels.com direct fetch BLOCKER ongoing (run 21).
+  - **Facebook** — WebSearch confirmed "on Facebook, the property shows 100% recommend with 5 reviews" — third consecutive stable run after RUN_018 dip.
+  - **Airbnb** — 403 BLOCKER ongoing (run 21, no live attempt).
+- **Done-log signal:** no review-related entries since RUN_011; `rancho-review-replies` RESOLVED 2026-04-15 22:12 remains the last review action. New git activity since RUN_020 is the 2026-05-06 image alt-text audit (8b4165a) + content-weekly blocked-run log (5ad683e) — both non-review. Unreplied=0 maintained on done-log signal.
+- **Re-Verify Gate against persistent surfaces:** no review-related claims to re-verify in CONTEXT.md Active Blockers; improvement-plan.html stale narrative copy unchanged (out of scope per SKILL); `tasks/review-monitor/BLOCKERS.md` unchanged (3 BLOCKERS still open, counters bumped to 21 in session-log + aggregate).
+- **Stale claims auto-resolved:** 0. **No new reviews; no response drafts written.** Dashboard status remains "ok".
+- **FLAG_FOR_ADAM (carried, deescalation maintained):** Google snippet six-run stable but unreliable as authoritative count. Durable fix unchanged: (a) Adam dashboard check (60s) or (b) Places API key (~5 min). Path (a) hasn't been done across 11 runs of asking.
+
 ## 2026-05-06 (rancho-content-weekly) — Strengthener BLOCKED run 3 / 3
 
 - **No website edits.** Third consecutive blocked run of `rancho-content-weekly` — same two NEEDS ADAM blockers from 2026-04-22 and 2026-04-29. Re-verified both before logging (per `feedback_stale_flags.md`): `find brand/ -name "*testimonial*" -o -name "*approved*"` returns zero, GOALS.md has no Settled Decisions section / no byline mention. Both prereqs are <30 min of Adam time combined.

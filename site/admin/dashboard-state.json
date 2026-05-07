@@ -1,8 +1,8 @@
 {
   "review_monitor": {
-    "last_run": "2026-05-06T11:38:00Z",
+    "last_run": "2026-05-07T11:30:00Z",
     "status": "ok",
-    "status_reason": "RUN_020. Google WebSearch snippet at 126 @ 4.9★ for the FIFTH consecutive run (RUN_016/017/018/019/020) — longest stable stretch since the ping-pong started at RUN_011 by a margin (prior longest was 3). Three earlier documented flips (RUN_013→014→015→016) keep this lower-confidence stable rather than authoritative; the aggregator may simply be sticking on one answer for now. FLAG_FOR_ADAM stays deescalated — durable fix unchanged (Adam dashboard 60s or Places API key ~5 min). Live-scrape verification still BLOCKER (20th, JS-rendered, no Places API key). No review-related done-log entries since RUN_011 — unreplied=0 maintained on done-log signal. TripAdvisor + Hipcamp live-confirmed 0 reviews (TripAdvisor still unclaimed, Travelers' Choice still noted). Facebook 5/100% recommend snippet stable for second consecutive run after RUN_018 one-run dip. Expedia 8.0 rating value RESURFACED inline this run ('solid guest review rating of 8.0 on Expedia') — RUN_019's observability dip resolved as a one-run blip. Hotels.com direct fetch BLOCKER ongoing (20th, no live attempt). Airbnb 403 BLOCKER ongoing (20th). The Knot listing surfaced in result list this run but with no count detail; still not in scope. TripAdvisor price drift $71-$175 → $68-$174 (-$3 floor, -$1 ceiling — first run in 4 where ceiling moved). 9-run drift floor $77→$68 / ceiling $181→$174 — both rails creeping downward, floor accelerating slightly.",
+    "status_reason": "RUN_021. Google WebSearch snippet at 126 @ 4.9★ for the SIXTH consecutive run (RUN_016/017/018/019/020/021) — six-run stable stretch is now 2x the prior longest since the ping-pong started at RUN_011. Three earlier documented flips (RUN_013→014→015→016) keep this lower-confidence stable rather than authoritative; the aggregator may simply be sticking on one answer for now. FLAG_FOR_ADAM stays deescalated — durable fix unchanged (Adam dashboard 60s or Places API key ~5 min). Live-scrape verification still BLOCKER (21st, JS-rendered, no Places API key). No review-related done-log entries since RUN_011 — unreplied=0 maintained on done-log signal. TripAdvisor + Hipcamp live-confirmed 0 reviews (TripAdvisor still unclaimed, Travelers' Choice still noted). Facebook 5/100% recommend snippet stable for third consecutive run after RUN_018 dip. Expedia 8.0 rating value DID NOT surface inline this run — observability dip similar to RUN_019; Hotels.com listing ho2867109568 still active and confirmed in search results, December 2025 'pool was super well kept' snippet still surfaced. Hotels.com direct fetch BLOCKER ongoing (21st, no live attempt). Airbnb 403 BLOCKER ongoing (21st). The Knot listing surfaced in result list this run but with no count detail; still not in scope. TripAdvisor price drift $68-$174 → $67-$174 (-$1 floor, ceiling steady at $174). 10-run drift floor $77→$67 / ceiling $181→$174 — floor still creeping downward (-$10 over 10 runs), ceiling settled for 1 run.",
     "new_reviews_pending_response": 0,
     "total_reviews_tracked": 132,
     "unreplied_by_platform": {
@@ -14,12 +14,12 @@
     },
     "stale_platforms": ["google", "expedia"],
     "flags": [
-      "google-search-snippet-126-five-stable-runs-but-three-prior-flips",
+      "google-search-snippet-126-six-stable-runs-but-three-prior-flips",
       "airbnb-listing-existence-unverified",
-      "google-live-scrape-blocked-20-runs",
-      "hotels-com-fetch-timeout-20-runs",
-      "expedia-rating-value-resurfaced-inline-after-one-run-dip",
-      "tripadvisor-price-ceiling-drift-resumed-after-4-stable-runs"
+      "google-live-scrape-blocked-21-runs",
+      "hotels-com-fetch-timeout-21-runs",
+      "expedia-rating-value-observability-dip-this-run",
+      "tripadvisor-floor-drift-continues-ceiling-stable-1-run"
     ],
     "blockers": [
       "google-reviews-count",
@@ -27,6 +27,6 @@
       "airbnb-listing-existence"
     ],
     "new_platforms_noted": ["yelp", "agoda", "the_knot"],
-    "run_number": 20
+    "run_number": 21
   }
 }
