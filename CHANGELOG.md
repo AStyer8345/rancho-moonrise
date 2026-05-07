@@ -1,5 +1,19 @@
 # Rancho Moonrise — Changelog
 
+## 2026-05-07 (rancho-site-daily) — AEO answer-first blocks added to faqs.html + accommodations.html
+
+- **Audit scope.** Yesterday closed image alt-text on the nav cluster; today's audit checked 28 customer-facing pages for: duplicate titles/meta descriptions, H1 count anomalies, canonical issues, AEO answer-first coverage, and blog-page alt-text gaps. Five of six checks came back clean — duplicate metadata 0, multi-H1 0, canonical issues 0, blog alt-text gaps 0. **One real gap surfaced**: 3 customer-facing landing pages flagged for missing `aeo-block` markup (faqs, accommodations, host-your-event).
+- **Triage refinement.** Investigation showed `host-your-event.html:202` already has an answer-first section in `<div class="container--narrow">` (and the speakable cssSelector at line 126 already references it) — audit was a class-detection false positive, no change needed. **2 real gaps**: faqs.html and accommodations.html both jump from page-header straight into content with no AEO answer-first overview.
+- **AEO blocks added (rancho-seo-s2).**
+  - `site/pages/faqs.html` — new `<section class="section aeo-block">` after page-header. H2 "Quick Answers — Stays at Rancho Moonrise" + 2 paragraphs covering 36-acre/Austin location anchor, A/C-heat-real-beds + pool/lodge, check-in/out times, dog policy, and pointer to detailed FAQ list. Speakable cssSelector extended with `.aeo-block h2, .aeo-block p`.
+  - `site/pages/accommodations.html` — new `<section class="section aeo-block">` after page-header, before cabin section. H2 "Where to Stay at Rancho Moonrise — Cabins and Safari Tents Near Austin" + 2 paragraphs covering cabin/safari-tent-types overview, amenities, bathroom config (ensuite vs bathhouse), pricing-by-config note. Speakable cssSelector extended with `.aeo-block h2, .aeo-block p`.
+- **Voice compliance.** Both blocks: keyword-leading H2 with location anchor, "20 minutes east of downtown Austin" (never "Manor"), zero banned terms (`luxury`, `Hill Country`, "General Store"), no specific overnight count. Pattern matches `safari-tents-near-austin.html:222` aeo-block exactly.
+- **Sitemap freshness.** 2 lastmod entries bumped to 2026-05-07: `/faqs/` (was 2026-04-30, week-stale), `/accommodations/` (was 2026-05-06).
+- **Validation.** `npm run validate:site` passes. All JSON-LD blocks on both edited pages parse via `python3 json.loads` (faqs: 4 blocks, accommodations: 3 blocks).
+- **Diff.** 4 files, 22 insertions, 2 deletions — surgical. Pre-existing uncommitted changes from a prior session in styles.css/main.js/weddings.html were intentionally NOT staged.
+- **Re-Verify Gate (live).** apex 200 + `server: Vercel` + `x-vercel-cache: HIT`; www 308 → apex; `/sitemap.xml`, `/corporate-retreats/`, `/safari-tents-near-austin/` all 200. All DNS/canonical/sitemap claims still_true; no stale claims auto-resolved.
+- **Why this run picked AEO over more CTR.** Text-CTR levers are exhausted on the customer-facing nav cluster: schema 17/17 (5/3), meta descriptions 18 pages (5/4), title tags 10 pages (5/5), image alt-text (5/6). The next autonomous gain inside this cluster was AEO answer-first coverage — gap was 3 pages, real gap was 2. With these closed, every customer-facing landing page now has either a dedicated `aeo-block` or an equivalent answer-first section.
+
 ## 2026-05-07 (rancho-review-monitor) — RUN_021 quiet hold, no state mutations
 
 - **Live verification (5 platforms scraped/searched, 3 BLOCKERS skipped):**

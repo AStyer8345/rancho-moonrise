@@ -1,5 +1,5 @@
 # Rancho Moonrise — TODO
-Last updated: 2026-05-06 (rancho-site-daily — image alt-text audit + 9 Instagram-grid alts populated on index.html + 3 long alts trimmed under 125 chars; sitemap lastmod bumped on 3 URLs)
+Last updated: 2026-05-07 (rancho-site-daily — AEO answer-first blocks added to faqs.html + accommodations.html; speakable cssSelector extended on both; 2 sitemap lastmod bumps; rancho-seo-s2 customer-facing nav cluster now complete)
 
 ## 🔥 NEEDS ADAM (highest leverage this week)
 
@@ -14,6 +14,25 @@ Last updated: 2026-05-06 (rancho-site-daily — image alt-text audit + 9 Instagr
 - **Per-unit accommodation pages remain blocked on low-res source JPGs** (Adam re-upload). The Retreat on the Hill (11) + Green Acres (8) + Lucky Arrow (5+) all reinforce the multi-URL pattern.
 
 
+
+## ✅ DONE 2026-05-07 — AEO answer-first blocks on faqs.html + accommodations.html
+
+Yesterday closed image alt-text on the nav cluster. Today's audit checked 28 customer-facing pages across 6 SEO dimensions; 5/6 came back clean (duplicate titles 0, duplicate meta 0, multi-H1 0, canonical 0, blog alt-text 0). One real gap: 2 customer-facing landing pages were jumping from page-header straight into content with no AEO answer-first overview block.
+
+1. **`site/pages/faqs.html`** — new `<section class="section aeo-block">` after page-header. H2 "Quick Answers — Stays at Rancho Moonrise" + 2 paragraphs covering 36-acre/Austin location, A/C-heat-real-beds + pool/lodge, check-in/out (3-5 PM / 11 AM), dog policy ($50 fee, 1 dog, 60-lb limit), and pointer to detailed FAQ list. Speakable cssSelector extended with `.aeo-block h2, .aeo-block p`.
+2. **`site/pages/accommodations.html`** — new `<section class="section aeo-block">` after page-header, before cabin section. H2 "Where to Stay at Rancho Moonrise — Cabins and Safari Tents Near Austin" + 2 paragraphs covering cabin/safari-tent configurations, amenities, ensuite-vs-bathhouse logic, and pricing-by-config note. Speakable cssSelector extended with `.aeo-block h2, .aeo-block p`.
+3. **False-positive (no change made)**: `host-your-event.html:202` already has answer-first content in `<div class="container--narrow">` and the speakable selector already references it. Adding `aeo-block` class would have introduced unwanted cream-box visual styling. Audit logic noted for future runs.
+4. **Voice compliance**: keyword-leading H2 with location anchor, "20 minutes east of downtown Austin" (never "Manor"), zero banned terms. Pattern matches `safari-tents-near-austin.html:222`.
+5. **Sitemap freshness**: 2 lastmod bumps to 2026-05-07 (`/faqs/` was 2026-04-30 — week-stale; `/accommodations/` was 2026-05-06).
+6. **Validation**: `npm run validate:site` passes. JSON-LD on both pages parses (faqs 4 blocks, accommodations 3 blocks).
+7. **Diff**: 4 files, 22 insertions, 2 deletions — surgical. Pre-existing prior-session changes in styles.css/main.js/weddings.html were intentionally NOT staged.
+8. **Re-Verify Gate (live)**: apex 200 + Vercel + cache HIT, www 308 → apex, sitemap + corp-retreats + safari-tents all 200. All DNS/canonical claims still_true; no stale claims auto-resolved.
+
+**Future autonomous candidates** (in priority order):
+- AEO baseline measurement (rancho-seo-s7) — query AI engines for the 10 target keywords now that AEO blocks are wired across the cluster
+- FAQPage JSON-LD on `/faqs/` itself — page has FAQ accordion content but no FAQPage schema block (currently only LocalBusiness + WebPage + Breadcrumb). Convert accordion to schema. ~30 Q&A items.
+- Promote `/corporate-retreats/` into main nav (currently footer only) — needs Adam confirm
+- Author Person schema for BlogPosting JSON-LD — BLOCKED on `NEEDS ADAM` author-byline decision
 
 ## ✅ DONE 2026-05-06 — Image alt-text audit + Instagram-grid SEO recovery
 
