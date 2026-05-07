@@ -413,3 +413,5 @@ Sync skipped this run. No source operations attempted.
 - No file scan or upload performed this run
 - ACTION NEEDED: run `notebooklm login` from terminal to refresh auth
 - 2026-05-07 08:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1 — auth_expired (login required, 9+ runs)
+
+2026-05-07 09:42 | scanned=0 added=0 replaced=0 skipped=0 errors=1 — auth_expired (10+ runs since 2026-05-05; run `notebooklm login`)
