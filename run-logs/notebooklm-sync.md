@@ -417,3 +417,4 @@ Sync skipped this run. No source operations attempted.
 2026-05-07 09:42 | scanned=0 added=0 replaced=0 skipped=0 errors=1 — auth_expired (10+ runs since 2026-05-05; run `notebooklm login`)
 2026-05-07 12:46 | scanned=0 added=0 replaced=0 skipped=0 errors=1 — auth_expired (11+ runs since 2026-05-05; run `notebooklm login`)
 2026-05-07 20:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1 — auth_expired (12+ runs since 2026-05-05; run `notebooklm login`)
+2026-05-08 00:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1 — auth_expired (13+ runs since 2026-05-05; run `notebooklm login`)
