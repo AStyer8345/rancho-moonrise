@@ -420,3 +420,4 @@ Sync skipped this run. No source operations attempted.
 2026-05-08 00:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1 — auth_expired (13+ runs since 2026-05-05; run `notebooklm login`)
 2026-05-08 04:07 | scanned=74 added=0 replaced=0 skipped=0 errors=1 | NotebookLM auth expired - run 'notebooklm login' to re-authenticate
 2026-05-08 08:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1 — notebooklm auth expired, run `notebooklm login` to re-authenticate; sync deferred
+2026-05-08 12:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1 — notebooklm auth expired since 2026-05-05; run `notebooklm login` to re-authenticate; sync deferred
