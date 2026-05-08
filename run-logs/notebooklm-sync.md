@@ -421,3 +421,11 @@ Sync skipped this run. No source operations attempted.
 2026-05-08 04:07 | scanned=74 added=0 replaced=0 skipped=0 errors=1 | NotebookLM auth expired - run 'notebooklm login' to re-authenticate
 2026-05-08 08:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1 — notebooklm auth expired, run `notebooklm login` to re-authenticate; sync deferred
 2026-05-08 12:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1 — notebooklm auth expired since 2026-05-05; run `notebooklm login` to re-authenticate; sync deferred
+
+## 2026-05-08 16:07 — AUTH FAILURE
+- Notebook: Rancho Moonrise (f2e7baf6-e0f2-4b29-93af-4f5ae09303bf)
+- Error: Authentication expired or invalid (notebooklm CLI)
+- Action needed: Run `notebooklm login` on this machine to re-authenticate
+- Skipped sync: brand/=39 files, deal/=35 files (74 syncable total)
+- State file NOT updated — next successful run will detect drift correctly
+2026-05-08 16:07 | scanned=74 added=0 replaced=0 skipped=74 errors=1
