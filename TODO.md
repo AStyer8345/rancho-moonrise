@@ -1,5 +1,5 @@
 # Rancho Moonrise — TODO
-Last updated: 2026-05-07 (rancho-site-daily — AEO answer-first blocks added to faqs.html + accommodations.html; speakable cssSelector extended on both; 2 sitemap lastmod bumps; rancho-seo-s2 customer-facing nav cluster now complete)
+Last updated: 2026-05-08 (rancho-site-daily — FAQPage JSON-LD parity closed on /faqs/, 17 → 18 Q&A items; sitemap lastmod bump; yesterday's TODO false-positive auto-resolved by Re-Verify Gate)
 
 ## 🔥 NEEDS ADAM (highest leverage this week)
 
@@ -14,6 +14,26 @@ Last updated: 2026-05-07 (rancho-site-daily — AEO answer-first blocks added to
 - **Per-unit accommodation pages remain blocked on low-res source JPGs** (Adam re-upload). The Retreat on the Hill (11) + Green Acres (8) + Lucky Arrow (5+) all reinforce the multi-URL pattern.
 
 
+
+## ✅ DONE 2026-05-08 — FAQPage JSON-LD parity closure on /faqs/ (17 → 18 items)
+
+Yesterday's TODO listed "FAQPage JSON-LD on `/faqs/` itself" as a future autonomous candidate — page allegedly had no FAQPage schema. Re-Verify Gate found the claim was a **false-positive**: a FAQPage block already existed at lines 29-122 with 17 Q&A items. Real gap was schema/accordion parity: visible accordion has 18 items, schema only 17.
+
+1. **Diverged item identified**: "Is the ranch a working ranch?" — accordion line 419-426, missing from schema.
+2. **Schema edit (`site/pages/faqs.html`)**: one Q&A appended to the FAQPage `mainEntity` array. Name "Is Rancho Moonrise a working ranch?", answer mirrors accordion with minor third-person rephrase ("Guests are asked" → consistent with rest of schema voice).
+3. **Voice compliance**: no banned terms; reuses existing "working ranch with livestock and wildlife" framing; no new claims added to the page.
+4. **Sitemap freshness**: `/faqs/` lastmod 2026-05-07 → 2026-05-08.
+5. **Validation**: `npm run validate:site` passes. All 4 JSON-LD blocks on `/faqs/` re-parse via `python3 json.loads`: FAQPage (now 18 items), BreadcrumbList, LocalBusiness, WebPage.
+6. **Question-name divergence preserved**: schema uses long-form names ("Is there a pool on the property?") while accordion uses short-form ("Is there a pool?"). For AI extraction the answer text is what gets cited; the name is metadata. Not worth churning.
+7. **Diff**: 2 files, 6 insertions, 1 deletion — surgical. Pre-existing uncommitted prior-session changes in styles.css/main.js/weddings.html intentionally NOT staged (same as 5/7 run).
+8. **Re-Verify Gate (live)**: apex 200 + Vercel + cache HIT, www 308 → apex, all 9 critical landing pages 200. All DNS/canonical claims still_true. **1 prior persistent claim auto-resolved** during the gate: yesterday's TODO claim about FAQPage absence was wrong; FAQPage was already present, schema/accordion parity now closed.
+
+**Future autonomous candidates** (in priority order):
+- AEO baseline measurement (rancho-seo-s7) — query AI engines for the 10 target keywords. Defer until Adam submits the GSC sitemap; signal is low before apex is in Google's index.
+- Author Person schema for BlogPosting JSON-LD — BLOCKED on `NEEDS ADAM` author-byline decision (Adam vs. Ashley vs. team byline).
+- Promote `/corporate-retreats/` into main nav (currently footer only) — needs Adam confirm.
+- Internal-linking audit — orphaned blog posts (low inbound count) → cluster hubs.
+- Article/HowTo schema enrichment on `/blog/corporate-retreat-planning-guide-texas/` — currently typed as BlogPosting, but the long-form planning-guide content fits Article (or HowTo, given step-by-step structure) better. Worth scoping next run.
 
 ## ✅ DONE 2026-05-07 — AEO answer-first blocks on faqs.html + accommodations.html
 
@@ -30,7 +50,7 @@ Yesterday closed image alt-text on the nav cluster. Today's audit checked 28 cus
 
 **Future autonomous candidates** (in priority order):
 - AEO baseline measurement (rancho-seo-s7) — query AI engines for the 10 target keywords now that AEO blocks are wired across the cluster
-- FAQPage JSON-LD on `/faqs/` itself — page has FAQ accordion content but no FAQPage schema block (currently only LocalBusiness + WebPage + Breadcrumb). Convert accordion to schema. ~30 Q&A items.
+- ~~FAQPage JSON-LD on `/faqs/`~~ — was a false-positive on inspection; FAQPage already existed. Real gap (17→18 parity) closed 5/8.
 - Promote `/corporate-retreats/` into main nav (currently footer only) — needs Adam confirm
 - Author Person schema for BlogPosting JSON-LD — BLOCKED on `NEEDS ADAM` author-byline decision
 
