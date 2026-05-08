@@ -1,5 +1,9 @@
 # Rancho Moonrise — Changelog
 
+## 2026-05-08 (rancho-review-monitor) — RUN_022 quiet hold; Expedia 8.0 resurfaced; TripAdvisor price held first time in 11 runs
+
+- rancho-review-monitor: scraped 5 platforms (TripAdvisor + Hipcamp WebFetch live; Google + Expedia + Facebook via WebSearch). Google snippet 126 @ 4.9★ stable 7th consecutive run; TripAdvisor unclaimed/0 reviews, price HELD $67-$174 (first stable run since RUN_011); Hipcamp 0/1 booking unchanged; Expedia 8.0 RESURFACED inline (RUN_021 one-run dip resolved); Facebook 5/100% recommend stable 4th run. 0 stale claims auto-resolved; 0 new reviews; 0 response drafts. 3 BLOCKERS unchanged at 22 consecutive runs (google-reviews-count, hotels-com-direct-fetch, airbnb-listing-existence).
+
 ## 2026-05-07 (rancho-site-daily) — AEO answer-first blocks added to faqs.html + accommodations.html
 
 - **Audit scope.** Yesterday closed image alt-text on the nav cluster; today's audit checked 28 customer-facing pages for: duplicate titles/meta descriptions, H1 count anomalies, canonical issues, AEO answer-first coverage, and blog-page alt-text gaps. Five of six checks came back clean — duplicate metadata 0, multi-H1 0, canonical issues 0, blog alt-text gaps 0. **One real gap surfaced**: 3 customer-facing landing pages flagged for missing `aeo-block` markup (faqs, accommodations, host-your-event).
