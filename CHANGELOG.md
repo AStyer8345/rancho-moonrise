@@ -1,5 +1,9 @@
 # Rancho Moonrise — Changelog
 
+## 2026-05-09 (rancho-review-monitor) — RUN_023 quiet hold; Expedia 8.0 inline 2nd run; TripAdvisor price drift resumed +$1 ceiling
+
+- rancho-review-monitor: scraped 5 platforms (TripAdvisor + Hipcamp WebFetch live; Google + Expedia + Facebook via WebSearch). Google snippet 126 @ 4.9★ stable 8th consecutive run (2.7x prior longest stretch since RUN_011 ping-pong began, but three prior flips keep it lower-confidence stable); TripAdvisor unclaimed/0 reviews, **price drift resumed $67-$174 → $67-$175** (+$1 ceiling, RUN_022's no-drift run was a one-run pause; 12-run drift floor net -$10 / ceiling net -$6); Travelers' Choice text appears as generic boilerplate this run with no specific Rancho Moonrise attribution (likely interpretation precision improvement, not state change); Hipcamp 0/1 booking unchanged ('time' singular vs RUN_022's 'times' — copy variant); **Expedia 8.0 INLINE second consecutive run** (RUN_021 dip fully resolved); Facebook 5/100% recommend stable 5th run. 0 stale claims auto-resolved; 0 new reviews; 0 response drafts. 3 BLOCKERS unchanged at 23 consecutive runs (google-reviews-count, hotels-com-direct-fetch, airbnb-listing-existence).
+
 ## 2026-05-08 (rancho-site-daily) — FAQPage JSON-LD parity closure on /faqs/ (17 → 18 items)
 
 - **Audit + auto-resolve.** Yesterday's TODO listed "FAQPage JSON-LD on `/faqs/` itself — page has FAQ accordion content but no FAQPage schema block" as a future autonomous candidate. Re-Verify Gate found this was a false-positive: a FAQPage block already existed (lines 29-122) with 17 Q&A items. Real gap: visible accordion has 18 items, schema only had 17. Diverged item: "Is the ranch a working ranch?" (accordion line 419-426, missing from schema).

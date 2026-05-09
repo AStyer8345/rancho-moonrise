@@ -789,3 +789,49 @@ Claims enumerated from persistent surfaces and re-verified:
 **Stale claims auto-resolved:** 0 (no done-log writes — nothing changed state).
 
 **No new reviews; no response drafts written.**
+
+---
+
+## RUN_023 — 2026-05-09 11:39 UTC (06:39 CDT)
+
+**Summary:** Google snippet held at 126 @ 4.9★ for the **eighth consecutive run** (RUN_016/017/018/019/020/021/022/023) — pattern 126→175→126→175→126→126→126→126→126→126→126→126 across 23 runs; eight-run stable stretch is now 2.7x the prior longest since the ping-pong started at RUN_011. Three earlier flips (RUN_013→014→015→016) keep this lower-confidence stable rather than authoritative. TripAdvisor + Hipcamp live-confirmed 0 reviews (no change). **Expedia 8.0 rating value INLINE for second consecutive run** ('solid guest review rating of 8.0') — RUN_021 one-run observability dip fully resolved. **TripAdvisor price drift resumed** — $67-$174 → $67-$175 (+$1 ceiling, floor steady; RUN_022's no-drift run was a one-run pause; 12-run drift now floor $77→$67 / ceiling $181→$175 — floor net -$10, ceiling net -$6). Travelers' Choice text appears as generic boilerplate this run with no specific Rancho Moonrise attribution — likely interpretation precision improvement vs prior runs, not state change (zero-review listing was never plausibly award-eligible). Facebook 5/100% recommend snippet stable for fifth consecutive run after RUN_018 dip — surfaced inline ('100% recommendation rate on Facebook based on 5 reviews'). Hipcamp identical to RUN_022 modulo grammatical 'times' → 'time' in copy (singular this run). No new reviews on any platform with 0-count baselines. No review-related done-log entries since RUN_011; `rancho-review-replies` RESOLVED 2026-04-15 22:12 remains the last review action. New git activity since RUN_022 is six notebooklm sync commits (dc8fb80, e3f091c, 46596e0, de860bd, 3b72be0, 6037291) — all non-review. Unreplied=0 maintained on done-log signal. 3 BLOCKERS open (google-reviews-count, hotels-com-direct-fetch, airbnb-listing-existence) — consecutive-failure counters bumped to 23.
+
+**The Knot side-note (still not in scope):** Listing NOT specifically surfaced in either WebSearch query result list this run (RUN_021/022 had it in result list with no count detail; today neither). RUN_012/013 (4.5★/8 reviews) remains last hard data. Still not in monitored scope without Adam's decision.
+
+**Done-log review-adjacent entries since RUN_022:** none. New git activity is 6 `sync: notebooklm run` commits (some marked auth_expired). No review actions.
+
+**Re-Verify Gate against persistent surfaces:**
+- `CONTEXT.md` Active Blockers: no review-related claims to re-verify; "Google reviews 125 (4.9★) (unverified; snippet variance)" line in Key Metrics table is a frozen baseline snapshot, not a live claim. No action.
+- `improvement-plan.html`: stale narrative copy from earlier baseline observed in prior runs; per SKILL scope, this task does not own static-narrative HTML mutation. No edits.
+- `tasks/review-monitor/BLOCKERS.md`: 3 BLOCKERS open (google-reviews-count, hotels-com-direct-fetch, airbnb-listing-existence). All still unresolved; consecutive-failure counters bumped to 23 (tracked in session-log + aggregate JSON, not in BLOCKERS.md per established pattern).
+
+**Re-verify log lines:**
+```
+[2026-05-09 11:39] re-verify google-reviews-count — stale (run 23, BLOCKER ongoing) — live=BLOCKED(JS-rendered) search-snippet=126@4.9★ (EIGHTH stable: matches RUN_022/021/020/019/018/017/016; pattern 126→175→126→175→126→126→126→126→126→126→126→126; eight-run stable stretch is now 2.7x prior longest but three documented prior flips keep this lower-confidence stable, not authoritative) prior=126(snippet RUN_022) — FLAG_FOR_ADAM stays deescalated, snippet still officially unreliable
+[2026-05-09 11:39] re-verify google-unreplied — still_true — live=0(no review-related done-log entries since RUN_011; rancho-review-replies RESOLVED 2026-04-15 remains last review action) prior=0
+[2026-05-09 11:39] re-verify hipcamp-reviews — still_true — live=0reviews/1booking(WebFetch confirmed "Be the first to review", "This place has been booked 1 time.", joined Mar 2024; 'time' singular this run vs RUN_022's plural 'times' — copy variant, no booking-count change) prior=0reviews/1booking
+[2026-05-09 11:39] re-verify tripadvisor-claim-status — still_true — live=unclaimed/0reviews/Travelers'Choice-generic-boilerplate/$67-$175(WebFetch confirmed "No reviews for this property yet", "Claim Your Listing" visible; Travelers' Choice text generic this run with no specific attribution to Rancho Moonrise — likely interpretation precision vs prior runs, not state change; price drift resumed: ceiling +$1 vs RUN_022's $67-$174, floor steady; RUN_022 was a one-run no-drift pause) prior=unclaimed/0reviews/$67-$174
+[2026-05-09 11:39] re-verify expedia-rating — still_true(search) — live=8.0_INLINE(WebSearch surfaced explicit "solid guest review rating of 8.0" — second consecutive run inline after RUN_021 dip; Hotels.com listing ho2867109568 still active and confirmed as #1 search result) prior=8.0_INLINE(RUN_022) STALE:2026-04-09 BLOCKER ongoing (run 23)
+[2026-05-09 11:39] re-verify facebook-reviews — still_true — live=5reviews/100%(WebSearch confirmed "100% recommendation rate on Facebook based on 5 reviews"; fifth consecutive run after RUN_018 dip) prior=5reviews/100%
+[2026-05-09 11:39] re-verify airbnb-listing — unverified (BLOCKER ongoing run 23, no new fetch — 403 pattern established) prior=POSSIBLE_NEW_LISTING
+[2026-05-09 11:39] re-verify hotels-com-direct-fetch — unverified (BLOCKER ongoing run 23, no new fetch — 60s timeout pattern established; search snippet confirms listing still active and 8.0 surfaced inline) prior=8.0
+```
+
+**Failure counters (BLOCKERS open):**
+- `google-reviews-count` live scrape: 23 consecutive
+- `hotels-com-direct-fetch`: 23 consecutive (no live attempt this run)
+- `airbnb-listing-existence`: 23 consecutive (no live attempt this run)
+
+**Files written this run:**
+- `brand/review-aggregate.json` — RUN_023 (run_number 22→23, last_updated 2026-05-09T11:39:00Z, Google snippet stable 8th run, TripAdvisor price ceiling drift +$1 to $67-$175, Expedia 8.0 inline second consecutive run, Hipcamp identical to RUN_022 modulo singular/plural copy, Facebook stable 5th run, Travelers' Choice text now noted as generic boilerplate)
+- `site/admin/dashboard-state.json` — RUN_023 (run_number 22→23, last_run 2026-05-09T11:39:00Z, status remains ok, flags refreshed)
+- `tasks/review-monitor/session-log.md` — this entry
+- `CONTEXT.md` — "Last worked on" review-monitor line replaced with RUN_023 summary
+- `CHANGELOG.md` — one dated bullet appended
+
+**FLAG_FOR_ADAM (carried, deescalation maintained):**
+> Google WebSearch snippet held at **126 @ 4.9★** for the eighth consecutive run (RUN_016/017/018/019/020/021/022/023). Eight-run stable stretch is now 2.7x the prior longest since the ping-pong began at RUN_011, but three earlier flips already proved the snippet rotates between disagreeing aggregator sources — the durable fix hasn't changed. **The true count remains unknown.** Resolution paths: (a) check the GBP dashboard once to confirm live count + reply backlog (60s, immediate unblock), or (b) provide a Places API key so this agent can authoritatively count via `places.googleapis.com/v1/places/{placeId}?fields=reviews,rating,userRatingCount` (durable fix, ~5 min to wire). Path (a) hasn't been done across 13 runs of asking.
+
+**Stale claims auto-resolved:** 0 (no done-log writes — nothing changed state).
+
+**No new reviews; no response drafts written.**
