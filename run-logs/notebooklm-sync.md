@@ -429,3 +429,4 @@ Sync skipped this run. No source operations attempted.
 - Skipped sync: brand/=39 files, deal/=35 files (74 syncable total)
 - State file NOT updated — next successful run will detect drift correctly
 2026-05-08 16:07 | scanned=74 added=0 replaced=0 skipped=74 errors=1
+2026-05-08 20:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1 — NotebookLM auth expired (run 'notebooklm login' on Adam's machine to restore)
