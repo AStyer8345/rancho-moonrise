@@ -430,3 +430,4 @@ Sync skipped this run. No source operations attempted.
 - State file NOT updated — next successful run will detect drift correctly
 2026-05-08 16:07 | scanned=74 added=0 replaced=0 skipped=74 errors=1
 2026-05-08 20:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1 — NotebookLM auth expired (run 'notebooklm login' on Adam's machine to restore)
+2026-05-09 00:08 | scanned=71 added=0 replaced=0 skipped=7 errors=1 — auth_expired since 2026-05-05; 7 new files queued (would-sync); state file NOT updated; run `notebooklm login` on Adam's machine to restore
