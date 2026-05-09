@@ -433,3 +433,5 @@ Sync skipped this run. No source operations attempted.
 2026-05-09 00:08 | scanned=71 added=0 replaced=0 skipped=7 errors=1 — auth_expired since 2026-05-05; 7 new files queued (would-sync); state file NOT updated; run `notebooklm login` on Adam's machine to restore
 
 2026-05-09 04:07 | scanned=71 added=0 replaced=0 skipped=7 errors=1 — auth_expired since 2026-05-05; 7 new files queued (would-sync); state file NOT updated; run `notebooklm login` on Adam's machine to restore
+2026-05-09 08:07 | scanned=64 added=0 replaced=0 skipped=4 errors=0
+2026-05-09 12:08 | scanned=64 added=0 replaced=0 skipped=3 errors=1 — auth_expired since 2026-05-05; no new/modified files since last successful run; state file NOT updated; run `notebooklm login` on Adam's machine to restore
