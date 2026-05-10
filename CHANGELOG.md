@@ -1,5 +1,9 @@
 # Rancho Moonrise — Changelog
 
+## 2026-05-10 (rancho-review-monitor) — RUN_024: Google snippet 9th stable, TripAdvisor ceiling +$4 single-run jump, Expedia 8.0 inline 3rd run, FB 6th stable
+
+- rancho-review-monitor: scraped 5 platforms across 2 live WebFetch (TripAdvisor, Hipcamp) + 3 WebSearch confirmations (Google, Expedia/Hotels.com, Facebook); 0 stale claims auto-resolved; 0 response drafts written; 3 BLOCKERS still open at 24 consecutive runs (google-reviews-count, hotels-com-direct-fetch, airbnb-listing-existence). Google snippet 126 @ 4.9★ ninth consecutive run (3.0x prior longest stable). TripAdvisor price drift resumed sharply — $67-$175 → $66-$179 (-$1 floor / +$4 ceiling, biggest single-run ceiling move in 13-run series). Travelers' Choice text continues NOT attributed to property (2nd run after RUN_023 reframing). Expedia 8.0 inline 3rd consecutive run. Facebook 5/100% recommend stable 6th consecutive run after RUN_018 dip. Hipcamp identical to RUN_023. Aggregate JSON + dashboard-state JSON + session-log + CONTEXT 'Last worked on' refreshed.
+
 ## 2026-05-09 (rancho-site-daily) — Internal-linking pass: 4 orphaned blog posts wired into topical clusters
 
 - **Audit.** Counted inbound links per blog post via `grep -rl --include='*.html' "/blog/<slug>/"` on `site/`, excluding self. Found 4 critically orphaned posts where the **only inbound link was the blog index** (functionally orphaned in the topical cluster): `birthday-party-venue-near-austin`, `mothers-day-near-austin`, `things-to-do-near-austin-with-kids`, `yoga-retreat-near-austin`.
