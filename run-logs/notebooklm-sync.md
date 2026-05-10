@@ -438,3 +438,5 @@ Sync skipped this run. No source operations attempted.
 2026-05-09 16:07 | scanned=64 added=0 replaced=0 skipped=4 errors=1 — auth_expired since 2026-05-05; no new/modified files since last successful run; state file NOT updated; run `notebooklm login` on Adam's machine to restore
 2026-05-09 20:08 | scanned=64 added=0 replaced=0 skipped=5 errors=0
 2026-05-10 00:08 | scanned=64 added=0 replaced=0 skipped=5 errors=0
+
+2026-05-10 04:07 | ERROR: NotebookLM auth expired — CLI redirected to Google login. Skipped sync. Run 'notebooklm login' to re-authenticate.
