@@ -1,5 +1,5 @@
 # Rancho Moonrise — TODO
-Last updated: 2026-05-08 (rancho-site-daily — FAQPage JSON-LD parity closed on /faqs/, 17 → 18 Q&A items; sitemap lastmod bump; yesterday's TODO false-positive auto-resolved by Re-Verify Gate)
+Last updated: 2026-05-10 (rancho-site-daily — internal-linking close-out: 3 lightly-linked posts brought to 4-inbound baseline via 6 surgical inserts on 5 host pages; cluster floor now 4 inbound)
 
 ## 🔥 NEEDS ADAM (highest leverage this week)
 
@@ -14,6 +14,38 @@ Last updated: 2026-05-08 (rancho-site-daily — FAQPage JSON-LD parity closed on
 - **Per-unit accommodation pages remain blocked on low-res source JPGs** (Adam re-upload). The Retreat on the Hill (11) + Green Acres (8) + Lucky Arrow (5+) all reinforce the multi-URL pattern.
 
 
+
+## ✅ DONE 2026-05-10 — Internal-linking close-out: 3 lightly-linked posts → 4 inbound each
+
+Continuation of 5/9 orphan pass. Yesterday closed 4 critically-orphaned blog posts (1 → 4 inbound). Today closes the 3 remaining lightly-linked posts that were flagged as the next slot's autonomous candidate: `austin-bachelorette-ranch-vs-bar-crawl`, `glamping-vs-camping`, `summer-glamping-near-austin` — each at 2 inbound (blog index + 1 cluster page).
+
+1. **Audit (pre-edit)**: confirmed each of the 3 posts had exactly 2 inbound topical links via `grep -rl --include='*.html' "/blog/<slug>/"` on `site/`, excluding self-references. Inbound sources for each: blog index + the parent cluster page (`bachelorette-party-austin-texas.html` for one; `glamping-near-austin-texas.html` for the other two).
+2. **6 surgical `<li>` inserts across 5 host-page Related Reading lists**:
+   - `weekend-getaways-near-austin.html` Related Reading ← `austin-bachelorette-ranch-vs-bar-crawl` + `glamping-vs-camping` (decision-aid + sibling weekend content; list grew 6 → 8 items + final blog-CTA)
+   - `glamping-near-austin-texas.html` Related Reading ← `austin-bachelorette-ranch-vs-bar-crawl` (bachelorette glamping is a real SERP query; page already links to bachelorette parent)
+   - `safari-tents-near-austin.html` Related Reading ← `glamping-vs-camping` (the question lands at the conversion-decision moment)
+   - `events.html` Related Reading ← `summer-glamping-near-austin` (peak event season)
+   - `weddings.html` Related Reading ← `summer-glamping-near-austin` (peak wedding season; page already links to bachelorette which is sibling cluster)
+3. **Insertion convention**: each new `<li>` placed before the trailing "More from the Rancho Moonrise Blog" sentinel where present, preserving the final-CTA pattern (matches 5/9 convention).
+4. **Anchor text**: mirrors each blog post's H1 / SERP title for keyword consistency. "Austin Bachelorette: Ranch vs. Bar Crawl" / "Glamping vs Camping: What's the Difference?" / "Summer Glamping Near Austin — Pool, A/C & Live Events".
+5. **Result**: post-edit `grep` count confirms each of the 3 posts now has 4 inbound topical links — matches the `wedding-venues-near-austin` baseline. **Cluster has zero blog posts below 4 inbound.**
+6. **Sitemap freshness**: 5 lastmod entries bumped to 2026-05-10. `/safari-tents-near-austin/` was 2026-04-26 — caught a 2-week-stale entry.
+7. **Validation**: `npm run validate:site` passes.
+8. **Diff**: 6 files, 11 insertions, 5 deletions (sitemap date replacements) — surgical. Pre-existing prior-session changes in styles.css/main.js (and an accommodations-section delete in weddings.html) intentionally NOT staged; weddings.html staged via focused 1-line patch (5/7, 5/8, 5/9 convention).
+9. **Re-Verify Gate (live)**: apex 200 + `server: Vercel` + cache HIT, www 308 → apex, sitemap 200, all 9 critical landing pages 200, all 3 target blog posts 200, `/blog/corporate-retreat-planning-guide-texas/` 200 (next slot's target). All DNS/canonical/sitemap claims still_true; 0 stale claims auto-resolved.
+
+**Future autonomous candidates** (in priority order):
+- **Article/HowTo schema enrichment on `/blog/corporate-retreat-planning-guide-texas/`** — currently typed `BlogPosting`, but the long-form planning-guide content fits `Article` (or `HowTo`, given step-by-step structure) better. This is the cleanest, well-scoped next slot — page is live (200), schema is single-block, edit is testable in one validation run. **Promote to top of queue.**
+- AEO baseline measurement (rancho-seo-s7) — query AI engines for the 10 target keywords. Defer until Adam submits the GSC sitemap; signal is low before apex is in Google's index.
+- Author Person schema for BlogPosting JSON-LD — BLOCKED on `NEEDS ADAM` author-byline decision (Adam vs. Ashley vs. team byline).
+- Promote `/corporate-retreats/` into main nav (currently footer only) — needs Adam confirm.
+- ~~Internal-linking audit — orphaned blog posts (low inbound count) → cluster hubs.~~ **CLOSED 5/10.** Cluster at 4-inbound floor; no posts below baseline.
+
+## ✅ DONE 2026-05-09 — Internal-linking pass: 4 orphaned blog posts → 4 inbound each
+
+(Yesterday's session-log entry was written into CONTEXT.md "Last Worked On" but didn't make it into TODO.md before the file was committed. Backfilled here for the historical record.)
+
+Audit found 4 critically-orphaned blog posts whose only inbound link was the blog index (a list page, not topical PageRank): `birthday-party-venue-near-austin`, `mothers-day-near-austin`, `things-to-do-near-austin-with-kids`, `yoga-retreat-near-austin`. 12 surgical `<li>` inserts across 7 host-page Related Reading lists brought each to 4 inbound (4x improvement). 7 sitemap lastmod entries bumped. Validation passed. Diff surgical (8 files, 12+/7 changes).
 
 ## ✅ DONE 2026-05-08 — FAQPage JSON-LD parity closure on /faqs/ (17 → 18 items)
 
