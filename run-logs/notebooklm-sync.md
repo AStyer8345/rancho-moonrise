@@ -447,3 +447,5 @@ Sync skipped this run. No source operations attempted.
 - However, 6 other files were already in the index from another session (likely an SEO edit run): `site/pages/events.html`, `site/pages/glamping-near-austin-texas.html`, `site/pages/safari-tents-near-austin.html`, `site/pages/weddings.html`, `site/pages/weekend-getaways-near-austin.html`, `site/sitemap.xml`. They got rolled into commit `c2b2db0` with a misleading "sync: notebooklm run" message and pushed to origin.
 - Damage is small (12 insertions / 5 deletions, all minor sitemap/HTML tweaks) and already pushed — not reverting (would require force-push, destructive).
 - FIX FOR NEXT RUN: this skill's git step should `git diff --cached --quiet` BEFORE `git add` to detect pre-staged files from other sessions, and either reset them or abort with a log warning. Adam should patch the SKILL.md.
+
+2026-05-10 12:08 | scanned=77 added=0 replaced=0 skipped=6 errors=1 — auth_expired since 2026-05-05; 7 new files queued (would-sync); state file NOT updated; run `notebooklm login` on Adam's machine to restore
