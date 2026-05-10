@@ -449,3 +449,4 @@ Sync skipped this run. No source operations attempted.
 - FIX FOR NEXT RUN: this skill's git step should `git diff --cached --quiet` BEFORE `git add` to detect pre-staged files from other sessions, and either reset them or abort with a log warning. Adam should patch the SKILL.md.
 
 2026-05-10 12:08 | scanned=77 added=0 replaced=0 skipped=6 errors=1 — auth_expired since 2026-05-05; 7 new files queued (would-sync); state file NOT updated; run `notebooklm login` on Adam's machine to restore
+2026-05-10 12:13 | scanned=0 added=0 replaced=0 skipped=0 errors=1 — auth_expired (still); notebooklm CLI returned "Authentication expired or invalid"; run `notebooklm login` on Adam's machine to restore; state file NOT updated
