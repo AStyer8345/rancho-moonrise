@@ -450,3 +450,4 @@ Sync skipped this run. No source operations attempted.
 
 2026-05-10 12:08 | scanned=77 added=0 replaced=0 skipped=6 errors=1 — auth_expired since 2026-05-05; 7 new files queued (would-sync); state file NOT updated; run `notebooklm login` on Adam's machine to restore
 2026-05-10 12:13 | scanned=0 added=0 replaced=0 skipped=0 errors=1 — auth_expired (still); notebooklm CLI returned "Authentication expired or invalid"; run `notebooklm login` on Adam's machine to restore; state file NOT updated
+2026-05-10 16:09 | scanned=64 added=0 replaced=0 skipped=3 errors=1 — auth_expired since 2026-05-05; 0 new/modified files; state file NOT updated; run `notebooklm login` on Adam's machine to restore
