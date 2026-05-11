@@ -456,3 +456,4 @@ Sync skipped this run. No source operations attempted.
 ## 2026-05-11 04:07 — AUTH FAILED
 NotebookLM CLI returned authentication expired. Run `notebooklm login` to re-authenticate.
 2026-05-11 04:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1 (auth_expired)
+2026-05-11 08:07 | ERROR: NotebookLM authentication expired. Run `notebooklm login` to re-authenticate. Sync aborted — no files touched. scanned=0 added=0 replaced=0 skipped=0 errors=1
