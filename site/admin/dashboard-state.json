@@ -1,8 +1,8 @@
 {
   "review_monitor": {
-    "last_run": "2026-05-10T11:35:00Z",
+    "last_run": "2026-05-11T11:42:00Z",
     "status": "ok",
-    "status_reason": "RUN_024. Google WebSearch snippet at 126 @ 4.9★ for the NINTH consecutive run (RUN_016/017/018/019/020/021/022/023/024) — nine-run stable stretch is now 3.0x the prior longest since the ping-pong started at RUN_011. Three earlier documented flips (RUN_013→014→015→016) keep this lower-confidence stable rather than authoritative; the aggregator may simply be sticking on one answer for an extended window. FLAG_FOR_ADAM stays deescalated — durable fix unchanged (Adam dashboard 60s or Places API key ~5 min). Live-scrape verification still BLOCKER (24th, JS-rendered, no Places API key). No review-related done-log entries since RUN_011 — unreplied=0 maintained on done-log signal. TripAdvisor + Hipcamp live-confirmed 0 reviews (TripAdvisor still unclaimed; Travelers' Choice text continues NOT attributed to Rancho Moonrise — second consecutive run after RUN_023 reframing, explanatory boilerplate only). Facebook 5/100% recommend snippet stable for sixth consecutive run after RUN_018 dip. Expedia 8.0 rating value INLINE for third consecutive run — Hotels.com listing ho2867109568 still active and confirmed in search results as #1 hit. Hotels.com direct fetch BLOCKER ongoing (24th, no live attempt). Airbnb 403 BLOCKER ongoing (24th). The Knot listing not specifically surfaced this run; still not in scope. TripAdvisor price drift resumed sharply: $66-$179 (-$1 floor / +$4 ceiling vs RUN_023's $67-$175 — biggest single-run ceiling jump in the 13-run drift series). 13-run drift floor $77→$66 / ceiling $181→$179 — floor net -$11, ceiling net -$2.",
+    "status_reason": "RUN_025. **Google count snippet observability dip — 9-run stable stretch broken.** Three WebSearch queries this run returned zero explicit count value in snippets (RUN_016–024 all surfaced 126 @ 4.9★). Pattern 126→175→126→175→126→126→126→126→126→126→126→126→126→ABSENT — either the count-bearing aggregator rotated out or the WebSearch index moved. The true count remains unknown. Live-scrape verification still BLOCKER (25th, JS-rendered, no Places API key). FLAG_FOR_ADAM stays deescalated — durable fix unchanged (Adam dashboard 60s or Places API key ~5 min). No review-related done-log entries since RUN_011 — unreplied=0 maintained on done-log signal. TripAdvisor + Hipcamp live-confirmed 0 reviews (TripAdvisor still unclaimed; Travelers' Choice text continues NOT attributed — third consecutive run after RUN_023 reframing). **TripAdvisor price drift partially reversed**: $66-$178 (-$1 ceiling vs RUN_024's $66-$179, floor unchanged — partial unwind of RUN_024's $4 ceiling jump). 14-run drift floor $77→$66 / ceiling $181→$178 — floor net -$11, ceiling net -$3. Facebook 5/100% recommend snippet stable for seventh consecutive run after RUN_018 dip. Expedia 8.0 rating value INLINE for FOURTH consecutive run — verbatim 'solid guest review rating of 8.0' (same phrasing as RUN_022/023/024). Hotels.com listing ho2867109568 still active and confirmed in search results as #1 hit. Hotels.com direct fetch BLOCKER ongoing (25th, no live attempt). Airbnb 403 BLOCKER ongoing (25th). **The Knot RE-SURFACED with count detail** — 4.5★ / 8 reviews (last hard-data RUN_012/013; no growth in 13 runs); still not in scope. Hipcamp identical to RUN_023/024 (1 booking singular copy, joined March 2024).",
     "new_reviews_pending_response": 0,
     "total_reviews_tracked": 132,
     "unreplied_by_platform": {
@@ -14,13 +14,14 @@
     },
     "stale_platforms": ["google", "expedia"],
     "flags": [
-      "google-search-snippet-126-nine-stable-runs-but-three-prior-flips",
+      "google-search-snippet-absent-after-9-stable-runs",
       "airbnb-listing-existence-unverified",
-      "google-live-scrape-blocked-24-runs",
-      "hotels-com-fetch-timeout-24-runs",
-      "expedia-rating-value-inline-third-consecutive-run",
-      "tripadvisor-price-drift-resumed-sharply-ceiling-up-4-floor-down-1",
-      "tripadvisor-travelers-choice-text-not-property-attributed-second-run"
+      "google-live-scrape-blocked-25-runs",
+      "hotels-com-fetch-timeout-25-runs",
+      "expedia-rating-value-inline-fourth-consecutive-run",
+      "tripadvisor-price-drift-partial-reversal-ceiling-down-1",
+      "tripadvisor-travelers-choice-text-not-property-attributed-third-run",
+      "the-knot-re-surfaced-with-count-detail-no-growth-from-run-012-013"
     ],
     "blockers": [
       "google-reviews-count",
@@ -28,6 +29,6 @@
       "airbnb-listing-existence"
     ],
     "new_platforms_noted": ["yelp", "agoda", "the_knot"],
-    "run_number": 24
+    "run_number": 25
   }
 }

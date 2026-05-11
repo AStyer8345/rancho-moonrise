@@ -879,3 +879,49 @@ Claims enumerated from persistent surfaces and re-verified:
 **Stale claims auto-resolved:** 0 (no done-log writes — nothing changed state).
 
 **No new reviews; no response drafts written.**
+
+---
+
+## RUN_025 — 2026-05-11 11:42 UTC (06:42 CDT)
+
+**Summary:** **Google count snippet OBSERVABILITY DIP — 9-run stable stretch broken.** Three WebSearch queries this run ("Rancho Moonrise glamping Manor Texas Google reviews", "\"Rancho Moonrise\" Manor reviews stars rating", "Rancho Moonrise Austin glamping 4.9 stars") returned zero explicit Google review count value in result snippets. RUN_016/017/018/019/020/021/022/023/024 all surfaced 126 @ 4.9★. Today's pattern is 126→175→126→175→126→126→126→126→126→126→126→126→126→ABSENT across 25 runs — either the aggregator that was serving "126" rotated out of the snippet, or WebSearch's index moved off the count-bearing source. Identical in shape to the RUN_021 one-run observability dip. **True count remains unknown** (live scrape still BLOCKER, 25th consecutive). TripAdvisor live-scraped via WebFetch: 0 reviews, unclaimed, "No reviews for this property yet." / "Claim Your Listing" visible. **TripAdvisor price drift partially reversed — $66-$179 → $66-$178** (-$1 ceiling, floor unchanged — partial unwind of RUN_024's $4 ceiling jump; 14-run drift now floor $77→$66 / ceiling $181→$178, floor net -$11, ceiling net -$3). Travelers' Choice text NOT attributed to Rancho Moonrise (third consecutive run after RUN_023 reframing). Hipcamp live-scraped: 0 reviews, "Be the first to review", 1 booking (singular, identical to RUN_023/024; joined March 2024). **Expedia 8.0 INLINE for FOURTH consecutive run** — verbatim "solid guest review rating of 8.0" (same exact phrasing as RUN_022/023/024). Hotels.com listing ho2867109568 still active and confirmed as #1 search result. **Facebook 5/100% recommend snippet stable** for seventh consecutive run after RUN_018 dip — surfaced inline ("100% recommendation rating with 5 reviews on Facebook"). **The Knot listing RE-SURFACED with explicit count detail** — "4.5 out of 5 stars rating with 8 reviews on The Knot" (last hard-data RUN_012/013; absent RUN_023/024). Same count, no growth in 13 runs / ~26 days. Still not in monitored scope without Adam's decision. No new reviews on any platform with 0-count baselines. No review-related done-log entries since RUN_011; `rancho-review-replies` RESOLVED 2026-04-15 22:12 remains the last review action. Git activity since RUN_024: 1 competitive-weekly commit (6af77e6 intel weekly card 2026-05-11), 4 notebooklm sync commits, 1 rancho-site-daily commit (76fc6bd internal-linking close-out) — all non-review. Unreplied=0 maintained on done-log signal. 3 BLOCKERS open (google-reviews-count, hotels-com-direct-fetch, airbnb-listing-existence) — consecutive-failure counters bumped to 25.
+
+**The Knot side-note (still not in scope):** Listing RE-SURFACED in WebSearch result list this run with explicit "4.5 out of 5 stars rating with 8 reviews on The Knot" — same numbers as RUN_012/013. No growth in 13 runs (~26 days). RUN_021/022 had listing in result list with no count detail; RUN_023/024 absent entirely; RUN_025 back with count. Still not in monitored scope without Adam's decision.
+
+**Done-log review-adjacent entries since RUN_024:** none. New git activity is 1 intel commit, 4 notebooklm syncs, 1 SEO daily commit. No review actions.
+
+**Re-Verify Gate against persistent surfaces:**
+- `CONTEXT.md` Active Blockers: no review-related claims to re-verify; "Google reviews 125 (4.9★) (unverified; snippet variance)" line in Key Metrics table is a frozen baseline snapshot, not a live claim. No action.
+- `improvement-plan.html`: stale narrative copy from earlier baseline observed in prior runs; per SKILL scope, this task does not own static-narrative HTML mutation. No edits.
+- `tasks/review-monitor/BLOCKERS.md`: 3 BLOCKERS open (google-reviews-count, hotels-com-direct-fetch, airbnb-listing-existence). All still unresolved; consecutive-failure counters bumped to 25 (tracked in session-log + aggregate JSON, not in BLOCKERS.md per established pattern).
+
+**Re-verify log lines:**
+```
+[2026-05-11 11:42] re-verify google-reviews-count — stale (run 25, BLOCKER ongoing) — live=BLOCKED(JS-rendered) search-snippet=ABSENT (three WebSearch queries returned no explicit count value; RUN_016–024 9-run stable stretch at 126 is broken; pattern 126→175→126→175→126→126→126→126→126→126→126→126→126→ABSENT; identical shape to RUN_021 one-run dip) prior=126(snippet RUN_024) — FLAG_FOR_ADAM stays deescalated, true count again unknown from snippets
+[2026-05-11 11:42] re-verify google-unreplied — still_true — live=0(no review-related done-log entries since RUN_011; rancho-review-replies RESOLVED 2026-04-15 remains last review action) prior=0
+[2026-05-11 11:42] re-verify hipcamp-reviews — still_true — live=0reviews/1booking(WebFetch confirmed "Be the first to review", "This place has been booked 1 time.", joined Mar 2024; copy identical to RUN_023/024) prior=0reviews/1booking
+[2026-05-11 11:42] re-verify tripadvisor-claim-status — still_true — live=unclaimed/0reviews/no-travelers-choice-attribution/$66-$178(WebFetch confirmed "No reviews for this property yet.", "Claim Your Listing" visible; Travelers' Choice text NOT attributed to Rancho Moonrise — third consecutive run after RUN_023 reframing; price drift partial reversal: ceiling -$1 / floor unchanged vs RUN_024's $66-$179 — partial unwind of RUN_024's $4 ceiling jump) prior=unclaimed/0reviews/$66-$179
+[2026-05-11 11:42] re-verify expedia-rating — still_true(search) — live=8.0_INLINE(WebSearch surfaced verbatim "solid guest review rating of 8.0" — FOURTH consecutive run inline, same phrasing as RUN_022/023/024; Hotels.com listing ho2867109568 still active and confirmed as #1 search result for direct query) prior=8.0_INLINE(RUN_024) STALE:2026-04-09 BLOCKER ongoing (run 25)
+[2026-05-11 11:42] re-verify facebook-reviews — still_true — live=5reviews/100%(WebSearch confirmed "100% recommendation rating with 5 reviews on Facebook"; seventh consecutive run after RUN_018 dip) prior=5reviews/100%
+[2026-05-11 11:42] re-verify airbnb-listing — unverified (BLOCKER ongoing run 25, no new fetch — 403 pattern established) prior=POSSIBLE_NEW_LISTING
+[2026-05-11 11:42] re-verify hotels-com-direct-fetch — unverified (BLOCKER ongoing run 25, no new fetch — 60s timeout pattern established; search snippet confirms listing still active and 8.0 surfaced inline fourth consecutive run) prior=8.0
+```
+
+**Failure counters (BLOCKERS open):**
+- `google-reviews-count` live scrape: 25 consecutive
+- `hotels-com-direct-fetch`: 25 consecutive (no live attempt this run)
+- `airbnb-listing-existence`: 25 consecutive (no live attempt this run)
+
+**Files written this run:**
+- `brand/review-aggregate.json` — RUN_025 (run_number 24→25, last_updated 2026-05-11T11:42:00Z, Google snippet count ABSENT [stable stretch broken], TripAdvisor price ceiling -$1 to $66-$178, Expedia 8.0 inline fourth consecutive run, Hipcamp identical to RUN_023/024, Facebook stable 7th run, Travelers' Choice text not property-attributed for 3rd run, The Knot re-surfaced with count detail)
+- `site/admin/dashboard-state.json` — RUN_025 (run_number 24→25, last_run 2026-05-11T11:42:00Z, status remains ok, flags refreshed)
+- `tasks/review-monitor/session-log.md` — this entry
+- `CONTEXT.md` — "Last worked on" review-monitor line replaced with RUN_025 summary
+- `CHANGELOG.md` — one dated bullet appended
+
+**FLAG_FOR_ADAM (escalated from RUN_024 — snippet observability now confirmed unreliable):**
+> Google WebSearch snippet was **absent from all three queries** this run after holding at 126 @ 4.9★ for nine consecutive runs (RUN_016–024). Either the aggregator that was serving "126" rotated out, or WebSearch's index moved off the count-bearing source. **The true count remains unknown from snippets alone.** Pattern across 25 runs is now 126→175→126→175→126→126→126→126→126→126→126→126→126→ABSENT. The 9-run stable stretch never settled into "authoritative" — and now it's gone. Resolution paths unchanged: (a) check the GBP dashboard once to confirm live count + reply backlog (60s, immediate unblock), or (b) provide a Places API key so this agent can authoritatively count via `places.googleapis.com/v1/places/{placeId}?fields=reviews,rating,userRatingCount` (durable fix, ~5 min to wire). Path (a) hasn't been done across 15 runs of asking.
+
+**Stale claims auto-resolved:** 0 (no done-log writes — nothing changed state).
+
+**No new reviews; no response drafts written.**
