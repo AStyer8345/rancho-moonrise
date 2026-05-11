@@ -1,5 +1,5 @@
 # Rancho Moonrise — TODO
-Last updated: 2026-05-11 (rancho-competitive-weekly — Lucky Arrow walked back May 1 ResortPass promise; Spoon Mountain shipped destination-guide content; 3 new findings (Loving Heart, Hipcamp curation gap, Hotels.com voice violation); GSC submit now 3rd-consecutive Priority 1)
+Last updated: 2026-05-11 (rancho-site-daily — HowTo JSON-LD shipped on `/blog/corporate-retreat-planning-guide-texas/`; pre-scoped next slot from 5/10 closed; 5 JSON-LD blocks on the page now parse: BlogPosting + HowTo + BreadcrumbList + WebPage + FAQPage)
 
 ## 🔥 NEEDS ADAM (highest leverage this week)
 
@@ -20,6 +20,28 @@ Last updated: 2026-05-11 (rancho-competitive-weekly — Lucky Arrow walked back 
 - **Per-unit accommodation pages remain blocked on low-res source JPGs** (Adam re-upload). The Retreat on the Hill (11) + Green Acres (8) + Lucky Arrow (5+) all reinforce the multi-URL pattern.
 
 
+
+## ✅ DONE 2026-05-11 — HowTo JSON-LD on `/blog/corporate-retreat-planning-guide-texas/`
+
+Yesterday's run pre-scoped this exact edit as "next slot's target" — closing the handoff cleanly today.
+
+1. **Audit (pre-edit).** Page body is an explicit 5-step "How to plan a corporate retreat" structure: H2 "Step 1: Define the Retreat Goal" (line 206), "Step 2: Choose the Right Texas Venue" (218), "Step 3: Build Your Timeline" (232), "Step 4: Build an Agenda That People Don't Dread" (246), "Step 5: Handle the Logistics Checklist" (265). But the page's only article-level schema was `BlogPosting` (lines 28–50) — a publication wrapper with no step semantics.
+2. **Schema edit (`site/pages/corporate-retreat-planning-guide-texas.html`).** New `HowTo` JSON-LD block inserted after `BlogPosting`, before `BreadcrumbList`. Structure:
+   - `@type: "HowTo"`, `name: "How to Plan a Corporate Retreat in Texas"`, top-level `description` distilling the 5-step process, `image` mirroring the BlogPosting hero, `totalTime: P12W` (matches the timeline section's "Lock the venue 12 weeks out" anchor).
+   - 5 `HowToStep` items with `position` (1–5), `name` (mirrors each H2 minus the "Step N:" prefix), and `text` (1–2 sentence distillation of the H2 section, 199–297 chars each).
+3. **Why HowTo not Article.** `BlogPosting` is a subtype of `Article` in schema.org's hierarchy — meaning the page IS already typed as an Article. Adding a parallel top-level `Article` block would be redundant. `HowTo` is the distinct sibling type with first-class `step` semantics; the body's explicit step structure is a textbook fit. Google retired most HowTo SERP rich results in 2023, but HowTo structured data remains valuable for AEO — AI engines parse `step` arrays to extract procedural answers.
+4. **Step `text` is distilled, not mirrored.** Each `HowToStep.text` summarizes its H2 section rather than quoting body content, so the schema stands on its own when an AI engine extracts one step in isolation.
+5. **Metadata refresh.** `BlogPosting.dateModified` bumped 2026-04-15 → 2026-05-11 since the page-level schema actually changed today. Sitemap `/blog/corporate-retreat-planning-guide-texas/` lastmod 2026-05-05 → 2026-05-11.
+6. **Validation.** `npm run validate:site` passes. All 5 JSON-LD blocks on the target page parse via `python3 json.loads`: BlogPosting (dateModified=2026-05-11), HowTo (5 steps), BreadcrumbList, WebPage (Speakable), FAQPage (4 Q&A).
+7. **Diff.** 2 files, 47 insertions, 2 deletions — surgical. Pre-existing uncommitted prior-session changes in styles.css/main.js/weddings.html intentionally NOT staged (5/7, 5/8, 5/9, 5/10 convention).
+8. **Re-Verify Gate (live).** apex 200 + `server: Vercel` + `x-vercel-cache: HIT`; www 308 → apex; sitemap 200; target `/blog/corporate-retreat-planning-guide-texas/` 200; all 9 critical landing pages 200 (`/corporate-retreats/`, `/safari-tents-near-austin/`, `/faqs/`, `/accommodations/`, `/host-your-event/`, `/events/`, `/weddings/`, `/contact/`). All DNS/canonical/sitemap claims still_true; 0 stale claims auto-resolved.
+
+**Future autonomous candidates** (in priority order):
+- AEO baseline measurement (rancho-seo-s7) — query AI engines for the 10 target keywords. Still deferred until Adam submits the GSC sitemap; signal is low before apex is in Google's index.
+- **Hipcamp curation-gap audit** (flagged in today's competitive-weekly) — Rancho's active Hipcamp listing is NOT in Hipcamp's "20 Best Glamping Sites 2026 Near Austin" landing page; top 5 are urban/airstream/East Austin properties. Audit listing photos / description / amenities vs. surfacing properties to identify what's missing. Autonomous-doable as a research/recommendation output.
+- Article/HowTo schema on other long-form blog posts with explicit step or list structure — today's edit shipped on `/blog/corporate-retreat-planning-guide-texas/`; survey blog cluster for the next-best fit (e.g., the "vs." comparison posts may not need HowTo, but `/blog/corporate-retreat-near-austin/` and `/blog/weekend-getaways-near-austin/` may benefit).
+- Author Person schema for BlogPosting JSON-LD — BLOCKED on `NEEDS ADAM` author-byline decision (Adam vs. Ashley vs. team byline).
+- Promote `/corporate-retreats/` into main nav (currently footer only) — needs Adam confirm.
 
 ## ✅ DONE 2026-05-10 — Internal-linking close-out: 3 lightly-linked posts → 4 inbound each
 

@@ -1,5 +1,15 @@
 # Rancho Moonrise — Changelog
 
+## 2026-05-11 (rancho-site-daily) — HowTo JSON-LD on /blog/corporate-retreat-planning-guide-texas/
+
+- **Schema enrichment on the corporate-retreat planning guide.** Page body is an explicit 5-step "How to plan a corporate retreat" structure (H2 "Step 1" through "Step 5"), but its only article-level schema was `BlogPosting` — a publication wrapper with no step semantics. Added a parallel `HowTo` JSON-LD block with 5 `HowToStep` items so AI engines and search crawlers can pattern-match the page as procedural content, not just a long blog post. `BlogPosting` retained alongside — it's still correct as the publication-level metadata; `HowTo` is a sibling type, not a replacement.
+- **Why HowTo not Article.** `BlogPosting` is already a subtype of `Article` in schema.org's hierarchy, so the page is already typed as an Article. Adding a parallel top-level `Article` block would be redundant. `HowTo` is the distinct sibling type with first-class `step` semantics, and the body content's "Step 1 / Step 2 / Step 3 / Step 4 / Step 5" structure is a textbook fit. Google retired most HowTo SERP rich results in 2023, but HowTo structured data remains valuable for AEO (AI engines parse `step` arrays to extract procedural answers).
+- **Step content.** Each `HowToStep.text` is a 1–2 sentence distillation of the corresponding H2 section (lines 206–276), not a copy of body content. Distilled rather than mirrored so the schema text stands on its own when an AI engine extracts an individual step in isolation. `totalTime: P12W` matches the timeline section's "Lock the venue 12 weeks out" anchor.
+- **Metadata refresh.** `BlogPosting.dateModified` bumped 2026-04-15 → 2026-05-11 since the page-level schema actually changed today. Sitemap `lastmod` for the same URL bumped 2026-05-05 → 2026-05-11.
+- **Validation.** `npm run validate:site` passes. All 5 JSON-LD blocks parse via `python3 json.loads`: BlogPosting, HowTo (5 steps), BreadcrumbList, WebPage (Speakable), FAQPage (4 Q&A).
+- **Diff.** 2 files, 47 insertions, 2 deletions — surgical. Pre-existing uncommitted prior-session changes in styles.css/main.js/weddings.html intentionally NOT staged (5/7, 5/8, 5/9, 5/10 convention).
+- **Re-Verify Gate (live).** apex 200 + `server: Vercel` + `x-vercel-cache: HIT`; www 308 → apex; sitemap 200; target page `/blog/corporate-retreat-planning-guide-texas/` 200; all 9 critical landing pages 200. All DNS/canonical/sitemap claims still_true; 0 stale claims auto-resolved.
+
 ## 2026-05-11 (rancho-competitive-weekly) — Lucky Arrow walked back May 1 promise; Spoon Mountain shipped content-marketing
 
 - **Re-Verify Gate.** 10 prior-report claims re-verified live. 9 still_true. **1 RESOLVED via auto-resolution**: Lucky Arrow ResortPass page "full food and bar menu will resume starting May 1, 2026" copy has been REMOVED. Today's WebFetch: *"There is no mention of a food and bar menu resuming on May 1, 2026, or any similar statement about service restoration."* Listing is still dormant ("no active products at the moment"), but the public reactivation date is gone.
