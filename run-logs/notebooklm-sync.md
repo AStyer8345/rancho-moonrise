@@ -462,3 +462,11 @@ NotebookLM CLI returned authentication expired. Run `notebooklm login` to re-aut
 2026-05-12 00:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1 | NotebookLM auth expired — run 'notebooklm login' to re-authenticate
 2026-05-12 00:07 | push failed — remote ahead of local; leaving local commit for next run
 2026-05-12 04:11 | scanned=0 added=0 replaced=0 skipped=0 errors=1 | NotebookLM auth still expired (~7 days, 30+ failed runs since 2026-05-05). Run `notebooklm login` on Adam's machine. State file NOT updated — all queued changes preserved for post-auth sync. Git also blocked: 2 local sync commits ahead of origin (c71001b, cf966ec) + remote ahead by 2 PR merges (#2, #3) + ref lock error on fetch + 20+ untracked "Copy 2/3" sync-conflict files in worktree. Skipping commit/push this run; needs Adam to reconcile.
+2026-05-12 05:23 | push failed — non-fast-forward, origin/main has 2 PR merges (#2, #3) ahead of local. Local commits c71001b, cf966ec, 364c33d preserved on disk. Not resolving — needs Adam to `git pull --rebase origin main` (and clean up the "Copy 2/3" sync artifacts in the worktree).
+
+## 2026-05-12 08:07 — Sync skipped: NotebookLM auth expired
+- `notebooklm use` returned: "Authentication expired or invalid. Redirected to Google login."
+- Action required: run `notebooklm login` to re-authenticate. Sync will resume on next scheduled run after re-auth.
+- State file untouched; no uploads attempted.
+
+2026-05-12 08:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1 (auth_expired)
