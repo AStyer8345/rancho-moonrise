@@ -1,9 +1,9 @@
 # Rancho Moonrise — TODO
-Last updated: 2026-05-11 (rancho-site-daily — HowTo JSON-LD shipped on `/blog/corporate-retreat-planning-guide-texas/`; pre-scoped next slot from 5/10 closed; 5 JSON-LD blocks on the page now parse: BlogPosting + HowTo + BreadcrumbList + WebPage + FAQPage)
+Last updated: 2026-05-12 (rancho-site-daily — ItemList JSON-LD shipped on `/blog/weekend-getaways-near-austin/`; yesterday's pre-scoped survey closed — no other HowTo-fit candidates, 3 ItemList-fit candidates identified; 3 JSON-LD blocks on the page now parse: BlogPosting + ItemList(5) + BreadcrumbList)
 
 ## 🔥 NEEDS ADAM (highest leverage this week)
 
-1. **GSC sitemap submit (Priority 1 — 3rd consecutive week, urgency escalating).** DNS live 11 days. `/corporate-retreats/` live 10 days, still NOT in "corporate retreat near austin texas" top 10. The Yurtopian's equivalent page out-ages it daily. Submit `https://ranchomoonrise.com/sitemap.xml` in Search Console and request indexing on `/corporate-retreats/`, `/safari-tents-near-austin/`, and apex.
+1. **GSC sitemap submit (Priority 1 — 3rd consecutive week, urgency escalating).** DNS live 12 days. `/corporate-retreats/` live 11 days, still NOT in "corporate retreat near austin texas" top 10. The Yurtopian's equivalent page out-ages it daily. Submit `https://ranchomoonrise.com/sitemap.xml` in Search Console and request indexing on `/corporate-retreats/`, `/safari-tents-near-austin/`, and apex.
 2. **ResortPass — pick a side this week.** Lucky Arrow has REMOVED the May 1 reactivation promise from their listing page entirely (confirmed via WebFetch May 11). Public timeline pressure is dead. The April 27 "48 hours" and May 4 "extended window" framings have both been wrong. Right framing now: the door has been open since April 6, stop letting this drift. Submit or move to "deferred."
 3. **Hotels.com listing copy fix (~15 min).** Listing ho2867109568 surfaces "20 luxury cabins and safari tents that can accommodate up to 50 guests" in the brand SERP description. Per VOICE-GUIDE.md, no specific unit counts. The Vercel site itself does NOT contain this copy — this is a third-party listing problem. Fastest external-SERP cleanup available.
 4. **Blog pipeline restart — flag at next Ashley check-in.** Spoon Mountain shipped a destination-guide content page (May 11 finding) now surfacing in "weekend getaway near austin glamping" SERP. First tracked competitor investing in research-intent content. Rancho's blog pipeline has been paused since 2026-04-23 (Ashley). Cost of pause is now measurable.
@@ -20,6 +20,29 @@ Last updated: 2026-05-11 (rancho-site-daily — HowTo JSON-LD shipped on `/blog/
 - **Per-unit accommodation pages remain blocked on low-res source JPGs** (Adam re-upload). The Retreat on the Hill (11) + Green Acres (8) + Lucky Arrow (5+) all reinforce the multi-URL pattern.
 
 
+
+## ✅ DONE 2026-05-12 — ItemList JSON-LD on `/blog/weekend-getaways-near-austin/`
+
+Yesterday's run pre-scoped this slot as "survey the blog cluster for the next-best Article/HowTo schema candidate." Survey complete: no other blog has explicit "Step N" procedural structure (only `corporate-retreat-planning-guide-texas` did, shipped 5/11). What 3 posts DO have is a numbered/listicle roundup structure. 5/11's competitive-weekly specifically logged Spoon Mountain shipping a competing "Ultimate 2026 Guide" surfacing on the `weekend getaway near austin glamping` SERP — making that page the highest-strategic-value target.
+
+1. **Schema choice — ItemList, not HowTo.** HowTo requires procedural content where step N+1 depends on having done step N. This page is a roundup of 5 independent destinations, not a procedure. `ItemList` is schema.org's first-class type for curated/ranked list content and is Google's recommended schema for listicle pages.
+2. **Schema edit (`site/pages/weekend-getaways-near-austin.html`).** New `ItemList` JSON-LD block inserted after `BlogPosting` block, before `BreadcrumbList`. Structure:
+   - `@type: "ItemList"`, `name: "Best Weekend Getaways Near Austin, Texas"`, top-level `description` summarizing the 5 destinations and distance band, `url` pointing at canonical, `numberOfItems: 5`.
+   - 5 `ListItem` items with `position` (1–5), `name` (mirrors each H2 minus the numeric prefix), and `description` (1–2 sentence distillation of the H2 section, 174–222 chars each).
+   - Position 1 (Rancho Moonrise) has `url: https://ranchomoonrise.com/`; positions 2–5 are name+description only — no fake URLs claimed for destinations we don't own.
+3. **`itemListOrder` intentionally omitted.** The numbering is partly editorial (position 1 is the host's own ranch in a hosted listicle) and the rest is rough geographic order. Claiming `ItemListOrderDescending` would misrepresent it as a competitive ranking. Omitting is the honest framing; Google treats it as an unordered curated list.
+4. **Item `description` is distilled, not mirrored.** Each summarizes its H2 section rather than quoting body content, so the schema stands on its own when an AI engine extracts one item in isolation. Voice-compliant (no "luxury", "Hill Country", "Manor" as location descriptor, "General Store", specific unit counts).
+5. **Metadata refresh.** `BlogPosting.dateModified` bumped 2026-04-11 → 2026-05-12 since the page-level schema actually changed today. Sitemap `/blog/weekend-getaways-near-austin/` lastmod 2026-05-10 → 2026-05-12.
+6. **Validation.** `npm run validate:site` passes. All 3 JSON-LD blocks on the target page parse via `python3 json.loads`: BlogPosting (dateModified=2026-05-12), ItemList (numberOfItems=5, itemListElement.length=5 — internal consistency check passes), BreadcrumbList (3 crumbs).
+7. **Diff.** 2 files, 46 insertions, 1 deletion — surgical. Pre-existing uncommitted prior-session changes in styles.css/main.js/weddings.html intentionally NOT staged (5/7, 5/8, 5/9, 5/10, 5/11 convention).
+8. **Re-Verify Gate (live).** apex 200 + `server: Vercel` + `x-vercel-cache: HIT`; www 308 → apex; sitemap 200; target `/blog/weekend-getaways-near-austin/` 200; yesterday's target `/blog/corporate-retreat-planning-guide-texas/` 200; all 9 critical landing pages 200. All 13 verified claims still_true; 0 stale claims auto-resolved.
+
+**Future autonomous candidates** (in priority order):
+- **Continue ItemList rollout to remaining list-structured blog posts.** Next-best fit: `things-to-do-manor-tx.html` (6 numbered destinations: Rancho Moonrise, Lake Walter E. Long, live event, Austin drive-in, Manor downtown, sunrise/sunset on the ranch). Then: `things-to-do-near-austin-with-kids.html` (5 named destinations — McKinney Falls, Bastrop, Hamilton Pool, Blue Hole, Rancho Moonrise). Both have clean roundup structure already in the body.
+- AEO baseline measurement (rancho-seo-s7) — query AI engines for the 10 target keywords. Still deferred until Adam submits the GSC sitemap; signal is low before apex is in Google's index.
+- **Hipcamp curation-gap audit** (flagged in 5/11 competitive-weekly) — Rancho's active Hipcamp listing is NOT in Hipcamp's "20 Best Glamping Sites 2026 Near Austin" landing page; top 5 are urban/airstream/East Austin properties. Audit listing photos / description / amenities vs. surfacing properties to identify what's missing. Autonomous-doable as a research/recommendation output.
+- Author Person schema for BlogPosting JSON-LD — BLOCKED on `NEEDS ADAM` author-byline decision.
+- Promote `/corporate-retreats/` into main nav (currently footer only) — needs Adam confirm.
 
 ## ✅ DONE 2026-05-11 — HowTo JSON-LD on `/blog/corporate-retreat-planning-guide-texas/`
 
