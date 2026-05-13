@@ -472,3 +472,7 @@ NotebookLM CLI returned authentication expired. Run `notebooklm login` to re-aut
 2026-05-12 08:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1 (auth_expired)
 2026-05-12 12:08 | scanned=0 added=0 replaced=0 skipped=0 errors=1 (auth_expired) — 8+ days, 35+ consecutive failed runs since 2026-05-05; needs `notebooklm login` on Adam's machine. Git also blocked: local commits c71001b/cf966ec/364c33d ahead of origin which has 2 PR merges ahead + 20+ "Copy 2/3" sync-conflict artifacts in worktree. Skipping commit/push — needs Adam to reconcile.
 2026-05-12 16:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1 (auth_expired) — still blocked since 2026-05-05 (~7 days, 36+ consecutive failed runs); needs `notebooklm login` on Adam's machine. State file untouched. Git also still blocked (local commits ahead of origin, origin ahead via PR merges, Copy 2/3 artifacts) — skipping commit/push, needs Adam to reconcile.
+
+## 2026-05-12 20:07 — Auth failure
+NotebookLM CLI returned: Authentication expired or invalid. Run 'notebooklm login' to re-authenticate.
+2026-05-12 20:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1
