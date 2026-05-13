@@ -1,5 +1,16 @@
 # Rancho Moonrise — Changelog
 
+## 2026-05-13 (rancho-review-monitor) — RUN_027 — Google snippet held 126 @ 4.9★ for 2nd consecutive post-dip run; TripAdvisor price drift resumed at $65-$175
+
+- Scraped 5 platforms; 0 new reviews, 0 response drafts, 0 stale claims auto-resolved.
+- Google WebSearch snippet held at 126 @ 4.9★ (11th confirmation since RUN_016; 11-of-12 stable with one mid-stretch ABSENT in RUN_025).
+- TripAdvisor live: 0 reviews, unclaimed, **price drift resumed** floor -$1/ceiling -$3 to $65-$175 (RUN_026's no-drift streak ended at one run; 16-run net floor -$12 / ceiling -$6 — biggest cumulative ceiling drop since drift tracking began); Travelers' Choice text not property-attributed (5th consecutive run).
+- Hipcamp: 0 reviews / 1 booking / joined March 2024 (identical to last 4 runs).
+- Expedia 8.0 rating inline via WebSearch — 6th consecutive run, verbatim phrasing same as RUN_022/023/024/025/026.
+- Facebook 5/100% recommend stable for 9th consecutive run after RUN_018 dip.
+- 3 BLOCKERS open at run 27 (google-reviews-count, hotels-com-direct-fetch, airbnb-listing-existence); failure counters bumped.
+- FLAG_FOR_ADAM stays deescalated — durable fix unchanged (Adam GBP dashboard 60s or Places API key).
+
 ## 2026-05-12 (rancho-site-daily) — ItemList JSON-LD on /blog/weekend-getaways-near-austin/
 
 - **Schema enrichment on the weekend-getaways roundup post.** Page body is an explicit numbered list of 5 weekend-getaway destinations (H2 "1." through "5." at lines 160/174/183/192/201), but its only article-level schema was `BlogPosting` — a publication wrapper with no list semantics. Added a parallel `ItemList` JSON-LD block with 5 `ListItem` items so AI engines and search crawlers can pattern-match the page as a curated list, not just a long blog post. `BlogPosting` retained alongside — it's still correct as the publication-level metadata; `ItemList` is a sibling type that captures the structural shape of the body.
