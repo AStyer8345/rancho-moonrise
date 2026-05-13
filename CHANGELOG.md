@@ -1,5 +1,15 @@
 # Rancho Moonrise — Changelog
 
+## 2026-05-13 (rancho-site-daily) — ItemList JSON-LD on /blog/things-to-do-manor-tx/
+
+- New `ItemList` JSON-LD block on `site/pages/things-to-do-manor-tx.html` with 6 `ListItem` items mirroring the body's "1." through "6." H2 structure (Rancho base, Lake Walter E. Long, live events, Austin day trip, Manor downtown, golden hour on the ranch).
+- URL assignments: position 1 → `https://ranchomoonrise.com/`; position 3 → `https://ranchomoonrise.com/events/`; positions 2/4/5/6 → name+description only (no fake URLs claimed for destinations we don't own; position 6 is a feature of position 1 so apex isn't duplicated).
+- `itemListOrder` intentionally omitted — numbering is editorial/thematic, not a competitive ranking. Item descriptions distilled (173–252 chars), not mirrored from body, so each stands on its own when an AI engine extracts one item.
+- Voice-compliant: no banned terms; "Manor" used only as the town name for its own destination, not as a location descriptor for Rancho Moonrise (Rancho is framed "20 minutes east of downtown Austin").
+- `BlogPosting.dateModified` 2026-04-29 → 2026-05-13. Sitemap lastmod for the slug 2026-05-09 → 2026-05-13.
+- `npm run validate:site` passes; all 5 JSON-LD blocks on the page parse (BlogPosting, ItemList numberOfItems=6 / actual_items=6 internal consistency, BreadcrumbList 3 crumbs, FAQPage 4 Q&A, WebPage Speakable).
+- Re-Verify Gate clean: apex 200 `server: Vercel` `x-vercel-cache: HIT`, www 308 → apex, sitemap 200, target + prior target + corporate-retreats + safari-tents + 6 critical landing pages all 200. 13 still_true, 0 resolved.
+
 ## 2026-05-13 (rancho-review-monitor) — RUN_027 — Google snippet held 126 @ 4.9★ for 2nd consecutive post-dip run; TripAdvisor price drift resumed at $65-$175
 
 - Scraped 5 platforms; 0 new reviews, 0 response drafts, 0 stale claims auto-resolved.
