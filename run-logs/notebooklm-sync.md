@@ -476,3 +476,12 @@ NotebookLM CLI returned authentication expired. Run `notebooklm login` to re-aut
 ## 2026-05-12 20:07 — Auth failure
 NotebookLM CLI returned: Authentication expired or invalid. Run 'notebooklm login' to re-authenticate.
 2026-05-12 20:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1
+
+## 2026-05-13 00:07 — Auth still expired
+NotebookLM CLI returned: Authentication expired or invalid. Run 'notebooklm login' to re-authenticate.
+2026-05-13 00:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1 (auth_expired) — 8th day blocked, ~37+ consecutive failed runs since 2026-05-05; needs `notebooklm login` on Adam's machine. State file untouched. Skipping git commit/push per prior run notes (local divergence pending Adam reconciliation).
+
+## 2026-05-13 — Auth still expired
+NotebookLM CLI returned: Authentication expired or invalid. Run 'notebooklm login' to re-authenticate.
+2026-05-13 04:08 | scanned=0 added=0 replaced=0 skipped=0 errors=1 (auth_expired) — 9th day blocked; needs `notebooklm login` on Adam's machine. State file untouched. Skipping git commit/push — working tree has unrelated modifications + iCloud-duplicate untracked files.
+2026-05-13 08:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1 — NotebookLM auth expired, run `notebooklm login` to restore
