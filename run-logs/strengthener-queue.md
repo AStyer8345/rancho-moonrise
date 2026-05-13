@@ -10,7 +10,7 @@ Priority: broken/placeholder assets first, then highest-impression landing pages
 | Page | Last Touch | Status |
 |------|-----------|--------|
 | `weddings.html` | 2026-04-22 | BLOCKED — see run log below |
-| `accommodations.html` | 2026-05-06 | BLOCKED — same two NEEDS ADAM items (run 3, no movement) |
+| `accommodations.html` | 2026-05-13 | BLOCKED — same two NEEDS ADAM items (run 4, 21 days, escalating to pause request) |
 | `host-your-event.html` | — | Pending |
 | `events.html` | — | Pending |
 | `pool-day-pass-austin.html` | — | Pending |
@@ -84,3 +84,24 @@ Priority: broken/placeholder assets first, then highest-impression landing pages
 **Result:** No changes to any landing page. No HTML edits. No commits to site/. Queue unchanged.
 
 **Next run:** 2026-05-13. If still blocked, the next run will recommend pausing the task by default rather than running again.
+
+---
+
+### 2026-05-13 — accommodations.html — BLOCKED (fourth consecutive blocked run — escalating to pause request)
+
+**Attempted:** accommodations.html (priority 2, fourth consecutive holdover).
+
+**Re-verified blockers (per `feedback_stale_flags.md` — required before re-surfacing a flag for the 4th time):**
+
+1. **Testimonials list still does not exist.** `find /Users/adamstyer/Documents/rancho-moonrise/brand -name "*testimonial*" -o -name "*approved*"` returns zero results. No `brand/approved-testimonials.md`. → Still NEEDS ADAM.
+2. **Author byline decision still not in GOALS.md.** `grep -i "byline\|author\|adam.*ashley\|settled decision" /Users/adamstyer/Documents/GOALS.md` returns no matches. GOALS.md (week of April 20) still has no Settled Decisions section. The week marker has not advanced for 23 days. → Still NEEDS ADAM.
+
+**21-day pattern:** Four runs (4/22, 4/29, 5/06, 5/13), zero website edits produced. Both prereqs are <30 minutes of Adam time. Per the 5/06 entry's commitment ("If neither is done by 5/11, run 4 will be the same blocked entry") and tightened recommendation ("the next run will recommend pausing the task by default rather than running again"), this run is making that recommendation directly.
+
+**Single ask to Adam (no menu, no negotiation):** Add `rancho-content-weekly` to `GOALS.md` → "Paused Workstreams" until either `brand/approved-testimonials.md` exists or a Settled Decisions section in GOALS.md picks the byline. The scheduled task is firing weekly and producing only this same blocked log entry — that's noise, not progress. Pausing is reversible the moment the prereqs land.
+
+**Result:** No changes to any landing page. No HTML edits. No commits to `site/`. Queue unchanged.
+
+**If Adam wants to unblock instead of pause:** the two artifacts needed are (a) `brand/approved-testimonials.md` with at least one quote per page-type tied to a real event date (wedding, corporate, glamping), and (b) one line in GOALS.md under a `## Settled Decisions` heading: `Author byline: Adam` (or Ashley, or team). Total time: ~25 minutes if testimonials are pulled from existing HoneyBook/Google review exports.
+
+**Next run:** 2026-05-20. If `rancho-content-weekly` is still firing and still blocked, that entry will be a one-liner pointer back to this one rather than a fifth re-litigation.
