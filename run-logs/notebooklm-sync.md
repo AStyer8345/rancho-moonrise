@@ -487,3 +487,10 @@ NotebookLM CLI returned: Authentication expired or invalid. Run 'notebooklm logi
 2026-05-13 08:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1 — NotebookLM auth expired, run `notebooklm login` to restore
 2026-05-13 12:27 | scanned=64 added=0 replaced=0 skipped=4 errors=1 (auth_expired) — 9th+ day blocked; 64 unsynced files queued in brand/+deal/. State file unchanged so next run after `notebooklm login` will catch up. Skipped git commit — working tree still has unrelated edits + iCloud-duplicate untracked files (" 2.json", " 3.json").
 2026-05-13 16:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1 | AUTH_EXPIRED: notebooklm login required
+
+## 2026-05-13 20:07 — auth failure
+- NotebookLM CLI returned: "Authentication expired or invalid"
+- Action needed: run `notebooklm login` to re-authenticate
+- No files scanned, uploaded, or deleted this run
+
+2026-05-13 20:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1
