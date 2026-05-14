@@ -494,3 +494,5 @@ NotebookLM CLI returned: Authentication expired or invalid. Run 'notebooklm logi
 - No files scanned, uploaded, or deleted this run
 
 2026-05-13 20:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1
+2026-05-14 00:07 | NotebookLM auth expired — 'notebooklm use' redirected to Google auth. Run 'notebooklm login' to re-authenticate. Sync skipped this run.
+2026-05-14 00:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1
