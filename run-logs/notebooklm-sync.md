@@ -509,3 +509,4 @@ Action required (manual): Adam needs to run `/Users/adamstyer/.local/bin/noteboo
 2026-05-14 16:03 | scanned=0 added=0 replaced=0 skipped=0 errors=1 (auth_expired)
 2026-05-15 09:45 | scanned=0 added=0 replaced=0 skipped=0 errors=1 (notebooklm auth expired — run 'notebooklm login')
 2026-05-15 10:10 | scanned=0 added=0 replaced=0 skipped=0 errors=1 (notebooklm auth expired — run 'notebooklm login')
+2026-05-15 12:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1 | NotebookLM auth expired — run 'notebooklm login' to re-authenticate. Skipping sync this run.
