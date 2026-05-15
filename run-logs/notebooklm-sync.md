@@ -500,3 +500,11 @@ NotebookLM CLI returned: Authentication expired or invalid. Run 'notebooklm logi
 
 2026-05-14 12:07 | NotebookLM auth expired — 'notebooklm use' redirected to Google auth. Run 'notebooklm login' to re-authenticate. Sync skipped this run.
 2026-05-14 12:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1
+
+## 2026-05-14 16:03 — AUTH FAILURE
+NotebookLM CLI authentication expired. `notebooklm use` returned: "Authentication expired or invalid. Redirected to: https://accounts.google.com... Run 'notebooklm login' to re-authenticate."
+
+Action required (manual): Adam needs to run `/Users/adamstyer/.local/bin/notebooklm login` to re-auth.
+
+2026-05-14 16:03 | scanned=0 added=0 replaced=0 skipped=0 errors=1 (auth_expired)
+2026-05-15 09:45 | scanned=0 added=0 replaced=0 skipped=0 errors=1 (notebooklm auth expired — run 'notebooklm login')
