@@ -1,5 +1,17 @@
 # Rancho Moonrise — Changelog
 
+## 2026-05-15 (rancho-site-daily) — ItemList JSON-LD on /blog/things-to-do-near-austin-with-kids/
+
+- New `ItemList` JSON-LD block on `site/pages/things-to-do-near-austin-with-kids.html` with 5 `ListItem` items matching the body's destination H2 order (Rancho Moonrise, McKinney Falls State Park, Bastrop State Park — Lost Pines, Hamilton Pool Preserve, Blue Hole Regional Park — Wimberley).
+- URL assignments: position 1 (Rancho Moonrise) → `https://ranchomoonrise.com/`; positions 2–5 → name+description only (no fake URLs claimed for state parks / public preserves / city-managed parks).
+- Unlike 5/13 manor-tx, this page's destination H2s are not numerically prefixed in the body — the curated list shape is implicit. Position assignment matches body order. `itemListOrder` intentionally omitted (editorial host's ordering, not a competitive ranking).
+- Item descriptions distilled from H2 sections (199–222 chars), not mirrored, so each stands on its own when an AI engine extracts one item.
+- Voice-compliant: no banned terms; "36 acres" is property size not unit count; "Lost Pines" and "Wimberley" are destinations not Rancho location descriptors.
+- `BlogPosting.dateModified` 2026-04-29 → 2026-05-15. Sitemap lastmod for the slug 2026-05-09 → 2026-05-15.
+- `npm run validate:site` passes; all 5 JSON-LD blocks parse (BlogPosting, ItemList numberOfItems=5 / itemListElement.length=5 internal consistency, BreadcrumbList 3 crumbs, WebPage Speakable, FAQPage 4 Q&A).
+- Re-Verify Gate: apex 200 `server: Vercel` `x-vercel-cache: HIT`, www 308 → apex, sitemap 200, target + 5/13 prior target + corporate-retreats + safari-tents all 200. 8 still_true, 0 resolved.
+- **Rollout complete:** the 3-post ItemList workstream (weekend-getaways 5/12, manor-tx 5/13, kids today) covers every roundup-format blog post in the cluster.
+
 ## 2026-05-13 (rancho-site-daily) — ItemList JSON-LD on /blog/things-to-do-manor-tx/
 
 - New `ItemList` JSON-LD block on `site/pages/things-to-do-manor-tx.html` with 6 `ListItem` items mirroring the body's "1." through "6." H2 structure (Rancho base, Lake Walter E. Long, live events, Austin day trip, Manor downtown, golden hour on the ranch).
