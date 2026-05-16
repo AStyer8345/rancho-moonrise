@@ -1,5 +1,15 @@
 # Rancho Moonrise — Changelog
 
+## 2026-05-16 (rancho-site-daily) — Hipcamp curation-gap audit shipped
+
+- New file: `brand/2026-05-16-hipcamp-curation-gap-audit.md` (~280 lines). Live-fetched Hipcamp's Austin glamping editorial landing (1.32 MB, 20-property `discoverHipcampLands` carousel) and Rancho's Hipcamp listing (844 KB, parsed Apollo cache); produced a side-by-side comparison identifying why Rancho is excluded.
+- Root cause: listing-configuration, not editorial judgment. Distance is NOT the problem — Rancho 14.7 mi NE of Austin (haversine), peer Webberville listing surfaces at 16.3 mi same direction.
+- 3 structural exclusion flags: `isPrivate: true`, `isReviewable: false` + 0 reviews, `discoverUrl` = TX state not Austin city.
+- 8 content-quality gaps including listing overview missing "glamping" + "safari tent" keywords, 24 photos with empty descriptions, empty `highlights` + `activities` arrays, acreage drift (overview "34", data 37, VOICE-GUIDE 36), voice violation ("unwind with a drink at our bar" — VOICE-GUIDE: bar is event-only).
+- Audit refuses to prescribe "fix it" because `isPrivate: true` may be a deliberate Ashley choice to use Hipcamp as backlink-only — surfaces a one-sentence Ashley question instead. Dependency-ordered unlock sequence included for IF Ashley wants Hipcamp surfacing.
+- No HTML edits, no Hipcamp dashboard changes. New NEEDS ADAM item in CONTEXT.md surfaces the Ashley question.
+- Re-Verify Gate: apex 200 + `server: Vercel` + `x-vercel-cache: HIT`; www 308 → apex; all 9 spot-checked URLs 200; 0 stale claims auto-resolved.
+
 ## 2026-05-16 (rancho-review-monitor) — RUN_030 — Google snippet held 126 @ 4.9★ 5th post-dip run; Hipcamp scrape recovered; Expedia 8.0 inline again; TripAdvisor price floor -$1 to $64-$175
 
 - Scraped 5 platforms; 0 new reviews, 0 response drafts, 0 stale claims auto-resolved.
