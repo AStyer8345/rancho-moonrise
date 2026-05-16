@@ -1,5 +1,16 @@
 # Rancho Moonrise — Changelog
 
+## 2026-05-16 (rancho-review-monitor) — RUN_030 — Google snippet held 126 @ 4.9★ 5th post-dip run; Hipcamp scrape recovered; Expedia 8.0 inline again; TripAdvisor price floor -$1 to $64-$175
+
+- Scraped 5 platforms; 0 new reviews, 0 response drafts, 0 stale claims auto-resolved.
+- Google WebSearch snippet held at 126 @ 4.9★ — 5th consecutive post-dip confirmation; 14-of-15 stable across 30 runs.
+- TripAdvisor live: 0 reviews, unclaimed, **price floor drifted -$1** to $64-$175 (new cumulative floor low; 19-run net floor -$13 / ceiling -$6); Travelers' Choice text NOT property-attributed (8th consecutive run).
+- Hipcamp live-scrape **recovered** after yesterday's one-run "Loading..." dip — 0 reviews / 1 booking / joined March 2024 (identical to RUN_028); stale flag cleared, scrape_failure_count reset 1→0.
+- Expedia 8.0 rating **inline again** — recovers from RUN_029's one-run absence (mirrors RUN_021→RUN_022 pattern); 8 of last 9 runs inline.
+- Facebook 5/100% recommend stable — 12th consecutive run after RUN_018 dip.
+- 3 BLOCKERS open at run 30 (google-reviews-count, hotels-com-direct-fetch, airbnb-listing-existence); failure counters bumped.
+- FLAG_FOR_ADAM stays deescalated — durable fix unchanged (Adam GBP dashboard 60s or Places API key).
+
 ## 2026-05-15 (rancho-site-daily) — ItemList JSON-LD on /blog/things-to-do-near-austin-with-kids/
 
 - New `ItemList` JSON-LD block on `site/pages/things-to-do-near-austin-with-kids.html` with 5 `ListItem` items matching the body's destination H2 order (Rancho Moonrise, McKinney Falls State Park, Bastrop State Park — Lost Pines, Hamilton Pool Preserve, Blue Hole Regional Park — Wimberley).

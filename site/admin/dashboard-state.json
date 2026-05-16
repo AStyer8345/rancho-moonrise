@@ -1,8 +1,8 @@
 {
   "review_monitor": {
-    "last_run": "2026-05-15T11:30:00Z",
+    "last_run": "2026-05-16T11:30:00Z",
     "status": "ok",
-    "status_reason": "RUN_029. Catch-up: yesterday's RUN_028 wrote aggregate + dashboard-state but was never committed (no rancho-review-monitor commit between 5/13 RUN_027 and today); RUN_029 supersedes those orphaned values. Run numbering jumps 027 → 029. **Google count snippet HELD at 126 @ 4.9★ — 4th consecutive post-dip confirmation (RUN_026/027/028/029).** Pattern across 29 runs: 126→175→126→175→126→126→126→126→126→126→126→126→126→ABSENT→126→126→126→126 — 13-of-14 stable with one mid-stretch dip; recovery is four-for-four. The true count remains unknown from live scrape (BLOCKER 29th); snippet still lower-confidence given three prior flips between 126 and 175. FLAG_FOR_ADAM stays deescalated — durable fix unchanged (Adam dashboard 60s or Places API key ~5 min). No review-related done-log entries since RUN_011 — unreplied=0 maintained on done-log signal. TripAdvisor live-confirmed 0 reviews, unclaimed; Travelers' Choice text continues NOT attributed (SEVENTH consecutive run). **TripAdvisor price REVERTED — $65-$178 → $65-$175** (ceiling -$3, fully reverses RUN_028's one-run ceiling +$3 bump; back to RUN_027 levels). 18-run net drift floor $77→$65 / ceiling $181→$175. **Hipcamp live-scrape FAILED today** — WebFetch returned 'Loading...' on both attempts (JS render gap, first such failure; aggregate retains RUN_028 values, tagged STALE:2026-05-14). Facebook 5/100% recommend stable — 11th consecutive run after RUN_018 dip. **Expedia 8.0 rating value NOT inline this run** — first absence after SEVEN consecutive inline confirmations (mirrors RUN_021 one-run dip). Hotels.com listing ho2867109568 still active; Hotels.com direct fetch BLOCKER ongoing (29th). Airbnb 403 BLOCKER ongoing (29th). The Knot listing in result list but no count detail re-surfaced — 4 consecutive runs without count.",
+    "status_reason": "RUN_030. **Google count snippet HELD at 126 @ 4.9★ — 5th consecutive post-dip confirmation (RUN_026/027/028/029/030).** Pattern across 30 runs: 126→175→126→175→126→126→126→126→126→126→126→126→126→ABSENT→126→126→126→126→126 — 14-of-15 stable with one mid-stretch dip; recovery is five-for-five. The true count remains unknown from live scrape (BLOCKER 30th); snippet still lower-confidence given three prior flips between 126 and 175. FLAG_FOR_ADAM stays deescalated — durable fix unchanged (Adam dashboard 60s or Places API key ~5 min). No review-related done-log entries since RUN_011 — unreplied=0 maintained on done-log signal. TripAdvisor live-confirmed 0 reviews, unclaimed; Travelers' Choice text continues NOT attributed (EIGHTH consecutive run). **TripAdvisor price DRIFTED — $65-$175 → $64-$175** (floor -$1, ceiling unchanged — biggest cumulative floor drop since drift tracking began at $77). 19-run net drift floor $77→$64 / ceiling $181→$175 (floor net -$13, ceiling net -$6). **Hipcamp live-scrape RECOVERED** — WebFetch succeeded both attempts after yesterday's one-run 'Loading...' dip. Confirmed identical to RUN_028 state; stale flag cleared, scrape_failure_count reset 1→0. **Expedia 8.0 INLINE again** — recovers from RUN_029's one-run absence (mirrors RUN_021→RUN_022 pattern). Facebook 5/100% recommend stable — 12th consecutive run after RUN_018 dip. Hotels.com listing ho2867109568 still active; Hotels.com direct fetch BLOCKER ongoing (30th). Airbnb 403 BLOCKER ongoing (30th). The Knot listing in result list but no count detail re-surfaced — 5 consecutive runs without count.",
     "new_reviews_pending_response": 0,
     "total_reviews_tracked": 132,
     "unreplied_by_platform": {
@@ -12,17 +12,17 @@
       "tripadvisor": 0,
       "facebook": 0
     },
-    "stale_platforms": ["google", "expedia", "hipcamp"],
+    "stale_platforms": ["google", "expedia"],
     "flags": [
-      "google-search-snippet-stable-four-runs-post-dip",
+      "google-search-snippet-stable-five-runs-post-dip",
       "airbnb-listing-existence-unverified",
-      "google-live-scrape-blocked-29-runs",
-      "hotels-com-fetch-timeout-29-runs",
-      "expedia-rating-value-not-inline-after-seven-consecutive-runs",
-      "tripadvisor-price-ceiling-reverted-fully",
-      "tripadvisor-travelers-choice-text-not-property-attributed-seventh-run",
-      "hipcamp-live-scrape-failed-one-run-observability-dip",
-      "facebook-stable-eleventh-consecutive-run"
+      "google-live-scrape-blocked-30-runs",
+      "hotels-com-fetch-timeout-30-runs",
+      "expedia-rating-value-inline-recovered-after-one-run-absence",
+      "tripadvisor-price-floor-new-low-64",
+      "tripadvisor-travelers-choice-text-not-property-attributed-eighth-run",
+      "hipcamp-live-scrape-recovered-stale-flag-cleared",
+      "facebook-stable-twelfth-consecutive-run"
     ],
     "blockers": [
       "google-reviews-count",
@@ -30,6 +30,6 @@
       "airbnb-listing-existence"
     ],
     "new_platforms_noted": ["yelp", "agoda", "the_knot"],
-    "run_number": 29
+    "run_number": 30
   }
 }
