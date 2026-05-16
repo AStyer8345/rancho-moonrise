@@ -512,3 +512,8 @@ Action required (manual): Adam needs to run `/Users/adamstyer/.local/bin/noteboo
 2026-05-15 12:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1 | NotebookLM auth expired — run 'notebooklm login' to re-authenticate. Skipping sync this run.
 2026-05-15 16:07 | ERROR: NotebookLM authentication expired — sync skipped. Run 'notebooklm login' to re-authenticate.
 2026-05-15 16:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1 (auth expired)
+2026-05-15 20:08 | scanned=74 added=0 replaced=0 skipped=10 errors=1 (auth_expired — 10 new files queued, run 'notebooklm login' to re-auth)
+
+2026-05-15 20:11 | DANGEROUS GIT STATE: 1,034 files staged for deletion in rancho-moonrise repo (index shows D on all tracked files; working tree intact as untracked). NOT committing log/state — would sweep deletions through. Next run will pick up after Adam resolves: `git -C /Users/adamstyer/Documents/rancho-moonrise reset HEAD` to unstage the deletions (working tree files are safe).
+2026-05-16 00:07 | ERROR: NotebookLM authentication expired. Run 'notebooklm login' to re-authenticate. Skipped sync.
+2026-05-16 00:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1
