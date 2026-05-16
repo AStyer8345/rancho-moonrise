@@ -519,3 +519,5 @@ Action required (manual): Adam needs to run `/Users/adamstyer/.local/bin/noteboo
 2026-05-16 00:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1
 2026-05-16 04:08 | scanned=0 added=0 replaced=0 skipped=0 errors=1 (auth_expired — 4th day; sync log only, no git commit due to unrelated modifications in working tree)
 2026-05-16 08:11 | scanned=64 added=0 replaced=0 skipped=3 errors=0
+2026-05-16 12:11 | ERROR: NotebookLM auth expired — run 'notebooklm login'. Sync skipped.
+2026-05-16 12:11 | scanned=0 added=0 replaced=0 skipped=0 errors=1
