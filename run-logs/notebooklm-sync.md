@@ -525,3 +525,4 @@ Action required (manual): Adam needs to run `/Users/adamstyer/.local/bin/noteboo
 2026-05-16 16:11 | scanned=0 added=0 replaced=0 skipped=0 errors=1 (auth_expired — run '/Users/adamstyer/.local/bin/notebooklm login' to re-auth; 5th day in this state)
 2026-05-17 00:16 | scanned=0 added=0 replaced=0 skipped=0 errors=1 (auth_expired — 6th day; run '/Users/adamstyer/.local/bin/notebooklm login' to re-auth)
 2026-05-17 04:15 | scanned=0 added=0 replaced=0 skipped=0 errors=1 (auth_expired — 7th day; run '/Users/adamstyer/.local/bin/notebooklm login' to re-auth)
+2026-05-17 07:00 | scanned=0 added=0 replaced=0 skipped=0 errors=1 (auth_expired — 8th day; run '/Users/adamstyer/.local/bin/notebooklm login' to re-auth; sync has been blocked since 2026-05-10)
