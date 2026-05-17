@@ -1,5 +1,15 @@
 # Rancho Moonrise — Changelog
 
+## 2026-05-17 (rancho-review-monitor) — RUN_031 — Google snippet held 126 @ 4.9★ 6th post-dip run; Hipcamp scrape 2nd clean run; Expedia 8.0 inline 2nd run; TripAdvisor ceiling -$1 new cumulative low
+
+- Scraped 5 platforms; 0 new reviews, 0 response drafts, 0 stale claims auto-resolved.
+- Google WebSearch snippet held at 126 @ 4.9★ — 6th consecutive post-dip confirmation; 15-of-16 stable across 31 runs.
+- TripAdvisor live: 0 reviews, unclaimed, **price ceiling drifted -$1** to $64-$174 (new cumulative ceiling low; 20-run net floor -$13 / ceiling -$7); Travelers' Choice text NOT property-attributed (9th consecutive run).
+- Hipcamp live-scrape **success — 2nd consecutive clean run** since RUN_029 one-run dip — 0 reviews / 1 booking / joined March 2024 (identical to RUN_028/030).
+- Expedia 8.0 rating **inline for 2nd consecutive run** — confirms RUN_030's recovery from RUN_029's one-run absence; 9 of last 10 runs inline.
+- Facebook 5/100% recommend stable — 13th consecutive run after RUN_018 dip.
+- 3 BLOCKERS unchanged: google-reviews-count (31 runs, JS-rendered), hotels-com-direct-fetch (31 runs), airbnb-listing-existence (31 runs, 403). FLAG_FOR_ADAM stays deescalated.
+
 ## 2026-05-16 (rancho-site-daily) — Hipcamp curation-gap audit shipped
 
 - New file: `brand/2026-05-16-hipcamp-curation-gap-audit.md` (~280 lines). Live-fetched Hipcamp's Austin glamping editorial landing (1.32 MB, 20-property `discoverHipcampLands` carousel) and Rancho's Hipcamp listing (844 KB, parsed Apollo cache); produced a side-by-side comparison identifying why Rancho is excluded.
