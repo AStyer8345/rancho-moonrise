@@ -1,9 +1,9 @@
 # Rancho Moonrise — TODO
-Last updated: 2026-05-16 (rancho-site-daily — Hipcamp curation-gap audit shipped at `brand/2026-05-16-hipcamp-curation-gap-audit.md`. New NEEDS ADAM item surfaces a one-sentence strategic question for Ashley: is Hipcamp intentionally an SEO-presence-only listing, or do we want bookings from it?)
+Last updated: 2026-05-17 (rancho-site-daily — `wordCount` enrichment on BlogPosting JSON-LD shipped across the 17-post blog cluster. Pre-scoped slot from 5/16. Schema-only, no body changes. Total cluster wordCount: 22,083; range 1,005–1,993. Validates clean. Next autonomous slot pre-scoped: `articleSection` enrichment.)
 
 ## 🔥 NEEDS ADAM (highest leverage this week)
 
-1. **GSC sitemap submit (Priority 1 — 4th consecutive week, urgency escalating).** DNS live 16 days. `/corporate-retreats/` live 15 days, still NOT in "corporate retreat near austin texas" top 10. The Yurtopian's equivalent page out-ages it daily. Submit `https://ranchomoonrise.com/sitemap.xml` in Search Console and request indexing on `/corporate-retreats/`, `/safari-tents-near-austin/`, and apex.
+1. **GSC sitemap submit (Priority 1 — 5th consecutive week, urgency escalating).** DNS live 17 days. `/corporate-retreats/` live 16 days, still NOT in "corporate retreat near austin texas" top 10. The Yurtopian's equivalent page out-ages it daily. Submit `https://ranchomoonrise.com/sitemap.xml` in Search Console and request indexing on `/corporate-retreats/`, `/safari-tents-near-austin/`, and apex.
 2. **Hipcamp strategy question for Ashley (NEW — surfaced by 2026-05-16 audit).** Read `brand/2026-05-16-hipcamp-curation-gap-audit.md`. The TL;DR is: Rancho is excluded from Hipcamp's Austin glamping editorial landing by 3 structural listing flags (`isPrivate: true`, `isReviewable: false`, state-level `discoverUrl`) plus 8 content gaps. The audit refuses to prescribe "fix it" because `isPrivate: true` may be a deliberate Ashley choice. One question for Ashley: **"Is the Hipcamp listing intentionally private — SEO presence only — or do we want bookings from it?"** If yes (intentional) → close the Hipcamp "Gap" on improvement-plan.html. If no → execute the dependency-ordered unlock sequence in Section 4B of the audit. Two voice/data fixes worth doing regardless: acreage drift in the listing copy ("34-acre" vs VOICE-GUIDE's 36) and a voice violation ("unwind with a drink at our bar" — VOICE-GUIDE says bar is event-only).
 3. **ResortPass — pick a side this week.** Lucky Arrow has REMOVED the May 1 reactivation promise from their listing page entirely (confirmed via WebFetch May 11). Public timeline pressure is dead. The April 27 "48 hours" and May 4 "extended window" framings have both been wrong. Right framing now: the door has been open since April 6, stop letting this drift. Submit or move to "deferred."
 4. **Hotels.com listing copy fix (~15 min).** Listing ho2867109568 surfaces "20 luxury cabins and safari tents that can accommodate up to 50 guests" in the brand SERP description. Per VOICE-GUIDE.md, no specific unit counts. The Vercel site itself does NOT contain this copy — this is a third-party listing problem. Fastest external-SERP cleanup available.
@@ -21,6 +21,29 @@ Last updated: 2026-05-16 (rancho-site-daily — Hipcamp curation-gap audit shipp
 - **Per-unit accommodation pages remain blocked on low-res source JPGs** (Adam re-upload). The Retreat on the Hill (11) + Green Acres (8) + Lucky Arrow (5+) all reinforce the multi-URL pattern.
 
 
+
+## ✅ DONE 2026-05-17 — `wordCount` enrichment across 17-post BlogPosting JSON-LD cluster
+
+Pre-scoped by 5/16 run-log as the cleanest next autonomous slot. Cluster-wide schema-only edit. `wordCount` is a schema.org `Article` property supported by all major engines and useful for AEO "how long is this article" intent — particularly relevant for AI-engine result framing ("a 1,200-word guide to…"). Until today, every BlogPosting block on the site lacked it.
+
+1. **Audit (pre-edit).** 17 pages with `"@type": "BlogPosting"` JSON-LD; 0 had `wordCount`.
+2. **Word-count method.** Regex-based article extraction: preferred `<article>` (10 pages), fell back to `<main>` (7 pages). Stripped `<script>/<style>/<nav>/<header>/<footer>/<aside>` before counting to avoid chrome bloat. Token pattern `[A-Za-z0-9][A-Za-z0-9'’\-]*` — punctuation-tolerant, contraction-friendly.
+3. **Schema edit (17 pages).** Inserted `"wordCount": NNNN,` between `"dateModified"` and `"url"` in each BlogPosting JSON-LD block. Bumped `dateModified` to `2026-05-17` on all 17 (schema actually changed today).
+4. **Word counts.** Range 1,005–1,993. Median ~1,256. Total cluster 22,083 words. No post dips below the 1,000-word "thin content" floor that Google has historically flagged in core-update post-mortems.
+5. **Sitemap.** Synced `<lastmod>` to `2026-05-17` for all 17 blog URLs.
+6. **Validation.** `npm run validate:site` passes. All 17 BlogPosting JSON-LD blocks parse-valid via `python3 json.loads`; all carry `"wordCount": <int>` and `"dateModified": "2026-05-17"`.
+7. **Diff.** 18 files, 51 insertions, 34 deletions — surgical. Pre-existing prior-session changes in styles.css/main.js/weddings.html/contact.html/api/inquiry.js intentionally NOT staged (5/7–5/16 convention).
+8. **Voice / data compliance.** No body content changed. `wordCount` is computed from existing body text; no new copy was written. VOICE-GUIDE compliance unchanged.
+9. **Accuracy note.** 7 pages without an `<article>` wrapper count FAQ accordion + Related Reading list contents because those are inside `<main>`. Consistent extraction rule; FAQ/Related-Reading copy IS substantive answer content engines parse. Dominant body sections still dominate the count; no post over-counted by more than ~50–100 words.
+10. **Re-Verify Gate (live).** apex 200 + `server: Vercel` + `x-vercel-cache: HIT`; www 308 → apex; sitemap 200; `/corporate-retreats/` 200; `/safari-tents-near-austin/` 200; all 17 BlogPosting pages still parse-verified after edits. 6/6 verified claims still_true; 0 stale claims auto-resolved.
+11. **Improvement-plan mapping.** This work does NOT map to any of the 8 named SEO task IDs (s1–s8). `wordCount` is post-level Article schema, distinct from s3 (internal linking), s4 (Breadcrumb + Speakable), or s7 (AEO measurement). No done-log entry.
+
+**Future autonomous candidates** (in priority order):
+- **`articleSection` enrichment on BlogPosting JSON-LD.** Cluster-wide, autonomous, schema.org-recognized. Would categorize each post under "Weddings" / "Corporate Retreats" / "Glamping" / "Things to Do" / "Bachelorette" / "Events". Useful for AI-engine topic classification.
+- **Image schema enrichment.** BlogPosting `"image"` fields are currently URL strings; schema.org prefers `ImageObject` with `width`/`height`. Dimensions are available from the WebP responsive ladder. Autonomous, surgical.
+- AEO baseline measurement (rancho-seo-s7) — still deferred until apex is in Google's index; signal is low pre-GSC-submit.
+- Author Person schema for BlogPosting JSON-LD — BLOCKED on `NEEDS ADAM` author-byline decision (Adam vs. Ashley vs. team byline).
+- Promote `/corporate-retreats/` into main nav (currently footer only) — needs Adam confirm.
 
 ## ✅ DONE 2026-05-13 — ItemList JSON-LD on `/blog/things-to-do-manor-tx/` (6 numbered destinations)
 

@@ -1,5 +1,19 @@
 # Rancho Moonrise — Changelog
 
+## 2026-05-17 (rancho-site-daily) — `wordCount` enrichment shipped across 17-post BlogPosting JSON-LD cluster
+
+- Pre-scoped slot from 5/16. Surgical schema-only — no body content changed.
+- Added `"wordCount": NNNN,` to BlogPosting JSON-LD on all 17 blog cluster posts. Inserted between `dateModified` and `url` for stable placement.
+- Word-count method: regex-based article extraction (preferred `<article>`, fell back to `<main>` on 7 pages), stripped `<script>/<style>/<nav>/<header>/<footer>/<aside>` before counting; token pattern `[A-Za-z0-9][A-Za-z0-9'’\-]*` for contraction-tolerance.
+- Range 1,005–1,993 words. Median ~1,256. Total cluster 22,083. No post dips below the 1,000-word "thin content" floor.
+- `BlogPosting.dateModified` bumped to 2026-05-17 on all 17 posts (schema actually changed today).
+- sitemap.xml `<lastmod>` synced to 2026-05-17 for all 17 blog URLs.
+- `npm run validate:site` passes. All 17 BlogPosting JSON-LD blocks parse-valid via `python3 json.loads`.
+- Diff: 18 files, 51 insertions, 34 deletions. Pre-existing prior-session changes in styles.css/main.js/weddings.html/contact.html/api/inquiry.js intentionally NOT staged (5/7–5/16 convention).
+- Re-Verify Gate live: apex 200 + Vercel + cache HIT, www 308 → apex, sitemap 200, all 17 BlogPosting pages still reachable. 6/6 still_true; 0 resolved.
+- Improvement-plan mapping: NONE — `wordCount` is post-level Article schema, distinct from s3 (internal linking), s4 (Breadcrumb + Speakable), s7 (AEO measurement).
+- Next slot pre-scoped: `articleSection` enrichment on BlogPosting JSON-LD — cluster-wide, autonomous, useful for AI-engine topic classification.
+
 ## 2026-05-17 (rancho-review-monitor) — RUN_031 — Google snippet held 126 @ 4.9★ 6th post-dip run; Hipcamp scrape 2nd clean run; Expedia 8.0 inline 2nd run; TripAdvisor ceiling -$1 new cumulative low
 
 - Scraped 5 platforms; 0 new reviews, 0 response drafts, 0 stale claims auto-resolved.
