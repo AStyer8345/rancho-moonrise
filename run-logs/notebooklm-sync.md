@@ -528,3 +528,4 @@ Action required (manual): Adam needs to run `/Users/adamstyer/.local/bin/noteboo
 2026-05-17 07:00 | scanned=0 added=0 replaced=0 skipped=0 errors=1 (auth_expired — 8th day; run '/Users/adamstyer/.local/bin/notebooklm login' to re-auth; sync has been blocked since 2026-05-10)
 2026-05-17 12:09 | scanned=65 added=0 replaced=0 skipped=3 errors=1 (auth_expired — 8th day; 1 new file queued: brand/2026-05-16-hipcamp-curation-gap-audit.md; run '/Users/adamstyer/.local/bin/notebooklm login' to re-auth)
 2026-05-17 16:08 | scanned=72 added=0 replaced=0 skipped=0 errors=1 — AUTH EXPIRED: run `notebooklm login` to re-authenticate. State file NOT updated; sync deferred to next run.
+2026-05-17 23:30 | scanned=65 added=0 replaced=0 skipped=4 errors=1 — AUTH EXPIRED (9th day blocked): 1 new file queued (brand/2026-05-16-hipcamp-curation-gap-audit.md); run `/Users/adamstyer/.local/bin/notebooklm login` to re-auth. State file NOT updated; sync deferred.
