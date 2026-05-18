@@ -1,5 +1,17 @@
 # Rancho Moonrise — Changelog
 
+## 2026-05-18 (rancho-competitive-weekly) — Two material findings; multi-week framings shift
+
+- **🚨 Rancho Moonrise has a LIVE ResortPass listing.** `resortpass.com/hotels/rancho-moonrise` exists with correct address (20117 Lockwood Rd, Manor, TX 78653), 3-star designation, pool hours 10am–6pm, copy "Escape to Rancho Moonrise's pool for a rejuvenating day!" Listing is dormant — "no active products at the moment." Five-week "should we submit?" framing was the wrong question. Decision moves from "submit or not" to "activate or kill."
+- **🟢 Google has started indexing the apex.** `site:ranchomoonrise.com` returns at least 11 indexed pages (apex, host-your-event, events, accommodations, policies, videos, 2 blog posts, 2 event subpages, 1 testimonial category). Still NOT indexed: `/corporate-retreats/` (17d uncrawled), `/safari-tents-near-austin/` (22d uncrawled), the `/blog/` index. The "DNS live, apex not yet crawled" framing of the past 4 weeks is no longer accurate. Re-frame GSC submit as "request indexing on the specific uncrawled URLs."
+- **Safari for the Soul brand mix shift.** Live site reads "over 6-acres at both properties in Spicewood and Marble Falls, TX." Breakdown: 1 safari tent (Cosmic Nights) + 4 yurts (Moonlight Magic, Starry Nights, Sabi Nights, Tentation). Direct competitor on safari-tent SERP transitioning away from safari tents. SERP snippet still lags.
+- **Walden Retreats SERP-copy refresh.** "15 luxury safari tents (7 suites + 8 studios)" SERP-dominant framing removed from live site. New copy: "15 luxury glamping tents, designed for comfort in nature. Each sleeps 2-4 people." Less specific.
+- **Corporate retreat SERP refreshed.** 3 new entrants (Moniker Partners — planning agency not venue, two slots; Peaceful Waters Retreat Center — La Grange 53 ac 40-cap; Texas Old Town — Kyle ~20 min). 3 drop-outs (Crystal Creek, Austin Luxury Retreat, Sage Hill `/hill-country/` subpage). The Yurtopian's `/corporate-retreats-in-texas-hill-country/` no longer in top-10.
+- **Spoon Mountain content-marketing page has one-week SERP half-life.** Their `/romantic-weekend-getaways-near-austin/` "Ultimate 2026 Guide" was flagged May 11 as a leading indicator. Today it has dropped out of the `weekend getaway near austin glamping` top-10 after exactly one week. The "competitor research-intent content is winning" framing weakens.
+- 10 of 12 prior-week claims STILL TRUE on live re-verification. 2 STATE CHANGES (Safari for the Soul, Walden Retreats). 0 stale claims auto-resolved.
+- Wrote `site/competitive-intelligence.md` for May 18. Dual-wrote Intel tab card to `site/improvement-plan.html` (sovereign) and `client-ops/clients/rancho-moonrise/improvement-plan.html` (mirror).
+- Re-Verify Gate (live): apex 200 + `server: Vercel` + `x-vercel-cache: HIT`; sitemap 200; `/corporate-retreats/` 200; `/safari-tents-near-austin/` 200.
+
 ## 2026-05-17 (rancho-site-daily) — `wordCount` enrichment shipped across 17-post BlogPosting JSON-LD cluster
 
 - Pre-scoped slot from 5/16. Surgical schema-only — no body content changed.
