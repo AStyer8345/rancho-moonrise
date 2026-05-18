@@ -1,5 +1,13 @@
 # Rancho Moonrise — Changelog
 
+## 2026-05-18 (rancho-review-monitor) — RUN_032: Google snippet 7th post-dip hold; TripAdvisor floor new low
+
+- Google count snippet HELD at 126 @ 4.9★ — 7th consecutive post-dip confirmation. Pattern across 32 runs: 16-of-17 stable with one mid-stretch ABSENT (RUN_025). FLAG_FOR_ADAM deescalation maintained; authoritative live scrape still BLOCKER (32nd consecutive).
+- TripAdvisor live-scraped: 0 reviews, unclaimed, Travelers' Choice text NOT property-attributed (10th consecutive run). **Price DRIFTED $64-$174 → $63-$174** (floor -$1 to new cumulative low; ceiling unchanged). 21-run net floor $77→$63 (-$14), ceiling $181→$174 (-$7).
+- Hipcamp live-scrape SUCCESS (3rd consecutive clean run): 0 reviews, "Be the first to review", "Booked 1 time", host "Rancho M.", joined March 2024.
+- Expedia 8.0 INLINE 3rd consecutive run (10 of last 11). Facebook 5/100% stable 14th consecutive run. Hotels.com + Airbnb direct-fetch BLOCKERS ongoing (32nd). The Knot listing in result list, no count detail re-surfaced (7th consecutive run).
+- Unreplied=0 maintained on done-log signal. 0 stale claims auto-resolved.
+
 ## 2026-05-18 (rancho-competitive-weekly) — Two material findings; multi-week framings shift
 
 - **🚨 Rancho Moonrise has a LIVE ResortPass listing.** `resortpass.com/hotels/rancho-moonrise` exists with correct address (20117 Lockwood Rd, Manor, TX 78653), 3-star designation, pool hours 10am–6pm, copy "Escape to Rancho Moonrise's pool for a rejuvenating day!" Listing is dormant — "no active products at the moment." Five-week "should we submit?" framing was the wrong question. Decision moves from "submit or not" to "activate or kill."
