@@ -1,5 +1,13 @@
 # Rancho Moonrise — Changelog
 
+## 2026-05-19 (rancho-review-monitor) — RUN_033: Google snippet 8th post-dip hold; TripAdvisor ceiling rebounded $174→$178
+
+- Google count snippet HELD at 126 @ 4.9★ — 8th consecutive post-dip confirmation (RUN_026-033). Pattern across 33 runs: 17-of-18 stable with one mid-stretch ABSENT (RUN_025). FLAG_FOR_ADAM deescalation maintained; authoritative live scrape still BLOCKER (33rd consecutive).
+- TripAdvisor live-scraped: 0 reviews, unclaimed, Travelers' Choice text NOT property-attributed (11th consecutive run). **Price DRIFTED $63-$174 → $63-$178** (floor unchanged at $63 cumulative low; ceiling +$4 — biggest single-run ceiling move in 11 runs, returns to pre-decline $178 last seen RUN_028). 22-run net drift floor $77→$63 (-$14), ceiling $181→$178 (-$3, erosion narrowed from -$7).
+- Hipcamp live-scrape SUCCESS (4th consecutive clean run): 0 reviews, "Be the first to review", "This place has been booked 1 time.", host "Rancho M.", joined March 2024.
+- Expedia 8.0 INLINE 4th consecutive run (11 of last 12). Facebook 5/100% stable 15th consecutive run. Hotels.com + Airbnb direct-fetch BLOCKERS ongoing (33rd). The Knot listing in result list, no count detail re-surfaced (8th consecutive run).
+- Unreplied=0 maintained on done-log signal. 0 stale claims auto-resolved.
+
 ## 2026-05-18 (rancho-review-monitor) — RUN_032: Google snippet 7th post-dip hold; TripAdvisor floor new low
 
 - Google count snippet HELD at 126 @ 4.9★ — 7th consecutive post-dip confirmation. Pattern across 32 runs: 16-of-17 stable with one mid-stretch ABSENT (RUN_025). FLAG_FOR_ADAM deescalation maintained; authoritative live scrape still BLOCKER (32nd consecutive).
