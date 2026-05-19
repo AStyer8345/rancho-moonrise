@@ -547,3 +547,11 @@ Action required (manual): Adam needs to run `/Users/adamstyer/.local/bin/noteboo
 - Action needed: Adam runs `/Users/adamstyer/.local/bin/notebooklm login` to restore Google auth
 
 2026-05-19 12:07 | scanned=0 added=0 replaced=0 skipped=75 errors=1 reason=auth_expired
+
+## 2026-05-19 16:07 — auth failure
+- NotebookLM authentication expired (run 'notebooklm login' to re-auth)
+- Detected 1 new file pending sync: 2026-05-16-hipcamp-curation-gap-audit.md
+- Skipped (>10MB): PRIVATE EVENTS AT RANCHO MOONRISE.pdf, INTIMATE EVENTS AT RM.pdf, ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf
+- State file NOT updated — pending file will retry on next run after re-auth
+
+2026-05-19 16:07 | scanned=65 added=0 replaced=0 skipped=3 errors=1
