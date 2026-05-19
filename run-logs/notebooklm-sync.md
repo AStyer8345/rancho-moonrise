@@ -539,3 +539,11 @@ Action required (manual): Adam needs to run `/Users/adamstyer/.local/bin/noteboo
 2026-05-19 04:08 | scanned=65 added=0 replaced=0 skipped=3 errors=1 — AUTH EXPIRED (blocked since 2026-05-10): 1 new file queued (brand/2026-05-16-hipcamp-curation-gap-audit.md); run `/Users/adamstyer/.local/bin/notebooklm login` to re-auth. State file NOT updated; sync deferred.
 2026-05-19 08:07 | ERROR: NotebookLM authentication expired — run 'notebooklm login' to re-authenticate. Sync skipped.
 2026-05-19 08:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1
+
+## 2026-05-19 12:07 — auth expired, sync skipped
+- NotebookLM CLI returned: "Authentication expired or invalid. Run 'notebooklm login' to re-authenticate."
+- 75 eligible files in brand/ + deal/ not synced this run
+- No state file modified, no uploads attempted
+- Action needed: Adam runs `/Users/adamstyer/.local/bin/notebooklm login` to restore Google auth
+
+2026-05-19 12:07 | scanned=0 added=0 replaced=0 skipped=75 errors=1 reason=auth_expired
