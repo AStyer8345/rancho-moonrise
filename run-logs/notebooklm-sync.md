@@ -555,3 +555,13 @@ Action required (manual): Adam needs to run `/Users/adamstyer/.local/bin/noteboo
 - State file NOT updated — pending file will retry on next run after re-auth
 
 2026-05-19 16:07 | scanned=65 added=0 replaced=0 skipped=3 errors=1
+
+## 2026-05-19 20:07 — auth failure
+
+NotebookLM CLI returned: "Authentication expired or invalid. Redirected to Google sign-in."
+Detected 1 new file pending upload: `brand/2026-05-16-hipcamp-curation-gap-audit.md`
+State file NOT updated — file will be re-detected on next run after Adam runs `notebooklm login`.
+
+```
+2026-05-19 20:07 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth)
+```
