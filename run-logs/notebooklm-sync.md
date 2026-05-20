@@ -576,3 +576,13 @@ State file NOT updated — file will re-sync on next run after Adam runs `notebo
 ```
 2026-05-20 10:01 | scanned=0 added=0 replaced=0 skipped=0 errors=1 (auth)
 ```
+
+## 2026-05-20 (scheduled run) — auth failure (5th consecutive)
+
+NotebookLM CLI still returning: "Authentication expired or invalid. Redirected to Google sign-in."
+Adam needs to run: `notebooklm login`
+State file NOT updated — pending file `brand/2026-05-16-hipcamp-curation-gap-audit.md` (and any newer changes) will re-sync once auth is restored.
+
+```
+2026-05-20 | scanned=0 added=0 replaced=0 skipped=0 errors=1 (auth)
+```
