@@ -1,5 +1,16 @@
 # Rancho Moonrise — Changelog
 
+## 2026-05-20 (rancho-review-monitor) — RUN_035 + retro-logged RUN_034
+
+- **Retro-log RUN_034 (2026-05-19):** RUN_034 produced a full report + GBP live snapshot + CONTEXT.md update yesterday but did not write a session-log entry and did not commit/push before its session ended. Backfilled to `tasks/review-monitor/session-log.md` and committing artifacts together with today's work to restore a continuous chain. RUN_034 material findings: **Google live=130/4.9★** (Chrome-verified via GBP dashboard; +5 vs. April 9 baseline 125, +4 vs. WebSearch snippet "126" that RUN_026-033 was anchoring on — snippet was lagging live exactly as SKILL.md anticipated); **Cassie Butterfield 5★ corporate-retreat Google review unreplied** (drafted); **Haylee L. 1★ on The Knot from 2026-02-26 surfaced as ~12 weeks unreplied** (drafted with edit-flag). The Knot moved IN SCOPE for the monitor. Apify cache absent (raw-data/ empty pre-run).
+- **RUN_035 (2026-05-20):** Quiet platform sweep — no new reviews on any monitorable platform. Both RUN_034 drafts CARRY FORWARD UNPOSTED — done-log signal: no review-related entry since `rancho-review-replies` RESOLVED 2026-04-15 22:12. Cassie Butterfield (Google 5★, ~5 days old) + Haylee L. (Knot 1★, ~12 weeks unreplied) both still presumed un-replied. No new drafts written; existing drafts in `brand/review-reports/2026-05-19-review-report.md` are still the live work product.
+- TripAdvisor live-scraped: 0 reviews, unclaimed, **price ceiling DRIFTED $63-$178 → $63-$179** (+$1 ceiling — first $179 since RUN_024 four weeks ago); floor unchanged at $63 cumulative low. 23-run net drift floor $77→$63 (-$14), ceiling $181→$179 (-$2 — erosion narrowed from -$3 RUN_033/034). Travelers' Choice text continues NOT attributed to Rancho (12th consecutive run after RUN_023 reframing).
+- Hipcamp live-scrape SUCCESS (5th consecutive clean run): 0 reviews, "Be the first to review", "Booked 1 time" (singular), host "Rancho M.", joined March 2024. Voice/data violations '34-acre' + 'drink at our bar' still present.
+- Expedia 8.0 INLINE 5th consecutive run (12 of last 13). Facebook 5/100% INLINE 16th consecutive run.
+- **The Knot direct WebFetch timed out 2x today** — first failure since RUN_034 succeeded; not yet a 3-consecutive blocker. Haylee L. review text still surfaces via WebSearch confirming the review is still live; owner-reply state unverifiable today (no Rancho-Moonrise-attributed owner response indexed in search results).
+- Hotels.com BLOCKER ongoing (34th, no live attempt). Airbnb 403 BLOCKER ongoing (34th, no live attempt). Apify GBP pull still not run — reviewer-removal detection still dormant.
+- Status: ok → **pending** (2 unreplied drafts outstanding, no count drops, no ≤3★ rating drop). 0 stale claims auto-resolved.
+
 ## 2026-05-19 (rancho-review-monitor) — RUN_033: Google snippet 8th post-dip hold; TripAdvisor ceiling rebounded $174→$178
 
 - Google count snippet HELD at 126 @ 4.9★ — 8th consecutive post-dip confirmation (RUN_026-033). Pattern across 33 runs: 17-of-18 stable with one mid-stretch ABSENT (RUN_025). FLAG_FOR_ADAM deescalation maintained; authoritative live scrape still BLOCKER (33rd consecutive).

@@ -1312,3 +1312,96 @@ Claims enumerated from persistent surfaces and re-verified:
 **Stale claims auto-resolved:** 0 (no done-log writes — nothing crossed from claimed to resolved this run).
 
 **No new reviews; no response drafts written.**
+
+
+---
+
+## RUN_034 — 2026-05-19 (retro-logged 2026-05-20 by RUN_035)
+
+> Backfill entry. RUN_034 ran on 2026-05-19 and produced a full report at `brand/review-reports/2026-05-19-review-report.md` + GBP live snapshot at `brand/review-reports/raw-data/2026-05-19-gbp-live-snapshot.md` + a CONTEXT.md "Last worked on" update, but did not write a session-log entry and did not commit/push before its session ended. Logging it now so the chain is continuous.
+
+**Status:** pending (2 unreplied drafts produced)
+
+**Notable observations (per the 2026-05-19 report):**
+
+- **Live-verified Google count = 130 / 4.9★** via Chrome MCP — GBP dashboard manager-view + Google Maps place card. +5 vs. 2026-04-09 baseline (125). +4 vs. the WebSearch snippet "126" that RUN_026-033 was holding on — snippet was lagging the live profile exactly as SKILL.md anticipated.
+- **NEW unreplied 5★ Google review** — Cassie Butterfield, posted ~3 days ago (i.e. ~2026-05-16), corporate-retreat review (team retreat, office space, pool, sunrises/sunsets, animals). Reply drafted in the report's "Google · Cassie Butterfield" section.
+- **NEW 1★ on The Knot surfaced this run** — Haylee L., posted 2026-02-26 — never previously flagged in this monitor's history. Quiet-property-risk complaint from a site visit (neighboring property amplified music). The Knot listing now sorts this 1★ first by date; ~12 weeks unreplied as of 2026-05-19. Reply drafted in the report's "The Knot · Haylee L." section with edit-flag on the "we're flagging neighboring-property activity..." sentence.
+- **The Knot moved IN SCOPE** for this monitor on 2026-05-19 after surfacing the unreplied Haylee L. 1★.
+- **Two unresolved items**: (a) Scott Morgan 1★ baseline UNVERIFIED — GBP modal scroll failed before Chrome MCP dropped its connection; (b) cached Apify JSON does NOT exist on disk (`raw-data/` was empty pre-run) so reviewer-removal detection currently dormant. Recommend Apify pull this week.
+- **TripAdvisor**: 0 reviews unclaimed, price $63-$178 (ceiling rebounded from RUN_033's $63-$174 to $63-$178). Travelers' Choice text NOT attributed to Rancho (11th consecutive run after RUN_023 reframing).
+- **Hipcamp**: 0 reviews, 22 sites, "Booked 1 time" on Cosmic Cabin singular; voice violations "20 luxury cabins…50 guests" (Knot) and "34-acre" + "drink at our bar" (Hipcamp) persist.
+- **Facebook 5/100% recommend** stable.
+
+**Files written this run (committed retroactively as part of RUN_035 commit):**
+- `brand/review-reports/2026-05-19-review-report.md` — RUN_034 full report (created)
+- `brand/review-reports/raw-data/2026-05-19-gbp-live-snapshot.md` — Chrome MCP live snapshot (created)
+- `CONTEXT.md` — RUN_033 "Last Worked On" review-monitor line replaced with RUN_034 summary
+
+**Files NOT written this run (orphaned by uncomitted close):**
+- `brand/review-aggregate.json` — never bumped from RUN_033 numbers
+- `site/admin/dashboard-state.json` — never bumped from RUN_033 numbers
+- `tasks/review-monitor/session-log.md` — this entry (now backfilled)
+- `CHANGELOG.md` — RUN_034 bullet missing (will be skipped — RUN_035 single bullet covers both runs)
+
+**FLAG_FOR_ADAM (carry into RUN_035):**
+
+> Two drafted replies on disk in `brand/review-reports/2026-05-19-review-report.md`. Cassie Butterfield (Google 5★) — ship as-is. Haylee L. (The Knot 1★) — 2-minute edit decision on the "we're flagging neighboring-property activity..." sentence.
+
+---
+
+## RUN_035 — 2026-05-20 15:16 UTC (10:16 CDT)
+
+**Status:** pending (2 carry-forward drafts unposted, no new reviews)
+
+**Notable observations:**
+
+- **Quiet platform sweep — no new reviews detected on any monitorable platform.** TripAdvisor 0 / unclaimed, Hipcamp 0, Facebook 5/100%, Expedia 8.0, all unchanged.
+- **Two URGENT items from RUN_034 carry forward unposted.** Done-log shows no review-related action since 2026-04-15 22:12; Cassie B. (Google 5★, ~5 days old) and Haylee L. (Knot 1★, ~12 weeks old) both presumed still un-replied. Drafts already in `brand/review-reports/2026-05-19-review-report.md`.
+- **Google live count carries forward at 130 / 4.9★** from RUN_034's Chrome-verified read (1 day old). No Chrome MCP this run, no Apify pull — direct re-verification unavailable. WebSearch snippet still anchors on 126 — 4-review lag now confirmed across two consecutive runs (snippet IS lagging live, exactly as RUN_034 predicted).
+- **TripAdvisor live-fetched: 0 reviews, unclaimed, price ceiling DRIFTED $63-$178 → $63-$179** (+$1 ceiling — first $179 since RUN_024, 4 weeks ago). Floor unchanged at $63 cumulative low. 23-run net drift floor $77→$63 (-$14), ceiling $181→$179 (-$2 — net erosion narrowed further from -$3 last run). Travelers' Choice text continues NOT attributed to Rancho Moonrise (12th consecutive run after RUN_023 reframing).
+- **Hipcamp live-scrape SUCCESS** — 5th consecutive clean run since RUN_029's one-run dip. Identical state to RUN_028/030-034 (0 reviews, 'Be the first to review', 'Booked 1 time' singular, joined March 2024, host 'Rancho M.'). Voice/data violations persist.
+- **Expedia 8.0 INLINE** for 5th consecutive run (12 of last 13 runs). Hotels.com listing ho2867109568 still active; direct fetch BLOCKER 34th (no live attempt).
+- **Facebook 5/100% INLINE** for 16th consecutive run after RUN_018 dip.
+- **The Knot direct WebFetch timed out 2x** today — first failure since RUN_034 succeeded. Not yet a 3-consecutive blocker. Haylee L. review text still surfaces via WebSearch confirming the review remains live; owner-reply state unverifiable today (no Rancho-Moonrise-attributed owner response indexed — search-surfaced 'The Old Rancho' Carlsbad hits are not relevant).
+- **Airbnb 403 BLOCKER ongoing** (34th, no live attempt).
+- **Unreplied=1 maintained** on done-log signal (Cassie carry-forward). Most recent review-related done-log entry remains `rancho-review-replies` RESOLVED 2026-04-15 22:12.
+
+**Re-Verify Gate outcomes:**
+
+```
+[2026-05-20 15:16] re-verify google-count-rating         — partial (live stale)  — live=130@4.9 (1d old, RUN_034) snippet=126 prior=130@4.9
+[2026-05-20 15:16] re-verify google-unreplied            — still_true (done-log) — live=1 (Cassie carry-forward) prior=1
+[2026-05-20 15:16] re-verify tripadvisor-status          — still_true            — live=0 unclaimed         prior=0 unclaimed
+[2026-05-20 15:16] re-verify tripadvisor-price-range     — partial               — live=$63-$179            prior=$63-$178
+[2026-05-20 15:16] re-verify tripadvisor-travelers-choice — still_true           — live=boilerplate         prior=boilerplate
+[2026-05-20 15:16] re-verify hipcamp-state               — still_true            — live=0 reviews / 1 booking prior=0 reviews / 1 booking
+[2026-05-20 15:16] re-verify expedia-rating              — still_true (inline)   — live=8.0                 prior=8.0
+[2026-05-20 15:16] re-verify facebook-state              — still_true (inline)   — live=5/100%              prior=5/100%
+[2026-05-20 15:16] re-verify theknot-haylee-unreplied    — still_true (search-only) — live=review-text-surfaced no-reply-indexed prior=unreplied(RUN_034 direct fetch)
+[2026-05-20 15:16] re-verify airbnb-existence            — BLOCKED               — 34th consecutive failure (no live attempt)
+[2026-05-20 15:16] re-verify hotels-com-direct           — BLOCKED               — 34th consecutive (no live attempt)
+[2026-05-20 15:16] re-verify theknot-direct-fetch        — failed                — 1st timeout, not blocker yet
+```
+
+**Failure counters (BLOCKERS open):**
+- `google-reviews-count` live scrape: 34 consecutive (no Places API key)
+- `hotels-com-direct-fetch`: 34 consecutive (no live attempt this run; pattern established)
+- `airbnb-listing-existence`: 34 consecutive (no live attempt this run; pattern established)
+- `theknot-direct-fetch`: 1 consecutive (NEW today; not yet a blocker)
+
+**Files written this run:**
+- `brand/review-reports/2026-05-20-review-report.md` — RUN_035 report (new).
+- `brand/review-aggregate.json` — RUN_035 (run_number 33→35, last_updated 2026-05-20T15:16:36Z; google.count 127→130 / unreplied 0→1 / last_live_verified+method set / search_snippet_lag_vs_live=4; tripadvisor.price ceiling +$1 to $63-$179 — first $179 since RUN_024; expedia.search_confirmed_date+note updated for 5th consecutive inline run; hipcamp.last_scrape updated; facebook.last_confirmed updated; the_knot moved in_scope=true since 2026-05-19 with haylee_l fields; airbnb/hotels-com timeout/failure counts +1 to 34).
+- `site/admin/dashboard-state.json` — RUN_035 (run_number 33→35, last_run 2026-05-20T15:16:36Z, status ok→pending, new_reviews_pending_response 0→2 with detail array, unreplied_by_platform.google 0→1 and the_knot 1 added, flags refreshed).
+- `tasks/review-monitor/session-log.md` — this entry + RUN_034 retro-backfill.
+- `CONTEXT.md` — RUN_034 "Last Worked On" review-monitor line replaced with RUN_035 summary.
+- `CHANGELOG.md` — one dated bullet appended covering both RUN_034 (retro) and RUN_035.
+
+**FLAG_FOR_ADAM (carried, escalation):**
+
+> Two drafted replies have been sitting on disk for 1 day with no done-log signal of posting. Cassie Butterfield (Google 5★, ~5 days old now) — drafted reply is ready as-is, voice-clean, 30 seconds to post in GBP dashboard. Haylee L. (The Knot 1★, ~12 weeks unreplied) — drafted reply is ready pending Adam's 2-minute edit decision on the "we're flagging neighboring-property activity..." sentence (commit to that operational change publicly or soften it). Both drafts live in `brand/review-reports/2026-05-19-review-report.md`. Adam: please mark these done in the briefing page (write to `rancho-done-log.md` via the Mark Done flow) once posted so this monitor can stop carrying them forward.
+
+**Stale claims auto-resolved this run:** 0.
+
+**No new reviews; no NEW response drafts written this run.** Two existing drafts carried forward unmodified.
