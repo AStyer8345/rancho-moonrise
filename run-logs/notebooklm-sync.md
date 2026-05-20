@@ -565,3 +565,4 @@ State file NOT updated — file will be re-detected on next run after Adam runs 
 ```
 2026-05-19 20:07 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth)
 ```
+2026-05-20 00:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1 — NotebookLM auth expired (run 'notebooklm login' to re-authenticate)
