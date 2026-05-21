@@ -1,5 +1,18 @@
 # Rancho Moonrise — Changelog
 
+## 2026-05-21 (rancho-review-monitor) — RUN_036 — 3rd consecutive quiet sweep, drafts carry day 3
+
+- **No new reviews on any monitored platform** — third quiet sweep in a row.
+- **Both RUN_034 drafts STILL CARRY FORWARD UNPOSTED for day 3** — Cassie Butterfield (Google 5★, day 6 since posting) + Haylee L. (Knot 1★, 91 days unreplied). Done-log grep confirmed no review-related entry since `rancho-review-replies` RESOLVED 2026-04-15 22:12. Drafts at `brand/review-reports/2026-05-19-review-report.md`.
+- **Google live count carries forward at 130/4.9★** from RUN_034 (2 days old; no Chrome MCP this run, no Apify, no Places API key). WebSearch snippet still 126 — **snippet-vs-live lag of +4 reviews now confirmed across 3 consecutive runs**.
+- TripAdvisor live-scraped: 0 reviews, unclaimed, **price range $63-$179 IDENTICAL to RUN_035 — no drift this run**. RUN_035's +$1 ceiling move (first $179 since RUN_024) is holding rather than oscillating. 24-run net drift unchanged from RUN_035 ($77→$63 / $181→$179).
+- Hipcamp live-scrape SUCCESS — **6th consecutive clean run** since RUN_029 dip. Identical state. Voice/data violations '34-acre' + 'drink at our bar' persist.
+- Expedia 8.0 INLINE **6th consecutive run** (13 of last 14). Facebook 5/100% INLINE **17th consecutive run**.
+- **The Knot direct WebFetch timed out** — 2nd consecutive direct-fetch failure (RUN_035 = 1st). Not yet at 3-consecutive blocker threshold; one more timeout next run = BLOCKER. WebSearch fallback: Haylee L. review text still surfaces (review remains live); "Haylee" name NOT in today's snippet (RUN_035 had it); no owner response indexed.
+- Hotels.com direct fetch BLOCKER 35th (no live attempt). Airbnb 403 BLOCKER 35th.
+- Re-Verify Gate: still_true=8, partial=1, blocked=2, failed=1, resolved=0.
+- Files: `tasks/review-monitor/raw/2026-05-21/` (4 snapshots), `brand/review-reports/2026-05-21-review-report.md`, `brand/review-aggregate.json` (RUN_036 bump), `site/admin/dashboard-state.json` (RUN_036 bump), `tasks/review-monitor/session-log.md` (RUN_036 entry), `CONTEXT.md` (Last Worked On + carry-forward refreshed).
+
 ## 2026-05-21 (rancho-site-daily) — `articleSection` schema enrichment across 17-post blog cluster
 
 - Added `articleSection` to BlogPosting JSON-LD on all 17 blog cluster posts. Six named buckets: Things to Do (6), Corporate Retreats (3), Glamping (3), Bachelorette (2), Weddings (2), Events (1). Pre-scoped by 5/17 run-log.
