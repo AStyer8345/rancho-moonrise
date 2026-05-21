@@ -1,5 +1,16 @@
 # Rancho Moonrise — Changelog
 
+## 2026-05-21 (rancho-site-daily) — `articleSection` schema enrichment across 17-post blog cluster
+
+- Added `articleSection` to BlogPosting JSON-LD on all 17 blog cluster posts. Six named buckets: Things to Do (6), Corporate Retreats (3), Glamping (3), Bachelorette (2), Weddings (2), Events (1). Pre-scoped by 5/17 run-log.
+- Assignments: austin-bachelorette-ranch-vs-bar-crawl + bachelorette-party-austin-texas → Bachelorette; birthday-party-venue-near-austin → Events; 3 corporate-retreat posts → Corporate Retreats; glamping-near-austin-texas + glamping-vs-camping + summer-glamping-near-austin → Glamping; ranch-wedding-texas + wedding-venues-near-austin → Weddings; remaining 6 (mothers-day, pool-day-pass, things-to-do-manor-tx, things-to-do-near-austin-with-kids, weekend-getaways, yoga-retreat) → Things to Do.
+- `dateModified` 2026-05-17 → 2026-05-21 across all 17 BlogPosting blocks. Sitemap `<lastmod>` synced for all 17 blog URLs.
+- Validation: `npm run validate:site` passes; all 17 BlogPosting JSON-LD blocks parse-valid via `python3 json.loads`; all carry `"articleSection"` ∈ {Weddings, Corporate Retreats, Glamping, Things to Do, Bachelorette, Events}.
+- Diff: 18 files, 51 insertions, 34 deletions. Surgical. Pre-existing prior-session changes in styles.css/main.js/weddings.html/contact.html/api/inquiry.js intentionally NOT staged (5/7–5/17 convention).
+- Re-Verify Gate (live): apex 200, www 308 → apex, sitemap 200, `/corporate-retreats/` 200, `/safari-tents-near-austin/` 200. 6/6 still_true, 0 resolved.
+- Run-log: `run-logs/2026-05-21-seo.md`. No done-log entry — schema enrichment doesn't map to any of the 8 named s1–s8 SEO task IDs.
+- Pre-scoped next slot: Image schema enrichment (BlogPosting `"image"` URL strings → `ImageObject` with width/height from WebP ladder). Autonomous, cluster-wide.
+
 ## 2026-05-20 (rancho-review-monitor) — RUN_035 + retro-logged RUN_034
 
 - **Retro-log RUN_034 (2026-05-19):** RUN_034 produced a full report + GBP live snapshot + CONTEXT.md update yesterday but did not write a session-log entry and did not commit/push before its session ended. Backfilled to `tasks/review-monitor/session-log.md` and committing artifacts together with today's work to restore a continuous chain. RUN_034 material findings: **Google live=130/4.9★** (Chrome-verified via GBP dashboard; +5 vs. April 9 baseline 125, +4 vs. WebSearch snippet "126" that RUN_026-033 was anchoring on — snippet was lagging live exactly as SKILL.md anticipated); **Cassie Butterfield 5★ corporate-retreat Google review unreplied** (drafted); **Haylee L. 1★ on The Knot from 2026-02-26 surfaced as ~12 weeks unreplied** (drafted with edit-flag). The Knot moved IN SCOPE for the monitor. Apify cache absent (raw-data/ empty pre-run).
