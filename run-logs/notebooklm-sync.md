@@ -589,3 +589,5 @@ State file NOT updated — pending file `brand/2026-05-16-hipcamp-curation-gap-a
 2026-05-20 16:07 | ERROR: NotebookLM authentication expired — needs 'notebooklm login'. Skipped sync. scanned=0 added=0 replaced=0 skipped=0 errors=1
 2026-05-21 12:40 | auth-expired | notebooklm CLI requires `notebooklm login` re-auth; sync skipped, state unchanged
 2026-05-21 16:08 | auth-expired | notebooklm CLI requires `notebooklm login` re-auth (4th consecutive failed run); sync skipped, state unchanged
+2026-05-21 20:08 | auth-expired | notebooklm CLI requires `notebooklm login` re-auth (5th consecutive failed run); 1 new file pending (brand/2026-05-16-hipcamp-curation-gap-audit.md); sync skipped, state unchanged
+2026-05-21 20:08 | scanned=65 added=0 replaced=0 skipped=4 errors=1
