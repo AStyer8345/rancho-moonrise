@@ -1,3 +1,4 @@
+2026-05-22 12:09 | scanned=0 added=0 replaced=0 skipped=0 errors=1 (auth_expired — 8th+ consecutive failed run since 2026-05-16; run '/Users/adamstyer/.local/bin/notebooklm login' to re-auth)
 2026-05-22 20:00 | scanned=0 added=0 replaced=0 skipped=0 errors=1 (auth_expired — still failing; run '/Users/adamstyer/.local/bin/notebooklm login' to re-auth)
 2026-05-16 20:25 | scanned=0 added=0 replaced=0 skipped=0 errors=1 (auth_expired — 6th day; run '/Users/adamstyer/.local/bin/notebooklm login' to re-auth; sync log only, no git commit due to unrelated working-tree modifications)
 2026-04-17 16:08 | scanned=64 added=0 replaced=0 skipped=3 errors=0
