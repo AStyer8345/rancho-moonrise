@@ -1,3 +1,4 @@
+2026-05-24 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth_expired — still failing since 2026-05-16; 1 pending file `brand/2026-05-16-hipcamp-curation-gap-audit.md` will sync once Adam runs '/Users/adamstyer/.local/bin/notebooklm login'; state unchanged)
 2026-05-23 19:35 | scanned=0 added=0 replaced=0 skipped=0 errors=1 (auth_expired — still failing since 2026-05-16; run '/Users/adamstyer/.local/bin/notebooklm login' to re-auth)
 2026-05-22 12:09 | scanned=0 added=0 replaced=0 skipped=0 errors=1 (auth_expired — 8th+ consecutive failed run since 2026-05-16; run '/Users/adamstyer/.local/bin/notebooklm login' to re-auth)
 2026-05-22 20:00 | scanned=0 added=0 replaced=0 skipped=0 errors=1 (auth_expired — still failing; run '/Users/adamstyer/.local/bin/notebooklm login' to re-auth)
