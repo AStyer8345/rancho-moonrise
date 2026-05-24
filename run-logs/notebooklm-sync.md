@@ -602,3 +602,16 @@ State file NOT updated — pending file `brand/2026-05-16-hipcamp-curation-gap-a
 2026-05-23 20:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1
 2026-05-24 11:36 | ERROR: notebooklm authentication expired — run 'notebooklm login' to re-authenticate. Skipped sync.
 2026-05-24 11:36 | scanned=0 added=0 replaced=0 skipped=0 errors=1
+
+## 2026-05-24 16:08
+ERROR: NotebookLM auth expired — `notebooklm list --json` returned "Authentication expired or invalid". Run `notebooklm login` to re-authenticate.
+
+Detected this run (deferred until auth restored):
+- NEW: brand/2026-05-16-hipcamp-curation-gap-audit.md
+
+Skipped (>10MB, permanent):
+- brand/PRIVATE EVENTS AT RANCHO MOONRISE.pdf (30.2MB)
+- brand/INTIMATE EVENTS AT RM.pdf (21.7MB)
+- brand/ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf (38.7MB)
+
+2026-05-24 16:08 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth)
