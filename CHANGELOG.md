@@ -1,5 +1,22 @@
 # Rancho Moonrise — Changelog
 
+## 2026-05-23 (rancho-site-daily) — Image schema enrichment across the 17-post blog cluster
+
+- **What shipped:** converted `"image": "URL"` → `"image": { "@type": "ImageObject", "url": "URL", "width": W, "height": H }` on every BlogPosting JSON-LD across the 17-post blog cluster. Pre-scoped 5/21 as the named #1 next-slot.
+- **Dimensions live-read via `sips`** against the actual served files (not guessed from WebP ladder filenames):
+  - `og-image.jpg` → 2134×1412 (13 posts)
+  - `feature-safari-tent.webp` → 800×477 (glamping-near-austin-texas)
+  - `wedding-hero.webp` → 1600×1066 (ranch-wedding-texas, wedding-venues-near-austin)
+  - `blog-corporate-retreat.jpg` → 6192×4128 (corporate-retreat-near-austin, corporate-retreat-planning-guide-texas)
+  - `blog-manor-things-to-do.webp` → 800×496 (things-to-do-manor-tx)
+- **Metadata refresh**: `BlogPosting.dateModified` 2026-05-21 → 2026-05-23 across all 17; sitemap `<lastmod>` synced for all 17 blog URLs.
+- **Validation**: `npm run validate:site` passes. All 17 BlogPosting JSON-LD blocks parse-valid via `python3 json.loads`. Every block carries `image.@type == "ImageObject"`, integer `width`/`height`, string `url`, and `"dateModified": "2026-05-23"`.
+- **Diff scope**: 18 files (17 blog posts + sitemap.xml). Pre-existing prior-session changes in `api/inquiry.js`, `site/css/styles.css`, `site/js/main.js`, `site/pages/contact.html`, `site/pages/weddings.html` intentionally NOT staged (5/7–5/21 convention).
+- **Improvement-plan mapping**: does NOT map to any of the 8 named SEO task IDs (s1–s8). No done-log entry.
+- **Re-Verify Gate (live)**: 6/6 still_true (apex 200 + Vercel, www 308 → apex, sitemap 200, `/corporate-retreats/` 200, `/safari-tents-near-austin/` 200, `/blog/` 200); 0 stale claims auto-resolved.
+- **Next slot pre-scoped**: `inLanguage: "en-US"` on BlogPosting JSON-LD (cluster-wide, surgical, 0/17 currently carry it).
+- Run-log: `run-logs/2026-05-23-seo.md`.
+
 ## 2026-05-21 (rancho-review-monitor) — RUN_036 — 3rd consecutive quiet sweep, drafts carry day 3
 
 - **No new reviews on any monitored platform** — third quiet sweep in a row.
