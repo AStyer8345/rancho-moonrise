@@ -37,3 +37,16 @@ Append-only. If a live verification path fails 3 consecutive runs for the same c
 - **Status:** Cannot confirm or deny. Listing title from search snippet: "Glamping Safari Tent 25 mins from downtown Austin — Yurts for Rent in Manor, Texas" (consistent with Rancho Moonrise).
 - **Resolution path:** Adam needs to open the Airbnb URL directly in a browser to confirm. If it IS a Rancho Moonrise listing, add Airbnb to review coverage scope. **This is the same FLAG_FOR_ADAM item surfaced in RUN_001 — 3rd run, escalating to BLOCKERS.**
 - **Logged:** 2026-04-17
+
+---
+
+## BLOCKER: theknot-direct-fetch — timeout 3 consecutive runs
+
+- **Claim:** The Knot listing copy + Haylee L. 1★ review (2026-02-26) owner-response state and any new reviews on `https://www.theknot.com/marketplace/rancho-moonrise-manor-tx-2087722`
+- **Verification path attempted:** WebFetch of the live listing URL
+- **Failure mode:** 60-second WebFetch timeout — page is heavy and/or rate-limiting unauthenticated bot fetches. RUN_034 (2026-05-19) succeeded; failures began RUN_035.
+- **Consecutive failures:** 3 (RUN_035 2026-05-20, RUN_036 2026-05-21, RUN_037 2026-05-23)
+- **Status:** Listing remains in monitored scope. Haylee L. review confirmed STILL LIVE via WebSearch fallback (review body text "neighboring property played extremely loud amplified music…" still indexed). Owner-response state cannot be confirmed today; presumed still unreplied (no Rancho Moonrise-attributed response surfaces in any search query).
+- **Working fallback:** WebSearch is the documented working alternative — it surfaces review body text and listing context reliably, and confirms whether Haylee's review remains live. **Limitation:** it cannot enumerate new reviews posted since RUN_034, and it cannot verify owner-response state directly. Net effect: drift detection on The Knot is now best-effort via search snippet rather than direct.
+- **Resolution path:** Either (a) Apify or another rendering scraper as a periodic pull for The Knot, (b) Adam manually opens the listing in a browser every ~2 weeks to spot-check for new reviews + owner-reply state, or (c) treat The Knot the same as Hotels.com — accept search-snippet confirmation as "likely unchanged" and downgrade to a quarterly manual check.
+- **Logged:** 2026-05-23

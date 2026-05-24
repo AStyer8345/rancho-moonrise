@@ -1468,3 +1468,67 @@ Claims enumerated from persistent surfaces and re-verified:
 **Stale claims auto-resolved this run:** 0.
 
 **No new reviews; no NEW response drafts written this run.** Two existing drafts carried forward unmodified for the 3rd consecutive run.
+
+---
+
+## RUN_037 — 2026-05-23 19:52 CDT (2026-05-24 00:52 UTC)
+
+**Status:** pending (2 carry-forward drafts unposted day 5; no new reviews; no rating drops; **NEW BLOCKER opened**)
+
+**Notable observations:**
+
+- **Fourth consecutive quiet platform sweep — no new reviews on any monitored platform.** TripAdvisor 0/unclaimed, Hipcamp 0 (carry — see below), Facebook 5/100%, Expedia 8.0, all unchanged.
+- **NEW BLOCKER: `theknot-direct-fetch`.** The Knot direct WebFetch timed out for the **3rd consecutive run** (RUN_035 = 1st, RUN_036 = 2nd, RUN_037 = 3rd). Per the Re-Verify Gate's "3 consecutive verification failures → BLOCKER" rule, logged to `tasks/review-monitor/BLOCKERS.md` with WebSearch documented as the working fallback. Net effect: drift detection on The Knot is now best-effort via search snippet rather than direct.
+- **Hipcamp 1-run live-scrape dip** — RUN_037 WebFetch returned only the "Loading..." JS-render shell. 7 prior consecutive clean scrapes broken (RUN_028 + RUN_030-036). Same shape as RUN_029. Not yet a BLOCKER (threshold = 3 consecutive). WebSearch snippet still surfaces listing copy confirming voice/data carry-forwards: "34-acre" + "drink at the bar."
+- **Done-log check:** `grep -i "review\|cassie\|haylee\|knot" rancho-done-log.md | tail -10` returned no review-related entries since `rancho-review-replies` RESOLVED 2026-04-15 22:12. Both RUN_034 drafts presumed still un-posted — day 5 in the monitor (5 calendar days since RUN_034 drafted them on 2026-05-19).
+- **Google live count carries forward at 130 / 4.9★** from RUN_034's Chrome-verified read (now 4 days old). No Chrome MCP this run. WebSearch snippet still anchors on 126 — **snippet-vs-live lag of +4 reviews now confirmed across 4 consecutive runs** (RUN_034 dashboard read = 130; RUN_035/036/037 snippets = 126).
+- **TripAdvisor live-fetched: 0 reviews, unclaimed, price range $63-$179 — IDENTICAL across RUN_035-036-037.** **3 consecutive runs no drift.** RUN_035's +$1 ceiling move (first $179 since RUN_024) is firmly holding rather than oscillating. 24-run net drift floor $77→$63 / ceiling $181→$179 unchanged. Travelers' Choice text continues NOT attributed to Rancho Moonrise (14th consecutive run after RUN_023 reframing).
+- **Expedia 8.0 INLINE** for 7th consecutive run. Hotels.com listing ho2867109568 still active; direct fetch BLOCKER 36th (no live attempt).
+- **Facebook 5/100% INLINE** for 18th consecutive run after RUN_018 dip.
+- **The Knot Haylee L.** review text still surfaces via WebSearch ("neighboring property played extremely loud amplified music..."); reviewer name "Haylee" surfaces only in unrelated context (Haylee Pham TikTok book reviewer) — not in Rancho-attributed snippet body. No Rancho Moonrise-attributed owner response indexed. Review confirmed still live; owner-reply state unverifiable today (direct-fetch BLOCKER).
+- **Airbnb 403 BLOCKER ongoing** (36th, no live attempt).
+- **Unreplied=1 maintained** on done-log signal (Cassie carry-forward, day 5 unposted in monitor).
+
+**Re-Verify Gate outcomes:**
+
+```
+[2026-05-23 19:52] re-verify google-count-rating         — partial (live 4d stale) — live=130@4.9 (RUN_034 carry) snippet=126 prior=130@4.9 / snippet=126
+[2026-05-23 19:52] re-verify google-unreplied            — still_true (done-log)   — live=1 (Cassie carry, day 5) prior=1
+[2026-05-23 19:52] re-verify tripadvisor-status          — still_true              — live=0 unclaimed          prior=0 unclaimed
+[2026-05-23 19:52] re-verify tripadvisor-price-range     — still_true (3 no-drift) — live=$63-$179 (3rd run)   prior=$63-$179
+[2026-05-23 19:52] re-verify tripadvisor-travelers-choice — still_true             — live=boilerplate (14th)   prior=boilerplate (13th)
+[2026-05-23 19:52] re-verify hipcamp-state               — failed (1st dip)        — Loading... shell only; 7-run clean streak broken
+[2026-05-23 19:52] re-verify expedia-rating              — still_true (inline)     — live=8.0 (7th consecutive) prior=8.0 (6th consecutive)
+[2026-05-23 19:52] re-verify facebook-state              — still_true (inline)     — live=5/100% (18th consec)  prior=5/100% (17th consec)
+[2026-05-23 19:52] re-verify theknot-haylee-unreplied    — still_true (search-only) — live=review-text-surfaced no-reply-indexed (day ~93) prior=still_true (day 91)
+[2026-05-23 19:52] re-verify theknot-direct-fetch        — BLOCKED (3rd consecutive) — 60s timeout — NEW BLOCKER OPENED, logged to BLOCKERS.md
+[2026-05-23 19:52] re-verify airbnb-existence            — BLOCKED                  — 36th consecutive (no live attempt)
+[2026-05-23 19:52] re-verify hotels-com-direct           — BLOCKED                  — 36th consecutive (no live attempt)
+```
+
+**Failure counters:**
+- `google-reviews-count` live scrape: 36 consecutive (no Places API key — BLOCKER since 2026-04-17)
+- `hotels-com-direct-fetch`: 36 consecutive (no live attempt; pattern established — BLOCKER since 2026-04-17)
+- `airbnb-listing-existence`: 36 consecutive (no live attempt; pattern established — BLOCKER since 2026-04-17)
+- `theknot-direct-fetch`: **3 consecutive — BLOCKER OPENED 2026-05-23** (RUN_035-036-037)
+- `hipcamp-live-scrape`: **1 consecutive** (NEW today; threshold is 3 — two more failures = BLOCKER)
+
+**Files written this run:**
+- `tasks/review-monitor/raw/2026-05-23/` — 4 snapshot files (tripadvisor.md, hipcamp.md, the-knot.md, web-search-snippets.md)
+- `brand/review-reports/2026-05-23-review-report.md` — RUN_037 report (new)
+- `brand/review-aggregate.json` — RUN_037 (run_number 36→37; the_knot.knot_direct_fetch_failure_count 2→3 + knot_direct_fetch_blocker=true + knot_direct_fetch_blocker_since="2026-05-23"; hipcamp.scrape_failure_count 0→1 + last_scrape_attempted bumped; google.search_snippet_runs_stable 10→11 + lag_confirmed_runs 3→4; tripadvisor.last_scrape bumped + price_delta reworded "3rd consecutive no-drift"; expedia.search_confirmed_date+note refreshed + hotels_com_timeout_count 35→36; facebook.last_confirmed→2026-05-23; airbnb.flag_run_count 35→36)
+- `site/admin/dashboard-state.json` — RUN_037 (run_number 36→37, last_run 2026-05-24T00:52:15Z, blockers array +theknot-direct-fetch, days_drafted_unposted 3→5, weeks/days_unreplied unchanged, flags refreshed)
+- `tasks/review-monitor/BLOCKERS.md` — **NEW entry: `theknot-direct-fetch`**
+- `tasks/review-monitor/session-log.md` — this entry
+- `CONTEXT.md` — "Last Worked On" review-monitor line replaced with RUN_037 summary (separate edit)
+- `CHANGELOG.md` — one dated bullet appended (separate edit)
+
+**FLAG_FOR_ADAM (escalating, day 5):**
+
+> The two drafted replies have now been ready and unposted across RUN_034 → RUN_037 (5 calendar days). Per Adam's standing feedback memory `feedback_stale_flags.md` — re-verify any flag that's appeared 2+ runs before surfacing again. Both items have been re-verified today (Cassie via done-log signal + Google live-count carry; Haylee via WebSearch confirming review still live) — the flag is not stale, it remains genuinely actionable.
+>
+> Cassie is 30 seconds in the GBP dashboard. Haylee is 2 minutes (one sentence-level edit). After posting, please mark done via the briefing-page Mark Done flow so this monitor stops carrying them forward.
+
+**Stale claims auto-resolved this run:** 0.
+
+**No new reviews; no NEW response drafts written this run.** Two existing drafts carried forward unmodified for the 4th consecutive run.
