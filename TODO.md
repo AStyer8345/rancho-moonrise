@@ -1,5 +1,5 @@
 # Rancho Moonrise — TODO
-Last updated: 2026-05-25 (rancho-competitive-weekly — quiet subject-property week. Safari for the Soul migrated domains (`safariforthesoul.com` → 301 to author site; live at `safariforthesoulglamping.com`) + 5/18 accommodation count corrected (2 safari tents + 3 yurts + 1 residential, not 1 + 4). Spoon Mountain weekend-getaways page returned to top 10. ResortPass listing decision drift now 7 days. Apex indexing continues to expand; landing pages still uncrawled.)
+Last updated: 2026-05-25 (rancho-site-daily — `isAccessibleForFree: true` enrichment across the 17-post BlogPosting cluster; 0/17 → 17/17 coverage; pre-scoped 5/24; surgical schema-only; defends against AI-engine paywall mis-classification. Also today: rancho-competitive-weekly — quiet subject-property week; Safari for the Soul migrated domains; 5/18 accommodation count corrected; Spoon Mountain weekend-getaways page returned to top 10; ResortPass listing decision drift now 7 days; apex indexing continues to expand; landing pages still uncrawled.)
 
 ## 🔥 NEEDS ADAM (highest leverage this week)
 
@@ -27,6 +27,26 @@ Last updated: 2026-05-25 (rancho-competitive-weekly — quiet subject-property w
 - **Per-unit accommodation pages remain blocked on low-res source JPGs** (Adam re-upload). The Retreat on the Hill (11) + Green Acres (8) + Lucky Arrow (40 across 5 types) reinforce the multi-URL pattern.
 
 
+
+## ✅ DONE 2026-05-25 — `isAccessibleForFree: true` enrichment across 17-post BlogPosting JSON-LD cluster
+
+Pre-scoped 5/24 as the named #1 next slot. Cluster-wide schema-only edit. `isAccessibleForFree` is a schema.org `CreativeWork` boolean that defends against AI-engine paywall mis-classification — major open-content publishers (NYT free articles, WaPo Climate Lab, Reuters) carry it explicitly. Until today, every BlogPosting block on the site lacked it.
+
+1. **Audit (pre-edit).** `grep -l 'isAccessibleForFree' site/pages/*.html` returned 1 match — but on second-pass inspection that file is `corporate-retreats.html` (EventVenue schema with `"isAccessibleForFree": false` for paid venue access), NOT one of the 17 BlogPosting pages. CONTEXT's "0/17 BlogPosting carry it" claim re-confirmed still_true after a stale-match scare.
+2. **Schema edit (17 pages).** Appended `"isAccessibleForFree": true` as the new last property on every BlogPosting JSON-LD block. Insertion anchor: `"inLanguage": "en-US"` (current last property, added 5/24) → added trailing comma, appended new line. +33 bytes per file.
+3. **Why `isAccessibleForFree` over `copyrightYear` / Person-author / nav-promotion.** Autonomous (no NEEDS ADAM), cluster-wide, defensive against a specific failure mode (Perplexity/ChatGPT occasionally tag uncertain pages as "behind paywall"). Person-author BLOCKED on byline decision; nav promotion needs Adam confirm; `copyrightYear` queued for next slot.
+4. **Metadata refresh.** `BlogPosting.dateModified` 2026-05-24 → 2026-05-25 across all 17. Sitemap `<lastmod>` synced for the same 17 URLs.
+5. **Improvement-plan mapping.** Does NOT map to any of the 8 named SEO task IDs (s1–s8). `isAccessibleForFree` is post-level CreativeWork schema, distinct from s4 (Breadcrumb + Speakable). No done-log entry.
+6. **Validation.** `npm run validate:site` passes. All 17 BlogPosting JSON-LD blocks parse-valid via `python3 json.loads`. Every block asserts `obj["isAccessibleForFree"] is True` AND `obj["dateModified"] == "2026-05-25"`.
+7. **Diff.** 18 files, 85 insertions, 51 deletions — uniform, surgical. Pre-existing prior-session changes in styles.css/main.js/weddings.html/contact.html/api/inquiry.js intentionally NOT staged (5/7–5/24 convention).
+8. **Re-Verify Gate (live).** apex 200 + `server: Vercel` + `x-vercel-cache: HIT`; www 308 → apex; sitemap 200; `/corporate-retreats/` 200; `/safari-tents-near-austin/` 200; `/blog/` 200. 6/6 verified claims still_true; 0 stale claims auto-resolved.
+
+**Future autonomous candidates** (in priority order):
+- **`copyrightYear: 2026` + `copyrightHolder` (publisher.Organization reference) on BlogPosting JSON-LD.** Cluster-wide, surgical, schema.org-recognized CreativeWork property. Closes the enrichment arc (wordCount → articleSection → ImageObject → inLanguage → isAccessibleForFree → copyrightYear/Holder).
+- AEO baseline measurement (rancho-seo-s7) — still deferred until apex is fully in Google's index; signal is low pre-GSC URL-inspection.
+- Author Person schema for BlogPosting JSON-LD — BLOCKED on `NEEDS ADAM` author-byline decision (Adam vs. Ashley vs. team byline).
+- Promote `/corporate-retreats/` into main nav (currently footer only) — needs Adam confirm.
+- Internal-linking cluster floor 4 → 5 inbound — would require Related-Reading insertion on 4–5 additional host pages per orphan post.
 
 ## ✅ DONE 2026-05-17 — `wordCount` enrichment across 17-post BlogPosting JSON-LD cluster
 

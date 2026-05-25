@@ -1,5 +1,17 @@
 # Rancho Moonrise — Changelog
 
+## 2026-05-25 (rancho-site-daily) — `isAccessibleForFree: true` enrichment across 17-post BlogPosting cluster
+
+- **Schema-only surgical edit** — appended `"isAccessibleForFree": true` as the new last property on every BlogPosting JSON-LD block (after `"inLanguage"`). 0/17 → 17/17 coverage. Pre-scoped by 5/24 run-log as the named #1 next slot.
+- **Why this slot over copyrightYear / Person-author / nav-promotion**: schema.org `CreativeWork` property; defends against AI-engine paywall mis-classification; mirrors NYT/WaPo/Reuters open-content patterns. Person-author still BLOCKED on byline decision; nav promotion needs Adam confirm.
+- **Audit pre-edit verification**: `grep` showed `isAccessibleForFree` already present on 1 file — but on `corporate-retreats.html` (EventVenue schema, `isAccessibleForFree: false` for paid venue access), NOT on any of the 17 BlogPosting pages. CONTEXT's "0/17 BlogPosting carry it" claim re-confirmed still_true.
+- **Metadata refresh**: `BlogPosting.dateModified` 2026-05-24 → 2026-05-25 on all 17. Sitemap `<lastmod>` bumped to 2026-05-25 for the same 17 URLs.
+- **Improvement-plan mapping**: this work does NOT map to any of the 8 named SEO task IDs (s1–s8). `isAccessibleForFree` is post-level CreativeWork schema, distinct from s4 (Breadcrumb + Speakable). No done-log entry.
+- **Validation**: `npm run validate:site` passes; every BlogPosting block re-parsed via `json.loads` post-edit; all 17 assert `isAccessibleForFree is True` and `dateModified == "2026-05-25"`.
+- **Diff**: 18 files, 85 insertions, 51 deletions — surgical. Pre-existing prior-session changes in styles.css/main.js/weddings.html/contact.html/api/inquiry.js intentionally NOT staged (5/7–5/24 convention).
+- **Re-Verify Gate (live)**: apex 200 + `server: Vercel` + `x-vercel-cache: HIT`; www 308 → apex; sitemap 200; `/corporate-retreats/` 200; `/safari-tents-near-austin/` 200; `/blog/` 200. 6/6 verified claims still_true; 0 stale claims auto-resolved.
+- **Pre-scoping for next slot**: `copyrightYear: 2026` + `copyrightHolder` (pointing to existing publisher.Organization) on BlogPosting JSON-LD — surgical, autonomous, cluster-wide; 0/17 currently carry it; rounds out the CreativeWork-property enrichment arc (wordCount → articleSection → ImageObject → inLanguage → isAccessibleForFree → copyrightYear/Holder). After this ships, the surgical schema runway exhausts and next workstreams shift to either Person-schema research (author byline) or internal-linking floor 4 → 5.
+
 ## 2026-05-25 (rancho-review-monitor RUN_039) — Sixth consecutive quiet sweep; Hipcamp recovered; Google snippet 126→175 anomaly
 
 - **No new reviews** on any monitored platform. Two RUN_034 drafts (Cassie Butterfield Google 5★ ~day 9; Haylee L. The Knot 1★ ~day 95 unreplied) still presumed unposted — done-log grep returned no review-related entry since 2026-04-15 22:12. Day 7 unposted in monitor.
