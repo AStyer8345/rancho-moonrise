@@ -1,5 +1,15 @@
 # Rancho Moonrise — Changelog
 
+## 2026-05-25 (rancho-review-monitor RUN_039) — Sixth consecutive quiet sweep; Hipcamp recovered; Google snippet 126→175 anomaly
+
+- **No new reviews** on any monitored platform. Two RUN_034 drafts (Cassie Butterfield Google 5★ ~day 9; Haylee L. The Knot 1★ ~day 95 unreplied) still presumed unposted — done-log grep returned no review-related entry since 2026-04-15 22:12. Day 7 unposted in monitor.
+- **Hipcamp scrape RECOVERED** — clean WebFetch returned 0 reviews / Cosmic Cabin 1 booking / host "Rancho M." Failure counter resets 2 → 0 after RUN_037/038 "Loading..." dips. No BLOCKER opened (threshold was 3). Pattern confirmed as transient JS-render flake. Voice/data violations now live-confirmed in listing copy (not just search snippets): "34-acre ranch" welcome + "37 acres" header + "unwind with a drink at our bar".
+- **Google WebSearch snippet STATE CHANGE 126 → 175** — same anomaly as RUN_011/012 (briefly 175 before reverting to 126 for 12 consecutive runs). Snippet precision unreliable for count — logged as snippet state change, NOT confirmed count change. Live (130 from RUN_034 Chrome read, now 6 days old) remains most recent authoritative value.
+- **TripAdvisor +$1 ceiling holds** — $63-$180 unchanged from RUN_038; drift now stable 2 consecutive runs.
+- **The Knot direct fetch 5th consecutive timeout** — BLOCKER `theknot-direct-fetch` (opened RUN_037) remains active. WebSearch fallback today surfaced Haylee L. review body text via Facebook-query side channel; reviewer name not in Rancho-attributed snippet; owner-reply state unverifiable.
+- **Stable inline confirmations:** Expedia 8.0 (9th consec run), Facebook 5/100% recommend (20th consec run), TripAdvisor 0 reviews/unclaimed.
+- **Output:** `brand/review-reports/2026-05-25-review-report.md`; aggregate + dashboard-state RUN_039 bumped; session-log appended; 4 raw snapshots at `tasks/review-monitor/raw/2026-05-25/`.
+
 ## 2026-05-25 (rancho-competitive-weekly) — Quiet subject-property week; Safari for the Soul domain move; Spoon Mountain weekend-getaways back in top 10
 
 - **Re-Verify Gate (12 prior claims from 5/18):** 10 still_true, 2 state_change (Safari for the Soul domain migration + accommodation-count correction; Spoon Mountain weekend-getaways page returned to top 10). 0 auto-resolved.
