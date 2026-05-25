@@ -1,5 +1,5 @@
 # Rancho Moonrise — TODO
-Last updated: 2026-05-20 (rancho-review-monitor RUN_035 — Two RUN_034 reply drafts carry forward UNPOSTED; done-log shows no review-related entry since 2026-04-15. Otherwise quiet platform sweep.)
+Last updated: 2026-05-25 (rancho-competitive-weekly — quiet subject-property week. Safari for the Soul migrated domains (`safariforthesoul.com` → 301 to author site; live at `safariforthesoulglamping.com`) + 5/18 accommodation count corrected (2 safari tents + 3 yurts + 1 residential, not 1 + 4). Spoon Mountain weekend-getaways page returned to top 10. ResortPass listing decision drift now 7 days. Apex indexing continues to expand; landing pages still uncrawled.)
 
 ## 🔥 NEEDS ADAM (highest leverage this week)
 
@@ -11,17 +11,19 @@ Last updated: 2026-05-20 (rancho-review-monitor RUN_035 — Two RUN_034 reply dr
 5. **Blog pipeline restart — framing softened this week.** Spoon Mountain's `/romantic-weekend-getaways-near-austin/` content-marketing page (flagged May 11 as a leading indicator) dropped out of the SERP top-10 after exactly one week. The "competitors are now winning research-intent SERPs with destination guides" framing weakens — single-week SERP half-life on Spoon Mountain's move. Not urgent to re-escalate based on this data point alone.
 6. **Glamping Hub submission.** 5 weeks running. Free, 15 min, glampinghub.com/list-your-property. The Yurtopian, Udoscape, Talula Mesa, Sabi, Loving Heart all already there.
 
-## 📌 Competitive intel quick wins (refreshed 2026-05-18)
+## 📌 Competitive intel quick wins (refreshed 2026-05-25)
 
-- **🆕 Rancho Moonrise ResortPass listing EXISTS** ([resortpass.com/hotels/rancho-moonrise](https://www.resortpass.com/hotels/rancho-moonrise)). Dormant, 0 products. See NEEDS ADAM #1.
-- **🆕 Google apex indexing has started** — 11+ pages live in `site:ranchomoonrise.com`. Major bottleneck narrowed. New landing pages (`/corporate-retreats/`, `/safari-tents-near-austin/`) still uncrawled; see NEEDS ADAM #2.
-- **🆕 Safari for the Soul rebrand** — moving from "5 safari tents" framing to "1 safari tent + 4 yurts across 2 properties (Spicewood + Marble Falls)." Direct safari-tent SERP competitor softening. Small opening for Rancho's `/safari-tents-near-austin/` IF indexing unblocks.
-- **🆕 Walden Retreats SERP-copy refresh** — "15 luxury safari tents (7 suites + 8 studios)" removed from live site, replaced with less specific "15 luxury glamping tents." Combined with Safari for the Soul shift, safari-tent SERP cluster is the most dynamic Rancho-relevant SERP this spring.
-- **🆕 Corporate retreat SERP refreshed** — 3 new entrants (Moniker Partners planning-agency / Peaceful Waters Retreat Center La Grange / Texas Old Town Kyle), 3 drop-outs (Crystal Creek, Austin Luxury Retreat, Sage Hill `/hill-country/`). The Yurtopian's corp-retreats page dropped from top-10 — small opening for Rancho's own `/corporate-retreats/` IF indexing unblocks.
-- **Spoon Mountain weekend-getaways content-marketing** one-week SERP half-life. May 11 "leading indicator" framing softens.
-- **Lucky Arrow ResortPass dormant** — no public reactivation date (removed May 11). Same state today. Door open since April 6.
-- **Track Loving Heart Retreats** as a safari tent SERP entrant (25 ac, 12 min from Marble Falls). Domain still has TLS cert mismatch — not fetchable.
+- **Rancho Moonrise ResortPass listing EXISTS, dormant — decision drift 7 days past 5/18 surface** ([resortpass.com/hotels/rancho-moonrise](https://www.resortpass.com/hotels/rancho-moonrise)). See NEEDS ADAM #2.
+- **Google apex indexing continues to expand** — filtered `site:` queries now surface `/faqs/`, `/policies/`, `/weddings/`, `/contact/`, `/accessibility/`, `/event/july-4th/` in addition to 5/18 set. Landing pages still uncrawled (24d + 29d, +7d drift); see NEEDS ADAM #3.
+- **🆕 Safari for the Soul moved domains** — `safariforthesoul.com` now 301-redirects to `janboalauthor.com` (unrelated author site). Live property at `safariforthesoulglamping.com`. Accommodation count corrected from 5/18: actual breakdown is **2 safari tents + 3 yurts + 1 residential** across Marble Falls + Spicewood (Cosmic Nights + Sabi Nights are safari tents; 5/18 missed Sabi Nights).
+- **🆕 Spoon Mountain `/romantic-weekend-getaways-near-austin/` back in top 10** after one week out — in/out/in oscillation over 3 weeks. May 11 leading-indicator framing partially rehabilitated; May 18 "one-week half-life" framing premature. Does NOT escalate blog-pipeline restart.
+- **🆕 Corporate retreat SERP refresh (3rd consecutive week of churn)** — new entrant: planretreat.com listicle. Returning to top 10: The Retreat at Crystal Creek (was drop-out 5/18). Off top 10 this week: Peaceful Waters, Texas Old Town. The Yurtopian's corp-retreats page still off SERP (2nd consecutive week).
+- **🆕 Camposanto ATX** (Graveyard Point on Lake Travis) — new entrant on `glamping near austin tx` SERP. First appearance across 4+ weeks of tracking. Lake Travis geography, not direct geographic competitor.
+- **Walden Retreats** — variant labels now visible on site (Premier Suites / Studios / Studios with Soaking Tubs). 15 unit count holds.
+- **Lucky Arrow ResortPass dormant** — no public reactivation date. Same state for 4+ weeks running.
+- **Track Loving Heart Retreats** as safari tent SERP entrant (25 ac, 12 min from Marble Falls). Domain still has TLS cert mismatch — not fetchable.
 - **Track Green Acres ATX (Elgin) as closest geographic competitor.** Press footprint in U.S. News / Dwell / Apartment Therapy / Austin Monthly.
+- **Internal-doc housekeeping:** old `safariforthesoul.com` URLs in any past audits/blog drafts now redirect to an author site. Live property at `safariforthesoulglamping.com`. Low priority.
 - **Per-unit accommodation pages remain blocked on low-res source JPGs** (Adam re-upload). The Retreat on the Hill (11) + Green Acres (8) + Lucky Arrow (40 across 5 types) reinforce the multi-URL pattern.
 
 

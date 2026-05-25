@@ -1,5 +1,18 @@
 # Rancho Moonrise — Changelog
 
+## 2026-05-25 (rancho-competitive-weekly) — Quiet subject-property week; Safari for the Soul domain move; Spoon Mountain weekend-getaways back in top 10
+
+- **Re-Verify Gate (12 prior claims from 5/18):** 10 still_true, 2 state_change (Safari for the Soul domain migration + accommodation-count correction; Spoon Mountain weekend-getaways page returned to top 10). 0 auto-resolved.
+- **Material competitor finding 1 — Safari for the Soul moved domains.** `safariforthesoul.com` now 301-redirects to `janboalauthor.com` (unrelated author site). Live property at `safariforthesoulglamping.com`. Accommodation count corrected from last week's "1 safari tent + 4 yurts" to actual **2 safari tents + 3 yurts + 1 residential across Marble Falls + Spicewood** (Cosmic Nights + Sabi Nights as safari tents). Brand-mix-shift framing from 5/18 directionally holds.
+- **Material competitor finding 2 — Spoon Mountain `/romantic-weekend-getaways-near-austin/` back in weekend-getaway top 10.** 5/18's "one-week SERP half-life" becomes "in/out/in oscillation over 3 weeks." May 11 leading-indicator framing partially rehabilitated. Does NOT escalate blog-pipeline restart decision (paused per Ashley 2026-04-23).
+- **Corporate retreat SERP refresh:** planretreat.com (new listicle entrant), The Retreat at Crystal Creek (drop-out 5/18 returned). Peaceful Waters + Texas Old Town off top 10. The Yurtopian's corp-retreats page off SERP for 2nd consecutive week.
+- **New entrant on `glamping near austin tx` SERP:** Camposanto ATX (Graveyard Point on Lake Travis). First time in 4+ weeks of tracking. Geography is Lake Travis — not direct geographic competitor.
+- **Apex indexing continues to grow.** Filtered `site:` queries now surface `/faqs/`, `/policies/`, `/weddings/`, `/contact/`, `/accessibility/`, `/event/july-4th/` in addition to 5/18 set. `/corporate-retreats/` (24d) + `/safari-tents-near-austin/` (29d) still NOT indexed — drift now +7 days.
+- **No state change:** Rancho Moonrise ResortPass listing (dormant, 0 products — Adam decision 7 days overdue), Lucky Arrow ResortPass (dormant), Lucky Arrow accommodation counts, Walden Retreats (15 tents, now with Premier Suites / Studios / Studios with Soaking Tubs variant labels visible), Spoon Mountain property pages, The Yurtopian, The Retreat on the Hill, Wahwahtaysee, Hipcamp curation gap.
+- **Re-Verify Gate (live) — Rancho:** apex 200 + `server: Vercel` + `x-vercel-cache: HIT`; sitemap 200; `/corporate-retreats/` 200; `/safari-tents-near-austin/` 200.
+- **Dual-write Intel tab card:** byte-identical insertion into sovereign (`site/improvement-plan.html`) + client-ops mirror. `diff` confirms identical.
+- **Output:** `site/competitive-intelligence.md` rewritten for May 25. Intel tab card dual-written.
+
 ## 2026-05-24 (rancho-site-daily) — `inLanguage: "en-US"` enrichment across the 17-post blog cluster
 
 - **What shipped:** inserted `"inLanguage": "en-US"` after `"keywords"` on every BlogPosting JSON-LD across the 17-post blog cluster. Pre-scoped 5/23 as the named #1 next-slot.
