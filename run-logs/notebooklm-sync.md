@@ -615,3 +615,4 @@ Skipped (>10MB, permanent):
 - brand/ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf (38.7MB)
 
 2026-05-24 16:08 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth)
+2026-05-24 20:08 | notebooklm auth expired — run 'notebooklm login' to re-authenticate; sync skipped (scanned=0 added=0 replaced=0 skipped=0 errors=1)
