@@ -634,3 +634,4 @@ NotebookLM CLI authentication expired. Cannot sync.
 2026-05-25 04:08 | scanned=65 added=0 replaced=0 skipped=3 errors=1 (auth-expired)
 
 > Note: push failed with "Permission denied (publickey)" — local commit `e9f80e5` is in main, will push on next successful run or manual intervention. Log this so it doesn't get lost.
+2026-05-25 08:08 | scanned=0 added=0 replaced=0 skipped=0 errors=1 | NotebookLM auth expired — run `notebooklm login` to restore sync
