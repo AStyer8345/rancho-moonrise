@@ -616,3 +616,8 @@ Skipped (>10MB, permanent):
 
 2026-05-24 16:08 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth)
 2026-05-24 20:08 | notebooklm auth expired — run 'notebooklm login' to re-authenticate; sync skipped (scanned=0 added=0 replaced=0 skipped=0 errors=1)
+
+## 2026-05-25 00:08 — Auth failure
+NotebookLM CLI returned authentication expired/invalid. `notebooklm use f2e7baf6-e0f2-4b29-93af-4f5ae09303bf` redirected to Google OAuth. Sync skipped — no scan, no uploads. Run `notebooklm login` to re-authenticate.
+
+2026-05-25 00:08 | scanned=0 added=0 replaced=0 skipped=0 errors=1
