@@ -621,3 +621,14 @@ Skipped (>10MB, permanent):
 NotebookLM CLI returned authentication expired/invalid. `notebooklm use f2e7baf6-e0f2-4b29-93af-4f5ae09303bf` redirected to Google OAuth. Sync skipped — no scan, no uploads. Run `notebooklm login` to re-authenticate.
 
 2026-05-25 00:08 | scanned=0 added=0 replaced=0 skipped=0 errors=1
+
+## 2026-05-25 04:08 — Auth expired
+
+NotebookLM CLI authentication expired. Cannot sync.
+
+- Detected: 1 new file pending sync (`2026-05-16-hipcamp-curation-gap-audit.md` in `brand/`)
+- Skipped (oversize, unchanged behavior): 3 PDFs >10MB
+- State file NOT updated (so next run will retry once auth is restored)
+- Action needed (Adam): run `notebooklm login` to re-authenticate
+
+2026-05-25 04:08 | scanned=65 added=0 replaced=0 skipped=3 errors=1 (auth-expired)
