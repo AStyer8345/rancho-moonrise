@@ -1,5 +1,16 @@
 # Rancho Moonrise — Changelog
 
+## 2026-05-26 (rancho-review-monitor RUN_040) — Seventh consecutive quiet sweep; Hipcamp recovery holds; Google snippet null; Knot Haylee visibility widens
+
+- **No new reviews** on any monitored platform. Two RUN_034 drafts (Cassie Butterfield Google 5★ ~day 10; Haylee L. The Knot 1★ ~day 96 unreplied) still presumed unposted — done-log grep returned no review-related entry since 2026-04-15 22:12. Day 8 unposted in monitor.
+- **Hipcamp scrape SUCCEEDED 2nd consecutive run** — failure counter holds at 0; voice/data violations ("34-acre" welcome + "37 acres" header + "drink at our bar") live-confirmed STILL PRESENT for 2 consecutive runs. Hipcamp recovery (RUN_039) confirmed structural, not single-run noise.
+- **TripAdvisor +$1 ceiling drift HOLDS 3rd consecutive run** — $63-$180 fully stabilized from RUN_038/RUN_039; floor unchanged $63. Travelers' Choice text NOT attributed (17th consec). 26-run net drift: floor -$14, ceiling -$1.
+- **Google WebSearch snippet returns NULL today** — third distinct snippet state in 3 consecutive runs (126 stable 12 runs → 175 RUN_039 → null RUN_040). Snippet baseline is dead; confirmed unreliable as authoritative count source. Live=130/4.9★ from RUN_034 Chrome read remains most recent authoritative value (now 7d old).
+- **The Knot direct fetch 6th consecutive timeout** — BLOCKER `theknot-direct-fetch` (opened RUN_037) remains active. **STATE CHANGE — Haylee L. reviewer name surfaced in direct Rancho-attributed search snippet today** (RUN_039 only had body text via Facebook-query side channel). Negative-review search exposure WIDENING day-over-day; owner-response still not indexed in any query.
+- **Stable inline confirmations:** Expedia 8.0 (10th consec run), Facebook 5/100% recommend (21st consec run), TripAdvisor 0 reviews/unclaimed.
+- **FLAG_FOR_ADAM (day 8 carry-forward):** Both drafts ready and unposted across RUN_034 → RUN_040 (8 calendar days). Knot-visibility-widening note raises cost of continued non-reply on Haylee. Cassie = 30s in GBP dashboard. Haylee = 2min one sentence-level edit.
+- **Output:** aggregate + dashboard-state RUN_040 bumped; session-log appended; 4 raw snapshots at `tasks/review-monitor/raw/2026-05-26/`. No new review-report file (no new reviews; drafts carry forward at `brand/review-reports/2026-05-19-review-report.md`).
+
 ## 2026-05-25 (rancho-site-daily) — `isAccessibleForFree: true` enrichment across 17-post BlogPosting cluster
 
 - **Schema-only surgical edit** — appended `"isAccessibleForFree": true` as the new last property on every BlogPosting JSON-LD block (after `"inLanguage"`). 0/17 → 17/17 coverage. Pre-scoped by 5/24 run-log as the named #1 next slot.

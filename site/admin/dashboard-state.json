@@ -1,12 +1,12 @@
 {
   "review_monitor": {
-    "last_run": "2026-05-25T16:00:00Z",
+    "last_run": "2026-05-26T11:40:00Z",
     "status": "pending",
-    "status_reason": "RUN_039 (2026-05-25 11:00 CDT). Sixth consecutive quiet sweep — no new reviews on any monitorable platform; TWO carry-forward URGENT items remain unposted: Cassie Butterfield Google 5★ (drafted in RUN_034 report, ~day 9 since posting, day 7 unposted in monitor) and Haylee L. The Knot 1★ from 2026-02-26 (drafted in RUN_034 report, ~13 weeks / 95 days unreplied, day 7 unposted in monitor). Status remains 'pending' — no rating drop, no review count decrease, no new ≤3★, but TWO outstanding drafts + Knot BLOCKER continues (5th consecutive timeout). Hipcamp scrape RECOVERED (failure counter resets 2 → 0; RUN_037/038 dips confirmed transient flake); voice/data violations confirmed STILL PRESENT in live listing copy. Google WebSearch snippet STATE CHANGE 126 → 175 — same anomaly as RUN_011/012; snippet not authoritative. TripAdvisor +$1 ceiling drift $179 → $180 (now stable 2 consecutive runs). Google live count 130/4.9★ carries from RUN_034 Chrome read (now 6 days old). Expedia 8.0 INLINE 9th consecutive run. Facebook 5/100% INLINE 20th consecutive run. The Knot direct WebFetch 5th consecutive timeout (BLOCKER ongoing since RUN_037); Haylee L. review text still surfaces via WebSearch; owner-reply state unverifiable. Hotels.com BLOCKER 38th. Airbnb 403 BLOCKER 38th. Done-log signal: no review-related entry since 2026-04-15 22:12.",
+    "status_reason": "RUN_040 (2026-05-26 06:40 CT). Seventh consecutive quiet sweep — no new reviews on any monitorable platform; TWO carry-forward URGENT items remain unposted: Cassie Butterfield Google 5★ (drafted in RUN_034 report, ~day 10 since posting, day 8 unposted in monitor) and Haylee L. The Knot 1★ from 2026-02-26 (drafted in RUN_034 report, ~13 weeks / 96 days unreplied, day 8 unposted in monitor). Status remains 'pending' — no rating drop, no review count decrease, no new ≤3★, but TWO outstanding drafts + Knot BLOCKER continues (6th consecutive timeout). Hipcamp scrape SUCCEEDED 2nd consecutive run (failure counter holds at 0); voice/data violations live-confirmed STILL PRESENT for 2 consecutive runs. Google WebSearch snippet returns NULL today — third distinct snippet state in 3 consecutive runs (126 stable 12 runs → 175 RUN_039 → null RUN_040); snippet confirmed unreliable as authoritative count source. TripAdvisor +$1 ceiling drift HOLDS 3rd consecutive run ($63-$180 fully stabilized). Google live count 130/4.9★ carries from RUN_034 Chrome read (now 7 days old). Expedia 8.0 INLINE 10th consecutive run. Facebook 5/100% INLINE 21st consecutive run. The Knot direct WebFetch 6th consecutive timeout (BLOCKER ongoing since RUN_037); Haylee L. reviewer name surfaced today in Rancho-attributed snippet (visibility WIDENING vs RUN_039 side-channel-only); owner-reply state unverifiable. Hotels.com BLOCKER 39th. Airbnb 403 BLOCKER 39th. Done-log signal: no review-related entry since 2026-04-15 22:12.",
     "new_reviews_pending_response": 2,
     "new_reviews_pending_response_detail": [
-      {"platform": "google", "reviewer": "Cassie Butterfield", "stars": 5, "posted": "~2026-05-16", "draft_location": "brand/review-reports/2026-05-19-review-report.md", "first_drafted_run": 34, "days_drafted_unposted": 7},
-      {"platform": "the_knot", "reviewer": "Haylee L.", "stars": 1, "posted": "2026-02-26", "draft_location": "brand/review-reports/2026-05-19-review-report.md", "first_drafted_run": 34, "weeks_unreplied": 13, "days_unreplied": 95, "days_drafted_unposted": 7}
+      {"platform": "google", "reviewer": "Cassie Butterfield", "stars": 5, "posted": "~2026-05-16", "draft_location": "brand/review-reports/2026-05-19-review-report.md", "first_drafted_run": 34, "days_drafted_unposted": 8},
+      {"platform": "the_knot", "reviewer": "Haylee L.", "stars": 1, "posted": "2026-02-26", "draft_location": "brand/review-reports/2026-05-19-review-report.md", "first_drafted_run": 34, "weeks_unreplied": 13, "days_unreplied": 96, "days_drafted_unposted": 8}
     ],
     "total_reviews_tracked": 132,
     "unreplied_by_platform": {
@@ -19,21 +19,21 @@
     },
     "stale_platforms": ["expedia"],
     "flags": [
-      "carry-forward-cassie-butterfield-google-unreplied-day-7-monitor",
-      "carry-forward-haylee-l-the-knot-unreplied-95-days",
-      "google-snippet-state-change-126-to-175-anomaly-not-authoritative",
-      "tripadvisor-price-ceiling-180-held-2-consecutive-runs",
-      "tripadvisor-travelers-choice-text-not-property-attributed-sixteenth-run",
-      "hipcamp-live-scrape-recovered-failure-counter-reset-0",
-      "hipcamp-voice-violation-drink-at-our-bar-confirmed-in-live-listing-not-just-search-snippet",
-      "hipcamp-acreage-drift-34-vs-37-vs-36-confirmed-in-live-listing-not-just-search-snippet",
-      "expedia-rating-value-inline-ninth-consecutive-run",
-      "facebook-stable-twentieth-consecutive-run",
-      "the-knot-direct-fetch-fifth-consecutive-timeout-BLOCKER-ongoing",
-      "the-knot-haylee-text-surfaced-today-via-facebook-query-side-channel",
+      "carry-forward-cassie-butterfield-google-unreplied-day-8-monitor",
+      "carry-forward-haylee-l-the-knot-unreplied-96-days",
+      "google-snippet-state-null-third-distinct-state-in-three-runs",
+      "tripadvisor-price-ceiling-180-held-3-consecutive-runs-fully-stabilized",
+      "tripadvisor-travelers-choice-text-not-property-attributed-seventeenth-run",
+      "hipcamp-live-scrape-recovered-second-consecutive-success",
+      "hipcamp-voice-violation-drink-at-our-bar-confirmed-live-second-consecutive-run",
+      "hipcamp-acreage-drift-34-vs-37-vs-36-confirmed-live-second-consecutive-run",
+      "expedia-rating-value-inline-tenth-consecutive-run",
+      "facebook-stable-twenty-first-consecutive-run",
+      "the-knot-direct-fetch-sixth-consecutive-timeout-BLOCKER-ongoing",
+      "the-knot-haylee-reviewer-name-surfaced-in-rancho-attributed-snippet-today-visibility-widening",
       "airbnb-listing-existence-unverified",
-      "google-live-scrape-blocked-38-runs",
-      "hotels-com-fetch-timeout-38-runs",
+      "google-live-scrape-blocked-39-runs",
+      "hotels-com-fetch-timeout-38-runs-no-attempt-this-run",
       "apify-pull-still-pending-reviewer-removal-detection-dormant"
     ],
     "blockers": [
@@ -43,6 +43,6 @@
       "theknot-direct-fetch"
     ],
     "new_platforms_noted": ["yelp", "agoda", "the_knot"],
-    "run_number": 39
+    "run_number": 40
   }
 }

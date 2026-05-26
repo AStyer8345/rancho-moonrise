@@ -1640,3 +1640,46 @@ Claims enumerated from persistent surfaces and re-verified:
 **No review drafts produced this run** — no new reviews detected on any platform; both RUN_034 carry-forward drafts remain at `brand/review-reports/2026-05-19-review-report.md`.
 
 **FLAG_FOR_ADAM (day 7 carry-forward):** Both drafts (Cassie Butterfield Google 5★, Haylee L. The Knot 1★) have now been ready and unposted across RUN_034 → RUN_039 (7 calendar days). Per `feedback_stale_flags.md` — both re-verified today, flag not stale. Cassie = 30s in GBP dashboard. Haylee = 2min one sentence-level edit. Mark Done via briefing page after posting.
+
+---
+
+## RUN_040 — 2026-05-26 06:40 CT
+
+**Summary:** Seventh consecutive quiet sweep — no new reviews on any monitored platform. Two RUN_034 drafts (Cassie Butterfield Google 5★ ~day 10 since posting, Haylee L. The Knot 1★ ~day 96 unreplied) still presumed unposted — done-log grep returned no review-related entry since 2026-04-15 22:12 (re-confirmed via direct grep). **Three state continuities + two new state changes this run:** (1) Hipcamp scrape SUCCEEDED 2nd consecutive run — failure counter holds at 0; voice/data violations ('34-acre' welcome + '37 acres' header + 'drink at our bar') now live-confirmed 2 consecutive runs. (2) TripAdvisor +$1 ceiling drift HOLDS 3rd consecutive run — $63-$180 fully stabilized; floor unchanged $63. (3) **STATE CHANGE — Google WebSearch snippet returns NULL today** — third distinct snippet state in 3 consecutive runs (126 stable 12 runs → 175 RUN_039 → null RUN_040). Snippet baseline is dead; confirmed unreliable as authoritative count source. (4) **STATE CHANGE — The Knot Haylee L. reviewer name surfaced in Rancho-attributed snippet today** — RUN_039 only had body text via Facebook-query side channel; visibility of negative review continues to WIDEN across search surfaces. (5) The Knot direct WebFetch 6th consecutive timeout — BLOCKER ongoing. Google live=130/4.9★ carries from RUN_034 Chrome read (now 7 days old). Expedia 8.0 INLINE 10th consecutive. Facebook 5/100% INLINE 21st consecutive. Hotels.com BLOCKER 39th (no live attempt). Airbnb 403 BLOCKER 39th (no live attempt). Dashboard status remains 'pending'.
+
+**Done-log review-adjacent entries since RUN_039:** none (most recent review action remains `rancho-review-replies` RESOLVED 2026-04-15 22:12)
+
+**Re-verify log lines:**
+```
+[2026-05-26 06:40] re-verify google-count-rating — partial (live 7d stale) — live=130@4.9 (RUN_034 carry) snippet=null (STATE_CHANGE vs 175 RUN_039 / vs 126 baseline) prior=130@4.9 / snippet=175
+[2026-05-26 06:40] re-verify google-unreplied — still_true (done-log) — live=1 (Cassie carry, day 10) prior=1
+[2026-05-26 06:40] re-verify tripadvisor-status — still_true — live=0 unclaimed prior=0 unclaimed
+[2026-05-26 06:40] re-verify tripadvisor-price-range — still_true (ceiling holds 3rd consec) — live=$63-$180 prior=$63-$180
+[2026-05-26 06:40] re-verify tripadvisor-travelers-choice — still_true — live=boilerplate (17th consec) prior=boilerplate (16th)
+[2026-05-26 06:40] re-verify hipcamp-state — still_true (2nd consec clean scrape) — live=0 reviews/1 booking/34-acre+drink-at-bar still present (failure counter 0)
+[2026-05-26 06:40] re-verify expedia-rating — still_true (inline) — live=8.0 (10th consecutive) prior=8.0 (9th consecutive)
+[2026-05-26 06:40] re-verify facebook-state — still_true (inline) — live=5/100% (21st consec) prior=5/100% (20th consec)
+[2026-05-26 06:40] re-verify theknot-haylee-unreplied — still_true (reviewer name surfaced in Rancho-attributed snippet today) — live=name+body indexed no-reply-indexed (day ~96) prior=still_true via side-channel only (day ~95)
+[2026-05-26 06:40] re-verify theknot-direct-fetch — BLOCKED (6th consec) — 60s timeout — BLOCKER ongoing (opened RUN_037)
+[2026-05-26 06:40] re-verify airbnb-existence — BLOCKED — 39th consecutive (no live attempt)
+[2026-05-26 06:40] re-verify hotels-com-direct — BLOCKED — 38th consecutive (no live attempt)
+```
+
+**Failure counters at end of RUN_040:**
+- `google-reviews-count` live scrape: 39 consecutive (BLOCKER since 2026-04-17)
+- `hotels-com-direct-fetch`: 38 consecutive no-attempt (BLOCKER since 2026-04-17; not re-attempted this run)
+- `airbnb-listing-existence`: 39 consecutive (BLOCKER since 2026-04-17)
+- `theknot-direct-fetch`: 6 consecutive — BLOCKER ongoing (opened 2026-05-23 RUN_037)
+- `hipcamp-live-scrape`: **0 consecutive** (2 consecutive clean scrapes — fully recovered)
+
+**Files written this run:**
+- `tasks/review-monitor/raw/2026-05-26/` — 4 snapshot files (tripadvisor.md, hipcamp.md, the-knot-timeout.md, web-search-snippets.md)
+- `brand/review-aggregate.json` — RUN_040 bump
+- `site/admin/dashboard-state.json` — RUN_040 bump
+- `tasks/review-monitor/session-log.md` — this entry appended
+- `CONTEXT.md` — "Last Worked On" review-monitor line replaced with RUN_040 summary
+- `CHANGELOG.md` — one dated bullet appended
+
+**No review drafts produced this run** — no new reviews detected on any platform; both RUN_034 carry-forward drafts remain at `brand/review-reports/2026-05-19-review-report.md`.
+
+**FLAG_FOR_ADAM (day 8 carry-forward):** Both drafts (Cassie Butterfield Google 5★, Haylee L. The Knot 1★) have now been ready and unposted across RUN_034 → RUN_040 (8 calendar days). Per `feedback_stale_flags.md` — both re-verified today, flag not stale. The Knot visibility widening note: Haylee's reviewer name is now surfacing in direct Rancho-attributed search snippets (not just Facebook-query side channel as in RUN_039) — bad-review search exposure is increasing day-over-day, raising the cost of continued non-reply. Cassie = 30s in GBP dashboard. Haylee = 2min one sentence-level edit. Mark Done via briefing page after posting.
