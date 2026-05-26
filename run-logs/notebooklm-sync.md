@@ -638,3 +638,9 @@ NotebookLM CLI authentication expired. Cannot sync.
 2026-05-25 08:08 | scanned=0 added=0 replaced=0 skipped=0 errors=1 | NotebookLM auth expired — run `notebooklm login` to restore sync
 2026-05-25 13:40 | scanned=0 added=0 replaced=0 skipped=0 errors=1 | NotebookLM auth expired — run `notebooklm login` to restore sync
 2026-05-25 20:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1 — NotebookLM auth expired (run 'notebooklm login')
+
+## 2026-05-26 00:07 — sync skipped (auth expired)
+NotebookLM CLI returned: 'Authentication expired or invalid. Run notebooklm login to re-authenticate.'
+Exiting cleanly. State file not updated; will retry next run.
+
+2026-05-26 00:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1 (auth-expired)
