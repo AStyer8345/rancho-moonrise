@@ -1,5 +1,19 @@
 # Rancho Moonrise — Changelog
 
+## 2026-05-26 (rancho-site-daily) — `copyrightYear: 2026` + `copyrightHolder` enrichment across 17-post BlogPosting cluster; CreativeWork-property arc complete
+
+- **Workstream**: Pre-scoped 5/25 as the named #1 next slot. Appended `"copyrightYear": 2026` + `"copyrightHolder": {Organization name+url}` after `"isAccessibleForFree": true` on every BlogPosting JSON-LD block. `copyrightHolder` mirrors the existing `publisher` (inline Organization, not `@id`-referenced) — purely additive, no risk to other agents' assumptions.
+- **17 files in `site/pages/`**: austin-bachelorette-ranch-vs-bar-crawl, bachelorette-party-austin-texas, birthday-party-venue-near-austin, corporate-retreat-near-austin, corporate-retreat-planning-guide-texas, corporate-retreat-ranch-vs-hotel, glamping-near-austin-texas, glamping-vs-camping, mothers-day-near-austin, pool-day-pass-austin, ranch-wedding-texas, summer-glamping-near-austin, things-to-do-manor-tx, things-to-do-near-austin-with-kids, wedding-venues-near-austin, weekend-getaways-near-austin, yoga-retreat-near-austin.
+- **`BlogPosting.dateModified` 2026-05-25 → 2026-05-26** across all 17.
+- **`site/sitemap.xml`**: 17 `<lastmod>` entries bumped 2026-05-25 → 2026-05-26 (verified 1:1 — all pre-edit 5-25 lastmod lines were blog URLs).
+- **Validation**: `npm run validate:site` passes; every JSON-LD block re-parsed via `json.loads`; all 17 BlogPosting blocks assert `copyrightYear == 2026` AND `copyrightHolder.@type == "Organization"` AND `copyrightHolder.name == "Rancho Moonrise"` AND `copyrightHolder.url == "https://ranchomoonrise.com"` AND `dateModified == "2026-05-26"` AND `isAccessibleForFree is True` AND `inLanguage == "en-US"`.
+- **Re-Verify Gate (live)**: apex 200 + `server: Vercel` + `x-vercel-cache: HIT`; www 308 → apex; sitemap 200; `/corporate-retreats/` 200; `/safari-tents-near-austin/` 200; `/blog/` 200. Plus 2 pre-edit grep checks (0/17 carry `copyrightYear`, 0/17 carry `copyrightHolder`). 8/8 still_true; 0 resolved.
+- **Diff**: 18 files staged, 153 insertions / 51 deletions — uniform (8/2 per blog file + 17/17 sitemap). Pre-existing prior-session changes (api/inquiry.js, styles.css, main.js, weddings.html, contact.html) intentionally NOT staged.
+- **Improvement-plan mapping**: this work does NOT map to any of the 8 named SEO task IDs (s1–s8). `copyrightYear`/`copyrightHolder` are post-level CreativeWork schema, distinct from s4 (Breadcrumb + Speakable). No done-log entry.
+- **Surgical-runway exhaustion**: with this slot shipped, the CreativeWork-property enrichment arc on BlogPosting JSON-LD is complete — wordCount → articleSection → ImageObject → inLanguage → isAccessibleForFree → copyrightYear/Holder all landed cluster-wide. Next autonomous runs need to move schema type, pursue research-output (Person-author research, AEO baseline), or wait for Adam unblock.
+- **Run-log**: `run-logs/2026-05-26-seo.md`.
+- **Next slot pre-scoped**: Person-schema author research (research-only deliverable at `brand/2026-05-XX-blog-author-byline-research.md`; surfaces a NEEDS ADAM single-question matrix for the default byline). Backup: AggregateRating onto BlogPosting JSON-LD (currently only on publisher).
+
 ## 2026-05-26 (rancho-review-monitor RUN_040) — Seventh consecutive quiet sweep; Hipcamp recovery holds; Google snippet null; Knot Haylee visibility widens
 
 - **No new reviews** on any monitored platform. Two RUN_034 drafts (Cassie Butterfield Google 5★ ~day 10; Haylee L. The Knot 1★ ~day 96 unreplied) still presumed unposted — done-log grep returned no review-related entry since 2026-04-15 22:12. Day 8 unposted in monitor.
