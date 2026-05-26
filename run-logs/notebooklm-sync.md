@@ -644,3 +644,4 @@ NotebookLM CLI returned: 'Authentication expired or invalid. Run notebooklm logi
 Exiting cleanly. State file not updated; will retry next run.
 
 2026-05-26 00:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1 (auth-expired)
+2026-05-26 04:07 | scanned=82 added=0 replaced=0 skipped=82 errors=1 (auth-expired — `notebooklm login` needed; auth has been down since 2026-05-25)
