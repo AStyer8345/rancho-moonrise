@@ -936,33 +936,36 @@ function showDashboard(user) {
 // shows as "Using hardcoded fallback — click Replace to override."
 // ============================================================
 
+// defaultUrl is the current hardcoded image baked into the HTML. Shown as the
+// thumbnail when no Supabase row exists yet so Ashley can see what's there
+// before replacing it. Path is absolute from site root.
 var SITE_IMAGE_SLOTS = [
     // ===== HOME =====
-    { slotKey: 'home_cabins_image',          page: 'home', label: 'Cabins split — image',                aspectRatio: '4:3' },
-    { slotKey: 'home_spaces_barn_image',     page: 'home', label: 'Our Spaces — Event Barn',              aspectRatio: '4:3' },
-    { slotKey: 'home_spaces_pool_image',     page: 'home', label: 'Our Spaces — The Pool',                aspectRatio: '4:3' },
-    { slotKey: 'home_spaces_lodge_image',    page: 'home', label: 'Our Spaces — The Lodge',               aspectRatio: '4:3' },
-    { slotKey: 'home_spaces_corral_image',   page: 'home', label: 'Our Spaces — The Corral',              aspectRatio: '4:3' },
-    { slotKey: 'home_weddingscta_bg',        page: 'home', label: 'Weddings CTA — background',            aspectRatio: '16:9' },
-    { slotKey: 'home_entirelyyours_image1',  page: 'home', label: 'Entirely Yours — image 1 (pool)',      aspectRatio: '4:3' },
-    { slotKey: 'home_entirelyyours_image2',  page: 'home', label: 'Entirely Yours — image 2 (barn)',      aspectRatio: '4:3' },
-    { slotKey: 'home_entirelyyours_image3',  page: 'home', label: 'Entirely Yours — image 3 (campfire)',  aspectRatio: '4:3' },
-    { slotKey: 'home_about_image',           page: 'home', label: 'About — aerial photo',                 aspectRatio: '4:3' },
-    { slotKey: 'home_finalcta_bg',           page: 'home', label: 'Final CTA — background',               aspectRatio: '16:9' },
+    { slotKey: 'home_cabins_image',          page: 'home', label: 'Cabins split — image',                aspectRatio: '4:3',  defaultUrl: '/images/feature-safari-tent-1024.webp' },
+    { slotKey: 'home_spaces_barn_image',     page: 'home', label: 'Our Spaces — Event Barn',              aspectRatio: '4:3',  defaultUrl: '/images/venue-event-barn-1024.webp' },
+    { slotKey: 'home_spaces_pool_image',     page: 'home', label: 'Our Spaces — The Pool',                aspectRatio: '4:3',  defaultUrl: '/images/venue-poolside-1024.webp' },
+    { slotKey: 'home_spaces_lodge_image',    page: 'home', label: 'Our Spaces — The Lodge',               aspectRatio: '4:3',  defaultUrl: '/images/lodge-fireplace-lounge-1024.webp' },
+    { slotKey: 'home_spaces_corral_image',   page: 'home', label: 'Our Spaces — The Corral',              aspectRatio: '4:3',  defaultUrl: '/images/wedding-ceremony-corral-1024.webp' },
+    { slotKey: 'home_weddingscta_bg',        page: 'home', label: 'Weddings CTA — background',            aspectRatio: '16:9', defaultUrl: '/images/cta-wedding-reception-1024.webp' },
+    { slotKey: 'home_entirelyyours_image1',  page: 'home', label: 'Entirely Yours — image 1 (pool)',      aspectRatio: '4:3',  defaultUrl: '/images/feature-pool-1024.webp' },
+    { slotKey: 'home_entirelyyours_image2',  page: 'home', label: 'Entirely Yours — image 2 (barn)',      aspectRatio: '4:3',  defaultUrl: '/images/venue-event-barn-1024.webp' },
+    { slotKey: 'home_entirelyyours_image3',  page: 'home', label: 'Entirely Yours — image 3 (campfire)',  aspectRatio: '4:3',  defaultUrl: '/images/accom-campfire-evening-1024.webp' },
+    { slotKey: 'home_about_image',           page: 'home', label: 'About — aerial photo',                 aspectRatio: '4:3',  defaultUrl: '/images/about-ranch-aerial-1024.webp' },
+    { slotKey: 'home_finalcta_bg',           page: 'home', label: 'Final CTA — background',               aspectRatio: '16:9', defaultUrl: '/images/cta-campfire-night-1024.webp' },
 
     // ===== ACCOMMODATIONS =====
-    { slotKey: 'accommodations_hero_bg',         page: 'accommodations', label: 'Hero — background',              aspectRatio: '16:9' },
-    { slotKey: 'accommodations_card_cabins',     page: 'accommodations', label: 'Cabins card — image',            aspectRatio: '3:2' },
-    { slotKey: 'accommodations_card_safari',     page: 'accommodations', label: 'Safari Tents card — image',      aspectRatio: '3:2' },
-    { slotKey: 'accommodations_card_group',      page: 'accommodations', label: 'Group Bookings card — image',    aspectRatio: '3:2' },
-    { slotKey: 'accommodations_amenity_pool',    page: 'accommodations', label: 'Amenity — Pool & Spa',           aspectRatio: '4:3' },
-    { slotKey: 'accommodations_amenity_lodge',   page: 'accommodations', label: 'Amenity — The Lodge',            aspectRatio: '4:3' },
-    { slotKey: 'accommodations_amenity_firepit', page: 'accommodations', label: 'Amenity — Fire Pits',            aspectRatio: '4:3' },
-    { slotKey: 'accommodations_amenity_pets',    page: 'accommodations', label: 'Amenity — Pet Friendly',         aspectRatio: '4:3' },
-    { slotKey: 'accommodations_amenity_wifi',    page: 'accommodations', label: 'Amenity — Complimentary WiFi',   aspectRatio: '4:3' },
-    { slotKey: 'accommodations_amenity_unload',  page: 'accommodations', label: 'Amenity — Easy Unloading',       aspectRatio: '4:3' },
-    { slotKey: 'accommodations_checkin_image',   page: 'accommodations', label: 'Check-In section — image',       aspectRatio: '4:3' },
-    { slotKey: 'accommodations_cta_bg',          page: 'accommodations', label: 'CTA banner — background',        aspectRatio: '16:9' }
+    { slotKey: 'accommodations_hero_bg',         page: 'accommodations', label: 'Hero — background',              aspectRatio: '16:9', defaultUrl: '/images/accom-safari-tent-1024.webp' },
+    { slotKey: 'accommodations_card_cabins',     page: 'accommodations', label: 'Cabins card — image',            aspectRatio: '3:2',  defaultUrl: '/images/accom-cabin-exterior-1024.webp' },
+    { slotKey: 'accommodations_card_safari',     page: 'accommodations', label: 'Safari Tents card — image',      aspectRatio: '3:2',  defaultUrl: '/images/accom-safari-tent-1024.webp' },
+    { slotKey: 'accommodations_card_group',      page: 'accommodations', label: 'Group Bookings card — image',    aspectRatio: '3:2',  defaultUrl: '/images/accom-group-aerial-1024.webp' },
+    { slotKey: 'accommodations_amenity_pool',    page: 'accommodations', label: 'Amenity — Pool & Spa',           aspectRatio: '4:3',  defaultUrl: '/images/feature-pool-1024.webp' },
+    { slotKey: 'accommodations_amenity_lodge',   page: 'accommodations', label: 'Amenity — The Lodge',            aspectRatio: '4:3',  defaultUrl: '/images/lodge-fireplace-lounge-1024.webp' },
+    { slotKey: 'accommodations_amenity_firepit', page: 'accommodations', label: 'Amenity — Fire Pits',            aspectRatio: '4:3',  defaultUrl: '/images/accom-campfire-evening-1024.webp' },
+    { slotKey: 'accommodations_amenity_pets',    page: 'accommodations', label: 'Amenity — Pet Friendly',         aspectRatio: '4:3',  defaultUrl: '/images/accom-safari-tent-1024.webp' },
+    { slotKey: 'accommodations_amenity_wifi',    page: 'accommodations', label: 'Amenity — Complimentary WiFi',   aspectRatio: '4:3',  defaultUrl: '/images/accom-group-aerial-1024.webp' },
+    { slotKey: 'accommodations_amenity_unload',  page: 'accommodations', label: 'Amenity — Easy Unloading',       aspectRatio: '4:3',  defaultUrl: '/images/accom-cabin-exterior-1024.webp' },
+    { slotKey: 'accommodations_checkin_image',   page: 'accommodations', label: 'Check-In section — image',       aspectRatio: '4:3',  defaultUrl: '/images/accom-campfire-evening-1024.webp' },
+    { slotKey: 'accommodations_cta_bg',          page: 'accommodations', label: 'CTA banner — background',        aspectRatio: '16:9', defaultUrl: '/images/cta-tent-morning-1024.webp' }
 ];
 
 // PAGE_LABELS is defined later in the file (shared with loadSiteCopy)
@@ -997,9 +1000,10 @@ async function loadSiteImages() {
         var slots = byPage[page];
         var cards = slots.map(function(slot) {
             var row = bySlot[slot.slotKey];
-            var thumb = row && row.public_url
-                ? '<img src="' + escapeHtml(row.public_url) + '" alt="" style="width: 100%; height: 100%; object-fit: cover;">'
-                : '<div style="display:flex; align-items:center; justify-content:center; height:100%; color:var(--text-muted); font-size:0.8rem; padding:8px; text-align:center;">Using site default<br>(no upload yet)</div>';
+            var thumbUrl = (row && row.public_url) ? row.public_url : slot.defaultUrl;
+            var thumb = thumbUrl
+                ? '<img src="' + escapeHtml(thumbUrl) + '" alt="" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.display=\'none\'; this.parentElement.innerHTML = \'<div style=&quot;display:flex;align-items:center;justify-content:center;height:100%;color:var(--text-muted);font-size:0.8rem;padding:8px;text-align:center;&quot;>Image not found</div>\'">'
+                : '<div style="display:flex; align-items:center; justify-content:center; height:100%; color:var(--text-muted); font-size:0.8rem; padding:8px; text-align:center;">No image set</div>';
             var alt = row && row.alt_text ? row.alt_text : '';
             return '<div class="site-image-card" data-slot="' + escapeHtml(slot.slotKey) + '">' +
                 '<div class="site-image-card__thumb">' + thumb + '</div>' +
