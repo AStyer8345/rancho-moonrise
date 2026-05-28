@@ -9,6 +9,10 @@
     <!-- Supabase JS Client -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 
+    <!-- Cropper.js for image cropping with locked aspect ratios -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cropperjs@1.6.1/dist/cropper.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/cropperjs@1.6.1/dist/cropper.min.js"></script>
+
     <style>
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -415,6 +419,24 @@
         .tabs { -webkit-overflow-scrolling: touch; scrollbar-width: none; }
         .tabs::-webkit-scrollbar { display: none; }
 
+        /* Site Images grid */
+        .site-image-page { margin-bottom: 32px; }
+        .site-image-page__title { font-size: 1.05rem; color: var(--orange); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+        .site-image-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+        .site-image-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; }
+        .site-image-card__thumb { width: 100%; aspect-ratio: 4 / 3; background: var(--bg); overflow: hidden; }
+        .site-image-card__body { padding: 12px 14px; flex: 1; display: flex; flex-direction: column; gap: 8px; }
+        .site-image-card__label { font-weight: 600; font-size: 0.9rem; color: var(--text); }
+        .site-image-card__meta { display: flex; gap: 8px; flex-wrap: wrap; }
+        .site-image-card__ratio { font-size: 0.7rem; color: var(--text-muted); background: var(--bg); padding: 2px 8px; border-radius: 999px; font-family: ui-monospace, monospace; }
+        .site-image-card__status { font-size: 0.7rem; color: var(--text-muted); background: var(--bg); padding: 2px 8px; border-radius: 999px; }
+        .site-image-card__status--custom { background: var(--success-light); color: var(--success); font-weight: 600; }
+        .site-image-card__alt { font-size: 0.75rem; color: var(--text-muted); font-style: italic; line-height: 1.4; }
+        .site-image-card__actions { display: flex; gap: 6px; flex-wrap: wrap; margin-top: auto; padding-top: 6px; }
+
+        /* Cropper container needs explicit max-height so the cropper sizes correctly */
+        #cropperArea img { max-width: 100%; max-height: 450px; display: block; }
+
         @media (max-width: 600px) {
             .content-card { grid-template-columns: 1fr; }
             .content-card__thumb { width: 100%; height: 160px; }
@@ -467,6 +489,7 @@
         <button class="tab-btn is-active" data-tab="events">Events</button>
         <button class="tab-btn" data-tab="photos">Photos</button>
         <button class="tab-btn" data-tab="galleries">Galleries</button>
+        <button class="tab-btn" data-tab="site-images">Site Images</button>
         <button class="tab-btn" data-tab="site-copy">Site Copy</button>
         <button class="tab-btn" data-tab="reviews">Reviews</button>
     </div>
@@ -506,6 +529,15 @@
             </select>
         </div>
         <div id="galleryList" class="loading">Loading gallery...</div>
+    </div>
+
+    <!-- SITE IMAGES TAB -->
+    <div class="tab-content" id="tab-site-images">
+        <div class="section-header">
+            <h2>Site Images</h2>
+        </div>
+        <p style="color: var(--text-muted); margin-bottom: 16px; font-size: 0.9rem;">Replace individual photos across the site — hero backgrounds, amenity cards, feature images. Each slot has a locked aspect ratio. Upload once, the system generates 4 responsive sizes automatically. Changes go live immediately.</p>
+        <div id="siteImagesList" class="loading">Loading image slots...</div>
     </div>
 
     <!-- SITE COPY TAB -->
@@ -735,6 +767,40 @@
     </div>
 </div>
 
+<!-- Cropper modal — used by Site Images tab to crop + upload a responsive image ladder -->
+<div class="modal-overlay" id="cropperModal">
+    <div class="modal" style="max-width: 720px;">
+        <h2 id="cropperTitle">Replace Image</h2>
+        <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:16px;" id="cropperSlotInfo">
+            Choose a high-resolution image. Crop will be locked to the slot's aspect ratio. We generate 480/1024/1920/2560 sized WebPs automatically.
+        </p>
+        <div class="error-msg" id="cropperError"></div>
+
+        <div class="form-group">
+            <label for="cropperFile">Choose image file (JPG, PNG, or WebP — bigger is better)</label>
+            <input type="file" id="cropperFile" accept="image/jpeg,image/png,image/webp">
+        </div>
+
+        <div id="cropperArea" style="display:none; max-height:450px; margin: 16px 0; background:#222; border-radius:6px; overflow:hidden;">
+            <img id="cropperImage" style="display:block; max-width:100%;">
+        </div>
+
+        <div class="form-group">
+            <label for="cropperAlt">Alt text (describes the image for screen readers and SEO)</label>
+            <input type="text" id="cropperAlt" placeholder="e.g. Resort-style pool at sunset">
+        </div>
+
+        <div id="cropperProgress" style="display:none; margin: 12px 0; padding: 12px; background: var(--bg); border-radius: 6px;">
+            <p style="font-size:0.9rem; color:var(--text-muted); margin:0;">Uploading <span id="cropperProgressText">…</span></p>
+        </div>
+
+        <div class="modal__footer">
+            <button type="button" class="btn btn--secondary" onclick="closeCropperModal()">Cancel</button>
+            <button type="button" class="btn btn--primary" id="cropperApplyBtn" disabled>Apply &amp; Upload</button>
+        </div>
+    </div>
+</div>
+
 <!-- Toast -->
 <div class="toast" id="toast"></div>
 
@@ -855,8 +921,137 @@ function showDashboard(user) {
     loadEvents();
     loadPhotos();
     loadGalleryPhotos();
+    loadSiteImages();
     loadSiteCopy();
     loadReviews();
+}
+
+// ============================================================
+// Site Images tab — lists every image slot tagged with
+// data-image-slot in the live HTML, grouped by page.
+//
+// The slot manifest is the source of truth for "what slots exist."
+// rancho_site_images rows are overlaid on top: if a row exists,
+// the thumbnail + alt text come from Supabase. Otherwise the slot
+// shows as "Using hardcoded fallback — click Replace to override."
+// ============================================================
+
+var SITE_IMAGE_SLOTS = [
+    // ===== HOME =====
+    { slotKey: 'home_cabins_image',          page: 'home', label: 'Cabins split — image',                aspectRatio: '4:3' },
+    { slotKey: 'home_spaces_barn_image',     page: 'home', label: 'Our Spaces — Event Barn',              aspectRatio: '4:3' },
+    { slotKey: 'home_spaces_pool_image',     page: 'home', label: 'Our Spaces — The Pool',                aspectRatio: '4:3' },
+    { slotKey: 'home_spaces_lodge_image',    page: 'home', label: 'Our Spaces — The Lodge',               aspectRatio: '4:3' },
+    { slotKey: 'home_spaces_corral_image',   page: 'home', label: 'Our Spaces — The Corral',              aspectRatio: '4:3' },
+    { slotKey: 'home_weddingscta_bg',        page: 'home', label: 'Weddings CTA — background',            aspectRatio: '16:9' },
+    { slotKey: 'home_entirelyyours_image1',  page: 'home', label: 'Entirely Yours — image 1 (pool)',      aspectRatio: '4:3' },
+    { slotKey: 'home_entirelyyours_image2',  page: 'home', label: 'Entirely Yours — image 2 (barn)',      aspectRatio: '4:3' },
+    { slotKey: 'home_entirelyyours_image3',  page: 'home', label: 'Entirely Yours — image 3 (campfire)',  aspectRatio: '4:3' },
+    { slotKey: 'home_about_image',           page: 'home', label: 'About — aerial photo',                 aspectRatio: '4:3' },
+    { slotKey: 'home_finalcta_bg',           page: 'home', label: 'Final CTA — background',               aspectRatio: '16:9' },
+
+    // ===== ACCOMMODATIONS =====
+    { slotKey: 'accommodations_hero_bg',         page: 'accommodations', label: 'Hero — background',              aspectRatio: '16:9' },
+    { slotKey: 'accommodations_card_cabins',     page: 'accommodations', label: 'Cabins card — image',            aspectRatio: '3:2' },
+    { slotKey: 'accommodations_card_safari',     page: 'accommodations', label: 'Safari Tents card — image',      aspectRatio: '3:2' },
+    { slotKey: 'accommodations_card_group',      page: 'accommodations', label: 'Group Bookings card — image',    aspectRatio: '3:2' },
+    { slotKey: 'accommodations_amenity_pool',    page: 'accommodations', label: 'Amenity — Pool & Spa',           aspectRatio: '4:3' },
+    { slotKey: 'accommodations_amenity_lodge',   page: 'accommodations', label: 'Amenity — The Lodge',            aspectRatio: '4:3' },
+    { slotKey: 'accommodations_amenity_firepit', page: 'accommodations', label: 'Amenity — Fire Pits',            aspectRatio: '4:3' },
+    { slotKey: 'accommodations_amenity_pets',    page: 'accommodations', label: 'Amenity — Pet Friendly',         aspectRatio: '4:3' },
+    { slotKey: 'accommodations_amenity_wifi',    page: 'accommodations', label: 'Amenity — Complimentary WiFi',   aspectRatio: '4:3' },
+    { slotKey: 'accommodations_amenity_unload',  page: 'accommodations', label: 'Amenity — Easy Unloading',       aspectRatio: '4:3' },
+    { slotKey: 'accommodations_checkin_image',   page: 'accommodations', label: 'Check-In section — image',       aspectRatio: '4:3' },
+    { slotKey: 'accommodations_cta_bg',          page: 'accommodations', label: 'CTA banner — background',        aspectRatio: '16:9' }
+];
+
+// PAGE_LABELS is defined later in the file (shared with loadSiteCopy)
+// and used here via JS's late-binding for var declarations.
+
+async function loadSiteImages() {
+    var container = $('#siteImagesList');
+    container.innerHTML = '<div class="loading">Loading image slots…</div>';
+
+    var { data: rows, error } = await sb
+        .from('rancho_site_images')
+        .select('*');
+
+    if (error) {
+        container.innerHTML = '<div class="error-msg" style="display:block;">Failed to load: ' + escapeHtml(error.message) + '</div>';
+        return;
+    }
+
+    var bySlot = {};
+    (rows || []).forEach(function(r) { bySlot[r.slot_key] = r; });
+
+    // Group manifest by page, preserving page order
+    var pageOrder = [];
+    var byPage = {};
+    SITE_IMAGE_SLOTS.forEach(function(slot) {
+        if (!byPage[slot.page]) { byPage[slot.page] = []; pageOrder.push(slot.page); }
+        byPage[slot.page].push(slot);
+    });
+
+    var html = pageOrder.map(function(page) {
+        var pageLabel = PAGE_LABELS[page] || page;
+        var slots = byPage[page];
+        var cards = slots.map(function(slot) {
+            var row = bySlot[slot.slotKey];
+            var thumb = row && row.public_url
+                ? '<img src="' + escapeHtml(row.public_url) + '" alt="" style="width: 100%; height: 100%; object-fit: cover;">'
+                : '<div style="display:flex; align-items:center; justify-content:center; height:100%; color:var(--text-muted); font-size:0.8rem; padding:8px; text-align:center;">Using site default<br>(no upload yet)</div>';
+            var alt = row && row.alt_text ? row.alt_text : '';
+            return '<div class="site-image-card" data-slot="' + escapeHtml(slot.slotKey) + '">' +
+                '<div class="site-image-card__thumb">' + thumb + '</div>' +
+                '<div class="site-image-card__body">' +
+                    '<div class="site-image-card__label">' + escapeHtml(slot.label) + '</div>' +
+                    '<div class="site-image-card__meta">' +
+                        '<span class="site-image-card__ratio">Aspect ' + escapeHtml(slot.aspectRatio) + '</span>' +
+                        (row ? '<span class="site-image-card__status site-image-card__status--custom">Custom</span>' : '<span class="site-image-card__status">Default</span>') +
+                    '</div>' +
+                    (alt ? '<div class="site-image-card__alt">' + escapeHtml(alt) + '</div>' : '') +
+                    '<div class="site-image-card__actions">' +
+                        '<button class="btn btn--primary btn--sm" onclick="replaceSlotImage(\'' + escapeHtml(slot.slotKey) + '\')">Replace Image</button>' +
+                        (row ? '<button class="btn btn--secondary btn--sm" onclick="resetSlotImage(\'' + escapeHtml(slot.slotKey) + '\')">Reset to Default</button>' : '') +
+                    '</div>' +
+                '</div>' +
+            '</div>';
+        }).join('');
+        return '<div class="site-image-page">' +
+            '<h3 class="site-image-page__title">' + escapeHtml(pageLabel) + ' <span style="color: var(--text-muted); font-weight: normal; font-size: 0.85rem;">(' + slots.length + ' image slots)</span></h3>' +
+            '<div class="site-image-grid">' + cards + '</div>' +
+        '</div>';
+    }).join('');
+
+    container.innerHTML = html;
+}
+
+function replaceSlotImage(slotKey) {
+    var slot = SITE_IMAGE_SLOTS.find(function(s) { return s.slotKey === slotKey; });
+    if (!slot) return;
+    // Pull current alt text from the DB to pre-fill, if any
+    sb.from('rancho_site_images')
+        .select('alt_text')
+        .eq('slot_key', slotKey)
+        .maybeSingle()
+        .then(function(res) {
+            openCropperFor({
+                slotKey: slot.slotKey,
+                page: slot.page,
+                label: slot.label,
+                aspectRatio: slot.aspectRatio,
+                currentAlt: (res.data && res.data.alt_text) || '',
+                onComplete: function() { loadSiteImages(); }
+            });
+        });
+}
+
+async function resetSlotImage(slotKey) {
+    if (!confirm('Reset to the original site image? This deletes the custom upload — the page will fall back to the original hardcoded photo.')) return;
+    var { error } = await sb.from('rancho_site_images').delete().eq('slot_key', slotKey);
+    if (error) { toast('Reset failed: ' + error.message, 'error'); return; }
+    toast('Reset to default — page will show original image on next reload', 'success');
+    loadSiteImages();
 }
 
 // ---- Tabs ----
@@ -1536,6 +1731,163 @@ $$('input[type="file"]').forEach(function(input) {
             reader.readAsDataURL(this.files[0]);
         }
     });
+});
+
+// ============================================================
+// Cropper pipeline — image upload with locked aspect ratio and
+// auto-generated 480/1024/1920/2560 WebP ladder.
+//
+// Public API:
+//   openCropperFor({
+//     slotKey, page, label, aspectRatio,   // required
+//     currentAlt,                          // optional — pre-fill alt field
+//     onComplete                           // callback({slotKey, public_url, alt_text})
+//   })
+//
+// Storage layout:
+//   bucket: rancho-moonrise
+//   path:   site-images/{slotKey}/v{timestamp}-{size}.webp
+//
+// public_url stored = 1024 size (cms.js detects the -1024.webp suffix
+// and rebuilds srcset across the full 4-size ladder on the live site).
+// ============================================================
+
+var _cropper = null;
+var _cropperState = null;
+
+function parseAspectRatio(s) {
+    if (!s || s.indexOf(':') === -1) return 4 / 3;
+    var parts = s.split(':');
+    var w = parseFloat(parts[0]);
+    var h = parseFloat(parts[1]);
+    if (!w || !h) return 4 / 3;
+    return w / h;
+}
+
+function openCropperFor(opts) {
+    _cropperState = opts;
+    $('#cropperTitle').textContent = 'Replace: ' + (opts.label || opts.slotKey);
+    $('#cropperSlotInfo').innerHTML =
+        'Page: <strong>' + escapeHtml(opts.page) + '</strong> &middot; ' +
+        'Aspect ratio: <strong>' + escapeHtml(opts.aspectRatio) + '</strong> (locked) &middot; ' +
+        'Will generate 480 / 1024 / 1920 / 2560 px WebPs.';
+    $('#cropperError').style.display = 'none';
+    $('#cropperFile').value = '';
+    $('#cropperAlt').value = opts.currentAlt || '';
+    $('#cropperArea').style.display = 'none';
+    $('#cropperApplyBtn').disabled = true;
+    $('#cropperProgress').style.display = 'none';
+    if (_cropper) { _cropper.destroy(); _cropper = null; }
+    openModal('cropperModal');
+}
+
+function closeCropperModal() {
+    if (_cropper) { _cropper.destroy(); _cropper = null; }
+    _cropperState = null;
+    closeModal('cropperModal');
+}
+
+$('#cropperFile').addEventListener('change', function(e) {
+    var file = e.target.files[0];
+    if (!file || !_cropperState) return;
+    var reader = new FileReader();
+    reader.onload = function(ev) {
+        var img = $('#cropperImage');
+        img.onload = function() {
+            if (_cropper) _cropper.destroy();
+            _cropper = new Cropper(img, {
+                aspectRatio: parseAspectRatio(_cropperState.aspectRatio),
+                viewMode: 1,
+                autoCropArea: 1,
+                background: false,
+                responsive: true,
+                zoomable: true,
+                rotatable: false,
+                scalable: false
+            });
+            $('#cropperApplyBtn').disabled = false;
+        };
+        img.src = ev.target.result;
+        $('#cropperArea').style.display = 'block';
+    };
+    reader.readAsDataURL(file);
+});
+
+// Convert cropper output to a single-size WebP blob
+function cropperToWebPBlob(cropper, targetWidth, aspectRatio) {
+    var ratio = parseAspectRatio(aspectRatio);
+    var targetHeight = Math.round(targetWidth / ratio);
+    return new Promise(function(resolve, reject) {
+        var canvas = cropper.getCroppedCanvas({
+            width: targetWidth,
+            height: targetHeight,
+            imageSmoothingEnabled: true,
+            imageSmoothingQuality: 'high'
+        });
+        if (!canvas) return reject(new Error('Cropper returned no canvas (image too small?)'));
+        canvas.toBlob(function(blob) {
+            if (!blob) return reject(new Error('Canvas toBlob returned null'));
+            resolve(blob);
+        }, 'image/webp', 0.85);
+    });
+}
+
+$('#cropperApplyBtn').addEventListener('click', async function() {
+    if (!_cropper || !_cropperState) return;
+    var btn = this;
+    var state = _cropperState;
+    btn.disabled = true;
+    $('#cropperError').style.display = 'none';
+    $('#cropperProgress').style.display = 'block';
+
+    var sizes = [480, 1024, 1920, 2560];
+    var ts = Date.now();
+    var basePath = 'site-images/' + state.slotKey + '/v' + ts;
+    var publicUrl1024 = '';
+
+    try {
+        for (var i = 0; i < sizes.length; i++) {
+            var size = sizes[i];
+            $('#cropperProgressText').textContent = (i + 1) + '/4 — ' + size + 'px';
+            var blob = await cropperToWebPBlob(_cropper, size, state.aspectRatio);
+            var path = basePath + '-' + size + '.webp';
+            var { error: upErr } = await sb.storage
+                .from('rancho-moonrise')
+                .upload(path, blob, { contentType: 'image/webp', upsert: false });
+            if (upErr) throw upErr;
+            if (size === 1024) {
+                var urlRes = sb.storage.from('rancho-moonrise').getPublicUrl(path);
+                publicUrl1024 = urlRes.data.publicUrl;
+            }
+        }
+
+        $('#cropperProgressText').textContent = 'finalizing…';
+        var row = {
+            slot_key: state.slotKey,
+            page: state.page,
+            label: state.label,
+            storage_path: basePath + '-1024.webp',
+            public_url: publicUrl1024,
+            alt_text: $('#cropperAlt').value.trim(),
+            aspect_ratio: state.aspectRatio,
+            is_active: true
+        };
+        var { error: upsertErr } = await sb
+            .from('rancho_site_images')
+            .upsert(row, { onConflict: 'slot_key' });
+        if (upsertErr) throw upsertErr;
+
+        toast('Image uploaded — live site will pick it up on next reload', 'success');
+        var done = state.onComplete;
+        closeCropperModal();
+        if (done) done(row);
+    } catch (err) {
+        var msg = (err && err.message) ? err.message : String(err);
+        $('#cropperError').textContent = 'Upload failed: ' + msg;
+        $('#cropperError').style.display = 'block';
+        $('#cropperProgress').style.display = 'none';
+        btn.disabled = false;
+    }
 });
 
 // ---- Close modals on overlay click ----

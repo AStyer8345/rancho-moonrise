@@ -235,6 +235,95 @@
             });
     }
 
+    // ---- Load Single-Slot Site Images ----
+    // Hydrates any element with data-image-slot="..." from rancho_site_images.
+    // <img> elements get src + srcset (responsive ladder if path follows -1024.webp convention).
+    // Other elements (divs used as background-image) get background-image swapped.
+    function loadSiteImages() {
+        var pageSlug = document.body.getAttribute('data-page');
+        if (!pageSlug) return;
+        query('rancho_site_images', 'page=eq.' + pageSlug + '&is_active=eq.true')
+            .then(function (rows) { rows.forEach(applyImageSlot); });
+    }
+
+    function applyImageSlot(row) {
+        var els = document.querySelectorAll('[data-image-slot="' + row.slot_key + '"]');
+        if (!els.length || !row.public_url) return;
+        els.forEach(function (el) {
+            if (el.tagName === 'IMG') {
+                applyResponsiveImage(el, row.public_url, row.alt_text);
+            } else {
+                el.style.backgroundImage = "url('" + row.public_url + "')";
+            }
+        });
+    }
+
+    // If url matches "{stem}-1024.webp", build srcset across the 480/1024/1920/2560 ladder.
+    // Otherwise just set src and remove any stale srcset.
+    function applyResponsiveImage(img, url, alt) {
+        var match = /^(.*)-1024\.webp$/i.exec(url);
+        if (match) {
+            var stem = match[1];
+            img.src = url;
+            img.srcset = stem + '-480.webp 480w, ' + stem + '-1024.webp 1024w, ' + stem + '-1920.webp 1920w, ' + stem + '-2560.webp 2560w';
+        } else {
+            img.src = url;
+            img.removeAttribute('srcset');
+        }
+        if (alt) img.alt = alt;
+    }
+
+    // ---- Load Galleries ----
+    // For each <div data-gallery="sectionKey"> on the page, fetches rancho_photos rows
+    // with that section and rebuilds the gallery tiles. Preserves tile class by
+    // inferring it from the container class (e.g. "wedding-gallery" -> "wedding-gallery__tile").
+    function loadGalleries() {
+        var galleries = document.querySelectorAll('[data-gallery]');
+        if (!galleries.length) return;
+
+        var sections = Array.prototype.map.call(galleries, function (g) {
+            return g.getAttribute('data-gallery');
+        }).filter(Boolean);
+        if (!sections.length) return;
+
+        var inList = '(' + sections.join(',') + ')';
+        query('rancho_photos', 'section=in.' + inList + '&is_active=eq.true&order=sort_order')
+            .then(function (rows) {
+                var bySection = {};
+                rows.forEach(function (r) {
+                    (bySection[r.section] = bySection[r.section] || []).push(r);
+                });
+                galleries.forEach(function (g) {
+                    var section = g.getAttribute('data-gallery');
+                    var photos = bySection[section];
+                    if (!photos || !photos.length) return;
+                    applyGallery(g, photos);
+                });
+            });
+    }
+
+    function applyGallery(container, photos) {
+        // Infer tile class from a container class ending in "gallery"
+        var tileClass = 'gallery__tile';
+        for (var i = 0; i < container.classList.length; i++) {
+            var c = container.classList[i];
+            if (/gallery$/.test(c)) { tileClass = c + '__tile'; break; }
+        }
+        container.innerHTML = photos.map(function (ph) {
+            var alt = escapeHtml(ph.alt_text || ph.title || '');
+            var url = escapeHtml(ph.public_url);
+            var srcsetAttr = '';
+            var match = /^(.*)-1024\.webp$/i.exec(ph.public_url);
+            if (match) {
+                var stem = escapeHtml(match[1]);
+                srcsetAttr = ' srcset="' + stem + '-480.webp 480w, ' + stem + '-1024.webp 1024w, ' + stem + '-1920.webp 1920w" sizes="(min-width: 900px) 25vw, 33vw"';
+            }
+            return '<div class="' + tileClass + '" role="listitem">' +
+                '<img src="' + url + '"' + srcsetAttr + ' alt="' + alt + '" width="800" height="800" loading="lazy" decoding="async">' +
+            '</div>';
+        }).join('');
+    }
+
     function applyCopyBlock(row) {
         var els = document.querySelectorAll('[data-copy-key="' + row.block_key + '"]');
         if (!els.length || !row.body) return;
@@ -242,6 +331,12 @@
             // data-copy-attr="href" lets a block control an attribute (link URL, src, etc.)
             var attr = el.getAttribute('data-copy-attr');
             if (attr) { el.setAttribute(attr, row.body); return; }
+            // data-copy-html="true" opts into innerHTML so blocks can include inline
+            // formatting like <strong>, <em>, <br>. Default is safe textContent.
+            if (el.getAttribute('data-copy-html') === 'true') {
+                el.innerHTML = row.body;
+                return;
+            }
             var tag = el.tagName;
             if (tag === 'H1' || tag === 'H2' || tag === 'H3' || tag === 'H4' || tag === 'P' || tag === 'SPAN' || tag === 'A' || tag === 'LI') {
                 el.textContent = row.body;
@@ -260,9 +355,13 @@
             loadTestimonials();
             loadEvents();
             loadSiteCopy();
+            loadSiteImages();
             // Hero photos: only load from CMS if photos have Supabase storage URLs
             // (currently seeded with local paths, so skip until Ashley uploads new ones)
             // loadHeroPhotos();
+            // Galleries: enable after Step 6 admin lets Ashley seed/order them.
+            // Without seeding first, this would replace hardcoded fallbacks with
+            // partial sets and drop tiles. loadGalleries();
         }, 100);
     }
 })();
