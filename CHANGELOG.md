@@ -1,5 +1,16 @@
 # Rancho Moonrise — Changelog
 
+## 2026-05-28 (rancho-site-daily) — Quiet maintenance run; no shipped edits (GOALS.md cruise-control gate)
+
+- **GOALS.md gate**: week of 2026-05-18 keeps Rancho on cruise control ("No Rancho Moonrise active work — paused (cruise control only if Ashley moves)"). `rancho-site-daily` not in explicit pause-list, so the run continued per CLAUDE.md ("Automated/scheduled tasks continue unless GOALS.md explicitly pauses them") — but executed in maintenance mode only.
+- **No schema edits.** CreativeWork-property enrichment arc closed 5/26 (wordCount → articleSection → ImageObject → inLanguage → isAccessibleForFree → copyrightYear/Holder). Both pre-scoped next-slot candidates (Person-author research as research-only deliverable; AggregateRating-on-BlogPosting cluster bump) deferred — would add work-in-progress against a paused workstream.
+- **No new NEEDS ADAM items.** Cruise control means Adam can't act on Rancho items this week — adding more would just queue noise.
+- **Re-Verify Gate (live, 8/8 still_true, 0 resolved)**: apex 200 + `server: Vercel` + `x-vercel-cache: HIT`; www 308 → apex; sitemap 200; `/corporate-retreats/` 200; `/safari-tents-near-austin/` 200; 17/17 BlogPosting cluster carries `copyrightYear: 2026` + `copyrightHolder` Organization block + `dateModified == "2026-05-26"` (5/26 schema enrichment intact, 2 days post-deploy).
+- **Pre-existing uncommitted prior-session changes** (api/inquiry.js, styles.css, main.js, weddings.html, contact.html) intentionally NOT staged (5/7+ convention).
+- **Gate-mismatch flag**: same situation `rancho-content-weekly` hit on 5/27. TODO.md NEEDS ADAM #0 augmented to also cover `rancho-site-daily`. Decision needed from Adam: (a) add both tasks to explicit GOALS.md pause-list, (b) remove from scheduled-task registry, or (c) flip Rancho off cruise control.
+- **Run-log**: `run-logs/2026-05-28-seo.md`.
+- **Improvement-plan mapping**: no task IDs touched, no done-log entry.
+
 ## 2026-05-26 (rancho-site-daily) — `copyrightYear: 2026` + `copyrightHolder` enrichment across 17-post BlogPosting cluster; CreativeWork-property arc complete
 
 - **Workstream**: Pre-scoped 5/25 as the named #1 next slot. Appended `"copyrightYear": 2026` + `"copyrightHolder": {Organization name+url}` after `"isAccessibleForFree": true` on every BlogPosting JSON-LD block. `copyrightHolder` mirrors the existing `publisher` (inline Organization, not `@id`-referenced) — purely additive, no risk to other agents' assumptions.
