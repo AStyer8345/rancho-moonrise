@@ -680,3 +680,10 @@ Exiting cleanly. State file not updated; will retry next run.
 
 2026-05-28 17:30 | ERROR: NotebookLM auth expired (down since 2026-05-25, 8th consecutive failed run) — run `notebooklm login` to re-authenticate. Sync skipped this run.
 2026-05-28 17:30 | scanned=0 added=0 replaced=0 skipped=0 errors=1 (auth-expired)
+
+## 2026-05-29 00:30 — NotebookLM auth expired
+- `notebooklm use` returned redirect to accounts.google.com
+- Action needed: run `notebooklm login` to re-authenticate
+- This run exited cleanly without scanning or uploading
+
+2026-05-29 00:30 | scanned=0 added=0 replaced=0 skipped=0 errors=1 (auth-expired)
