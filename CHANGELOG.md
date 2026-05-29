@@ -1,5 +1,16 @@
 # Rancho Moonrise — Changelog
 
+## 2026-05-29 (rancho-site-daily) — Quiet maintenance run; no shipped edits. **Third consecutive day** scheduled task fires against paused workstream.
+
+- **GOALS.md gate** (same as 5/28): week of 2026-05-18 keeps Rancho on cruise control. `rancho-site-daily` not in explicit pause-list. Task ran in maintenance mode only — re-verify gate + state spot-checks.
+- **Three-day pattern now confirmed across 2 distinct task IDs**: 5/27 `rancho-content-weekly` + 5/28 `rancho-site-daily` + 5/29 `rancho-site-daily`. NEEDS ADAM #0 strengthened from 2-day to 3-day pattern.
+- **No schema edits.** CreativeWork-property enrichment arc closed 5/26; next-slot candidates deferred under cruise control. Same rationale as 5/28.
+- **No new NEEDS ADAM items.** Adam can't act on Rancho items this week per GOALS.md.
+- **Re-Verify Gate (live, 10/10 still_true, 0 resolved)**: apex 200 + `server: Vercel` + `x-vercel-cache: HIT`; www 308 → apex; sitemap 200; `/corporate-retreats/` 200; `/safari-tents-near-austin/` 200; `/blog/` 200; 3-page BlogPosting spot-check (glamping-near-austin-texas, corporate-retreat-near-austin, wedding-venues-near-austin) confirms `copyrightYear: 2026` + `copyrightHolder` Organization block + `isAccessibleForFree: true` + `dateModified == "2026-05-26"` intact on live apex (3 days post-deploy).
+- **Pre-existing uncommitted prior-session changes** (api/inquiry.js, styles.css, main.js, weddings.html, contact.html) intentionally NOT staged (5/7+ convention holds).
+- **Run-log**: `run-logs/2026-05-29-seo.md`.
+- **Improvement-plan mapping**: no task IDs touched, no done-log entry.
+
 ## 2026-05-28 (rancho-site-daily) — Quiet maintenance run; no shipped edits (GOALS.md cruise-control gate)
 
 - **GOALS.md gate**: week of 2026-05-18 keeps Rancho on cruise control ("No Rancho Moonrise active work — paused (cruise control only if Ashley moves)"). `rancho-site-daily` not in explicit pause-list, so the run continued per CLAUDE.md ("Automated/scheduled tasks continue unless GOALS.md explicitly pauses them") — but executed in maintenance mode only.
