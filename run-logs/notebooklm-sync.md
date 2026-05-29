@@ -695,3 +695,4 @@ Exiting cleanly. State file not updated; will retry next run.
 - Action needed: Adam runs `notebooklm login` to re-auth, then this task will pick up the new file on next run
 - State file NOT updated so next successful run will detect the same delta
 2026-05-29 04:08 | scanned=65 added=0 replaced=0 skipped=3 errors=1
+2026-05-29 10:23 | scanned=0 added=0 replaced=0 skipped=0 errors=1 (auth-expired, still — needs `notebooklm login`)
