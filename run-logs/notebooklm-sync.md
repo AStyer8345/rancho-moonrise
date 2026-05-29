@@ -687,3 +687,11 @@ Exiting cleanly. State file not updated; will retry next run.
 - This run exited cleanly without scanning or uploading
 
 2026-05-29 00:30 | scanned=0 added=0 replaced=0 skipped=0 errors=1 (auth-expired)
+
+## 2026-05-29 04:08 — Auth failure
+- Status: NotebookLM CLI auth expired ("Authentication expired or invalid")
+- Detected changes (not synced): 1 new file — `brand/2026-05-16-hipcamp-curation-gap-audit.md`
+- Skipped (>10MB): 3 PDFs (PRIVATE EVENTS, INTIMATE EVENTS, ALL INCLUSIVE RETREATS)
+- Action needed: Adam runs `notebooklm login` to re-auth, then this task will pick up the new file on next run
+- State file NOT updated so next successful run will detect the same delta
+2026-05-29 04:08 | scanned=65 added=0 replaced=0 skipped=3 errors=1
