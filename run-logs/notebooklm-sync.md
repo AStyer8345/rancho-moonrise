@@ -703,3 +703,4 @@ Exiting cleanly. State file not updated; will retry next run.
 2026-05-30 00:22 | scanned=0 added=0 replaced=0 skipped=0 errors=1
 
 2026-05-30 05:07 | ERROR auth_expired — `notebooklm login` required; skipping sync
+2026-05-30 10:51 | scanned=0 added=0 replaced=0 skipped=0 errors=1 — NotebookLM auth expired, run 'notebooklm login' to re-authenticate
