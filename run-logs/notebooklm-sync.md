@@ -699,3 +699,5 @@ Exiting cleanly. State file not updated; will retry next run.
 2026-05-29 12:07 | ERROR: NotebookLM auth expired — run 'notebooklm login' to re-auth. Sync skipped.
 2026-05-29 20:14 | ERROR: NotebookLM authentication expired or invalid — `notebooklm use` returned auth warning. Skipping sync. Adam needs to re-authenticate the notebooklm CLI.
 2026-05-29 20:14 | scanned=0 added=0 replaced=0 skipped=0 errors=1
+2026-05-30 00:22 | ERROR: NotebookLM auth expired (recurring since 2026-05-29). Run 'notebooklm login' to re-auth. Sync skipped.
+2026-05-30 00:22 | scanned=0 added=0 replaced=0 skipped=0 errors=1
