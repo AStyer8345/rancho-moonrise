@@ -708,3 +708,4 @@ Exiting cleanly. State file not updated; will retry next run.
 2026-05-30 20:42 | ERROR notebooklm auth expired — run 'notebooklm login' to re-authenticate. Sync skipped, no state changes.
 2026-05-31 15:52 | ERROR notebooklm auth expired (recurring since 2026-05-29) — run 'notebooklm login' to re-auth. 1 new file pending sync: 2026-05-16-hipcamp-curation-gap-audit.md
 2026-05-31 15:52 | scanned=65 added=0 replaced=0 skipped=3 errors=1
+2026-05-31 16:08 | ERROR notebooklm auth still expired (recurring since 2026-05-29) — Adam needs to run 'notebooklm login'. Sync skipped, no state changes.
