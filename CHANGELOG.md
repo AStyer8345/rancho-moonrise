@@ -1,5 +1,22 @@
 # Rancho Moonrise — Changelog
 
+## 2026-06-01 (rancho-competitive-weekly) — Quiet competitive week; intel card + competitive-intelligence.md rewritten + dual-write to client-ops mirror
+
+- **GOALS.md gate**: week of 2026-05-18 keeps Rancho on cruise control. `rancho-competitive-weekly` not in explicit pause-list — ran per CLAUDE.md ("Automated/scheduled tasks continue unless GOALS.md explicitly pauses them"). 6th consecutive Rancho task firing against the cruise-control gate (5/27 content-weekly + 5/28/29 site-daily + this run).
+- **Re-Verify Gate (live, 9 still true, 1 SOFT REFRAME, 1 STATE CHANGE, 0 auto-resolved)**: apex 200 + `server: Vercel` + `x-vercel-cache: HIT`; www 308 → apex; sitemap 200; `/corporate-retreats/` 200; `/safari-tents-near-austin/` 200. **STATE CHANGE**: Spoon Mountain `/romantic-weekend-getaways-near-austin/` OUT of weekend-getaway top 10 again — 4-week pattern crystallized as in (5/11) / out (5/18) / in (5/25) / out (6/1), 50/50 hit rate. **SOFT REFRAME**: Safari for the Soul unit count is genuinely ambiguous — live site today classifies Sabi Nights as "Safari Tent/Yurt"; 5/25's confident "2 safari tents + 3 yurts" was over-correction from 5/18's "1+4"; honest read 1–2 safari tents + 3–4 yurts + 1 residential.
+- **New findings this week (6 items)**:
+  1. **Lucky Arrow Retreat now in Hipcamp's curated "20 Best Glamping Near Austin"** at position 8 — first direct-competitor appearance in Hipcamp editorial set across 3 reads (5/16 / 5/25 / 6/1); Rancho remains absent. Material because Lucky Arrow is the closest geographic + product-category competitor that also operates an active Hipcamp listing. Reinforces open Hipcamp-strategy Ashley question.
+  2. **Camp Lucy** (Driftwood winery + chapel + accommodations) new on corporate-retreat top 10 at `/meetings-events/corporate-packages` — name-brand entrant in the cluster Rancho's `/corporate-retreats/` is built for.
+  3. **viprealestate.com** "Best Seven Glamping Getaways Near Austin, Texas" listicle new on weekend-getaway SERP. Cluster continues to fragment toward listicles.
+  4. **Hipcamp carousel substantially rotated vs. 5/25** — only 6 of 20 properties overlap; 5/25 named anchors (Charmadillo, Dos Rios, Seco Ridge, 3 Dry Wells, Boulderdash, Mystic Quarry) all cycled out.
+  5. **Lucky Arrow ResortPass publishes Fri-Sun 2-6pm operating hours despite 0 products** — middle-ground pattern Rancho could ship without committing to product activation.
+  6. **Walden Retreats** page now describes "four accommodation types" with only three named (Premier Suites / Studios / Studios with Soaking Tubs) — minor textual inconsistency, not a state change.
+- **Adam-side action items unchanged from 5/18 + 5/25**: ResortPass decision (14d drift), GSC URL-Inspection on `/corporate-retreats/` (31d) + `/safari-tents-near-austin/` (36d), Hotels.com listing fix (4th week), Hipcamp Ashley question (reinforced by Lucky Arrow's curation-set entry).
+- **Outputs**:
+  - `site/competitive-intelligence.md` rewritten for June 1 (5 sections + appendix; 11-claim re-verify table)
+  - Intel tab card dual-written to `site/improvement-plan.html` (sovereign) + `client-ops/clients/rancho-moonrise/improvement-plan.html` (mirror), byte-identical
+- **Improvement-plan mapping**: no SEO task IDs (s1–s8) touched; not a code/schema run. No done-log entry from this work itself, though the Hipcamp/ResortPass findings reinforce existing tasks.
+
 ## 2026-05-29 (rancho-site-daily) — Quiet maintenance run; no shipped edits. **Third consecutive day** scheduled task fires against paused workstream.
 
 - **GOALS.md gate** (same as 5/28): week of 2026-05-18 keeps Rancho on cruise control. `rancho-site-daily` not in explicit pause-list. Task ran in maintenance mode only — re-verify gate + state spot-checks.
