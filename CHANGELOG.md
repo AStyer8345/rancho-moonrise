@@ -1,5 +1,19 @@
 # Rancho Moonrise — Changelog
 
+## 2026-06-01 (rancho-site-daily) — Quiet maintenance run; no shipped edits. **3rd `rancho-site-daily` firing against the cruise-control gate; 7th overall Rancho task firing across 4 distinct IDs.**
+
+- **GOALS.md gate (same as 5/28 + 5/29)**: week of 2026-05-18 keeps Rancho on cruise control. `rancho-site-daily` not in the explicit pause-list. Task ran in maintenance mode only — re-verify gate + state spot-checks.
+- **Cruise-control firing-pattern strengthened today (3 task firings in one day)**: `rancho-competitive-weekly` (early today) + `rancho-review-monitor` RUN_041 (today) + `rancho-site-daily` (this run) all fired against the same paused workstream. `rancho-site-daily` specifically is now at its 3rd firing in 5 days (5/28 + 5/29 + 6/1). TODO.md NEEDS ADAM #0 strengthened from 6 firings / 4 IDs to **7 firings / 4 IDs**.
+- **No schema edits.** Surgical-runway exhaustion from 5/26 holds. Pre-scoped next candidates (Person-author research, AggregateRating-on-BlogPosting cluster bump) remain deferred under cruise control — surfacing more NEEDS ADAM items or shipping cluster-wide edits against a paused workstream adds noise, not signal. Same call as 5/28 + 5/29 maintenance runs.
+- **No new NEEDS ADAM items.** Adam can't act on Rancho items this week per GOALS.md.
+- **Re-Verify Gate (live, 9/9 still_true, 0 resolved)**:
+  - 6 live URL checks: apex 200 + `server: Vercel` + `x-vercel-cache: HIT`; www 308 → apex; sitemap 200; `/corporate-retreats/` 200; `/safari-tents-near-austin/` 200; `/blog/` 200.
+  - 3-page BlogPosting schema spot-check (glamping-near-austin-texas, corporate-retreat-near-austin, wedding-venues-near-austin) — all 7 CreativeWork properties from the 5/17 → 5/26 enrichment arc intact on live apex 6 days post-deploy: `wordCount` (1005/1106/1256), `articleSection` (Glamping / Corporate Retreats / Weddings), `inLanguage: "en-US"`, `isAccessibleForFree: true`, `copyrightYear: 2026`, `copyrightHolder` Organization block, `dateModified: "2026-05-26"`. No schema drift.
+- **Findings owned by sister tasks (skipped per Re-Verify Gate ownership table)**: Google review reply state, GBP cadence, review counts (Google/TripAdvisor/Hipcamp/Expedia/Facebook), SERP positions for tracked keywords. Those belong to `rancho-review-monitor` and `rancho-competitive-weekly`.
+- **Pre-existing uncommitted prior-session changes** (api/inquiry.js, styles.css, main.js, weddings.html, contact.html) intentionally NOT staged (5/7+ convention holds). Notebooklm-sync state JSON + `* 2.md` / `* 3.md` duplicates also untouched (notebooklm-sync artifacts).
+- **Run-log**: `run-logs/2026-06-01-seo.md`.
+- **Improvement-plan mapping**: no SEO task IDs (s1–s8) touched. No done-log entry. No PROGRESS bumps.
+
 ## 2026-06-01 (rancho-competitive-weekly) — Quiet competitive week; intel card + competitive-intelligence.md rewritten + dual-write to client-ops mirror
 
 - **GOALS.md gate**: week of 2026-05-18 keeps Rancho on cruise control. `rancho-competitive-weekly` not in explicit pause-list — ran per CLAUDE.md ("Automated/scheduled tasks continue unless GOALS.md explicitly pauses them"). 6th consecutive Rancho task firing against the cruise-control gate (5/27 content-weekly + 5/28/29 site-daily + this run).
