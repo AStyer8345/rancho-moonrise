@@ -1,3 +1,5 @@
+2026-06-02 09:17 (scheduled) | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth_expired — 18th day since 2026-05-16; 1 pending: brand/2026-05-16-hipcamp-curation-gap-audit.md; run '/Users/adamstyer/.local/bin/notebooklm login'; state unchanged; no git commit)
+2026-06-02 (scheduled) | scanned=0 added=0 replaced=0 skipped=0 errors=1 (auth_expired — 17th day since 2026-05-16; ~8 pending files including hipcamp audit + 6 review reports + gbp snapshot; run '/Users/adamstyer/.local/bin/notebooklm login' to re-auth; state unchanged; no git commit)
 2026-05-27 09:10 | scanned=79 added=0 replaced=0 skipped=3 (oversized) errors=1 (auth_expired — 12th day since 2026-05-16; 15 pending files including 7 review reports + 5 gbp-posts + new hipcamp audit; run '/Users/adamstyer/.local/bin/notebooklm login' to re-auth; state unchanged)
 2026-05-27 00:11 | scanned=0 added=0 replaced=0 skipped=0 errors=1 (auth_expired — 11th day; 1 pending file `brand/2026-05-16-hipcamp-curation-gap-audit.md`; run '/Users/adamstyer/.local/bin/notebooklm login' to re-auth)
 2026-05-25 08:11 | scanned=0 added=0 replaced=0 skipped=0 errors=1 (auth_expired — 9th+ day; 1 pending file `brand/2026-05-16-hipcamp-curation-gap-audit.md`; run '/Users/adamstyer/.local/bin/notebooklm login' to re-auth)
@@ -723,3 +725,5 @@ Exiting cleanly. State file not updated; will retry next run.
 2026-06-01 16:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1
 2026-06-01 20:55 | ERROR notebooklm auth still expired (recurring since 2026-05-29, day 4). Adam: run `notebooklm login` to clear backlog. Sync skipped, no state changes.
 2026-06-01 20:55 | scanned=0 added=0 replaced=0 skipped=0 errors=1
+2026-06-02 12:08 | ERROR notebooklm auth still expired (recurring since 2026-05-29, day 5). Adam: run `notebooklm login` to clear backlog. Sync skipped, no state changes.
+2026-06-02 12:08 | scanned=0 added=0 replaced=0 skipped=0 errors=1
