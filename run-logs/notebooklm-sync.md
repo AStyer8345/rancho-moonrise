@@ -736,3 +736,4 @@ Exiting cleanly. State file not updated; will retry next run.
 2026-06-03 07:27 | scanned=0 added=0 replaced=0 skipped=0 errors=1
 2026-06-03 09:15 | scanned=0 added=0 replaced=0 skipped=0 errors=1 | NotebookLM auth expired — re-authenticate via notebooklm CLI
 2026-06-03 12:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1 | NotebookLM auth still expired (day 7) — Adam: run `notebooklm login`
+2026-06-03 16:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1 | NotebookLM auth still expired (day 7) — Adam: run `notebooklm login`
