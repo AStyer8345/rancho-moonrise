@@ -10,7 +10,7 @@ Priority: broken/placeholder assets first, then highest-impression landing pages
 | Page | Last Touch | Status |
 |------|-----------|--------|
 | `weddings.html` | 2026-04-22 | BLOCKED — see run log below |
-| `accommodations.html` | 2026-05-13 | BLOCKED — same two NEEDS ADAM items (run 4, 21 days, escalating to pause request) |
+| `accommodations.html` | 2026-06-03 | BLOCKED — same two NEEDS ADAM items (run 5, 42 days; GOALS.md week of 5/18 now also pauses Rancho broadly) |
 | `host-your-event.html` | — | Pending |
 | `events.html` | — | Pending |
 | `pool-day-pass-austin.html` | — | Pending |
@@ -105,3 +105,9 @@ Priority: broken/placeholder assets first, then highest-impression landing pages
 **If Adam wants to unblock instead of pause:** the two artifacts needed are (a) `brand/approved-testimonials.md` with at least one quote per page-type tied to a real event date (wedding, corporate, glamping), and (b) one line in GOALS.md under a `## Settled Decisions` heading: `Author byline: Adam` (or Ashley, or team). Total time: ~25 minutes if testimonials are pulled from existing HoneyBook/Google review exports.
 
 **Next run:** 2026-05-20. If `rancho-content-weekly` is still firing and still blocked, that entry will be a one-liner pointer back to this one rather than a fifth re-litigation.
+
+---
+
+### 2026-06-03 — BLOCKED (run 5; one-liner per 5/13 commitment)
+
+Two hard stops re-verified still true (`find brand -name "*testimonial*" -o -name "*approved*"` = 0 hits; `grep -i "byline\|settled decision\|author.*adam\|author.*ashley" GOALS.md` = 0 hits). Plus GOALS.md week of 5/18 now says "No Rancho Moonrise active work — paused (cruise control only if Ashley moves)" — the broader pause signal is also live alongside the task-specific blockers. Today is the 5th structurally-blocked content-weekly run (4/22, 4/29, 5/06, 5/13, 6/03) and the **10th overall Rancho scheduled-task firing against the cruise-control gate** (this is the 2nd content-weekly firing since the GOALS pause; the 5/27 firing exited via the gate without appending here). 42-day blocker pattern (4/22 → 6/03). No edits to any landing page. See 5/13 entry for the single-ask pause request to Adam — now also surfaced as TODO.md NEEDS ADAM #0 with daily firing-count drift. Next run: 2026-06-10.

@@ -1,6 +1,19 @@
 # Rancho Moonrise — Changelog
 
-## 2026-06-03 (rancho-site-daily) — Quiet maintenance run; no shipped edits. **5th `rancho-site-daily` firing against the cruise-control gate; 9th overall Rancho task firing across 4 distinct IDs.**
+## 2026-06-03 PM (rancho-content-weekly) — Same-day 2nd Rancho cruise-control firing on top of this morning's site-daily; no shipped edits. **5th structurally-blocked content-weekly run on a 42-day pattern; 10th overall Rancho task firing across 4 distinct IDs.**
+
+- **Task-spec hard stops re-verified still true (both)**: (1) `find /Users/adamstyer/Documents/rancho-moonrise/brand -name "*testimonial*" -o -name "*approved*"` returns 0 hits — no `brand/approved-testimonials.md`. (2) `grep -i "byline\|settled decision\|author.*adam\|author.*ashley" /Users/adamstyer/Documents/GOALS.md` returns 0 hits — no Settled Decisions section, no author-byline pick. The two prereqs flagged on 4/22, 4/29, 5/06, 5/13 are still missing 42 days after first surface.
+- **Plus GOALS.md broad-pause layered on top**: week of 2026-05-18 says "No Rancho Moonrise active work — paused (cruise control only if Ashley moves)." `rancho-content-weekly` is now the cleanest double-pause case in the registry — blocked by both the task-spec's own hard stops AND the broader Rancho pause signal.
+- **Per the 5/13 commitment** ("the next run will be a one-liner pointer back to this one rather than a fifth re-litigation"): today's strengthener-queue entry is a one-liner. Queue table `accommodations.html` Last Touch bumped 5/13 → 6/03 (still BLOCKED).
+- **Cruise-control firing pattern**: `rancho-content-weekly` itself is now at its 2nd cruise-control firing (1st was 5/27, which exited via the gate without appending to the strengthener queue — a quieter exit than today's full run-log + TODO + CONTEXT + CHANGELOG cascade). Today is the first calendar day with TWO Rancho cruise-control firings (site-daily AM + content-weekly PM). TODO.md NEEDS ADAM #0 strengthened from **9 firings / 4 IDs to 10 firings / 4 IDs**.
+- **Re-Verify Gate (live, 3/3 still_true on the 3 checks this task needs)**: apex 200 + `server: Vercel` + `x-vercel-cache: HIT`; www 308 → apex; sitemap 200. Full 9/9 Re-Verify Gate from this morning's site-daily run remains valid (read but not re-curled).
+- **No site/pages/* edits, no schema edits, no sitemap touch.**
+- **Pre-existing uncommitted prior-session changes** (api/inquiry.js, styles.css, main.js, weddings.html, contact.html) intentionally NOT staged (5/7+ convention holds).
+- **Findings owned by sister tasks (skipped)**: review state, GBP cadence, SERP positions — owned by `rancho-review-monitor` + `rancho-competitive-weekly`.
+- **Run-log**: `run-logs/strengthener-queue.md` (one-liner appended) + this morning's `run-logs/2026-06-03-seo.md` (site-daily).
+- **Improvement-plan mapping**: no SEO task IDs (s1–s8) touched. No done-log entry. No PROGRESS bumps.
+
+## 2026-06-03 AM (rancho-site-daily) — Quiet maintenance run; no shipped edits. **5th `rancho-site-daily` firing against the cruise-control gate; 9th overall Rancho task firing across 4 distinct IDs.**
 
 - **GOALS.md gate (same as 5/28 + 5/29 + 6/1 + 6/2)**: week of 2026-05-18 keeps Rancho on cruise control. `rancho-site-daily` not in the explicit pause-list. Task ran in maintenance mode only — re-verify gate + state spot-checks. The 30-second GOALS.md pause-list fix is now **7 days overdue** (NEEDS ADAM #0 first surfaced 5/27).
 - **Cruise-control firing-pattern continues**: `rancho-site-daily` specifically is now at its 5th firing in 7 days (5/28 + 5/29 + 6/1 + 6/2 + 6/3). TODO.md NEEDS ADAM #0 strengthened from 8 firings / 4 IDs to **9 firings / 4 IDs**.
