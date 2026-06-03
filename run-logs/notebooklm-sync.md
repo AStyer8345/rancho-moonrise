@@ -729,3 +729,4 @@ Exiting cleanly. State file not updated; will retry next run.
 2026-06-02 12:08 | scanned=0 added=0 replaced=0 skipped=0 errors=1
 2026-06-02 16:08 | ERROR notebooklm auth still expired (recurring since 2026-05-29, day 5). Adam: run `notebooklm login` to clear backlog. Sync skipped, no state changes.
 2026-06-02 16:08 | scanned=0 added=0 replaced=0 skipped=0 errors=1
+2026-06-02 20:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1 | NotebookLM auth expired — run 'notebooklm login' to re-authenticate
