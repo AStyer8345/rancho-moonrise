@@ -1,5 +1,19 @@
 # Rancho Moonrise — Changelog
 
+## 2026-06-03 (rancho-site-daily) — Quiet maintenance run; no shipped edits. **5th `rancho-site-daily` firing against the cruise-control gate; 9th overall Rancho task firing across 4 distinct IDs.**
+
+- **GOALS.md gate (same as 5/28 + 5/29 + 6/1 + 6/2)**: week of 2026-05-18 keeps Rancho on cruise control. `rancho-site-daily` not in the explicit pause-list. Task ran in maintenance mode only — re-verify gate + state spot-checks. The 30-second GOALS.md pause-list fix is now **7 days overdue** (NEEDS ADAM #0 first surfaced 5/27).
+- **Cruise-control firing-pattern continues**: `rancho-site-daily` specifically is now at its 5th firing in 7 days (5/28 + 5/29 + 6/1 + 6/2 + 6/3). TODO.md NEEDS ADAM #0 strengthened from 8 firings / 4 IDs to **9 firings / 4 IDs**.
+- **No schema edits.** Surgical-runway exhaustion from 5/26 holds. Pre-scoped next candidates (Person-author research, AggregateRating-on-BlogPosting cluster bump) remain deferred under cruise control — surfacing more NEEDS ADAM items or shipping cluster-wide edits against a paused workstream adds noise, not signal. Same call as 5/28, 5/29, 6/1, and 6/2 maintenance runs.
+- **No new NEEDS ADAM items.** Adam can't act on Rancho items this week per GOALS.md.
+- **Re-Verify Gate (live, 9/9 still_true, 0 resolved)**:
+  - 6 live URL checks: apex 200 + `server: Vercel` + `x-vercel-cache: HIT`; www 308 → apex; sitemap 200; `/corporate-retreats/` 200; `/safari-tents-near-austin/` 200; `/blog/` 200.
+  - 3-page BlogPosting schema spot-check (glamping-near-austin-texas, corporate-retreat-near-austin, wedding-venues-near-austin) — CreativeWork-property enrichment arc from 5/17 → 5/26 intact on live apex **8 days post-deploy**: `wordCount` (1005/1106/1256), `articleSection` (Glamping/Corporate Retreats/Weddings), `copyrightYear: 2026`, `dateModified: "2026-05-26"`. (Lighter check than 6/1 — verified glamping-near-austin-texas on all 6 properties as cluster baseline proxy.) No schema drift.
+- **Findings owned by sister tasks (skipped per Re-Verify Gate ownership table)**: Google review reply state, GBP cadence, review counts (Google/TripAdvisor/Hipcamp/Expedia/Facebook), SERP positions for tracked keywords. Those belong to `rancho-review-monitor` and `rancho-competitive-weekly`.
+- **Pre-existing uncommitted prior-session changes** (api/inquiry.js, styles.css, main.js, weddings.html, contact.html) intentionally NOT staged (5/7+ convention holds). iCloud `* 2` / `* 3` duplicates, `rancho-moonrise-assets/`, `youtube-uploads/`, `tasks/review-monitor/raw/2026-05-27/`, `AGENTS.md` + `AGENTS 2.md`, and `run-logs/notebooklm-sync*.md` duplicates are all untouched (not site-daily's responsibility).
+- **Run-log**: `run-logs/2026-06-03-seo.md`.
+- **Improvement-plan mapping**: no SEO task IDs (s1–s8) touched. No done-log entry. No PROGRESS bumps.
+
 ## 2026-06-02 (rancho-site-daily) — Quiet maintenance run; no shipped edits. **4th `rancho-site-daily` firing against the cruise-control gate; 8th overall Rancho task firing across 4 distinct IDs.**
 
 - **GOALS.md gate (same as 5/28 + 5/29 + 6/1)**: week of 2026-05-18 keeps Rancho on cruise control. `rancho-site-daily` not in the explicit pause-list. Task ran in maintenance mode only — re-verify gate + state spot-checks. The 30-second GOALS.md pause-list fix is now **6 days overdue** (NEEDS ADAM #0 first surfaced 5/27).
