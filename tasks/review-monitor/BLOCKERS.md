@@ -40,6 +40,21 @@ Append-only. If a live verification path fails 3 consecutive runs for the same c
 
 ---
 
+## BLOCKER: hipcamp-direct-fetch — listing fetch failed 3 consecutive runs
+
+- **Claim:** Hipcamp listing state for Rancho Moonrise (currently 0 reviews, 1 booking, voice violations: "34-acre" welcome + "37 acres" header + "drink at our bar" — last live-verified RUN_040 2026-05-26)
+- **Verification path attempted:** WebFetch of `https://www.hipcamp.com/en-US/land/texas-rancho-moonrise-dw9hklej`
+- **Failure mode:** mixed across the 3 consecutive failures —
+  - RUN_041 2026-06-01: WebFetch resolved to a Texas glamping guide list page (Good Guad Land Co., The Best Dam Spot, Sparrow Bend River Retreat, etc.) instead of the Rancho-specific listing
+  - RUN_042 2026-06-02: same Texas glamping guide list page returned again — 2nd consecutive
+  - RUN_043 2026-06-03: WebFetch returned "Loading..." — page never finished rendering for the fetcher (different failure mode but still zero Rancho-attributed content extractable)
+- **Consecutive failures:** 3 (RUN_041 2026-06-01, RUN_042 2026-06-02, RUN_043 2026-06-03)
+- **Status:** Hipcamp count/rating/voice-violations now STALE:2026-05-26 (last successful scrape). 0 reviews presumed (carry from RUN_040). Voice violations cannot be re-confirmed.
+- **Resolution path:** Either (a) Apify or another headless-render scraper to defeat the JS-render dependency, (b) Adam manually opens the listing every ~2 weeks to spot-check, or (c) treat Hipcamp the same as Hotels.com — accept search-snippet confirmation as "likely unchanged" and downgrade to quarterly manual check. WebSearch fallback is partial: confirms listing exists in `hipcamp.com/en-US/land/texas-rancho-moonrise-dw9hklej` index but cannot enumerate reviews or quote on-page copy.
+- **Logged:** 2026-06-03
+
+---
+
 ## BLOCKER: theknot-direct-fetch — timeout 3 consecutive runs
 
 - **Claim:** The Knot listing copy + Haylee L. 1★ review (2026-02-26) owner-response state and any new reviews on `https://www.theknot.com/marketplace/rancho-moonrise-manor-tx-2087722`
