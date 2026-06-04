@@ -1,5 +1,22 @@
 # Rancho Moonrise — Changelog
 
+## 2026-06-04 (rancho-review-monitor RUN_044) — 11th consecutive quiet sweep; Hotels.com 1st direct-fetch in 41 runs (timeout, counter 41→42); Hipcamp BLOCKER enters no-attempt cycle; Google snippet null 2nd consec; carry-forwards day 17
+
+- **GOALS.md gate**: week of 2026-05-18 keeps Rancho on cruise control. `rancho-review-monitor` not in the explicit pause-list nor keep-running list — runs as automated monitoring to detect drift. Same reading as RUN_041 → RUN_043.
+- **No new reviews on any monitorable platform** — 11th consecutive quiet sweep. No drafts produced.
+- **Hotels.com direct WebFetch ATTEMPTED for the 1st time in 41 runs** — 60s timeout (same failure mode as RUN_001-003 baseline). Counter advances 41→42. BLOCKER ongoing since 2026-04-17.
+- **Hipcamp `hipcamp-direct-fetch` BLOCKER (opened RUN_043)** enters 1st run of no-attempt cycle. WebSearch confirms listing still indexed at known URL; voice violations '34-acre' + 'weddings up to 200 guests' + 'The Lodge on-site has beer, wine, and snacks' persist in snippet, carry forward STALE:2026-05-26.
+- **Google WebSearch snippet returns NULL 2nd consecutive run** — 7-run history now 126→175→null→126→126→null→null (5 distinct states / 4 unique values). Snippet baseline NOT reforming; confirmed unreliable. Live=130/4.9★ from RUN_034 Chrome read remains authoritative (16 days old).
+- **TripAdvisor STABLE at $63-$181 — 4th consecutive run** at same range. RUN_041's drift back to RUN_001 baseline ($180 → $181) holds 4 consecutive runs. 29-run net floor -$14 / ceiling 0; pattern crystallized.
+- **Knot Haylee L. body indexed** in Rancho-attributed snippet (verbatim 'amplified music...impossible to sleep' text); reviewer name 'Haylee' was IN this run's query so independent-surfacing assertion not made (RUN_043's 4-of-5-run pattern hold ambiguous this run by design). Owner-response state still unverifiable; direct fetch NOT attempted (BLOCKER ongoing — 10-run no-attempt cycle).
+- **Agoda multi-region listing re-sighted** in WebSearch (en-ie + en-za + .com root variants for property h82700060). 2 direct WebFetch attempts returned header-only (JS-render). State matches existing `in_scope: false` entry from 2026-04-19; not a new finding.
+- **Expedia 8.0 INLINE 14th consec**. Banned VOICE-GUIDE strings '20 luxury cabins... 50 guests' + 'Austin's first glamping' persist in Hotels.com listing copy (third-party listing fix, not Rancho site).
+- **Facebook 5/100% INLINE 25th consec**. Direct WebFetch returned header-only (JS-render); search snippet is documented working path.
+- **Airbnb 403 BLOCKER 43rd no-attempt** — snippet confirms listing still surfaces at `/rooms/1284193976615696223`.
+- **Carry-forward URGENT day 17**: Cassie Butterfield Google 5★ (~day 19 since posting) + Haylee L. Knot 1★ (~day 98 unreplied) both still unposted. Drafts at `brand/review-reports/2026-05-19-review-report.md`. Done-log grep confirms no review-related RESOLVED entry since 2026-04-15 22:12.
+- **Files**: `tasks/review-monitor/raw/2026-06-04/run-summary.md`, `brand/review-aggregate.json` (RUN_044 bump, fresh scrape on TripAdvisor + 4 snippets), `site/admin/dashboard-state.json`, `tasks/review-monitor/session-log.md` (RUN_044 entry appended), `run-logs/2026-06-04-review-monitor.md`.
+- **No CONTEXT.md Active Blockers / TODO.md changes** beyond counter increments — no material state change today.
+
 ## 2026-06-04 (rancho-site-daily) — Quiet maintenance run; no shipped edits. **6th `rancho-site-daily` firing against the cruise-control gate; 11th overall Rancho task firing across 4 distinct IDs since GOALS.md week-of-5/18 pause.**
 
 - **GOALS.md gate**: week of 2026-05-18 keeps Rancho on cruise control. `rancho-site-daily` NOT in the explicit pause-list. Per CLAUDE.md ("Automated/scheduled tasks continue unless GOALS.md explicitly pauses them"), task fired and ran in maintenance mode — Re-Verify Gate + state spot-checks only. Same call as 5/28, 5/29, 6/1, 6/2, 6/3 maintenance runs.
