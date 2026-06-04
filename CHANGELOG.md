@@ -1,5 +1,17 @@
 # Rancho Moonrise — Changelog
 
+## 2026-06-04 (rancho-site-daily) — Quiet maintenance run; no shipped edits. **6th `rancho-site-daily` firing against the cruise-control gate; 11th overall Rancho task firing across 4 distinct IDs since GOALS.md week-of-5/18 pause.**
+
+- **GOALS.md gate**: week of 2026-05-18 keeps Rancho on cruise control. `rancho-site-daily` NOT in the explicit pause-list. Per CLAUDE.md ("Automated/scheduled tasks continue unless GOALS.md explicitly pauses them"), task fired and ran in maintenance mode — Re-Verify Gate + state spot-checks only. Same call as 5/28, 5/29, 6/1, 6/2, 6/3 maintenance runs.
+- **CreativeWork-property enrichment arc closed 5/26.** No surgical autonomous slot remains in that arc. Pre-scoped next candidates (Person-author research, AggregateRating-on-BlogPosting) deferred again — both would surface either a new NEEDS ADAM item or a 17-file cluster diff against a paused workstream Adam isn't reviewing this week. Adds noise, not signal.
+- **Re-Verify Gate (live, 9/9 still_true, 0 resolved)**: apex 200 + `server: Vercel` + `x-vercel-cache: HIT`; www 308 → apex; sitemap 200; `/corporate-retreats/` 200; `/safari-tents-near-austin/` 200; `/blog/` 200. BlogPosting schema spot-check on `/blog/glamping-near-austin-texas/` confirms full 6-property CreativeWork set intact 9 days post-5/26 deploy (`dateModified: 2026-05-26`, `wordCount: 1005`, `articleSection: "Glamping"`, `inLanguage: "en-US"`, `isAccessibleForFree: true`, `copyrightYear: 2026`). Apex `age: 45873s` ≈ 12.7 hr — cache rotation, content unchanged.
+- **TODO.md NEEDS ADAM #0 strengthened** from 10 firings / 4 IDs / 7-day overdue (6/3) to **11 firings / 4 IDs / 8-day overdue** (6/4). The 30-second pause-list fix has now been on Adam's plate for 8 full days since 5/27. Firing-count drift continues daily until Adam picks an option.
+- **No site/pages/* edits, no schema edits, no sitemap touch.**
+- **Pre-existing uncommitted prior-session changes** (api/inquiry.js, styles.css, main.js, weddings.html, contact.html) intentionally NOT staged (5/7+ convention holds).
+- **Findings owned by sister tasks (skipped)**: review state, GBP cadence, SERP positions — owned by `rancho-review-monitor` + `rancho-competitive-weekly`.
+- **Run-log**: `run-logs/2026-06-04-seo.md`.
+- **Improvement-plan mapping**: no SEO task IDs (s1–s8) touched. No done-log entry. No PROGRESS bumps.
+
 ## 2026-06-03 (rancho-review-monitor RUN_043) — 10th consecutive quiet sweep; **`hipcamp-direct-fetch` BLOCKER opened** (3rd consecutive failure); Knot Haylee name returns to snippet; Google snippet null
 
 - **GOALS.md gate**: week of 2026-05-18 keeps Rancho on cruise control. `rancho-review-monitor` not in the explicit pause-list nor keep-running list — runs as automated monitoring to detect drift. Same reading as RUN_041 + RUN_042.
