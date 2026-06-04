@@ -738,3 +738,10 @@ Exiting cleanly. State file not updated; will retry next run.
 2026-06-03 09:15 | scanned=0 added=0 replaced=0 skipped=0 errors=1 | NotebookLM auth expired — re-authenticate via notebooklm CLI
 2026-06-03 12:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1 | NotebookLM auth still expired (day 7) — Adam: run `notebooklm login`
 2026-06-03 16:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1 | NotebookLM auth still expired (day 7) — Adam: run `notebooklm login`
+
+## 2026-06-04 09:10 — Sync failed: NotebookLM auth expired
+- `notebooklm use` returned 'Authentication expired or invalid. Run notebooklm login to re-authenticate.'
+- Skipped scan + uploads this run. State file unchanged.
+- Action needed: Adam runs `notebooklm login` to restore auth before next scheduled run.
+
+2026-06-04 09:10 | scanned=0 added=0 replaced=0 skipped=0 errors=1 (auth-expired)
