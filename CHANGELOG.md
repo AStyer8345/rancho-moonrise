@@ -1,5 +1,18 @@
 # Rancho Moonrise — Changelog
 
+## 2026-06-05 (rancho-review-monitor RUN_045) — 12th consecutive quiet sweep; Google snippet null→175 (null streak broken, still non-authoritative); Hipcamp BLOCKER 2nd no-attempt run; carry-forwards day 18
+
+- **GOALS.md gate**: week of 2026-05-18 keeps Rancho on cruise control. `rancho-review-monitor` not in the explicit pause-list nor keep-running list — per CLAUDE.md ("Automated/scheduled tasks continue unless GOALS.md explicitly pauses them") it runs as automated monitoring to detect drift. Monitoring ≠ active work. Same reading as RUN_041 → RUN_044.
+- **No new reviews on any monitorable platform** — 12th consecutive quiet sweep. No drafts produced.
+- **Google WebSearch snippet returns 175 — null streak (RUN_043+044) broken.** 8-run history now 126→175→null→126→126→null→null→175 (5 distinct states / 4 unique values). 175 ≠ live authoritative 130 (delta +45) → snippet remains a non-authoritative surface, not a count proxy. Live=130/4.9★ from RUN_034 Chrome read remains authoritative (now 17 days old).
+- **TripAdvisor STABLE at $63-$181 — 5th consecutive run** at same range. 30-run net floor -$14 / ceiling 0; pattern well crystallized. 0 reviews, unclaimed.
+- **The Knot holds 8 reviews / 4.5★ (no new review).** Haylee L. 1★ body still indexed in Rancho-attributed snippet via a NAME-FREE query ('loud amplified music neighboring property') — result did not name the reviewer, so name-surfacing is NOT asserted this run. Owner-response state still unverifiable; direct fetch NOT attempted (BLOCKER ongoing — 11-run no-attempt cycle).
+- **Hipcamp `hipcamp-direct-fetch` BLOCKER** — 2nd run of no-attempt cycle. WebSearch confirms listing still indexed; voice violations carry STALE:2026-05-26.
+- **Hotels.com direct fetch NOT attempted** this run (counter holds 42; cruise-control — no value re-confirming a 42-failure BLOCKER). **Expedia 8.0 INLINE 15th consec**. **Facebook 5/100% INLINE 26th consec**. **Airbnb 403 BLOCKER 44th no-attempt**. **Google live-scrape BLOCKER 44th**.
+- **Carry-forward URGENT day 18**: Cassie Butterfield Google 5★ (~day 20 since posting) + Haylee L. Knot 1★ (~day 99 unreplied) both still unposted. Drafts at `brand/review-reports/2026-05-19-review-report.md`. Done-log grep confirms no review-related RESOLVED entry since 2026-04-15 22:12.
+- **Files**: `tasks/review-monitor/raw/2026-06-05/run-summary.md`, `brand/review-aggregate.json` (RUN_045 bump, fresh scrape on TripAdvisor + 4 snippets), `site/admin/dashboard-state.json`, `tasks/review-monitor/session-log.md` (RUN_045 entry appended), `run-logs/2026-06-05-review-monitor.md`.
+- **CONTEXT.md "Last Worked On" deliberately left untouched** — file at 161 lines, over the 150-line cap; RUN_043 precedent preserved. No material state change today beyond the non-authoritative snippet swing + routine counter advances. No TODO.md changes (carry-forwards persist).
+
 ## 2026-06-04 (rancho-review-monitor RUN_044) — 11th consecutive quiet sweep; Hotels.com 1st direct-fetch in 41 runs (timeout, counter 41→42); Hipcamp BLOCKER enters no-attempt cycle; Google snippet null 2nd consec; carry-forwards day 17
 
 - **GOALS.md gate**: week of 2026-05-18 keeps Rancho on cruise control. `rancho-review-monitor` not in the explicit pause-list nor keep-running list — runs as automated monitoring to detect drift. Same reading as RUN_041 → RUN_043.
