@@ -748,3 +748,4 @@ Exiting cleanly. State file not updated; will retry next run.
 2026-06-04 12:08 | scanned=65 added=0 replaced=0 skipped=3 errors=1 (auth-expired; 1 new file pending: brand/2026-05-16-hipcamp-curation-gap-audit.md)
 2026-06-04 16:08 | scanned=0 added=0 replaced=0 skipped=0 errors=1 — NotebookLM auth expired, run 'notebooklm login' to re-authenticate
 2026-06-04 20:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1 (notebooklm auth expired — run 'notebooklm login')
+2026-06-05 00:08 | scanned=0 added=0 replaced=0 skipped=0 errors=1 — NotebookLM auth expired (day 8, since 2026-05-29). Adam: run `notebooklm login` to clear backlog.
