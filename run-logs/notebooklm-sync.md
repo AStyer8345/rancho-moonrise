@@ -1,3 +1,4 @@
+2026-06-05 (scheduled) | scanned=82 added=0 replaced=0 skipped=3 errors=1 (auth_expired — 20th day since 2026-05-16; 8 pending files: hipcamp audit + 6 review reports + 1 gbp snapshot; run '/Users/adamstyer/.local/bin/notebooklm login' to re-auth; state unchanged; no git commit)
 2026-06-03 20:08 (scheduled) | scanned=79 added=0 replaced=0 skipped=3 errors=1 (auth_expired — 19th day since 2026-05-16; 15 pending files: hipcamp audit + 7 review reports + 1 gbp snapshot + 5 gbp-posts + 1 fonts EULA html; run '/Users/adamstyer/.local/bin/notebooklm login' to re-auth; state unchanged)
 2026-06-02 09:17 (scheduled) | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth_expired — 18th day since 2026-05-16; 1 pending: brand/2026-05-16-hipcamp-curation-gap-audit.md; run '/Users/adamstyer/.local/bin/notebooklm login'; state unchanged; no git commit)
 2026-06-02 (scheduled) | scanned=0 added=0 replaced=0 skipped=0 errors=1 (auth_expired — 17th day since 2026-05-16; ~8 pending files including hipcamp audit + 6 review reports + gbp snapshot; run '/Users/adamstyer/.local/bin/notebooklm login' to re-auth; state unchanged; no git commit)
@@ -749,3 +750,11 @@ Exiting cleanly. State file not updated; will retry next run.
 2026-06-04 16:08 | scanned=0 added=0 replaced=0 skipped=0 errors=1 — NotebookLM auth expired, run 'notebooklm login' to re-authenticate
 2026-06-04 20:07 | scanned=0 added=0 replaced=0 skipped=0 errors=1 (notebooklm auth expired — run 'notebooklm login')
 2026-06-05 00:08 | scanned=0 added=0 replaced=0 skipped=0 errors=1 — NotebookLM auth expired (day 8, since 2026-05-29). Adam: run `notebooklm login` to clear backlog.
+
+## 2026-06-05 12:09 — auth still expired
+- Verified live: `notebooklm list` returns "Authentication expired or invalid" → run `notebooklm login`.
+- Day 9 of outage (since 2026-05-29). State file left unchanged so pending file retries next run.
+- Pending upload: brand/2026-05-16-hipcamp-curation-gap-audit.md (NEW, .md, 18 KB).
+- Correctly skipped: 3 PDFs >10MB, review-aggregate.json (.json not allowed).
+
+2026-06-05 12:09 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth expired — run 'notebooklm login'; 1 file pending)
