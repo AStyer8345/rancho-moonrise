@@ -758,3 +758,11 @@ Exiting cleanly. State file not updated; will retry next run.
 - Correctly skipped: 3 PDFs >10MB, review-aggregate.json (.json not allowed).
 
 2026-06-05 12:09 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth expired — run 'notebooklm login'; 1 file pending)
+
+## 2026-06-05 16:08 — auth still expired (recheck)
+- Live recheck: `notebooklm list` + `source list` both return "Authentication expired or invalid" → needs `notebooklm login` (interactive Google OAuth; cannot run unattended).
+- Outage ongoing since 2026-05-29. State file left unchanged so pending file retries next run.
+- Pending upload: brand/2026-05-16-hipcamp-curation-gap-audit.md (NEW, .md, 18 KB).
+- Correctly skipped: 3 PDFs >10MB (ALL INCLUSIVE RETREATS 36.9MB, INTIMATE EVENTS 20.7MB, PRIVATE EVENTS 28.8MB), review-aggregate.json (.json not allowed).
+
+2026-06-05 16:08 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth expired — run 'notebooklm login'; 1 file pending)
