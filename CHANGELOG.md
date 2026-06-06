@@ -1,5 +1,15 @@
 # Rancho Moonrise — Changelog
 
+## 2026-06-06 (rancho-review-monitor RUN_046) — 13th consecutive quiet sweep; TripAdvisor $63-$181 + 0/unclaimed re-confirmed via DIRECT WebFetch (6th consec); Google snippet swung back 175→126; carry-forwards day 19
+
+- rancho-review-monitor RUN_046: scraped review state across 7 platforms (TripAdvisor direct WebFetch + Google/Expedia/Facebook/The Knot/Hipcamp WebSearch snippets + apex/www/sitemap curl liveness). No new reviews anywhere — 13th consecutive quiet sweep. 0 stale claims auto-resolved (all carry-forward claims re-verified still_true). 0 response drafts produced.
+- **TripAdvisor**: confirmed via DIRECT WebFetch this run — "No reviews for this property yet", "Is this your business?" (unclaimed), price range "$63 - $181 (Based on Average Rates for a Standard Room)". 6th consecutive run at $63-$181; hardens the stability claim beyond list-page snippets. (Manor hotels list snippet showed a $77 floor — different surface, no drift.)
+- **Google**: WebSearch snippet swung back 175→126 (9-run history 126→175→null→126→126→null→null→175→126; non-authoritative, ≠ live 130). Live 130/4.9★ carries from RUN_034 Chrome read (now 18d old). Direct GBP scrape BLOCKER, 45th no-attempt.
+- **Expedia** 8.0 inline (16th consec); **Facebook** 5/100% inline (27th consec); **The Knot** 8/4.5★ no new review, Haylee L. body still indexed via name-free query (owner-reply unverifiable, ~day 100); **Hipcamp** still indexed, snippet re-surfaced '34-acre' + bar voice/data violations (STALE:2026-05-26).
+- **BLOCKERS no-attempt cycle**: google-count 45, airbnb 45, hotels.com (held 42), theknot-direct 12, hipcamp-direct 3rd no-attempt-cycle run.
+- **FLAG_FOR_ADAM (day 19 carry-forward)**: Cassie Butterfield Google 5★ (30s in GBP dashboard) + Haylee L. The Knot 1★ (2-min edit) drafted in `brand/review-reports/2026-05-19-review-report.md`, ready and unposted across RUN_034 → RUN_046. Both re-verified today, flag not stale.
+- Dashboard status: `pending`. CONTEXT.md "Last Worked On" left untouched (file over 150-line cap; RUN_043–045 precedent — review-monitor's honest live surface is dashboard-state.json + session-log).
+
 ## 2026-06-05 (rancho-review-monitor RUN_045) — 12th consecutive quiet sweep; Google snippet null→175 (null streak broken, still non-authoritative); Hipcamp BLOCKER 2nd no-attempt run; carry-forwards day 18
 
 - **GOALS.md gate**: week of 2026-05-18 keeps Rancho on cruise control. `rancho-review-monitor` not in the explicit pause-list nor keep-running list — per CLAUDE.md ("Automated/scheduled tasks continue unless GOALS.md explicitly pauses them") it runs as automated monitoring to detect drift. Monitoring ≠ active work. Same reading as RUN_041 → RUN_044.
