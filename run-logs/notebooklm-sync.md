@@ -768,3 +768,10 @@ Exiting cleanly. State file not updated; will retry next run.
 2026-06-05 16:08 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth expired — run 'notebooklm login'; 1 file pending)
 
 2026-06-05 20:09 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth expired — run 'notebooklm login'; day 9, 1 file pending: brand/2026-05-16-hipcamp-curation-gap-audit.md)
+
+### 2026-06-06 00:08 — auth blocked
+- NotebookLM auth expired/invalid (`source list` returned auth-redirect error). Needs interactive `notebooklm login`.
+- 1 NEW file detected but NOT uploaded: `2026-05-16-hipcamp-curation-gap-audit.md` (18,543 bytes)
+- 3 oversize PDFs skipped per >10MB rule (PRIVATE EVENTS, INTIMATE EVENTS, ALL INCLUSIVE RETREATS)
+- State file intentionally left UNCHANGED so the pending file re-syncs once auth is restored.
+2026-06-06 00:08 | scanned=65 added=0 replaced=0 skipped=3 errors=1
