@@ -766,3 +766,5 @@ Exiting cleanly. State file not updated; will retry next run.
 - Correctly skipped: 3 PDFs >10MB (ALL INCLUSIVE RETREATS 36.9MB, INTIMATE EVENTS 20.7MB, PRIVATE EVENTS 28.8MB), review-aggregate.json (.json not allowed).
 
 2026-06-05 16:08 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth expired — run 'notebooklm login'; 1 file pending)
+
+2026-06-05 20:09 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth expired — run 'notebooklm login'; day 9, 1 file pending: brand/2026-05-16-hipcamp-curation-gap-audit.md)
