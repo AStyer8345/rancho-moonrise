@@ -784,3 +784,11 @@ Exiting cleanly. State file not updated; will retry next run.
 2026-06-06 04:08 | scanned=65 added=0 replaced=0 skipped=3 errors=1 (auth_expired)
 
 2026-06-06 08:08 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth expired since 2026-05-29 — needs interactive `notebooklm login`; 1 file pending: brand/2026-05-16-hipcamp-curation-gap-audit.md; state unchanged)
+
+## 2026-06-06 12:09
+- ERROR: NotebookLM auth still expired (`notebooklm use` redirects to Google sign-in: "Authentication expired or invalid"). Broken since 2026-05-29.
+- No uploads attempted. Scanned 65 eligible files; 1 still pending: `brand/2026-05-16-hipcamp-curation-gap-audit.md` (18,543 bytes).
+- 3 oversize PDFs skipped per >10MB rule (PRIVATE EVENTS, INTIMATE EVENTS, ALL INCLUSIVE RETREATS).
+- State file intentionally NOT updated so the pending file re-syncs once auth is restored.
+- NEEDS ADAM: run interactive `notebooklm login` to restore the Rancho NotebookLM sync. Recurring across every run since 2026-05-29 — sync is fully blocked until re-auth.
+2026-06-06 12:09 | scanned=65 added=0 replaced=0 skipped=3 errors=1 (auth expired since 2026-05-29 — needs interactive `notebooklm login`; 1 file pending: brand/2026-05-16-hipcamp-curation-gap-audit.md; state unchanged)
