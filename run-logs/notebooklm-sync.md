@@ -775,3 +775,10 @@ Exiting cleanly. State file not updated; will retry next run.
 - 3 oversize PDFs skipped per >10MB rule (PRIVATE EVENTS, INTIMATE EVENTS, ALL INCLUSIVE RETREATS)
 - State file intentionally left UNCHANGED so the pending file re-syncs once auth is restored.
 2026-06-06 00:08 | scanned=65 added=0 replaced=0 skipped=3 errors=1
+
+## 2026-06-06 04:08
+- ERROR: NotebookLM authentication expired/invalid (`source list` redirected to Google sign-in). Aborted sync, no uploads attempted.
+- Detected 1 new file not yet synced: `2026-05-16-hipcamp-curation-gap-audit.md` (brand/) — deferred, state file intentionally NOT updated so next run retries after re-auth.
+- Skipped 3 oversize files (>10MB): PRIVATE EVENTS / INTIMATE EVENTS / ALL INCLUSIVE RETREATS PDFs.
+- NEEDS ADAM: re-authenticate notebooklm CLI (`notebooklm auth` / re-login) to resume Rancho NotebookLM sync.
+2026-06-06 04:08 | scanned=65 added=0 replaced=0 skipped=3 errors=1 (auth_expired)
