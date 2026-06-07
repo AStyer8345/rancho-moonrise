@@ -802,3 +802,8 @@ Exiting cleanly. State file not updated; will retry next run.
 - State file intentionally NOT updated so the pending file re-syncs once auth is restored.
 - NEEDS ADAM: run interactive `notebooklm login` to restore the Rancho NotebookLM sync. Blocked ~9 days now — sync fully stalled until re-auth.
 2026-06-07 15:15 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth expired since 2026-05-29 — needs interactive `notebooklm login`; 1 file pending: brand/2026-05-16-hipcamp-curation-gap-audit.md; state unchanged)
+
+## 2026-06-07 (scheduled run)
+- ERROR persists: NotebookLM auth still expired (re-verified live — `source list --json` returns {error:true, "Authentication expired or invalid. Run 'notebooklm login'"}). Broken since 2026-05-29.
+- No uploads. 1 file still pending: `brand/2026-05-16-hipcamp-curation-gap-audit.md`. State file intentionally NOT advanced. Exited cleanly per safety rule.
+2026-06-07 16:08 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth expired since 2026-05-29 — needs interactive `notebooklm login`; 1 pending: brand/2026-05-16-hipcamp-curation-gap-audit.md; state unchanged)
