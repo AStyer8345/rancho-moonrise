@@ -832,3 +832,11 @@ Exiting cleanly. State file not updated; will retry next run.
 - Skipped by rules: 3 PDFs >10MB (PRIVATE EVENTS 28.8MB, INTIMATE EVENTS 20.7MB, ALL INCLUSIVE RETREATS 36.9MB) + 1 non-allowed ext (review-aggregate.json).
 
 2026-06-08 04:10 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth expired since 2026-05-29 — needs interactive `notebooklm login`; 1 pending: brand/2026-05-16-hipcamp-curation-gap-audit.md; state unchanged)
+
+## 2026-06-08 08:15 — RUN ABORTED: NotebookLM auth expired
+- Detected 1 new file pending sync: `2026-05-16-hipcamp-curation-gap-audit.md` (brand/)
+- `notebooklm use` returned: "Authentication expired or invalid. Run 'notebooklm login' to re-authenticate."
+- Cannot re-auth in an automated run (interactive Google OAuth). Skipped upload.
+- State file intentionally NOT updated — pending file will retry next run after re-auth.
+- Skipped (>10MB, expected): ALL INCLUSIVE RETREATS, INTIMATE EVENTS, PRIVATE EVENTS PDFs.
+2026-06-08 08:15 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth_expired)
