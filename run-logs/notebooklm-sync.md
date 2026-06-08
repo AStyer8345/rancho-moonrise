@@ -840,3 +840,10 @@ Exiting cleanly. State file not updated; will retry next run.
 - State file intentionally NOT updated — pending file will retry next run after re-auth.
 - Skipped (>10MB, expected): ALL INCLUSIVE RETREATS, INTIMATE EVENTS, PRIVATE EVENTS PDFs.
 2026-06-08 08:15 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth_expired)
+
+## 2026-06-08 09:35 — RUN ABORTED: NotebookLM auth still expired (3rd run today, same blocker)
+- Re-verified live: `notebooklm source list --json` → {error:true} "Authentication expired or invalid" (Google sign-in redirect).
+- Blocker continuous since 2026-05-29 (~10 days). Only Adam can fix via interactive `notebooklm login` (Google OAuth — not runnable unattended).
+- 1 file still pending: `brand/2026-05-16-hipcamp-curation-gap-audit.md` (18,543 bytes). State file left UNCHANGED — re-syncs next run after re-auth.
+- Skipped by rules (expected): 3 PDFs >10MB + review-aggregate.json (.json).
+2026-06-08 09:35 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth_expired since 2026-05-29; 1 pending: brand/2026-05-16-hipcamp-curation-gap-audit.md; state unchanged)
