@@ -44,7 +44,7 @@ Adam-side action items are unchanged and aging: ResortPass decision now 21 days 
 | Rancho not ranking non-brand (0/5); brand SERP #1 | Live SERPs — ranchomoonrise.com #1 brand query. 0 non-brand placements across all 5 tracked keywords. | ✅ STILL TRUE |
 | `/corporate-retreats/` + `/safari-tents-near-austin/` not indexed | Neither URL surfaced in filtered `site:` queries; fallback pages (/host-your-event/, /accommodations/) returned instead. 38d and 43d uncrawled now (+7d each). *(site: path-filter approximate — strong indication, not GSC-grade.)* | ✅ STILL TRUE — drift continues |
 
-**Resolution summary:** 7 still true, 2 CHANGED (Lucky Arrow ResortPass hours expanded; Walden copy cleaned), 1 STATE CHANGE (Camp Lucy off SERP after one week), 1 prior competitor claim auto-resolved to done-log (Camp Lucy corporate-SERP presence no longer true).
+**Resolution summary:** 8 still true, 2 CHANGED (Lucky Arrow ResortPass hours expanded; Walden copy cleaned), 1 STATE CHANGE (Camp Lucy off SERP after one week), 1 prior competitor claim auto-resolved to done-log (Camp Lucy corporate-SERP presence no longer true).
 
 ---
 

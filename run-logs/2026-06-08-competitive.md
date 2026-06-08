@@ -22,7 +22,7 @@ Tooling: firecrawl installed but unauthenticated (headless run, no user to compl
 - re-verify rancho-nonbrand-brand — still_true — live=0/5 non-brand, #1 brand prior=0/5, #1
 - re-verify landing-page-indexing — still_true — live=/corporate-retreats/ 38d + /safari-tents-near-austin/ 43d uncrawled prior=31d+36d (site: path-filter approximate)
 
-Summary: 7 still_true, 2 CHANGED (Lucky Arrow hours, Walden copy), 1 resolved (Camp Lucy SERP), 1 done-log RESOLVED line appended.
+Summary: 8 still_true, 2 CHANGED (Lucky Arrow hours, Walden copy), 1 resolved (Camp Lucy SERP), 1 done-log RESOLVED line appended.
 
 ## New findings
 - Corporate SERP churn: Camp Lucy out after 1 wk; Peaceful Waters + 7744 Ranch in; Element Ranch #1, Crystal Creek hold; Yurtopian off 4th wk.
