@@ -815,3 +815,12 @@ Exiting cleanly. State file not updated; will retry next run.
 - State file intentionally NOT advanced so the pending file re-syncs once auth is restored.
 - NEEDS ADAM: run interactive `notebooklm login` to restore the Rancho NotebookLM sync. Sync fully stalled until re-auth.
 2026-06-07 20:08 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth expired since 2026-05-29 — needs interactive `notebooklm login`; 1 pending: brand/2026-05-16-hipcamp-curation-gap-audit.md; state unchanged)
+
+## 2026-06-08 00:09 — FAILED (auth expired)
+- NotebookLM CLI auth is expired/invalid (`notebooklm list` returns Google sign-in redirect).
+- ACTION NEEDED (Adam): run `notebooklm login` to re-authenticate. No sync possible until then.
+- Detected but NOT synced (deferred to next run): `brand/2026-05-16-hipcamp-curation-gap-audit.md` (new)
+- Skipped by rules: 3 PDFs >10MB (PRIVATE EVENTS 28.8MB, INTIMATE EVENTS 20.7MB, ALL INCLUSIVE RETREATS 36.9MB), 1 non-allowed ext (review-aggregate.json)
+- State file left UNCHANGED so the new file re-detects next run.
+
+2026-06-08 00:09 | scanned=65 added=0 replaced=0 skipped=4 errors=1
