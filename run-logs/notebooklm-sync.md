@@ -847,3 +847,11 @@ Exiting cleanly. State file not updated; will retry next run.
 - 1 file still pending: `brand/2026-05-16-hipcamp-curation-gap-audit.md` (18,543 bytes). State file left UNCHANGED — re-syncs next run after re-auth.
 - Skipped by rules (expected): 3 PDFs >10MB + review-aggregate.json (.json).
 2026-06-08 09:35 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth_expired since 2026-05-29; 1 pending: brand/2026-05-16-hipcamp-curation-gap-audit.md; state unchanged)
+
+### 2026-06-08 16:09 — RUN ABORTED (auth expired)
+- NotebookLM auth expired/invalid — `notebooklm source list` and `use` returned: "Authentication expired or invalid. Run 'notebooklm login' to re-authenticate."
+- Detected 1 new file pending upload: `2026-05-16-hipcamp-curation-gap-audit.md` (brand/)
+- State file NOT advanced — pending file will retry on next run once auth is restored.
+- Skipped 3 oversize PDFs (>10MB): PRIVATE EVENTS (28.8MB), INTIMATE EVENTS (20.7MB), ALL INCLUSIVE RETREATS (36.9MB).
+- ACTION NEEDED (Adam): run `notebooklm login` to re-authenticate the CLI.
+2026-06-08 16:09 | scanned=65 added=0 replaced=0 skipped=3 errors=1
