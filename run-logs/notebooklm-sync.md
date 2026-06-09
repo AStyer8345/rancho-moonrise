@@ -861,3 +861,10 @@ Exiting cleanly. State file not updated; will retry next run.
 2026-06-09 09:13 | scanned=65 added=0 replaced=0 skipped=3 errors=1
 - 2026-06-09 09:38 | ERROR: NotebookLM auth still expired ("notebooklm login" needed) — auth_expired since 2026-05-29, 4th+ consecutive blocked run. Same 1 file pending: `2026-05-16-hipcamp-curation-gap-audit.md` (brand/). State file NOT advanced — will re-sync once auth restored. 3 oversize PDFs skipped (>10MB). ACTION NEEDED (Adam): run `notebooklm login`.
 2026-06-09 09:38 | scanned=65 added=0 replaced=0 skipped=3 errors=1
+
+## 2026-06-09 16:08 — BLOCKED: auth expired
+- NotebookLM authentication expired/invalid. `source list` returned auth-redirect error; `notebooklm login` required (interactive OAuth — cannot run in autonomous task).
+- Detected 1 new file pending sync: `2026-05-16-hipcamp-curation-gap-audit.md` (brand/). NOT uploaded.
+- State file intentionally NOT updated, so the pending file is re-detected on the next run after re-auth.
+- Skipped (safety rules): 3 PDFs >10MB (ALL INCLUSIVE RETREATS, INTIMATE EVENTS, PRIVATE EVENTS), 1 non-allowed ext (review-aggregate.json).
+2026-06-09 16:08 | scanned=65 added=0 replaced=0 skipped=4 errors=1
