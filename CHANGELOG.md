@@ -1,5 +1,13 @@
 # Rancho Moonrise — Changelog
 
+## 2026-06-09 (events-popup) — Admin-controlled homepage upcoming-events popup shipped
+
+- **New feature (Adam interactive request):** dismissible, frequency-capped popup on the homepage that features upcoming events. Ships **dormant** — no popup shows until Ashley features an event, so zero visitor-facing change at deploy time.
+- **Data:** added `show_in_popup boolean not null default false` to `rancho_events` (Supabase migration `add_show_in_popup_to_rancho_events`; all 23 existing rows defaulted false).
+- **Admin (`site/admin/index.html`):** "⭐ Feature in homepage popup" checkbox on the event form; `★ Featured` badge + Feature/Unfeature quick-toggle in the events list; four plain-English status lines (Showing / Hidden-won't-show / past-date / popup-full) so a featured event can never silently fail; Events-tab hint. Commit `6e2553e`.
+- **Frontend (`site/js/event-popup.js`, new; loaded only on `index.html`):** queries up to 3 featured+active+upcoming events via the same anon REST pattern as `cms.js`; modal fades in ~2s; dismiss via X/backdrop/Esc; 3-day localStorage cap keyed to a signature of featured event IDs (a newly-featured event resets the cap for returning visitors); a11y (role=dialog, focus trap, scroll lock), artwork onerror fallback, ticket links `target=_blank rel=noopener`, localStorage try/catch fail-open. Commits `c3aa77a`, `0ee541b`.
+- Built via brainstorming → spec → plan → subagent-driven execution with per-task spec + code-quality review. Spec: `docs/superpowers/specs/2026-06-09-events-popup-design.md`; plan: `docs/superpowers/plans/2026-06-09-events-popup.md`.
+
 ## 2026-06-09 (rancho-review-monitor) — RUN_047, 14th consecutive quiet sweep; TripAdvisor price drift; 2 carry-forward drafts day 22
 
 - rancho-review-monitor RUN_047: scraped 7 platforms (curl liveness + 5 search-snippet platforms + TripAdvisor DIRECT WebFetch), resolved 0 stale claims, drafted 0 new responses (no new reviews on any platform). 14th consecutive quiet sweep.

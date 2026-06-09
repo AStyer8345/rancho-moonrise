@@ -2,6 +2,18 @@
 
 ---
 
+## 2026-06-09 — Events Popup Is Controlled by a Per-Event Flag, Not a Settings Panel
+
+**Decision:** The homepage events popup is driven by a single `show_in_popup` boolean on each `rancho_events` row, surfaced in the admin as a "Feature in Popup" toggle (mirroring the existing Active/Hidden Show/Hide pattern). The popup shows up to 3 featured + active + upcoming events. Frequency cap is a 3-day localStorage window keyed to a *signature of featured event IDs*. Popup styles are injected by `event-popup.js` itself (no separate CSS file).
+
+**Over:** a dedicated "Popup Settings" admin tab/table (on/off switch, custom headline, event picker); a global toggle that auto-shows the next event; capping by timestamp alone.
+
+**Why:** One flag = Ashley's complete control surface (feature events = popup on; feature none = off) with zero new mental model — she reuses the Show/Hide muscle she already knows. Requiring both `is_active` AND `show_in_popup` keeps a Hidden event from popping; explicit per-card status lines remove the "I featured it but nothing happened" silent failure. Signature-keyed capping is what lets a newly-featured event resurface for returning visitors instead of being stuck behind a stale 3-day blackout. JS-injected styles keep the feature to one script + one `<script>` tag — trivial to roll back.
+
+**Context:** Shipped 2026-06-09 (commits `6e2553e`, `c3aa77a`, `0ee541b`) via brainstorming → spec → plan → subagent-driven execution. Spec: `docs/superpowers/specs/2026-06-09-events-popup-design.md`.
+
+---
+
 ## 2026-04-30 — Apex Domain Is Canonical Production Host
 
 **Decision:** `https://ranchomoonrise.com` is the canonical production host. Vercel project domain settings should keep the apex as primary and permanently redirect `https://www.ranchomoonrise.com` to apex.
