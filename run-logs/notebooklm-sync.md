@@ -857,3 +857,5 @@ Exiting cleanly. State file not updated; will retry next run.
 2026-06-08 16:09 | scanned=65 added=0 replaced=0 skipped=3 errors=1
 - 2026-06-09 09:02 | ERROR: NotebookLM auth expired ("notebooklm login" needed). Detected 1 new file pending sync: `2026-05-16-hipcamp-curation-gap-audit.md`. State file NOT updated so it re-syncs once auth is restored. 3 files skipped (>10MB).
 2026-06-09 09:02 | scanned=65 added=0 replaced=0 skipped=3 errors=1
+- 2026-06-09 09:13 | ERROR: NotebookLM auth still expired ("notebooklm login" needed) — 3rd consecutive blocked run. Same 1 file pending: `2026-05-16-hipcamp-curation-gap-audit.md` (brand/). State file NOT advanced. 3 oversize PDFs skipped (>10MB). No upload possible until Adam re-authenticates the CLI.
+2026-06-09 09:13 | scanned=65 added=0 replaced=0 skipped=3 errors=1
