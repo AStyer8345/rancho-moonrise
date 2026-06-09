@@ -494,6 +494,14 @@
         <button class="tab-btn" data-tab="reviews">Reviews</button>
     </div>
 
+<style>
+  .badge--featured { background: #fff3e0; color: #b4531f; border: 1px solid #f0c9a4; }
+  .popup-status { font-size: 0.8rem; font-weight: 600; margin: 6px 0 0; }
+  .popup-status--ok { color: #2e7d32; }
+  .popup-status--warn { color: #b4531f; }
+  .popup-status--muted { color: var(--text-muted); }
+  .events-hint { color: var(--text-muted); font-size: 0.85rem; margin: 0 0 12px; }
+</style>
     <!-- EVENTS TAB -->
     <div class="tab-content is-active" id="tab-events">
         <div class="section-header">
@@ -590,6 +598,13 @@
             <div class="form-group">
                 <label for="eventTicketUrl">Ticket Link (optional)</label>
                 <input type="url" id="eventTicketUrl" placeholder="https://...">
+            </div>
+            <div class="form-group">
+                <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-weight:normal;">
+                    <input type="checkbox" id="eventFeatured" style="width:auto;margin:0;">
+                    <span>⭐ Feature in homepage popup</span>
+                </label>
+                <p style="color:var(--text-muted);font-size:0.8rem;margin:4px 0 0;">Shows this event in the homepage popup. The popup displays up to 3 featured upcoming events (soonest first). The event must also be set to <strong>Active</strong> to appear.</p>
             </div>
             <div class="form-group">
                 <label>Event Artwork</label>
@@ -1079,19 +1094,47 @@ async function loadEvents() {
     if (error) { container.innerHTML = '<p class="empty-state">Error loading events.</p>'; return; }
     if (!data.length) { container.innerHTML = '<div class="empty-state"><p>No events yet.</p></div>'; return; }
 
-    container.innerHTML = data.map(function(ev) {
+    var todayStr = new Date().toISOString().slice(0, 10);
+
+    // Which featured events actually appear in the popup: active + upcoming, soonest first, top 3.
+    var inPopup = {};
+    data.filter(function(ev){ return ev.show_in_popup && ev.is_active && ev.event_date >= todayStr; })
+        .slice(0, 3)
+        .forEach(function(ev){ inPopup[ev.id] = true; });
+
+    container.innerHTML =
+        '<p class="events-hint">The homepage popup shows up to 3 featured upcoming events, soonest first. An event must be <strong>Active</strong> and dated today or later to appear.</p>' +
+        data.map(function(ev) {
         var thumb = ev.artwork_url
             ? '<img class="content-card__thumb" src="' + escapeHtml(ev.artwork_url) + '" alt="">'
             : '<div class="content-card__thumb" style="display:flex;align-items:center;justify-content:center;font-size:2rem;">📅</div>';
+
+        var featuredBadge = ev.show_in_popup ? ' <span class="badge badge--featured">★ Featured</span>' : '';
+
+        var statusLine = '';
+        if (ev.show_in_popup) {
+            if (!ev.is_active) {
+                statusLine = '<p class="popup-status popup-status--warn">★ Featured, but Hidden — click "Show" to display it in the popup.</p>';
+            } else if (ev.event_date < todayStr) {
+                statusLine = '<p class="popup-status popup-status--muted">★ Featured, but the date has passed — won\'t show.</p>';
+            } else if (inPopup[ev.id]) {
+                statusLine = '<p class="popup-status popup-status--ok">★ Showing in homepage popup.</p>';
+            } else {
+                statusLine = '<p class="popup-status popup-status--muted">★ Featured — popup is full (shows soonest 3).</p>';
+            }
+        }
+
         return '<div class="content-card">' +
             thumb +
             '<div class="content-card__info">' +
-                '<h3>' + escapeHtml(ev.title) + ' <span class="badge ' + (ev.is_active ? 'badge--active' : 'badge--inactive') + '">' + (ev.is_active ? 'Active' : 'Hidden') + '</span></h3>' +
+                '<h3>' + escapeHtml(ev.title) + ' <span class="badge ' + (ev.is_active ? 'badge--active' : 'badge--inactive') + '">' + (ev.is_active ? 'Active' : 'Hidden') + '</span>' + featuredBadge + '</h3>' +
                 '<p style="color:var(--orange);font-size:0.8rem;font-weight:600;margin-bottom:4px;">' + formatDate(ev.event_date) + (ev.event_time ? ' · ' + escapeHtml(ev.event_time) : '') + '</p>' +
                 '<p>' + escapeHtml(ev.description) + '</p>' +
+                statusLine +
             '</div>' +
             '<div class="content-card__actions">' +
                 '<button class="btn btn--secondary btn--sm" onclick="editEvent(\'' + ev.id + '\')">Edit</button>' +
+                '<button class="btn btn--secondary btn--sm" onclick="toggleFeatured(\'' + ev.id + '\',' + !ev.show_in_popup + ',' + ev.is_active + ')">' + (ev.show_in_popup ? 'Unfeature' : 'Feature') + '</button>' +
                 '<button class="btn btn--danger btn--sm" onclick="toggleEvent(\'' + ev.id + '\',' + !ev.is_active + ')">' + (ev.is_active ? 'Hide' : 'Show') + '</button>' +
                 '<button class="btn btn--danger btn--sm" onclick="deleteEvent(\'' + ev.id + '\')">Delete</button>' +
             '</div>' +
@@ -1123,6 +1166,7 @@ async function editEvent(id) {
     $('#eventPrice').value = data.price || '';
     $('#eventTicketUrl').value = data.ticket_url || '';
     $('#eventOrder').value = data.sort_order;
+    $('#eventFeatured').checked = !!data.show_in_popup;
 
     var preview = $('#eventArtworkPreview');
     if (data.artwork_url) {
@@ -1138,6 +1182,16 @@ async function editEvent(id) {
 async function toggleEvent(id, active) {
     await sb.from('rancho_events').update({ is_active: active }).eq('id', id);
     toast(active ? 'Event shown on site' : 'Event hidden from site');
+    loadEvents();
+}
+
+async function toggleFeatured(id, next, isActive) {
+    await sb.from('rancho_events').update({ show_in_popup: next }).eq('id', id);
+    if (next && !isActive) {
+        toast("Featured — but it's Hidden, so click Show to make it appear in the popup.");
+    } else {
+        toast(next ? 'Added to homepage popup' : 'Removed from homepage popup');
+    }
     loadEvents();
 }
 
@@ -1172,6 +1226,7 @@ $('#eventForm').addEventListener('submit', async function(e) {
         price: $('#eventPrice').value.trim() || null,
         ticket_url: $('#eventTicketUrl').value.trim() || null,
         sort_order: parseInt($('#eventOrder').value) || 0,
+        show_in_popup: $('#eventFeatured').checked,
     };
 
     // Upload artwork if provided
