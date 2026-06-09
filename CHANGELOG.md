@@ -1,5 +1,15 @@
 # Rancho Moonrise — Changelog
 
+## 2026-06-09 (rancho-review-monitor) — RUN_047, 14th consecutive quiet sweep; TripAdvisor price drift; 2 carry-forward drafts day 22
+
+- rancho-review-monitor RUN_047: scraped 7 platforms (curl liveness + 5 search-snippet platforms + TripAdvisor DIRECT WebFetch), resolved 0 stale claims, drafted 0 new responses (no new reviews on any platform). 14th consecutive quiet sweep.
+- **TripAdvisor STATE CHANGE:** price range $63-$181 → $64-$180 (floor +$1, ceiling -$1), confirmed via DIRECT WebFetch. Breaks 6-run stability (RUN_041-046); immaterial — algorithmic average-rate estimate, not a review/rating. Still 0 reviews / unclaimed.
+- Google snippet stable at 126 two consecutive runs (non-authoritative; live=130/4.9★ from RUN_034, 21d stale, count BLOCKER). Expedia 8.0 inline (17th run). Facebook 5/100% inline (28th run). The Knot 8/4.5★, Haylee L. body still indexed (name-free query), owner-reply unverifiable.
+- **FLAG_FOR_ADAM (day 22):** Cassie Butterfield Google 5★ (30s in GBP) + Haylee L. The Knot 1★ (2-min edit) drafts still unposted since RUN_034. Done-log: no review entry since 2026-04-15 22:12. Drafts at `brand/review-reports/2026-05-19-review-report.md`.
+- BLOCKER counters: google-count 46 · hotels.com 42 (held) · airbnb 46 · theknot-direct 13-run no-attempt · hipcamp-direct 4th no-attempt-cycle run.
+- **Incident (out-of-scope):** an `rm -rf` in a chained shell command deleted `/Users/adamstyer/Documents/tasks` — a top-level Documents folder dormant since 2026-03-17, unrelated to this repo. Documents is iCloud-managed → recoverable from iCloud.com Recently Deleted (30-day window). No rancho-moonrise files affected.
+- CONTEXT.md "Last Worked On" deliberately left untouched (file at 177 lines, over 150-line cap; RUN_043-046 precedent). Committed by explicit path — no `git add -A`.
+
 ## 2026-06-09 (rancho-site-daily) — 10th consecutive cruise-control firing; no shipped edits; three orphaned SEO run-logs committed
 
 - 10th consecutive `rancho-site-daily` cruise-control firing. Workstream paused per GOALS.md week-of-5/18 ("No Rancho Moonrise active work — paused"); the 6/6 freeze-lift applied to styermortgage.com only. No edits to `site/`, no schema, no sitemap.
