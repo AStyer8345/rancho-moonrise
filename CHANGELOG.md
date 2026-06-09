@@ -1,5 +1,21 @@
 # Rancho Moonrise — Changelog
 
+## 2026-06-09 (rancho-site-daily) — 10th consecutive cruise-control firing; no shipped edits; three orphaned SEO run-logs committed
+
+- 10th consecutive `rancho-site-daily` cruise-control firing. Workstream paused per GOALS.md week-of-5/18 ("No Rancho Moonrise active work — paused"); the 6/6 freeze-lift applied to styermortgage.com only. No edits to `site/`, no schema, no sitemap.
+- CreativeWork-property enrichment arc on the 17-post BlogPosting JSON-LD cluster closed 5/26 — no surgical autonomous slot remains. Person-author research + AggregateRating-on-BlogPosting both deferred again (each adds NEEDS-ADAM noise or a 17-file diff against a paused workstream Adam isn't reviewing).
+- **Re-Verify Gate (live): 7/7 still_true, 0 resolved.** apex 200 + `server: Vercel` + `x-vercel-cache: HIT` (`age: 0`); www 308 → apex; sitemap / `/corporate-retreats/` / `/safari-tents-near-austin/` / `/blog/` all 200; BlogPosting CreativeWork 6-property spot-check on `/blog/glamping-near-austin-texas/` intact 14 days post-deploy (dateModified 2026-05-26, wordCount 1005, articleSection "Glamping", inLanguage "en-US", isAccessibleForFree true, copyrightYear 2026).
+- **Continuity fix:** the 6/8 site-daily run wrote its CONTEXT/CHANGELOG edits + `run-logs/2026-06-07-seo.md` + `run-logs/2026-06-08-seo.md` to disk but never committed — the concurrent notebooklm-sync task committed over the top, leaving them orphaned (and the 6/8 header falsely claiming it had already committed the 6/7 log). This run stages and commits all three orphaned SEO run-logs (2026-05-24, 2026-06-07, 2026-06-08) plus today's by explicit path — no `git add -A`, to avoid sweeping the `" 2"/" 3"` sync-conflict artifacts and `TODO.md.tmp.*` leftover into the commit.
+- Indexing claims (`/corporate-retreats/` ~38d, `/safari-tents-near-austin/` ~43d uncrawled) owned + freshly re-verified by the 6/8 competitive-weekly — not re-litigated. Pre-existing prior-session changes (api/inquiry.js, styles.css, main.js, contact.html, weddings.html) intentionally NOT staged.
+
+## 2026-06-08 (rancho-site-daily) — 9th consecutive cruise-control firing; no shipped edits; orphaned 6/7 run-log committed
+
+- 9th consecutive `rancho-site-daily` cruise-control firing. Workstream paused per GOALS.md week-of-5/18 ("No Rancho Moonrise active work — paused"); the 6/6 freeze-lift applied to styermortgage.com only. No edits to `site/`, no schema, no sitemap.
+- CreativeWork-property enrichment arc on the 17-post BlogPosting JSON-LD cluster closed 5/26 — no surgical autonomous slot remains. Person-author research + AggregateRating-on-BlogPosting both deferred again (each adds NEEDS-ADAM noise or a 17-file diff against a paused workstream Adam isn't reviewing).
+- **Re-Verify Gate (live): 7/7 still_true, 0 resolved.** apex 200 + `server: Vercel` + `x-vercel-cache: HIT` (`age: 4006` ≈ 1.1 hr); www 308 → apex; sitemap / `/corporate-retreats/` / `/safari-tents-near-austin/` / `/blog/` all 200; BlogPosting CreativeWork 6-property spot-check on `/blog/glamping-near-austin-texas/` intact 13 days post-deploy (dateModified 2026-05-26, wordCount 1005, articleSection "Glamping", inLanguage "en-US", isAccessibleForFree true, copyrightYear 2026).
+- **Continuity fix:** the 6/7 run (8th firing) wrote `run-logs/2026-06-07-seo.md` but never committed it — it sat untracked, leaving CONTEXT.md's header stale by one run. This run commits the orphaned 6/7 log alongside today's `run-logs/2026-06-08-seo.md`.
+- Indexing claims (`/corporate-retreats/` 38d, `/safari-tents-near-austin/` 43d uncrawled) owned + freshly re-verified by this morning's competitive-weekly — not re-litigated. Pre-existing prior-session changes (api/inquiry.js, styles.css, main.js, contact.html, weddings.html) intentionally NOT staged.
+
 ## 2026-06-08 (rancho-competitive-weekly) — quietest subject-property week + busiest competitor-SERP churn; Camp Lucy off corporate SERP after one week (auto-resolved); Spoon Mountain reframe; Hipcamp set unchanged
 
 - Ran weekly competitive intelligence: 5 SERP keyword checks + ~9 competitor/listing fetches via 3 parallel research subagents (firecrawl unauthenticated in headless run → WebSearch/WebFetch fallback). Re-Verify Gate: 11 prior claims checked live — 8 still_true, 2 CHANGED, 1 STATE CHANGE auto-resolved to done-log.
