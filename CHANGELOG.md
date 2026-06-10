@@ -1,5 +1,14 @@
 # Rancho Moonrise — Changelog
 
+## 2026-06-10 (rancho-review-monitor) — RUN_048, 15th consecutive quiet sweep; TripAdvisor drift stabilized; 2 carry-forward drafts day 23
+
+- rancho-review-monitor RUN_048: scraped 7 platforms (curl liveness + 5 search-snippet platforms + TripAdvisor DIRECT WebFetch), resolved 0 stale claims, drafted 0 new responses (no new reviews on any platform). 15th consecutive quiet sweep.
+- **TripAdvisor:** price range $64-$180 held a 2nd consecutive run (RUN_047 drift $63-$181 → $64-$180 now stabilized), confirmed via DIRECT WebFetch. Still 0 reviews / unclaimed. Immaterial — algorithmic average-rate estimate.
+- Google snippet stable at 126 three consecutive runs (non-authoritative; live=130/4.9★ from RUN_034, 22d stale, count BLOCKER). Expedia 8.0 inline (18th run). Facebook 5/100% inline (29th run). The Knot 8/4.5★, Haylee L. body still indexed (name-free query), owner-reply unverifiable.
+- **FLAG_FOR_ADAM (day 23):** Cassie Butterfield Google 5★ (30s in GBP) + Haylee L. The Knot 1★ (2-min edit) drafts still unposted since RUN_034. Done-log: no review entry since 2026-04-15 22:12. Drafts at `brand/review-reports/2026-05-19-review-report.md`.
+- BLOCKER counters: google-count 47 · hotels.com 42 (held) · airbnb 47 · theknot-direct 14-run no-attempt · hipcamp-direct 5th no-attempt-cycle run.
+- CONTEXT.md "Last Worked On" deliberately left untouched (file over 150-line cap; RUN_043-047 precedent). All file ops by explicit path — no `git add -A`, no chained `rm` (RUN_047 incident discipline).
+
 ## 2026-06-09 (events-popup) — Admin-controlled homepage upcoming-events popup shipped
 
 - **New feature (Adam interactive request):** dismissible, frequency-capped popup on the homepage that features upcoming events. Ships **dormant** — no popup shows until Ashley features an event, so zero visitor-facing change at deploy time.

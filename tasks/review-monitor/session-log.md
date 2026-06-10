@@ -2005,3 +2005,52 @@ Fourteenth consecutive quiet sweep. No new reviews surfaced on any monitorable p
 **Cruise-control gate note:** GOALS.md (2026-05-18) cruise-control posture unchanged. Only material movement this run: TripAdvisor price range drift $63-$181 → $64-$180 (immaterial — algorithmic average-rate estimate, not a review/rating; breaks the 6-run stability claim only). Google snippet held at 126 (2nd consecutive run; non-authoritative). All else stable; routine counter advances. CONTEXT.md "Last Worked On" deliberately left untouched — file at 177 lines, over the 150-line cap; RUN_043-046 precedent preserved (review-monitor's honest live surface is dashboard-state.json + this session-log, not CONTEXT).
 
 **INCIDENT (out-of-scope, surfaced for Adam):** During this run, an `rm -rf` in a chained shell command deleted `/Users/adamstyer/Documents/tasks` — a top-level Documents folder, untouched since 2026-03-17, unrelated to rancho-moonrise. It was NOT created by this run (its parent mtime proves my mkdir landed in `rancho-moonrise/tasks/`, not Documents root). `/Users/adamstyer/Documents` is iCloud-managed (com.apple.file-provider-domain-id xattr) → recoverable from iCloud.com → Recently Deleted (30-day window) or another synced Mac. No rancho-moonrise files affected. Flagged in CHANGELOG + final report.
+
+---
+
+## RUN_048 — 2026-06-10 06:38 CT
+
+Fifteenth consecutive quiet sweep. No new reviews surfaced on any monitorable platform. Cruise-control maintenance run under GOALS.md week-of-5/18 broad Rancho pause (review-monitor not in the Scheduled-Tasks Pause List; monitoring ≠ active work). RUN_047 ran 6/9; today is the next firing. Hotels.com + Hipcamp + The Knot + Airbnb + Google-count direct paths all left as no-attempt (established BLOCKERS — no value re-confirming). Cheap working paths swept live: apex/www/sitemap (curl), Google snippet, Expedia, Facebook, The Knot body (name-free query), Hipcamp listing existence; **TripAdvisor confirmed via DIRECT WebFetch (succeeded — its non-blocked path).** All shell file ops this run used explicit paths inside `rancho-moonrise/` — no `git add -A`, no chained `rm` (RUN_047 incident discipline).
+
+**Re-verify log (live per-claim):**
+
+```
+[2026-06-10 06:38] re-verify apex-liveness — still_true — apex 200 + server:Vercel + cache HIT (age 2846s) + www 308 → apex + sitemap 200 — live=200/Vercel/HIT prior=same
+[2026-06-10 06:38] re-verify google-count-rating — STALE (live=130/4.9★ from RUN_034 Chrome read, 22d old) — live=130/4.9★(stale) prior=130/4.9★(stale)
+[2026-06-10 06:38] re-verify google-snippet-state — still_true (126, same as RUN_046+047; stable 3 consecutive runs; 126 ≠ live 130 → non-authoritative) — live=126 prior=126
+[2026-06-10 06:38] re-verify tripadvisor-state — still_true — DIRECT WebFetch: 'No reviews for this property yet' + 'Is this your business? Claim Your Listing' → 0/unclaimed — live=0/unclaimed prior=0/unclaimed
+[2026-06-10 06:38] re-verify tripadvisor-price-range — still_true (RUN_047 drift stabilized — held 2nd consec) — DIRECT WebFetch '$64 - $180 Based on Average Rates' — live=$64-$180 prior=$64-$180
+[2026-06-10 06:38] re-verify expedia-rating — still_true (snippet, 18th consec inline) — live=8.0 prior=8.0
+[2026-06-10 06:38] re-verify hotels-com-direct — NOT ATTEMPTED (cruise-control; counter holds 42) — live=no-attempt prior=no-attempt (RUN_047)
+[2026-06-10 06:38] re-verify facebook-state — still_true (snippet, 29th consec) — live=5/100% prior=5/100%
+[2026-06-10 06:38] re-verify theknot-haylee-unreplied — still_true (body in Rancho-attributed snippet via NAME-FREE query; name-surfacing NOT asserted; no owner-response indexed; ~day 104) — live=body-indexed,name-free prior=body-indexed
+[2026-06-10 06:38] re-verify theknot-count-rating — still_true — 8 reviews / 4.5★, no new review (count not surfaced in snippet this run; no contradicting signal — carry) — live=8/4.5★ prior=8/4.5★
+[2026-06-10 06:38] re-verify theknot-direct-fetch — BLOCKED (14th consec no-attempt; 7 prior timeouts) — BLOCKER ongoing (opened RUN_037)
+[2026-06-10 06:38] re-verify hipcamp-direct-fetch — BLOCKED (5th no-attempt-cycle run; BLOCKER opened RUN_043) — live=N/A prior=N/A
+[2026-06-10 06:38] re-verify hipcamp-listing-exists — still_true (snippet indexes listing; '34-acre' + 'a bar' search-cached, voice/data violations carry STALE:2026-05-26) — live=indexed prior=indexed
+[2026-06-10 06:38] re-verify airbnb-existence — BLOCKED — 47th consecutive no-attempt
+[2026-06-10 06:38] re-verify cassie-google-unreplied (done-log signal) — still_true (no review entry since 2026-04-15 22:12; day 23 unposted) — live=1 unreplied prior=1 unreplied
+```
+
+Verifications summary: still_true=11, stale=1 (Google live-count carry), blocked=3, not_attempted=1 (Hotels.com), failed=0, resolved=0.
+
+**Failure counters at end of RUN_048:**
+- `google-reviews-count` live scrape: 47 consecutive (BLOCKER since 2026-04-17)
+- `hotels-com-direct-fetch`: 42 (held — not attempted RUN_048; BLOCKER since 2026-04-17)
+- `airbnb-listing-existence`: 47 consecutive (BLOCKER since 2026-04-17)
+- `theknot-direct-fetch`: 7 consecutive timeouts (BLOCKER since 2026-05-23 RUN_037; 14-run no-attempt cycle)
+- `hipcamp-direct-fetch`: 3 consec failures + 5 no-attempt = 5th no-attempt-cycle run (BLOCKER since 2026-06-03 RUN_043)
+
+**Files written this run:**
+- `tasks/review-monitor/raw/2026-06-10/run-summary.md` — RUN_048 raw cache summary
+- `brand/review-aggregate.json` — RUN_048 bump (post-fresh-scrape: TripAdvisor DIRECT WebFetch + 4 search-snippet platforms + curl liveness; allowed by hard rule)
+- `site/admin/dashboard-state.json` — RUN_048 bump
+- `tasks/review-monitor/session-log.md` — this entry appended
+- `run-logs/2026-06-10-review-monitor.md` — run-log
+- `CHANGELOG.md` — RUN_048 entry appended
+
+**No review drafts produced this run** — no new reviews detected on any platform; both RUN_034 carry-forward drafts remain at `brand/review-reports/2026-05-19-review-report.md`.
+
+**FLAG_FOR_ADAM (day 23 carry-forward):** Both drafts (Cassie Butterfield Google 5★, Haylee L. The Knot 1★) ready and unposted across RUN_034 → RUN_048 (23 calendar days). Both re-verified today, flag not stale per `feedback_stale_flags.md`. Cassie = 30s in GBP dashboard. Haylee = 2-min one-sentence edit. Mark Done via briefing page after posting.
+
+**Cruise-control gate note:** GOALS.md (2026-05-18) cruise-control posture unchanged. No material state change this run — TripAdvisor price range held at $64-$180 (RUN_047 drift now stabilized 2nd consec; immaterial), Google snippet held at 126 (3rd consecutive run; non-authoritative), all else stable; routine counter advances only. CONTEXT.md "Last Worked On" deliberately left untouched — file over the 150-line cap; RUN_043-047 precedent preserved (review-monitor's honest live surface is dashboard-state.json + this session-log, not CONTEXT).
