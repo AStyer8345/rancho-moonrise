@@ -868,3 +868,11 @@ Exiting cleanly. State file not updated; will retry next run.
 - State file intentionally NOT updated, so the pending file is re-detected on the next run after re-auth.
 - Skipped (safety rules): 3 PDFs >10MB (ALL INCLUSIVE RETREATS, INTIMATE EVENTS, PRIVATE EVENTS), 1 non-allowed ext (review-aggregate.json).
 2026-06-09 16:08 | scanned=65 added=0 replaced=0 skipped=4 errors=1
+
+## 2026-06-10 05:39 — BLOCKED: auth expired (ongoing since 2026-05-29)
+- Re-verified live: `notebooklm use`/`list` return auth-redirect error. `notebooklm login` (interactive Google OAuth) required — cannot run in autonomous task.
+- 1 file still pending sync: `2026-05-16-hipcamp-curation-gap-audit.md` (brand/). NOT uploaded.
+- State file intentionally NOT advanced, so the pending file re-syncs on the first run after re-auth.
+- Skipped per safety rules: 3 PDFs >10MB (ALL INCLUSIVE RETREATS, INTIMATE EVENTS, PRIVATE EVENTS).
+- ACTION NEEDED (Adam): run `notebooklm login` to restore the CLI session. ~12 days blocked.
+2026-06-10 05:39 | scanned=65 added=0 replaced=0 skipped=3 errors=1
