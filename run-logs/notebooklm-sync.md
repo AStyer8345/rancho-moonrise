@@ -883,3 +883,10 @@ Exiting cleanly. State file not updated; will retry next run.
 - Skipped (>10MB, never in state): `PRIVATE EVENTS AT RANCHO MOONRISE.pdf`, `INTIMATE EVENTS AT RM.pdf`, `ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf`.
 - State file left unchanged. No NotebookLM operations performed.
 2026-06-10 07:33 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth-expired)
+
+### 2026-06-10 16:08 — sync run (BLOCKED: auth expired — still)
+- Re-verified live this run: `notebooklm use` → "Authentication expired or invalid"; `notebooklm list --json` returns auth-redirect error. Interactive `notebooklm login` (Google OAuth) required — cannot run autonomously. Blocked since ~2026-05-29.
+- 1 file still pending: `brand/2026-05-16-hipcamp-curation-gap-audit.md` (18,543 bytes). NOT uploaded. State file intentionally left unchanged so it re-syncs on the first run after re-auth.
+- Skipped per safety rules (>10MB, never in state): `ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf` (36.9MB), `INTIMATE EVENTS AT RM.pdf` (20.7MB), `PRIVATE EVENTS AT RANCHO MOONRISE.pdf` (28.8MB). Also skipped: `review-aggregate.json` (.json, unsupported ext).
+- No NotebookLM operations performed. ACTION NEEDED (Adam): run `notebooklm login` to restore the CLI session.
+2026-06-10 16:08 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth-expired)
