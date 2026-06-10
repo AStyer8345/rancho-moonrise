@@ -876,3 +876,10 @@ Exiting cleanly. State file not updated; will retry next run.
 - Skipped per safety rules: 3 PDFs >10MB (ALL INCLUSIVE RETREATS, INTIMATE EVENTS, PRIVATE EVENTS).
 - ACTION NEEDED (Adam): run `notebooklm login` to restore the CLI session. ~12 days blocked.
 2026-06-10 05:39 | scanned=65 added=0 replaced=0 skipped=3 errors=1
+
+### 2026-06-10 07:33 — sync run (BLOCKED: auth expired)
+- NotebookLM CLI auth expired/invalid — `notebooklm list` and `source list` both return Authentication error. Needs `notebooklm login` (browser OAuth, UI-only — Adam must re-auth).
+- Detected 1 new file pending sync: `brand/2026-05-16-hipcamp-curation-gap-audit.md` — NOT synced, NOT recorded in state (will retry next run after re-auth).
+- Skipped (>10MB, never in state): `PRIVATE EVENTS AT RANCHO MOONRISE.pdf`, `INTIMATE EVENTS AT RM.pdf`, `ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf`.
+- State file left unchanged. No NotebookLM operations performed.
+2026-06-10 07:33 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth-expired)
