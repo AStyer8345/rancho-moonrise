@@ -10,7 +10,7 @@ Priority: broken/placeholder assets first, then highest-impression landing pages
 | Page | Last Touch | Status |
 |------|-----------|--------|
 | `weddings.html` | 2026-04-22 | BLOCKED — see run log below |
-| `accommodations.html` | 2026-06-03 | BLOCKED — same two NEEDS ADAM items (run 5, 42 days; GOALS.md week of 5/18 now also pauses Rancho broadly) |
+| `accommodations.html` | 2026-06-10 | BLOCKED — same two NEEDS ADAM items (run 6, 49 days; GOALS.md week of 5/18 still pauses Rancho broadly) |
 | `host-your-event.html` | — | Pending |
 | `events.html` | — | Pending |
 | `pool-day-pass-austin.html` | — | Pending |
@@ -111,3 +111,9 @@ Priority: broken/placeholder assets first, then highest-impression landing pages
 ### 2026-06-03 — BLOCKED (run 5; one-liner per 5/13 commitment)
 
 Two hard stops re-verified still true (`find brand -name "*testimonial*" -o -name "*approved*"` = 0 hits; `grep -i "byline\|settled decision\|author.*adam\|author.*ashley" GOALS.md` = 0 hits). Plus GOALS.md week of 5/18 now says "No Rancho Moonrise active work — paused (cruise control only if Ashley moves)" — the broader pause signal is also live alongside the task-specific blockers. Today is the 5th structurally-blocked content-weekly run (4/22, 4/29, 5/06, 5/13, 6/03) and the **10th overall Rancho scheduled-task firing against the cruise-control gate** (this is the 2nd content-weekly firing since the GOALS pause; the 5/27 firing exited via the gate without appending here). 42-day blocker pattern (4/22 → 6/03). No edits to any landing page. See 5/13 entry for the single-ask pause request to Adam — now also surfaced as TODO.md NEEDS ADAM #0 with daily firing-count drift. Next run: 2026-06-10.
+
+---
+
+### 2026-06-10 — BLOCKED (run 6; one-liner per 5/13 commitment)
+
+Both hard stops re-verified live still true (`find brand -iname "*testimonial*" -o -iname "*approved*"` = 0 hits; `grep -i "byline\|author.*adam\|author.*ashley\|settled decision" GOALS.md` = exit 1, 0 matches). GOALS.md (still week of 5/18, last updated 6/6 — the 6/6 freeze-lift was styermortgage.com only) keeps "No Rancho Moonrise active work — paused (cruise control only if Ashley moves)." 6th structurally-blocked content-weekly run (4/22, 4/29, 5/06, 5/13, 6/03, 6/10); 49-day blocker pattern. No landing-page edits. The single-ask pause request lives in the 5/13 entry and TODO.md NEEDS ADAM #0 — not re-litigated here. Next run: 2026-06-17.

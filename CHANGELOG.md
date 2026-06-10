@@ -1,5 +1,12 @@
 # Rancho Moonrise — Changelog
 
+## 2026-06-10 (rancho-content-weekly) — run 6, structurally blocked, no landing-page edits
+
+- 6th structurally-blocked `rancho-content-weekly` run (4/22, 4/29, 5/06, 5/13, 6/03, 6/10); 49-day blocker pattern. Both task-spec hard stops re-verified **live** still true: (1) `find brand -iname "*testimonial*" -o -iname "*approved*"` = 0 hits (no approved-testimonials list); (2) `grep -i "byline\|author.*adam\|author.*ashley\|settled decision" GOALS.md` = exit 1 (no author-byline decision). Each pass requires ≥3 of {photos, author block, testimonial, local detail} — with author block + testimonial both gated on Adam, the spec cannot be satisfied.
+- Layered on top: GOALS.md (still week of 5/18, last updated 6/6 — freeze-lift was styermortgage.com only) keeps "No Rancho Moonrise active work — paused (cruise control only if Ashley moves)." Cleanest double-pause case in the registry.
+- Per the 5/13 commitment, today's `run-logs/strengthener-queue.md` entry is a one-liner pointer, not a 6th re-litigation; queue table `accommodations.html` Last Touch bumped 6/03 → 6/10 (still BLOCKED). Single-ask pause request lives in the 5/13 queue entry + TODO.md NEEDS ADAM #0 — not re-surfaced here.
+- No `site/pages/*` edits, no schema, no sitemap touch. Committed by explicit path (`run-logs/strengthener-queue.md`, `CHANGELOG.md`) only — pre-existing prior-session changes (api/inquiry.js, styles.css, main.js, contact.html, weddings.html) + concurrent-writer artifacts (`* 2`/`* 3`, `AGENTS*.md`, `TODO.md.tmp.*`, duplicated images) intentionally NOT staged; no `git add -A`.
+
 ## 2026-06-10 (rancho-site-daily) — 11th consecutive cruise-control firing, no shipped edits
 
 - 11th consecutive `rancho-site-daily` cruise-control firing (5/28, 5/29, 6/1, 6/2, 6/3, 6/4, 6/6, 6/7, 6/8, 6/9, 6/10). GOALS.md still week-of-5/18 ("No Rancho Moonrise active work — paused"); task runs as read-only Re-Verify maintenance only.
