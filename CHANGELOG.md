@@ -1,5 +1,12 @@
 # Rancho Moonrise — Changelog
 
+## 2026-06-11 (rancho-site-daily) — 12th consecutive cruise-control firing, no shipped edits
+
+- 12th consecutive `rancho-site-daily` cruise-control firing (5/28, 5/29, 6/1, 6/2, 6/3, 6/4, 6/6, 6/7, 6/8, 6/9, 6/10, 6/11). GOALS.md still week-of-5/18 ("No Rancho Moonrise active work — paused"; 6/6 freeze-lift was styermortgage.com only); task runs as read-only Re-Verify maintenance only.
+- **Re-Verify Gate (live, 7/7 still_true, 0 resolved):** apex 200 + `server: Vercel` + `x-vercel-cache: HIT` (`age: 14746` ≈ 4.1 hr); www 308 → apex; sitemap.xml 200; `/corporate-retreats/` 200; `/safari-tents-near-austin/` 200; `/blog/` 200; BlogPosting CreativeWork 6-property spot-check on `/blog/glamping-near-austin-texas/` intact 16 days post-5/26 deploy (dateModified 2026-05-26, wordCount 1005, articleSection "Glamping", inLanguage "en-US", isAccessibleForFree true, copyrightYear 2026).
+- CreativeWork-property enrichment arc on the 17-post BlogPosting JSON-LD cluster closed 5/26 — no surgical autonomous slot remains. Person-author research + AggregateRating-on-BlogPosting both deferred again (noise / 17-file diff against a paused workstream). Indexing claims owned by 6/8 competitive-weekly, not re-litigated.
+- No `site/` edits, no schema edits, no sitemap touch. Pre-existing prior-session changes + concurrent-writer artifacts intentionally NOT staged; committed by explicit path only (no `git add -A`). Run-log: `run-logs/2026-06-11-seo.md`. No SEO task IDs (s1–s8) touched, no done-log entry.
+
 ## 2026-06-10 (rancho-content-weekly) — run 6, structurally blocked, no landing-page edits
 
 - 6th structurally-blocked `rancho-content-weekly` run (4/22, 4/29, 5/06, 5/13, 6/03, 6/10); 49-day blocker pattern. Both task-spec hard stops re-verified **live** still true: (1) `find brand -iname "*testimonial*" -o -iname "*approved*"` = 0 hits (no approved-testimonials list); (2) `grep -i "byline\|author.*adam\|author.*ashley\|settled decision" GOALS.md` = exit 1 (no author-byline decision). Each pass requires ≥3 of {photos, author block, testimonial, local detail} — with author block + testimonial both gated on Adam, the spec cannot be satisfied.
