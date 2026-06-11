@@ -911,3 +911,9 @@ Exiting cleanly. State file not updated; will retry next run.
 - Skipped per safety rules: 3 PDFs >10MB (ALL INCLUSIVE RETREATS 36.9MB, PRIVATE EVENTS 28.8MB, INTIMATE EVENTS 20.7MB) + review-aggregate.json (unsupported ext).
 - No NotebookLM operations performed. ACTION NEEDED (Adam): run `notebooklm login` to restore the CLI session.
 2026-06-11 12:08 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth-expired)
+
+### 2026-06-11 16:08 — sync run (BLOCKED: auth expired — unchanged, see prior entries)
+- Re-verified live: `source list --json` → `"Authentication expired or invalid"` + Google sign-in redirect. Same continuous block since ~2026-05-29; 5th run today.
+- Pending unchanged: 1 file `brand/2026-05-16-hipcamp-curation-gap-audit.md`. Not uploaded. State file untouched so it re-syncs after re-auth.
+- ACTION NEEDED (Adam): run `notebooklm login` once to clear this — every scheduled run is a no-op until then.
+2026-06-11 16:08 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth-expired)
