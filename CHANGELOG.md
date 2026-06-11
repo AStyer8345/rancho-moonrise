@@ -1,5 +1,13 @@
 # Rancho Moonrise — Changelog
 
+## 2026-06-11 (rancho-review-monitor) — RUN_049, 16th consecutive quiet sweep
+
+- 16th consecutive quiet sweep. No new reviews on any monitorable platform; no rating drops, no count drops, no new ≤3★. Read-only cruise-control monitor under GOALS.md week-of-5/18 broad Rancho pause (not in Scheduled-Tasks Pause List; monitoring ≠ active work).
+- **Re-Verify Gate (8 live claims, 8 still_true, 0 resolved):** TripAdvisor DIRECT WebFetch — 0 reviews / unclaimed / price range **$64–$180 held a 3rd consecutive run** (immaterial algorithmic rate estimate). Google WebSearch snippet **flipped 126 → 175** (non-authoritative; oscillation 126/175/null/126/175; live-authoritative 130 from RUN_034 Chrome read now 23 days STALE). Expedia 8.0 inline (19th consecutive). Facebook 5/100% inline (30th consecutive). The Knot Haylee L. 1★ body still indexed via name-free query (name-surfacing not asserted, no owner-response indexed, 105 days unreplied). Done-log: no review entry since 2026-04-15 22:12 → both carry-forward drafts still unposted.
+- **BLOCKERS held (no-attempt cruise-control):** theknot-direct-fetch (15th no-attempt run), hipcamp-direct-fetch (6th no-attempt-cycle run), airbnb-listing-existence (48th run, 403), hotels-com-direct-fetch (counter holds 42), google-reviews-count (live scrape blocked, 48 runs).
+- **2 carry-forward drafts still unposted (day 24 in monitor):** Cassie Butterfield Google 5★ (~day 26 since posting) + Haylee L. The Knot 1★ (105 days unreplied). Drafts at `brand/review-reports/2026-05-19-review-report.md`. Dashboard status stays `pending`.
+- State files updated: `brand/review-aggregate.json` (RUN_049, fresh live scrape), `site/admin/dashboard-state.json`. Run-log: `run-logs/2026-06-11-review-monitor.md`. Committed by explicit path only; prior-session changes + concurrent-writer artifacts NOT staged.
+
 ## 2026-06-11 (rancho-site-daily) — 12th consecutive cruise-control firing, no shipped edits
 
 - 12th consecutive `rancho-site-daily` cruise-control firing (5/28, 5/29, 6/1, 6/2, 6/3, 6/4, 6/6, 6/7, 6/8, 6/9, 6/10, 6/11). GOALS.md still week-of-5/18 ("No Rancho Moonrise active work — paused"; 6/6 freeze-lift was styermortgage.com only); task runs as read-only Re-Verify maintenance only.
