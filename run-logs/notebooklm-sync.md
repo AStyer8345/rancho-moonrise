@@ -923,3 +923,6 @@ Exiting cleanly. State file not updated; will retry next run.
 - Pending unchanged: 1 file `brand/2026-05-16-hipcamp-curation-gap-audit.md`. Not uploaded; state file untouched so it re-syncs after re-auth.
 - ACTION NEEDED (Adam): run `notebooklm login` once to clear this — every scheduled run is a no-op until then.
 2026-06-11 20:07 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth-expired)
+
+2026-06-12 08:33 | ERROR: NotebookLM auth expired/invalid — `notebooklm use` returned "Authentication expired or invalid.", `source list` returned 0 sources. Cannot sync until re-authenticated (OAuth, needs Adam). Detected 1 new file pending: 2026-05-16-hipcamp-curation-gap-audit.md. State file NOT updated so it retries next run.
+2026-06-12 08:33 | scanned=65 added=0 replaced=0 skipped=5 errors=1
