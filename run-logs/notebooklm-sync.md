@@ -917,3 +917,9 @@ Exiting cleanly. State file not updated; will retry next run.
 - Pending unchanged: 1 file `brand/2026-05-16-hipcamp-curation-gap-audit.md`. Not uploaded. State file untouched so it re-syncs after re-auth.
 - ACTION NEEDED (Adam): run `notebooklm login` once to clear this — every scheduled run is a no-op until then.
 2026-06-11 16:08 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth-expired)
+
+### 2026-06-11 20:07 — sync run (BLOCKED: auth expired — unchanged)
+- Re-verified live: `source list --json` → "Authentication expired or invalid" + Google sign-in redirect. Continuous block since ~2026-05-29.
+- Pending unchanged: 1 file `brand/2026-05-16-hipcamp-curation-gap-audit.md`. Not uploaded; state file untouched so it re-syncs after re-auth.
+- ACTION NEEDED (Adam): run `notebooklm login` once to clear this — every scheduled run is a no-op until then.
+2026-06-11 20:07 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth-expired)
