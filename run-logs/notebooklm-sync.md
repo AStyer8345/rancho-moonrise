@@ -948,3 +948,25 @@ Exiting cleanly. State file not updated; will retry next run.
 - State file left unchanged so this file retries on the next run after re-auth.
 - Skipped (oversized, >10MB, expected): PRIVATE EVENTS AT RANCHO MOONRISE.pdf (28.8MB), INTIMATE EVENTS AT RM.pdf (20.7MB), ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf (36.9MB).
 2026-06-13 12:15 | scanned=65 added=0 replaced=0 skipped=3 errors=1 (auth expired)
+
+## 2026-06-13 16:15 — AUTH FAILURE (ongoing)
+- NotebookLM CLI auth still expired (redirect to Google sign-in on `use`/`source list`). Run `notebooklm login` to re-authenticate (interactive Google OAuth — cannot run in an automated task).
+- Recursive scan of brand/ + deal/ found 15 NEW files not yet in sync state (0 modified). Prior runs scanned top-level only and saw just 1; the extra 14 live in subdirs (brand/gbp-posts/, brand/review-reports/, brand/review-reports/raw-data/, brand/fonts/):
+  - brand/2026-05-16-hipcamp-curation-gap-audit.md
+  - brand/gbp-posts/2026-04-09-gbp-post.md
+  - brand/gbp-posts/2026-04-13-gbp-post.md
+  - brand/gbp-posts/2026-04-15-blog12-social-snippets.md
+  - brand/gbp-posts/2026-04-15-gbp-profile-fields.md
+  - brand/gbp-posts/2026-04-15-gbp-qa-seed.md
+  - brand/review-reports/2026-04-09-review-report.md
+  - brand/review-reports/2026-05-19-review-report.md
+  - brand/review-reports/2026-05-20-review-report.md
+  - brand/review-reports/2026-05-21-review-report.md
+  - brand/review-reports/2026-05-23-review-report.md
+  - brand/review-reports/2026-05-24-review-report.md
+  - brand/review-reports/2026-05-25-review-report.md
+  - brand/review-reports/raw-data/2026-05-19-gbp-live-snapshot.md
+  - brand/fonts/Monotype Font Software End User License Agreement.html
+- NONE uploaded (auth blocked). State file left unchanged so all 15 retry on the next run after re-auth.
+- Skipped (oversized, >10MB, expected): PRIVATE EVENTS AT RANCHO MOONRISE.pdf (30.2MB), INTIMATE EVENTS AT RM.pdf (21.7MB), ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf (38.7MB).
+2026-06-13 16:15 | scanned=79 added=0 replaced=0 skipped=3 errors=1 (auth expired)
