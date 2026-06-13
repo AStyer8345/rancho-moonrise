@@ -941,3 +941,10 @@ Exiting cleanly. State file not updated; will retry next run.
 - Skipped (>10MB): brand/PRIVATE EVENTS AT RANCHO MOONRISE.pdf (28.8MB), brand/INTIMATE EVENTS AT RM.pdf (20.7MB), brand/ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf (36.9MB)
 - State file NOT updated (preserves retry of the pending file on next run).
 2026-06-13 10:39 | scanned=68 added=0 replaced=0 skipped=3 errors=1
+
+## 2026-06-13 12:15 — AUTH FAILURE
+- NotebookLM CLI auth expired (redirect to Google sign-in). Run `notebooklm login` to re-authenticate.
+- Detected 1 new file pending sync: `brand/2026-05-16-hipcamp-curation-gap-audit.md` — NOT uploaded (auth blocked).
+- State file left unchanged so this file retries on the next run after re-auth.
+- Skipped (oversized, >10MB, expected): PRIVATE EVENTS AT RANCHO MOONRISE.pdf (28.8MB), INTIMATE EVENTS AT RM.pdf (20.7MB), ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf (36.9MB).
+2026-06-13 12:15 | scanned=65 added=0 replaced=0 skipped=3 errors=1 (auth expired)
