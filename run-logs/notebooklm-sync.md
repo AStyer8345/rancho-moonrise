@@ -933,3 +933,11 @@ Exiting cleanly. State file not updated; will retry next run.
 - Skipped per safety rules: 3 PDFs >10MB + `review-aggregate.json` (unsupported ext).
 - ACTION NEEDED (Adam): run `notebooklm login` once — every scheduled run is a no-op until then.
 2026-06-12 20:08 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth-expired)
+
+## 2026-06-13 10:39 — BLOCKED (auth expired)
+- NotebookLM CLI auth expired/invalid — `notebooklm list` returned ERROR, `use` showed "Authentication expired or invalid."
+- Action needed: Adam must run `notebooklm login` to re-authenticate (interactive Google OAuth — cannot be done in automated run).
+- Pending to sync once auth restored: 1 NEW file — `brand/2026-05-16-hipcamp-curation-gap-audit.md`
+- Skipped (>10MB): brand/PRIVATE EVENTS AT RANCHO MOONRISE.pdf (28.8MB), brand/INTIMATE EVENTS AT RM.pdf (20.7MB), brand/ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf (36.9MB)
+- State file NOT updated (preserves retry of the pending file on next run).
+2026-06-13 10:39 | scanned=68 added=0 replaced=0 skipped=3 errors=1
