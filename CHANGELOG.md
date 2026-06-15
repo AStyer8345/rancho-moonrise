@@ -1,5 +1,13 @@
 # Rancho Moonrise — Changelog
 
+## 2026-06-15 (rancho-review-monitor) — RUN_052: 19th consecutive quiet sweep, no new reviews
+
+- Nineteenth consecutive quiet sweep. No new reviews on any monitorable platform; no rating drops, no count drops, no new ≤3★. Cruise-control maintenance run under GOALS.md week-of-5/18 broad Rancho pause (review-monitor not in the Scheduled-Tasks Pause List; monitoring ≠ active work).
+- **Re-Verify Gate (8 live claims, 8 still_true, 0 resolved):** TripAdvisor DIRECT WebFetch 0/unclaimed, price floor ticked $65→$66 (ceiling holds $179, immaterial); Google WebSearch snippet held at 126 + 4.9★ (first 3-run hold; non-authoritative — live-authoritative 130 STALE 27d); Expedia 8.0 anchor CONFIRMED on targeted query (22nd inline), general query surfaced 9.0 "Wonderful" (artifact, 3rd run) — no change asserted; Facebook 5/100% (33rd inline); The Knot Haylee L. 1★ body still indexed verbatim via name-free query (no owner-response, 109 days unreplied).
+- **BLOCKERS held no-attempt (cruise-control):** theknot-direct-fetch (18th run), hipcamp-direct-fetch (9th no-attempt-cycle run), airbnb-listing-existence 403 (51st), hotels-com-direct-fetch (counter holds 42; 8.0 cross-confirmed via Expedia targeted query), google-reviews-count live scrape.
+- 2 carry-forward drafts still unposted (day 28 in monitor): Cassie Butterfield Google 5★ + Haylee L. The Knot 1★ — both at `brand/review-reports/2026-05-19-review-report.md`; done-log shows no review reply posted since 2026-04-15. Dashboard status `pending`. No drafts produced this run.
+- State written: `brand/review-aggregate.json`, `site/admin/dashboard-state.json`, run-log `run-logs/2026-06-15-review-monitor.md`. Committed by explicit path — no `git add -A`; pre-existing prior-session changes + concurrent-writer artifacts NOT staged.
+
 ## 2026-06-15 (rancho-competitive-weekly) — June 15 intel: Hipcamp rotation resumed, Yurtopian re-entered, aggregator surge
 
 - June 15 weekly competitive run. Intel card dual-written to both improvement-plan files (sovereign `site/improvement-plan.html` + client-ops mirror), byte-identical. `site/competitive-intelligence.md` rewritten for June 15. Two parallel research agents (live SERP + competitor re-verification).
