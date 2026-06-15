@@ -1,5 +1,14 @@
 # Rancho Moonrise — Changelog
 
+## 2026-06-15 (rancho-competitive-weekly) — June 15 intel: Hipcamp rotation resumed, Yurtopian re-entered, aggregator surge
+
+- June 15 weekly competitive run. Intel card dual-written to both improvement-plan files (sovereign `site/improvement-plan.html` + client-ops mirror), byte-identical. `site/competitive-intelligence.md` rewritten for June 15. Two parallel research agents (live SERP + competitor re-verification).
+- **Re-Verify Gate (live):** 7 still_true, 2 CHANGED, 1 UNVERIFIED-on-page, 1 new UNVERIFIED watch item. CHANGED: (1) Hipcamp curated "20 Best Glamping Near Austin" set ROTATED — broke the 4-week byte-identical streak; Lucky Arrow slipped #8→#9; Rancho absent 5th read. (2) The Yurtopian RE-ENTERED corporate-retreat SERP ~#3 after 4 weeks off. Prior "Hipcamp zero rotation / byte-identical" claim auto-resolved to done-log.
+- **Broad SERP-layout shift:** aggregators/listicles (Glamping Hub, Hipcamp, Teamout, VIP RE, Wilder, Texplorevibe) surged to top across `glamping near austin tx`, `safari tent austin texas`, `weekend getaway near austin glamping`. Branded #1-holders all slid beneath: Udoscape #1→~#6, Element Ranch #1→~#6 (Sage Hill to #1), Safari for the Soul #1→~#5. Spoon Mountain dropped off safari-tent SERP + slipped #1→~#5 on narrow "romantic weekend getaways near austin."
+- **Watch item (UNVERIFIED):** non-localized WebSearch put ranchomoonrise.com ~#7 on its own brand term below Yelp/Do512/The Knot/Hipcamp/FB — likely logged-out-SERP artifact; flagged for clean incognito/rank-tracker confirmation, not treated as confirmed regression.
+- **Hotels.com** fetch blocked (two 60s timeouts) — banned "20 cabins / 50 guests" copy still in live search index (6th week); tagged UNVERIFIED-on-page, TripAdvisor cross-check does not carry the copy.
+- Rancho unchanged 7th cruise-control week: 0/4 non-brand, `/corporate-retreats/` 45d + `/safari-tents-near-austin/` 50d not surfacing. ResortPass frozen both sides (Rancho dormant; Lucky Arrow dormant, hours unchanged). Adam-side items parked per GOALS.md week-of-5/18 pause. CONTEXT.md "What's Next" drift numbers refreshed (ResortPass 28d, indexing 45d/50d, Hipcamp #9). Run-log: `run-logs/2026-06-15-competitive.md`.
+
 ## 2026-06-15 (rancho-site-daily) — 16th consecutive cruise-control firing, no shipped edits
 
 - 16th consecutive `rancho-site-daily` cruise-control firing. No shipped edits. CreativeWork-property enrichment arc on the 17-post BlogPosting JSON-LD cluster closed 5/26 — no surgical autonomous slot remains. Both pre-scoped candidates (Person-author research, AggregateRating-on-BlogPosting) deferred again: one surfaces a new NEEDS ADAM, the other is a 17-file cluster diff against a workstream GOALS.md still pauses.
