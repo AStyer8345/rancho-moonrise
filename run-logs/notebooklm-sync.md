@@ -1002,3 +1002,11 @@ Exiting cleanly. State file not updated; will retry next run.
 - Skipped (>10MB, persistent): PRIVATE EVENTS AT RANCHO MOONRISE.pdf, INTIMATE EVENTS AT RM.pdf, ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf
 - State file NOT updated (pending file retried). FIX: Adam must run `notebooklm login` interactively to restore OAuth.
 2026-06-14 08:17 | scanned=65 added=0 replaced=0 skipped=3 errors=1
+
+## 2026-06-15 10:09 — auth failure (no sync performed)
+- NotebookLM authentication expired/invalid — `use`/`source list` rejected with redirect to Google sign-in (6th consecutive blocked run; auth down since ~2026-06-13 16:15).
+- Pending (NOT synced, will retry next run once re-authed): 2026-05-16-hipcamp-curation-gap-audit.md (NEW)
+- Modified files: none. Removed: none.
+- Skipped (>10MB, persistent): PRIVATE EVENTS AT RANCHO MOONRISE.pdf, INTIMATE EVENTS AT RM.pdf, ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf
+- State file NOT updated (pending file retried). FIX: Adam must run `notebooklm login` interactively to restore OAuth. Blocked 6 runs straight — sync is effectively offline until re-auth.
+2026-06-15 10:09 | scanned=65 added=0 replaced=0 skipped=3 errors=1
