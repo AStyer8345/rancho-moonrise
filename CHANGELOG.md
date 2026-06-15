@@ -1,5 +1,12 @@
 # Rancho Moonrise — Changelog
 
+## 2026-06-15 (rancho-site-daily) — 16th consecutive cruise-control firing, no shipped edits
+
+- 16th consecutive `rancho-site-daily` cruise-control firing. No shipped edits. CreativeWork-property enrichment arc on the 17-post BlogPosting JSON-LD cluster closed 5/26 — no surgical autonomous slot remains. Both pre-scoped candidates (Person-author research, AggregateRating-on-BlogPosting) deferred again: one surfaces a new NEEDS ADAM, the other is a 17-file cluster diff against a workstream GOALS.md still pauses.
+- **Re-Verify Gate (live, 7/7 still_true, 0 resolved):** apex 200 + `server: Vercel` + `x-vercel-cache: HIT` (`age: 91276` ≈ 25.4 hr); www 308 → apex; sitemap / corp-retreats / safari-tents / blog all 200; BlogPosting CreativeWork 6-property spot-check on `/blog/glamping-near-austin-texas/` intact 20 days post-5/26 deploy (dateModified 2026-05-26, wordCount 1005, articleSection "Glamping", inLanguage "en-US", isAccessibleForFree true, copyrightYear 2026). 0 stale claims → 0 done-log entries.
+- GOALS.md still week-of-5/18 ("No Rancho Moonrise active work — paused"; 6/6 freeze-lift was styermortgage.com only). Indexing claims (`/corporate-retreats/`, `/safari-tents-near-austin/` uncrawled) owned by competitive-weekly — not re-litigated. Review/GBP claims owned by review-monitor / gbp-weekly — not touched.
+- Pre-existing prior-session changes (api/inquiry.js, site/css/styles.css, site/js/main.js, site/pages/contact.html, site/pages/weddings.html) + concurrent-writer artifacts (`* 2`/`* 3` dups, AGENTS.md, TODO.md.tmp.*, rancho-moonrise-assets/, duplicated images, youtube-uploads/) intentionally NOT staged. Committed by explicit path only — no `git add -A`. No site/pages/* edits, no schema touch, no sitemap touch. No SEO task IDs (s1–s8) touched. Run-log: `run-logs/2026-06-15-seo.md`.
+
 ## 2026-06-14 (rancho-site-daily) — 15th consecutive cruise-control firing, no shipped edits
 
 - 15th consecutive `rancho-site-daily` cruise-control firing. No shipped edits. CreativeWork-property enrichment arc on the 17-post BlogPosting JSON-LD cluster closed 5/26 — no surgical autonomous slot remains. Both pre-scoped candidates (Person-author research, AggregateRating-on-BlogPosting) deferred again: one surfaces a new NEEDS ADAM, the other is a 17-file cluster diff against a workstream GOALS.md still pauses.
