@@ -1034,3 +1034,12 @@ Exiting cleanly. State file not updated; will retry next run.
 - Skipped by safety filters: 3 PDFs >10MB (ALL INCLUSIVE RETREATS, INTIMATE EVENTS, PRIVATE EVENTS), 1 non-allowed ext (review-aggregate.json).
 - ACTION NEEDED (Adam): run `notebooklm login` to restore the sync.
 2026-06-15 20:25 | scanned=65 added=0 replaced=0 skipped=4 errors=1
+
+### 2026-06-16 08:35 — ERROR: NotebookLM authentication still expired
+- Re-verified live this run: `source list --json` rejected with "Authentication expired or invalid. Run 'notebooklm login'." Redirects to Google sign-in.
+- Auth has been down since ~2026-06-13; this is ~10 consecutive blocked runs. Sync effectively offline until re-auth.
+- 1 new file still pending (NOT uploaded): `2026-05-16-hipcamp-curation-gap-audit.md`. No modified/removed files.
+- Skipped by safety filters: 3 PDFs >10MB (ALL INCLUSIVE RETREATS, INTIMATE EVENTS, PRIVATE EVENTS), 1 non-allowed ext (review-aggregate.json).
+- State file intentionally NOT updated — pending file retries once re-authed.
+- ACTION NEEDED (Adam): run `notebooklm login` interactively to restore the sync. Only Adam can do this; it's an OAuth flow unavailable to scheduled runs.
+2026-06-16 08:35 | scanned=65 added=0 replaced=0 skipped=4 errors=1
