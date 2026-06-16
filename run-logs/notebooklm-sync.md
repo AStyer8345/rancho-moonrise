@@ -1043,3 +1043,9 @@ Exiting cleanly. State file not updated; will retry next run.
 - State file intentionally NOT updated — pending file retries once re-authed.
 - ACTION NEEDED (Adam): run `notebooklm login` interactively to restore the sync. Only Adam can do this; it's an OAuth flow unavailable to scheduled runs.
 2026-06-16 08:35 | scanned=65 added=0 replaced=0 skipped=4 errors=1
+
+### 2026-06-16 12:23 — ERROR: NotebookLM auth still expired (re-verified live)
+- `source list --json` again rejected with "Authentication expired or invalid. Run 'notebooklm login'." Sync remains offline.
+- Still 1 pending file (NOT uploaded): `2026-05-16-hipcamp-curation-gap-audit.md`. No new/modified/removed since last run.
+- State file untouched so the pending file uploads once re-authed. ACTION NEEDED (Adam): run `notebooklm login` (interactive OAuth — unavailable to scheduled runs).
+2026-06-16 12:23 | scanned=65 added=0 replaced=0 skipped=4 errors=1
