@@ -1026,3 +1026,11 @@ Exiting cleanly. State file not updated; will retry next run.
 - Skipped (>10MB, persistent): PRIVATE EVENTS AT RANCHO MOONRISE.pdf, INTIMATE EVENTS AT RM.pdf, ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf
 - State file NOT updated (pending file retried). FIX: Adam must run `notebooklm login` interactively to restore OAuth. Blocked 8 runs straight — sync is effectively offline until re-auth.
 2026-06-15 16:08 | scanned=65 added=0 replaced=0 skipped=3 errors=1
+
+### 2026-06-15 20:25 — ERROR: NotebookLM authentication expired
+- notebooklm CLI returned: "Authentication expired or invalid. Run 'notebooklm login' to re-authenticate."
+- 1 new file detected but NOT uploaded (auth blocked): `2026-05-16-hipcamp-curation-gap-audit.md`
+- State file intentionally NOT updated so this file retries on the next run after re-auth.
+- Skipped by safety filters: 3 PDFs >10MB (ALL INCLUSIVE RETREATS, INTIMATE EVENTS, PRIVATE EVENTS), 1 non-allowed ext (review-aggregate.json).
+- ACTION NEEDED (Adam): run `notebooklm login` to restore the sync.
+2026-06-15 20:25 | scanned=65 added=0 replaced=0 skipped=4 errors=1
