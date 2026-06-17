@@ -1,5 +1,14 @@
 # Rancho Moonrise — Changelog
 
+## 2026-06-17 (rancho-site-daily) — 18th consecutive cruise-control firing, no shipped edits
+
+- 18th consecutive `rancho-site-daily` cruise-control firing. No shipped edits. GOALS.md (week-of-5/18, last touched 6/6 — styermortgage.com freeze-lift only) still reads "No Rancho Moonrise active work — paused"; no Ashley move this run.
+- CreativeWork-property enrichment arc on BlogPosting JSON-LD closed 5/26; no surgical autonomous slot remains. Person-author research (new NEEDS ADAM byline matrix) + AggregateRating-on-BlogPosting (17-file cluster diff) both deferred again — shipping either adds review-noise against a paused workstream, not signal.
+- **Re-Verify Gate (live, 7/7 still_true, 0 resolved):** apex 200 + `server: Vercel` + `x-vercel-cache: HIT` (`age: 66948` ≈ 18.6 hr); www 308 → apex; sitemap / `/corporate-retreats/` / `/safari-tents-near-austin/` / `/blog/` all 200; BlogPosting CreativeWork 6-property spot-check on `/blog/glamping-near-austin-texas/` intact 22 days post-5/26 deploy (dateModified 2026-05-26, wordCount 1005, articleSection "Glamping", inLanguage "en-US", isAccessibleForFree true, copyrightYear 2026, copyrightHolder "Rancho Moonrise").
+- Indexing claims owned by `rancho-competitive-weekly` + Adam — not re-litigated. No SEO task IDs (s1–s8) touched; no done-log entry.
+- NEEDS ADAM #0 pause-list fix now **21 days overdue** (first surfaced 5/27); `rancho-site-daily` alone has fired in cruise-control mode 18 consecutive times. Strengthened in TODO.md.
+- Pre-existing prior-session changes (api/inquiry.js, styles.css, main.js, contact.html, weddings.html) + concurrent-writer artifacts (`* 2`/`* 3` dupes, TODO.md.tmp.*, AGENTS*.md, rancho-moonrise-assets/, duplicated images) intentionally NOT staged. Committed by explicit path only — no `git add -A`. Run-log: `run-logs/2026-06-17-seo.md`.
+
 ## 2026-06-16 (rancho-site-daily) — 17th consecutive cruise-control firing, no shipped edits
 
 - 17th consecutive `rancho-site-daily` cruise-control firing. No shipped edits. GOALS.md (week-of-5/18, last touched 6/6 — styermortgage.com freeze-lift only) still reads "No Rancho Moonrise active work — paused"; no Ashley move this run.
