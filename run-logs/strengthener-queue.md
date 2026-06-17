@@ -10,7 +10,7 @@ Priority: broken/placeholder assets first, then highest-impression landing pages
 | Page | Last Touch | Status |
 |------|-----------|--------|
 | `weddings.html` | 2026-04-22 | BLOCKED — see run log below |
-| `accommodations.html` | 2026-06-10 | BLOCKED — same two NEEDS ADAM items (run 6, 49 days; GOALS.md week of 5/18 still pauses Rancho broadly) |
+| `accommodations.html` | 2026-06-17 | BLOCKED — same two NEEDS ADAM items (run 7, 56 days; GOALS.md week of 5/18 still pauses Rancho broadly) |
 | `host-your-event.html` | — | Pending |
 | `events.html` | — | Pending |
 | `pool-day-pass-austin.html` | — | Pending |
@@ -117,3 +117,9 @@ Two hard stops re-verified still true (`find brand -name "*testimonial*" -o -nam
 ### 2026-06-10 — BLOCKED (run 6; one-liner per 5/13 commitment)
 
 Both hard stops re-verified live still true (`find brand -iname "*testimonial*" -o -iname "*approved*"` = 0 hits; `grep -i "byline\|author.*adam\|author.*ashley\|settled decision" GOALS.md` = exit 1, 0 matches). GOALS.md (still week of 5/18, last updated 6/6 — the 6/6 freeze-lift was styermortgage.com only) keeps "No Rancho Moonrise active work — paused (cruise control only if Ashley moves)." 6th structurally-blocked content-weekly run (4/22, 4/29, 5/06, 5/13, 6/03, 6/10); 49-day blocker pattern. No landing-page edits. The single-ask pause request lives in the 5/13 entry and TODO.md NEEDS ADAM #0 — not re-litigated here. Next run: 2026-06-17.
+
+---
+
+### 2026-06-17 — BLOCKED (run 7; one-liner per 5/13 commitment)
+
+Both hard stops re-verified live still true (`find brand -iname "*testimonial*" -o -iname "*approved*"` = 0 hits; `grep -in "byline\|settled decision\|author.*adam\|author.*ashley" GOALS.md` = exit 1, 0 matches). GOALS.md still week of 5/18 — "No Rancho Moonrise active work — paused (cruise control only if Ashley moves)." 7th structurally-blocked content-weekly run (4/22, 4/29, 5/06, 5/13, 6/03, 6/10, 6/17); 56-day blocker pattern. No landing-page edits. Single-ask pause request lives in the 5/13 entry and TODO.md NEEDS ADAM #0 — not re-litigated here. Next run: 2026-06-24.

@@ -1,5 +1,12 @@
 # Rancho Moonrise — Changelog
 
+## 2026-06-17 (rancho-content-weekly) — run 7, double-blocked, no shipped edits
+
+- 7th structurally-blocked content-weekly run (4/22, 4/29, 5/06, 5/13, 6/03, 6/10, 6/17); 56-day blocker pattern. No landing-page edits.
+- Both task-spec hard stops re-verified live still true: (1) `find brand -iname "*testimonial*" -o -iname "*approved*"` = 0 hits (no approved testimonials list); (2) `grep -in "byline\|settled decision\|author.*adam\|author.*ashley" GOALS.md` = exit 1 (no author-byline decision). Either alone blocks the required "named author block" + "real guest testimonial" pass items.
+- GOALS.md week-of-5/18 broad-pause ("No Rancho Moonrise active work — paused (cruise control only if Ashley moves)") layered on top — content-weekly remains the cleanest double-pause case in the registry.
+- Per the 5/13 commitment, logged a one-liner to `run-logs/strengthener-queue.md` (not a re-litigation); queue table `accommodations.html` Last Touch 6/10 → 6/17. Single-ask pause request lives in the 5/13 queue entry + TODO.md NEEDS ADAM #0. Committed by explicit path — no `git add -A`.
+
 ## 2026-06-17 (rancho-site-daily) — 18th consecutive cruise-control firing, no shipped edits
 
 - 18th consecutive `rancho-site-daily` cruise-control firing. No shipped edits. GOALS.md (week-of-5/18, last touched 6/6 — styermortgage.com freeze-lift only) still reads "No Rancho Moonrise active work — paused"; no Ashley move this run.
