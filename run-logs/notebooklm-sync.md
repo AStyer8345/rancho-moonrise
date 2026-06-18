@@ -1065,3 +1065,10 @@ Exiting cleanly. State file not updated; will retry next run.
 - Skipped 4: 3 PDFs >10MB (ALL INCLUSIVE RETREATS, INTIMATE EVENTS, PRIVATE EVENTS) + review-aggregate.json (ext not in allow-list).
 - ACTION NEEDED (Adam): run `notebooklm login` (interactive Google OAuth — unavailable to scheduled runs). Until then this sync is a no-op every run.
 2026-06-18 12:12 | scanned=65 added=0 replaced=0 skipped=4 errors=1
+
+### 2026-06-18 16:08 — ERROR: NotebookLM auth still expired (re-verified live, scheduled run)
+- `notebooklm use` + `source list --json` both rejected: "Authentication expired or invalid. Run 'notebooklm login'." Auth offline since ~2026-06-13.
+- 2 pending files still NOT uploaded: `2026-05-16-hipcamp-curation-gap-audit.md` (new), `2026-04-09-rancho-moonrise-improvement-plan.html` (modified). State file left UNTOUCHED so both upload once re-authed.
+- Skipped 4: 3 PDFs >10MB + review-aggregate.json (ext not allowed).
+- ACTION NEEDED (Adam): run `notebooklm login` (interactive OAuth — unavailable to scheduled runs).
+2026-06-18 16:08 | scanned=65 added=0 replaced=0 skipped=4 errors=1
