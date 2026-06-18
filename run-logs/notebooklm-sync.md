@@ -1055,3 +1055,6 @@ Exiting cleanly. State file not updated; will retry next run.
 - Unchanged: 1 pending file NOT uploaded — `2026-05-16-hipcamp-curation-gap-audit.md`. No new/modified/removed since last run. State file left untouched so it uploads once re-authed.
 - ACTION NEEDED (Adam): run `notebooklm login` (interactive Google OAuth — unavailable to scheduled runs). Until then this sync is a no-op every run.
 2026-06-16 12:24 | scanned=65 added=0 replaced=0 skipped=4 errors=1
+
+2026-06-18 10:55 | ERROR: notebooklm auth expired ('Authentication expired or invalid' / 'Run notebooklm login to re-authenticate'). 1 pending new file NOT synced: 2026-05-16-hipcamp-curation-gap-audit.md. State file left unchanged so next run retries. ACTION NEEDED: Adam run 'notebooklm login'.
+2026-06-18 10:55 | scanned=65 added=0 replaced=0 skipped=3 errors=1
