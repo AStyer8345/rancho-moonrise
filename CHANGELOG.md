@@ -1,5 +1,14 @@
 # Rancho Moonrise — Changelog
 
+## 2026-06-18 (rancho-review-monitor) — RUN_054, 21st consecutive quiet sweep
+
+- No new reviews on any monitorable platform; no rating drops, no count drops, no new ≤3★. Re-Verify Gate (8 live claims): 7 still_true, 1 CHANGED (immaterial), 0 resolved.
+- **CHANGED:** TripAdvisor price band $66–$179 → **$69–$178** (floor +$3 to $69, ceiling −$1 to $178) via DIRECT WebFetch — algorithmic standard-room rate estimate, not a review signal; 0 reviews / unclaimed unchanged; dashboard status unaffected.
+- Google WebSearch snippet held at **126** + 4.9★ (5-run hold; non-authoritative, ≠ live-authoritative 130 which is now 30d STALE from the RUN_034 Chrome read). Expedia 8.0 anchor CONFIRMED on targeted Hotels.com query (24th consecutive inline; no 9.0 artifact this run). Facebook 5/100% (35th inline). The Knot Haylee L. 1★ body still indexed via name-free query (no owner-response; **112 days unreplied**).
+- BLOCKERS held no-attempt: `theknot-direct-fetch` (20th), `hipcamp-direct-fetch` (11th no-attempt-cycle run), `airbnb-listing-existence` 403 (53rd), `hotels-com-direct-fetch` (counter holds 42), `google-reviews-count` (live scrape blocked).
+- **Carry-forward (day 31 in monitor, still unposted — done-log shows no review entry since 2026-04-15):** Cassie Butterfield Google 5★ + Haylee L. The Knot 1★. Both drafts at `brand/review-reports/2026-05-19-review-report.md`. (The same-day rancho-biweekly-audit independently graded GBP a regression on exactly these two unposted replies.)
+- State updated: `brand/review-aggregate.json`, `site/admin/dashboard-state.json`, `run-logs/2026-06-18-review-monitor.md`. Committed by explicit path; pre-existing prior-session changes + concurrent-writer artifacts intentionally NOT staged.
+
 ## 2026-06-18 (rancho-biweekly-audit) — Bi-weekly business audit #2 generated and shipped
 
 - **Audit completed** — first full business audit since April 23 (56-day gap; the bi-weekly cadence broke during the May 18 Rancho pause). New file: `site/audits/2026-06-18-business-audit.html`, mirroring the April 9 baseline stylesheet/layout across the same 7 areas. Every grade grounded in live verification (ranchomoonrise.com, TripAdvisor, Hipcamp, Instagram, June 2026 Austin glamping + wedding SERP/AI-answer scans) and current repo state.
