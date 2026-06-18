@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Rancho Moonrise — Bi-Weekly Business Audit (June 18, 2026)</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital@0;1&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #FAF7F2; color: #2D2A26; line-height: 1.7; }
+  .container { max-width: 900px; margin: 0 auto; padding: 40px 24px; }
+  h1 { font-family: 'Lora', serif; font-size: 2.4rem; color: #B6603F; margin-bottom: 8px; }
+  .subtitle { font-size: 0.95rem; color: #8B7D6B; margin-bottom: 48px; }
+  h2 { font-family: 'Lora', serif; font-size: 1.6rem; color: #2D2A26; margin-top: 56px; margin-bottom: 20px; padding-bottom: 8px; border-bottom: 2px solid #B6603F; }
+  h3 { font-size: 1.1rem; font-weight: 600; margin-top: 28px; margin-bottom: 10px; color: #B6603F; }
+  p { margin-bottom: 14px; font-size: 0.95rem; }
+  .grade-card { display: flex; align-items: center; gap: 20px; background: #fff; border-radius: 10px; padding: 20px 24px; margin-bottom: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .grade { font-size: 2rem; font-weight: 700; min-width: 56px; text-align: center; border-radius: 8px; padding: 8px 12px; color: #fff; }
+  .grade-a { background: #31735A; }
+  .grade-b { background: #6B8E5B; }
+  .grade-c { background: #C9842B; }
+  .grade-d { background: #D4714E; }
+  .grade-f { background: #B6603F; }
+  .grade-label { flex: 1; }
+  .grade-label strong { display: block; font-size: 1rem; margin-bottom: 2px; }
+  .grade-label span { font-size: 0.85rem; color: #8B7D6B; }
+  .delta { font-size: 0.78rem; font-weight: 600; padding: 2px 8px; border-radius: 4px; margin-left: 8px; }
+  .delta-up { background: #E8F5E9; color: #2E7D32; }
+  .delta-flat { background: #F5F2EC; color: #8B7D6B; }
+  .delta-down { background: #FFEBEE; color: #C62828; }
+  .rec-box { background: #fff; border-left: 4px solid #B6603F; border-radius: 0 8px 8px 0; padding: 18px 22px; margin-bottom: 16px; }
+  .rec-box.green { border-left-color: #31735A; }
+  .rec-box.amber { border-left-color: #C9842B; }
+  .rec-box strong { color: #2D2A26; }
+  .rec-box p { margin-bottom: 0; font-size: 0.9rem; }
+  .tag { display: inline-block; font-size: 0.7rem; font-weight: 600; padding: 2px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px; margin-right: 6px; }
+  .tag-quick { background: #E8F5E9; color: #2E7D32; }
+  .tag-medium { background: #FFF8E1; color: #F57F17; }
+  .tag-major { background: #FFEBEE; color: #C62828; }
+  .summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px; }
+  @media (max-width: 600px) { .summary-grid { grid-template-columns: 1fr; } h1 { font-size: 1.8rem; } }
+  .stat-card { background: #fff; border-radius: 10px; padding: 20px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .stat-card .num { font-size: 2.2rem; font-weight: 700; color: #B6603F; }
+  .stat-card .label { font-size: 0.8rem; color: #8B7D6B; margin-top: 4px; }
+  .toc { background: #fff; border-radius: 10px; padding: 24px; margin-bottom: 40px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .toc a { color: #B6603F; text-decoration: none; font-size: 0.9rem; display: block; padding: 4px 0; }
+  .toc a:hover { text-decoration: underline; }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.88rem; }
+  th, td { padding: 10px 14px; text-align: left; border-bottom: 1px solid #E8E0D4; }
+  th { font-weight: 600; color: #8B7D6B; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Rancho Moonrise — Bi-Weekly Business Audit</h1>
+<p class="subtitle">June 18, 2026 &middot; Bi-weekly audit #2 &middot; Grades measured against 2026-04-09 baseline &middot; 56 days since the April 23 audit (cadence broke during the May 18 pause)</p>
+
+<div class="summary-grid">
+  <div class="stat-card"><div class="num">LIVE</div><div class="label">ranchomoonrise.com now serves from Vercel — DNS cutover done 04-30</div></div>
+  <div class="stat-card"><div class="num">~14K</div><div class="label">Instagram followers (was ~13K at baseline)</div></div>
+  <div class="stat-card"><div class="num">0</div><div class="label">TripAdvisor / Hipcamp / WeddingWire reviews — unchanged 70 days</div></div>
+  <div class="stat-card"><div class="num">30d</div><div class="label">Rancho on paused / cruise-control since the May 18 GOALS freeze</div></div>
+</div>
+
+<div class="toc" style="margin-top: 32px;">
+<strong style="font-size: 0.85rem; color: #8B7D6B; text-transform: uppercase; letter-spacing: 0.5px;">Contents</strong>
+<a href="#scorecard">1. Grade Matrix — Baseline vs Current</a>
+<a href="#website">2. Website</a>
+<a href="#gbp">3. Google Business Profile</a>
+<a href="#social">4. Social Media</a>
+<a href="#reviews">5. Reviews</a>
+<a href="#booking">6. Booking Flow</a>
+<a href="#honeybook">7. HoneyBook</a>
+<a href="#operations">8. Operations</a>
+<a href="#bottom">9. Bottom Line</a>
+</div>
+
+<!-- ===== SCORECARD ===== -->
+<h2 id="scorecard">1. Grade Matrix — Baseline vs Current</h2>
+
+<div class="grade-card"><div class="grade grade-a">A-</div><div class="grade-label"><strong>Website <span class="delta delta-up">B → A-</span></strong><span>DNS cutover landed 04-30 — apex ranchomoonrise.com now serves the full Vercel build (verified live: 200, server: Vercel). The 17-post blog cluster carries a complete CreativeWork schema suite (wordCount, articleSection, ImageObject, inLanguage, isAccessibleForFree, copyrightYear/Holder) plus HowTo + ItemList on listicle posts and a 4-inbound internal-link floor. Held off A by two uncrawled landing pages and a stale homepage events block.</span></div></div>
+<div class="grade-card"><div class="grade grade-b">B-</div><div class="grade-label"><strong>Google Business Profile <span class="delta delta-up">D → B-</span></strong><span>The baseline fixes hold — Event-venue category, real description, hours, HTTPS, 4.9★ on ~130 reviews. But the "unreplied = 0" win from April regressed: a ~30-day-old 5★ and a 110-day-old Knot 1★ both sit with drafted-but-unposted replies. Q&A/Chat/photo-refresh items stalled through the pause. Net a half-step back from April's B.</span></div></div>
+<div class="grade-card"><div class="grade grade-b">B-</div><div class="grade-label"><strong>Social Media <span class="delta delta-flat">B- → B-</span></strong><span>Instagram nudged ~13K → ~14K — real but modest organic growth, no paid spend. Facebook / TikTok / LinkedIn baselines holding. No conversion-funnel change on the Linktree, no YouTube walkthrough, no email capture from social. Structurally identical to April.</span></div></div>
+<div class="grade-card"><div class="grade grade-f">F</div><div class="grade-label"><strong>Review Platforms <span class="delta delta-flat">F → F</span></strong><span>TripAdvisor confirmed live today: still 0 reviews, still unclaimed ("Is this your business?"). Hipcamp still 0. WeddingWire still no listing. Google is strong but remains the only platform with reviews. 70 days on, the multi-platform gap is completely untouched — the most stuck area in the audit.</span></div></div>
+<div class="grade-card"><div class="grade grade-b">B</div><div class="grade-label"><strong>Booking Flow <span class="delta delta-up">C+ → B</span></strong><span>The April cap is gone: the inquiry form backend is wired — <code>/api/inquiry</code> POSTs to the CRM webhook and fires the events@ notification, so submissions no longer vanish into <code>action="#"</code>. Cloudbeds "Book Now" resolves, events hydrate from Supabase, and the admin-controlled homepage events popup shipped 06-09 (dormant until Ashley features an event). ResortPass still dormant; Hipcamp copy still bare.</span></div></div>
+<div class="grade-card"><div class="grade grade-b">B</div><div class="grade-label"><strong>HoneyBook <span class="delta delta-flat">B → B</span></strong><span>No reported change. Wedding and bar flows hold. Corporate retreat, intimate events, private events, and glamping flows still aren't built. Nothing moved here — saying so honestly.</span></div></div>
+<div class="grade-card"><div class="grade grade-b">B-</div><div class="grade-label"><strong>Operations <span class="delta delta-flat">C → B-</span></strong><span>Small forward motion (inquiry CRM webhook, events-popup admin control). Offset by the open structural items: no full CRM, GA4/GTM ID still missing so conversions aren't reported, GITHUB_TOKEN still broad-scoped, and the Paul/Donna governance conflict is still open. The 30-day pause itself is an ops-hygiene drag — tasks keep firing against a paused workstream.</span></div></div>
+
+<!-- ===== WEBSITE ===== -->
+<h2 id="website">2. Website</h2>
+
+<div class="rec-box green">
+<strong>The Big One Landed — DNS Cutover:</strong>
+<p>The cap that held Website at B+ in April is gone. <code>ranchomoonrise.com</code> now serves the Vercel build directly — verified live this morning (HTTP 200, <code>server: Vercel</code>, apex canonical, www 308 → apex). Every blog post, schema tag, and landing page that was compounding authority on <code>rancho-moonrise.vercel.app</code> in April is now accruing to the real domain. This was the single highest-leverage open item across the last three audits and it shipped 04-30.</p>
+</div>
+
+<div class="rec-box green">
+<strong>Schema Suite Is Effectively Complete:</strong>
+<p>The 17-post BlogPosting cluster now carries a full CreativeWork property set — <code>wordCount</code>, <code>articleSection</code>, <code>ImageObject</code>, <code>inLanguage</code>, <code>isAccessibleForFree</code>, <code>copyrightYear</code>, and <code>copyrightHolder</code> — layered on top of HowTo (corporate-retreat guide), ItemList (the numbered listicle posts), FAQPage, and BreadcrumbList. Internal linking sits at a 4-inbound floor with zero orphaned posts. A non-brand WebSearch for "glamping near Austin… safari tents pool" surfaced Rancho Moonrise in the AI answer — a citation it did not earn at baseline.</p>
+</div>
+
+<div class="rec-box amber">
+<strong>The Cap Now: Crawl, Not Build:</strong>
+<p>Two flagship landing pages are built and schema-complete but still uncrawled — <code>/corporate-retreats/</code> (~45 days) and <code>/safari-tents-near-austin/</code> (~50 days). The pages are done; Google just hasn't indexed them, and the gate is a 5-minute GSC URL-Inspection → Request Indexing that has been on Adam's plate for weeks. Until that happens, the schema work isn't fully cashing in.</p>
+</div>
+
+<div class="rec-box">
+<strong>Two Freshness Bugs Worth a Look:</strong>
+<p>The live homepage "Upcoming Events" cards show past dates (April 26, May 2, May 29) as "upcoming" — a visitor today reads stale events. The dynamic Supabase feed and the 06-09 popup are healthy, but the hardcoded homepage block needs a refresh or should pull from the live feed. Separately, the hero still reads "125+ Google reviews" while the live count is ~130 — a small but easy honesty bump. The 8 low-res source JPGs (four accommodation thumbnails at 340×340) still cap the responsive ladder and need re-upload from Ashley.</p>
+</div>
+
+<div class="rec-box">
+<strong>Next Actions:</strong>
+<p>1) GSC Request Indexing on the two uncrawled landing pages — 5 minutes, highest leverage. 2) Refresh or auto-wire the homepage "Upcoming Events" block so it never shows past dates. 3) Re-upload the 8 low-res images at 1600px+ and rerun the responsive pipeline.</p>
+</div>
+
+<!-- ===== GBP ===== -->
+<h2 id="gbp">3. Google Business Profile</h2>
+
+<div class="rec-box green">
+<strong>Baseline Fixes Are Holding:</strong>
+<p>Everything Adam fixed in April is still in place: primary category Event venue (not Hotel), a real ~738-char description in place of the old blog-post-as-description, hours set, HTTPS website URL, opening date. 4.9★ holding on roughly 130 reviews. The profile reads like an owned, maintained listing — a completely different diligence experience than the neglected D-grade profile at baseline.</p>
+</div>
+
+<div class="rec-box amber">
+<strong>Regression — the "Unreplied = 0" Win Slipped:</strong>
+<p>April's headline GBP win was that every review was replied. That's no longer true. Two reviews now sit with drafted-but-unposted replies: a Cassie Butterfield Google 5★ (~30 days old) and a Haylee L. The Knot 1★ that is now ~110 days unreplied. The Knot 1★ is the worse exposure — its verbatim text still surfaces in Rancho-attributed search snippets even on name-free queries. Both replies are already written and waiting in <code>brand/review-reports/2026-05-19-review-report.md</code>; posting them is a sub-five-minute job that has been open for a month.</p>
+</div>
+
+<div class="rec-box">
+<strong>Stalled Manual Items:</strong>
+<p>The two remaining Adam-owned GBP items from the baseline plan — enable Google Chat, and upload 10+ fresh owner photos — haven't moved. They were manual to begin with and the May 18 Rancho pause parked them. Neither is urgent, but neither is closed.</p>
+</div>
+
+<div class="rec-box">
+<strong>Next Actions:</strong>
+<p>1) Post the two waiting review replies — restores unreplied = 0 and clears the 110-day Knot 1★. 2) Enable Chat. 3) Upload a fresh wedding/pool photo set. All three are short manual GBP-dashboard tasks.</p>
+</div>
+
+<!-- ===== SOCIAL ===== -->
+<h2 id="social">4. Social Media</h2>
+
+<table>
+<tr><th>Platform</th><th>Baseline (04-09)</th><th>April (04-23)</th><th>Current (06-18)</th></tr>
+<tr><td>Instagram</td><td>~13K followers</td><td>~13K, 284 posts</td><td>~14K followers</td></tr>
+<tr><td>Facebook</td><td>~500 (stale est.)</td><td>864 followers</td><td>Holding</td></tr>
+<tr><td>TikTok</td><td>Activity unclear</td><td>1,408 followers</td><td>Active, linked in site footer</td></tr>
+<tr><td>LinkedIn</td><td>"Page exists"</td><td>106 followers</td><td>Holding</td></tr>
+<tr><td>Pinterest</td><td>Active</td><td>Unchanged</td><td>Unchanged</td></tr>
+</table>
+
+<div class="rec-box">
+<strong>Reading the Numbers:</strong>
+<p>Instagram crossed from ~13K toward ~14K — real organic growth on an account with no paid spend, which is the honest win here. Everything else is holding at its April baseline. The content cadence is alive (event promos, pool, live music), and the site footer now links all four platforms cleanly.</p>
+</div>
+
+<div class="rec-box">
+<strong>Still Pending from Baseline:</strong>
+<p>No conversion-path change on the Linktree — the 14K followers still aren't routed into a structured booking/inquiry funnel. No YouTube venue walkthrough (competitors use video tours). No email-capture flow from social into the database. These were open at baseline, open in April, and remain open now.</p>
+</div>
+
+<div class="rec-box">
+<strong>Next Actions:</strong>
+<p>1) Audit the Linktree and confirm conversion CTAs (Book a Stay, Plan a Wedding, Pool Passes, Events). 2) One wedding-planner-targeted reel per month with a location tag. 3) Capture a single venue walkthrough for YouTube and pin it.</p>
+</div>
+
+<!-- ===== REVIEWS ===== -->
+<h2 id="reviews">5. Reviews</h2>
+
+<table>
+<tr><th>Platform</th><th>Baseline</th><th>Current (06-18)</th><th>Change</th></tr>
+<tr><td>Google</td><td>125 / 4.9★ / 9 unreplied</td><td>~130 / 4.9★ / 1 unreplied (5★)</td><td>Count up, but a reply lapsed</td></tr>
+<tr><td>TripAdvisor</td><td>0 reviews, unclaimed</td><td>0 reviews, unclaimed (live-confirmed)</td><td>No change in 70 days</td></tr>
+<tr><td>Hipcamp</td><td>0 reviews</td><td>0 reviews</td><td>No change</td></tr>
+<tr><td>WeddingWire</td><td>No listing</td><td>No listing</td><td>No change</td></tr>
+<tr><td>The Knot</td><td>5+ positive, 1 significant 1★</td><td>Same — 1★ now 110 days unreplied</td><td>Exposure widening</td></tr>
+<tr><td>Expedia</td><td>8.0 mixed</td><td>8.0 (monitor inline)</td><td>Flat</td></tr>
+<tr><td>Facebook</td><td>5.0 (5 reviews)</td><td>5.0 / 100%</td><td>Flat</td></tr>
+</table>
+
+<div class="rec-box amber">
+<strong>The Most Stuck Area in the Audit:</strong>
+<p>This is the one place where 70 days have produced essentially nothing. TripAdvisor — confirmed live today — is still 0 reviews and still unclaimed, with the "Is this your business?" and "Claim Your Listing" prompts both showing. Hipcamp is still 0. WeddingWire still doesn't have a listing. Claiming TripAdvisor is ~20 minutes and free; opening WeddingWire is ~30 minutes and free. The bet at baseline, repeated in April, was that these were a two-week lift. Two months later, nobody has pulled the trigger.</p>
+</div>
+
+<div class="rec-box">
+<strong>The Knot 1★ Is Now the Sharpest Edge:</strong>
+<p>The Haylee L. 1★ on The Knot — a quiet-property complaint from a site visit — is ~110 days unreplied, and its verbatim body still surfaces in Rancho-attributed search snippets even when the query doesn't include her name. A drafted reply exists; the only open question is whether to publicly commit to the neighboring-property-noise mitigation language in it. That's a 2-minute decision blocking a month-old draft.</p>
+</div>
+
+<div class="rec-box">
+<strong>Next Actions:</strong>
+<p>1) Claim TripAdvisor and open WeddingWire — both free, both under an hour combined. 2) Post the two waiting replies (Google 5★ + Knot 1★). 3) Stand up a stay-type-routed post-event review request: glamping → Hipcamp, wedding → The Knot/WeddingWire, event → Google. Even three Hipcamp reviews break the "Be the first to review" frame on the venue's own core listing.</p>
+</div>
+
+<!-- ===== BOOKING ===== -->
+<h2 id="booking">6. Booking Flow</h2>
+
+<div class="rec-box green">
+<strong>What Shipped — the April Cap Cleared:</strong>
+<p>April's hard stop was that the wedding inquiry forms were <code>action="#"</code> and sent submissions into the void. That's fixed: <code>/api/inquiry</code> now POSTs to the CRM webhook (<code>RANCHO_CRM_WEBHOOK_URL</code> + <code>RANCHO_API_KEY</code> set in Vercel), and the CRM-side n8n workflow fires the events@ notification as a side branch so Ashley's inbox keeps its familiar pattern. The "Book Now" Cloudbeds link resolves on the live homepage. Events hydrate from Supabase, and the admin-controlled homepage events popup shipped 06-09 — dormant until Ashley features her first event.</p>
+</div>
+
+<div class="rec-box">
+<strong>Still Open:</strong>
+<p>The ResortPass listing (<code>resortpass.com/hotels/rancho-moonrise</code>) is live but dormant with zero products — a decision Adam has been sitting on for ~28 days: activate with day-pass products, or formally kill it. The Hipcamp listing copy still reads like a bare campsite. And the stale homepage "Upcoming Events" block (see Website) is a booking-adjacent freshness bug — a prospect skimming for "what's on this weekend" sees April and May dates.</p>
+</div>
+
+<div class="rec-box">
+<strong>Next Actions:</strong>
+<p>1) Make the ResortPass call — even the no-product middle ground (publish hours, like Lucky Arrow) beats a dormant zero-product listing. 2) Rewrite the Hipcamp first paragraph to surface the real amenity split honestly. 3) Fix the homepage events freshness so it always shows genuinely upcoming events.</p>
+</div>
+
+<!-- ===== HONEYBOOK ===== -->
+<h2 id="honeybook">7. HoneyBook</h2>
+
+<div class="rec-box">
+<strong>No Reported Change Since Baseline:</strong>
+<p>Wedding flow unchanged — 4 pages, 72+ vendors, full policy suite. Bar packages unchanged — three tiers ($7 / $11 / $15 per person per hour). No flows built for corporate retreats, private events, intimate events, or glamping packages. This area has not moved across either audit, and there's no evidence it moved during the pause.</p>
+</div>
+
+<div class="rec-box">
+<strong>Opportunity Cost Is Unchanged:</strong>
+<p>Private events are ~46% of revenue and POS/bar another ~22% — together roughly two-thirds of the business runs without a branded client flow. Every corporate inquiry still lands in a wedding-flow template or a raw email thread. A cloned wedding flow retargeted for corporate retreats would pay for itself on a single booking.</p>
+</div>
+
+<div class="rec-box">
+<strong>Next Actions:</strong>
+<p>1) Clone the wedding flow into a corporate-retreat flow — swap the policy language, drop in the corporate pricing structure, fork day-retreat vs overnight. 2) Add a side-by-side comparison table to the bar-package pages. This is the cleanest untapped revenue lever in the whole audit.</p>
+</div>
+
+<!-- ===== OPERATIONS ===== -->
+<h2 id="operations">8. Operations</h2>
+
+<div class="rec-box green">
+<strong>What Improved:</strong>
+<p>The inquiry CRM webhook wiring (see Booking) is as much an ops win as a booking win — it's the first piece of real lead-capture plumbing the business has had. The 06-09 events-popup feature added admin-side control (a <code>show_in_popup</code> column and Feature toggle), so Ashley can light up a homepage modal without code. The scheduled-task backbone keeps running — SEO daily, competitive weekly, review monitor, GBP posts — and the live-verify gates in those runs are catching real deploy state.</p>
+</div>
+
+<div class="rec-box amber">
+<strong>The Pause Is Now an Ops-Hygiene Problem:</strong>
+<p>Rancho has been "paused / cruise-control only" since the May 18 GOALS freeze — ~30 days. In that window <code>rancho-site-daily</code> alone has fired 19 consecutive times with no shipped edits, and concurrent writers have left orphaned run-logs and duplicate artifacts in the tree that every run now has to carefully avoid staging. The 30-second fix — add these tasks to the GOALS pause list so they exit cleanly — has itself been open ~22 days. The tasks aren't doing harm, but they're generating noise and a small amount of avoidable mess.</p>
+</div>
+
+<div class="rec-box">
+<strong>Still Open — Structural:</strong>
+<p>No full CRM (the webhook is plumbing, not a pipeline view). No GA4/GTM measurement ID, so conversion events fire to <code>console.debug</code> and report nowhere — the business still can't see which channel drives bookings. <code>GITHUB_TOKEN</code> on Vercel is still broad-scoped (a 5-minute fine-grained-PAT rotation). And the Paul/Donna step-away / governance conflict from the April 23 onsite is still unresolved — Donna acting unilaterally, the bookkeeper unusable as a financials channel, Exhibit A still missing. That governance overhang is the single biggest non-technical risk on the board.</p>
+</div>
+
+<div class="rec-box">
+<strong>Next Actions:</strong>
+<p>1) Pick a side on the paused tasks — add them to the GOALS pause list or remove them from the registry (30 seconds, ends the daily no-op fires). 2) Supply a GA4 or GTM ID so the conversion plumbing actually reports. 3) Rotate the GITHUB_TOKEN. 4) Get Nancy's read on the governance conflict so the buyout model can move.</p>
+</div>
+
+<!-- ===== BOTTOM LINE ===== -->
+<h2 id="bottom">9. Bottom Line</h2>
+
+<p>This audit covers 56 days, not the usual 14 — the bi-weekly cadence broke when Rancho went to paused / cruise-control on May 18, and this is the first audit since April 23. Over that long window, the picture splits cleanly: the things that were code, shipped; the things that were a manual push or an external claim, didn't.</p>
+
+<p>The two bets the April audit named both landed. DNS cutover happened 04-30, so the entire schema-rich Vercel build now serves from <code>ranchomoonrise.com</code> — that alone moves Website B+ → A-. And the inquiry-form backend got wired, so submissions hit a CRM webhook instead of vanishing — Booking C+ → B. Layered on top is a near-complete BlogPosting schema suite and the first non-brand AI citation Rancho has earned. Real progress, and it's on the board.</p>
+
+<p>The misses are equally clear, and two are essentially free. TripAdvisor is still 0 reviews and unclaimed (confirmed live today), Hipcamp is still 0, WeddingWire still has no listing — Reviews stays F, untouched for 70 days. Worse, April's clean "unreplied = 0" GBP win regressed: a 5★ and a 110-day-old Knot 1★ both sit with replies written and unposted, which pulls GBP back a half-step to B-. None of these are hard. Claiming TripAdvisor is 20 minutes. Posting two drafted replies is five. The bottleneck, again, is the push — not the plan.</p>
+
+<p><strong>The bet for the next audit:</strong> post the two waiting replies, claim TripAdvisor, open WeddingWire, request indexing on the two uncrawled landing pages, and make the ResortPass call. Every one of those is under 30 minutes and none requires a single line of code. If they happen, the next audit reads Reviews F → C, GBP B- → B+, Website A- → A. If they don't, we'll have learned that the constraint on this business was never the build — it was thirty minutes of someone's afternoon.</p>
+
+<p style="margin-top: 32px; padding-top: 24px; border-top: 1px solid #E8E0D4; font-size: 0.8rem; color: #8B7D6B;">
+Audit prepared June 18, 2026 &middot; Bi-weekly cadence (resumes from a paused window) &middot; Sources: /audits/2026-04-09-business-audit.html (baseline), /audits/2026-04-23-business-audit.html (prior), CONTEXT.md (06-18), CHANGELOG.md, TODO.md, /brand/2026-04-09-metrics-baseline.md, /brand/review-reports/2026-05-19-review-report.md, recent run-logs (SEO daily, competitive weekly, review monitor), and live verification of ranchomoonrise.com, tripadvisor.com/Rancho_Moonrise, hipcamp.com, instagram.com/rancho_moonrise, and June 2026 Austin glamping + wedding-venue SERP / AI-answer scans.
+</p>
+
+</div>
+</body>
+</html>

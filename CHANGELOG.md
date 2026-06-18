@@ -1,5 +1,12 @@
 # Rancho Moonrise — Changelog
 
+## 2026-06-18 (rancho-biweekly-audit) — Bi-weekly business audit #2 generated and shipped
+
+- **Audit completed** — first full business audit since April 23 (56-day gap; the bi-weekly cadence broke during the May 18 Rancho pause). New file: `site/audits/2026-06-18-business-audit.html`, mirroring the April 9 baseline stylesheet/layout across the same 7 areas. Every grade grounded in live verification (ranchomoonrise.com, TripAdvisor, Hipcamp, Instagram, June 2026 Austin glamping + wedding SERP/AI-answer scans) and current repo state.
+- **Grade movement vs April 9 baseline → current:** Website B → **A-** (DNS cutover landed 04-30; apex serves the full Vercel build; near-complete BlogPosting schema suite; first non-brand AI citation on a glamping query). Booking C+ → **B** (inquiry-form backend wired to the CRM webhook — April's `action="#"` dead-end is gone). GBP D → **B-** — *regression flagged vs April's B*: the "unreplied=0" win slipped, with a Google 5★ (~30d) and a Knot 1★ (~110d) both holding drafted-but-unposted replies. Reviews **F** (flat, 70 days untouched — TripAdvisor confirmed 0/unclaimed live). Social **B-**, HoneyBook **B**, Operations **B-** (all flat).
+- **New audit card** added to the Audits tab on both improvement-plan files (`site/improvement-plan.html` + `brand/2026-04-09-rancho-moonrise-improvement-plan.html`), teal `#4ECDC4` border, inserted above the April 23 card; April 9 gold baseline anchor untouched.
+- **Surfaced TODO items (all free, all <30 min, none require code):** post the two waiting review replies; claim TripAdvisor; open WeddingWire; GSC Request Indexing on `/corporate-retreats/` + `/safari-tents-near-austin/`; make the ResortPass activate-or-kill call; fix the stale homepage "Upcoming Events" block (shows past April/May dates as upcoming).
+
 ## 2026-06-18 (rancho-site-daily) — 19th consecutive cruise-control firing, no shipped edits
 
 - Re-Verify Gate (live, 7/7 still_true, 0 resolved): apex 200 + `server: Vercel` + `x-vercel-cache: HIT` (`age: 84110` ≈ 23.4 hr); www 308 → apex; sitemap / `/corporate-retreats/` / `/safari-tents-near-austin/` / `/blog/` all 200; BlogPosting CreativeWork 6-property spot-check on `/blog/glamping-near-austin-texas/` intact 23 days post-5/26 deploy (dateModified 2026-05-26, wordCount 1005, articleSection "Glamping", inLanguage "en-US", isAccessibleForFree true, copyrightYear 2026, copyrightHolder present).
