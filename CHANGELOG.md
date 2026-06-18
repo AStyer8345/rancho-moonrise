@@ -1,5 +1,12 @@
 # Rancho Moonrise — Changelog
 
+## 2026-06-18 (rancho-site-daily) — 19th consecutive cruise-control firing, no shipped edits
+
+- Re-Verify Gate (live, 7/7 still_true, 0 resolved): apex 200 + `server: Vercel` + `x-vercel-cache: HIT` (`age: 84110` ≈ 23.4 hr); www 308 → apex; sitemap / `/corporate-retreats/` / `/safari-tents-near-austin/` / `/blog/` all 200; BlogPosting CreativeWork 6-property spot-check on `/blog/glamping-near-austin-texas/` intact 23 days post-5/26 deploy (dateModified 2026-05-26, wordCount 1005, articleSection "Glamping", inLanguage "en-US", isAccessibleForFree true, copyrightYear 2026, copyrightHolder present).
+- GOALS.md still week-of-5/18 ("No Rancho Moonrise active work — paused (cruise control only if Ashley moves)"); no Ashley move this cycle. CreativeWork-property enrichment arc closed 5/26 — no surgical autonomous slot remains; Person-author research + AggregateRating-on-BlogPosting deferred again.
+- Indexing claims owned by `rancho-competitive-weekly` + Adam, not re-litigated. Review/GBP claims owned by review-monitor / gbp-weekly, out of scope.
+- No site/pages/* edits, no schema edits, no sitemap touch. Pre-existing prior-session changes + concurrent-writer artifacts intentionally NOT staged; committed by explicit path only. Run-log: `run-logs/2026-06-18-seo.md`.
+
 ## 2026-06-17 (rancho-content-weekly) — run 7, double-blocked, no shipped edits
 
 - 7th structurally-blocked content-weekly run (4/22, 4/29, 5/06, 5/13, 6/03, 6/10, 6/17); 56-day blocker pattern. No landing-page edits.
