@@ -1072,3 +1072,12 @@ Exiting cleanly. State file not updated; will retry next run.
 - Skipped 4: 3 PDFs >10MB + review-aggregate.json (ext not allowed).
 - ACTION NEEDED (Adam): run `notebooklm login` (interactive OAuth — unavailable to scheduled runs).
 2026-06-18 16:08 | scanned=65 added=0 replaced=0 skipped=4 errors=1
+
+## 2026-06-19 08:40 — RUN ABORTED: NotebookLM auth expired
+- Detected NEW: 2026-05-16-hipcamp-curation-gap-audit.md
+- Detected MODIFIED: 2026-04-09-rancho-moonrise-improvement-plan.html
+- Skipped (too big >10MB): PRIVATE EVENTS AT RANCHO MOONRISE.pdf, INTIMATE EVENTS AT RM.pdf, ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf
+- Skipped (ext not allowed): review-aggregate.json
+- ERROR: `notebooklm source list` returned 'Authentication expired or invalid.' Needs interactive `notebooklm login`.
+- State file NOT updated — the 2 pending changes will be retried on the next run after re-auth.
+2026-06-19 08:40 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth-expired, deferred 2 changes)
