@@ -1104,3 +1104,14 @@ Pending (detected, not synced):
 Skipped >10MB (expected, would skip regardless): PRIVATE EVENTS / INTIMATE EVENTS / ALL INCLUSIVE RETREATS PDFs
 >>> ACTION NEEDED FROM ADAM: run `notebooklm login` to restore NotebookLM auth. Sync is a no-op until then. <<<
 2026-06-20 | scanned=68 added=0 replaced=0 skipped=3 errors=1 (auth_expired)
+
+### 2026-06-20 12:26 — run (auth still expired)
+NotebookLM auth STILL expired this run. Verified live (not stale): `source list --json` → {"error":true,"code":"ERROR","message":"Authentication expired or invalid ... Run 'notebooklm login' to re-authenticate."}
+Recurring: this is at least the 2nd consecutive run blocked by the same auth failure.
+State file intentionally NOT updated — the 2 pending files below will re-sync automatically once auth is restored.
+Pending (detected this run, not synced):
+  - NEW: brand/2026-05-16-hipcamp-curation-gap-audit.md (18543 bytes)
+  - MODIFIED: brand/2026-04-09-rancho-moonrise-improvement-plan.html (60047 -> 61254 bytes, delete+replace)
+Skipped >10MB (expected, would skip regardless): PRIVATE EVENTS / INTIMATE EVENTS / ALL INCLUSIVE RETREATS PDFs
+>>> ACTION NEEDED FROM ADAM: run `notebooklm login` to restore NotebookLM auth. Sync is a no-op until then. Note: Rancho is in "no active work / cruise control" per GOALS — if you don't need the notebook current, you may prefer to pause this scheduled task instead of re-authing. <<<
+2026-06-20 12:26 | scanned=65 added=0 replaced=0 skipped=3 errors=1 (auth_expired)
