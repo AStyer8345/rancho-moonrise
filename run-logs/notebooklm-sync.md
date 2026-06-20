@@ -1092,3 +1092,15 @@ Pending (detected, not synced):
 Skipped >10MB (expected): PRIVATE EVENTS / INTIMATE EVENTS / ALL INCLUSIVE RETREATS PDFs
 ACTION NEEDED FROM ADAM: run 'notebooklm login' to restore NotebookLM auth.
 2026-06-19 12:08 | scanned=65 added=0 replaced=0 skipped=3 errors=1 (auth_expired)
+
+## 2026-06-20 — AUTH FAILURE (sync deferred, 8th+ consecutive)
+NotebookLM CLI authentication still expired (`use` + `source list --json` both redirect to Google sign-in / return code ERROR "Authentication expired or invalid").
+Auth has been offline since ~2026-06-13 — every run since has deferred. Re-auth requires interactive `notebooklm login` (Google OAuth), unavailable to unattended scheduled runs.
+Verified live this run (not a stale flag): ran `source list --json` → ERROR auth-expired.
+State file intentionally NOT updated so pending files re-sync after re-auth.
+Pending (detected, not synced):
+  - NEW: brand/2026-05-16-hipcamp-curation-gap-audit.md
+  - MODIFIED: brand/2026-04-09-rancho-moonrise-improvement-plan.html (delete+replace)
+Skipped >10MB (expected, would skip regardless): PRIVATE EVENTS / INTIMATE EVENTS / ALL INCLUSIVE RETREATS PDFs
+>>> ACTION NEEDED FROM ADAM: run `notebooklm login` to restore NotebookLM auth. Sync is a no-op until then. <<<
+2026-06-20 | scanned=68 added=0 replaced=0 skipped=3 errors=1 (auth_expired)
