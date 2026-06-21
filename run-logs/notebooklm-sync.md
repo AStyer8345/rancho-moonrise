@@ -1142,3 +1142,7 @@ Same 2 files still pending (state file intentionally NOT updated so they re-sync
 Skipped >10MB (expected): PRIVATE EVENTS / INTIMATE EVENTS / ALL INCLUSIVE RETREATS PDFs.
 Already covered by TODO.md NEEDS ADAM #0 (rancho-* tasks firing against paused workstream, 24d overdue). Did NOT edit TODO.md — task file forbids it + 105KB concurrent-writer clobber risk. Auth-specific sub-issue (`notebooklm login`) is moot if Adam pauses this task per #0; if he wants the notebook current instead, re-auth is the one manual step.
 2026-06-21 | scanned=65 added=0 replaced=0 skipped=3 errors=1 (auth_expired)
+
+### 2026-06-21 11:51 (run) — auth STILL expired (6th+ consecutive block)
+Live re-verify: `notebooklm use <id>` → Google sign-in redirect; `source list --json` → "Authentication expired or invalid." Same 2 files pending; state NOT updated. Already tracked under TODO.md NEEDS ADAM #0 (paused Rancho workstream, task should be paused or re-auth'd). No new action.
+2026-06-21 | scanned=65 added=0 replaced=0 skipped=3 errors=1 (auth_expired)
