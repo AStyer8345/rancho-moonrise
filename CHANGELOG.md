@@ -1,5 +1,20 @@
 # Rancho Moonrise — Changelog
 
+## 2026-06-21 (rancho-site-daily) — 22nd consecutive cruise-control firing, no shipped edits
+
+- GOALS.md still week-of-5/18 ("No Rancho Moonrise active work — paused; cruise control only if Ashley moves"). No Ashley move this cycle. CreativeWork-property enrichment arc on BlogPosting JSON-LD closed 5/26 — no surgical autonomous slot remains; Person-author research + AggregateRating-on-BlogPosting both deferred again (each adds NEEDS-ADAM noise or a 17-file diff against a paused workstream).
+- Re-Verify Gate (live, 7/7 still_true, 0 resolved): apex 200 + `server: Vercel` + `x-vercel-cache: HIT` (`age: 60969` ≈ 16.9 hr); www 308 → apex; `/sitemap.xml`, `/corporate-retreats/`, `/safari-tents-near-austin/`, `/blog/` all 200; BlogPosting CreativeWork 6-property spot-check on `/blog/glamping-near-austin-texas/` intact 26 days post-5/26 deploy (dateModified 2026-05-26, wordCount 1005, articleSection "Glamping", inLanguage "en-US", isAccessibleForFree true, copyrightYear 2026).
+- Continuity fix: committed orphaned `run-logs/2026-06-20-seo.md` (written by the 6/20 run, never committed — concurrent writer committed over the top) by explicit path.
+- Ownership: indexing claims owned by `rancho-competitive-weekly` + Adam; review-count / GBP-reply / GBP-cadence claims owned by `rancho-review-monitor` / `rancho-gbp-weekly` — neither re-litigated here.
+- No site/pages/* edits, no schema edits, no sitemap touch. Pre-existing prior-session changes (api/inquiry.js, styles.css, main.js, contact.html, weddings.html) + concurrent-writer artifacts intentionally NOT staged. Committed by explicit path only. No SEO task IDs (s1–s8) touched, no done-log entry. Run-log: `run-logs/2026-06-21-seo.md`.
+
+## 2026-06-20 (rancho-site-daily) — 21st consecutive cruise-control firing, no shipped edits
+
+- GOALS.md still week-of-5/18 ("No Rancho Moonrise active work — paused; cruise control only if Ashley moves"). No Ashley move this cycle. CreativeWork-property enrichment arc on BlogPosting JSON-LD closed 5/26 — no surgical autonomous slot remains; Person-author research + AggregateRating-on-BlogPosting both deferred again (each adds NEEDS-ADAM noise or a 17-file diff against a paused workstream).
+- Re-Verify Gate (live, 7/7 still_true, 0 resolved): apex 200 + `server: Vercel` + `x-vercel-cache: HIT` (`age: 16250` ≈ 4.5 hr); www 308 → apex; `/sitemap.xml`, `/corporate-retreats/`, `/safari-tents-near-austin/`, `/blog/` all 200; BlogPosting CreativeWork 6-property spot-check on `/blog/glamping-near-austin-texas/` intact 25 days post-5/26 deploy (dateModified 2026-05-26, wordCount 1005, articleSection "Glamping", inLanguage "en-US", isAccessibleForFree true, copyrightYear 2026).
+- Ownership: indexing claims owned by `rancho-competitive-weekly` + Adam; review-count / GBP-reply / GBP-cadence claims owned by `rancho-review-monitor` / `rancho-gbp-weekly` — neither re-litigated here.
+- No site/pages/* edits, no schema edits, no sitemap touch. Pre-existing prior-session changes (api/inquiry.js, styles.css, main.js, contact.html, weddings.html) + concurrent-writer artifacts intentionally NOT staged. Committed by explicit path only. No SEO task IDs (s1–s8) touched, no done-log entry. Run-log: `run-logs/2026-06-20-seo.md`.
+
 ## 2026-06-19 (rancho-site-daily) — 20th consecutive cruise-control firing, no shipped edits
 
 - GOALS.md still week-of-5/18 ("No Rancho Moonrise active work — paused; cruise control only if Ashley moves"). No Ashley move this cycle. CreativeWork-property enrichment arc on BlogPosting JSON-LD closed 5/26 — no surgical autonomous slot remains; Person-author research + AggregateRating-on-BlogPosting both deferred again (each adds NEEDS-ADAM noise or a 17-file diff against a paused workstream).
