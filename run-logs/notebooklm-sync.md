@@ -1133,3 +1133,12 @@ No new changes since last run — same 2 files still pending; state file intenti
 Skipped >10MB (expected): PRIVATE EVENTS / INTIMATE EVENTS / ALL INCLUSIVE RETREATS PDFs. Skipped non-allowed ext: review-aggregate.json.
 >>> ACTION NEEDED: run `notebooklm login`. 4th+ run blocked by same auth failure. Per GOALS, Rancho is cruise-control — strongly consider PAUSING this scheduled task until the notebook needs to be current. <<<
 2026-06-20 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth_expired)
+
+### 2026-06-21 11:47 (run) — auth STILL expired (5th+ consecutive block)
+Live re-verify: `notebooklm use <id>` → Google sign-in redirect; `source list --json` → "Authentication expired or invalid." 0 sources reachable.
+Same 2 files still pending (state file intentionally NOT updated so they re-sync once auth restored):
+  - NEW: brand/2026-05-16-hipcamp-curation-gap-audit.md (18543 bytes)
+  - MODIFIED: brand/2026-04-09-rancho-moonrise-improvement-plan.html (60047 -> 61254 bytes)
+Skipped >10MB (expected): PRIVATE EVENTS / INTIMATE EVENTS / ALL INCLUSIVE RETREATS PDFs.
+Already covered by TODO.md NEEDS ADAM #0 (rancho-* tasks firing against paused workstream, 24d overdue). Did NOT edit TODO.md — task file forbids it + 105KB concurrent-writer clobber risk. Auth-specific sub-issue (`notebooklm login`) is moot if Adam pauses this task per #0; if he wants the notebook current instead, re-auth is the one manual step.
+2026-06-21 | scanned=65 added=0 replaced=0 skipped=3 errors=1 (auth_expired)
