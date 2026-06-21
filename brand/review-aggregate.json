@@ -1,8 +1,8 @@
 {
-  "last_updated": "2026-06-18T14:05:00Z",
-  "run_number": 54,
-  "note": "RUN_054 (2026-06-18 09:05 CT). Twenty-first consecutive quiet sweep — no new reviews on any monitored platform; no rating drops, no count drops, no new <=3star. Cruise control: review-monitor not in GOALS.md Pause List; runs to detect drift only (GOALS.md week-of-5/18 broad Rancho pause still in force; monitoring is not active work — same posture as site-daily/competitive-weekly). RUN_053 (6/16) is the prior run (no review-monitor firing 6/17). Two RUN_034 drafts still presumed unposted — done-log shows no review-related entry since 2026-04-15 22:12: Cassie Butterfield Google 5star (day 31 unposted in monitor) and Haylee L. The Knot 1star from 2026-02-26 (112 days unreplied, day 31 unposted in monitor); both drafts at brand/review-reports/2026-05-19-review-report.md. **TripAdvisor price band SHIFTED $66-$179 -> $69-$178** this run (floor +$3 to $69, ceiling -$1 to $178) via DIRECT WebFetch ('No reviews for this property yet'; 'Claim Your Listing'; '$69 - $178 Based on Average Rates for a Standard Room'); 0/unclaimed UNCHANGED — price is an algorithmic standard-room rate estimate, NOT a review signal; immaterial, within the stable oscillation band; dashboard status unaffected. **Google WebSearch snippet HELD at 126** (rating 4.9 surfaced) — 5th consecutive run at 126; oscillation history 126/175/null/126/175/126/126/126/126/126; snippet remains non-authoritative (126 != live 130). Live=130/4.9star carries from RUN_034 Chrome read (now 30 days old, STALE). **Expedia 8.0 anchor CONFIRMED** on targeted Hotels.com query ('guest review rating of 8.0 out of 10', 24th consecutive inline run); no 9.0 'Wonderful' artifact surfaced this run (general query returned 8.0 path only) — reliability remains downgraded; NO rating change asserted per Re-Verify Gate. Facebook 5/100% INLINE 35th consecutive run ('100% recommendation rating with 5 reviews'). The Knot Haylee L. body STILL indexed in Rancho-attributed snippet via name-free query (name-surfacing not asserted; no owner-response indexed); listing holds 8/4.5star (count not surfaced this run, no contradicting signal — carry); direct fetch not attempted (BLOCKER, 20th no-attempt run, 7 prior timeouts). Hotels.com direct fetch NOT attempted (counter holds 42; cruise-control; 8.0 cross-confirmed via Expedia targeted query). Airbnb 403 BLOCKER 53rd run no-attempt. Hipcamp hipcamp-direct-fetch BLOCKER — 11th run of no-attempt cycle; listing still indexed via WebSearch; voice/data violations carry STALE:2026-05-26. Unreplied=1 (Cassie carry-forward) + Knot=1 (Haylee carry-forward) maintained on done-log signal. Dashboard status remains 'pending' (no rating drop, no review-count drop, no new <=3star — but 2 outstanding carry-forward drafts day 31 in monitor + Knot BLOCKER 20th run no-attempt + Hipcamp BLOCKER 11th no-attempt-cycle run).",
-  "note_prior_run_053": "RUN_053 (2026-06-16 09:10 CT). Twentieth consecutive quiet sweep — no new reviews; no rating/count drops, no new <=3star. RUN_052 (6/15) prior. Two RUN_034 drafts unposted (Cassie day 29; Haylee 110d, day 29). TripAdvisor HELD $66-$179 via DIRECT WebFetch; 0/unclaimed unchanged; RUN_052's +$1 floor tick holding. Google snippet HELD 126 (4-run hold); non-authoritative (126 != live 130, 28d STALE). Expedia 8.0 anchor CONFIRMED targeted (23rd inline); 9.0 'Wonderful' artifact 4th run, NO change asserted. Facebook 5/100% INLINE 34th run. The Knot Haylee L. body indexed name-free (no owner-response); 8/4.5star carry; direct fetch not attempted (BLOCKER 19th no-attempt). Hotels.com not attempted (counter 42). Airbnb 403 BLOCKER 52nd. Hipcamp BLOCKER 10th no-attempt-cycle. Unreplied=1+1. Dashboard 'pending'.",
+  "last_updated": "2026-06-21T14:05:00Z",
+  "run_number": 56,
+  "note": "RUN_056 (2026-06-21 09:05 CT). Twenty-third consecutive quiet sweep — no new reviews on any monitored platform; no rating drops, no count drops, no new <=3star. Cruise control: review-monitor not in GOALS.md Pause List; runs to detect drift only (GOALS.md week-of-5/18 broad Rancho pause still in force; monitoring is not active work — same posture as site-daily/competitive-weekly). RUN_055 (6/19) is the prior run (no review-monitor firing 6/20). **CONTINUITY FIX:** RUN_055 wrote run-logs/2026-06-19-review-monitor.md but never committed it and never bumped this aggregate or dashboard-state off run_number 54 (concurrent notebooklm-sync committed over the top). This run commits the orphaned RUN_055 log by explicit path and advances both state files 54 -> 56; RUN_055's findings are preserved in note_prior_run_055. Two RUN_034 drafts still presumed unposted — done-log shows no review-related entry since 2026-04-15 22:12: Cassie Butterfield Google 5star (day 34 unposted in monitor) and Haylee L. The Knot 1star from 2026-02-26 (115 days unreplied, day 34 unposted in monitor); both drafts at brand/review-reports/2026-05-19-review-report.md. **TripAdvisor price band SHIFTED $69-$175 -> $67-$166** this run (floor -$2 to $67, ceiling -$9 to $166) via DIRECT WebFetch ('No reviews for this property yet'; 'Claim Your Listing'; '$67 - $166 Based on Average Rates for a Standard Room'); 0/unclaimed UNCHANGED — price is an algorithmic standard-room rate estimate, NOT a review signal; immaterial, within the stable oscillation band; dashboard status unaffected. **Google WebSearch snippet RECOVERED to 126/4.9star** (RUN_055 did not surface an inline count due to an API socket error) — snippet remains non-authoritative (126 != live 130). Live=130/4.9star carries from RUN_034 Chrome read (now 33 days old, STALE). **Expedia 8.0 anchor CONFIRMED** on targeted Hotels.com/Expedia query ('solid guest review rating of 8.0', 26th consecutive inline run); no 9.0 'Wonderful' artifact this run — reliability remains downgraded; NO rating change asserted per Re-Verify Gate. Facebook 5/100% INLINE 37th consecutive run ('100% recommend rating with 5 reviews'). The Knot Haylee L. body STILL indexed in Rancho-attributed snippet via name-free query (name-surfacing not asserted; no owner-response indexed); listing holds 8/4.5star (count not surfaced this run, no contradicting signal — carry); direct fetch not attempted (BLOCKER, 22nd no-attempt run, 7 prior timeouts). Hotels.com direct fetch NOT attempted (counter holds 42; cruise-control; 8.0 cross-confirmed via Expedia targeted query). Airbnb 403 BLOCKER 55th run no-attempt. Hipcamp hipcamp-direct-fetch BLOCKER — 13th run of no-attempt cycle; voice/data violations carry STALE:2026-05-26. Unreplied=1 (Cassie carry-forward) + Knot=1 (Haylee carry-forward) maintained on done-log signal. Dashboard status remains 'pending' (no rating drop, no review-count drop, no new <=3star — but 2 outstanding carry-forward drafts day 34 in monitor + Knot BLOCKER 22nd run no-attempt + Hipcamp BLOCKER 13th no-attempt-cycle run).",
+  "note_prior_run_055": "RUN_055 (2026-06-19 09:05 CT). Twenty-second consecutive quiet sweep — no new reviews; no rating/count drops, no new <=3star. RUN_054 (6/18) prior. NOTE: this run's run-log was orphaned (written, never committed; aggregate/dashboard never advanced off 54) and is committed/reconciled by RUN_056. Two RUN_034 drafts unposted (Cassie day 32; Haylee 113d, day 32). TripAdvisor SHIFTED $69-$178 -> $69-$175 via DIRECT WebFetch (ceiling -$3); 0/unclaimed unchanged. Google snippet NOT surfaced (API socket error mid-fetch) — treated as no-surface per gate, not a state change; live 130 STALE 31d. Expedia 8.0 anchor CONFIRMED targeted (25th inline); no 9.0 artifact. Facebook 5/100% INLINE 36th run. The Knot Haylee L. body indexed name-free (no owner-response); 8/4.5star carry; direct fetch not attempted (BLOCKER 21st no-attempt). Hotels.com not attempted (counter 42). Airbnb 403 BLOCKER 54th. Hipcamp BLOCKER 12th no-attempt-cycle. Unreplied=1+1. Dashboard 'pending'.",
   "platforms": {
     "google": {
       "count": 130,
@@ -14,25 +14,25 @@
       "blocker": true,
       "blocker_since": "2026-04-17",
       "last_live_verified": "2026-05-19",
-      "last_live_method": "Chrome MCP (GBP dashboard + Maps card) — 30 days old as of RUN_054",
+      "last_live_method": "Chrome MCP (GBP dashboard + Maps card) — 33 days old as of RUN_056",
       "search_snippet_count": 126,
       "search_snippet_prior": 126,
-      "search_snippet_date": "2026-06-18",
-      "search_snippet_runs_stable": 5,
+      "search_snippet_date": "2026-06-21",
+      "search_snippet_runs_stable": 1,
       "search_snippet_null_consecutive_runs": 0,
       "search_snippet_lag_vs_live": -4,
       "search_snippet_lag_confirmed_consecutive_runs": 0,
-      "search_snippet_note": "RUN_054 WebSearch surfaced inline count 126 + rating 4.9 — 5th consecutive run at 126. Oscillation history now 126/175/null/126/175/126/126/126/126/126 — snippet is NOT a reliable count proxy (126 != live authoritative 130). Live count of 130 from RUN_034 Chrome read remains most recent authoritative value (now 30 days old). Resolution path unchanged: Places API key for authoritative API count, or Adam dashboard re-confirm.",
+      "search_snippet_note": "RUN_056 WebSearch surfaced inline count 126 + rating 4.9 — recovered from RUN_055's not-surfaced (API socket error). Oscillation history now 126/175/null/126/175/126/126/126/126/126/not-surfaced/126 — snippet is NOT a reliable count proxy (126 != live authoritative 130). Live count of 130 from RUN_034 Chrome read remains most recent authoritative value (now 33 days old). Resolution path unchanged: Places API key for authoritative API count, or Adam dashboard re-confirm.",
       "last_scrape": null,
       "last_known": "2026-05-19"
     },
     "airbnb": {
       "count": null,
       "rating": null,
-      "note": "Search result still shows possible listing at /rooms/1284193976615696223 (title: 'Glamping Safari Tent 25 mins from downtown Austin - Yurts for Rent in Manor, Texas' — consistent with Rancho Moonrise). 403 on direct fetch — BLOCKER since 2026-04-17. No new fetch attempted (403 pattern established, run 53). FLAG_FOR_ADAM standing.",
+      "note": "Search result still shows possible listing at /rooms/1284193976615696223 (title: 'Glamping Safari Tent 25 mins from downtown Austin - Yurts for Rent in Manor, Texas' — consistent with Rancho Moonrise). 403 on direct fetch — BLOCKER since 2026-04-17. No new fetch attempted (403 pattern established, run 55). FLAG_FOR_ADAM standing.",
       "last_scrape": null,
       "flag": "NEEDS_ADAM_VERIFY",
-      "flag_run_count": 53,
+      "flag_run_count": 55,
       "blocker": true,
       "blocker_since": "2026-04-17"
     },
@@ -46,12 +46,12 @@
       "last_scrape": "2026-05-26T11:40:00Z",
       "last_scrape_attempted": "2026-06-03T11:30:00Z",
       "scrape_failure_count": 3,
-      "scrape_failure_no_attempt_cycle_runs": 11,
+      "scrape_failure_no_attempt_cycle_runs": 13,
       "scrape_failure_threshold_blocker": 3,
       "blocker": true,
       "blocker_since": "2026-06-03",
       "blocker_id": "hipcamp-direct-fetch",
-      "note": "BLOCKER opened RUN_043 (3 consecutive failed scrapes RUN_041-043). RUN_054 11th run of no-attempt cycle — direct fetch not attempted. WebSearch confirms listing still indexed at known URL texas-rancho-moonrise-dw9hklej (surfaced in results this run). 0 reviews still presumed. Voice/data violations ('34-acre' vs VOICE-GUIDE 36, 'a bar' reference) carry forward STALE:2026-05-26 — not re-confirmable on-page under BLOCKER. Resolution path: Apify or headless-render scraper, or Adam manual spot-check every ~2 weeks, or downgrade to quarterly cadence (same pattern as Hotels.com / The Knot)."
+      "note": "BLOCKER opened RUN_043 (3 consecutive failed scrapes RUN_041-043). RUN_056 13th run of no-attempt cycle — direct fetch not attempted; no separate existence query this sweep (no contradicting signal, listing presumed unchanged at known URL texas-rancho-moonrise-dw9hklej). 0 reviews still presumed. Voice/data violations ('34-acre' vs VOICE-GUIDE 36, 'a bar' reference) carry forward STALE:2026-05-26 — not re-confirmable on-page under BLOCKER. Resolution path: Apify or headless-render scraper, or Adam manual spot-check every ~2 weeks, or downgrade to quarterly cadence (same pattern as Hotels.com / The Knot)."
     },
     "expedia": {
       "count": null,
@@ -61,16 +61,16 @@
       "last_scrape": null,
       "last_confirmed": "2026-04-09",
       "search_confirmed_rating": 8.0,
-      "search_confirmed_date": "2026-06-18",
+      "search_confirmed_date": "2026-06-21",
       "search_snippet_divergent": true,
       "search_snippet_divergent_values": [8.0, 9.0],
-      "search_confirmed_note": "RUN_054 — 8.0 anchor CONFIRMED via targeted Hotels.com query ('guest review rating of 8.0 out of 10'), 24th consecutive inline run; no 9.0 'Wonderful' reading surfaced this run (general query returned the 8.0 path only — first run since RUN_050 without the 9.0 artifact appearing, but absence is not asserted as a change). Two distinct Expedia entities continue to surface: h89565924 (expedia.com/Manor-Hotels-Rancho-Moonrise.h89565924) + Hotels.com-shared ho2867109568. 9.0 (when it appears) treated as snippet/listing-variant artifact; NO rating change asserted per Re-Verify Gate. Snippet reliability remains downgraded since RUN_050. Banned VOICE-GUIDE strings persist in Hotels.com listing copy — third-party listing copy issue, not Rancho's site. Hotels.com listing URL ho2867109568 still active in search results.",
+      "search_confirmed_note": "RUN_056 — 8.0 anchor CONFIRMED via targeted Hotels.com/Expedia query ('solid guest review rating of 8.0'), 26th consecutive inline run; no 9.0 'Wonderful' reading surfaced this run (2nd consecutive run without the 9.0 artifact appearing, but absence is not asserted as a change). Two distinct Expedia entities continue to surface: h89565924 (expedia.com/Manor-Hotels-Rancho-Moonrise.h89565924) + Hotels.com-shared ho2867109568. 9.0 (when it appears) treated as snippet/listing-variant artifact; NO rating change asserted per Re-Verify Gate. Snippet reliability remains downgraded since RUN_050. Banned VOICE-GUIDE strings persist in Hotels.com listing copy — third-party listing copy issue, not Rancho's site. Hotels.com listing URL ho2867109568 still active in search results.",
       "hotels_com_direct_fetch_attempted_this_run": false,
       "hotels_com_direct_fetch_result_this_run": "not attempted (cruise-control; no value re-confirming 42-failure BLOCKER; 8.0 cross-confirmed via Expedia/Hotels.com targeted WebSearch query)",
       "hotels_com_timeout_count": 42,
       "blocker": true,
       "blocker_since": "2026-04-17",
-      "note": "Rating 8.0 last confirmed direct-scrape 2026-04-09; last confirmed via search snippet 2026-06-18 (RUN_054 — 8.0 anchor surfaced inline on targeted query, 24th consecutive inline run; no 9.0 artifact this run). Listing still active. Hotels.com direct fetch NOT attempted this run (counter holds 42). BLOCKER ongoing."
+      "note": "Rating 8.0 last confirmed direct-scrape 2026-04-09; last confirmed via search snippet 2026-06-21 (RUN_056 — 8.0 anchor surfaced inline on targeted query, 26th consecutive inline run; no 9.0 artifact this run). Listing still active. Hotels.com direct fetch NOT attempted this run (counter holds 42). BLOCKER ongoing."
     },
     "facebook": {
       "count": 5,
@@ -78,8 +78,8 @@
       "recommend_pct": 100,
       "stale": false,
       "last_scrape": null,
-      "last_confirmed": "2026-06-18",
-      "note": "5 reviews, 100% recommend — surfaced inline via WebSearch RUN_054 ('100% recommend rating with 5 reviews'). Stable for thirty-five consecutive runs after RUN_018 one-run dip. Direct WebFetch not attempted this run (search-snippet is the documented working path for Facebook)."
+      "last_confirmed": "2026-06-21",
+      "note": "5 reviews, 100% recommend — surfaced inline via WebSearch RUN_056 ('100% recommend rating with 5 reviews'). Stable for thirty-seven consecutive runs after RUN_018 one-run dip. Direct WebFetch not attempted this run (search-snippet is the documented working path for Facebook)."
     },
     "tripadvisor": {
       "status": "unclaimed",
@@ -87,12 +87,12 @@
       "rating": null,
       "stale": false,
       "listing_url": "https://www.tripadvisor.com/Hotel_Review-g56224-d33307272-Reviews-Rancho_Moonrise-Manor_Texas.html",
-      "last_scrape": "2026-06-18T14:05:00Z",
+      "last_scrape": "2026-06-21T14:05:00Z",
       "last_scrape_method": "direct WebFetch of listing page (succeeded — not a blocker path)",
-      "price_range": "$69-$178",
-      "price_range_prior": "$66-$179",
-      "price_delta": "SHIFT this run — $66-$179 -> $69-$178 (floor +$3 to $69, ceiling -$1 to $178) vs RUN_053. Confirmed via DIRECT WebFetch this run ('$69 - $178 Based on Average Rates for a Standard Room'). Immaterial: algorithmic standard-room rate estimate, not a review signal; within the stable oscillation band. 39-run net drift: floor $77->$69 (-$8) / ceiling $181->$178 (-$3). Pattern: minor oscillation within a stable band.",
-      "note": "Live verified via DIRECT WebFetch of the listing page RUN_054: 'No reviews for this property yet'; 'Claim Your Listing' → 0/unclaimed; '$69 - $178 (Based on Average Rates for a Standard Room)'. 0/unclaimed UNCHANGED; price band shifted +$3 floor / -$1 ceiling (immaterial rate-estimate oscillation)."
+      "price_range": "$67-$166",
+      "price_range_prior": "$69-$175",
+      "price_delta": "SHIFT this run — $69-$175 -> $67-$166 vs RUN_055 (floor -$2 to $67, ceiling -$9 to $166). Confirmed via DIRECT WebFetch this run ('$67 - $166 Based on Average Rates for a Standard Room'). Immaterial: algorithmic standard-room rate estimate, not a review signal; within the stable oscillation band. 41-run net drift: floor $77->$67 (-$10) / ceiling $181->$166 (-$15). Pattern: minor oscillation within a stable band.",
+      "note": "Live verified via DIRECT WebFetch of the listing page RUN_056: 'No reviews for this property yet'; 'Claim Your Listing' → 0/unclaimed; '$67 - $166 (Based on Average Rates for a Standard Room)'. 0/unclaimed UNCHANGED; price band shifted -$2 floor / -$9 ceiling (immaterial rate-estimate oscillation)."
     },
     "yelp": {
       "status": "listing_exists",
@@ -115,8 +115,8 @@
       ],
       "in_scope": false,
       "first_discovered": "2026-04-19",
-      "last_seen_in_search": "2026-06-18",
-      "note": "Listing discovered in search results 2026-04-19. Re-sighted RUN_054 (en-ie variant seen this run). JS-rendered — no review data on direct fetch. Remains in_scope: false per existing scope rules; FLAG_FOR_ADAM-verify standing item carries from 2026-04-19 (did Adam/Ashley submit to Agoda, or is this speculative listing distribution like ResortPass/Hotels.com?)."
+      "last_seen_in_search": "2026-06-21",
+      "note": "Listing discovered in search results 2026-04-19. Re-sighted RUN_056 (en-ie variant seen this run). JS-rendered — no review data on direct fetch. Remains in_scope: false per existing scope rules; FLAG_FOR_ADAM-verify standing item carries from 2026-04-19 (did Adam/Ashley submit to Agoda, or is this speculative listing distribution like ResortPass/Hotels.com?)."
     },
     "the_knot": {
       "status": "listing_exists",
@@ -128,15 +128,15 @@
       "haylee_l_unreplied": true,
       "haylee_l_post_date": "2026-02-26",
       "haylee_l_unreplied_weeks": 16,
-      "haylee_l_unreplied_days": 112,
-      "haylee_l_last_verified": "2026-06-18",
-      "haylee_l_last_verified_method": "WebSearch — Haylee L. review body STILL LIVE in Rancho-attributed snippet (loud-music text indexed verbatim: 'neighboring property played extremely loud amplified music from early afternoon until after midnight'; venue cannot control/prevent it; risk not disclosed pre-booking). Query this run was NAME-FREE ('Rancho Moonrise The Knot reviews loud amplified music neighboring property') — body surfaced without the reviewer name in the query, and the result did not name Haylee either, so name-surfacing is NOT asserted this run. No owner-response indexed in any query. The Knot listing count/rating not surfaced in snippet this run (no contradicting signal — 8 reviews / 4.5star carried).",
+      "haylee_l_unreplied_days": 115,
+      "haylee_l_last_verified": "2026-06-21",
+      "haylee_l_last_verified_method": "WebSearch — Haylee L. review body STILL LIVE in Rancho-attributed snippet (loud-music text indexed verbatim: 'neighboring property played extremely loud amplified music from early afternoon until after midnight'; venue cannot control/prevent it; risk not disclosed pre-booking; 'would have easily ruined the entire event'). Query this run was NAME-FREE ('Rancho Moonrise The Knot reviews loud amplified music neighboring property') — body surfaced without the reviewer name in the query, and the result did not name Haylee either, so name-surfacing is NOT asserted this run. No owner-response indexed in any query. The Knot listing count/rating not surfaced in snippet this run (no contradicting signal — 8 reviews / 4.5star carried).",
       "knot_direct_fetch_failure_count": 7,
       "knot_direct_fetch_blocker_threshold": 3,
       "knot_direct_fetch_blocker": true,
       "knot_direct_fetch_blocker_since": "2026-05-23",
-      "knot_direct_fetch_no_attempt_runs": 20,
-      "note": "Moved IN SCOPE 2026-05-19 (RUN_034). RUN_054 direct WebFetch not attempted — BLOCKER theknot-direct-fetch remains active (7 prior consecutive timeouts RUN_035-041; 20-run no-attempt cycle now). WebSearch is documented working fallback. Haylee L. review body surfaces in Rancho-attributed snippet today via name-free query; count holds 8 / 4.5star (carry). Listing copy '20 luxury cabins...50 guests' voice violation persists (not re-fetched today)."
+      "knot_direct_fetch_no_attempt_runs": 22,
+      "note": "Moved IN SCOPE 2026-05-19 (RUN_034). RUN_056 direct WebFetch not attempted — BLOCKER theknot-direct-fetch remains active (7 prior consecutive timeouts RUN_035-041; 22-run no-attempt cycle now). WebSearch is documented working fallback. Haylee L. review body surfaces in Rancho-attributed snippet today via name-free query; count holds 8 / 4.5star (carry). Listing copy '20 luxury cabins...50 guests' voice violation persists (not re-fetched today)."
     }
   }
 }

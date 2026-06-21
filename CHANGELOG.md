@@ -1,5 +1,14 @@
 # Rancho Moonrise — Changelog
 
+## 2026-06-21 (rancho-review-monitor) — RUN_056, 23rd consecutive quiet sweep, no new reviews
+
+- Cruise-control maintenance run under GOALS.md week-of-5/18 broad Rancho pause (review-monitor not in the Scheduled-Tasks Pause List; monitoring ≠ active work). No new reviews on any monitorable platform; no rating drops, no count drops, no new ≤3★.
+- Re-Verify Gate (8 live claims): 7 still_true, 1 CHANGED, 0 resolved → no done-log RESOLVED line. CHANGED = TripAdvisor price band $69–$175 → $67–$166 (DIRECT WebFetch: "No reviews for this property yet" / "Claim Your Listing" / "$67 – $166 Based on Average Rates for a Standard Room") — immaterial algorithmic rate estimate, not a review signal; 0/unclaimed unchanged. Google WebSearch snippet recovered to 126/4.9★ (RUN_055 returned no count, API socket error); non-authoritative (≠ live 130, 33d STALE). Expedia 8.0 anchor CONFIRMED targeted (26th inline; no 9.0 artifact). Facebook 5/100% (37th inline). The Knot Haylee L. 1★ body still indexed via name-free query (no owner-response; 115d unreplied).
+- BLOCKERS held no-attempt: theknot-direct-fetch (22nd), hipcamp-direct-fetch (13th no-attempt-cycle run), airbnb-listing-existence 403 (55th), hotels-com-direct-fetch (counter 42), google-reviews-count (live scrape blocked).
+- 2 carry-forward drafts still unposted (day 34 in monitor; done-log shows no review entry since 2026-04-15 22:12): Cassie Butterfield Google 5★ + Haylee L. The Knot 1★ — both at `brand/review-reports/2026-05-19-review-report.md`. Dashboard status `pending`.
+- Continuity fix: committed orphaned `run-logs/2026-06-19-review-monitor.md` (RUN_055 — written 6/19, never committed, never advanced aggregate/dashboard off run_number 54) by explicit path; RUN_056 reconciles state 54 → 56, RUN_055 folded into `note_prior_run_055`.
+- State written: `brand/review-aggregate.json` (54→56), `site/admin/dashboard-state.json` (54→56), `run-logs/2026-06-21-review-monitor.md`. Committed by explicit path; pre-existing prior-session changes + concurrent-writer artifacts intentionally NOT staged.
+
 ## 2026-06-21 (rancho-site-daily) — 22nd consecutive cruise-control firing, no shipped edits
 
 - GOALS.md still week-of-5/18 ("No Rancho Moonrise active work — paused; cruise control only if Ashley moves"). No Ashley move this cycle. CreativeWork-property enrichment arc on BlogPosting JSON-LD closed 5/26 — no surgical autonomous slot remains; Person-author research + AggregateRating-on-BlogPosting both deferred again (each adds NEEDS-ADAM noise or a 17-file diff against a paused workstream).
