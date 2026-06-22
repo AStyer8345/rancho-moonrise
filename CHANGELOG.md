@@ -1,5 +1,12 @@
 # Rancho Moonrise — Changelog
 
+## 2026-06-22 (rancho-site-daily) — 23rd consecutive cruise-control firing, no shipped edits
+
+- GOALS.md still week-of-5/18 ("No Rancho Moonrise active work — paused; cruise control only if Ashley moves"). No Ashley move this cycle. CreativeWork-property enrichment arc on BlogPosting JSON-LD closed 5/26 — no surgical autonomous slot remains; Person-author research + AggregateRating-on-BlogPosting both deferred again.
+- Re-Verify Gate (live, 7/7 still_true, 0 resolved): apex 200 + `server: Vercel` + `x-vercel-cache: HIT` (`age: 44013` ≈ 12.2 hr); www 308 → apex; sitemap / corp-retreats / safari-tents / blog all 200; BlogPosting CreativeWork 6-property spot-check on `/blog/glamping-near-austin-texas/` intact 27 days post-5/26 deploy.
+- **Continuity fix — CHANGELOG concurrent-writer stale-revert caught:** working tree held an older CHANGELOG.md than HEAD (pure 9-line deletion of the committed 2026-06-21 RUN_056 review-monitor entry). Verified deletion-only, then `git checkout CHANGELOG.md` to restore HEAD before prepending this entry — review-monitor's entry preserved, not silently reverted.
+- Committed by explicit path only. Pre-existing prior-session changes (api/inquiry.js, styles.css, main.js, contact.html, weddings.html) + concurrent-writer artifacts (`* 2`/`* 3`, AGENTS*.md, TODO.md.tmp.*, duplicated images, rancho-moonrise-assets/, youtube-uploads/) intentionally NOT staged. Run-log: `run-logs/2026-06-22-seo.md`.
+
 ## 2026-06-21 (rancho-review-monitor) — RUN_056, 23rd consecutive quiet sweep, no new reviews
 
 - Cruise-control maintenance run under GOALS.md week-of-5/18 broad Rancho pause (review-monitor not in the Scheduled-Tasks Pause List; monitoring ≠ active work). No new reviews on any monitorable platform; no rating drops, no count drops, no new ≤3★.
