@@ -1162,3 +1162,10 @@ Live re-verify: `notebooklm use <id>` → Google sign-in redirect; `source list 
   - MODIFIED: brand/2026-04-09-rancho-moonrise-improvement-plan.html (61254 bytes)
 Skipped >10MB (expected): PRIVATE EVENTS / INTIMATE EVENTS / ALL INCLUSIVE RETREATS PDFs. No new action — tracked under TODO.md NEEDS ADAM #0; fix is `notebooklm login` or pause this task (Rancho is cruise-control per GOALS). Did NOT edit TODO.md (task file forbids it).
 2026-06-22 | scanned=65 added=0 replaced=0 skipped=3 errors=1 (auth_expired)
+
+### 2026-06-22 (run) — auth STILL expired (9th+ consecutive block)
+Live re-verify: `notebooklm use <id>` → "Authentication expired or invalid"; `source list --json` → same error + Google sign-in redirect (`notebooklm login` required). 0 sources reachable. Same 2 files pending; state NOT updated so they re-sync once auth restored:
+  - NEW: brand/2026-05-16-hipcamp-curation-gap-audit.md (18543 bytes)
+  - MODIFIED: brand/2026-04-09-rancho-moonrise-improvement-plan.html (61254 bytes)
+Skipped >10MB (expected): PRIVATE EVENTS / INTIMATE EVENTS / ALL INCLUSIVE RETREATS PDFs. No new action — tracked under TODO.md NEEDS ADAM #0; fix is `notebooklm login` or pause this task (Rancho is cruise-control per GOALS). Did NOT edit TODO.md (task file forbids it).
+2026-06-22 | scanned=65 added=0 replaced=0 skipped=3 errors=1 (auth_expired)
