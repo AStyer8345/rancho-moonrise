@@ -1146,3 +1146,12 @@ Already covered by TODO.md NEEDS ADAM #0 (rancho-* tasks firing against paused w
 ### 2026-06-21 11:51 (run) — auth STILL expired (6th+ consecutive block)
 Live re-verify: `notebooklm use <id>` → Google sign-in redirect; `source list --json` → "Authentication expired or invalid." Same 2 files pending; state NOT updated. Already tracked under TODO.md NEEDS ADAM #0 (paused Rancho workstream, task should be paused or re-auth'd). No new action.
 2026-06-21 | scanned=65 added=0 replaced=0 skipped=3 errors=1 (auth_expired)
+
+### 2026-06-21 14:54 (run) — auth STILL expired (7th+ consecutive block)
+Live re-verify: `notebooklm use <id>` → "Authentication expired or invalid"; `list --json` → same error + Google sign-in redirect (`notebooklm login` required). 0 sources reachable.
+Same 2 files pending (state NOT updated so they re-sync once auth restored):
+  - NEW: brand/2026-05-16-hipcamp-curation-gap-audit.md (18543 bytes)
+  - MODIFIED: brand/2026-04-09-rancho-moonrise-improvement-plan.html (61254 bytes)
+Skipped >10MB (expected): PRIVATE EVENTS / INTIMATE EVENTS / ALL INCLUSIVE RETREATS PDFs. Skipped non-sync ext: brand/review-aggregate.json.
+Already tracked under TODO.md NEEDS ADAM #0 (rancho-* tasks firing against paused workstream). Per GOALS, Rancho is cruise-control — fix is one of: (a) `notebooklm login` to re-auth if the notebook must stay current, or (b) pause this scheduled task. No code/state change made. Did NOT edit TODO.md (task file forbids it).
+2026-06-21 | scanned=68 added=0 replaced=0 skipped=4 errors=1 (auth_expired)
