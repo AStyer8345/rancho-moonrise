@@ -1,5 +1,15 @@
 # Rancho Moonrise — Changelog
 
+## 2026-06-22 (rancho-review-monitor) — RUN_057, 24th consecutive quiet sweep, no new reviews
+
+- Cruise-control maintenance run under GOALS.md week-of-5/18 broad Rancho pause (review-monitor not in the Scheduled-Tasks Pause List; monitoring ≠ active work). No new reviews on any monitorable platform; no rating drops, no count drops, no new ≤3★.
+- Re-Verify Gate (8 live claims): 7 still_true, 1 CHANGED, 0 resolved → no done-log RESOLVED line. CHANGED = TripAdvisor price band $67–$166 → $66–$165 (DIRECT WebFetch of canonical listing `g56224-d33307272`: "No reviews for this property yet" / "Claim Your Listing" / "$66 – $165 Based on Average Rates for a Standard Room") — immaterial algorithmic rate estimate, not a review signal; 0/unclaimed unchanged. Google WebSearch snippet held at 126/4.9★ (2-run hold); non-authoritative (≠ live 130, 34d STALE). Expedia 8.0 anchor CONFIRMED targeted (27th inline; no 9.0 artifact, 3rd consecutive run without it). Facebook 5/100% (38th inline). The Knot Haylee L. 1★ body still indexed via name-free query (no owner-response; 116d unreplied).
+- **TripAdvisor URL gotcha recorded:** a non-canonical URL `g55819-d27521234` resolves to an unrelated Kyiv hostel; the canonical Rancho listing is `g56224-d33307272` (now captured in `tripadvisor.canonical_url_note` + dashboard flag). Future runs should fetch the canonical URL only; it re-surfaces reliably via WebSearch.
+- BLOCKERS held no-attempt: theknot-direct-fetch (23rd), hipcamp-direct-fetch (14th no-attempt-cycle run), airbnb-listing-existence 403 (56th), hotels-com-direct-fetch (counter 42), google-reviews-count (live scrape blocked).
+- 2 carry-forward drafts still unposted (day 35 in monitor; done-log shows no review entry since 2026-04-15 22:12): Cassie Butterfield Google 5★ + Haylee L. The Knot 1★ — both at `brand/review-reports/2026-05-19-review-report.md`. Dashboard status `pending`.
+- Clean continuity this run: RUN_056's log + state both committed cleanly (no orphaned prior log), and CHANGELOG.md HEAD matched the working tree (no concurrent-writer stale-revert).
+- State written: `brand/review-aggregate.json` (56→57), `site/admin/dashboard-state.json` (56→57), `run-logs/2026-06-22-review-monitor.md`. Committed by explicit path; pre-existing prior-session changes + concurrent-writer artifacts intentionally NOT staged.
+
 ## 2026-06-22 (rancho-site-daily) — 23rd consecutive cruise-control firing, no shipped edits
 
 - GOALS.md still week-of-5/18 ("No Rancho Moonrise active work — paused; cruise control only if Ashley moves"). No Ashley move this cycle. CreativeWork-property enrichment arc on BlogPosting JSON-LD closed 5/26 — no surgical autonomous slot remains; Person-author research + AggregateRating-on-BlogPosting both deferred again.
