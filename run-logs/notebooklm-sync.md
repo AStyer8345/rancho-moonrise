@@ -1184,3 +1184,12 @@ Live re-verify: `notebooklm use` + `source list --json` → "Authentication expi
 - Pending (deferred to next run): 1 new `2026-05-16-hipcamp-curation-gap-audit.md`, 1 modified `2026-04-09-rancho-moonrise-improvement-plan.html`.
 - ACTION NEEDED (Adam): re-authenticate the notebooklm CLI (`notebooklm auth login` or equivalent) so the next scheduled run can sync.
 2026-06-23 02:59 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth_expired)
+- PUSH FAILED (SSH connection reset to github). Commit 9fa4f4a is local; will push on next run per task policy (no retry).
+
+### 2026-06-23 05:34 — AUTH FAILURE (sync skipped)
+- notebooklm CLI auth expired: "Authentication expired or invalid" → needs `notebooklm login` (interactive browser OAuth, can't run unattended).
+- Detected but NOT synced (state file left untouched so they re-detect next run):
+  - NEW: brand/2026-05-16-hipcamp-curation-gap-audit.md
+  - MODIFIED: brand/2026-04-09-rancho-moonrise-improvement-plan.html (60047 → 61254 bytes)
+  - Action needed from Adam: run `notebooklm login` to restore auth; next scheduled run will sync these.
+2026-06-23 05:34 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth expired — 2 changes pending)
