@@ -1193,3 +1193,11 @@ Live re-verify: `notebooklm use` + `source list --json` → "Authentication expi
   - MODIFIED: brand/2026-04-09-rancho-moonrise-improvement-plan.html (60047 → 61254 bytes)
   - Action needed from Adam: run `notebooklm login` to restore auth; next scheduled run will sync these.
 2026-06-23 05:34 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth expired — 2 changes pending)
+
+### 2026-06-23 12:09 — AUTH FAILURE (sync skipped, recurring)
+- notebooklm CLI auth still expired: "Authentication expired or invalid" → redirects to Google sign-in. Needs `notebooklm login` (interactive browser OAuth — cannot run unattended).
+- Same 2 changes still pending (state file left UNTOUCHED so they re-detect next run):
+  - NEW: brand/2026-05-16-hipcamp-curation-gap-audit.md
+  - MODIFIED: brand/2026-04-09-rancho-moonrise-improvement-plan.html (60047 → 61254 bytes)
+- 3rd consecutive auth-failure run today (02:59, 05:34, now). ACTION NEEDED (Adam): run `notebooklm login` to restore auth; next run will sync.
+2026-06-23 12:09 | scanned=65 added=0 replaced=0 skipped=3 errors=1 (auth expired — 2 changes pending)
