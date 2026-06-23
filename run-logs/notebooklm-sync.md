@@ -1177,3 +1177,10 @@ Live re-verify: `source list --json` → "Authentication expired or invalid" + G
 ### 2026-06-22 (run) — auth STILL expired (11th+ consecutive block)
 Live re-verify: `notebooklm use` + `source list --json` → "Authentication expired or invalid" (Google sign-in redirect; `notebooklm login` required). 0 sources reachable. Same 2 files still pending — state NOT updated so they re-sync once auth restored. NEW: brand/2026-05-16-hipcamp-curation-gap-audit.md; MODIFIED: brand/2026-04-09-rancho-moonrise-improvement-plan.html. Skipped >10MB (expected): 3 event PDFs + 1 .json. Standing recommendation unchanged: run `notebooklm login` (interactive) or PAUSE this task — Rancho is cruise-control per GOALS.
 2026-06-22 20:39 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth_expired)
+
+### 2026-06-23 02:59 — run (AUTH FAILURE)
+- NotebookLM authentication expired/invalid — `notebooklm list` and `source list` both redirect to Google sign-in.
+- Sync skipped. State file left UNCHANGED so pending files re-sync after re-auth.
+- Pending (deferred to next run): 1 new `2026-05-16-hipcamp-curation-gap-audit.md`, 1 modified `2026-04-09-rancho-moonrise-improvement-plan.html`.
+- ACTION NEEDED (Adam): re-authenticate the notebooklm CLI (`notebooklm auth login` or equivalent) so the next scheduled run can sync.
+2026-06-23 02:59 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth_expired)
