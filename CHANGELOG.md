@@ -1,5 +1,14 @@
 # Rancho Moonrise — Changelog
 
+## 2026-06-23 (rancho-site-daily) — 24th consecutive cruise-control firing, no shipped edits
+
+- Cruise-control maintenance run under GOALS.md week-of-5/18 broad Rancho pause ("No Rancho Moonrise active work — paused; cruise control only if Ashley moves"). No Ashley move this cycle. No shipped edits.
+- Re-Verify Gate (live, 7/7 still_true, 0 resolved → no done-log RESOLVED line): apex `HTTP/2 200` + `server: Vercel` + `x-vercel-cache: HIT` (`age: 7246` ≈ 2.0 hr); www `308` → `https://ranchomoonrise.com/`; sitemap.xml 200; `/corporate-retreats/` 200; `/safari-tents-near-austin/` 200; `/blog/` 200; BlogPosting CreativeWork 6-property spot-check on `/blog/glamping-near-austin-texas/` intact 28 days post-5/26 deploy (dateModified 2026-05-26, wordCount 1005, articleSection "Glamping", inLanguage "en-US", isAccessibleForFree true, copyrightYear 2026).
+- CreativeWork-property enrichment arc on BlogPosting JSON-LD closed 5/26 — no surgical autonomous slot remains. Person-author byline research + AggregateRating-on-BlogPosting both deferred again (each adds NEEDS-ADAM noise or a 17-file diff against a paused workstream).
+- Ownership boundaries: indexing claims (`/corporate-retreats/` ~46d, `/safari-tents-near-austin/` ~51d uncrawled) owned by competitive-weekly + Adam — not re-litigated; review/GBP claims owned by review-monitor/gbp-weekly — not touched.
+- Clean continuity: CHANGELOG.md HEAD == working tree (no concurrent-writer stale-revert this cycle); `run-logs/2026-06-22-seo.md` tracked, no orphaned prior-day SEO log. Pre-existing prior-session changes (api/inquiry.js, styles.css, main.js, contact.html, weddings.html) + concurrent-writer artifacts (`* 2.*`, `* 3.*`, AGENTS.md, TODO.md.tmp.*) intentionally NOT staged; committed by explicit path only.
+- No SEO task IDs (s1–s8) touched, no done-log entry. Run-log: `run-logs/2026-06-23-seo.md`.
+
 ## 2026-06-22 (rancho-review-monitor) — RUN_057, 24th consecutive quiet sweep, no new reviews
 
 - Cruise-control maintenance run under GOALS.md week-of-5/18 broad Rancho pause (review-monitor not in the Scheduled-Tasks Pause List; monitoring ≠ active work). No new reviews on any monitorable platform; no rating drops, no count drops, no new ≤3★.
