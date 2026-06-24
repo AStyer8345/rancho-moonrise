@@ -123,3 +123,9 @@ Both hard stops re-verified live still true (`find brand -iname "*testimonial*" 
 ### 2026-06-17 — BLOCKED (run 7; one-liner per 5/13 commitment)
 
 Both hard stops re-verified live still true (`find brand -iname "*testimonial*" -o -iname "*approved*"` = 0 hits; `grep -in "byline\|settled decision\|author.*adam\|author.*ashley" GOALS.md` = exit 1, 0 matches). GOALS.md still week of 5/18 — "No Rancho Moonrise active work — paused (cruise control only if Ashley moves)." 7th structurally-blocked content-weekly run (4/22, 4/29, 5/06, 5/13, 6/03, 6/10, 6/17); 56-day blocker pattern. No landing-page edits. Single-ask pause request lives in the 5/13 entry and TODO.md NEEDS ADAM #0 — not re-litigated here. Next run: 2026-06-24.
+
+---
+
+### 2026-06-24 — BLOCKED (run 8; one-liner per 5/13 commitment)
+
+Both hard stops re-verified live still true (`find brand -iname "*testimonial*" -o -iname "*approved*"` = 0 hits; `grep -iE "byline|author.*(adam|ashley)|settled decision" GOALS.md` = 0 matches). GOALS.md still week of 5/18 — "No Rancho Moonrise active work — paused (cruise control only if Ashley moves)." 8th structurally-blocked content-weekly run (4/22, 4/29, 5/06, 5/13, 6/03, 6/10, 6/17, 6/24); 63-day blocker pattern. A compliant strengthening pass needs ≥3 of 4 elements; author-block and testimonial are hard-blocked and the photo element is NEEDS ADAM (low-res/placeholder) — only "local detail" remains, which alone fails the ≥3 bar. No landing-page edits. Single-ask pause request lives in the 5/13 entry and TODO.md NEEDS ADAM #0 — not re-litigated here. Next run: 2026-07-01.
