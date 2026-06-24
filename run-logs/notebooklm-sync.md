@@ -1215,3 +1215,11 @@ Live re-verify: `notebooklm use` + `source list --json` → "Authentication expi
 - Verified live (not assumed): `list --json` returns `Authentication expired or invalid`. Needs interactive `notebooklm login`.
 - ACTION still pending with Adam — see 13:00 entry. Per GOALS.md Rancho is cruise-control; recommend re-auth or pause this task.
 2026-06-23 16:09 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth expired — 2 changes pending)
+
+## 2026-06-24 00:08 — RUN FAILED (auth)
+- NotebookLM auth expired: `source list` returned 'Authentication expired or invalid'. Needs interactive `notebooklm login` (cannot run headless).
+- Detected but NOT synced (state left unchanged so next authed run catches them):
+  - NEW: 2026-05-16-hipcamp-curation-gap-audit.md
+  - MODIFIED: 2026-04-09-rancho-moonrise-improvement-plan.html
+- Skipped (>10MB): PRIVATE EVENTS AT RANCHO MOONRISE.pdf, INTIMATE EVENTS AT RM.pdf, ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf
+2026-06-24 00:08 | scanned=68 added=0 replaced=0 skipped=3 errors=1
