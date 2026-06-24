@@ -1223,3 +1223,13 @@ Live re-verify: `notebooklm use` + `source list --json` → "Authentication expi
   - MODIFIED: 2026-04-09-rancho-moonrise-improvement-plan.html
 - Skipped (>10MB): PRIVATE EVENTS AT RANCHO MOONRISE.pdf, INTIMATE EVENTS AT RM.pdf, ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf
 2026-06-24 00:08 | scanned=68 added=0 replaced=0 skipped=3 errors=1
+
+## 2026-06-24 09:26 — RUN FAILED (auth) — recurring since 2026-06-23
+- NotebookLM CLI auth still expired (v0.3.4): `use`/`source list` return 'Authentication expired or invalid', Google sign-in redirect. Requires interactive `notebooklm login` — cannot run headless.
+- Verified live, not assumed. State ledger left UNTOUCHED so the next authenticated run catches the backlog.
+- Pending (detected, not synced):
+  - NEW: 2026-05-16-hipcamp-curation-gap-audit.md (brand/)
+  - MODIFIED: 2026-04-09-rancho-moonrise-improvement-plan.html (brand/, 60047→61254 bytes)
+- Skipped (>10MB): PRIVATE EVENTS AT RANCHO MOONRISE.pdf, INTIMATE EVENTS AT RM.pdf, ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf
+- ACTION FOR ADAM: run `notebooklm login` once, OR pause this task until Rancho work resumes (GOALS.md has Rancho on cruise-control). This has failed ~7+ times — the log channel isn't surfacing it.
+2026-06-24 09:26 | scanned=65 added=0 replaced=0 skipped=3 errors=1 (auth expired — 2 changes pending)
