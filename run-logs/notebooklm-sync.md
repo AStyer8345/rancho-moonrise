@@ -1209,3 +1209,9 @@ Live re-verify: `notebooklm use` + `source list --json` → "Authentication expi
   - MODIFIED: brand/2026-04-09-rancho-moonrise-improvement-plan.html
 - Recurring across many runs (today: 02:59, 05:34, 12:09, now). ACTION NEEDED (Adam): run `notebooklm login` to restore auth, OR pause this scheduled task (Rancho is cruise-control per GOALS — this task can't succeed until re-auth and is bloating the log).
 2026-06-23 13:00 | scanned=65 added=0 replaced=0 skipped=3 errors=1 (auth expired — 2 changes pending)
+
+### 2026-06-23 16:09 — AUTH FAILURE (sync skipped, 5th today)
+- notebooklm CLI auth still expired (Google sign-in redirect). Same 2 changes pending; state file UNTOUCHED.
+- Verified live (not assumed): `list --json` returns `Authentication expired or invalid`. Needs interactive `notebooklm login`.
+- ACTION still pending with Adam — see 13:00 entry. Per GOALS.md Rancho is cruise-control; recommend re-auth or pause this task.
+2026-06-23 16:09 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth expired — 2 changes pending)
