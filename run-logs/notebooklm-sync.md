@@ -1263,3 +1263,9 @@ Live re-verify: `notebooklm use` + `source list --json` → "Authentication expi
 - Same 2 changes pending: NEW 2026-05-16-hipcamp-curation-gap-audit.md, MODIFIED 2026-04-09-rancho-moonrise-improvement-plan.html (60047→61254). State ledger UNTOUCHED — both retry once auth restored.
 - No new flag raised: already in TODO.md NEEDS ADAM #0. Resolution is Adam's (run `notebooklm login` once, or pause this task — Rancho is cruise-control per GOALS.md).
 2026-06-25 08:53 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth expired — recurring)
+
+## 2026-06-25 12:08 — RUN FAILED (auth) — recurring, already flagged
+- Re-verified live (`list --json`): NotebookLM CLI auth still expired (Google sign-in redirect). Headless `notebooklm login` impossible in unattended run.
+- 2 changes still pending: NEW 2026-05-16-hipcamp-curation-gap-audit.md, MODIFIED 2026-04-09-rancho-moonrise-improvement-plan.html (60047→61254). State ledger UNTOUCHED — both retry once auth restored.
+- No new flag: already in TODO.md NEEDS ADAM #0 (rancho-* tasks firing against paused workstream, 24+ days overdue). Resolution is Adam's: run `notebooklm login` once, OR pause this task per GOALS.md cruise-control.
+2026-06-25 12:08 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth expired — recurring)
