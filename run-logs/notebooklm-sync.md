@@ -1276,3 +1276,12 @@ Live re-verify: `notebooklm use` + `source list --json` → "Authentication expi
 - Skipped 3 sources over 10MB (PRIVATE EVENTS 28.8MB, INTIMATE EVENTS 20.7MB, ALL INCLUSIVE RETREATS 36.9MB).
 - No new flag: already in TODO.md NEEDS ADAM #0. Resolution is Adam's: run `notebooklm login` once, OR pause this task (Rancho is cruise-control / paused per GOALS.md).
 2026-06-25 16:08 | scanned=65 added=0 replaced=0 skipped=3 errors=1 (auth expired — recurring)
+
+## 2026-06-25 18:04 — AUTH FAILURE
+NotebookLM auth expired (`source list` returned Authentication expired/invalid; redirect to Google sign-in).
+Cannot re-authenticate in unattended run — requires interactive `notebooklm login`.
+Detected but NOT synced (state file left unchanged so they retry next run):
+- NEW: brand/2026-05-16-hipcamp-curation-gap-audit.md
+- MODIFIED: brand/2026-04-09-rancho-moonrise-improvement-plan.html
+Skipped (>10MB): PRIVATE EVENTS AT RANCHO MOONRISE.pdf, INTIMATE EVENTS AT RM.pdf, ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf
+2026-06-25 18:04 | scanned=65 added=0 replaced=0 skipped=3 errors=1 (auth)
