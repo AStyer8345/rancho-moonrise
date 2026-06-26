@@ -1294,3 +1294,4 @@ Skipped (>10MB): PRIVATE EVENTS AT RANCHO MOONRISE.pdf, INTIMATE EVENTS AT RM.pd
 - Skipped 3 sources >10MB (PRIVATE EVENTS 28.8MB, INTIMATE EVENTS 20.7MB, ALL INCLUSIVE RETREATS 36.9MB) + review-aggregate.json (ext).
 - No new flag: already in TODO.md NEEDS ADAM #0. Resolution is Adam's: run `notebooklm login` once, OR pause this task (Rancho is cruise-control per GOALS.md).
 2026-06-26 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth expired — recurring)
+2026-06-26 12:05 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth expired — recurring, re-confirmed, already in TODO NEEDS ADAM #0; state untouched, 2 files pending retry)
