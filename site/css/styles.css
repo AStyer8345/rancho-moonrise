@@ -3180,7 +3180,7 @@ p { margin-bottom: 1em; }
    .hero--slideshow .hero__slide and .hero__bg rules (0,2,0). */
 .parallax-hero.parallax-hero {
     position: absolute;
-    inset: -25%;
+    inset: -10%;
     will-change: transform;
 }
 @media (prefers-reduced-motion: reduce) {

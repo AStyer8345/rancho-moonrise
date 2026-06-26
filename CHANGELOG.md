@@ -1,5 +1,12 @@
 # Rancho Moonrise — Changelog
 
+## 2026-06-26 (hero-fix, manual) — Hero slideshow zoom + quality fix
+
+- Hero photos read as over-zoomed/low-quality. Root cause: `.parallax-hero { inset: -25% }` blew each slide to 150% of the hero, so `object-fit: cover` applied a 1.5× zoom-crop and upscaled the WebP. Reduced to `inset: -10%` (1.2×) and matched the JS parallax shift `scrollY * 0.4 → 0.08` (safe ratio is `inset% ≥ speed`; old pairing 25<40 was already gap-prone). Verified no top/bottom gap at max shift (57px vs 72px overscan).
+- Aerial slide rebuilt at 1600px from its 1600px master (`about-ranch-aerial-1600.webp`, q88) and added `1600w` to its srcset; default src bumped 1024→1600.
+- Safari-tent slide removed from the slideshow (master only 800px — couldn't be sharpened at full-bleed; Adam approved dropping it). Slideshow now 4 slides / 4 dots, all from 1600–3840px sources. Content-section safari-tent images (50vw / 25vw) left as-is.
+- Committed by explicit path (hero hunk of styles.css via `git apply --cached`); concurrent-writer pre-existing changes in styles.css/main.js/contact.html/weddings.html/api/inquiry.js NOT staged.
+
 ## 2026-06-26 (rancho-site-daily) — 27th consecutive cruise-control firing, no shipped edits
 
 - Cruise-control maintenance run under GOALS.md week-of-5/18 broad Rancho pause ("No Rancho Moonrise active work — paused; cruise control only if Ashley moves"). No Ashley move this cycle. No shipped edits.

@@ -20,7 +20,7 @@
                 var el = parallaxEls[i];
                 var rect = el.getBoundingClientRect();
                 if (rect.bottom < 0 || rect.top > window.innerHeight) continue;
-                el.style.transform = 'translate3d(0,' + (scrollY * 0.4) + 'px,0)';
+                el.style.transform = 'translate3d(0,' + (scrollY * 0.08) + 'px,0)';
             }
             parallaxTicking = false;
         }
