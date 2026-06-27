@@ -1296,3 +1296,8 @@ Skipped (>10MB): PRIVATE EVENTS AT RANCHO MOONRISE.pdf, INTIMATE EVENTS AT RM.pd
 2026-06-26 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth expired — recurring)
 2026-06-26 12:05 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth expired — recurring, re-confirmed, already in TODO NEEDS ADAM #0; state untouched, 2 files pending retry)
 2026-06-26 12:09 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth expired — recurring, already in TODO NEEDS ADAM #0; state untouched, 2 files pending: hipcamp-curation-gap-audit.md NEW, improvement-plan.html MODIFIED)
+2026-06-27 05:21 | AUTH FAILED — notebooklm session expired; run 'notebooklm login' to re-authenticate. No sync performed. State file left unchanged so pending changes re-sync next run.
+2026-06-27 05:21 |   pending add: 2026-05-16-hipcamp-curation-gap-audit.md
+2026-06-27 05:21 |   pending replace: 2026-04-09-rancho-moonrise-improvement-plan.html
+2026-06-27 05:21 |   skipped (>10MB): PRIVATE EVENTS AT RANCHO MOONRISE.pdf, INTIMATE EVENTS AT RM.pdf, ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf
+2026-06-27 05:21 | scanned=65 added=0 replaced=0 skipped=3 errors=1
