@@ -1,5 +1,14 @@
 # Rancho Moonrise — Changelog
 
+## 2026-06-27 (rancho-review-monitor) — RUN_059: 26th consecutive quiet sweep + orphaned RUN_058 reconciled
+
+- 26th consecutive quiet sweep. No new reviews on any monitorable platform; no rating drops, no count drops, no new ≤3★. Cruise-control maintenance under GOALS.md week-of-5/18 broad Rancho pause (review-monitor not in the Scheduled-Tasks Pause List; monitoring ≠ active work).
+- **Continuity fix:** RUN_058 (6/26) was orphaned — its run-log was written but never committed, its `brand/review-aggregate.json` edit (57→58) sat uncommitted, and its dashboard-state/CONTEXT/CHANGELOG/TODO edits were reverted by the concurrent 6/26 `rancho-site-daily` commit. RUN_059 commits the orphaned `run-logs/2026-06-26-review-monitor.md` by explicit path and reconciles shared state 57→59 (phantom 58 never persisted on the dashboard).
+- Re-Verify Gate (8 live claims): 7 still_true, 1 CHANGED (immaterial), 0 resolved → no done-log RESOLVED line. **CHANGED:** Google WebSearch snippet oscillated 175 → 126/4.9★ (back to recent hold value; non-authoritative, ≠ live 130 STALE 39d; no review-state action). TripAdvisor DIRECT WebFetch of canonical `g56224-d33307272`: 0/unclaimed + price band HELD $63–$156 (no drift vs RUN_058). Expedia 8.0 anchor CONFIRMED targeted (29th inline; no 9.0 artifact, 5th consecutive run without). Facebook 5/100% (40th inline). The Knot Haylee L. 1★ body still indexed name-free (no owner-response; 121d unreplied).
+- BLOCKERS held no-attempt: theknot-direct-fetch (25th), hipcamp-direct-fetch (16th cycle run), airbnb 403 (58th), hotels.com (counter 42), google-count (live scrape blocked).
+- 2 carry-forward drafts still unposted (day 40 in monitor): Cassie Butterfield Google 5★ + Haylee L. Knot 1★ — both at `brand/review-reports/2026-05-19-review-report.md`; dashboard `pending`.
+- State: aggregate 58→59, dashboard-state 57→59. Committed by explicit path; pre-existing prior-session changes + concurrent-writer artifacts intentionally NOT staged. Run-log: `run-logs/2026-06-27-review-monitor.md`.
+
 ## 2026-06-26 (hero-fix, manual) — Hero slideshow zoom + quality fix
 
 - Hero photos read as over-zoomed/low-quality. Root cause: `.parallax-hero { inset: -25% }` blew each slide to 150% of the hero, so `object-fit: cover` applied a 1.5× zoom-crop and upscaled the WebP. Reduced to `inset: -10%` (1.2×) and matched the JS parallax shift `scrollY * 0.4 → 0.08` (safe ratio is `inset% ≥ speed`; old pairing 25<40 was already gap-prone). Verified no top/bottom gap at max shift (57px vs 72px overscan).
