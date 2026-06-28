@@ -1301,3 +1301,12 @@ Skipped (>10MB): PRIVATE EVENTS AT RANCHO MOONRISE.pdf, INTIMATE EVENTS AT RM.pd
 2026-06-27 05:21 |   pending replace: 2026-04-09-rancho-moonrise-improvement-plan.html
 2026-06-27 05:21 |   skipped (>10MB): PRIVATE EVENTS AT RANCHO MOONRISE.pdf, INTIMATE EVENTS AT RM.pdf, ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf
 2026-06-27 05:21 | scanned=65 added=0 replaced=0 skipped=3 errors=1
+
+## 2026-06-27 20:08 — AUTH FAILURE (no sync performed)
+NotebookLM auth expired/invalid. CLI `source list` returned ERROR; redirect to Google sign-in.
+Needs interactive re-auth: run `notebooklm login` (cannot be done unattended).
+Detected but DEFERRED until re-auth (state file intentionally NOT updated):
+- ADD (new): brand/2026-05-16-hipcamp-curation-gap-audit.md
+- REPLACE (modified): brand/2026-04-09-rancho-moonrise-improvement-plan.html (60047 → 61254 bytes)
+Skipped >10MB (3, expected): ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf (36.9MB); INTIMATE EVENTS AT RM.pdf (20.7MB); PRIVATE EVENTS AT RANCHO MOONRISE.pdf (28.8MB)
+2026-06-27 20:08 | scanned=65 added=0 replaced=0 skipped=3 errors=1 (auth)
