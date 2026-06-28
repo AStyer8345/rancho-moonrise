@@ -1,5 +1,13 @@
 # Rancho Moonrise — Changelog
 
+## 2026-06-28 (rancho-review-monitor) — RUN_060: 27th consecutive quiet sweep
+
+- 27th consecutive quiet sweep. No new reviews on any monitorable platform; no rating drops, no count drops, no new ≤3★. Cruise-control maintenance under GOALS.md week-of-5/18 broad Rancho pause (review-monitor not in the Scheduled-Tasks Pause List; monitoring ≠ active work).
+- Re-Verify Gate (8 live claims): 7 still_true, 1 CHANGED (immaterial), 0 resolved → no done-log RESOLVED line. **CHANGED:** TripAdvisor DIRECT WebFetch of canonical `g56224-d33307272`: 0/unclaimed + price band $63–$156 → $54–$156 (floor −$9, ceiling held; algorithmic standard-room rate estimate, not a review signal). Google WebSearch snippet HELD 126/4.9★ (2-run hold; non-authoritative, ≠ live 130 STALE 40d; no review-state action). Expedia 8.0 anchor CONFIRMED targeted (30th inline; no 9.0 artifact, 6th consecutive run without). Facebook 5/100% (41st inline). The Knot Haylee L. 1★ body still indexed name-free (no owner-response; 122d unreplied).
+- BLOCKERS held no-attempt: theknot-direct-fetch (26th), hipcamp-direct-fetch (17th cycle run), airbnb 403 (59th), hotels.com (counter 42), google-count (live scrape blocked).
+- 2 carry-forward drafts still unposted (day 41 in monitor): Cassie Butterfield Google 5★ + Haylee L. Knot 1★ — both at `brand/review-reports/2026-05-19-review-report.md`; dashboard `pending`.
+- Clean continuity: RUN_059 (`491021b`, 6/27) committed its log + state; no orphaned review-monitor state to reconcile. State: aggregate 59→60, dashboard-state 59→60. Committed by explicit path; pre-existing prior-session changes + concurrent-writer artifacts intentionally NOT staged. Run-log: `run-logs/2026-06-28-review-monitor.md`.
+
 ## 2026-06-27 (rancho-review-monitor) — RUN_059: 26th consecutive quiet sweep + orphaned RUN_058 reconciled
 
 - 26th consecutive quiet sweep. No new reviews on any monitorable platform; no rating drops, no count drops, no new ≤3★. Cruise-control maintenance under GOALS.md week-of-5/18 broad Rancho pause (review-monitor not in the Scheduled-Tasks Pause List; monitoring ≠ active work).
