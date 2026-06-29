@@ -1,5 +1,15 @@
 # Rancho Moonrise — Changelog
 
+## 2026-06-29 (rancho-competitive-weekly) — June 29 intel run
+
+- Two-week gap (June 22 run did not fire). Rancho unchanged 8th cruise-control week (GOALS.md week of 5/18 — paused): 0/4 non-brand, both landing pages still not surfacing (`/corporate-retreats/` ~59d, `/safari-tents-near-austin/` ~64d). Competitive monitoring is read-only — continues. No subject-property edits.
+- Method: 4 parallel research agents (live SERP + competitor fetches), US logged-out non-geo proxy. Re-Verify Gate: 11 prior claims checked — 7 still_true, 3 routine SERP-position changes, 1 genuine competitor change, 1 UNVERIFIED-on-page, **2 auto-resolved → done-log**.
+- **Both 6/15 lead claims reversed:** (1) the "broad aggregator surge" was a one-week presentation artifact — property domains reclaimed the top (Udoscape #1 glamping, Safari for the Soul #1 safari-tent, Spoon Mountain #1 romantic; Hipcamp/Glamping Hub below property sites). Explicitly NOT carried forward as trend. (2) brand-SERP ~#7 UNVERIFIED watch item RESOLVED — ranchomoonrise.com is **#1** on its own name above all aggregators (logged-out artifact).
+- **Genuine competitor change — Spoon Mountain:** starting rate ~$245 → "starting $300–500/night"; romantic-getaways page moved (old `/romantic-weekend-getaways-near-austin/` 404s → relocated to `/travel-to-wimberley/...`, same H1, still #1 narrow term). RESOLVED to done-log; report link updated.
+- Corporate cluster churned: Sage Hill #1; Crystal Creek #2 + Lucky Arrow #7 re-entered; Camp Lucy #9; The Yurtopian dropped back off (6/15 re-entry reverted). Structural gaps stable: Glamping Hub absent ~11wk; Hipcamp curated set 6th read (did NOT rotate again — Urban Hideout #1/Cozy Cactus #2/Lucky Arrow #9 held); Hotels.com banned copy 7th wk (UNVERIFIED-on-page, fetch blocked, snippet-confirmed).
+- New finding flagged: "publish your own listicle" is the repeatable competitor lever (Spoon Mountain, Cameron Ranch, Udoscape rank via own-domain guide pages) — highest-value content gap for Rancho's paused blog cluster when the pipeline reopens.
+- Outputs: Intel card dual-written byte-identical to both improvement-plan.html files (verified via diff); `site/competitive-intelligence.md` rewritten for June 29; CONTEXT/TODO refreshed; 2 done-log RESOLVED entries. Run-log: `run-logs/2026-06-29-competitive.md`. Committed by explicit path only.
+
 ## 2026-06-29 (rancho-site-daily) — 29th consecutive cruise-control firing
 
 - 29th consecutive `rancho-site-daily` cruise-control firing. No shipped edits. GOALS.md still week-of-5/18 ("No Rancho Moonrise active work — paused; cruise control only if Ashley moves"); no Ashley move this cycle.
