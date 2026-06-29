@@ -1,5 +1,13 @@
 # Rancho Moonrise — Changelog
 
+## 2026-06-29 (rancho-review-monitor) — RUN_061: 28th consecutive quiet sweep
+
+- 28th consecutive quiet sweep. No new reviews on any monitorable platform; no rating drops, no count drops, no new ≤3★. Cruise-control maintenance under GOALS.md week-of-5/18 broad Rancho pause (review-monitor not in the Scheduled-Tasks Pause List; monitoring ≠ active work).
+- Re-Verify Gate (8 live claims): 6 still_true, 2 CHANGED (both immaterial), 0 resolved → no done-log RESOLVED line. **CHANGED:** (1) TripAdvisor DIRECT WebFetch of canonical `g56224-d33307272`: 0/unclaimed + price band $54–$156 → $51–$156 (floor −$3, ceiling held; algorithmic standard-room rate estimate, not a review signal); fetch also surfaced a "Travelers' Choice award designation" string on the 0-review unclaimed listing — page-template/cross-listing artifact, NOT a real award (no action). (2) Google WebSearch snippet OSCILLATED 126 → 175 (back to alternate value; 4.9★ not surfaced inline; non-authoritative, ≠ live 130 STALE 41d; no review-state action). Expedia 8.0 anchor CONFIRMED targeted (31st inline; no 9.0 artifact, 7th consecutive run without). Facebook 5/100% (42nd inline). The Knot Haylee L. 1★ body still indexed name-free (no owner-response; 123d unreplied); listing count/rating SURFACED inline this run — 8 reviews / 4.5★ re-confirmed.
+- BLOCKERS held no-attempt: theknot-direct-fetch (27th), hipcamp-direct-fetch (18th cycle run), airbnb 403 (60th), hotels.com (counter 42), google-count (live scrape blocked).
+- 2 carry-forward drafts still unposted (day 42 in monitor): Cassie Butterfield Google 5★ + Haylee L. Knot 1★ — both at `brand/review-reports/2026-05-19-review-report.md`; dashboard `pending`.
+- Clean continuity: RUN_060 (6/28) committed its log + state; no orphaned review-monitor state to reconcile. State: aggregate 60→61, dashboard-state 60→61. Committed by explicit path; pre-existing prior-session changes + concurrent-writer artifacts intentionally NOT staged. Run-log: `run-logs/2026-06-29-review-monitor.md`.
+
 ## 2026-06-29 (rancho-competitive-weekly) — June 29 intel run
 
 - Two-week gap (June 22 run did not fire). Rancho unchanged 8th cruise-control week (GOALS.md week of 5/18 — paused): 0/4 non-brand, both landing pages still not surfacing (`/corporate-retreats/` ~59d, `/safari-tents-near-austin/` ~64d). Competitive monitoring is read-only — continues. No subject-property edits.
