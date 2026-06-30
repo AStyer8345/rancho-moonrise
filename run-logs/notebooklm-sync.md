@@ -1365,3 +1365,11 @@ Detected but DEFERRED until re-auth (state file intentionally NOT updated, so th
 Skipped >10MB (3, expected): ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf; INTIMATE EVENTS AT RM.pdf; PRIVATE EVENTS AT RANCHO MOONRISE.pdf
 Skipped non-synced ext (1, expected): review-aggregate.json
 2026-06-29 16:09 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth)
+
+## 2026-06-30 11:23 — auth expired, sync deferred
+- NotebookLM CLI auth expired/invalid (`notebooklm source list` returned ERROR; redirect to Google sign-in). Needs `notebooklm login`.
+- Detected but NOT synced (state file left unchanged so these re-sync after re-auth):
+  - NEW: brand/2026-05-16-hipcamp-curation-gap-audit.md
+  - MODIFIED: brand/2026-04-09-rancho-moonrise-improvement-plan.html
+- Skipped (>10MB, never synced): PRIVATE EVENTS AT RANCHO MOONRISE.pdf (28.8MB), INTIMATE EVENTS AT RM.pdf (20.7MB), ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf (36.9MB)
+2026-06-30 11:23 | scanned=65 added=0 replaced=0 skipped=3 errors=1 (auth_expired)
