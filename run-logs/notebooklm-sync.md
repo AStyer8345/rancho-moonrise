@@ -1355,3 +1355,13 @@ Detected but DEFERRED until re-auth (state file intentionally NOT updated, so th
 - REPLACE (modified): brand/2026-04-09-rancho-moonrise-improvement-plan.html (60047 → 61254 bytes)
 Skipped >10MB (3, expected): ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf; INTIMATE EVENTS AT RM.pdf; PRIVATE EVENTS AT RANCHO MOONRISE.pdf
 2026-06-29 12:08 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth)
+
+## 2026-06-29 16:09 — AUTH FAILURE (no sync performed) — 7th consecutive run
+NotebookLM auth still expired/invalid. Re-verified live this run (stale-flag policy): CLI `source list --json` returns `{"error":true,"code":"ERROR","message":"Authentication expired or invalid..."}` with redirect to Google sign-in. Resolution requires interactive `notebooklm login` — cannot be performed in an unattended scheduled run.
+FLAG_FOR_ADAM: NotebookLM session must be re-authenticated (`notebooklm login`) for Rancho sync to resume. Broken since ~2026-06-27. Same 2 files deferred across 7 runs now.
+Detected but DEFERRED until re-auth (state file intentionally NOT updated, so these retry next run):
+- ADD (new): brand/2026-05-16-hipcamp-curation-gap-audit.md
+- REPLACE (modified): brand/2026-04-09-rancho-moonrise-improvement-plan.html (60047 → 61254 bytes)
+Skipped >10MB (3, expected): ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf; INTIMATE EVENTS AT RM.pdf; PRIVATE EVENTS AT RANCHO MOONRISE.pdf
+Skipped non-synced ext (1, expected): review-aggregate.json
+2026-06-29 16:09 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth)
