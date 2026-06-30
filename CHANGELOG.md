@@ -1,5 +1,14 @@
 # Rancho Moonrise — Changelog
 
+## 2026-06-30 (rancho-site-daily) — 30th consecutive cruise-control firing
+
+- 30th consecutive `rancho-site-daily` cruise-control firing. No shipped edits. GOALS.md still week-of-5/18 ("No Rancho Moonrise active work — paused; cruise control only if Ashley moves"); no Ashley move this cycle.
+- CreativeWork-property enrichment arc on BlogPosting JSON-LD closed 5/26 — no surgical autonomous slot remains. Person-author research + AggregateRating-on-BlogPosting both deferred again (each adds NEEDS-ADAM noise or a 17-file diff against a paused workstream Adam isn't reviewing this week).
+- Re-Verify Gate (live, 7/7 still_true, 0 resolved): apex 200 + `server: Vercel` + `x-vercel-cache: HIT` (`age: 38355` ≈ 10.7 hr); www 308 → apex; sitemap / corp-retreats / safari-tents / blog all 200; BlogPosting CreativeWork 6-property spot-check on `/blog/glamping-near-austin-texas/` intact 35 days post-5/26 deploy (dateModified 2026-05-26, wordCount 1005, articleSection "Glamping", inLanguage "en-US", isAccessibleForFree true, copyrightYear 2026).
+- Clean continuity: 6/29 SEO log committed in `f0501b7`; no orphaned SEO run-log to reconcile this cycle. Pre-existing prior-session changes (api/inquiry.js, styles.css, main.js, contact.html, weddings.html) + concurrent-writer artifacts (`*" 2".*`/`*" 3".*`, `TODO.md.tmp.*`, `AGENTS.md`, `rancho-moonrise-assets/`, duplicated images) intentionally NOT staged. Commit by explicit path only.
+- Ownership boundaries not re-litigated: indexing claims owned by competitive-weekly + Adam; review/GBP owned by review-monitor / gbp-weekly. No site/pages/* edits, no schema edits, no sitemap touch. No SEO task IDs (s1–s8) touched, no done-log entry.
+- Run-log: `run-logs/2026-06-30-seo.md`.
+
 ## 2026-06-29 (rancho-review-monitor) — RUN_061: 28th consecutive quiet sweep
 
 - 28th consecutive quiet sweep. No new reviews on any monitorable platform; no rating drops, no count drops, no new ≤3★. Cruise-control maintenance under GOALS.md week-of-5/18 broad Rancho pause (review-monitor not in the Scheduled-Tasks Pause List; monitoring ≠ active work).
