@@ -2066,3 +2066,16 @@ Verifications summary: still_true=11, stale=1 (Google live-count carry), blocked
 [2026-06-16 09:10] re-verify google-unreplied — still_true — live=1 prior=1 (Cassie carry)
 [2026-06-16 09:10] re-verify theknot-unreplied — still_true — live=1 prior=1 (Haylee carry)
 BLOCKERS no-attempt: airbnb(52) hotels.com(42) theknot-direct(19) hipcamp-direct(10th cycle) google-count. Carry-forward drafts day 29: Cassie (Google 5★), Haylee L. (Knot 1★, 110d). Dashboard pending. Run-log: run-logs/2026-06-16-review-monitor.md.
+
+---
+
+[2026-06-30 06:30] RUN_062 — 29th consecutive quiet sweep — no new reviews on any monitorable platform; no rating/count drops, no new ≤3★. ok.
+[2026-06-30 06:30] re-verify tripadvisor-reviews — still_true — live=0/unclaimed prior=0/unclaimed
+[2026-06-30 06:30] re-verify tripadvisor-price-range — changed — live=$45-$154 prior=$51-$156 (floor -$6, ceiling -$2; immaterial rate estimate)
+[2026-06-30 06:30] re-verify google-snippet-count — changed — live=126 prior=175 (oscillated to common hold value; non-authoritative, live-authoritative=130 STALE 42d; no action)
+[2026-06-30 06:30] re-verify expedia-rating — still_true — live=8.0(confirmed) prior=8.0 (32nd inline; no 9.0 artifact, 8th consecutive run without)
+[2026-06-30 06:30] re-verify facebook-reviews — still_true — live=5/100% prior=5/100% (43rd inline)
+[2026-06-30 06:30] re-verify theknot-haylee-l-live — still_true — live=body-indexed prior=body-indexed (124d unreplied; count not surfaced inline, 8/4.5★ carried)
+[2026-06-30 06:30] re-verify google-unreplied — still_true — live=1 prior=1 (Cassie carry)
+[2026-06-30 06:30] re-verify theknot-unreplied — still_true — live=1 prior=1 (Haylee carry)
+BLOCKERS no-attempt: airbnb(61) hotels.com(42) theknot-direct(28) hipcamp-direct(19th cycle) google-count. Carry-forward drafts day 43: Cassie (Google 5★), Haylee L. (Knot 1★, 124d). Dashboard pending. Run-log: run-logs/2026-06-30-review-monitor.md.

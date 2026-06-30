@@ -9,6 +9,14 @@
 - Ownership boundaries not re-litigated: indexing claims owned by competitive-weekly + Adam; review/GBP owned by review-monitor / gbp-weekly. No site/pages/* edits, no schema edits, no sitemap touch. No SEO task IDs (s1–s8) touched, no done-log entry.
 - Run-log: `run-logs/2026-06-30-seo.md`.
 
+## 2026-06-30 (rancho-review-monitor) — RUN_062: 29th consecutive quiet sweep
+
+- rancho-review-monitor: scraped reviews across 5 working paths (TripAdvisor direct; Google/Expedia/Facebook/The Knot via search), 0 new reviews, 0 stale claims resolved, 0 response drafts produced. Quiet sweep.
+- Re-Verify Gate (8 live claims): 6 still_true, 2 CHANGED (both immaterial), 0 resolved → no done-log RESOLVED line. **CHANGED:** (1) TripAdvisor price band $51–$156 → $45–$154 (floor −$6, ceiling −$2; algorithmic standard-room rate estimate, not a review signal; 0/unclaimed held; no Travelers' Choice artifact string this run — RUN_061's string did not recur, confirming transient page-template artifact). (2) Google WebSearch snippet OSCILLATED 175 → 126/4.9★ (back to common hold value, inline; non-authoritative, ≠ live 130 STALE 42d). Expedia 8.0 anchor CONFIRMED targeted (32nd inline; no 9.0 artifact, 8th consecutive run without). Facebook 5/100% (43rd inline). The Knot Haylee L. 1★ body still indexed name-free (no owner-response; 124d unreplied); listing count/rating did NOT surface inline this run — 8 reviews / 4.5★ carried.
+- BLOCKERS held no-attempt: theknot-direct-fetch (28th), hipcamp-direct-fetch (19th cycle run), airbnb 403 (61st), hotels.com (counter 42), google-count (live scrape blocked).
+- 2 carry-forward drafts still unposted (day 43 in monitor): Cassie Butterfield Google 5★ + Haylee L. Knot 1★ — both at `brand/review-reports/2026-05-19-review-report.md`. Dashboard `pending`.
+- State: aggregate 61→62, dashboard-state 61→62. Clean continuity (RUN_061 committed its log + state; no orphan to reconcile; today's site-daily committed CONTEXT/CHANGELOG/TODO at `9dca613` first). Committed by explicit path; prior-session changes + concurrent-writer artifacts NOT staged. Run-log: `run-logs/2026-06-30-review-monitor.md`.
+
 ## 2026-06-29 (rancho-review-monitor) — RUN_061: 28th consecutive quiet sweep
 
 - 28th consecutive quiet sweep. No new reviews on any monitorable platform; no rating drops, no count drops, no new ≤3★. Cruise-control maintenance under GOALS.md week-of-5/18 broad Rancho pause (review-monitor not in the Scheduled-Tasks Pause List; monitoring ≠ active work).
