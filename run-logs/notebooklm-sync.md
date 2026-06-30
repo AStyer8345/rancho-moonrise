@@ -1383,3 +1383,9 @@ Skipped non-synced ext (1, expected): review-aggregate.json
   - MODIFIED: brand/2026-04-09-rancho-moonrise-improvement-plan.html (60047 → 61254 bytes)
 - Skipped (>10MB, never synced): PRIVATE EVENTS AT RANCHO MOONRISE.pdf (28.8MB), INTIMATE EVENTS AT RM.pdf (20.7MB), ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf (36.9MB)
 2026-06-30 12:42 | scanned=65 added=0 replaced=0 skipped=3 errors=1 (auth_expired)
+
+## 2026-06-30 16:19 — auth still expired, sync deferred (9th run)
+- `notebooklm use`/`source list` return "Authentication expired or invalid" (Google sign-in redirect). Needs interactive `notebooklm login` — cannot run headless. Verified live this run.
+- Same 2 files deferred since ~2026-06-27. State file deliberately NOT updated so they re-sync once auth is restored.
+- FLAG_FOR_ADAM: run `notebooklm login` to restore the Rancho NotebookLM session. Backlog is 2 small files (1 new, 1 modified).
+2026-06-30 16:19 | scanned=65 added=0 replaced=0 skipped=3 errors=1 (auth_expired)
