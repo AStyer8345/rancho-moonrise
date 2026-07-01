@@ -1389,3 +1389,6 @@ Skipped non-synced ext (1, expected): review-aggregate.json
 - Same 2 files deferred since ~2026-06-27. State file deliberately NOT updated so they re-sync once auth is restored.
 - FLAG_FOR_ADAM: run `notebooklm login` to restore the Rancho NotebookLM session. Backlog is 2 small files (1 new, 1 modified).
 2026-06-30 16:19 | scanned=65 added=0 replaced=0 skipped=3 errors=1 (auth_expired)
+
+2026-07-01 12:08 | ERROR: NotebookLM auth expired — 'notebooklm login' re-auth needed (interactive). Detected 1 new (2026-05-16-hipcamp-curation-gap-audit.md) + 1 modified (2026-04-09-rancho-moonrise-improvement-plan.html) but could not upload. State file left UNCHANGED so next run re-detects.
+2026-07-01 12:08 | scanned=65 added=0 replaced=0 skipped=4 errors=1
