@@ -1435,3 +1435,18 @@ Pending changes (unchanged from prior run):
 - REPLACE: 2026-04-09-rancho-moonrise-improvement-plan.html (modified, 60047 → 61254 bytes)
 
 2026-07-02 12:08 | scanned=65 added=0 replaced=0 skipped=7 errors=1 (auth expired — 2 changes deferred)
+
+---
+## Run 2026-07-02 18:05
+
+NotebookLM auth STILL expired ("Authentication expired or invalid" — CLI redirects to Google sign-in). This is the **3rd consecutive failed run today** (prior: 01:44, 12:08). A scheduled task cannot run the interactive OAuth/browser flow, so this cannot self-heal — Adam must run `notebooklm login` in an interactive terminal.
+
+No source operations performed. State file NOT updated — the same 2 changes stay deferred for the next run once auth is restored.
+
+Pending changes (unchanged, deferred across all 3 runs today):
+- ADD: 2026-05-16-hipcamp-curation-gap-audit.md (new, 18543 bytes)
+- REPLACE: 2026-04-09-rancho-moonrise-improvement-plan.html (modified, 60047 → 61254 bytes)
+
+Also skipped (over 10MB size cap, not syncable regardless): PRIVATE EVENTS AT RANCHO MOONRISE.pdf (28.8MB), INTIMATE EVENTS AT RM.pdf (20.7MB), ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf (36.9MB).
+
+2026-07-02 18:05 | scanned=65 added=0 replaced=0 skipped=7 errors=1 (auth expired — 2 changes deferred, 3rd consecutive failure)
