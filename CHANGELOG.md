@@ -1,5 +1,14 @@
 # Rancho Moonrise — Changelog
 
+## 2026-07-02 (rancho-site-daily) — 31st consecutive cruise-control firing
+
+- 31st consecutive `rancho-site-daily` cruise-control firing. No shipped edits. GOALS.md still week-of-5/18 ("No Rancho Moonrise active work — paused; cruise control only if Ashley moves"); no Ashley move this cycle.
+- CreativeWork-property enrichment arc on BlogPosting JSON-LD closed 5/26 — no surgical autonomous slot remains. Person-author research + AggregateRating-on-BlogPosting both deferred again (each adds NEEDS-ADAM noise or a 17-file diff against a paused workstream).
+- Re-Verify Gate (live, 7/7 still_true, 0 resolved): apex 200 + `server: Vercel` + `x-vercel-cache: HIT` (`age: 26543` ≈ 7.4 hr); www 308 → apex; sitemap / corp-retreats / safari-tents / blog all 200; BlogPosting CreativeWork 6-property spot-check on `/blog/glamping-near-austin-texas/` intact 37 days post-5/26 deploy (dateModified 2026-05-26, wordCount 1005, articleSection "Glamping", inLanguage "en-US", isAccessibleForFree true, copyrightYear 2026).
+- Clean continuity: 6/30 SEO log committed in `9dca613`; no 7/1 SEO log (1-day gap — site-daily did not fire 7/1 — not an orphan). Note: bi-weekly business audit due today per CONTEXT — owned by the audit task, not site-daily; not run here.
+- Pre-existing prior-session changes (api/inquiry.js, styles.css, main.js, contact.html, weddings.html) + concurrent-writer artifacts (`*" 2".*`/`*" 3".*`, `TODO.md.tmp.*`, `AGENTS.md`, `CHANGELOG 2.md`, `TODO 2.md`, `rancho-moonrise-assets/`, `youtube-uploads/`, duplicated images) intentionally NOT staged. Commit by explicit path only.
+- Run-log: `run-logs/2026-07-02-seo.md`. No SEO task IDs (s1–s8) touched, no done-log entry.
+
 ## 2026-06-30 (rancho-site-daily) — 30th consecutive cruise-control firing
 
 - 30th consecutive `rancho-site-daily` cruise-control firing. No shipped edits. GOALS.md still week-of-5/18 ("No Rancho Moonrise active work — paused; cruise control only if Ashley moves"); no Ashley move this cycle.
