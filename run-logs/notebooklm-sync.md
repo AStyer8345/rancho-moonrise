@@ -1407,3 +1407,20 @@ Skipped non-synced ext (1, expected): review-aggregate.json
 - Skipped (>10MB, never eligible): PRIVATE EVENTS (30.2MB), INTIMATE EVENTS (21.7MB), ALL INCLUSIVE RETREATS (38.7MB)
 - FLAG_FOR_ADAM (re-verified this run): run `notebooklm login` to restore the Rancho NotebookLM session. Only fix needed; backlog is 2 small files.
 2026-07-01 16:10 | scanned=65 added=0 replaced=0 skipped=3 errors=1 (auth_expired)
+
+## 2026-07-02 01:44 — SYNC FAILED (auth expired)
+
+NotebookLM CLI returned: "Authentication expired or invalid" — run `notebooklm login` to re-authenticate.
+No source operations performed. State file NOT updated so pending files retry next run.
+
+Pending changes detected (deferred):
+- ADD: 2026-05-16-hipcamp-curation-gap-audit.md (new)
+- REPLACE: 2026-04-09-rancho-moonrise-improvement-plan.html (modified, 60047 → 61254 bytes)
+
+Skipped this scan (over 10MB / disallowed ext):
+- ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf (36.9MB)
+- INTIMATE EVENTS AT RM.pdf (20.7MB)
+- PRIVATE EVENTS AT RANCHO MOONRISE.pdf (28.8MB)
+- review-aggregate.json (ext not allowed)
+
+2026-07-02 01:44 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth expired — 2 changes deferred)
