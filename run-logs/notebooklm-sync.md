@@ -1399,3 +1399,11 @@ Skipped non-synced ext (1, expected): review-aggregate.json
 - Backlog (2 files): NEW brand/2026-05-16-hipcamp-curation-gap-audit.md · MODIFIED brand/2026-04-09-rancho-moonrise-improvement-plan.html (60047→61254)
 - FLAG_FOR_ADAM (re-verified this run): run `notebooklm login` to restore the Rancho NotebookLM session. That's the only fix; backlog is 2 small files.
 2026-07-01 12:15 | scanned=65 added=0 replaced=0 skipped=3 errors=1 (auth_expired)
+
+## 2026-07-01 (Week of May 18 GOALS) — auth STILL expired, sync deferred
+- Verified live this run: `notebooklm use`/`source list` → "Authentication expired or invalid" (Google sign-in redirect). Headless re-auth impossible.
+- Broken since ~2026-06-27. Identical 2-file backlog every run; state file deliberately NOT updated so both re-sync the instant auth returns.
+- Backlog (2 files): NEW brand/2026-05-16-hipcamp-curation-gap-audit.md · MODIFIED brand/2026-04-09-rancho-moonrise-improvement-plan.html (60047→61254 bytes)
+- Skipped (>10MB, never eligible): PRIVATE EVENTS (30.2MB), INTIMATE EVENTS (21.7MB), ALL INCLUSIVE RETREATS (38.7MB)
+- FLAG_FOR_ADAM (re-verified this run): run `notebooklm login` to restore the Rancho NotebookLM session. Only fix needed; backlog is 2 small files.
+2026-07-01 16:10 | scanned=65 added=0 replaced=0 skipped=3 errors=1 (auth_expired)
