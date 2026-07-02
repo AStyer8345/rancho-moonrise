@@ -1424,3 +1424,14 @@ Skipped this scan (over 10MB / disallowed ext):
 - review-aggregate.json (ext not allowed)
 
 2026-07-02 01:44 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth expired — 2 changes deferred)
+
+---
+## Run 2026-07-02 12:08
+
+NotebookLM auth STILL expired ("Authentication expired or invalid" — needs `notebooklm login` in an interactive session). Scheduled task cannot run the OAuth/browser flow. No source operations performed. State file NOT updated — same 2 changes remain deferred for retry.
+
+Pending changes (unchanged from prior run):
+- ADD: 2026-05-16-hipcamp-curation-gap-audit.md (new, 18543 bytes)
+- REPLACE: 2026-04-09-rancho-moonrise-improvement-plan.html (modified, 60047 → 61254 bytes)
+
+2026-07-02 12:08 | scanned=65 added=0 replaced=0 skipped=7 errors=1 (auth expired — 2 changes deferred)
