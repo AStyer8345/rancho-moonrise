@@ -1465,3 +1465,13 @@ Pending changes (unchanged, deferred across 4 runs now):
 Also skipped (over 10MB size cap, not syncable regardless): PRIVATE EVENTS AT RANCHO MOONRISE.pdf (28.8MB), INTIMATE EVENTS AT RM.pdf (20.7MB), ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf (36.9MB). Also skipped (non-allowed .json ext): review-aggregate.json.
 
 2026-07-03 01:23 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth expired — 2 changes deferred, 4th consecutive failure)
+
+## 2026-07-03 04:49 — NotebookLM auth expired (run aborted, no sync)
+NotebookLM API returned "Authentication expired or invalid" (redirect to Google sign-in).
+Cannot re-auth in a non-interactive scheduled run — requires `notebooklm login` (browser OAuth) by Adam.
+State file left UNCHANGED so the 2 deferred changes are re-detected once auth is restored:
+- PENDING ADD: brand/2026-05-16-hipcamp-curation-gap-audit.md
+- PENDING REPLACE: brand/2026-04-09-rancho-moonrise-improvement-plan.html
+>> 5th consecutive failed run. ACTION FOR ADAM: run `notebooklm login` to re-authenticate, then this sync self-heals.
+
+2026-07-03 04:49 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth expired — 2 changes deferred, 5th consecutive failure; needs `notebooklm login`)
