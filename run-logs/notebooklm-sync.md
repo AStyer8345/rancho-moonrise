@@ -1484,3 +1484,13 @@ State file left UNTOUCHED. Same 2 changes still deferred:
 >> 6th consecutive failed run. ACTION FOR ADAM: run `notebooklm login` (browser OAuth). Sync self-heals after.
 
 2026-07-03 08:08 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth expired — 2 changes deferred, 6th consecutive failure; needs `notebooklm login`)
+
+## 2026-07-03 12:08 — NotebookLM auth still expired (run aborted, no sync)
+Verified live: `notebooklm source list --json` returns "Authentication expired or invalid" (redirect to Google sign-in). Unchanged from prior 6 runs.
+State file left UNTOUCHED so pending changes re-detect once auth is restored.
+- PENDING ADD: brand/2026-05-16-hipcamp-curation-gap-audit.md
+- PENDING REPLACE: brand/2026-04-09-rancho-moonrise-improvement-plan.html
+- SKIPPED (>10MB, oversize regardless of auth): brand/PRIVATE EVENTS AT RANCHO MOONRISE.pdf (30MB), brand/INTIMATE EVENTS AT RM.pdf (21MB), brand/ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf (38MB)
+>> 7th consecutive failed run. ACTION FOR ADAM: run `notebooklm login` (browser OAuth). Sync self-heals on the next run after.
+
+2026-07-03 12:08 | scanned=68 added=0 replaced=0 skipped=3 errors=1 (auth expired — 2 changes deferred, 7th consecutive failure; needs `notebooklm login`)
