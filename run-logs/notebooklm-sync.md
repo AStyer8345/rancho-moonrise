@@ -1475,3 +1475,12 @@ State file left UNCHANGED so the 2 deferred changes are re-detected once auth is
 >> 5th consecutive failed run. ACTION FOR ADAM: run `notebooklm login` to re-authenticate, then this sync self-heals.
 
 2026-07-03 04:49 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth expired — 2 changes deferred, 5th consecutive failure; needs `notebooklm login`)
+
+## 2026-07-03 08:08 — NotebookLM auth still expired (run aborted, no sync)
+Verified live: `source list` returns "Authentication expired or invalid." Unchanged from prior runs.
+State file left UNTOUCHED. Same 2 changes still deferred:
+- PENDING ADD: brand/2026-05-16-hipcamp-curation-gap-audit.md
+- PENDING REPLACE: brand/2026-04-09-rancho-moonrise-improvement-plan.html
+>> 6th consecutive failed run. ACTION FOR ADAM: run `notebooklm login` (browser OAuth). Sync self-heals after.
+
+2026-07-03 08:08 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth expired — 2 changes deferred, 6th consecutive failure; needs `notebooklm login`)
