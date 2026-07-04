@@ -1494,3 +1494,11 @@ State file left UNTOUCHED so pending changes re-detect once auth is restored.
 >> 7th consecutive failed run. ACTION FOR ADAM: run `notebooklm login` (browser OAuth). Sync self-heals on the next run after.
 
 2026-07-03 12:08 | scanned=68 added=0 replaced=0 skipped=3 errors=1 (auth expired — 2 changes deferred, 7th consecutive failure; needs `notebooklm login`)
+
+## 2026-07-03 15:05 — auth still expired (8th consecutive failure)
+Verified live: `notebooklm list --json` returns `Authentication expired or invalid` with redirect to Google sign-in. `notebooklm use <id>` shows "Warning: Authentication expired or invalid." No notebook operations possible this run.
+State file left UNTOUCHED — pending changes will re-detect automatically once auth is restored.
+Scanned 65 eligible files across brand/ (30) + deal/ (35). Oversize PDFs (>10MB) remain skipped regardless of auth.
+>> 8th consecutive failed run. ACTION FOR ADAM: run `notebooklm login` (browser OAuth) once — sync self-heals on the next scheduled run.
+
+2026-07-03 15:05 | scanned=65 added=0 replaced=0 skipped=0 errors=1 (auth expired — needs `notebooklm login`, 8th consecutive failure)
