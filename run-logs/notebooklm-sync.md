@@ -1502,3 +1502,6 @@ Scanned 65 eligible files across brand/ (30) + deal/ (35). Oversize PDFs (>10MB)
 >> 8th consecutive failed run. ACTION FOR ADAM: run `notebooklm login` (browser OAuth) once — sync self-heals on the next scheduled run.
 
 2026-07-03 15:05 | scanned=65 added=0 replaced=0 skipped=0 errors=1 (auth expired — needs `notebooklm login`, 8th consecutive failure)
+2026-07-04 10:20 | AUTH FAILURE — NotebookLM session expired. `notebooklm login` required (interactive OAuth, cannot run in scheduled task).
+2026-07-04 10:20 | Deferred (not synced): NEW 2026-05-16-hipcamp-curation-gap-audit.md; MODIFIED 2026-04-09-rancho-moonrise-improvement-plan.html (60047→61254 bytes). State file left unchanged so next run re-detects.
+2026-07-04 10:20 | scanned=65 added=0 replaced=0 skipped=4 errors=1
