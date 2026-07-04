@@ -1509,3 +1509,7 @@ Scanned 65 eligible files across brand/ (30) + deal/ (35). Oversize PDFs (>10MB)
 2026-07-04 12:13 | AUTH FAILURE — NotebookLM session still expired. `notebooklm login` (interactive OAuth) required; cannot run in scheduled task. 10th consecutive failed run.
 2026-07-04 12:13 | Deferred (unchanged from prior runs): NEW 2026-05-16-hipcamp-curation-gap-audit.md; MODIFIED 2026-04-09-rancho-moonrise-improvement-plan.html. State file left UNTOUCHED so both re-detect once auth is restored.
 2026-07-04 12:13 | scanned=65 added=0 replaced=0 skipped=4 errors=1
+
+2026-07-04 16:21 | AUTH FAILURE — NotebookLM session still expired (`source list --json` → "Authentication expired or invalid", redirect to Google sign-in). 11th consecutive failed run. `notebooklm login` (interactive OAuth) required — cannot run in a scheduled task.
+2026-07-04 16:21 | Deferred (unchanged from prior runs): NEW brand/2026-05-16-hipcamp-curation-gap-audit.md; MODIFIED brand/2026-04-09-rancho-moonrise-improvement-plan.html (60047→61254). State file left UNTOUCHED so both re-detect once auth is restored.
+2026-07-04 16:21 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth expired — needs `notebooklm login`)
