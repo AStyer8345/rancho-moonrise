@@ -10,7 +10,7 @@ Priority: broken/placeholder assets first, then highest-impression landing pages
 | Page | Last Touch | Status |
 |------|-----------|--------|
 | `weddings.html` | 2026-04-22 | BLOCKED — see run log below |
-| `accommodations.html` | 2026-06-17 | BLOCKED — same two NEEDS ADAM items (run 7, 56 days; GOALS.md week of 5/18 still pauses Rancho broadly) |
+| `accommodations.html` | 2026-07-15 | BLOCKED — same two NEEDS ADAM items (run 9, 84 days; GOALS.md week of 5/18 still pauses Rancho broadly) |
 | `host-your-event.html` | — | Pending |
 | `events.html` | — | Pending |
 | `pool-day-pass-austin.html` | — | Pending |
@@ -129,3 +129,9 @@ Both hard stops re-verified live still true (`find brand -iname "*testimonial*" 
 ### 2026-06-24 — BLOCKED (run 8; one-liner per 5/13 commitment)
 
 Both hard stops re-verified live still true (`find brand -iname "*testimonial*" -o -iname "*approved*"` = 0 hits; `grep -iE "byline|author.*(adam|ashley)|settled decision" GOALS.md` = 0 matches). GOALS.md still week of 5/18 — "No Rancho Moonrise active work — paused (cruise control only if Ashley moves)." 8th structurally-blocked content-weekly run (4/22, 4/29, 5/06, 5/13, 6/03, 6/10, 6/17, 6/24); 63-day blocker pattern. A compliant strengthening pass needs ≥3 of 4 elements; author-block and testimonial are hard-blocked and the photo element is NEEDS ADAM (low-res/placeholder) — only "local detail" remains, which alone fails the ≥3 bar. No landing-page edits. Single-ask pause request lives in the 5/13 entry and TODO.md NEEDS ADAM #0 — not re-litigated here. Next run: 2026-07-01.
+
+---
+
+### 2026-07-15 — BLOCKED (run 9; one-liner per 5/13 commitment)
+
+Both hard stops re-verified live still true (`find brand site -iname "*testimonial*" -o -iname "*approved*"` = 0 hits; `grep -in "byline|settled decision|author.*adam|author.*ashley" GOALS.md` = 0 matches). GOALS.md still week of 5/18 (last updated 7/02 — a LoanOS-only edit; the Rancho line "No Rancho Moonrise active work — paused (cruise control only if Ashley moves)" is unchanged). 9th structurally-blocked content-weekly run (4/22, 4/29, 5/06, 5/13, 6/03, 6/10, 6/17, 6/24, 7/15); 84-day blocker pattern. No landing-page edits. Single-ask pause request lives in the 5/13 entry and TODO.md NEEDS ADAM #0 — not re-litigated here. Committed queue file only by explicit path; pre-existing prior-session changes + concurrent-writer artifacts intentionally NOT staged. Next run: 2026-07-22.
