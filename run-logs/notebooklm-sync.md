@@ -1520,3 +1520,11 @@ Scanned 65 eligible files across brand/ (30) + deal/ (35). Oversize PDFs (>10MB)
 2026-07-05 11:10 | AUTH FAILURE: notebooklm CLI session expired — run `notebooklm login` to re-auth. No sources synced. State file NOT updated so pending files retry next run.
 2026-07-05 11:10 |   pending-new: 2026-05-16-hipcamp-curation-gap-audit.md | pending-modified: 2026-04-09-rancho-moonrise-improvement-plan.html | skipped-too-big(>10MB): PRIVATE EVENTS AT RANCHO MOONRISE.pdf, INTIMATE EVENTS AT RM.pdf, ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf
 2026-07-05 11:10 | scanned=65 added=0 replaced=0 skipped=3 errors=1
+
+## 2026-07-15 15:18 — auth still expired (13th+ consecutive failure; last successful sync predates 2026-07-03)
+Verified live this run: `notebooklm source list --json` → `{"error":true,"code":"ERROR","message":"Authentication expired or invalid..."}` with redirect to Google sign-in. `notebooklm use <id>` prints "Warning: Authentication expired or invalid." No notebook operations possible.
+Scanned 65 eligible files (brand/ + deal/). State file left UNTOUCHED so pending changes re-detect once auth is restored.
+Deferred (unchanged across all failed runs since 2026-07-03): NEW brand/2026-05-16-hipcamp-curation-gap-audit.md; MODIFIED brand/2026-04-09-rancho-moonrise-improvement-plan.html (60047→61254 bytes).
+Skipped >10MB (skipped regardless of auth): ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf (36.9MB), PRIVATE EVENTS AT RANCHO MOONRISE.pdf (28.8MB), INTIMATE EVENTS AT RM.pdf (20.7MB).
+>> ACTION FOR ADAM: run `notebooklm login` (one-time browser OAuth). Sync self-heals on the next scheduled run. This has now failed continuously for 12+ days.
+2026-07-15 15:18 | scanned=65 added=0 replaced=0 skipped=3 errors=1 (auth expired — needs `notebooklm login`)
