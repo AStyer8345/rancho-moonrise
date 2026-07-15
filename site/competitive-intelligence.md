@@ -1,180 +1,184 @@
 # Rancho Moonrise — Competitive Intelligence Report
 **Prepared for:** Rancho Moonrise Operations
 **Subject Property:** Rancho Moonrise · 20117 Lockwood Rd, 78653 (20 min from downtown Austin)
-**Research Date:** June 29, 2026
-**Previous Report:** June 15, 2026 (June 22 run did not fire — two-week gap)
+**Research Date:** July 15, 2026
+**Previous Report:** June 29, 2026 (July 6 run did not fire)
 
 ---
 
 ## Executive Summary
 
-Eighth consecutive cruise-control week on the subject-property side (GOALS.md week of 5/18 keeps Rancho paused). Rancho didn't move: still 0/4 on tracked non-brand keywords, both post-launch landing pages still not surfacing — `/corporate-retreats/` now ~59 days and `/safari-tents-near-austin/` now ~64 days since launch with no direct evidence of indexing.
+Tenth consecutive cruise-control week on Rancho's own SEO side (GOALS.md week of 5/18 keeps Rancho paused): still 0/4 on tracked non-brand keywords, both post-launch landing pages still not surfacing — `/corporate-retreats/` now ~75 days and `/safari-tents-near-austin/` now ~80 days since launch with no direct evidence of indexing.
 
-**The week's story is that last week's two headline claims reversed — and both reversals matter more as a caution than as news.** On 6/15 the report led with a "broad SERP-layout shift toward aggregators and listicles." This week property domains reclaimed the top across the glamping head terms: **Udoscape recovered #1** on `glamping near austin tx` (was ~#6), **Safari for the Soul jumped to #1** on `safari tent austin texas` (was ~#5), and **Spoon Mountain reclaimed #1** on the narrow `romantic weekend getaways near austin` (was ~#5). Hipcamp and Glamping Hub slid below property sites on `glamping near austin tx`. The 6/15 "aggregator surge" was a one-week presentation artifact, not a structural shift — it is explicitly NOT carried forward as a trend.
+**But this is not a quiet week. The headline is two genuine ResortPass state changes that reverse a claim carried unchanged for seven weeks.**
 
-**The 6/15 brand-SERP watch item is resolved.** A clean live brand search puts **ranchomoonrise.com at #1** on its own name, above every aggregator (Instagram, Facebook, Do512, Hipcamp, The Knot, Yelp, LinkedIn). The 6/15 "~#7, UNVERIFIED" reading was confirmed to be a logged-out/non-geo SERP artifact. No title-tag or brand-entity action is warranted.
+**Rancho Moonrise's own ResortPass listing went live with products.** After seven straight weeks reading "no active products at the moment," the listing now sells bookable day passes and experiences: **Half-Day Pass ($15), Day Pass ($20), Pilates and Horses ($58), and a Full Moon Floating Sound Bath ($30)** — and now surfaces **4.9★ / 45 reviews**. Address (20117 Lockwood Rd) and pool hours (10:00am–6:00pm) unchanged. Someone activated it, which **resolves the 42-day "activate or kill" decision drift** that had been parked since the 5/18 surface. The listing is now generating day-pass revenue instead of sitting dormant.
 
-**One genuine competitor state change: Spoon Mountain.** Its starting rate rose from ~$245/night to a stated **"starting $300–500 per night,"** and its romantic-getaways page **moved** — the old URL (`/romantic-weekend-getaways-near-austin/`) now 404s, with the same content (H1 "Romantic Weekend Getaways Near Austin – Ultimate 2026 Guide") live at a new parented path, `/travel-to-wimberley/romantic-weekend-getaways-near-austin/`. The page still ranks #1 on the narrow term despite the URL move — Google followed the redirect/recrawl cleanly.
+**Lucky Arrow's ResortPass listing also went live** — six products (Adult Day Pass $30, Family Pool Day Pass $30, Family Pass $75, Family Pool Cabana $175, Adult Pool Cabana $175, Day Room/Private Yurt $90) and adjusted hours (pool 12–8pm, was 12–10pm; bar Fri 2–6pm bar-only + Sat/Sun 12–6pm pool bar & food). This reverses the "ResortPass frozen on both sides" read that held from mid-May.
 
-**Corporate-retreat cluster churned again, and The Yurtopian's 6/15 re-entry reverted.** Sage Hill holds #1. Crystal Creek re-entered at #2, Lucky Arrow re-entered at #7, Walden is visible at #6, and Camp Lucy surfaced at #9. **The Yurtopian dropped back off** after its one-week ~#3 cameo — exactly the in/out churn pattern the bottom half of this cluster shows every week. Rancho still can't enter until `/corporate-retreats/` is crawled.
+Everything else is routine SERP churn. The **Hipcamp "20 Best Glamping Near Austin" set rotated again**, breaking the two-week byte-stable streak: the top two anchors held (Urban Hideout #1, Cozy Cactus Airstream #2) but the mid-list reshuffled and **Lucky Arrow moved from #9 to #8**. Rancho is still absent — now the 7th consecutive read. On `glamping near austin tx`, **Talula Mesa jumped to #1** (was ~#3) while **Udoscape slid from #1 to ~#6** and aggregators (Glamping Hub #3, Hipcamp #4) settled mid-pack. The corporate-retreat cluster churned again: Sage Hill holds #1, Crystal Creek slid #2→#3, Element Ranch re-entered #6, 7744 Ranch #8, Camp Lucy #9 — and **Lucky Arrow dropped off the top 10** (was #7), Yurtopian still off. Spoon Mountain holds #1 on the narrow romantic term at its new `/travel-to-wimberley/` URL, but its pricing is now internally inconsistent — the legacy **"$245/night" line reappeared** on-page alongside "starting $300–500."
 
-**The two structural gaps are stable and unmoved:** Rancho is still absent from Glamping Hub (now ~11 weeks) and still absent from Hipcamp's curated "20 Best Glamping Near Austin" set (6th consecutive read; the set did NOT rotate again this week — Urban Hideout #1, Cozy Cactus Airstream #2, Lucky Arrow #9 all held). The Hotels.com listing still indexes the banned "20 luxury cabins / 50 guests" copy (7th week; on-page UNVERIFIED — direct fetch blocked, copy confirmed verbatim in the live search snippet). ResortPass frozen on both sides — Rancho dormant (0 products, pool 10am–6pm), Lucky Arrow dormant with the same expanded hours.
+One positive brand signal: a **Tribeza editorial feature** ("Inside TRIBEZA's Creative Countryside Retreat at Rancho Moonrise") now surfaces on the brand SERP, above the aggregators. Brand search still puts **ranchomoonrise.com at #1**.
 
-Adam-side action items remain parked while Rancho is on cruise control: ResortPass decision now **42 days** drifted, GSC URL-Inspection on the two uncrawled pages, Hotels.com banned-copy fix (7th week), Hipcamp-strategy question for Ashley.
+Structural gaps unchanged: Rancho still absent from Glamping Hub (~13 weeks) and from Hipcamp's curated set (7th read). The Hotels.com listing still indexes the banned "20 luxury cabins / 50 guests" copy (8th week; on-page UNVERIFIED — surfaces in the brand snippet). Adam-side items remaining: GSC URL-Inspection on the two uncrawled pages, Hotels.com banned-copy fix, Hipcamp-strategy question for Ashley. **The ResortPass decision is now cleared — the listing was activated.**
 
-**⚡ Top 3 Actionable Findings (Week of June 29):**
+**⚡ Top 3 Actionable Findings (Week of July 15):**
 
-1. **GSC URL-Inspection on `/corporate-retreats/` (~59d) + `/safari-tents-near-austin/` (~64d).** Same item, now 7th read running, drifting ~+14d since 6/15. The rest of Rancho's site is broadly indexed and healthy (homepage #1 on brand, blog/events/videos all surfacing) — which makes the two newest commercial pages' absence stand out as a page-specific lag, not a sitewide crawl problem. ~5 min in Search Console — URL Inspection → Request Indexing on each. Single highest-leverage external lever. (Owned by `rancho-site-daily` + Adam.)
-2. **"Publish your own listicle" is the repeatable competitor lever.** Spoon Mountain (#1 romantic via its own "Ultimate 2026 Guide"), Cameron Ranch (#3 weekend-getaway via its own roundup), and Udoscape all rank via guide/roundup pages on their own domains — not just booking pages. This is the clearest content gap Rancho's paused 18-post blog cluster could close once the pipeline reopens.
-3. **Hipcamp strategy question for Ashley.** One sentence — "is the Hipcamp listing intentionally backlink-only, or do we want bookings from it?" — retires a flag that's now recurred across 6 reads. Lucky Arrow holds the curated #9 slot Rancho hasn't entered. Pair with the Glamping Hub absence (~11 weeks), the other free aggregator lever.
+1. **GSC URL-Inspection on `/corporate-retreats/` (~75d) + `/safari-tents-near-austin/` (~80d).** 8th read running, drifting ~+16d since 6/29. Rest of Rancho's site is broadly indexed and healthy (homepage #1 on brand; blog/events/videos surface) — these two commercial pages lag specifically. ~5 min in Search Console → URL Inspection → Request Indexing on each. Single highest-leverage external lever. (Owned by `rancho-site-daily` + Adam.)
+2. **ResortPass is now activated — confirm it's intentional (Ashley, 30s).** Both Rancho and Lucky Arrow flipped their ResortPass listings from dormant to live-with-products this cycle. Rancho now shows day passes + a 4.9★/45-review surface. Worth a 30-second confirmation that the activation is complete and intended (not a template default), since it's a new revenue channel that appeared without a logged decision.
+3. **Own-domain guide/listicle content (whenever blog pipeline reopens).** Spoon Mountain (#1 romantic via its own guide) and Cameron Ranch (#2 weekend-getaway via its own roundup) both rank guide content, not booking pages. Rancho's paused 18-post blog cluster is the asset that closes this gap.
 
 ---
 
-## Re-Verify Gate — Claims from June 15 Checked Live (June 29)
+## Re-Verify Gate — Claims from June 29 Checked Live (July 15)
 
-| Claim | Live Verification (June 29) | Result |
+| Claim | Live Verification (July 15) | Result |
 |---|---|---|
-| Rancho Moonrise ResortPass listing exists but dormant | Fetched resortpass.com/hotels/rancho-moonrise (200) — "no active products at the moment." 0 products, 3-star, pool Daily 10:00am–6:00pm, address 20117 Lockwood Rd Manor TX 78653. Amenities: Pool, Drink Service, Towels. | ✅ STILL TRUE |
-| Lucky Arrow ResortPass dormant; expanded hours (daily Pool 12–10pm + Fri–Sun bar 2–6pm) | Fetched resortpass.com/hotels/lucky-arrow-retreat (200) — still dormant, 0 products. Pool 12pm–10pm; Pool Bar & Food Fri–Sun 2pm–6pm. Identical to 6/15. | ✅ STILL TRUE |
-| Hipcamp curated set rotated; Lucky Arrow #9; Rancho absent (5th read) | Set did NOT rotate again: Urban Hideout #1, Cozy Cactus Airstream #2 held; Lucky Arrow #9 held; Rancho absent — now **6th consecutive read**. | ✅ STILL TRUE (now byte-stable 2 weeks) |
-| Camp Lucy corporate page live (off SERP) | Fetched camplucy.com/meetings-events/corporate-packages (200) — "Corporate Meetings & Packages," 282 acres, 50,000+ sq ft, six venues, 6–300. **Re-entered corporate-retreat SERP at #9.** | ✅ STILL TRUE (page); ⚠️ SERP re-entered |
-| Walden Retreats 15 tents; "four types" copy clean | Fetched waldenretreats.com — "15 luxury glamping tents," three labels intact, no "four accommodation types." | ✅ STILL TRUE |
-| Safari for the Soul count ambiguous (1–2 tents + 3–4 yurts + 1 residential) | Fetched safariforthesoulglamping.com — 6 units / 2 locations. Sabi Nights still labeled both ways. No new units / third location. **Jumped to #1 on safari-tent SERP** (was ~#5). | ✅ STILL TRUE (count); ⚠️ SERP up |
-| Spoon Mountain `/romantic-weekend-getaways-near-austin/` live; 3 tents from $245 | **CHANGED.** Old URL now **404s**; same-H1 content live at new `/travel-to-wimberley/romantic-weekend-getaways-near-austin/`. 3 tents (Shaka, Kingfisher, Chisum) hold, but **price floor up: ~$245 → "starting $300–500/night."** Reclaimed #1 on narrow term. | ⚠️ CHANGED (URL move + price up) |
-| The Yurtopian corporate page live; re-entered SERP ~#3 | Fetched theyurtopian.com — live, 10 Dripping Springs yurts (46 ac) + 6 Wimberley, corporate "Events & Groups" in nav. **DROPPED BACK OFF the corporate-retreat top 10** — one-week re-entry reverted. | ✅ STILL TRUE (page); ⚠️ SERP dropped off |
-| Hotels.com listing pushes banned "20 cabins / 50 guests" copy | Direct fetch blocked (two 60s timeouts; Expedia mirror 429). Live search snippet returns banned copy verbatim: "20 luxury Cabins and Safari Tents, accommodating up to 50 overnight." | ⚠️ UNVERIFIED ON-PAGE (still true via index, 7th wk) |
-| Brand SERP — owned site ~#7 below aggregators (UNVERIFIED watch item) | Live brand search: **ranchomoonrise.com is #1**, above Instagram/Facebook/Do512/Hipcamp/The Knot/Yelp/LinkedIn. The ~#7 reading was a logged-out artifact. | ✅ RESOLVED — owned site #1, no regression |
-| Rancho not ranking non-brand; `/corporate-retreats/` + `/safari-tents-near-austin/` not surfacing | Live SERPs — 0/4 non-brand. Neither landing-page URL surfaced as a standalone result; ~59d / ~64d since launch. Rest of site indexed (homepage #1, blog/events/videos surface). | ✅ STILL TRUE |
+| Rancho ResortPass listing exists but dormant (0 products, "no active products at the moment") | Fetched resortpass.com/hotels/rancho-moonrise (200) — **now lists bookable products**: Half-Day Pass $15, Day Pass $20, Pilates and Horses $58, Full Moon Floating Sound Bath $30. Shows 4.9★/45 reviews. Pool 10am–6pm, address unchanged. | ⚠️ **RESOLVED / CHANGED** — listing activated |
+| Lucky Arrow ResortPass dormant (0 products); daily pool 12–10pm + Fri–Sun bar 2–6pm | Fetched resortpass.com/hotels/lucky-arrow-retreat (200) — **now lists 6 products** (Adult Day Pass $30, Family Pool Day Pass $30, Family Pass $75, Family Pool Cabana $175, Adult Pool Cabana $175, Day Room/Private Yurt $90). Pool 12–8pm; bar Fri 2–6pm + Sat/Sun 12–6pm. | ⚠️ **RESOLVED / CHANGED** — listing activated, hours adjusted |
+| Hipcamp curated set byte-stable 2 weeks; Lucky Arrow #9; Rancho absent | Set **rotated again** (byte-stable streak broken): Urban Hideout #1, Cozy Cactus Airstream #2 held; mid-list reshuffled (Breathe Deeply, Texas Music River Ranch, The Outpost, 13 Acres, Happy Horse Camp populate #3–#7); **Lucky Arrow #9 → #8**. Rancho absent (7th read). | ⚠️ CHANGED (rotation) — Rancho absent still true |
+| Spoon Mountain romantic page live at new `/travel-to-wimberley/` URL; #1; ~$300–500 | Fetched (200) — H1 unchanged, 3 tents (Shaka, Kingfisher, Chisum), holds #1. **Pricing now inconsistent:** legacy "$245/night" line reappeared alongside "Starting at $300/night (typically $300–$500, premium to ~$1,200)." | ✅ STILL TRUE (URL/#1); ⚠️ price copy inconsistent |
+| Safari for the Soul — 6 units / 2 locations, count ambiguous; #1 safari-tent SERP | Holds **#1** on `safari tent austin texas`; two parallel brand domains both ranking. No new units / third location. | ✅ STILL TRUE |
+| Walden Retreats 15 tents; copy clean | "15 luxury glamping tents," three labels, no "four accommodation types." Visible ~#5 glamping / #7 corporate. | ✅ STILL TRUE |
+| Camp Lucy corporate page live; corporate SERP #9 | Live (282 acres, 50,000+ sq ft, six venues, 6–300). **Holds corporate-retreat SERP #9.** | ✅ STILL TRUE |
+| Hotels.com listing pushes banned "20 cabins / 50 guests" copy | Direct fetch not attempted this run. Banned copy still surfaces verbatim in live brand-search snippet. | ⚠️ UNVERIFIED ON-PAGE (index-confirmed, 8th wk) |
+| Brand SERP — owned site #1 | Live brand search: **ranchomoonrise.com #1**, above Instagram/FB/Do512/The Knot/Yelp/Hipcamp. **New:** Tribeza editorial feature now surfaces on the brand SERP. | ✅ STILL TRUE (+ earned media) |
+| Rancho not ranking non-brand; `/corporate-retreats/` + `/safari-tents-near-austin/` not surfacing | Live SERPs — 0/4 non-brand; neither landing-page URL surfaced; ~75d / ~80d since launch. Rest of site indexed (homepage #1, blog/events/videos surface). | ✅ STILL TRUE |
 
-**Resolution summary:** 7 still true, 3 SERP-position changes (Camp Lucy re-entered #9, Safari for the Soul to #1, Yurtopian dropped off — all routine cluster churn), 1 genuine competitor change (Spoon Mountain URL move + price up), 1 UNVERIFIED-on-page (Hotels.com — index-confirmed, fetch blocked), 1 **auto-resolved** (brand-SERP ~#7 watch item → owned site is #1 live). Prior "broad aggregator surge" narrative explicitly NOT carried forward — it reversed this week.
+**Resolution summary:** 6 still true, 1 rotation-CHANGED (Hipcamp — Rancho-absent core claim still true; byte-stable sub-claim resolved), 1 price-copy wrinkle (Spoon Mountain), 1 UNVERIFIED-on-page (Hotels.com), and **2 genuine state changes auto-resolved to done-log** (Rancho ResortPass activated; Lucky Arrow ResortPass activated). The "ResortPass frozen on both sides" narrative is explicitly retired.
 
 ---
 
-## Section 1 — SERP Rankings Summary (June 29, 2026)
+## Section 1 — SERP Rankings Summary (July 15, 2026)
 
 > Methodology note: SERP ordering below is from a US logged-out, non-geolocated web-search proxy — directional, not pixel-exact (no ads, map pack, or PAA interleaving). Competitor presence/absence is reliable; exact ranks are approximate.
 
 | Keyword | Top SERP Sites (approx. order) | Named Competitors | Rancho Moonrise Position |
 |---|---|---|---|
-| glamping near austin tx | Udoscape, Green Acres Glamping, Talula Mesa, Hipcamp listicle, Glamping Hub, TX P&W Magazine, Walden, Yelp, The Retreat on the Hill | **Udoscape recovered to #1** (was ~#6). Aggregators (Hipcamp #4, Glamping Hub #5) pushed below 3 property sites. Talula #3, Walden #7. | Not ranking |
-| safari tent austin texas | Safari for the Soul (#1), Hipcamp, Wahwahtaysee Resort, Glamping Hub, Spoon Mountain, Hipcamp (2nd), Safari for the Soul (2nd domain), Expedia, Field Mag | **Safari for the Soul jumped #1** (was ~#5). **Spoon Mountain returned** at ~#5 (had dropped off 6/15). SFTS runs two parallel domains, both ranking. | Not ranking |
-| corporate retreat near austin texas | **Sage Hill (#1)**, Crystal Creek (#2), Wilder listicle, Peaceful Waters, Element Ranch, Walden, Lucky Arrow, Teamout listicle, Camp Lucy, 7744 Ranch | **Sage Hill holds #1. Crystal Creek re-entered #2; Lucky Arrow re-entered #7; Camp Lucy #9. The Yurtopian dropped back off.** | Not ranking. `/corporate-retreats/` not surfacing ~59 days post-launch |
-| weekend getaway near austin glamping | Hipcamp listicle (#1), Udoscape, Cameron Ranch Glamping, The Retreat on the Hill, Texplorevibe, Glamping Hub, Walden, A Taste of Koko, One Chel of an Adventure | **Hipcamp took #1** (Glamping Hub slipped to ~#6). 5 of 9 are roundup content. Cameron Ranch ranks its own listicle at #3. | Not ranking |
-| romantic weekend getaways near austin | **Spoon Mountain (#1)**, So Much Life, Romantic Spots Austin, Tripadvisor, Lost Pines, Yelp, Romantic Spots Austin (home), Expedia, Camels & Chocolate, VacationIdea | **Spoon Mountain reclaimed #1** (was ~#5) with its own "2026 Guide" page — still the only glamping property on page 1. | Not ranking |
-| Rancho Moonrise (brand) | **ranchomoonrise.com (#1)**, Instagram, Facebook, Romantic Spots Austin, Do512, Hipcamp, The Knot, Yelp, LinkedIn | Owned site **#1**, above all aggregators. 6/15 ~#7 watch item resolved as logged-out artifact. | Ranking #1 (brand) — healthy |
+| glamping near austin tx | Talula Mesa, Green Acres, Glamping Hub, Hipcamp, Walden, Udoscape, A Taste of Koko, Cameron Ranch, Outdoorsy | **Talula Mesa jumped to #1** (was ~#3). **Udoscape slid #1→~#6.** Aggregators (Glamping Hub #3, Hipcamp #4) mid-pack. Walden #5. | Not ranking |
+| safari tent austin texas | Safari for the Soul (#1), Glamping Hub, Wahwahtaysee, Hipcamp, Spoon Mountain, Hipcamp (2nd), SFTS (2nd domain), Expedia, Vrbo | **Safari for the Soul holds #1.** Spoon Mountain ~#5. Wahwahtaysee visible #3. SFTS runs two ranking domains. | Not ranking |
+| corporate retreat near austin texas | **Sage Hill (#1)**, Wilder listicle, Crystal Creek, Teamout listicle, Peaceful Waters, Element Ranch, Walden, 7744 Ranch, Camp Lucy, Sage Hill blog | **Sage Hill holds #1.** Crystal Creek #2→#3; Element Ranch re-entered #6; 7744 Ranch #8; Camp Lucy #9. **Lucky Arrow dropped off top 10** (was #7). Yurtopian off. | Not ranking. `/corporate-retreats/` not surfacing ~75d post-launch |
+| weekend getaway near austin glamping | Hipcamp listicle (#1), Cameron Ranch, Udoscape, Glamping Hub, Walden, The Retreat on the Hill, Yelp, VIP RE listicle, Texplorevibe | **Hipcamp holds #1.** **Cameron Ranch rose to #2** (own listicle). 5 of 9 are roundup content. | Not ranking |
+| romantic weekend getaways near austin | **Spoon Mountain (#1)**, Romantic Spots Austin, So Much Life, Visit Austin, Yelp, Tripadvisor, Lost Pines, Camels & Chocolate, HomeToGo, Sage Hill | **Spoon Mountain holds #1** at its new `/travel-to-wimberley/` URL — still the only glamping property on page 1. Sage Hill romantic page surfaced #10. | Not ranking |
+| Rancho Moonrise (brand) | **ranchomoonrise.com (#1)**, Instagram, Facebook, Romantic Spots Austin, Do512, The Knot, Yelp, **Tribeza**, Hipcamp | Owned site **#1**, above all aggregators. New: Tribeza editorial feature surfaces. | Ranking #1 (brand) — healthy |
 
-**Rancho non-brand placement: 0/4 — unchanged.** Brand: #1 (resolved healthy).
+**Rancho non-brand placement: 0/4 — unchanged.** Brand: #1 (healthy, + Tribeza earned media).
 
 ---
 
 ## Section 2 — Competitor Highlights
 
-### Reversal — Aggregator Surge Was a One-Week Artifact
+### State Change — ResortPass Activated on Both Sides (the week's story)
 
-The single most important correction this week: the 6/15 "broad SERP-layout shift toward aggregators/listicles" reversed. Property domains reclaimed the top across the glamping head terms — Udoscape back to #1 on `glamping near austin tx`, Safari for the Soul to #1 on `safari tent austin texas`, Spoon Mountain to #1 on `romantic weekend getaways near austin`. Hipcamp and Glamping Hub fell below property sites on the core glamping term. The lesson is methodological: a single week of aggregators-on-top is presentation volatility, not a structural shift, and shouldn't drive strategy on its own. The durable read is the opposite of last week's framing — **property domains that publish strong content win these terms**, which is why the listicle/guide content gap (below) is the real lever, not "get into aggregators."
+The single most material change this cycle: both ResortPass listings this report has tracked flipped from dormant to live-with-products.
 
-### Repeatable Lever — "Publish Your Own Listicle"
+- **Rancho Moonrise** — was "no active products at the moment" for seven consecutive weeks. Now sells **Half-Day Pass ($15), Day Pass ($20), Pilates and Horses ($58), and a Full Moon Floating Sound Bath ($30)**, and shows **4.9★ / 45 reviews**. The experience products (sound bath, pilates + horses) map directly to Rancho's known event programming — this is a real activation, not a template artifact. It resolves the 42-day "activate or kill" decision drift that had been parked since 5/18.
+- **Lucky Arrow Retreat** — also flipped live with **six products** (Adult Day Pass $30, Family Pool Day Pass $30, Family Pass $75, Family Pool Cabana $175, Adult Pool Cabana $175, Day Room/Private Yurt $90) and adjusted hours (pool 12–8pm, was 12–10pm; bar Fri 2–6pm + Sat/Sun 12–6pm pool bar & food).
 
-The clearest competitive pattern this week is competitors ranking via roundup/guide pages on their own domains:
-- **Spoon Mountain** holds #1 on `romantic weekend getaways near austin` with its own "Romantic Weekend Getaways Near Austin – Ultimate 2026 Guide" — beating travel-editorial (So Much Life, Tripadvisor, Yelp, Expedia) at their own game.
-- **Cameron Ranch Glamping** ranks #3 on `weekend getaway near austin glamping` via its own "Best Glamping Near Austin: 5 Places" roundup.
+The prior "publish-operational-data-while-keeping-products-dark" middle-ground read for Lucky Arrow no longer applies — both properties are now selling day access directly.
 
-Both rank guide content, not booking pages. Rancho's 18-post blog cluster is the asset that could close this gap — but the pipeline is paused (Ashley, 2026-04-23). Worth flagging as the highest-value content move whenever the pipeline reopens.
+### Repeatable Lever — "Publish Your Own Listicle" (unchanged)
 
-### Competitor State Change — Spoon Mountain (Price + URL)
+Competitors continue to rank via roundup/guide pages on their own domains:
+- **Spoon Mountain** holds #1 on `romantic weekend getaways near austin` with its own "Ultimate 2026 Guide" — beating travel-editorial (Romantic Spots Austin, So Much Life, Tripadvisor, Yelp) at their own game.
+- **Cameron Ranch Glamping** ranks #2 on `weekend getaway near austin glamping` via its own roundup.
 
-Spoon Mountain made the only genuine competitor change this week:
-- **Price floor up:** rates that read "$245/night" on 6/15 now read **"starting $300–500 per night, depending on season and tent selection,"** with premium packages up to ~$1,200. The $245 figure no longer appears.
-- **Romantic-getaways page relocated:** the prior URL `/romantic-weekend-getaways-near-austin/` now **404s**; the same content (H1 unchanged) is live at `/travel-to-wimberley/romantic-weekend-getaways-near-austin/`. The page still ranks #1 on the narrow term, so the move was handled cleanly. Tent count (3: Shaka, Kingfisher, Chisum) and private-pool detail unchanged.
+Both rank guide content, not booking pages. Rancho's 18-post blog cluster is the asset that could close this gap — pipeline paused (Ashley, 2026-04-23). Highest-value content move whenever the pipeline reopens.
 
-### Corporate-Retreat Cluster Churn (Yurtopian Re-Entry Reverted)
+### Spoon Mountain — Pricing Copy Now Inconsistent
 
-Sage Hill holds #1. The bottom-half reshuffle: **Crystal Creek re-entered at #2**, **Lucky Arrow re-entered at #7**, **Walden** visible at #6, **Camp Lucy** surfaced at #9. **The Yurtopian dropped back off** after its one-week ~#3 cameo on 6/15 — its page never changed (10 Dripping Springs yurts + 6 Wimberley, "Events & Groups" in nav), this is pure SERP churn. Peaceful Waters + 7744 Ranch held. The pattern holds: winnable, volatile, weekly turnover — but Rancho can't enter until `/corporate-retreats/` is crawled.
+Spoon Mountain still holds #1 on the narrow romantic term at its `/travel-to-wimberley/romantic-weekend-getaways-near-austin/` URL (H1 unchanged; 3 tents Shaka/Kingfisher/Chisum). But the on-page pricing is now internally inconsistent: the legacy **"$245/night" line has reappeared** alongside the "Starting at $300/night (typically $300–500, premium to ~$1,200)" copy the 6/29 report captured. Not a material competitive move — flagged only so the "price up to $300–500" claim isn't over-stated; the page currently states both figures.
+
+### Corporate-Retreat Cluster Churn (Lucky Arrow Dropped Off)
+
+Sage Hill holds #1. Bottom-half reshuffle: Crystal Creek slid #2→#3, Element Ranch re-entered #6, Walden #7, 7744 Ranch #8, Camp Lucy #9. **Lucky Arrow dropped off the top 10** (was #7 on 6/29); Yurtopian remains off. Peaceful Waters + Wilder/Teamout listicles held. The pattern holds: winnable, volatile, weekly turnover — Rancho can't enter until `/corporate-retreats/` is crawled.
 
 ### Re-Confirmed Competitor State
 
 #### Safari for the Soul — [safariforthesoulglamping.com](https://safariforthesoulglamping.com)
-6 units across 2 locations: Marble Falls (Cosmic Nights, Sabi Nights, Moonlight Magic Yurt, Starry Nights Yurt, KickBack Cove Home) + Spicewood (Tentation Yurt). Sabi Nights still labeled both "yurt" and "safari tent." Honest read 1–2 safari tents + 3–4 yurts + 1 residential. No new units / third location. **Jumped to #1 on safari-tent SERP** this week (runs two parallel brand domains, both ranking).
+6 units across 2 locations (Marble Falls + Spicewood); count still ambiguous (1–2 safari tents + 3–4 yurts + 1 residential). No new units / third location. **Holds #1** on the safari-tent SERP; runs two parallel brand domains, both ranking.
 
 #### Walden Retreats — [waldenretreats.com](https://waldenretreats.com)
-15 luxury glamping tents; 3 variant labels (Premier Suites / Studios / Studios with Soaking Tubs). "Four accommodation types" copy still clean. Visible at ~#6 on the corporate-retreat term + #7 on glamping/weekend terms.
+15 luxury glamping tents; three variant labels; "four accommodation types" copy still clean. Visible ~#5 glamping / #7 corporate.
 
 #### Lucky Arrow Retreat — [luckyarrowretreat.com](https://luckyarrowretreat.com)
-5 accommodation types (40 total). ResortPass dormant (0 products) with expanded hours unchanged (daily Pool 12–10pm + Fri–Sun bar 2–6pm). Holds Hipcamp curated #9. Re-entered corporate-retreat SERP at #7. The publish-operational-data-while-keeping-products-dark pattern remains the no-product middle ground Rancho could adopt on its own ResortPass listing.
+5 accommodation types (40 total). **ResortPass now activated** (6 products, pool 12–8pm, bar Fri + Sat/Sun). Holds Hipcamp curated #8 (up from #9). **Dropped off the corporate-retreat SERP top 10** this week.
 
 #### Camp Lucy — [camplucy.com](https://www.camplucy.com/meetings-events/corporate-packages/)
-Corporate page live (200): 282 acres, 50,000+ sq ft, six venues, groups 6–300. **Re-entered the corporate-retreat SERP at #9** this week (one-week visitor pattern continues).
+Corporate page live (282 acres, 50,000+ sq ft, six venues, groups 6–300). **Holds the corporate-retreat SERP #9.**
 
 #### The Yurtopian — [theyurtopian.com](https://theyurtopian.com)
-10-yurt Dripping Springs (46-acre resort) + 6-yurt Wimberley; corporate "Events & Groups" in nav. **Dropped back off the corporate-retreat SERP** after a one-week ~#3 re-entry.
+10-yurt Dripping Springs + 6-yurt Wimberley; corporate "Events & Groups" in nav. Remains off the corporate-retreat SERP.
 
 ---
 
-## Section 3 — Content Gap Analysis (Updated June 29)
+## Section 3 — Content Gap Analysis (Updated July 15)
 
-| Content Type | Who Has It | Rancho Moonrise Status | Δ vs. June 15 |
+| Content Type | Who Has It | Rancho Moonrise Status | Δ vs. June 29 |
 |---|---|---|---|
-| Dedicated safari tent landing page | Walden, Safari for the Soul, The Retreat on the Hill | Built (`/safari-tents-near-austin/`), FAQPage schema. **Still not surfacing** ~64 days post-launch. | Drifted +14 days |
-| Corporate retreat landing page | Sage Hill, Crystal Creek, Element Ranch, Peaceful Waters, 7744 Ranch, Camp Lucy; Yurtopian off SERP | Built (`/corporate-retreats/`), full schema, 7 inbound links. **Still not surfacing** ~59 days post-launch. | Drifted +14 days; cluster churned |
-| Own-domain listicle / guide content | Spoon Mountain (#1 romantic), Cameron Ranch (#3 weekend getaway), Udoscape | 18-post blog cluster — pipeline paused 2026-04-23 | **NEW lever flagged** — own-domain guide pages win head terms |
+| Dedicated safari tent landing page | Walden, Safari for the Soul, The Retreat on the Hill | Built (`/safari-tents-near-austin/`), FAQPage schema. **Still not surfacing** ~80 days post-launch. | Drifted +16 days |
+| Corporate retreat landing page | Sage Hill, Crystal Creek, Element Ranch, Peaceful Waters, 7744 Ranch, Camp Lucy | Built (`/corporate-retreats/`), full schema, 7 inbound links. **Still not surfacing** ~75 days post-launch. | Drifted +16 days; cluster churned |
+| Own-domain listicle / guide content | Spoon Mountain (#1 romantic), Cameron Ranch (#2 weekend getaway), Udoscape | 18-post blog cluster — pipeline paused 2026-04-23 | Unchanged — lever still open |
 | Per-unit accommodation URLs | The Retreat on the Hill (11), Safari for the Soul (6), Lucky Arrow (40 across 5 types) | accommodations.html lists 4 categories | Unchanged — blocked on low-res source JPGs |
-| ResortPass listing | Lucky Arrow (dormant, publishes daily pool hours), Rancho Moonrise (dormant — 0 products) | **Listing exists.** Dormant. Decision drift now 42 days. | Drift continues; both sides frozen |
-| Glamping Hub listing | Talula Mesa, Udoscape, The Yurtopian, Safari for the Soul | Still absent | Unchanged (~11 weeks) |
-| Hipcamp curated "20 Best Glamping" inclusion | Lucky Arrow (#9), 19 other properties | Active listing — **absent across 6 consecutive reads** | Set did NOT rotate; gap holds |
+| ResortPass listing | Lucky Arrow (**now active, 6 products**), Rancho Moonrise (**now active — day passes + experiences**) | **Listing ACTIVATED** — day passes + 4.9★/45 reviews live | **RESOLVED — was dormant 7 wks; both sides now live** |
+| Glamping Hub listing | Talula Mesa, Udoscape, The Yurtopian, Safari for the Soul | Still absent | Unchanged (~13 weeks) |
+| Hipcamp curated "20 Best Glamping" inclusion | Lucky Arrow (#8), 19 other properties | Active listing — **absent across 7 consecutive reads** | Set rotated; Lucky Arrow #9→#8; gap holds |
 | WeddingWire listing | Honeysuckle Ranch | Still absent | Unchanged |
-| Hotels.com listing brand-SERP hygiene | n/a | ho2867109568 still indexes "20 luxury cabins... 50 guests" — banned per VOICE-GUIDE | Unchanged (7th week); on-page UNVERIFIED |
-| New landing page indexing | n/a | **NOT YET.** `/corporate-retreats/` ~59d, `/safari-tents-near-austin/` ~64d | Drifting — owned by `rancho-site-daily` + Adam |
+| Hotels.com listing brand-SERP hygiene | n/a | ho2867109568 still indexes "20 luxury cabins… 50 guests" — banned per VOICE-GUIDE | Unchanged (8th week); on-page UNVERIFIED |
+| Earned media / editorial | (various) | **Tribeza feature now surfaces on brand SERP** | NEW — positive brand signal |
+| New landing page indexing | n/a | **NOT YET.** `/corporate-retreats/` ~75d, `/safari-tents-near-austin/` ~80d | Drifting — owned by `rancho-site-daily` + Adam |
 
 ---
 
 ## Section 4 — Quick Wins This Week
 
-1. **GSC — request indexing on `/corporate-retreats/` (~59d) + `/safari-tents-near-austin/` (~64d) (Adam, ~5 min).** 7th read running. Rest of site indexes fine (homepage #1 on brand); these two pages lag specifically. URL Inspection → Request Indexing on each.
-2. **Own-domain guide/listicle content (whenever blog pipeline reopens).** Spoon Mountain (#1 romantic) and Cameron Ranch (#3 weekend getaway) both rank via roundup pages on their own domains. The clearest path to head-term visibility for a property site.
-3. **Hipcamp curation gap — Ashley question still open.** Lucky Arrow holds curated #9; Rancho absent 6 reads. Set is byte-stable 2 weeks running.
-4. **Glamping Hub submission still absent (~11 weeks).** Free, ~15 min at glampinghub.com/list-your-property.
-5. **Hotels.com listing copy fix (Adam, ~15 min).** 7th consecutive week. ho2867109568 still indexes "20 luxury cabins... 50 guests" — banned per VOICE-GUIDE.
+1. **GSC — request indexing on `/corporate-retreats/` (~75d) + `/safari-tents-near-austin/` (~80d) (Adam, ~5 min).** 8th read running. Rest of site indexes fine (homepage #1 on brand); these two pages lag specifically.
+2. **Confirm ResortPass activation is intentional (Ashley, 30s).** Rancho's listing flipped to live-with-products this cycle (day passes + 4.9★/45 reviews). Quick confirm it's complete and intended — new revenue channel that appeared without a logged decision.
+3. **Own-domain guide/listicle content (whenever blog pipeline reopens).** Spoon Mountain (#1 romantic) + Cameron Ranch (#2 weekend getaway) both rank via roundup pages on their own domains.
+4. **Hipcamp curation gap — Ashley question still open.** Lucky Arrow holds curated #8; Rancho absent 7 reads.
+5. **Glamping Hub submission still absent (~13 weeks).** Free, ~15 min at glampinghub.com/list-your-property.
+6. **Hotels.com listing copy fix (Adam, ~15 min).** 8th consecutive week. ho2867109568 still indexes "20 luxury cabins… 50 guests" — banned per VOICE-GUIDE.
 
 ---
 
 ## Section 5 — Recommendations for This Week
 
-**Priority 1 — GSC indexing request on specific URLs (Adam, ~5 min):** ~59d and ~64d uncrawled. Single highest-leverage external lever; everything built on these two pages is invisible until crawled. (Owned by `rancho-site-daily` + Adam.)
+**Priority 1 — GSC indexing request on specific URLs (Adam, ~5 min):** ~75d and ~80d uncrawled. Single highest-leverage external lever; everything built on these two pages is invisible until crawled. (Owned by `rancho-site-daily` + Adam.)
 
-**Priority 2 — Reframe head-term strategy around own-domain content, NOT aggregators.** Last week's "get into aggregators" framing was built on a one-week aggregator surge that reversed. The durable read: property domains that publish strong guide/listicle content (Spoon Mountain, Cameron Ranch) win these terms. Rancho's paused blog cluster is the asset; this becomes actionable when the pipeline reopens.
+**Priority 2 — Confirm the ResortPass activation (Ashley, 30s).** Both Rancho and Lucky Arrow flipped ResortPass to live-with-products this cycle. Rancho now sells day passes and shows a 4.9★/45-review surface. This resolves the long-parked activate-or-kill decision — worth a 30-second confirmation it was intentional and is complete, since it's a new booking channel.
 
-**Priority 3 — Close the two free aggregator gaps regardless** (Hipcamp curated inclusion + Glamping Hub listing) — both pending Ashley's strategy call. They are backlink/discovery value even if on-site content is the bigger lever.
+**Priority 3 — Reframe head-term strategy around own-domain content, NOT aggregators.** Property domains that publish strong guide/listicle content (Spoon Mountain, Cameron Ranch) win these terms. Rancho's paused blog cluster is the asset; actionable when the pipeline reopens.
 
-**Priority 4 — Hotels.com listing fix (Adam, ~15 min):** 7th consecutive week; on-page unconfirmed this run (fetch blocked) but copy still indexed verbatim.
+**Priority 4 — Close the two free aggregator gaps regardless** (Hipcamp curated inclusion + Glamping Hub listing) — both pending Ashley's strategy call. Backlink/discovery value even if on-site content is the bigger lever.
 
-**Priority 5 — Continue monitoring corporate-retreat + safari-tent SERP churn.** Crystal Creek + Lucky Arrow re-entries, Yurtopian drop-off, and Camp Lucy's #9 cameo all confirm weekly volatility. No Rancho-side change needed yet — monitoring is the action until indexing unblocks. Rancho remains on cruise control per GOALS.md (5/18); all Adam-side items are parked.
+**Priority 5 — Hotels.com listing fix (Adam, ~15 min):** 8th consecutive week; on-page unconfirmed this run (not fetched) but copy still indexed verbatim.
+
+**Priority 6 — Continue monitoring corporate-retreat + safari-tent SERP churn.** Lucky Arrow dropping off corporate, Crystal Creek slide, Element Ranch re-entry all confirm weekly volatility. No Rancho-side change needed yet — monitoring is the action until indexing unblocks. Rancho remains on cruise control per GOALS.md (5/18); Adam-side items are parked.
 
 ---
 
-## Appendix: Rancho Moonrise Competitive Positioning (June 29, 2026)
+## Appendix: Rancho Moonrise Competitive Positioning (July 15, 2026)
 
-| Attribute | Current State | Change Since June 15 |
+| Attribute | Current State | Change Since June 29 |
 |---|---|---|
-| Organic ranking — glamping queries | Not ranking | Udoscape recovered #1; aggregators slid below property sites |
-| Organic ranking — safari tent queries | Not ranking. Safari for the Soul to #1; Spoon Mountain returned ~#5. | Aggregator surge reversed; SFTS up |
-| Organic ranking — corporate retreat | Not ranking. `/corporate-retreats/` not surfacing ~59 days. Sage Hill #1; Crystal Creek #2; Lucky Arrow #7; Camp Lucy #9; Yurtopian off. | Cluster churned; Yurtopian re-entry reverted |
-| Organic ranking — weekend getaway | Not ranking. Hipcamp #1; Glamping Hub ~#6; Cameron Ranch #3 (own listicle). | Hipcamp took #1 |
-| Organic ranking — branded query | **Owned site #1**, above all aggregators | ✅ 6/15 ~#7 watch item RESOLVED — artifact |
+| Organic ranking — glamping queries | Not ranking | Talula Mesa to #1; Udoscape slid to ~#6 |
+| Organic ranking — safari tent queries | Not ranking. Safari for the Soul holds #1; Spoon Mountain ~#5. | Stable |
+| Organic ranking — corporate retreat | Not ranking. `/corporate-retreats/` not surfacing ~75d. Sage Hill #1; Crystal Creek #3; Element Ranch #6; Camp Lucy #9; Lucky Arrow off. | Cluster churned; Lucky Arrow dropped off |
+| Organic ranking — weekend getaway | Not ranking. Hipcamp #1; Cameron Ranch #2 (own listicle). | Cameron Ranch up |
+| Organic ranking — branded query | **Owned site #1**, above all aggregators; Tribeza feature now surfaces | ✅ Healthy + new earned media |
 | The Knot | Active — 8 reviews, 4.5 stars | No change |
-| Hipcamp | Active listing — NOT in curated "20 Best." Lucky Arrow #9. Set did not rotate. | Gap holds; set byte-stable |
-| Glamping Hub | ❌ Still not listed | No change (~11 weeks) |
+| Hipcamp | Active listing — NOT in curated "20 Best." Lucky Arrow #8. Set rotated. | Gap holds; set rotated (Lucky Arrow #9→#8) |
+| Glamping Hub | ❌ Still not listed | No change (~13 weeks) |
 | WeddingWire | ❌ Still not listed | No change |
 | TripAdvisor | 0 reviews, NOT claimed (owned by review-monitor) | No change |
-| Hotels.com listing copy | "20 luxury cabins... 50 guests" — banned per VOICE-GUIDE | On-page UNVERIFIED this run (7th week) |
-| **ResortPass listing** | **Live but dormant — 0 products.** Lucky Arrow comparator unchanged. | **Decision drift: 42 days since 5/18 surface** |
-| DNS cutover | ✅ LIVE (4/30) — apex serves from Vercel | Stable, 60 days |
-| GSC indexing — `/corporate-retreats/` | Not surfacing ~59 days post-launch | +14 days drift |
-| GSC indexing — `/safari-tents-near-austin/` | Not surfacing ~64 days post-launch | +14 days drift |
-| Lucky Arrow status | 5 accommodation types; ResortPass dormant (daily pool + Fri–Sun bar); Hipcamp curated #9; re-entered corporate SERP #7 | Re-entered corporate SERP |
-| Safari for the Soul status | 1–2 safari tents + 3–4 yurts + 1 residential. To #1 on safari-tent SERP. | SERP up |
+| Hotels.com listing copy | "20 luxury cabins… 50 guests" — banned per VOICE-GUIDE | On-page UNVERIFIED (8th week) |
+| **ResortPass listing** | **LIVE with products** — Half-Day $15, Day Pass $20, Pilates+Horses $58, Full Moon Sound Bath $30; 4.9★/45 reviews | ✅ **ACTIVATED — 42-day drift resolved** |
+| DNS cutover | ✅ LIVE (4/30) — apex serves from Vercel | Stable, 76 days |
+| GSC indexing — `/corporate-retreats/` | Not surfacing ~75 days post-launch | +16 days drift |
+| GSC indexing — `/safari-tents-near-austin/` | Not surfacing ~80 days post-launch | +16 days drift |
+| Lucky Arrow status | 5 accommodation types; **ResortPass now active (6 products, pool 12–8pm)**; Hipcamp curated #8; dropped off corporate SERP | ResortPass activated; corporate SERP off |
+| Safari for the Soul status | 1–2 safari tents + 3–4 yurts + 1 residential. Holds #1 safari-tent SERP. | Stable |
 | Walden Retreats status | 15 luxury glamping tents; 3 variant labels; copy clean | Stable |
-| Camp Lucy status | Page live (corporate packages). Re-entered corporate SERP #9. | Re-entered SERP |
-| The Yurtopian status | 10 Dripping Springs yurts + 6 Wimberley; corporate in nav. Dropped off corporate SERP. | Re-entry reverted |
-| Spoon Mountain status | 3 private-pool safari tents. **Price up ~$245 → starting $300–500.** Romantic page moved (old URL 404 → `/travel-to-wimberley/...`). Reclaimed #1 narrow term. | Price + URL change |
-</content>
-</invoke>
+| Camp Lucy status | Page live (corporate packages). Holds corporate SERP #9. | Stable |
+| The Yurtopian status | 10 Dripping Springs yurts + 6 Wimberley; corporate in nav. Off corporate SERP. | Stable |
+| Spoon Mountain status | 3 private-pool safari tents. Holds #1 narrow term at `/travel-to-wimberley/` URL. Pricing copy now inconsistent ($245 line reappeared alongside $300–500). | Price copy inconsistent |
