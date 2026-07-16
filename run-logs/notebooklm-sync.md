@@ -1536,3 +1536,7 @@ Skipped >10MB (skipped regardless of auth): ALL INCLUSIVE RETREATS AT RANCHO MOO
 
 2026-07-16 12:08 | ERROR: NotebookLM auth still expired (re-verified live: source list → auth error, redirect to Google sign-in). Needs one-time `notebooklm login`. Same pending changes as prior runs; state file left untouched so they re-detect once authed.
 2026-07-16 12:08 | scanned=65 added=0 replaced=0 skipped=4 errors=1
+
+2026-07-16 16:08 | ERROR: NotebookLM auth expired — `notebooklm login` required (non-interactive run, cannot re-auth).
+2026-07-16 16:08 | Pending (deferred, state NOT advanced): added 2026-05-16-hipcamp-curation-gap-audit.md (new); replaced 2026-04-09-rancho-moonrise-improvement-plan.html (modified 60047->61254 bytes).
+2026-07-16 16:08 | scanned=65 added=0 replaced=0 skipped=3 errors=1
