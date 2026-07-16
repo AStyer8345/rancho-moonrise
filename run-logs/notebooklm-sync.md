@@ -1528,3 +1528,8 @@ Deferred (unchanged across all failed runs since 2026-07-03): NEW brand/2026-05-
 Skipped >10MB (skipped regardless of auth): ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf (36.9MB), PRIVATE EVENTS AT RANCHO MOONRISE.pdf (28.8MB), INTIMATE EVENTS AT RM.pdf (20.7MB).
 >> ACTION FOR ADAM: run `notebooklm login` (one-time browser OAuth). Sync self-heals on the next scheduled run. This has now failed continuously for 12+ days.
 2026-07-15 15:18 | scanned=65 added=0 replaced=0 skipped=3 errors=1 (auth expired — needs `notebooklm login`)
+2026-07-16 10:18 | ERROR: NotebookLM auth expired — 'notebooklm login' required (interactive OAuth, cannot run in scheduled session).
+2026-07-16 10:18 | Pending sync (NOT applied, state file left unchanged so next authed run picks them up):
+2026-07-16 10:18 |   NEW      2026-05-16-hipcamp-curation-gap-audit.md (18543 B)
+2026-07-16 10:18 |   MODIFIED 2026-04-09-rancho-moonrise-improvement-plan.html (60047 -> 61254 B)
+2026-07-16 10:18 | scanned=65 added=0 replaced=0 skipped=4 errors=1
