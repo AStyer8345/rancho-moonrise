@@ -1,5 +1,11 @@
 # Rancho Moonrise — Changelog
 
+## 2026-07-16 (rancho-site-daily) — 37th consecutive cruise-control firing
+
+- **No shipped edits.** GOALS.md still week-of-5/18 ("No Rancho Moonrise active work — paused; cruise control only if Ashley moves"), last touched 2026-07-02 (LoanOS-only; Rancho line unchanged). No Ashley move this cycle. Surgical CreativeWork-property enrichment runway on BlogPosting JSON-LD closed 5/26 — no autonomous slot remains; Person-author research + AggregateRating-on-BlogPosting both deferred again (each adds NEEDS-ADAM noise or a 17-file diff against a paused workstream).
+- **Re-Verify Gate (live) — 7/7 still_true, 0 resolved:** apex 200 + `server: Vercel` + `x-vercel-cache: HIT` (`age: 66592` ≈ 18.5 hr); www 308 → apex; sitemap.xml / `/corporate-retreats/` / `/safari-tents-near-austin/` / `/blog/` all 200; BlogPosting CreativeWork 6-property spot-check on `/blog/glamping-near-austin-texas/` intact 51 days post-5/26 deploy (dateModified 2026-05-26, wordCount 1005, articleSection "Glamping", inLanguage "en-US", isAccessibleForFree true, copyrightYear 2026). 0 stale claims → no done-log entry.
+- **Clean continuity:** `run-logs/2026-07-15-seo.md` (yesterday's 36th firing) tracked — no orphaned prior-day SEO log; CHANGELOG.md working tree == HEAD (no concurrent-writer stale-revert). Ownership boundaries unchanged: indexing/SERP → competitive-weekly + Adam; review/GBP → review-monitor/gbp-weekly; bi-weekly audit (last 6/18, due 7/2) → audit task. Committed by explicit path; pre-existing prior-session changes + concurrent-writer artifacts intentionally NOT staged. Run-log: `run-logs/2026-07-16-seo.md`.
+
 ## 2026-07-15 (rancho-site-daily) — 36th consecutive cruise-control firing
 
 - **No shipped edits.** GOALS.md still week-of-5/18 ("No Rancho Moonrise active work — paused; cruise control only if Ashley moves"), last touched 2026-07-02 (LoanOS-only; Rancho line unchanged). No Ashley move this cycle. Surgical CreativeWork-property enrichment runway on BlogPosting JSON-LD closed 5/26 — no autonomous slot remains; Person-author research + AggregateRating-on-BlogPosting both deferred again (each adds NEEDS-ADAM noise or a 17-file diff against a paused workstream).
