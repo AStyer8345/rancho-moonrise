@@ -1552,3 +1552,7 @@ Skipped >10MB (skipped regardless of auth): ALL INCLUSIVE RETREATS AT RANCHO MOO
 2026-07-17 04:08 | ERROR: NotebookLM auth expired — CLI redirected to Google sign-in. Run 'notebooklm login' in an interactive session to re-authenticate.
 2026-07-17 04:08 | Pending (not synced, will retry next run): 2026-05-16-hipcamp-curation-gap-audit.md [NEW], 2026-04-09-rancho-moonrise-improvement-plan.html [MODIFIED]
 2026-07-17 04:08 | scanned=65 added=0 replaced=0 skipped=4 errors=1
+
+2026-07-17 08:08 | ERROR: NotebookLM auth still expired — `notebooklm list --json` returned {"error":true} "Authentication expired or invalid" (redirect to Google sign-in). Needs one-time interactive `notebooklm login`; impossible in a scheduled run. Consecutive failures since 2026-07-03 (~2 weeks). State file NOT advanced so pending files re-detect once re-authed.
+2026-07-17 08:08 | Pending (deferred, not synced): NEW brand/2026-05-16-hipcamp-curation-gap-audit.md (18543 B); MODIFIED brand/2026-04-09-rancho-moonrise-improvement-plan.html (60047->61254 B). Skipped >10MB regardless of auth: ALL INCLUSIVE RETREATS…pdf (36.9MB), PRIVATE EVENTS…pdf (28.8MB), INTIMATE EVENTS AT RM.pdf (20.7MB), plus review-aggregate.json (non-synced ext).
+2026-07-17 08:08 | scanned=65 added=0 replaced=0 skipped=4 errors=1 (auth expired — needs `notebooklm login`)
