@@ -1,5 +1,12 @@
 # Rancho Moonrise — Changelog
 
+## 2026-07-17 (rancho-site-daily) — 38th consecutive cruise-control firing
+
+- **No shipped edits.** GOALS.md still week-of-5/18 ("No Rancho Moonrise active work — paused; cruise control only if Ashley moves"), last touched 2026-07-02 (LoanOS-only; Rancho line unchanged). No Ashley move this cycle. Surgical CreativeWork-property enrichment runway on BlogPosting JSON-LD closed 5/26 — no autonomous slot remains; Person-author research + AggregateRating-on-BlogPosting both deferred again (each adds NEEDS-ADAM noise or a 17-file diff against a paused workstream).
+- **Re-Verify Gate (live, 7/7 still_true, 0 resolved):** apex 200 + `server: Vercel` + `x-vercel-cache: HIT` (`age: 2455` ≈ 41 min); www → apex; sitemap / corp-retreats / safari-tents / blog all 200; BlogPosting CreativeWork 6-property spot-check on `/blog/glamping-near-austin-texas/` intact 52 days post-5/26 deploy (dateModified 2026-05-26, wordCount 1005, articleSection "Glamping", inLanguage "en-US", isAccessibleForFree true, copyrightYear 2026).
+- **Clean continuity:** both `run-logs/2026-07-15-seo.md` and `run-logs/2026-07-16-seo.md` tracked (committed at `958b3fe`, the 37th firing) — no orphaned prior-day SEO log to reconcile; CHANGELOG.md HEAD == working tree (no concurrent-writer stale-revert). Indexing/SERP claims owned by competitive-weekly + Adam; review/GBP by review-monitor/gbp-weekly — neither re-litigated.
+- **Commit discipline:** pre-existing prior-session changes (api/inquiry.js, styles.css, main.js, contact.html, weddings.html) + concurrent-writer artifacts intentionally NOT staged; committed by explicit path only. No SEO task IDs (s1–s8) touched, no done-log entry. Run-log: `run-logs/2026-07-17-seo.md`.
+
 ## 2026-07-16 (rancho-review-monitor) — RUN_064 — 31st consecutive quiet sweep
 
 - **No new reviews on any monitorable platform; no rating/count drops; no new ≤3★.** 12-day gap since RUN_063 (7/04) — task did not fire 7/05–7/15. Cruise-control maintenance under GOALS.md week-of-5/18 broad Rancho pause (review-monitor NOT in the Scheduled-Tasks Pause List; monitoring ≠ active work per Rancho CLAUDE.md line 1). Done-log grep confirms no review-related RESOLVED entry since 2026-04-15 22:12 — the three 2026-07-15 RESOLVED lines are all competitive-weekly ResortPass items, not review replies.
