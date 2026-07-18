@@ -2079,3 +2079,20 @@ BLOCKERS no-attempt: airbnb(52) hotels.com(42) theknot-direct(19) hipcamp-direct
 [2026-06-30 06:30] re-verify google-unreplied — still_true — live=1 prior=1 (Cassie carry)
 [2026-06-30 06:30] re-verify theknot-unreplied — still_true — live=1 prior=1 (Haylee carry)
 BLOCKERS no-attempt: airbnb(61) hotels.com(42) theknot-direct(28) hipcamp-direct(19th cycle) google-count. Carry-forward drafts day 43: Cassie (Google 5★), Haylee L. (Knot 1★, 124d). Dashboard pending. Run-log: run-logs/2026-06-30-review-monitor.md.
+
+---
+
+> **Session-log continuity note (added RUN_065):** RUN_063 (2026-07-04) and RUN_064 (2026-07-16) fired and committed their aggregate (62→63→64) + dashboard (62→63→64) + CONTEXT "Last Worked On" bullets + CHANGELOG entries, but did **not** append to this session-log — this file was 2 runs behind RUN_065. Their honest per-claim state is preserved in `brand/review-aggregate.json` (`note` + `note_prior_run_064`) and the CONTEXT "Last Worked On" bullets dated 2026-07-04 and 2026-07-16. Not reconstructed here (exact per-claim verify lines for those runs were not recorded). RUN_065 resumes the append cadence.
+
+## RUN_065 — 2026-07-18 06:30 CT — ok (quiet sweep + 1 BLOCKER opened)
+32nd consecutive quiet sweep. 0 new reviews, 0 rating/count drops, 0 new ≤3★, 0 drafts (both RUN_034 carry-forwards still unposted). Re-Verify Gate 8 live claims: 7 still_true, 1 STALE (Google live-count carry), 0 resolved. **Material change:** tripadvisor-direct-fetch BLOCKER OPENED (3rd consecutive direct-fetch failure). 2-day gap since RUN_064 (task did not fire 7/17).
+[2026-07-18 06:30] re-verify tripadvisor-direct-fetch — FAILED 3rd consecutive (RUN_063 403, RUN_064 403, RUN_065 domain-safety/network block) → BLOCKER OPENED (tripadvisor-direct-fetch, logged in BLOCKERS.md) — live=fetch-blocked prior=403
+[2026-07-18 06:30] re-verify tripadvisor-reviews — still_true (WebSearch corroboration: canonical g56224-d33307272 indexed, no count/rating in snippet) — live=0/unclaimed prior=0/unclaimed
+[2026-07-18 06:30] re-verify tripadvisor-price-range — STALE:2026-06-30 (not re-confirmable under BLOCKER; immaterial rate estimate) — live=unverifiable prior=$45-$154
+[2026-07-18 06:30] re-verify google-snippet-count — still_true(non-authoritative) — live=126 prior=175 (oscillated back to common hold; 4.9★ inline; live-authoritative 130 STALE 60d)
+[2026-07-18 06:30] re-verify expedia-rating — still_true — live=8.0(inline) prior=8.0 (no 9.0 artifact, 10th consecutive run without)
+[2026-07-18 06:30] re-verify facebook-reviews — still_true — live=5/100% prior=5/100% (46th inline)
+[2026-07-18 06:30] re-verify theknot-haylee-l-live — still_true — live=body-indexed prior=body-indexed (142d unreplied, 20wk; no owner-response indexed; count not inline, 8/4.5★ carried)
+[2026-07-18 06:30] re-verify google-unreplied — still_true (done-log brand/rancho-done-log.md does not exist; no review RESOLVED entry ever) — live=1 prior=1 (Cassie carry)
+[2026-07-18 06:30] re-verify theknot-unreplied — still_true — live=1 prior=1 (Haylee carry)
+BLOCKERS no-attempt: airbnb(64) hotels.com(42) theknot-direct(31st) hipcamp-direct(22nd cycle) google-count. NEW BLOCKER: tripadvisor-direct-fetch (opened 2026-07-18, 3 consecutive failures). Carry-forward drafts day 61: Cassie (Google 5★, ~63d old), Haylee L. (Knot 1★, 142d). Dashboard pending. State: aggregate 64→65, dashboard-state 64→65. Run-log: run-logs/2026-07-18-review-monitor.md.

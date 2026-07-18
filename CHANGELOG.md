@@ -1,5 +1,12 @@
 # Rancho Moonrise — Changelog
 
+## 2026-07-18 (rancho-review-monitor) — RUN_065, 32nd consecutive quiet sweep
+
+- **rancho-review-monitor:** scraped review state across 6 monitorable platforms, resolved 0 stale claims, drafted 0 responses (no new reviews). Re-Verify Gate 8 live claims: 7 still_true, 1 STALE, 0 resolved. No rating drops, no count drops, no new ≤3★. 2-day gap since RUN_064 (task did not fire 7/17).
+- **Material change — BLOCKER opened:** `tripadvisor-direct-fetch` — DIRECT WebFetch of canonical `g56224-d33307272` failed for the 3rd consecutive run (RUN_063 403, RUN_064 403, RUN_065 domain-safety/network block); 403-watch 2-of-3 → 3-of-3 crossed threshold; logged in `tasks/review-monitor/BLOCKERS.md`. WebSearch fallback confirms canonical listing still indexed → **0/unclaimed HELD**; price band `$45–$154` carries **STALE:2026-06-30** (algorithmic rate estimate, not a review signal — immaterial).
+- **Quiet-sweep detail:** Google WebSearch snippet oscillated 175 → 126 (4.9★ inline; non-authoritative; live 130 STALE 60d). Expedia 8.0 inline (no 9.0 artifact, 10th run). Facebook 5/100% inline (46th run). The Knot Haylee L. 1★ body still indexed, no owner-response (142d / 20wk unreplied); 8/4.5★ carried. BLOCKERS no-attempt: airbnb(64), hotels.com(42), theknot-direct(31st), hipcamp-direct(22nd cycle), google-count. `brand/rancho-done-log.md` does not exist — no review RESOLVED entry ever logged; both RUN_034 carry-forward drafts (Cassie Butterfield Google 5★ day 61; Haylee L. Knot 1★ day 61) remain unposted at `brand/review-reports/2026-05-19-review-report.md`. Dashboard `pending`.
+- **Continuity:** RUN_063/064 had not appended to `session-log.md` (this run adds a continuity note + resumes the cadence). aggregate 64→65, dashboard-state 64→65. Committed by explicit path; prior-session changes + concurrent-writer artifacts NOT staged. Run-log: `run-logs/2026-07-18-review-monitor.md`.
+
 ## 2026-07-18 (rancho-site-daily) — 39th consecutive cruise-control firing
 
 - **No shipped edits.** GOALS.md still week-of-5/18 ("No Rancho Moonrise active work — paused; cruise control only if Ashley moves"), last touched 2026-07-02 (LoanOS-only; Rancho line unchanged). No Ashley move this cycle. Surgical CreativeWork-property enrichment runway on BlogPosting JSON-LD closed 5/26 — no autonomous slot remains; Person-author research + AggregateRating-on-BlogPosting both deferred again (each adds NEEDS-ADAM noise or a 17-file diff against a paused workstream).

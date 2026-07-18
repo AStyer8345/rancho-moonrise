@@ -1,12 +1,12 @@
 {
   "review_monitor": {
-    "last_run": "2026-07-16T11:30:00Z",
+    "last_run": "2026-07-18T11:30:00Z",
     "status": "pending",
-    "status_reason": "RUN_064 (2026-07-16 06:30 CT). Thirty-first consecutive quiet sweep — no new reviews on any monitorable platform; no rating drop, no review-count drop, no new <=3star. 12-DAY GAP since RUN_063 (2026-07-04) — task did not fire 7/05-7/15; site-daily/competitive-weekly carried the Rancho cadence. CLEAN CONTINUITY: RUN_063 (7/04) committed its run-log + aggregate (62->63) + dashboard (62->63); no orphaned review-monitor state carried into this run (today's rancho-site-daily 37th firing committed CONTEXT/CHANGELOG/TODO at 958b3fe, notebooklm-sync f4ba8e0 on top; those three were clean in the working tree — this run edits them fresh and commits by explicit path). TWO carry-forward URGENT items remain unposted: Cassie Butterfield Google 5star (drafted RUN_034, day 59 unposted in monitor) and Haylee L. The Knot 1star from 2026-02-26 (drafted RUN_034, 140 days unreplied, day 59 unposted in monitor). Done-log grep this run confirms no review-related RESOLVED entry since 2026-04-15 22:12 (the three 2026-07-15 RESOLVED lines are all rancho-competitive-weekly ResortPass items, NOT review replies). Status remains 'pending' — no rating drop, no review count decrease, no new <=3star, but TWO outstanding drafts + Knot BLOCKER continues (30 runs no-attempt) + Hipcamp BLOCKER 21st run of no-attempt cycle + TripAdvisor direct-fetch 403 watch now 2-of-3. NEW THIS RUN: TripAdvisor DIRECT WebFetch of canonical g56224-d33307272 FAILED HTTP 403 AGAIN — 2nd consecutive failure (RUN_063 was 1st; RUN_060/061/062 all succeeded); BLOCKER threshold 3, none opened; watch escalated 1->2 of 3; if 403 recurs RUN_065, open a BLOCKER. Fell back to WebSearch: canonical listing still indexed ('RANCHO MOONRISE - Prices & Campground Reviews (Manor, TX)') with no count/rating in snippet — consistent with 0/unclaimed; 0/unclaimed HELD via search corroboration; price band NOT re-confirmable, carries $45-$154 STALE:2026-06-30 (algorithmic standard-room rate estimate, not a review signal; dashboard status unaffected). Google WebSearch snippet OSCILLATED 126 -> 175 this run (high oscillation value; 4.9star not inline; 175 != live 130 so snippet remains non-authoritative and is not a reliable count proxy in either direction). Google live count 130/4.9star carries from RUN_034 Chrome read (58 days old, STALE) — 58 days without an authoritative count; re-confirm via Places API or GBP dashboard. Expedia 8.0 anchor SURFACED INLINE this run — inline confirmation RECOVERED after RUN_063 miss; no 9.0 artifact (9th consecutive without); Hotels.com listing ho2867109568 still active. Facebook 5/100% INLINE 45th consecutive run. The Knot direct WebFetch not attempted (BLOCKER ongoing since RUN_037, 7 prior timeouts; 30th no-attempt run); listing count/rating SURFACED INLINE this run (8 reviews / 4.5star, count held — no new reviews); Haylee L. review body surfaces today in Rancho-attributed snippet via NAME-FREE query (name-surfacing not asserted); owner-reply state unverifiable, no owner-response indexed. Hipcamp direct fetch not attempted (BLOCKER 21st no-attempt-cycle run); voice/data violations carry STALE:2026-05-26. Airbnb 403 BLOCKER 63rd no-attempt. Hotels.com direct fetch NOT attempted (counter holds 42; cruise-control). Done-log signal: no review-related entry since 2026-04-15 22:12.",
+    "status_reason": "RUN_065 (2026-07-18 06:30 CT). Thirty-second consecutive quiet sweep — no new reviews on any monitorable platform; no rating drop, no review-count drop, no new <=3star. 2-day gap since RUN_064 (2026-07-16) — task did not fire 7/17. CLEAN CONTINUITY: RUN_064 (7/16) committed its run-log + aggregate (63->64) + dashboard (63->64) + CONTEXT/CHANGELOG bullets; no orphaned review-monitor state carried into this run (today's rancho-site-daily 39th firing committed CONTEXT/CHANGELOG/TODO at d77f1bb, notebooklm-sync 6b7fedd on top; those were clean in the working tree — this run edits CONTEXT 'Last Worked On' + CHANGELOG + session-log fresh and commits by explicit path). MATERIAL CHANGE THIS RUN: tripadvisor-direct-fetch BLOCKER OPENED — DIRECT WebFetch of canonical g56224-d33307272 FAILED for the 3rd consecutive run (RUN_063 403, RUN_064 403, RUN_065 domain-safety/network block 'Unable to verify if domain www.tripadvisor.com is safe to fetch'; same net effect); 403-watch 2-of-3 -> 3-of-3, threshold met, BLOCKER logged in tasks/review-monitor/BLOCKERS.md. Fell back to WebSearch: canonical listing still indexed ('RANCHO MOONRISE - Prices & Campground Reviews (Manor, TX)') with no count/rating in snippet — 0/unclaimed HELD via search corroboration; price band NOT re-confirmable, carries $45-$154 STALE:2026-06-30 (algorithmic standard-room rate estimate, not a review signal; dashboard status unaffected). TWO carry-forward URGENT items remain unposted: Cassie Butterfield Google 5star (drafted RUN_034, day 61 unposted in monitor, ~63d old review) and Haylee L. The Knot 1star from 2026-02-26 (drafted RUN_034, 142 days / 20 weeks unreplied, day 61 unposted in monitor). done-log (brand/rancho-done-log.md) does not exist — no review RESOLVED entry has ever been logged; both drafts remain genuinely unposted. Status remains 'pending' — no rating drop, no review count decrease, no NEW <=3star; the Haylee 1star is a long-standing carried draft (not a fresh drop), classification held consistent with RUN_060-064. Google WebSearch snippet OSCILLATED 175 -> 126 this run (4.9star inline; 126 is the common hold value; non-authoritative, has printed both 126 and 175 while live 130 — not a reliable count proxy in either direction). Google live count 130/4.9star carries from RUN_034 Chrome read (60 days old, STALE) — 60 days without an authoritative count; re-confirm via Places API or GBP dashboard. Expedia 8.0 anchor SURFACED INLINE this run; no 9.0 artifact (10th consecutive without); Hotels.com listing ho2867109568 still active. Facebook 5/100% INLINE 46th consecutive run. The Knot direct WebFetch not attempted (BLOCKER ongoing since RUN_037, 7 prior timeouts; 31st no-attempt run); listing count/rating did NOT surface inline this run (8 reviews / 4.5star carried — no new reviews); Haylee L. review body surfaces today in Rancho-attributed snippet; owner-reply state unverifiable, no owner-response indexed. Hipcamp direct fetch not attempted (BLOCKER 22nd no-attempt-cycle run); voice/data violations carry STALE:2026-05-26. Airbnb 403 BLOCKER 64th no-attempt. Hotels.com direct fetch NOT attempted (counter holds 42; cruise-control).",
     "new_reviews_pending_response": 2,
     "new_reviews_pending_response_detail": [
-      {"platform": "google", "reviewer": "Cassie Butterfield", "stars": 5, "posted": "~2026-05-16", "draft_location": "brand/review-reports/2026-05-19-review-report.md", "first_drafted_run": 34, "days_drafted_unposted": 59},
-      {"platform": "the_knot", "reviewer": "Haylee L.", "stars": 1, "posted": "2026-02-26", "draft_location": "brand/review-reports/2026-05-19-review-report.md", "first_drafted_run": 34, "weeks_unreplied": 20, "days_unreplied": 140, "days_drafted_unposted": 59}
+      {"platform": "google", "reviewer": "Cassie Butterfield", "stars": 5, "posted": "~2026-05-16", "draft_location": "brand/review-reports/2026-05-19-review-report.md", "first_drafted_run": 34, "days_drafted_unposted": 61},
+      {"platform": "the_knot", "reviewer": "Haylee L.", "stars": 1, "posted": "2026-02-26", "draft_location": "brand/review-reports/2026-05-19-review-report.md", "first_drafted_run": 34, "weeks_unreplied": 20, "days_unreplied": 142, "days_drafted_unposted": 61}
     ],
     "total_reviews_tracked": 132,
     "unreplied_by_platform": {
@@ -19,35 +19,34 @@
     },
     "stale_platforms": ["expedia", "hipcamp", "tripadvisor"],
     "flags": [
-      "carry-forward-cassie-butterfield-google-unreplied-day-59-monitor",
-      "carry-forward-haylee-l-the-knot-unreplied-140-days",
-      "clean-continuity-run-063-committed-no-orphaned-state",
-      "12-day-gap-since-run-063-task-did-not-fire-7-05-to-7-15",
-      "tripadvisor-direct-fetch-403-second-consecutive-failure-watch-2-of-3-fell-back-to-websearch-0-unclaimed-held",
+      "carry-forward-cassie-butterfield-google-unreplied-day-61-monitor",
+      "carry-forward-haylee-l-the-knot-unreplied-142-days-20-weeks",
+      "clean-continuity-run-064-committed-no-orphaned-state",
+      "2-day-gap-since-run-064-task-did-not-fire-7-17",
+      "tripadvisor-direct-fetch-BLOCKER-OPENED-3rd-consecutive-failure-websearch-0-unclaimed-held",
       "tripadvisor-price-band-not-reconfirmable-carries-45-154-stale-2026-06-30",
-      "google-snippet-oscillated-126-to-175-high-value-non-authoritative-live-130-stale-58d",
-      "expedia-8.0-surfaced-inline-recovered-no-9.0-artifact-ninth-run",
-      "facebook-stable-forty-fifth-consecutive-run",
-      "the-knot-direct-fetch-blocker-ongoing-thirty-runs-no-attempt",
-      "the-knot-listing-count-rating-surfaced-inline-8-at-4.5-count-held-no-new-reviews",
-      "airbnb-listing-existence-unverified-63-runs",
-      "google-live-scrape-blocked-63-runs-58-days-without-authoritative-count",
+      "google-snippet-oscillated-175-to-126-non-authoritative-live-130-stale-60d",
+      "expedia-8.0-surfaced-inline-no-9.0-artifact-tenth-run",
+      "facebook-stable-forty-sixth-consecutive-run",
+      "the-knot-direct-fetch-blocker-ongoing-thirty-one-runs-no-attempt",
+      "the-knot-count-rating-8-at-4.5-carried-no-new-reviews",
+      "airbnb-listing-existence-unverified-64-runs",
+      "google-live-scrape-blocked-64-runs-60-days-without-authoritative-count",
       "hotels-com-fetch-not-attempted-counter-holds-42",
-      "hipcamp-direct-fetch-blocker-twenty-first-no-attempt-cycle-run",
-      "tripadvisor-canonical-url-g56224-d33307272-non-canonical-g55819-d27521234-is-kyiv-hostel",
-      "apify-pull-still-pending-reviewer-removal-detection-dormant"
+      "hipcamp-direct-fetch-blocker-twenty-second-no-attempt-cycle-run",
+      "done-log-file-missing-no-review-resolved-entry-ever-logged",
+      "tripadvisor-canonical-url-g56224-d33307272-non-canonical-g55819-d27521234-is-kyiv-hostel"
     ],
     "blockers": [
       "google-reviews-count",
       "hotels-com-direct-fetch",
       "airbnb-listing-existence",
       "theknot-direct-fetch",
-      "hipcamp-direct-fetch"
+      "hipcamp-direct-fetch",
+      "tripadvisor-direct-fetch"
     ],
-    "watch": [
-      "tripadvisor-direct-fetch-403-2-of-3-consecutive-failures"
-    ],
+    "watch": [],
     "new_platforms_noted": ["yelp", "agoda", "the_knot"],
-    "run_number": 64
+    "run_number": 65
   }
 }

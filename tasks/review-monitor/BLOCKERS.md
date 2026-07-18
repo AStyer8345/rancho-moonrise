@@ -65,3 +65,19 @@ Append-only. If a live verification path fails 3 consecutive runs for the same c
 - **Working fallback:** WebSearch is the documented working alternative — it surfaces review body text and listing context reliably, and confirms whether Haylee's review remains live. **Limitation:** it cannot enumerate new reviews posted since RUN_034, and it cannot verify owner-response state directly. Net effect: drift detection on The Knot is now best-effort via search snippet rather than direct.
 - **Resolution path:** Either (a) Apify or another rendering scraper as a periodic pull for The Knot, (b) Adam manually opens the listing in a browser every ~2 weeks to spot-check for new reviews + owner-reply state, or (c) treat The Knot the same as Hotels.com — accept search-snippet confirmation as "likely unchanged" and downgrade to a quarterly manual check.
 - **Logged:** 2026-05-23
+
+---
+
+## BLOCKER: tripadvisor-direct-fetch — direct fetch failed 3 consecutive runs
+
+- **Claim:** TripAdvisor claimed/unclaimed status, review count/rating, and price band for the canonical Rancho Moonrise listing `g56224-d33307272` (`https://www.tripadvisor.com/Hotel_Review-g56224-d33307272-Reviews-Rancho_Moonrise-Manor_Texas.html`). Baseline: 0 reviews / unclaimed; price band `$45–$154` (last successful direct scrape RUN_062, 2026-06-30).
+- **Verification path attempted:** WebFetch of the canonical listing URL. This was the one previously-reliable direct path — RUN_060/061/062 (6/28–6/30) all succeeded and read the price band directly.
+- **Failure mode:** mixed across the 3 consecutive failures, same net effect (no on-page content extractable):
+  - RUN_063 2026-07-04: HTTP 403 (1st failure of the previously-reliable path)
+  - RUN_064 2026-07-16: HTTP 403 (2nd consecutive)
+  - RUN_065 2026-07-18: WebFetch returned "Unable to verify if domain www.tripadvisor.com is safe to fetch" (domain-safety/network block) — 3rd consecutive; different mechanism, identical result (zero Rancho-attributed on-page content)
+- **Consecutive failures:** 3 (RUN_063 2026-07-04, RUN_064 2026-07-16, RUN_065 2026-07-18)
+- **Status:** 0/unclaimed HELD via WebSearch corroboration — canonical `g56224-d33307272` still indexed as "RANCHO MOONRISE - Prices & Campground Reviews (Manor, TX)" with no count/rating in snippet (consistent with 0/unclaimed). Price band NOT re-confirmable — carries `$45–$154` **STALE:2026-06-30**. Immaterial regardless: the price band is an algorithmic standard-room rate estimate, not a review signal; 0/unclaimed is the review-relevant fact and it still holds.
+- **Working fallback:** WebSearch reliably surfaces the canonical listing's existence + title (confirms 0/unclaimed by absence of any count/rating snippet). **Limitation:** cannot enumerate the price band and cannot detect a hypothetical claim/first-review event as fast as the direct path could. **Canonical-URL guard:** only `g56224-d33307272` is Rancho's listing; the non-canonical `g55819-d27521234` resolves to an unrelated Kyiv hostel — never fetch it.
+- **Resolution path:** Either (a) Apify or another rendering/residential-proxy scraper as a periodic TripAdvisor pull, (b) Adam manually opens the listing every ~2 weeks to spot-check claim status + first review, or (c) accept the WebSearch "still indexed, 0/unclaimed" signal and downgrade TripAdvisor direct-fetch to a quarterly manual check (same pattern as Hotels.com / The Knot / Hipcamp). No Adam action required unless a claim/first-review event is suspected — 0/unclaimed has held across every read since the listing was first tracked.
+- **Logged:** 2026-07-18
