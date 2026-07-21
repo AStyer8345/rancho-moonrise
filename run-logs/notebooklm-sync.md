@@ -1590,3 +1590,14 @@ Skipped >10MB (skipped regardless of auth): ALL INCLUSIVE RETREATS AT RANCHO MOO
 2026-07-21 08:19 | ERROR: notebooklm auth still expired — verified live this run: `notebooklm use <id>` and `list --json` both returned {"error":true} "Authentication expired or invalid" (redirect to accounts.google.com). No uploads attempted; state file left unchanged so the next run retries. 21st consecutive failure since 2026-07-03 (~2.5 weeks, zero syncs). ACTION NEEDED: Adam runs `notebooklm login` once interactively — or pause this task until he does. Delta scan itself works fine; only the NotebookLM API leg is broken.
 2026-07-21 08:19 | Pending (deferred, not synced): NEW approved-testimonials.md (4387 B), NEW 2026-05-16-hipcamp-curation-gap-audit.md (18543 B), MODIFIED 2026-04-09-rancho-moonrise-improvement-plan.html (60047->61254 B, delete-then-reupload). Skipped >10MB: ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf (36.9MB), PRIVATE EVENTS AT RANCHO MOONRISE.pdf (28.8MB), INTIMATE EVENTS AT RM.pdf (20.7MB). Skipped unsupported ext: review-aggregate.json.
 2026-07-21 08:19 | scanned=70 added=0 replaced=0 skipped=4 errors=1 (auth expired — needs `notebooklm login`)
+
+## 2026-07-21 12:08 — RUN ABORTED: NotebookLM auth expired
+- `notebooklm source list --json` returned: "Authentication expired or invalid. Run 'notebooklm login' to re-authenticate."
+- No uploads, deletes, or state-file writes performed. Sync state left untouched so the backlog re-detects on the next run.
+- Pending backlog (16 new, 1 modified) waiting on re-auth:
+  - NEW: approved-testimonials.md, 2026-05-16-hipcamp-curation-gap-audit.md, 2026-04-09/05-19/05-20/05-21/05-23/05-24/05-25-review-report.md, 2026-05-19-gbp-live-snapshot.md, 2026-04-15-gbp-profile-fields.md, 2026-04-15-gbp-qa-seed.md, 2026-04-09-gbp-post.md, 2026-04-13-gbp-post.md, 2026-04-15-blog12-social-snippets.md, Monotype Font Software End User License Agreement.html
+  - MODIFIED: 2026-04-09-rancho-moonrise-improvement-plan.html
+- Skipped by policy: 3 PDFs >10MB (ALL INCLUSIVE RETREATS, INTIMATE EVENTS, PRIVATE EVENTS), 3 unsupported ext (review-aggregate.json, 2 .otf fonts)
+- ACTION FOR ADAM: run `notebooklm login` — this task cannot re-auth (interactive Google OAuth).
+2026-07-21 12:08 | scanned=80 added=0 replaced=0 skipped=6 errors=1 (auth)
+- NOTE: this run's scan recursed into subfolders (brand/gbp-posts, brand/review-reports), so scanned=80 vs ~66-70 in prior runs which were top-level only. The 13 extra "NEW" items are pre-existing subfolder files, not new work — they were never in scope before. Whoever restores auth should decide whether subfolders belong in the notebook before the first successful sync uploads all 13.
