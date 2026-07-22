@@ -9,9 +9,9 @@ Priority: broken/placeholder assets first, then highest-impression landing pages
 
 | Page | Last Touch | Status |
 |------|-----------|--------|
-| `weddings.html` | 2026-04-22 | BLOCKED — see run log below |
-| `accommodations.html` | 2026-07-15 | BLOCKED — same two NEEDS ADAM items (run 9, 84 days; GOALS.md week of 5/18 still pauses Rancho broadly) |
-| `host-your-event.html` | — | Pending |
+| `weddings.html` | 2026-04-22 | BLOCKED — no approved wedding testimonial (author block now unblocked) |
+| `accommodations.html` | **2026-07-22** | ✅ **STRENGTHENED** — 3 of 4 elements shipped (photos, author block, local detail). Testimonial still NEEDS ADAM. |
+| `host-your-event.html` | — | Pending — **next up** |
 | `events.html` | — | Pending |
 | `pool-day-pass-austin.html` | — | Pending |
 | `glamping-near-austin-texas.html` | — | Pending |
@@ -135,3 +135,31 @@ Both hard stops re-verified live still true (`find brand -iname "*testimonial*" 
 ### 2026-07-15 — BLOCKED (run 9; one-liner per 5/13 commitment)
 
 Both hard stops re-verified live still true (`find brand site -iname "*testimonial*" -o -iname "*approved*"` = 0 hits; `grep -in "byline|settled decision|author.*adam|author.*ashley" GOALS.md` = 0 matches). GOALS.md still week of 5/18 (last updated 7/02 — a LoanOS-only edit; the Rancho line "No Rancho Moonrise active work — paused (cruise control only if Ashley moves)" is unchanged). 9th structurally-blocked content-weekly run (4/22, 4/29, 5/06, 5/13, 6/03, 6/10, 6/17, 6/24, 7/15); 84-day blocker pattern. No landing-page edits. Single-ask pause request lives in the 5/13 entry and TODO.md NEEDS ADAM #0 — not re-litigated here. Committed queue file only by explicit path; pre-existing prior-session changes + concurrent-writer artifacts intentionally NOT staged. Next run: 2026-07-22.
+
+---
+
+### 2026-07-22 — accommodations.html — ✅ SHIPPED (run 10; 10-run block broken, first strengthening pass in 91 days)
+
+**Gate re-checked live, not inherited from CONTEXT.md** (per the standing correction logged by rancho-site-daily this morning — re-read GOALS.md from disk each run):
+
+1. **Author byline — RESOLVED.** GOALS.md now has a `## Settled Decisions` section: *"Rancho Moonrise author byline: Ashley … Byline form: `Ashley · Rancho Moonrise`. Settled 2026-07-15. This clears the `rancho-content-weekly` author-block hard stop."* GOALS.md also moved `rancho-content-weekly` into **Keep running** ("unpaused 2026-07-15 — byline settled, testimonials sourcing underway"). Runs 1–9 read a GOALS.md that predated this.
+2. **Testimonial — STILL BLOCKED.** `brand/approved-testimonials.md` now exists (created 2026-07-15) — real progress — but its only candidate, **T-001 Cassie Butterfield (Google 5★)**, is `STATUS: UNAPPROVED — awaiting Adam` with `EVENT DATE: UNKNOWN`. The file's own hard rule allows pulling only `APPROVED` entries. Separately, T-001 is corporate-retreat content and its own note says it "does NOT serve wedding, accommodation, or glamping pages" — so even once approved it will not serve this page. The file's Coverage-gaps table lists Accommodations/glamping as **"No — Hipcamp shows 0 reviews. Nothing on file."**
+
+**Why this run shipped anyway (the ≥3 rule):** the task spec requires *at least 3 of 4* elements. Runs 1–9 correctly refused because author-block AND testimonial AND photos were all blocked, leaving only 1. With the byline settled and real unused photos available, this run had photos + author + local detail = 3. Bar met.
+
+**Page picked:** `accommodations.html` — held the #2 queue slot since 4/29 and was the standing holdover.
+
+**Shipped (1 file):**
+- **3 real photos, each verified by opening the file** — no stock, no AI, and no alt text written from a filename. Two replaced *duplicate* images (the page was rendering `accom-safari-tent`, `accom-group-aerial` and `accom-cabin-exterior` twice each): Pet Friendly → `lodge-window-view` (black ranch dog at the Lodge window, straw hat and cowhide stool beside her); WiFi → `lodge-dining-area` (long reclaimed-wood table, leather sling chairs). Third: `accom-outdoor-bath` newly placed in a real content section.
+- **Named author block** — `Ashley · Rancho Moonrise` + role line + review date. **First visible author block on the site** (no page had one; no CSS class existed — used the page's inline-style convention). Matching `author` Person added to `WebPage` JSON-LD with `dateModified: 2026-07-22`.
+- **Local detail** — killed the generic *"clean, well-maintained bathhouse"* (3 occurrences; copyable by any Texas venue) and replaced it with the real building: corrugated metal walls, cedar plank floor, carved river-rock sink on a cedar vanity, walk-in shower — confirmed by opening `accom-outdoor-bath-1024.webp` directly. Plus Travis County active-burn-ban constraint on fire pits (already published in `faqs.html`) and donkeys at the fence line (VOICE-GUIDE-sanctioned).
+
+**Bug fixed in passing:** `og:image`/`twitter:image` pointed at `accommodation-premium-safari.jpg` — a **342×340** thumbnail — while declaring `width 1200` / `height 630`. Repointed to `accom-safari-tent.jpg` (2049×1536) with true dimensions. **Checked all 29 other public pages — no other page has this defect.**
+
+**Verification:** `npm run validate:site` passes; 3/3 JSON-LD blocks parse with `author.name = Ashley` and `dateModified` asserted; all 4 assets 200 + decode at real dimensions; 0 banned words; 0 emoji; `Manor` only in schema address + footer. No screenshot — preview harness reported `window.innerHeight: 0` (viewport never had height, so IntersectionObserver couldn't fire and lazy images never decoded). Confirmed a harness artifact, not a regression: every pre-existing `.fade-in` on the page behaves identically and the untouched homepage reveals normally.
+
+**Finding for future runs — do not add photos to `[data-gallery]` blocks.** Both galleries here are Supabase-hydrated from `rancho_photos` (`ranch_tour` 12 active, `lodge` 8) and call `el.innerHTML = ''` before appending. Static tiles added there are **wiped client-side in production**. All three photos this run went to non-hydrated slots.
+
+**Left alone deliberately:** `corral-hank-willie` and `corral-waylon-texas` — real photos in the responsive ladder with **zero references anywhere in the repo**. Strong orphaned assets, but VOICE-GUIDE lists the horse corral under "future, not yet public-ready" while it is already live on `index.html`, `weddings.html` and `host-your-event.html`. That contradiction is Adam's call, not an autonomous run's. Logged to TODO.
+
+**Next run:** `host-your-event.html`. Note T-001 (once approved) is corporate-retreat content and suits `host-your-event.html` / `corporate-retreat-near-austin.html` — so that page could reach 4 of 4 if Adam approves it and Ashley supplies the event date.

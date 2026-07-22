@@ -3,6 +3,24 @@ Last updated: 2026-07-22 (rancho-site-daily — **cruise-control streak BROKEN a
 
 ## 🔥 NEEDS ADAM (highest leverage this week)
 
+### NEEDS ADAM — Approve testimonial T-001 (unblocks the 4th element of every content-weekly run) — added 2026-07-22 by `rancho-content-weekly`
+
+**Status: the byline half is DONE, the testimonial half is one checkbox away.** Thank you — the `## Settled Decisions` line in GOALS.md ("byline: Ashley · Rancho Moonrise") plus creating `brand/approved-testimonials.md` broke a 10-run, 91-day block. `accommodations.html` shipped its first strengthening pass today with 3 of the 4 required elements.
+
+**The one remaining gap — two small asks:**
+
+1. **Flip T-001 to `STATUS: APPROVED` in `brand/approved-testimonials.md` (~30 seconds).** Cassie Butterfield's Google 5★ is verbatim, attributed and live-verified; it currently reads `UNAPPROVED — awaiting Adam`. Content tasks may only pull `APPROVED` entries, so it cannot be placed on any page until you flip it.
+2. **Get the event date from Ashley's booking record (~2 min).** The entry has `EVENT DATE: UNKNOWN`. The task spec requires a testimonial tied to a **real event date** — a review date is explicitly not an event date — so even once approved, T-001 can't ship without it.
+
+**Worth knowing about coverage:** T-001 is corporate-retreat content. Its own note says it "does NOT serve wedding, accommodation, or glamping pages." So approving it unblocks `host-your-event.html` and `corporate-retreat-near-austin.html` — **not** weddings, accommodations, glamping, pool or bachelorette. Per the file's Coverage-gaps table, weddings is the highest-value hole: **8 reviews live on The Knot at 4.5★, none captured verbatim.** The file's own recommendation is the fastest close: *"Ashley pulls 2–3 wedding quotes with real event dates straight from HoneyBook or her inbox"* — better provenance than anything scraped, and dated by definition. Until that happens, `weddings.html` can reach at most 3 of 4 elements.
+
+**Two smaller decisions surfaced by today's run (neither blocking):**
+
+- **Horse corral — is it public-ready or not?** `VOICE-GUIDE.md` lists it under *"Future spaces — future, not yet public-ready,"* but it is **already live on `index.html`, `weddings.html` and `host-your-event.html`**. Meanwhile `corral-hank-willie` and `corral-waylon-texas` — real photos of the hand-painted HANK / WILLIE / WAYLON signs under the corral shelter, genuinely uncopyable content — sit in the responsive ladder with **zero references anywhere in the repo**. Autonomous runs won't place them while the guide contradicts production. One line either way in VOICE-GUIDE unblocks them.
+- **Acreage and direction contradict across surfaces.** VOICE-GUIDE says **36 acres**; the Hipcamp listing text says "34-acre" and its data payload says **37**. Site copy says "20 minutes **east**" while `things-to-do-manor-tx.html` says **northeast** and the Hipcamp coordinates compute NE. The approved phrase "20 minutes from downtown Austin" (no direction) sidesteps the second one cleanly.
+
+**Do not re-surface the old framing.** The pre-2026-07-15 version of this item asked you to either settle the byline or pause the task. Both are resolved — the task is correctly unpaused in GOALS.md → Keep running, and it is shipping. This item is now scoped only to the testimonial approval above.
+
 ### NEEDS ADAM — From 2026-06-18 Bi-Weekly Audit
 
 The June 18 audit (`site/audits/2026-06-18-business-audit.html`) confirmed the build shipped but the manual push stalled. Six items below — ordered by impact — are all free and all under 30 minutes, and none requires code. They are the difference between the next audit reading Reviews F → C / GBP B- → B+ / Website A- → A, or reading identical.
