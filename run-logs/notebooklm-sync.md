@@ -1609,3 +1609,4 @@ Skipped >10MB (skipped regardless of auth): ALL INCLUSIVE RETREATS AT RANCHO MOO
 - Skipped by policy: 3 PDFs >10MB (ALL INCLUSIVE RETREATS 36.9MB, PRIVATE EVENTS 28.8MB, INTIMATE EVENTS 20.7MB); 3 unsupported ext (review-aggregate.json, 2 .otf).
 - ACTION FOR ADAM: run `notebooklm login` once interactively, or pause this scheduled task. Zero successful syncs since 2026-07-03 (~3 weeks). The delta scan works; only the NotebookLM API leg is broken.
 2026-07-22 10:30 | scanned=86 added=0 replaced=0 skipped=6 errors=1 (auth)
+2026-07-22 10:47 | scanned=66 added=0 replaced=0 skipped=4 errors=1 (auth) — re-verified `notebooklm login` still expired; state untouched. Same blocker as the 10:30 run. See that entry for the full backlog breakdown.
