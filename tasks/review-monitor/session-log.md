@@ -2096,3 +2096,18 @@ BLOCKERS no-attempt: airbnb(61) hotels.com(42) theknot-direct(28) hipcamp-direct
 [2026-07-18 06:30] re-verify google-unreplied — still_true (done-log brand/rancho-done-log.md does not exist; no review RESOLVED entry ever) — live=1 prior=1 (Cassie carry)
 [2026-07-18 06:30] re-verify theknot-unreplied — still_true — live=1 prior=1 (Haylee carry)
 BLOCKERS no-attempt: airbnb(64) hotels.com(42) theknot-direct(31st) hipcamp-direct(22nd cycle) google-count. NEW BLOCKER: tripadvisor-direct-fetch (opened 2026-07-18, 3 consecutive failures). Carry-forward drafts day 61: Cassie (Google 5★, ~63d old), Haylee L. (Knot 1★, 142d). Dashboard pending. State: aggregate 64→65, dashboard-state 64→65. Run-log: run-logs/2026-07-18-review-monitor.md.
+
+## RUN_066 — 2026-07-22 06:30 CT — ok (quiet sweep + 2 material data events)
+33rd consecutive quiet sweep on review counts. 0 new reviews, 0 rating/count drops, 0 new ≤3★, 0 new drafts (both RUN_034 carry-forwards still unposted, day 65). Re-Verify Gate 11 live claims: 8 still_true, 1 partial/divergent, 1 new-signal, 1 failed, 0 resolved. **Material: (1) Expedia/Hotels.com two-entity split upgraded from artifact to probable real divergence; (2) Hipcamp no-attempt cycle broken on a contradicting signal, re-attempt failed, count held at 0 — but both voice violations re-confirmed live after 57 days stale.** 4-day gap since RUN_065 (task did not fire 7/19–7/21).
+[2026-07-22 06:30] re-verify google-snippet-count — still_true — live=126 prior=126 (2 runs stable; 4.9★ inline; live-authoritative 130 now STALE 64d)
+[2026-07-22 06:30] re-verify google-unreplied — still_true (done-log brand/rancho-done-log.md still does not exist) — live=1 prior=1 (Cassie carry)
+[2026-07-22 06:30] re-verify expedia-rating — partial/divergent — live=8.0(h89565924 inline)+9.0(hotels.com ho2867109568, 3 independent queries) prior=8.0 → entity-split hypothesis recorded, 8.0 anchor NOT overwritten, FLAG_FOR_ADAM
+[2026-07-22 06:30] re-verify expedia-count — new_signal(unconfirmed) — live=13 / "8.6 out of 10 from 20 reviews" prior=null → logged only, count stays null (8.6/20 off an aggregate travel-guide page, cross-listing smell)
+[2026-07-22 06:30] re-verify facebook-reviews — still_true — live=5/100% prior=5/100% (47th inline)
+[2026-07-22 06:30] re-verify theknot-haylee-l-live — still_true — live=body-indexed verbatim on a name-free query prior=body-indexed (146d/~21wk; no owner-response indexed; count not inline, 8/4.5★ carried)
+[2026-07-22 06:30] re-verify theknot-unreplied — still_true — live=1 prior=1 (Haylee carry)
+[2026-07-22 06:30] re-verify theknot-voice-violation — still_true — live="20 luxury cabins…up to 50 guests" inline prior=same
+[2026-07-22 06:30] re-verify tripadvisor-reviews — still_true (WebSearch corroboration, canonical g56224-d33307272 indexed, no count/rating in snippet) — live=0/unclaimed prior=0/unclaimed
+[2026-07-22 06:30] re-verify hipcamp-voice-violations — still_true, STALENESS RESOLVED — live="34-acre ranch"+"a bar" both in snippet prior=STALE:2026-05-26 (re-confirmed after 57 days)
+[2026-07-22 06:30] re-verify hipcamp-count — FAILED (no-attempt cycle broken on contradicting signal; direct re-attempt returned "Loading…") — live=unverifiable prior=0 → holds 0, STALE:2026-05-26, failure count 3→4
+BLOCKERS no-attempt: airbnb(65) hotels.com(42, held) theknot-direct(32nd) tripadvisor-direct(1st since opening 7/18) google-count. hipcamp-direct: cycle BROKEN + re-attempted + failed → failure count 4, cycle resets to 0. No new blocker opened. Carry-forward drafts day 65: Cassie (Google 5★, ~67d old), Haylee L. (Knot 1★, 146d). Dashboard pending. State: aggregate 65→66, dashboard-state 65→66. Run-log: run-logs/2026-07-22-review-monitor.md.

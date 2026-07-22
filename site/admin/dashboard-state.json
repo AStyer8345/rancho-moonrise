@@ -1,12 +1,30 @@
 {
   "review_monitor": {
-    "last_run": "2026-07-18T11:30:00Z",
+    "last_run": "2026-07-22T11:30:00Z",
     "status": "pending",
-    "status_reason": "RUN_065 (2026-07-18 06:30 CT). Thirty-second consecutive quiet sweep — no new reviews on any monitorable platform; no rating drop, no review-count drop, no new <=3star. 2-day gap since RUN_064 (2026-07-16) — task did not fire 7/17. CLEAN CONTINUITY: RUN_064 (7/16) committed its run-log + aggregate (63->64) + dashboard (63->64) + CONTEXT/CHANGELOG bullets; no orphaned review-monitor state carried into this run (today's rancho-site-daily 39th firing committed CONTEXT/CHANGELOG/TODO at d77f1bb, notebooklm-sync 6b7fedd on top; those were clean in the working tree — this run edits CONTEXT 'Last Worked On' + CHANGELOG + session-log fresh and commits by explicit path). MATERIAL CHANGE THIS RUN: tripadvisor-direct-fetch BLOCKER OPENED — DIRECT WebFetch of canonical g56224-d33307272 FAILED for the 3rd consecutive run (RUN_063 403, RUN_064 403, RUN_065 domain-safety/network block 'Unable to verify if domain www.tripadvisor.com is safe to fetch'; same net effect); 403-watch 2-of-3 -> 3-of-3, threshold met, BLOCKER logged in tasks/review-monitor/BLOCKERS.md. Fell back to WebSearch: canonical listing still indexed ('RANCHO MOONRISE - Prices & Campground Reviews (Manor, TX)') with no count/rating in snippet — 0/unclaimed HELD via search corroboration; price band NOT re-confirmable, carries $45-$154 STALE:2026-06-30 (algorithmic standard-room rate estimate, not a review signal; dashboard status unaffected). TWO carry-forward URGENT items remain unposted: Cassie Butterfield Google 5star (drafted RUN_034, day 61 unposted in monitor, ~63d old review) and Haylee L. The Knot 1star from 2026-02-26 (drafted RUN_034, 142 days / 20 weeks unreplied, day 61 unposted in monitor). done-log (brand/rancho-done-log.md) does not exist — no review RESOLVED entry has ever been logged; both drafts remain genuinely unposted. Status remains 'pending' — no rating drop, no review count decrease, no NEW <=3star; the Haylee 1star is a long-standing carried draft (not a fresh drop), classification held consistent with RUN_060-064. Google WebSearch snippet OSCILLATED 175 -> 126 this run (4.9star inline; 126 is the common hold value; non-authoritative, has printed both 126 and 175 while live 130 — not a reliable count proxy in either direction). Google live count 130/4.9star carries from RUN_034 Chrome read (60 days old, STALE) — 60 days without an authoritative count; re-confirm via Places API or GBP dashboard. Expedia 8.0 anchor SURFACED INLINE this run; no 9.0 artifact (10th consecutive without); Hotels.com listing ho2867109568 still active. Facebook 5/100% INLINE 46th consecutive run. The Knot direct WebFetch not attempted (BLOCKER ongoing since RUN_037, 7 prior timeouts; 31st no-attempt run); listing count/rating did NOT surface inline this run (8 reviews / 4.5star carried — no new reviews); Haylee L. review body surfaces today in Rancho-attributed snippet; owner-reply state unverifiable, no owner-response indexed. Hipcamp direct fetch not attempted (BLOCKER 22nd no-attempt-cycle run); voice/data violations carry STALE:2026-05-26. Airbnb 403 BLOCKER 64th no-attempt. Hotels.com direct fetch NOT attempted (counter holds 42; cruise-control).",
+    "status_reason": "RUN_066 (2026-07-22 06:30 CT). Thirty-third consecutive quiet sweep on review counts — no new reviews on any monitorable platform, no rating drop, no review-count drop, no new <=3star — but TWO MATERIAL DATA EVENTS. 4-day gap since RUN_065 (2026-07-18); task did not fire 7/19-7/21. Gate re-read from disk: GOALS.md (mtime 2026-07-20 11:19) does not list this task on the Pause List and narrows the Rancho pause to OUTREACH ONLY (site/content RESUMED 2026-07-15) — running is correct behavior. MATERIAL EVENT 1 — Expedia/Hotels.com TWO-ENTITY SPLIT upgraded from 'transient artifact' to PROBABLE REAL DIVERGENCE: 9.0 surfaced 3x across independent queries and for the first time was consistently attributed per-entity (hotels.com ho2867109568 -> 9.0 'Wonderful'; expedia.com h89565924 -> 8.0). The 8.0 anchor was NOT overwritten — no fresh direct scrape is available (hotels.com direct fetch = 42-timeout BLOCKER) — and the split is recorded pending Adam confirmation. First-ever review counts for the cluster also surfaced (13, and '8.6 out of 10 from 20 reviews') — mutually inconsistent, the 8.6/20 off an aggregate travel-guide page; logged, NOT written as the count. FLAG_FOR_ADAM: 30 seconds in either extranet settles whether this is one rating or two. MATERIAL EVENT 2 — Hipcamp 22-run no-attempt cycle DELIBERATELY BROKEN after a WebSearch snippet surfaced apparent review content against the 0-review baseline; per the Re-Verify Gate a direct fetch was attempted and FAILED again ('Loading...', the RUN_043 failure mode), failure count 3->4. Count HELD at 0 — the quotes are not attributable to Hipcamp (same query returned an unrelated 'Stargazing @ Moonrise Ranch' in CALIFORNIA; mosquito quote resurfaced in a Hotels.com-dominated result set). UPSIDE: both Hipcamp voice/data violations RE-CONFIRMED LIVE ('34-acre ranch' vs VOICE-GUIDE 36, and 'a bar') after 57 days carrying STALE:2026-05-26 — now current. Google snippet HELD at 126 (2 runs stable; 4.9star inline); live-authoritative 130 now 64 DAYS STALE — snippet has printed 126, 130 and 175 and is not a proxy in either direction; resolves only via Places API key or a 30-second GBP dashboard re-confirm. Facebook 5/100% inline 47th consecutive run. The Knot: Haylee L. body still indexed verbatim on a name-free query with no owner-response anywhere (146 days / ~21 weeks unreplied); 8/4.5star carried; '20 luxury cabins…up to 50 guests' voice violation re-confirmed inline; direct fetch not attempted (32nd no-attempt run). TripAdvisor 0/unclaimed held via search corroboration; direct fetch not attempted (1st no-attempt run since the blocker opened 7/18); price band $45-$154 STALE:2026-06-30. Airbnb 403 BLOCKER 65th no-attempt run. TWO carry-forward URGENT items remain UNPOSTED at day 65: Cassie Butterfield Google 5star (drafted RUN_034, ~67d old review) and Haylee L. The Knot 1star from 2026-02-26 (146 days unreplied). done-log (brand/rancho-done-log.md) still does not exist — no review RESOLVED entry has ever been logged, so both drafts are genuinely unposted. Status remains 'pending' — no rating drop, no review-count decrease, no NEW <=3star; the Haylee 1star is a long-standing carried draft, not a fresh drop (classification held consistent with RUN_060-065).",
     "new_reviews_pending_response": 2,
     "new_reviews_pending_response_detail": [
-      {"platform": "google", "reviewer": "Cassie Butterfield", "stars": 5, "posted": "~2026-05-16", "draft_location": "brand/review-reports/2026-05-19-review-report.md", "first_drafted_run": 34, "days_drafted_unposted": 61},
-      {"platform": "the_knot", "reviewer": "Haylee L.", "stars": 1, "posted": "2026-02-26", "draft_location": "brand/review-reports/2026-05-19-review-report.md", "first_drafted_run": 34, "weeks_unreplied": 20, "days_unreplied": 142, "days_drafted_unposted": 61}
+      {
+        "platform": "google",
+        "reviewer": "Cassie Butterfield",
+        "stars": 5,
+        "posted": "~2026-05-16",
+        "draft_location": "brand/review-reports/2026-05-19-review-report.md",
+        "first_drafted_run": 34,
+        "days_drafted_unposted": 61
+      },
+      {
+        "platform": "the_knot",
+        "reviewer": "Haylee L.",
+        "stars": 1,
+        "posted": "2026-02-26",
+        "draft_location": "brand/review-reports/2026-05-19-review-report.md",
+        "first_drafted_run": 34,
+        "weeks_unreplied": 20,
+        "days_unreplied": 142,
+        "days_drafted_unposted": 61
+      }
     ],
     "total_reviews_tracked": 132,
     "unreplied_by_platform": {
@@ -17,7 +35,11 @@
       "facebook": 0,
       "the_knot": 1
     },
-    "stale_platforms": ["expedia", "hipcamp", "tripadvisor"],
+    "stale_platforms": [
+      "expedia",
+      "hipcamp",
+      "tripadvisor"
+    ],
     "flags": [
       "carry-forward-cassie-butterfield-google-unreplied-day-61-monitor",
       "carry-forward-haylee-l-the-knot-unreplied-142-days-20-weeks",
@@ -46,7 +68,11 @@
       "tripadvisor-direct-fetch"
     ],
     "watch": [],
-    "new_platforms_noted": ["yelp", "agoda", "the_knot"],
-    "run_number": 65
+    "new_platforms_noted": [
+      "yelp",
+      "agoda",
+      "the_knot"
+    ],
+    "run_number": 66
   }
 }
