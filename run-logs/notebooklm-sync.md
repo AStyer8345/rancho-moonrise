@@ -1601,3 +1601,11 @@ Skipped >10MB (skipped regardless of auth): ALL INCLUSIVE RETREATS AT RANCHO MOO
 - ACTION FOR ADAM: run `notebooklm login` — this task cannot re-auth (interactive Google OAuth).
 2026-07-21 12:08 | scanned=80 added=0 replaced=0 skipped=6 errors=1 (auth)
 - NOTE: this run's scan recursed into subfolders (brand/gbp-posts, brand/review-reports), so scanned=80 vs ~66-70 in prior runs which were top-level only. The 13 extra "NEW" items are pre-existing subfolder files, not new work — they were never in scope before. Whoever restores auth should decide whether subfolders belong in the notebook before the first successful sync uploads all 13.
+
+## 2026-07-22 10:30 — RUN ABORTED: NotebookLM auth expired (22nd consecutive)
+- Verified live this run: `notebooklm use <id>` and `source list --json` both returned {"error":true} "Authentication expired or invalid" (redirect to accounts.google.com).
+- No uploads, deletes, or state-file writes. Sync state untouched so the backlog re-detects next run.
+- Backlog unchanged from 2026-07-21 12:08: 16 NEW + 1 MODIFIED (2026-04-09-rancho-moonrise-improvement-plan.html, 60047->61254 B). Scan is recursive (brand/gbp-posts, brand/review-reports) — 13 of the 16 "NEW" are pre-existing subfolder files, not new work.
+- Skipped by policy: 3 PDFs >10MB (ALL INCLUSIVE RETREATS 36.9MB, PRIVATE EVENTS 28.8MB, INTIMATE EVENTS 20.7MB); 3 unsupported ext (review-aggregate.json, 2 .otf).
+- ACTION FOR ADAM: run `notebooklm login` once interactively, or pause this scheduled task. Zero successful syncs since 2026-07-03 (~3 weeks). The delta scan works; only the NotebookLM API leg is broken.
+2026-07-22 10:30 | scanned=86 added=0 replaced=0 skipped=6 errors=1 (auth)
