@@ -1610,3 +1610,15 @@ Skipped >10MB (skipped regardless of auth): ALL INCLUSIVE RETREATS AT RANCHO MOO
 - ACTION FOR ADAM: run `notebooklm login` once interactively, or pause this scheduled task. Zero successful syncs since 2026-07-03 (~3 weeks). The delta scan works; only the NotebookLM API leg is broken.
 2026-07-22 10:30 | scanned=86 added=0 replaced=0 skipped=6 errors=1 (auth)
 2026-07-22 10:47 | scanned=66 added=0 replaced=0 skipped=4 errors=1 (auth) — re-verified `notebooklm login` still expired; state untouched. Same blocker as the 10:30 run. See that entry for the full backlog breakdown.
+
+## 2026-07-22 13:11 — RUN ABORTED: NotebookLM auth expired (23rd consecutive)
+- Verified live this run (not carried over from the log): `notebooklm use <id>`, `list --json`, and `source list --json` all returned {"error":true,"code":"ERROR"} "Authentication expired or invalid" with a redirect to accounts.google.com.
+- No uploads, no deletes, no state-file write. Tracker left untouched so the backlog re-detects on the next run.
+- SCOPE CORRECTION: prior runs reported oscillating scan counts (86 / 66 / 80) because some recursed into subfolders and some did not. The tracked state contains **0** subdirectory entries, so top-level-only is the historical scope. Re-scanned accordingly.
+- TRUE BACKLOG (top-level brand/ + deal/): scanned=66 tracked=64 → **2 NEW + 1 MODIFIED**, not the 16+1 previously reported.
+  - NEW: approved-testimonials.md, 2026-05-16-hipcamp-curation-gap-audit.md
+  - MODIFIED: 2026-04-09-rancho-moonrise-improvement-plan.html (60047 -> 61254 B)
+  - The other 14 "NEW" items in the 2026-07-21/07-22 entries are pre-existing files in brand/gbp-posts/ and brand/review-reports/. They were never in scope and are NOT pending work.
+- Skipped by policy: 3 PDFs >10MB (ALL INCLUSIVE RETREATS 36.9MB, PRIVATE EVENTS 28.8MB, INTIMATE EVENTS 20.7MB); 1 unsupported ext (review-aggregate.json).
+- ACTION FOR ADAM: run `notebooklm login` once interactively, or pause this scheduled task. Zero successful syncs since 2026-07-03 (~3 weeks). The delta scan is healthy; only the NotebookLM API leg is broken. Re-auth is interactive Google OAuth and cannot be automated from here.
+2026-07-22 13:11 | scanned=66 added=0 replaced=0 skipped=4 errors=1 (auth)
