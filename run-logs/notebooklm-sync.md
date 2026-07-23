@@ -1622,3 +1622,14 @@ Skipped >10MB (skipped regardless of auth): ALL INCLUSIVE RETREATS AT RANCHO MOO
 - Skipped by policy: 3 PDFs >10MB (ALL INCLUSIVE RETREATS 36.9MB, PRIVATE EVENTS 28.8MB, INTIMATE EVENTS 20.7MB); 1 unsupported ext (review-aggregate.json).
 - ACTION FOR ADAM: run `notebooklm login` once interactively, or pause this scheduled task. Zero successful syncs since 2026-07-03 (~3 weeks). The delta scan is healthy; only the NotebookLM API leg is broken. Re-auth is interactive Google OAuth and cannot be automated from here.
 2026-07-22 13:11 | scanned=66 added=0 replaced=0 skipped=4 errors=1 (auth)
+
+## 2026-07-23 00:24 — auth failure (no sync performed)
+- NotebookLM authentication expired/invalid — `notebooklm use` and `source list` both returned an auth redirect to accounts.google.com.
+- Action: logged and exited cleanly per safety rules. Did NOT run `notebooklm login` (interactive OAuth not possible in scheduled task).
+- Pending changes detected but NOT uploaded (state file left untouched so next run re-detects them):
+  - NEW: 2026-05-16-hipcamp-curation-gap-audit.md
+  - NEW: approved-testimonials.md
+  - MODIFIED: 2026-04-09-rancho-moonrise-improvement-plan.html
+- Skipped by safety rules: 3 PDFs >10MB (ALL INCLUSIVE RETREATS, INTIMATE EVENTS, PRIVATE EVENTS), review-aggregate.json (unsupported ext).
+- NEEDS ADAM: run `notebooklm login` to re-authenticate; sync will catch up automatically next run.
+2026-07-23 00:24 | scanned=66 added=0 replaced=0 skipped=4 errors=1 (auth_expired)
