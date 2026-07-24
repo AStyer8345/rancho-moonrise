@@ -1646,3 +1646,14 @@ Skipped this run (unchanged behavior): 3 PDFs >10MB (ALL INCLUSIVE RETREATS, INT
 
 **NEEDS ADAM:** run `notebooklm login` to restore NotebookLM auth, then this task resumes automatically.
 2026-07-23 12:08 | scanned=66 added=0 replaced=0 skipped=4 errors=1 (auth-expired)
+
+## 2026-07-23 21:32 — RUN FAILED (auth expired, unchanged since 12:08)
+Re-verified live: `notebooklm source list` still returns "Authentication expired or invalid" (Google sign-in redirect). Same blocker as the 01:19 and 12:08 runs today. State file NOT updated — the 3 pending files retry automatically once auth is restored. No new/removed files since 12:08.
+
+Pending (detected, not synced):
+- ADD  approved-testimonials.md (brand, 4387b)
+- ADD  2026-05-16-hipcamp-curation-gap-audit.md (brand, 18543b)
+- REPLACE  2026-04-09-rancho-moonrise-improvement-plan.html (brand, 60047b -> 61254b)
+
+**NEEDS ADAM:** run `notebooklm login` to restore NotebookLM auth; this task then resumes automatically.
+2026-07-23 21:32 | scanned=66 added=0 replaced=0 skipped=4 errors=1 (auth-expired)
