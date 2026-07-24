@@ -1668,3 +1668,14 @@ Pending (detected, not synced):
 
 **NEEDS ADAM:** run `notebooklm login` to restore NotebookLM auth; this task then resumes automatically.
 2026-07-24 10:26 | scanned=66 added=0 replaced=0 skipped=4 errors=1 (auth-expired)
+
+## 2026-07-24 (later) — RUN FAILED (auth expired, unchanged since 2026-07-23)
+Re-verified live: `source list` still returns "Authentication expired or invalid" (Google sign-in redirect). Same blocker, same 3 pending files, no new/removed files. State file untouched — pending set retries automatically once auth is restored.
+
+Pending (detected, not synced):
+- ADD  approved-testimonials.md (brand, 4387b)
+- ADD  2026-05-16-hipcamp-curation-gap-audit.md (brand, 18543b)
+- REPLACE  2026-04-09-rancho-moonrise-improvement-plan.html (brand, 61254b)
+
+**NEEDS ADAM:** run `notebooklm login` to restore NotebookLM auth; this task then resumes automatically.
+2026-07-24 12:20 | scanned=66 added=0 replaced=0 skipped=4 errors=1 (auth-expired)
