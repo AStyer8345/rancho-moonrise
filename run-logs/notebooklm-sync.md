@@ -1679,3 +1679,10 @@ Pending (detected, not synced):
 
 **NEEDS ADAM:** run `notebooklm login` to restore NotebookLM auth; this task then resumes automatically.
 2026-07-24 12:20 | scanned=66 added=0 replaced=0 skipped=4 errors=1 (auth-expired)
+
+## 2026-07-24 16:17 — sync BLOCKED (NotebookLM auth expired)
+- `notebooklm list`/`use` return: Authentication expired or invalid. Redirected to Google sign-in.
+- No sources added/replaced/deleted. State file intentionally NOT advanced so pending files re-sync once auth is restored.
+- Recurring: same block logged earlier today (12:20). Still unresolved.
+- **NEEDS ADAM:** run `notebooklm login` to restore auth (interactive Google OAuth — cannot be done from a scheduled run). Sync resumes automatically next run.
+2026-07-24 16:17 | scanned=83 added=0 replaced=0 skipped=3 errors=1 (auth-expired)
