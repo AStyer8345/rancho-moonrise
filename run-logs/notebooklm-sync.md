@@ -1686,3 +1686,18 @@ Pending (detected, not synced):
 - Recurring: same block logged earlier today (12:20). Still unresolved.
 - **NEEDS ADAM:** run `notebooklm login` to restore auth (interactive Google OAuth — cannot be done from a scheduled run). Sync resumes automatically next run.
 2026-07-24 16:17 | scanned=83 added=0 replaced=0 skipped=3 errors=1 (auth-expired)
+
+## 2026-08-14 09:36 — sync BLOCKED (NotebookLM auth expired)
+- Re-verified directly: `notebooklm list --json` and `source list --json` both return `Authentication expired or invalid` → Google sign-in redirect.
+- No sources added/replaced/deleted. State file intentionally NOT advanced, so the backlog re-syncs automatically once auth is restored.
+- Backlog unchanged and stable: 2 new + 1 modified (see below). Nothing is being lost.
+- **Blocker age: first logged 2026-05-03 08:06 — 41 consecutive blocked runs, ~103 days.**
+- **NEEDS ADAM:** run `notebooklm login` (interactive Google OAuth — cannot run from a scheduled task). Sync resumes on its own next run.
+
+Pending (detected, not synced):
+- ADD      2026-05-16-hipcamp-curation-gap-audit.md (brand, 18543b)
+- ADD      approved-testimonials.md (brand, 4387b)
+- REPLACE  2026-04-09-rancho-moonrise-improvement-plan.html (brand, 61254b)
+
+Skipped (expected, not errors): 3 decks >10MB, 1 non-synced extension (review-aggregate.json)
+2026-08-14 09:36 | scanned=66 added=0 replaced=0 skipped=4 errors=1 (auth-expired)
