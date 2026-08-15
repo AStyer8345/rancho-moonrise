@@ -1746,3 +1746,11 @@ Pending (detected, not synced):
 
 Skipped (expected, not errors): 3 event decks >10MB, 1 non-synced extension (review-aggregate.json)
 2026-08-15 07:46 | scanned=66 added=0 replaced=0 skipped=4 errors=1 (auth-expired)
+
+## 2026-08-15 10:15 — sync BLOCKED (NotebookLM auth expired)
+- Re-verified: `notebooklm use`, `list --json`, `source list --json` all return `Authentication expired or invalid`.
+- No sources added/replaced/deleted. State file intentionally NOT advanced.
+- Backlog unchanged: 2 new + 1 modified (same as prior runs).
+- **Blocker: 45 consecutive blocked runs, first logged 2026-05-03 — 104 days.**
+- **NEEDS ADAM:** run `/Users/adamstyer/.local/bin/notebooklm login` (interactive Google OAuth — a scheduled run cannot complete it).
+2026-08-15 10:15 | scanned=66 added=0 replaced=0 skipped=4 errors=1 (auth-expired)
