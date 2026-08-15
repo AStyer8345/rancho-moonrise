@@ -1755,3 +1755,4 @@ Skipped (expected, not errors): 3 event decks >10MB, 1 non-synced extension (rev
 - **NEEDS ADAM:** run `/Users/adamstyer/.local/bin/notebooklm login` (interactive Google OAuth — a scheduled run cannot complete it).
 2026-08-15 10:15 | scanned=66 added=0 replaced=0 skipped=4 errors=1 (auth-expired)
 2026-08-15 13:18 | scanned=66 added=0 replaced=0 skipped=4 errors=1 (auth-expired — re-verified, unchanged; run 46, see 10:15 entry for detail)
+2026-08-15 16:04 | scanned=66 added=0 replaced=0 skipped=4 errors=1 (auth-expired — re-verified, unchanged; run 47, see 10:15 entry for detail)
