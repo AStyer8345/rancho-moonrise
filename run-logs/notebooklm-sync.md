@@ -1780,3 +1780,24 @@ of which belong in the brand notebook and all of which would churn daily. Flat s
 
 Skipped (expected, not errors): 3 event decks >10MB, 1 non-synced extension (review-aggregate.json), .DS_Store
 2026-08-17 11:38 | scanned=66 added=0 replaced=0 skipped=5 errors=1 (auth-expired)
+
+## 2026-08-17 12:07 — run 2 (auth still expired)
+
+Second consecutive failed run today. `notebooklm use`, `list --json`, and `source list --json` all return:
+`Authentication expired or invalid. Redirected to: accounts.google.com/... Run 'notebooklm login' to re-authenticate.`
+
+Zero NotebookLM operations executed. Sync state file left UNTOUCHED on purpose — writing the current mtime map
+after a failed run would mark these 3 files as synced and they would never upload again.
+
+Pending queue (unchanged from the 11:38 run, flat scan of brand/ + deal/):
+- ADD      brand/2026-05-16-hipcamp-curation-gap-audit.md (18543b)
+- ADD      brand/approved-testimonials.md (4387b)
+- REPLACE  brand/2026-04-09-rancho-moonrise-improvement-plan.html (61254b)
+
+Skipped (expected, not errors): 3 event decks >10MB, review-aggregate.json (non-synced extension), .DS_Store
+
+BLOCKER — needs Adam: `notebooklm login` is an interactive Google OAuth flow. A scheduled/non-interactive run
+cannot complete it. This task will keep no-opping every run until Adam runs `notebooklm login` in a terminal.
+Once re-authenticated, the next scheduled run drains the 3-file queue automatically; no manual sync needed.
+
+2026-08-17 12:07 | scanned=66 added=0 replaced=0 skipped=5 errors=1 (auth-expired)
