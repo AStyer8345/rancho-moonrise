@@ -1758,3 +1758,4 @@ Skipped (expected, not errors): 3 event decks >10MB, 1 non-synced extension (rev
 2026-08-15 16:04 | scanned=66 added=0 replaced=0 skipped=4 errors=1 (auth-expired — re-verified, unchanged; run 47, see 10:15 entry for detail)
 2026-08-16 20:00 | scanned=66 added=0 replaced=0 skipped=4 errors=1 (auth-expired — re-verified, unchanged; run 48, day 105, see 2026-08-15 10:15 entry for detail)
 2026-08-16 21:14 | scanned=66 added=0 replaced=0 skipped=4 errors=1 (auth-expired — re-verified, unchanged; run 49, day 106, see 2026-08-15 10:15 entry for detail)
+2026-08-17 07:12 | scanned=66 added=0 replaced=0 skipped=4 errors=1 (auth-expired — re-verified via `use`/`list --json`/`source list --json`; backlog re-diffed and unchanged at 2 new + 1 modified; run 50, day 107; state NOT advanced; see 2026-08-15 10:15 entry for full detail)
