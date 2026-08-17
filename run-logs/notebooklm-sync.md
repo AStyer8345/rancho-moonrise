@@ -1757,3 +1757,4 @@ Skipped (expected, not errors): 3 event decks >10MB, 1 non-synced extension (rev
 2026-08-15 13:18 | scanned=66 added=0 replaced=0 skipped=4 errors=1 (auth-expired — re-verified, unchanged; run 46, see 10:15 entry for detail)
 2026-08-15 16:04 | scanned=66 added=0 replaced=0 skipped=4 errors=1 (auth-expired — re-verified, unchanged; run 47, see 10:15 entry for detail)
 2026-08-16 20:00 | scanned=66 added=0 replaced=0 skipped=4 errors=1 (auth-expired — re-verified, unchanged; run 48, day 105, see 2026-08-15 10:15 entry for detail)
+2026-08-16 21:14 | scanned=66 added=0 replaced=0 skipped=4 errors=1 (auth-expired — re-verified, unchanged; run 49, day 106, see 2026-08-15 10:15 entry for detail)
