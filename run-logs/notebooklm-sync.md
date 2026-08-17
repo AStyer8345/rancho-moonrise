@@ -1759,3 +1759,24 @@ Skipped (expected, not errors): 3 event decks >10MB, 1 non-synced extension (rev
 2026-08-16 20:00 | scanned=66 added=0 replaced=0 skipped=4 errors=1 (auth-expired — re-verified, unchanged; run 48, day 105, see 2026-08-15 10:15 entry for detail)
 2026-08-16 21:14 | scanned=66 added=0 replaced=0 skipped=4 errors=1 (auth-expired — re-verified, unchanged; run 49, day 106, see 2026-08-15 10:15 entry for detail)
 2026-08-17 07:12 | scanned=66 added=0 replaced=0 skipped=4 errors=1 (auth-expired — re-verified via `use`/`list --json`/`source list --json`; backlog re-diffed and unchanged at 2 new + 1 modified; run 50, day 107; state NOT advanced; see 2026-08-15 10:15 entry for full detail)
+
+## 2026-08-17 11:38 — sync BLOCKED (NotebookLM auth expired)
+- Re-verified via `use`, `list --json`, `source list --json` — all return `Authentication expired or invalid`.
+- No sources added/replaced/deleted. State file intentionally NOT advanced — backlog re-syncs automatically once auth is restored.
+- Backlog re-diffed and unchanged: 2 new + 1 modified.
+- **Blocker: 51 consecutive blocked runs, first logged 2026-05-03 — day 107.**
+- **NEEDS ADAM:** run `/Users/adamstyer/.local/bin/notebooklm login` (interactive Google OAuth — a scheduled run cannot complete it). Sync resumes on its own next run.
+
+Pending (detected, not synced):
+- ADD      brand/2026-05-16-hipcamp-curation-gap-audit.md (18543b)
+- ADD      brand/approved-testimonials.md (4387b)
+- REPLACE  brand/2026-04-09-rancho-moonrise-improvement-plan.html (61254b)
+
+Note (scan depth — recorded once, no behavior change): this run cross-checked flat vs recursive scanning of the
+watched folders. Established behavior is FLAT (top-level of brand/ and deal/ only), which is what the 64-entry
+state file was built from and what reproduces the historical scanned=66. Recursing would add 14 subdirectory
+files — brand/fonts/ (a Monotype EULA), brand/gbp-posts/ (5), brand/review-reports/ (8, incl. raw-data/) — none
+of which belong in the brand notebook and all of which would churn daily. Flat scan retained deliberately.
+
+Skipped (expected, not errors): 3 event decks >10MB, 1 non-synced extension (review-aggregate.json), .DS_Store
+2026-08-17 11:38 | scanned=66 added=0 replaced=0 skipped=5 errors=1 (auth-expired)
