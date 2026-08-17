@@ -7,6 +7,29 @@ Prior: 2026-07-22 (rancho-site-daily — **cruise-control streak BROKEN at 39; f
 
 ## 🔥 NEEDS ADAM (highest leverage this week)
 
+### NEEDS ADAM — ResortPass has 53 reviews and nobody is watching it (~2 min) — added 2026-08-17 by `rancho-review-monitor`
+
+**`resortpass.com/hotels/rancho-moonrise` carries 53 reviews at 4.8★. It is not in this task's monitored scope and never has been.**
+
+It moved **+8 reviews and −0.1★** since 2026-07-15 (was 45 @ 4.9★). Verified by two independent direct fetches the same morning — this task's own and `rancho-competitive-weekly`'s — returning identical values.
+
+At 53 reviews it is **Rancho's second-largest review pool after Google — four times The Knot (8) and Facebook (6) combined.**
+
+**The part worth your attention:** `resortpass.com` returns HTTP 200 to a plain fetch and parses cleanly, while **six of the eight platforms this task does monitor are hard-blocked** (Google, Airbnb, Hotels.com, The Knot, Hipcamp, TripAdvisor). The one review surface that is actually readable is the one that was never in scope.
+
+**Two questions, both answerable in the ResortPass host dashboard:**
+1. **Are there unreplied reviews sitting in there?** 53 reviews with unknown reply coverage is a real gap. There is no per-review enumeration path from outside — `/hotels/rancho-moonrise/reviews` returns 404 — so this genuinely cannot be answered without the dashboard. It is recorded as `null`, not zero.
+2. **Is a specific bad review behind the 4.9 → 4.8 drift**, or is it just eight average ones? This is the only rating decline observed on any platform this year, and it is invisible to every current monitor.
+
+### NEEDS ADAM — A negative Facebook review is live, unanswered, and nobody knows what it says (60 seconds) — added 2026-08-17 by `rancho-review-monitor`
+
+Facebook went **5 → 6 reviews, 100% → 86% recommend** — its first movement in 48 consecutive runs. Confirmed across three independent queries before recording. A drop from 100% means **at least one non-recommend now exists where there were zero.**
+
+**I could not get the review text.** Facebook's page is JS-gated — a direct fetch returns the page title and nothing else — and no search query surfaced the body. **So no response draft was written.** Drafting one would have meant inventing what the guest said, and a fabricated reply in Ashley's voice answering a complaint nobody has read is worse than an empty slot.
+
+**Fix:** open [the Reviews tab](https://www.facebook.com/p/Rancho-Moonrise-100083582071947/) → read the non-recommend → paste the text into this repo or send it to Ashley. A proper draft follows on the next run.
+
+
 ### NEEDS ADAM — One search API key (~10 min) — added 2026-08-17 by `rancho-site-daily`
 
 **This unblocks two things at once, and the second one is bigger than Rancho.**
@@ -763,3 +786,14 @@ All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms. Li
 - [x] BreadcrumbList schema on all 13 subpages
 - [x] CollectionPage + ItemList schema on blog.html
 - [x] Verified homepage LodgingBusiness schema complete (geo, price, amenities)
+
+---
+
+## Added 2026-08-17 by `rancho-review-monitor` (RUN_068)
+
+- [ ] **Add ResortPass to the live-claim ownership table** in `tasks/review-monitor/master-agent.md`. It carries 53 reviews at 4.8★ and is the **only** review surface returning a clean HTTP 200 while 6 of 8 in-scope platforms are blocked. **Not done this run** — editing the ownership table is a scope change, not a data write, and this task's hard rules put scope decisions with Adam. Needs his yes, then it's a 5-minute edit.
+- [ ] **Paste the Facebook non-recommend review text into the repo** so a response draft can be written. Blocked on the NEEDS ADAM item above.
+- [ ] **Post the two drafts sitting unposted at day 90** — Cassie Butterfield (Google 5★) and Haylee L. (The Knot 1★), both in `brand/review-reports/2026-05-19-review-report.md`. Haylee's 1★ is now **172 days / ~24.6 weeks unreplied**. Re-verified against the root done-log this run: last review-reply resolution is still 2026-04-15.
+- [ ] **Settle the three-entity OTA split** — expedia 8.0 / hotels.com 9.0 / agoda 8.6, now holding a 3rd consecutive run with a third value. 30 seconds in either extranet. If it is genuinely more than one rating, hotels.com and agoda are accumulating reviews on surfaces nobody monitors for replies — the same failure mode ResortPass just demonstrated.
+- [ ] **Fix the two Hipcamp voice/data violations** (re-confirmed live 2026-08-17): "34-acre ranch" (VOICE-GUIDE says 36, site data field says 37 — three different numbers in circulation) and "a refreshing pool, **a bar**, and cozy lounge areas" (the Neon Moon Barn Lounge is event-only, not a walk-in bar).
+- [ ] **CONTEXT.md is over its 150-line cap** — 152 after this run, and it arrived at 153 *before* this task touched it. This run folded its own superseded RUN_067 entry into the collapsed block to take it down rather than up, but the overage is driven by two very long same-day header entries from `rancho-competitive-weekly` and `rancho-site-daily`, which are not this task's to prune.

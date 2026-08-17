@@ -2126,3 +2126,45 @@ BLOCKERS no-attempt: airbnb(65) hotels.com(42, held) theknot-direct(32nd) tripad
 [2026-07-23 06:30] re-verify hipcamp-voice-violations — still_true — live="34-acre ranch"+"bar" both in snippet prior=re-confirmed 2026-07-22
 [2026-07-23 06:30] re-verify hipcamp-count — still_true (no contradicting signal; no-attempt cycle resumes) — live=0 prior=0
 BLOCKERS no-attempt: airbnb(66) hotels.com(42, held) theknot-direct(33rd) tripadvisor-direct(2nd) google-count. hipcamp-direct: no-attempt cycle resumes at 1 (no contradicting signal this run). No new blocker opened. Carry-forward drafts day 66: Cassie (Google 5★, ~68d old), Haylee L. (Knot 1★, 147d). Dashboard pending. State: aggregate 66→67, dashboard-state 66→67. Run-log: run-logs/2026-07-23-review-monitor.md.
+
+---
+
+## RUN_068 — 2026-08-17 06:30 CT
+
+**QUIET STREAK BROKEN AT 34.** 25-day coverage gap since RUN_067 (2026-07-23) — task did not fire 7/24–8/16. Two platforms moved; one of them is not in monitored scope. Status → **urgent** (rating dropped on two platforms AND a new negative review is live and unreplied). No response drafts written this run — see the Facebook entry for why that is the correct outcome, not a gap.
+
+### Re-Verify Gate — 13 live claims
+
+```
+[2026-08-17 11:30] re-verify google-count-rating          — still_true(blocked) — live=snippet 126/4.9★ prior=130/4.9★ auth 2026-05-19 (now 90d stale)
+[2026-08-17 11:30] re-verify google-unreplied-cassie      — still_true — live=1 unreplied prior=1 (root done-log: last resolution 2026-04-15, no Cassie entry)
+[2026-08-17 11:30] re-verify facebook-count-recommend     — NEW_SIGNAL — live=6 reviews/86% recommend prior=5/100% (stable 48 runs)
+[2026-08-17 11:30] re-verify facebook-review-text         — failed(1/3) — live=title only (JS-gated) prior=n/a — NO DRAFT WRITTEN
+[2026-08-17 11:30] re-verify resortpass-review-state      — NEW_SIGNAL — live=53 @ 4.8★ prior=45 @ 4.9★ (2026-07-15) — OUT OF SCOPE
+[2026-08-17 11:30] re-verify resortpass-reply-coverage    — unknown — live=no enumeration path (/reviews = HTTP 404) prior=never tracked
+[2026-08-17 11:30] re-verify the-knot-count-rating        — still_true — live=8/4.5★ prior=8/4.5★
+[2026-08-17 11:30] re-verify the-knot-haylee-unreplied    — still_true — live=unreplied 172d/~24.6wk prior=147d/21wk
+[2026-08-17 11:30] re-verify expedia-8.0-anchor           — still_true — live=8.0 (expedia h89565924) prior=8.0
+[2026-08-17 11:30] re-verify expedia-hotels-split         — still_true(3rd consecutive) — live=8.0/9.0/8.6 across 3 entities prior=8.0/9.0
+[2026-08-17 11:30] re-verify tripadvisor-unclaimed        — still_true — live=0/unclaimed (search corroboration) prior=0/unclaimed
+[2026-08-17 11:30] re-verify hipcamp-count                — still_true — live=0 prior=0
+[2026-08-17 11:30] re-verify hipcamp-voice-violations     — still_true — live='34-acre' + 'a bar' both re-confirmed prior=same
+[2026-08-17 11:30] re-verify airbnb-listing-existence     — still_true(unverifiable) — live=403 not attempted prior=403 (67th run)
+[2026-08-17 11:30] re-verify two-drafts-unposted          — still_true — live=day 90 prior=day 66
+```
+
+**Tally:** 10 still_true · 2 new_signal · 1 unknown · 1 verification-failure · 0 partial · **0 resolved**
+
+### FLAG_FOR_ADAM (3)
+
+1. **ResortPass has 53 reviews at 4.8★ and nobody is watching it.** Not in the ownership table, not in `review-aggregate.json`, absent from `brand/` and `tasks/review-monitor/` entirely. +8 reviews and −0.1★ since 2026-07-15. Reply coverage is **unknown** — there is no per-review enumeration path. Two questions, ~2 min in the ResortPass host dashboard: are reviews sitting there unreplied, and is there a specific bad one behind the 4.9→4.8 drift?
+2. **A negative Facebook review is live and unanswered, and nobody knows what it says.** 100% → 86% recommend means ≥1 non-recommend where there were zero. The text is unobtainable by this agent. 60 seconds on the FB Reviews tab → paste the text → real draft next run.
+3. **Three OTA entities, three different ratings, third consecutive run.** expedia 8.0 / hotels.com 9.0 / agoda 8.6, the last now carrying its own distinct review quote. 30 seconds in either extranet settles whether this is one rating or three — and if it is more than one, hotels.com and agoda are accumulating reviews on surfaces nobody monitors for replies.
+
+### Ownership violation check
+
+None found. No other scheduled task surfaced a review/reply claim this run. `rancho-competitive-weekly` read ResortPass the same day, but recorded it as a *pricing/product* claim (its own scope), not a review-reply claim — correct behavior. Its review-count read is what surfaced this task's blind spot, and the two independent reads agreeing is what made the finding safe to record.
+
+### Scope change NOT made unilaterally
+
+Adding ResortPass to monitored scope requires editing `master-agent.md`'s live-claim ownership table. That is a scope decision, not a data write. Recommended, logged to TODO.md, **not executed this run.**
