@@ -1801,3 +1801,16 @@ cannot complete it. This task will keep no-opping every run until Adam runs `not
 Once re-authenticated, the next scheduled run drains the 3-file queue automatically; no manual sync needed.
 
 2026-08-17 12:07 | scanned=66 added=0 replaced=0 skipped=5 errors=1 (auth-expired)
+
+## 2026-08-17 16:07 — run 3 (auth still expired)
+
+Re-verified, not assumed: `notebooklm use <id>` and `source list --json` both still return
+`Authentication expired or invalid ... Run 'notebooklm login' to re-authenticate.`
+
+Zero NotebookLM operations. State file left UNTOUCHED (writing it would silently mark the queue as synced).
+Pending queue unchanged from runs 1 and 2 — same 2 adds + 1 replace, no new drift in brand/ or deal/.
+
+BLOCKER unchanged: `notebooklm login` is interactive Google OAuth; a scheduled run cannot complete it.
+Third consecutive no-op. Queue drains automatically on the first run after Adam re-authenticates.
+
+2026-08-17 16:07 | scanned=66 added=0 replaced=0 skipped=5 errors=1 (auth-expired)
