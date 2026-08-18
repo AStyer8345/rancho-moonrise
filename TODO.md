@@ -1,11 +1,42 @@
 # Rancho Moonrise — TODO
-Last updated: 2026-08-17 (rancho-site-daily — **the #1 queued slot (`rancho-seo-s7` AEO/SERP baseline) was attempted and proven unmeasurable from this client.** Pending since 5/04 without anyone testing whether it was *runnable*. It isn't: DuckDuckGo HTML + lite both return **HTTP 202 challenge pages, 0 results**; bare-curl Bing returns 200 and parses cleanly but **degrades into dictionary/Wikipedia results** after a few automated queries. **A false "0/10 ranking" table was generated and killed before reporting** — it matched the known prior state exactly, which is what made it dangerous. **Brand canary settled it:** `Rancho Moonrise` (site is #1) returned gorancho.com / merriam-webster.com / miranchogrill.com, **not** ranchomoonrise.com. Shipped `scripts/serp-baseline.py` with the canary as a **hard gate** — on failure it writes `MEASUREMENT BLOCKED`, **zero** keyword rows, exit 2. Rewrote `tasks/seo-aeo/BLOCKERS.md`, auto-resolving a **108-day-stale DNS blocker** that still gated "all SEO/AEO work." **Cross-repo:** fixed the shared client-ops re-verify runbook, which named the now-dead DDG path as *the* SERP verification path fleet-wide. Re-Verify Gate 6 claims: 5 still_true, 1 resolved. No site HTML changed. New NEEDS ADAM: **one search API key** unblocks s7 *and* restores SERP verification for every client task. Run-log: `run-logs/2026-08-17-seo.md`. Prior header ↓.)
+Last updated: 2026-08-18 (rancho-site-daily — **`rancho-seo-s7` MEASURED and RESOLVED: 4/10 keywords ranking, 4/10 answer-engine citations.** Yesterday's "unmeasurable from this client" verdict is **overturned** — bare `curl` is bot-detected, the harness `WebSearch` tool is not. Brand canary passed before any absence was recorded. CONTEXT had already flagged the contradiction (`rancho-competitive-weekly` ran 8 successful SERP queries the same morning) and asked for reconciliation before buying a key — **reconciled: one variable, and it wasn't the credential.** Ranking: `/weddings/` (**first core landing page ever recorded ranking**), `/blog/corporate-retreat-near-austin/`, `/blog/bachelorette-party-austin-texas/` (new), `/blog/wedding-venues-near-austin/` (new, best position 4/8). **3 of 4 are blog URLs — pipeline paused since 4/23.** **Retired rather than performed** the queued 4→5 internal-link pass: correlation is *inverse* (best performers have the **fewest** inbound links; most-linked page doesn't rank), word count + schema uniform across both groups — on-page levers **measured** exhausted. **Fixed:** AEO entity-authority template said **"34-acre"** vs VOICE-GUIDE's 36 and 183/183 site instances → corrected. Site acreage drift **auto-resolved** (belongs to Hipcamp, not the site). Cross-repo: shared re-verify runbook now names the working SERP path fleet-wide. **API-key ask DOWNGRADED to nice-to-have — nothing waits on it.** No site HTML changed. Gate: 8 claims, 4 resolved. Run-log: `run-logs/2026-08-18-seo.md`. Prior header ↓.)
+
+Prior: 2026-08-17 (rancho-site-daily — ⚠️ **conclusion overturned 2026-08-18.**
 
 Prior: 2026-08-16 (rancho-site-daily — **schema workstream closed at 100%; `rancho-seo-s4` RESOLVED.** 23-day coverage gap (no run 7/24→8/16; only auth-blocked notebooklm-sync commits). **The entire pre-scoped next-slot queue was already shipped** — CONTEXT.md's #1 (`videos.html` no JSON-LD) and #2 (`accessibility.html`/`policies.html` no WebPage/speakable) were closed by commits `089439f` (7/23) and `531d7a5` (7/24) that landed after the last CONTEXT rewrite; the re-verify gate caught this before duplicate work. Sitewide re-audit across 29 public pages: **0 invalid JSON-LD, 0 pages without speakable**; sitemap↔routes↔page-files complete in all three directions. **Shipped:** internal-linking floor restoration — `ranch-wedding-texas.html` sat at 3 inbound vs a floor of 4; verified against HEAD first so it's reported as a long-standing gap, **not a regression**. One `<li>` added in `bachelorette-party-austin-texas.html` (host chosen for link equity, 8 inbound, and existing wedding adjacency); anchor variance across the other 3 inbound links deliberately preserved. **Cluster floor now uniform 4 across all 17 posts.** validate:site passes; sitemap well-formed. New NEEDS ADAM: dead YouTube video on `/videos/` day 24. Run-log: `run-logs/2026-08-16-seo.md`. Prior header ↓.)
 
 Prior: 2026-07-22 (rancho-site-daily — **cruise-control streak BROKEN at 39; first shipped edit since 5/26.** Pause gate was stale: GOALS.md (mtime 2026-07-20 11:19) narrowed the Rancho pause to ***outreach only*** and marks **site/content work RESUMED 2026-07-15** — the 7/17 + 7/18 runs idled through an unblocked workstream. Shipped `WebPage`/`SpeakableSpecification` + `FAQPage` on `/blog/weekend-getaways-near-austin/` — the only blog-cluster page rendering a full visible `.aeo-block` Quick-Answers section (4 Q&As) with no schema exposing it. FAQ text extracted from the DOM and asserted verbatim, never authored. 2 files, +58/-2, schema-only, zero copy changes. Cluster 16/17 → 17/17 on both types; `npm run validate:site` passes; 0 invalid JSON-LD across all 30 public pages. Re-Verify Gate live 7/7 still_true, **3 resolved**: NEEDS ADAM #0 (tasks-vs-pause-list) CLOSED after 56 days by the GOALS.md update; AggregateRating-on-BlogPosting **RETIRED** (self-serving review schema earns no SERP stars); `rancho-seo-s4` → PROGRESS 90%. CONTEXT.md trimmed 251 → 204 lines (collapsed 20 duplicate site-daily cruise-control entries + 9 stacked headers; review-monitor/competitive-weekly entries left alone — not this task's to prune). New #1 next slot: **`videos.html` carries no JSON-LD at all** — VideoObject is one of the few types still earning a real SERP rich result. Coverage gap: no site-daily run-log for 7/19–7/21; task didn't fire 3 days. Run-log: `run-logs/2026-07-22-seo.md`.)
 
 ## 🔥 NEEDS ADAM (highest leverage this week)
+
+### NEEDS ADAM — the blog pause is now measurably expensive, and Ashley has never seen the number — added 2026-08-18 by `rancho-site-daily`
+
+**Rancho ranks on 4 of its 10 target keywords. 3 of those 4 rankings are blog posts. The blog pipeline has been paused since 2026-04-23.**
+
+| Keyword | Ranking URL | Position in set |
+|---|---|---|
+| overnight event venue Austin | `/blog/wedding-venues-near-austin/` | **4 / 8** — best in the whole set |
+| bachelorette party Austin ranch | `/blog/bachelorette-party-austin-texas/` | 5 / 9 |
+| corporate retreat venue Austin TX | `/blog/corporate-retreat-near-austin/` | 8 / 8 |
+| wedding venue Austin TX ranch | `/weddings/` — the one landing page | 9 / 9 |
+
+The two blog URLs also hold **better positions** than either the landing page or the corporate blog post. And the same 4 keywords are the only ones where an answer engine names Rancho at all.
+
+**This is not an argument to unpause.** The pause was Ashley's call on 2026-04-23 and there may be good operational reasons for it — she is running events, laundry, design, inquiries and two babies, and writing is real work. **It is an argument that the decision should be re-made with the number visible**, because when it was made nobody knew the blog was the only thing on this property that ranks.
+
+**The ask:** put the 4/10 baseline in front of Ashley and ask whether the pause still reflects what she wants. If the answer is "yes, no bandwidth," that is a fine answer — but then the honest conclusion is that organic growth is capped, and the lever moves to GBP and the OTA listings instead.
+
+**Full data:** `tasks/seo-aeo/serp-baseline-2026-08-18.md`
+
+### NEEDS ADAM — GSC is down to ONE url (~2 min) — narrowed 2026-08-18
+
+`/safari-tents-near-austin/` only, now **~114 days** uncrawled. URL Inspection → Request Indexing on that one URL. **Do not re-submit the sitemap.**
+
+`/corporate-retreats/` is **done** — indexed and ranking, confirmed independently by two tasks (`rancho-competitive-weekly` 8/17, `rancho-site-daily` 8/18). It rode this list for 8 consecutive reports; it is off now.
+
+### ~~NEEDS ADAM — search API key (Priority 1)~~ → DOWNGRADED 2026-08-18, do not buy on the old framing
+
+`rancho-seo-s7` is **baselined without a key**, and SERP verification works fleet-wide **without one** — the harness `WebSearch` tool is the working path; only bare `curl` is bot-detected. A Google Programmable Search Engine key (free, 100 q/day) is still worth having for *certified absolute ranks* and *unattended script runs*. **Nothing is waiting on it.**
 
 ### NEEDS ADAM — ResortPass has 53 reviews and nobody is watching it (~2 min) — added 2026-08-17 by `rancho-review-monitor`
 

@@ -48,7 +48,8 @@ Full SEO/AEO program activates:
 2. **Entity authority** — Rancho Moonrise must be defined as an entity:
    - LodgingBusiness + EventVenue schema with geo, amenities, reviews
    - Consistent NAP across every page footer
-   - "Rancho Moonrise is a 34-acre glamping and events ranch in Manor, TX, 20 minutes from downtown Austin."
+   - "Rancho Moonrise is a 36-acre glamping and events ranch in Manor, TX, 20 minutes from downtown Austin."
+     (Acreage corrected 34 → **36** on 2026-08-18. `VOICE-GUIDE.md:271` is authoritative — "36 acres (not 20, not 31)" — and all 183 acreage instances across 31 site files already read 36. The "Manor, TX" half of this sentence is contested and deliberately untouched: `VOICE-GUIDE.md:270` bans "Manor" as a location descriptor while line 230 instructs targeting it. Awaiting Ashley's ruling — see FLAG #2 in `run-logs/2026-08-17-competitive.md`.)
 3. **Conversational query targeting** — Optimize for AI queries:
    - "Best glamping near Austin TX" → glamping page + homepage
    - "Unique wedding venues Austin Texas" → weddings page

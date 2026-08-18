@@ -45,7 +45,7 @@ Last updated: 2026-04-09 (Session 2)
 - [ ] Baseline check: query ChatGPT, Perplexity, Google AI Overview for all 10 target keywords
 - [ ] Track which competitors appear in AI answers for each keyword
 - [ ] Ensure FAQ schema answers match conversational query patterns
-- [ ] Add "About" structured content: "Rancho Moonrise is a 34-acre glamping and events ranch..."
+- [ ] Add "About" structured content: "Rancho Moonrise is a 36-acre glamping and events ranch..." (was 34 — corrected 2026-08-18 against `VOICE-GUIDE.md:271`)
 - [ ] Create content that directly answers "Best [X] near Austin" for each service type
 - [ ] Monitor monthly: are AI engines citing ranchomoonrise.com pages?
 

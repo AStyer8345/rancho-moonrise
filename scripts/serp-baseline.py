@@ -2,6 +2,22 @@
 """
 SERP baseline for the 10 target keywords in tasks/seo-aeo/master-agent.md.
 
+!! SUPERSEDED 2026-08-18 — PREFER THE HARNESS `WebSearch` TOOL !!
+    This script shells out to bare curl, which is the reason the 2026-08-17 run
+    reported "MEASUREMENT BLOCKED". The same 10 keywords issued through the
+    agent harness's own WebSearch tool the next morning returned clean,
+    differentiated result sets and produced a real baseline: 4/10 ranking
+    (tasks/seo-aeo/serp-baseline-2026-08-18.md).
+
+    The failure was never "SERP measurement is impossible from this client" --
+    it was bare curl getting bot-detected. Bing serves an automated curl a
+    degraded set; it serves the harness a real one.
+
+    Keep this file for the day an API key lands (see --help / BLOCKERS.md), at
+    which point swap `fetch()` for the keyed endpoint and the canary guard below
+    becomes the right shape again. Until then, running this will produce a false
+    negative, not data.
+
 Records, per keyword: whether ranchomoonrise.com appears in the organic top N,
 at what rank, and which domains hold the top 5. This is the retrieval substrate
 that answer engines draw from, so it is the measurable half of
