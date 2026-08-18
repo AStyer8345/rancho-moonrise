@@ -1857,3 +1857,5 @@ INTIMATE EVENTS AT RM.pdf (21.7 MB)
 **NEEDS ADAM:** run `notebooklm login` in an interactive terminal.
 
 2026-08-18 12:52 | scanned=66 added=0 replaced=0 skipped=4 errors=1
+
+2026-08-18 16:08 | scanned=66 added=0 replaced=0 skipped=4 errors=1 (auth-expired — re-verified via `use`, `list --json`, `source list --json`; backlog unchanged at 2 new + 1 modified; run 52, day 108 since first failure 2026-06-02; state NOT advanced; no new detail vs 2026-08-15 10:15 entry)
