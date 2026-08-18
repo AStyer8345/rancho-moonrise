@@ -1814,3 +1814,23 @@ BLOCKER unchanged: `notebooklm login` is interactive Google OAuth; a scheduled r
 Third consecutive no-op. Queue drains automatically on the first run after Adam re-authenticates.
 
 2026-08-17 16:07 | scanned=66 added=0 replaced=0 skipped=5 errors=1 (auth-expired)
+
+## 2026-08-18 10:42 — run 4 (auth still expired)
+
+Re-verified live, not carried forward: `notebooklm use f2e7baf6-…`, `source list --json`, and `list --json`
+all return `Authentication expired or invalid … Run 'notebooklm login' to re-authenticate.` (CLI v0.3.4).
+
+Zero NotebookLM operations. State file left UNTOUCHED — writing it would mark the queue synced when nothing uploaded.
+Scan is stable: 66 eligible files, same pending queue as runs 1–3, no new drift in brand/ or deal/.
+
+Pending queue:
+- ADD      brand/2026-05-16-hipcamp-curation-gap-audit.md (18543b)
+- ADD      brand/approved-testimonials.md (4387b)
+- REPLACE  brand/2026-04-09-rancho-moonrise-improvement-plan.html (61254b)
+
+Skipped (expected): 3 event decks >10MB, review-aggregate.json (non-synced extension), .DS_Store
+
+BLOCKER unchanged, 4th consecutive no-op: `notebooklm login` is an interactive Google OAuth flow that a
+scheduled run cannot complete. Adam runs it once in a terminal; the next scheduled run drains all 3 files.
+
+2026-08-18 10:42 | scanned=66 added=0 replaced=0 skipped=5 errors=1 (auth-expired)
