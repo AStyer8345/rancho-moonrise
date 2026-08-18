@@ -1834,3 +1834,26 @@ BLOCKER unchanged, 4th consecutive no-op: `notebooklm login` is an interactive G
 scheduled run cannot complete. Adam runs it once in a terminal; the next scheduled run drains all 3 files.
 
 2026-08-18 10:42 | scanned=66 added=0 replaced=0 skipped=5 errors=1 (auth-expired)
+
+## 2026-08-18 12:52 — BLOCKED: NotebookLM authentication expired
+
+`notebooklm list --json`, `use`, and `source list --json` all return:
+`Authentication expired or invalid ... Run 'notebooklm login' to re-authenticate.`
+
+Re-auth requires an interactive Google sign-in, which a scheduled run cannot perform.
+No uploads, no deletes attempted. **State file intentionally NOT updated** so these
+files are still detected as pending on the next run.
+
+Pending when auth is restored (3 ops):
+- ADD: brand/2026-05-16-hipcamp-curation-gap-audit.md
+- ADD: brand/approved-testimonials.md
+- REPLACE: brand/2026-04-09-rancho-moonrise-improvement-plan.html (61254 b, was 60047 b)
+
+Persistently skipped — over the 10 MB cap (3 files, unchanged behavior):
+ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf (38.7 MB),
+PRIVATE EVENTS AT RANCHO MOONRISE.pdf (30.2 MB),
+INTIMATE EVENTS AT RM.pdf (21.7 MB)
+
+**NEEDS ADAM:** run `notebooklm login` in an interactive terminal.
+
+2026-08-18 12:52 | scanned=66 added=0 replaced=0 skipped=4 errors=1
