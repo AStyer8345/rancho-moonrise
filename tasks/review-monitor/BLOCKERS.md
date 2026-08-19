@@ -81,3 +81,17 @@ Append-only. If a live verification path fails 3 consecutive runs for the same c
 - **Working fallback:** WebSearch reliably surfaces the canonical listing's existence + title (confirms 0/unclaimed by absence of any count/rating snippet). **Limitation:** cannot enumerate the price band and cannot detect a hypothetical claim/first-review event as fast as the direct path could. **Canonical-URL guard:** only `g56224-d33307272` is Rancho's listing; the non-canonical `g55819-d27521234` resolves to an unrelated Kyiv hostel — never fetch it.
 - **Resolution path:** Either (a) Apify or another rendering/residential-proxy scraper as a periodic TripAdvisor pull, (b) Adam manually opens the listing every ~2 weeks to spot-check claim status + first review, or (c) accept the WebSearch "still indexed, 0/unclaimed" signal and downgrade TripAdvisor direct-fetch to a quarterly manual check (same pattern as Hotels.com / The Knot / Hipcamp). No Adam action required unless a claim/first-review event is suspected — 0/unclaimed has held across every read since the listing was first tracked.
 - **Logged:** 2026-07-18
+
+---
+
+## BLOCKER: facebook-review-text — review enumeration failed 3 consecutive runs
+
+- **Claim:** The identity and verbatim text of the non-recommend review(s) behind Facebook's move from 5 reviews / 100% recommend to **6 reviews / 86% recommend** (first movement in 48 runs, recorded RUN_068 2026-08-17)
+- **Verification path attempted:** WebFetch of `https://www.facebook.com/p/Rancho-Moonrise-100083582071947/`
+- **Failure mode:** JS-gated page — the fetch returns the page **title only** ("Rancho Moonrise | Manor TX"). No review count, no recommendation percentage, no review bodies. Identical result all three runs.
+- **Consecutive failures:** 3 (RUN_068 2026-08-17, RUN_069 2026-08-18, RUN_070 2026-08-19)
+- **Status:** The **aggregate** figure is NOT stale — 6 / 86% has been confirmed by WebSearch on three consecutive runs and has settled. What is blocked is strictly the **review text**, and therefore the response draft. `unreplied: 1` on Facebook is held on the arithmetic alone (100% → 86% means ≥1 non-recommend exists where there were zero), not on having read anything.
+- **Why no draft has been written, three runs running:** drafting a response in Ashley's voice to a review whose content is unknown would be fabrication. An empty draft slot is the honest state. This is a deliberate outcome, not a gap in the run.
+- **Attribution guard (do not skip on a future run):** WebSearch surfaces negative prose adjacent to the Facebook figure that is **not** Facebook content — specifically Haylee L.'s The Knot review ("a neighboring property played extremely loud amplified music…", "I would never recommend this venue…"). RUN_069 caught and rejected exactly this. The summarizer places the two together because both are the negative signal on the property. **Never record Knot text as the Facebook review body.**
+- **Resolution path:** 60 seconds by whoever holds the Page — open the Reviews tab, copy the non-recommend text into this repo, and a real draft follows on the next run. Alternatives if that never happens: (a) a rendering scraper (Apify) against the Page, or (b) accept that Facebook review *bodies* are permanently unreadable by this agent and monitor the aggregate only, treating any further recommend-rate drop as a same-day Adam ping rather than a draftable event.
+- **Logged:** 2026-08-19

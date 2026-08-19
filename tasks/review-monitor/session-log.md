@@ -2168,3 +2168,97 @@ None found. No other scheduled task surfaced a review/reply claim this run. `ran
 ### Scope change NOT made unilaterally
 
 Adding ResortPass to monitored scope requires editing `master-agent.md`'s live-claim ownership table. That is a scope decision, not a data write. Recommended, logged to TODO.md, **not executed this run.**
+
+---
+
+## RUN_069 — 2026-08-18 (RECOVERED, written retroactively by RUN_070 on 2026-08-19)
+
+**This run scraped and never wrote.** Raw notes were produced at `tasks/review-monitor/raw/2026-08-18/scrape-notes.md` and then the run terminated before step 6. Evidence, all confirmed by RUN_070: no `RUN_069` heading existed in this file; no `run-logs/2026-08-18-review-monitor.md` was ever created; `brand/review-aggregate.json` still read `run_number: 68` / `last_updated: 2026-08-17T11:30:00Z`; `site/admin/dashboard-state.json` still read `last_run: 2026-08-17T11:30:00Z`; and the raw directory was **untracked in git**, one `git clean` away from being lost.
+
+Its findings are recorded here for continuity. **None of them were carried into RUN_070's live state** — every claim was independently re-fetched on 2026-08-19.
+
+```
+[2026-08-18] re-verify resortpass-review-state    — still_true — live=53 @ 4.8★ prior=53 @ 4.8★ (2nd independent direct fetch, HTTP 200)
+[2026-08-18] re-verify facebook-count-recommend   — still_true — live=6/86% prior=6/86% (2nd consecutive confirmation)
+[2026-08-18] re-verify facebook-review-text       — failed(2/3) — live=title only (JS-gated) prior=title only — NO DRAFT WRITTEN
+[2026-08-18] re-verify google-count-rating        — still_true(blocked) — live=snippet 126 prior=snippet 126 (stability 0→1); auth 130 now 91d stale
+[2026-08-18] re-verify the-knot-haylee-unreplied  — still_true — live=173d/~24.7wk prior=172d/24.6wk
+[2026-08-18] re-verify theknot-direct-fetch       — failed(8) — no-attempt cycle DELIBERATELY BROKEN on a contradicting signal; 60s timeout
+[2026-08-18] re-verify expedia-8.0-anchor         — still_true — live=8.0 prior=8.0; direct fetch HTTP 429 (1st, new failure mode)
+[2026-08-18] re-verify expedia-hotels-split       — still_true(4th consecutive) — live=8.0/9.0/8.6 prior=same
+[2026-08-18] re-verify hipcamp-count              — still_true — live=0 prior=0
+[2026-08-18] re-verify hipcamp-voice-violations   — still_true — live='34-acre' + 'a bar' prior=same (3rd consecutive)
+[2026-08-18] re-verify tripadvisor-unclaimed      — still_true — live=0/unclaimed prior=0/unclaimed
+[2026-08-18] re-verify airbnb-listing-existence   — still_true(unverifiable) — live=403 not attempted prior=403 (68th run)
+```
+
+**Two things RUN_069 did well and they are worth keeping.** First, it **broke a 34-run no-attempt cycle on The Knot** because a search summary asserted an owner response existed — a contradicting signal, which the gate says forbids assuming the claim still holds. The fetch timed out and the claim was correctly HELD rather than resolved, after the summarizer retracted the assertion in its own next sentence. Second, it caught the **attribution blend** in which Haylee L.'s Knot review prose surfaces in the same result set as the Facebook figure, and refused to record it as the Facebook review body. Both are exactly right.
+
+**One thing it discovered and nobody would have known:** the Google Travel entity page (`google.com/travel/hotels/entity/ChoI2Z_U1dC__dyVARoNL2cvMTFxOTlwMWNqeRAB`) returns truncated content with no numbers extractable — a third dead path for `google-count`, alongside the dead GBP WebFetch and the unreliable search snippet. Logged so no future run burns a call on it.
+
+**Net for RUN_069:** no new reviews, no count or rating moved on any platform, day over day. Both of RUN_068's movements (ResortPass, Facebook) re-confirmed at the same value from independent reads — they were real and they had settled.
+
+---
+
+## RUN_070 — 2026-08-19 06:30 CT
+
+**No new reviews and no rating moved on any platform.** Status stays **urgent** on the standing condition, not a new one: a 1★ review is unreplied at day 174 and two drafts sit unposted at day 92. Three things are genuinely new, none of them a review event, and one of them is a process failure this run had to repair before it could do anything else.
+
+**Brand canary PASSED** before any absence was recorded — unrestricted brand query returned `ranchomoonrise.com` plus correctly-attributed third-party listings. Session not degraded.
+
+### Re-Verify Gate — 18 live claims
+
+```
+[2026-08-19 11:30] re-verify google-count-rating          — still_true(blocked) — live=snippet '125+' (SITE-DERIVED) prior=snippet 126; auth 130 now 92d stale
+[2026-08-19 11:30] re-verify google-snippet-path-validity — NEW_SIGNAL — live=snippet echoes site's own reviewCount:125 prior=treated as independent read
+[2026-08-19 11:30] re-verify google-unreplied-cassie      — still_true — live=1 unreplied prior=1 (root done-log: last resolution still 2026-04-15)
+[2026-08-19 11:30] re-verify facebook-count-recommend     — still_true — live=6/86% prior=6/86% (3rd consecutive — movement SETTLED)
+[2026-08-19 11:30] re-verify facebook-review-text         — failed(3/3) — live=title only prior=title only — BLOCKER OPENED, NO DRAFT WRITTEN
+[2026-08-19 11:30] re-verify resortpass-review-state      — verification-failure — live=rating block absent from a HTTP 200 page prior=53 @ 4.8★ — HELD STALE:2026-08-18, NOT recorded as a drop
+[2026-08-19 11:30] re-verify resortpass-products          — still_true — live=2 products ($15/$20) prior=2 products ($15/$20)
+[2026-08-19 11:30] re-verify resortpass-reply-coverage    — unknown — live=no enumeration path (/reviews = 404) prior=unknown
+[2026-08-19 11:30] re-verify the-knot-haylee-unreplied    — still_true — live=174d/~24.9wk, no owner response prior=173d/24.7wk
+[2026-08-19 11:30] re-verify the-knot-count-rating        — still_true(held) — live=not re-read, no contradicting signal prior=8/4.5★
+[2026-08-19 11:30] re-verify expedia-8.0-anchor           — still_true — live=8.0 (confirmed ×2, entity h89565924) prior=8.0
+[2026-08-19 11:30] re-verify expedia-review-count         — NEW_SIGNAL — live=6 verified reviews prior=null since 2026-04-09
+[2026-08-19 11:30] re-verify expedia-hotels-split         — still_true(5th consecutive) — live=8.0/9.0/8.6(carried) prior=8.0/9.0/8.6
+[2026-08-19 11:30] re-verify expedia-direct-fetch         — failed(2) — live=HTTP 429 prior=HTTP 429 (blocker threshold 3)
+[2026-08-19 11:30] re-verify agoda-direct-fetch           — failed(1) — live=empty page prior=never attempted directly
+[2026-08-19 11:30] re-verify hipcamp-count                — still_true — live=0 prior=0
+[2026-08-19 11:30] re-verify hipcamp-voice-violations     — still_true — live='34-acre ranch' + 'a pool, bar, and lounge area' prior=same (4th consecutive, domain-restricted)
+[2026-08-19 11:30] re-verify tripadvisor-unclaimed        — still_true — live=0/unclaimed (canonical indexed, no count in snippet) prior=0/unclaimed
+[2026-08-19 11:30] re-verify airbnb-listing-existence     — still_true(unverifiable) — live=403 not attempted prior=403 (69th run)
+[2026-08-19 11:30] re-verify two-drafts-unposted          — still_true — live=day 92 prior=day 90
+```
+
+**Tally:** 13 still_true · 2 new_signal · 1 unknown · 4 verification-failure · 0 partial · **0 resolved**
+
+### The three new things
+
+**1 — Expedia carries 6 reviews. This field has been `null` since April.** Two independent domain-restricted queries agree, both binding the count to Expedia-specific descriptors (2.5-star property, "Very Good", "6 verified reviews") for entity `h89565924` at 8.0/10. Recorded as `search_confirmed_count`, **not** promoted to the authoritative `count` — the hard rule forbids an aggregate state write without a direct scrape, and the direct scrape returned HTTP 429. **Coincidence flagged rather than smoothed:** Facebook also reads exactly 6. Neither query's result set contained `facebook.com`, and both bound the 6 to OTA descriptors, so it is recorded as a real read — but a third differently-phrased confirmation should land before promotion. The practical consequence is larger than the number: 6 reviews exist on a surface whose reply coverage has never been checked, and it was invisible because the count itself was null.
+
+**2 — The Google snippet path is contaminated by the site's own schema.** This run's snippet read *"4.9-star rating across 125+ Google reviews."* `site/index.html:90` carries `reviewCount": "125"` — the AggregateRating anchor CONTEXT.md holds at 125 pending Adam's confirmation. The engine read Rancho's own structured data back and presented it as a Google review count. Observed snippet values to date: **175 / 130 / 126 / 125+**, at least one of which is now demonstrably self-referential. The snippet was already documented as "not a count proxy in either direction"; it is now additionally documented as *partly an echo of ourselves*. That retires the last reason to look at it. Live-authoritative 130 (RUN_034 Chrome MCP, 2026-05-19) is **92 days stale** and the only real number this task has.
+
+**3 — RUN_069 scraped and never wrote.** Detailed above. Its raw notes were untracked in git. This run committed them and folded the findings into this file. The structural lesson: the scrape is the cheap half and the write is the half that survives — a run that dies at step 5 leaves no trace that it ran at all, and the next run's "prior value" silently reaches back two days instead of one.
+
+### What was refused
+
+- **ResortPass 53 @ 4.8★ was NOT recorded as a drop.** The page returned HTTP 200 with products, star class and pool copy rendering identically; only the aggregate rating block failed to survive the fetch. That is an extraction failure. Recording "no rating found" as a decline on the one platform already showing this year's only rating decline would have been a confident, plausible, entirely fabricated finding — the exact shape the gate exists to stop. Held `STALE:2026-08-18`, backed by three prior reads (this task 8/17, `rancho-competitive-weekly` 8/17, this task 8/18).
+- **A ResortPass follow-up search returned PissedConsumer 1.3/69 and Trustpilot data.** That is ResortPass-the-platform's own reputation, not Rancho's listing rating. Different entity. Not recorded.
+- **A large blended TripAdvisor answer was rejected wholesale:** *"one of the most beautiful 120 acre ranches in all of Texas… 15 minutes from downtown Austin… a shooting location for the famed western movie Lonesome Dove… prices $116 to $119."* Rancho is 36 acres, 20 minutes, and has no Lonesome Dove connection. It is bleed from the other properties in the same result set (Moon River Ranch, Texas Ranch RV Resort, Moonrise Resort FL, Moonrise Camp Wadi Rum, Manor RV Park CO). The `$116–$119` band was **not** written to the price field.
+- **An unrestricted Hipcamp query returned a blended answer reading "36 acres"** — the site's number, mixed in with Hipcamp's copy. Discarded, and the query re-run restricted to `hipcamp.com`, which returned **"a 34-acre ranch"** and **"a pool, bar, and lounge area"** — both violations re-confirmed, 4th consecutive run, and the cleanest attribution this task has managed. Prior runs could not separate the two sources. The acreage drift is Hipcamp's alone; the site is clean at 183/183.
+
+### FLAG_FOR_ADAM (4)
+
+1. **Six reviews exist on Expedia and nobody has ever checked whether they have replies.** New information this run — the count has been null since April. Reply coverage on `h89565924` is unknown, exactly as it is on ResortPass. Both are surfaces accumulating public reviews outside anything this monitor can enumerate.
+2. **The Facebook non-recommend is now a formal blocker, and it is still a 60-second fix.** Three runs have tried to read it and all three got the page title. Open the Reviews tab on the Page, paste the text into the repo, and a real draft follows next run. Until then the slot stays empty on purpose.
+3. **Google's authoritative review count is 92 days old, and the fallback is now known to be reading our own website back to us.** A 30-second look at the GBP dashboard replaces a number this task has been unable to verify since May — and the Places API key would end the problem permanently.
+4. **ResortPass, 53 reviews, still outside monitored scope.** Unchanged ask from RUN_068. Adding it requires a `master-agent.md` ownership-table edit, which is a scope decision and is deliberately not made unilaterally. Second run carrying this.
+
+### Ownership violation check
+
+None found. `rancho-site-daily` (2026-08-19) surfaced third-party listing copy claims — the Knot's *"20 luxury cabins…up to 50 guests"* — but that is a **voice/copy** claim in its own scope, not a review-reply claim, and it explicitly did not touch review counts or reply state. Correct behavior. Its finding independently corroborates this task's carried Knot voice-violation entry.
+
+### Scope change NOT made unilaterally
+
+Adding ResortPass (and now Expedia's newly-visible review pool) to the monitored-scope ownership table in `master-agent.md` remains recommended and remains **not executed** — it is a scope decision. Second consecutive run carrying the recommendation to TODO.md rather than acting on it.
