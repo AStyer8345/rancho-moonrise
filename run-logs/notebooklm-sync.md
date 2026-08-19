@@ -1903,3 +1903,4 @@ Persistently skipped — over the 10 MB cap (3 files, unchanged behavior):
 
 **NEEDS ADAM:** run `notebooklm login` in an interactive terminal. Re-auth is a Google
 OAuth browser flow; a scheduled run cannot perform it. 54 consecutive no-op runs.
+2026-08-19 16:08 | scanned=66 added=0 replaced=0 skipped=4 errors=1 (auth-expired — re-verified via `use`, `list --json`, `source list --json`; backlog unchanged at 2 new + 1 modified; run 55, day 109 since first failure 2026-06-02; state NOT advanced)
