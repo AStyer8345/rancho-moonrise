@@ -1861,3 +1861,45 @@ INTIMATE EVENTS AT RM.pdf (21.7 MB)
 2026-08-18 16:08 | scanned=66 added=0 replaced=0 skipped=4 errors=1 (auth-expired — re-verified via `use`, `list --json`, `source list --json`; backlog unchanged at 2 new + 1 modified; run 52, day 108 since first failure 2026-06-02; state NOT advanced; no new detail vs 2026-08-15 10:15 entry)
 
 2026-08-19 10:07 | scanned=66 added=0 replaced=0 skipped=4 errors=1 (auth-expired — re-verified via `use`, `list --json`, `source list --json`; backlog unchanged at 2 new + 1 modified; run 53, day 109 since first failure 2026-06-02; state NOT advanced; no new detail vs prior entries)
+
+2026-08-19 12:08 | scanned=66 added=0 replaced=0 skipped=4 errors=1 (auth-expired — re-verified via `use`, `list --json`, `source list --json`; backlog unchanged at 2 new + 1 modified; run 54, day 109 since first failure 2026-06-02; state NOT advanced)
+
+### NEW FINDING this run — scan scope is top-level only
+
+Ran the folder diff both ways to sanity-check the long-flat backlog count:
+
+| scope | scanned | new | modified | unchanged |
+|---|---|---|---|---|
+| top-level only (established behavior, matches state file) | 66 | 2 | 1 | 63 |
+| recursive (`os.walk`) | 81 | 17 | 1 | 63 |
+
+All 64 entries in `.rancho-notebook-sync-state.json` are top-level `brand/` and `deal/`
+files, so every run since inception has scanned non-recursively. The 15-file gap is
+**not** backlog growth — it is 15 files sitting in subdirectories that have never been
+in scope:
+
+- `brand/gbp-posts/` (5) — GBP post drafts, output of the weekly social task
+- `brand/review-reports/` (7) + `brand/review-reports/raw-data/` (1) — generated review reports
+- `brand/review-log/` (1) — generated review log
+- `brand/fonts/` (1) — Monotype EULA
+
+**No behavior changed this run.** Kept top-level scope so the log series stays
+comparable and so a scope change doesn't ride in on an unrelated auth outage. Judgment:
+most of those subdirectory files are *generated artifacts of other scheduled tasks*
+(review reports, GBP drafts, a font license), not Rancho brand/deal source documents —
+adding them would dilute the notebook rather than enrich it. If Adam wants any of them
+in scope, the fix is to name specific subdirectories in the task file, not to flip on
+blanket recursion.
+
+Backlog pending when auth is restored (3 ops, unchanged for 109 days):
+- ADD: `brand/2026-05-16-hipcamp-curation-gap-audit.md`
+- ADD: `brand/approved-testimonials.md`
+- REPLACE: `brand/2026-04-09-rancho-moonrise-improvement-plan.html` (61254 b, was 60047 b)
+
+Persistently skipped — over the 10 MB cap (3 files, unchanged behavior):
+`ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf` (36.9 MB),
+`PRIVATE EVENTS AT RANCHO MOONRISE.pdf` (28.8 MB),
+`INTIMATE EVENTS AT RM.pdf` (20.7 MB)
+
+**NEEDS ADAM:** run `notebooklm login` in an interactive terminal. Re-auth is a Google
+OAuth browser flow; a scheduled run cannot perform it. 54 consecutive no-op runs.
