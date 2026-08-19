@@ -11,8 +11,8 @@ Priority: broken/placeholder assets first, then highest-impression landing pages
 |------|-----------|--------|
 | `weddings.html` | 2026-04-22 | BLOCKED — no approved wedding testimonial (author block now unblocked) |
 | `accommodations.html` | **2026-07-22** | ✅ **STRENGTHENED** — 3 of 4 elements shipped (photos, author block, local detail). Testimonial still NEEDS ADAM. |
-| `host-your-event.html` | — | Pending — **next up** |
-| `events.html` | — | Pending |
+| `host-your-event.html` | **2026-08-19** | ✅ **STRENGTHENED** — 3 of 4 elements shipped (photos, author block, local detail). Testimonial still NEEDS ADAM. |
+| `events.html` | — | Pending — **next up** |
 | `pool-day-pass-austin.html` | — | Pending |
 | `glamping-near-austin-texas.html` | — | Pending |
 | `bachelorette-party-austin-texas.html` | — | Pending |
@@ -163,3 +163,32 @@ Both hard stops re-verified live still true (`find brand site -iname "*testimoni
 **Left alone deliberately:** `corral-hank-willie` and `corral-waylon-texas` — real photos in the responsive ladder with **zero references anywhere in the repo**. Strong orphaned assets, but VOICE-GUIDE lists the horse corral under "future, not yet public-ready" while it is already live on `index.html`, `weddings.html` and `host-your-event.html`. That contradiction is Adam's call, not an autonomous run's. Logged to TODO.
 
 **Next run:** `host-your-event.html`. Note T-001 (once approved) is corporate-retreat content and suits `host-your-event.html` / `corporate-retreat-near-austin.html` — so that page could reach 4 of 4 if Adam approves it and Ashley supplies the event date.
+
+---
+
+### 2026-08-19 — host-your-event.html — ✅ SHIPPED (run 11; second consecutive productive run)
+
+**Gate re-checked live, not inherited.** GOALS.md read from disk: `## Settled Decisions` still carries the Ashley byline (`Ashley · Rancho Moonrise`, settled 2026-07-15), and `rancho-content-weekly` is still under **Keep running**. Author block remains unblocked.
+
+**Testimonial — STILL BLOCKED, re-verified rather than assumed.** `brand/approved-testimonials.md` read fresh this run: the only candidate, **T-001 Cassie Butterfield (Google 5★)**, is still `STATUS: UNAPPROVED — awaiting Adam` with `EVENT DATE: UNKNOWN`. This is the page the file's own header nominates for it ("Suggested pages: `corporate-retreat-near-austin.html`, `host-your-event.html`") — so `host-your-event.html` is exactly the page that would have hit **4 of 4** had T-001 been approved. It has now been sitting unapproved for **35 days**. Nothing else changed in the file since 2026-07-15. → **NEEDS ADAM** (still the single highest-value 2-minute unblock in this workstream).
+
+**Page picked:** `host-your-event.html` — held the #3 queue slot and was named "next up" by the 7/22 run.
+
+**Shipped (2 files, +49/−1 on the page, +1/−1 on the sitemap):**
+
+- **3 real photos, each verified by opening the file** before alt text was written. All three were **orphaned assets** — present in the responsive ladder, referenced nowhere in the repo:
+  - `event-fringe-pergola` → replaced a **duplicate** `venue-event-barn` on the Conferences & Luncheons card (the same image was rendering twice on this page, at the card and again in the Event Barn split). Covered cedar patio, round bistro tables, sage chairs, bench of patterned pillows, fringe garlands and string lights overhead.
+  - `event-picnic-thunderbird` → new Courtyard split. Gravel courtyard, wood picnic tables, agave in the gravel, thunderbird mural with *BE HERE NOW* on the barn's black metal wall.
+  - `event-outdoor-bar-disco` → new Outdoor Bar split. Corrugated-metal bar with wood counter, prickly pear in terracotta pots, branch pergola with a disco ball.
+- **Named author block** — `Ashley · Rancho Moonrise` + role line + review date, matching the inline-style convention established on `accommodations.html` 7/22 (no CSS class exists for this yet; still only 2 pages carry one). Matching `author` Person added to the `WebPage` JSON-LD alongside `dateModified: 2026-08-19` — this page's `WebPage` block previously carried **neither**.
+- **Local detail (two, both verifiable)** — (1) the thunderbird mural / *BE HERE NOW* / breeze-block wall / agave courtyard, read straight off the photo, not inferred; (2) **Travis County active burn ban** pausing fire-pit use, plus fires out by midnight — already published on `policies.html`, and county-specific, so a venue in Hays or Bastrop County literally cannot copy the sentence. Bar copy holds the VOICE-GUIDE line: venue-sold, per person per hour, no outside alcohol, never walk-in.
+
+**Rejected during drafting — recorded so a future run doesn't re-reach for it:** the **9:30 PM noise curfew** looked like an ideal uncopyable planning detail (real, published on `policies.html` and `faqs.html`). It was cut because line 288 of this same page already reads "celebrations that go late" — publishing a 9:30 outdoor cutoff here would have contradicted live copy on the same screen. Which of the two is correct for *private events* (as opposed to overnight guests on a shared property) is a real question and is **NOT** resolvable autonomously → logged to TODO as a question for Ashley.
+
+**Verification:** `npm run validate:site` passes. All 4 JSON-LD blocks parse; `WebPage.author.name = Ashley` and `dateModified = 2026-08-19` asserted by parse, not by grep. All 6 image variants (3 × 480w/1024w) exist and decode at their real dimensions. HTML tag balance checked programmatically — 0 unclosed, 0 mismatched. 0 banned filler words, 0 emoji. `Manor` appears 3× and all 3 are pre-existing postal-address contexts (schema `addressLocality`, schema FAQ answer, footer) — no location descriptor in body copy. Sitemap `lastmod` bumped 2026-05-05 → 2026-08-19.
+
+**No screenshot — and the reason is different from 7/22's.** Dev servers cannot be started from an unattended scheduled-task run (the harness refuses: nobody is present to approve). Verification was therefore entirely static. Note for whoever runs this interactively: the three new images are **portrait** sources (1024×1366) landing in `4/3` `aspect-ratio` containers with `object-fit: cover`, so they centre-crop. The crop was reasoned through — mural and picnic tables both survive the centre band — but it has not been seen rendered.
+
+**Left alone deliberately:** the page states **200** capacity in the AEO block and **1,000+** in the FAQ, and the `EventVenue` schema declares `maximumAttendeeCapacity: 200` while VOICE-GUIDE says "Events up to 200". That is a three-way contradiction in published copy and schema, it predates this run, and picking a number is a facts decision, not a content-strengthening one → logged to TODO.
+
+**Next run:** `events.html`. If T-001 lands as APPROVED with an event date before then, **jump the queue back to `host-your-event.html` or `corporate-retreat-near-austin.html`** — either would reach 4 of 4 on a single short pass.

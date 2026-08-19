@@ -129,7 +129,9 @@ The video card **"Escape to Rancho Moonrise"** on `/videos/` points at YouTube I
 
 I've left the card in place rather than silently removing visible content, since deleting published content is your call, not mine.
 
-### NEEDS ADAM — Approve testimonial T-001 (unblocks the 4th element of every content-weekly run) — added 2026-07-22 by `rancho-content-weekly`
+### NEEDS ADAM — Approve testimonial T-001 (unblocks the 4th element of every content-weekly run) — added 2026-07-22, **re-verified 2026-08-19** by `rancho-content-weekly`
+
+**Re-verified live 2026-08-19 (not recycled):** `brand/approved-testimonials.md` re-read this run — T-001 is still `STATUS: UNAPPROVED — awaiting Adam` with `EVENT DATE: UNKNOWN`, unchanged for **35 days**. This run strengthened **`host-your-event.html`** — which that file's own header names as a suggested page for T-001 — so **this is the exact page that would have reached 4 of 4** instead of 3 of 4. Same again for `corporate-retreat-near-austin.html` when it comes up in the queue. The ask below has not changed; only the cost of not doing it has.
 
 **Status: the byline half is DONE, the testimonial half is one checkbox away.** Thank you — the `## Settled Decisions` line in GOALS.md ("byline: Ashley · Rancho Moonrise") plus creating `brand/approved-testimonials.md` broke a 10-run, 91-day block. `accommodations.html` shipped its first strengthening pass today with 3 of the 4 required elements.
 
@@ -144,6 +146,11 @@ I've left the card in place rather than silently removing visible content, since
 
 - **Horse corral — is it public-ready or not?** `VOICE-GUIDE.md` lists it under *"Future spaces — future, not yet public-ready,"* but it is **already live on `index.html`, `weddings.html` and `host-your-event.html`**. Meanwhile `corral-hank-willie` and `corral-waylon-texas` — real photos of the hand-painted HANK / WILLIE / WAYLON signs under the corral shelter, genuinely uncopyable content — sit in the responsive ladder with **zero references anywhere in the repo**. Autonomous runs won't place them while the guide contradicts production. One line either way in VOICE-GUIDE unblocks them.
 - **Acreage and direction contradict across surfaces.** VOICE-GUIDE says **36 acres**; the Hipcamp listing text says "34-acre" and its data payload says **37**. Site copy says "20 minutes **east**" while `things-to-do-manor-tx.html` says **northeast** and the Hipcamp coordinates compute NE. The approved phrase "20 minutes from downtown Austin" (no direction) sidesteps the second one cleanly.
+
+**Two more surfaced by the 2026-08-19 run on `host-your-event.html` (neither blocking, both are facts decisions an autonomous run should not make):**
+
+- **Does the 9:30 PM noise curfew bind private events?** It's published on `policies.html` and `faqs.html` as a property-wide quiet-hours rule for a shared property with overnight guests. It would be an excellent planning detail on the events page — specific, real, and impossible for a competitor to copy. It was **cut** because `host-your-event.html` line 288 already tells event clients *"celebrations that go late."* One of those two is wrong for private events, and shipping both on one page would contradict live copy on the same screen. **Question for Ashley:** does a buyout or private party run past 9:30 outdoors, or does the music move into the barn? One sentence unblocks a strong detail on this page and on `events.html`, `weddings.html` and `bachelorette-party-austin-texas.html`.
+- **Capacity contradicts itself three ways on the events page.** The AEO block says the Event Barn holds **200**; the FAQ (visible copy *and* `FAQPage` schema) says **"up to 1,000+ guests"**; the `EventVenue` schema declares `maximumAttendeeCapacity: 200`; `VOICE-GUIDE.md` says "Events up to 200." Both numbers are published to Google right now from the same page. Related and probably the same root: `rancho-site-daily` confirmed today that The Knot listing claims **"up to 50 guests"** in one place and **300+** in another. **Which number is real for a full-property buyout?** Once settled, the fix is mechanical and one run wide.
 
 **Do not re-surface the old framing.** The pre-2026-07-15 version of this item asked you to either settle the byline or pause the task. Both are resolved — the task is correctly unpaused in GOALS.md → Keep running, and it is shipping. This item is now scoped only to the testimonial approval above.
 
