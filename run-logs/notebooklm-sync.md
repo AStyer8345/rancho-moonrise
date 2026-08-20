@@ -1970,3 +1970,9 @@ decision for Adam rather than a silent behavior change inside a failing run.
 Backlog unchanged (2 new + 1 modified, byte-verified): `brand/2026-05-16-hipcamp-curation-gap-audit.md`, `brand/approved-testimonials.md`, `brand/2026-04-09-rancho-moonrise-improvement-plan.html` (60,047 -> 61,254). Persistent >10 MB skips unchanged (3 PDFs). Recursive-scan gap unchanged (81 eligible vs 66 tracked) — still Adam's call, not a silent behavior change.
 
 **NEEDS ADAM — unchanged:** run `notebooklm login` interactively, or pause this scheduled task. See the 2026-08-20 09:22 entry for the full detail; future runs will keep this line short rather than restating it.
+
+2026-08-20 12:14 | scanned=66 added=0 replaced=0 skipped=4 errors=1 (auth-expired — re-verified live: `use`, `list --json`, and `source list --json` all return the Google sign-in redirect. Run 60, day 96. State NOT advanced. Second firing today; the 12:11 run is run 59.)
+
+Backlog unchanged, byte-verified: 2 new (`brand/2026-05-16-hipcamp-curation-gap-audit.md`, `brand/approved-testimonials.md`) + 1 modified (`brand/2026-04-09-rancho-moonrise-improvement-plan.html`, 60,047 -> 61,254). Three >10 MB PDFs still skipped. Recursive-scan gap (81 eligible vs 66 tracked) still open for Adam.
+
+**NEEDS ADAM — unchanged:** run `notebooklm login` interactively, or pause this task. Full detail in the 2026-08-20 09:22 entry.
