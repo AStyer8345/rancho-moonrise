@@ -1911,3 +1911,25 @@ auth-expired runs. Re-auth is a Google OAuth browser flow that a scheduled run c
 perform. Recommend Adam either run `notebooklm login` interactively, or pause the
 `rancho-notebooklm-sync` scheduled task until he does — it is currently burning a run
 slot twice daily to write the same failure line.
+2026-08-20 06:00 | scanned=69 added=0 replaced=0 skipped=4 errors=1 (auth-expired — re-verified via `use`, `list --json`, `source list --json`; backlog unchanged at 2 new + 1 modified; run 57; state NOT advanced)
+
+**STREAK CORRECTION.** Prior entries disagreed on the streak start (one said
+2026-06-02, another 2026-05-16). Verified against this log: last successful sync was
+**2026-05-02 04:10**; first auth-expired run was **2026-05-03 08:06**. As of today that
+is **109 days / 57 consecutive failed runs**. Treat 2026-05-03 as the true start date.
+
+Backlog still waiting on re-auth (unchanged since the streak began):
+- NEW: `brand/2026-05-16-hipcamp-curation-gap-audit.md`
+- NEW: `brand/approved-testimonials.md`
+- MODIFIED: `brand/2026-04-09-rancho-moonrise-improvement-plan.html` (60,047 -> 61,254 bytes)
+
+Persistently skipped — over the 10 MB cap (3 files, unchanged behavior):
+`ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf` (36.9 MB),
+`PRIVATE EVENTS AT RANCHO MOONRISE.pdf` (28.8 MB),
+`INTIMATE EVENTS AT RM.pdf` (20.7 MB)
+
+**NEEDS ADAM — two options, pick one:**
+1. Run `notebooklm login` in an interactive terminal (Google OAuth browser flow; a
+   scheduled run cannot perform it), or
+2. Pause the `rancho-notebooklm-sync` scheduled task until you do. It has burned
+   57 run slots writing the same failure line and has synced nothing in 109 days.
