@@ -1964,3 +1964,9 @@ decision for Adam rather than a silent behavior change inside a failing run.
 2. Pause the `rancho-notebooklm-sync` scheduled task until you do.
 
 58 runs have now written the same failure line and nothing has synced in 96 days.
+
+2026-08-20 12:11 | scanned=66 added=0 replaced=0 skipped=4 errors=1 (auth-expired — re-verified live this run: `use` renders the Google sign-in warning, `list --json` returns the same redirect error. Run 59, day 96 of the outage. State NOT advanced.)
+
+Backlog unchanged (2 new + 1 modified, byte-verified): `brand/2026-05-16-hipcamp-curation-gap-audit.md`, `brand/approved-testimonials.md`, `brand/2026-04-09-rancho-moonrise-improvement-plan.html` (60,047 -> 61,254). Persistent >10 MB skips unchanged (3 PDFs). Recursive-scan gap unchanged (81 eligible vs 66 tracked) — still Adam's call, not a silent behavior change.
+
+**NEEDS ADAM — unchanged:** run `notebooklm login` interactively, or pause this scheduled task. See the 2026-08-20 09:22 entry for the full detail; future runs will keep this line short rather than restating it.
