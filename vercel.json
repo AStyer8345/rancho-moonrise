@@ -11,6 +11,26 @@
       "maxDuration": 10
     }
   },
+  "redirects": [
+    { "source": "/event/:slug*", "destination": "/events/", "permanent": true },
+    { "source": "/glamping-near-austin-texas/", "destination": "/blog/glamping-near-austin-texas/", "permanent": true },
+    { "source": "/wedding-venues-near-austin/", "destination": "/blog/wedding-venues-near-austin/", "permanent": true },
+    { "source": "/corporate-retreat-near-austin/", "destination": "/blog/corporate-retreat-near-austin/", "permanent": true },
+    { "source": "/corporate-retreat-planning-guide-texas/", "destination": "/blog/corporate-retreat-planning-guide-texas/", "permanent": true },
+    { "source": "/things-to-do-manor-tx/", "destination": "/blog/things-to-do-manor-tx/", "permanent": true },
+    { "source": "/things-to-do-near-austin-with-kids/", "destination": "/blog/things-to-do-near-austin-with-kids/", "permanent": true },
+    { "source": "/bachelorette-party-austin-texas/", "destination": "/blog/bachelorette-party-austin-texas/", "permanent": true },
+    { "source": "/ranch-wedding-texas/", "destination": "/blog/ranch-wedding-texas/", "permanent": true },
+    { "source": "/weekend-getaways-near-austin/", "destination": "/blog/weekend-getaways-near-austin/", "permanent": true },
+    { "source": "/pool-day-pass-austin/", "destination": "/blog/pool-day-pass-austin/", "permanent": true },
+    { "source": "/glamping-vs-camping/", "destination": "/blog/glamping-vs-camping/", "permanent": true },
+    { "source": "/summer-glamping-near-austin/", "destination": "/blog/summer-glamping-near-austin/", "permanent": true },
+    { "source": "/austin-bachelorette-ranch-vs-bar-crawl/", "destination": "/blog/austin-bachelorette-ranch-vs-bar-crawl/", "permanent": true },
+    { "source": "/corporate-retreat-ranch-vs-hotel/", "destination": "/blog/corporate-retreat-ranch-vs-hotel/", "permanent": true },
+    { "source": "/mothers-day-near-austin/", "destination": "/blog/mothers-day-near-austin/", "permanent": true },
+    { "source": "/birthday-party-venue-near-austin/", "destination": "/blog/birthday-party-venue-near-austin/", "permanent": true },
+    { "source": "/yoga-retreat-near-austin/", "destination": "/blog/yoga-retreat-near-austin/", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/accommodations/", "destination": "/pages/accommodations.html" },
     { "source": "/weddings/", "destination": "/pages/weddings.html" },
