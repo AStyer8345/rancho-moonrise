@@ -1933,3 +1933,34 @@ Persistently skipped — over the 10 MB cap (3 files, unchanged behavior):
    scheduled run cannot perform it), or
 2. Pause the `rancho-notebooklm-sync` scheduled task until you do. It has burned
    57 run slots writing the same failure line and has synced nothing in 109 days.
+
+2026-08-20 09:22 | scanned=66 added=0 replaced=0 skipped=4 errors=1 (auth-expired — re-verified live via `use`, `list --json`, `source list --json`; all three return the same Google sign-in redirect. Backlog unchanged at 2 new + 1 modified. Run 58. State NOT advanced.)
+
+Corrected anchors (prior entries drifted between two different "day N since" baselines):
+- Last run that actually synced anything: **2026-05-02** (`replaced=7`).
+- First auth-expired failure: **2026-05-16**. Today is day **96** of the outage.
+- Consecutive failed runs: **58**.
+
+Backlog waiting on re-auth (byte-verified this run, unchanged):
+- NEW: `brand/2026-05-16-hipcamp-curation-gap-audit.md`
+- NEW: `brand/approved-testimonials.md`
+- MODIFIED: `brand/2026-04-09-rancho-moonrise-improvement-plan.html` (60,047 -> 61,254 bytes)
+
+Persistently skipped — over the 10 MB cap (3 files, unchanged behavior):
+`ALL INCLUSIVE RETREATS AT RANCHO MOONRISE.pdf` (36.9 MB),
+`PRIVATE EVENTS AT RANCHO MOONRISE.pdf` (28.8 MB),
+`INTIMATE EVENTS AT RM.pdf` (20.7 MB)
+
+Noted, not acted on: the historical `scanned=` convention is top-level-only. A recursive
+scan of `brand/` + `deal/` finds 81 eligible files — 15 more than the tracked 66, all in
+subdirectories (`brand/gbp-posts/`, `brand/review-reports/`, `brand/review-log/`,
+`brand/fonts/`). Those have never been synced and are not counted in the backlog above.
+Changing the scan depth would upload 15 files in one burst, so it stays a separate
+decision for Adam rather than a silent behavior change inside a failing run.
+
+**NEEDS ADAM — unchanged ask, pick one:**
+1. Run `/Users/adamstyer/.local/bin/notebooklm login` in an interactive terminal
+   (Google OAuth browser flow — a scheduled run cannot perform it), or
+2. Pause the `rancho-notebooklm-sync` scheduled task until you do.
+
+58 runs have now written the same failure line and nothing has synced in 96 days.
