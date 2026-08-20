@@ -12,7 +12,7 @@
     }
   },
   "redirects": [
-    { "source": "/event/:slug*", "destination": "/events/", "permanent": true },
+    { "source": "/event/:slug*/", "destination": "/events/", "permanent": true },
     { "source": "/glamping-near-austin-texas/", "destination": "/blog/glamping-near-austin-texas/", "permanent": true },
     { "source": "/wedding-venues-near-austin/", "destination": "/blog/wedding-venues-near-austin/", "permanent": true },
     { "source": "/corporate-retreat-near-austin/", "destination": "/blog/corporate-retreat-near-austin/", "permanent": true },
