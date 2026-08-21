@@ -95,3 +95,23 @@ Append-only. If a live verification path fails 3 consecutive runs for the same c
 - **Attribution guard (do not skip on a future run):** WebSearch surfaces negative prose adjacent to the Facebook figure that is **not** Facebook content — specifically Haylee L.'s The Knot review ("a neighboring property played extremely loud amplified music…", "I would never recommend this venue…"). RUN_069 caught and rejected exactly this. The summarizer places the two together because both are the negative signal on the property. **Never record Knot text as the Facebook review body.**
 - **Resolution path:** 60 seconds by whoever holds the Page — open the Reviews tab, copy the non-recommend text into this repo, and a real draft follows on the next run. Alternatives if that never happens: (a) a rendering scraper (Apify) against the Page, or (b) accept that Facebook review *bodies* are permanently unreadable by this agent and monitor the aggregate only, treating any further recommend-rate drop as a same-day Adam ping rather than a draftable event.
 - **Logged:** 2026-08-19
+- **Update 2026-08-21 (RUN_071):** aggregate 6 / 86% re-confirmed a **4th** consecutive time, and for the first time on a `facebook.com` **domain-restricted** query — the cleanest attribution the figure has had. Review body still not surfaced; direct fetch not re-attempted (no contradicting signal). **4th run with no draft, still deliberate.** Blocker unchanged and still a 60-second fix.
+
+---
+
+## BLOCKER: expedia-direct-fetch — HTTP 429 three consecutive runs
+
+- **Claim:** Expedia review count and rating for the canonical Rancho Moonrise entity `h89565924` (`https://www.expedia.com/Manor-Hotels-Rancho-Moonrise.h89565924.Hotel-Information`). Baseline anchor 8.0/10 last confirmed by direct scrape **2026-04-09**; count `null` in the aggregate since that same date.
+- **Verification path attempted:** WebFetch of the canonical Expedia entity URL.
+- **Failure mode:** **HTTP 429 Too Many Requests**, response body not retrieved. Identical all three runs. This is a rate-limit, not a hard block or a bot-detection challenge — the request is being throttled rather than refused on identity.
+- **Consecutive failures:** 3 (RUN_069 2026-08-18, RUN_070 2026-08-19, RUN_071 2026-08-21)
+- **Distinct from `hotels-com-direct-fetch`:** different entity (`h89565924` vs `ho2867109568`), different failure mode (429 rate-limit vs 60-second timeout). Tracked separately so a fix to one is not mistaken for a fix to the other.
+- **Status:** Rating 8.0 is **not** stale in substance — it was re-confirmed live by search on 2026-08-19 (×2) and again 2026-08-21, always bound to `h89565924`. What is blocked is strictly the **direct** path, and therefore the ability to promote anything into an authoritative field.
+- **The consequence that makes this blocker matter more than its siblings:** `master-agent.md` hard-rules that `brand/review-aggregate.json` is never written without a **fresh direct scrape**. Expedia's count has now been confirmed at **6** by three independent, differently-phrased, domain-restricted searches (RUN_070 ×2, RUN_071 ×1) — which was the exact precondition RUN_070 set for promoting it. With the direct path blocked, *"pending a direct scrape"* now means *"pending forever"*: the evidence bar has been cleared and the rule still forbids the write. **This is a rule question, not a data question, and it is deliberately not resolved unilaterally.**
+- **Why the count matters at all:** six public reviews exist on a surface whose **reply coverage has never been checked once**. It was invisible for four months precisely because the count field read `null`. Same shape as the ResortPass discovery in RUN_068.
+- **Resolution path — any one of:**
+  - (a) **30 seconds in the Expedia extranet** — settles the count, the rating, *and* the reply coverage at once, and simultaneously resolves the two-entity 8.0/9.0/8.6 split question that has stood since RUN_066. Highest value per second of Adam's time of anything this task currently carries.
+  - (b) **Authorise search-confirmed promotion** when a value has ≥3 independent same-day domain-restricted confirmations *and* the direct path is a logged blocker. Would also unblock the Hipcamp, Knot and TripAdvisor counts under the same logic. This is a change to `master-agent.md`'s hard rules and needs Adam's sign-off.
+  - (c) Rendering/residential-proxy scraper (Apify) — same answer already proposed for Hipcamp, The Knot and TripAdvisor. At four blocked platforms this is starting to look like one purchase rather than four workarounds.
+  - (d) Retry with backoff on a later cadence — 429 is transient by nature, so this may self-heal; worth one attempt per run before declaring it permanent.
+- **Logged:** 2026-08-21

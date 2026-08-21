@@ -2262,3 +2262,89 @@ None found. `rancho-site-daily` (2026-08-19) surfaced third-party listing copy c
 ### Scope change NOT made unilaterally
 
 Adding ResortPass (and now Expedia's newly-visible review pool) to the monitored-scope ownership table in `master-agent.md` remains recommended and remains **not executed** — it is a scope decision. Second consecutive run carrying the recommendation to TODO.md rather than acting on it.
+
+---
+
+## RUN_071 — 2026-08-21 06:30 CT
+
+**No new reviews on any platform.** 2-day gap — the task did not fire 8/20. Status stays **urgent** on the standing condition, not a new one: Haylee L.'s 1★ is unreplied at day 176 and two drafts sit unposted at day 94.
+
+**The headline is a resolution, not a discovery.** RUN_070 refused to record a missing ResortPass rating block as a decline. Today the block rendered at exactly the held value. That refusal is now vindicated on the record.
+
+**Brand canary PASSED** before any absence was recorded — unrestricted brand query returned `ranchomoonrise.com` plus correctly-attributed third-party listings (Yelp, Do512, Hotels.com, LinkedIn, The Knot, Facebook, Expedia). Session not degraded.
+
+### Re-Verify Gate — 19 live claims
+
+```
+[2026-08-21 11:30] re-verify resortpass-review-state      — RESOLVED — live=53 @ 4.8★ RENDERED prior=53 @ 4.8★ held STALE:2026-08-18 — extraction failure cleared, value unchanged
+[2026-08-21 11:30] re-verify resortpass-products         — still_true — live=2 products ($15/$20) prior=2 products ($15/$20)
+[2026-08-21 11:30] re-verify resortpass-reply-coverage   — unknown — live=page states no individual reviews and no owner responses render prior=unknown
+[2026-08-21 11:30] re-verify expedia-direct-fetch        — failed(3/3) — live=HTTP 429 prior=HTTP 429 — THRESHOLD MET, BLOCKER OPENED
+[2026-08-21 11:30] re-verify expedia-review-count        — still_true(3rd confirmation) — live=6 verified reviews prior=6 (search-confirmed ×2)
+[2026-08-21 11:30] re-verify expedia-8.0-anchor          — still_true — live=8.0 (entity h89565924) prior=8.0
+[2026-08-21 11:30] re-verify expedia-hotels-split        — NOT_RECONFIRMED — live=8.0 only; 9.0/8.6 absent prior=8.0/9.0/8.6 — counter HELD at 5, not incremented
+[2026-08-21 11:30] re-verify agoda-rating                — still_true(held) — live=listing active, no rating inline prior=8.6 (not re-confirmed since RUN_068)
+[2026-08-21 11:30] re-verify facebook-count-recommend    — still_true — live=6/86% prior=6/86% (4th consecutive, 1st domain-restricted)
+[2026-08-21 11:30] re-verify facebook-review-text        — blocked(no attempt) — live=n/a prior=title only — blocker open, NO DRAFT, 4th run
+[2026-08-21 11:30] re-verify the-knot-haylee-unreplied   — still_true — live=176d/~25.1wk, no owner response prior=174d/24.9wk
+[2026-08-21 11:30] re-verify the-knot-count-rating       — still_true(held) — live=not re-read, no contradicting signal prior=8/4.5★
+[2026-08-21 11:30] re-verify tripadvisor-unclaimed       — still_true — live=0/unclaimed (canonical indexed, no count in snippet) prior=0/unclaimed
+[2026-08-21 11:30] re-verify tripadvisor-travelers-choice— REJECTED(artifact, 2nd sighting) — live=award string resurfaced prior=artifact RUN_061 — written nowhere
+[2026-08-21 11:30] re-verify hipcamp-count               — still_true — live=0 prior=0
+[2026-08-21 11:30] re-verify hipcamp-voice-violations    — still_true — live='34-acre ranch' + 'a bar' prior=same (5th consecutive, domain-restricted)
+[2026-08-21 11:30] re-verify google-count-rating         — blocked(path retired) — live=NOT QUERIED by design prior=auth 130, now 94d stale
+[2026-08-21 11:30] re-verify google-unreplied-cassie     — still_true — live=1 unreplied prior=1 (root done-log: last resolution still 2026-04-15)
+[2026-08-21 11:30] re-verify airbnb-listing-existence    — still_true(unverifiable) — live=403 not attempted prior=403 (71st run)
+[2026-08-21 11:30] re-verify two-drafts-unposted         — still_true — live=day 94 prior=day 92
+```
+
+**Tally:** 12 still_true · **1 resolved** · 1 not_reconfirmed · 1 rejected-artifact · 2 unknown/blocked · 1 verification-failure (new blocker) · 1 no-attempt · 0 partial
+
+### The one that matters: the gate caught a fabrication before it existed
+
+RUN_070's ResortPass fetch returned HTTP 200. Products rendered. Star class rendered. Pool copy rendered. Only the aggregate rating block failed to survive — no `4.8`, no `(53)`. The obvious, cheap, wrong move was to record "no rating found" as a drop.
+
+It would have been a *plausible* drop. ResortPass is the one platform carrying this year's only genuine rating decline (4.9 → 4.8 across +8 reviews, RUN_068). A second consecutive decline would have fit the story perfectly, and every downstream surface would have inherited it.
+
+Today the same URL returned **4.8 ★, 53 reviews, Half-Day Pass $15, Day Pass $20** — identical to the held value. The non-render was transient, exactly as classified.
+
+The value now stands on four independent reads: this task 8/17, `rancho-competitive-weekly` 8/17, this task 8/18 (RUN_069), this task 8/21. `stale` cleared, `rating_extraction_failure_count` reset 1 → 0 — it never reached the 3-run blocker threshold.
+
+**This is the first complete save-and-recover cycle the Re-Verify Gate has produced on this property.** Prior runs demonstrated the gate *refusing* bad data; this one closes the loop and shows the refusal was correct rather than merely cautious. Worth keeping as the reference example of why "an absence is a property of your query" is a rule and not a slogan.
+
+### Expedia: the evidence bar cleared, and the rule didn't move
+
+Two things happened on the same platform this run, and they point in opposite directions.
+
+The direct fetch returned **HTTP 429 for the third consecutive run** (RUN_069, RUN_070, RUN_071) → threshold met → **blocker `expedia-direct-fetch` opened**, tracked separately from `hotels-com-direct-fetch` (different entity `h89565924` vs `ho2867109568`, different failure mode: rate-limit vs 60-second timeout).
+
+Simultaneously, the count of **6 earned its third independent confirmation**, on a third distinct phrasing, restricted to `expedia.com` alone: *"Rancho Moonrise has a rating of 8.0 out of 10 with 6 verified guest reviews."* That is **exactly** the precondition RUN_070 named before promoting the value into the authoritative `count` field.
+
+**The precondition is met. The promotion is withheld.** The hard rule in `master-agent.md` forbids writing the aggregate without a fresh *direct* scrape — and the direct scrape just became a formal blocker. So *"pending a direct scrape"* has quietly become *"pending forever"*: the evidence bar has been cleared and the rule still forbids the write.
+
+That is a **rule** question, not a data question, so it is not resolved unilaterally — same precedent as the ResortPass scope change now carried unacted for three runs. Recorded as `count_promotion_decision` in the aggregate with both options spelled out for Adam.
+
+The coincidence flagged in RUN_070 (Facebook also reads exactly 6) is now substantially de-risked without being smoothed away: the Facebook 6 came from a `facebook.com`-restricted query and the Expedia 6 from an `expedia.com`-restricted query. Two figures, two domains, independently sourced. Still a genuine coincidence — recorded as one.
+
+### What was refused
+
+- **TripAdvisor's "Travelers' Choice award … top 10% of properties" string RESURFACED — 2nd sighting.** First seen RUN_061, confirmed transient RUN_062. It is **self-refuting on its own terms**: the award is defined by consistently great reviews, and this listing has **zero** reviews and is unclaimed. Rejected, written nowhere, and now recorded as a **recurring** artifact (`travelers_choice_artifact_sightings: 2`) so a future run rejects it on sight instead of rediscovering it. This is the most dangerous class of finding this task handles — a flattering, plausible, well-formed string that no one would think to question.
+- **"about 15 minutes from downtown Austin"** — Rancho is 20. Same cross-property bleed as RUN_070; the result set again carried Moon River Ranch, Moonrise Resort FL, Moonrise Camp Wadi Rum, Manor RV Park CO, Moonrise Inn Donghe.
+- **The OTA split was not re-confirmed and the counter was NOT incremented.** An `hotels.com`/`agoda.com`-restricted query returned both listings still active and re-surfaced the known 2026-07-11 pool review — but neither 9.0 nor 8.6 appeared inline. Only 8.0 re-surfaced. Both carried values held unchanged and unverified today. **A listing being live is not a rating being read**, and incrementing a confirmation counter on the former would corrupt the only evidence trail supporting the split hypothesis.
+- **The Google snippet query was deliberately not run.** RUN_070 proved the snippet is partly an echo of the site's own `reviewCount: "125"` at `site/index.html:90`. Re-issuing it would re-inject a self-referential number dressed as a fresh read — the precise failure Adam's standing feedback names. No snippet value recorded this run, by design. Authoritative 130 is **94 days stale**.
+
+### FLAG_FOR_ADAM (5)
+
+1. **One decision unblocks a stuck rule.** Expedia's count of 6 has cleared the evidence bar this task set for itself, and the direct path that the rule requires is now formally blocked. Either (a) 30 seconds in the Expedia extranet — which settles count, rating, reply coverage *and* the 8.0/9.0/8.6 split question in one look — or (b) authorise promotion on ≥3 independent same-day domain-restricted confirmations when the direct path is a logged blocker, which would also unblock the Hipcamp, Knot and TripAdvisor counts.
+2. **Six reviews on Expedia, reply coverage still never checked.** Second run carrying this. It was invisible for four months only because the count field read `null`.
+3. **Facebook's non-recommend text — 4th run, still 60 seconds.** Open the Reviews tab, paste the text into the repo, a real draft follows next run. The slot stays empty on purpose until then.
+4. **ResortPass, 53 reviews, still outside monitored scope — 3rd run carrying this.** Requires a `master-agent.md` ownership-table edit, which is a scope decision and deliberately not taken unilaterally.
+5. **Eight open blockers, and seven are the same problem.** Four of them (`hipcamp`, `theknot`, `tripadvisor`, `expedia`) name the identical remedy — a rendering/residential-proxy scraper such as Apify. At four platforms that is one purchase, not four workarounds. Worth deciding once rather than logging four more times.
+
+### Ownership violation check
+
+None found. No other task surfaced a review/reply claim since RUN_070.
+
+### Scope change NOT made unilaterally
+
+Adding ResortPass (53 reviews) and Expedia's confirmed pool (6) to the monitored-scope ownership table in `master-agent.md` remains recommended and remains **not executed**. Third consecutive run carrying the recommendation to TODO.md rather than acting on it.
