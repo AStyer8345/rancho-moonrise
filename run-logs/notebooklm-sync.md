@@ -1982,3 +1982,9 @@ Backlog unchanged, byte-verified: 2 new (`brand/2026-05-16-hipcamp-curation-gap-
 Backlog byte-verified, unchanged: 2 new (`brand/2026-05-16-hipcamp-curation-gap-audit.md`, `brand/approved-testimonials.md`) + 1 modified (`brand/2026-04-09-rancho-moonrise-improvement-plan.html`, 60,047 -> 61,254). Three >10 MB PDFs still skipped. Top-level eligible count moved 66 -> 69 (the three oversized PDFs are now counted in the scan total); recursive gap now 84 eligible vs 69 top-level — the 15 extras are all generated output (`brand/review-reports/`, `brand/gbp-posts/`, `brand/review-log/`, a font EULA), so non-recursive scanning still looks like the right behavior, not a bug.
 
 **NEEDS ADAM — unchanged:** run `notebooklm login` interactively, or pause this task. Full detail in the 2026-08-20 09:22 entry.
+
+2026-08-26 05:41 | scanned=69 added=0 replaced=0 skipped=4 errors=1 (auth-expired — re-verified live: `use` renders the Google sign-in warning, `list --json` returns the redirect error. Run 62, day 102. State NOT advanced.)
+
+Backlog byte-verified, unchanged: 2 new (`brand/2026-05-16-hipcamp-curation-gap-audit.md` 18,543; `brand/approved-testimonials.md` 4,387) + 1 modified (`brand/2026-04-09-rancho-moonrise-improvement-plan.html`, 60,047 -> 61,254). Three >10 MB PDFs + `brand/review-aggregate.json` still skipped by rule. Non-recursive scan unchanged and still correct — the subdirectory files are generated output.
+
+**NEEDS ADAM — unchanged:** run `notebooklm login` interactively, or pause this task. Full detail in the 2026-08-20 09:22 entry.
