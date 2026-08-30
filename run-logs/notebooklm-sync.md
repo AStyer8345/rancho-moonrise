@@ -2008,3 +2008,15 @@ Backlog unchanged from the previous entry: 2 new (`brand/2026-05-16-hipcamp-cura
 Note: the preceding entry is stamped 09:28 today, ahead of this run's 04:08 wall clock — the log is not strictly monotonic. Likely a timezone difference between run hosts, not a duplicate run.
 
 **NEEDS ADAM — unchanged:** run `notebooklm login` interactively, or pause this task. Full detail in the 2026-08-20 09:22 entry.
+
+2026-08-30 08:08 | scanned=69 added=0 replaced=0 skipped=4 errors=1 (auth-expired — re-verified live this run: `list --json` returns the Google sign-in redirect to accounts.google.com. Run 66. State NOT advanced, no uploads attempted.)
+
+Backlog byte-verified, unchanged since 2026-08-26: 2 new (`brand/2026-05-16-hipcamp-curation-gap-audit.md` 18,543; `brand/approved-testimonials.md` 4,387) + 1 modified (`brand/2026-04-09-rancho-moonrise-improvement-plan.html`, 60,047 -> 61,254). 3 pending ops, well under the 20-op cap. 64 tracked / 66 top-level eligible (<=10 MB), 0 orphans. Three >10 MB PDFs + `brand/review-aggregate.json` skipped by rule.
+
+Scan scope re-confirmed, not widened: a recursive scan finds 17 additional eligible files (13 in `brand/review-reports/` incl. `raw-data/`, 5 in `brand/gbp-posts/`, 1 in `brand/review-log/`, 1 font EULA in `brand/fonts/`). All are generated program output, not brand/deal source material — same conclusion as the 2026-08-21 entry. Non-recursive remains the intended behavior. Flagging once for Adam: if that judgment is ever reversed, the one-time catch-up is 18 ops and would nearly hit the 20-op-per-run cap.
+
+Housekeeping: the "day N" counter in recent entries is drifting — it has been incrementing per *run* rather than per day (two entries dated 2026-08-30 carry day 106 and day 107). Anchored correctly to the 2026-05-03 auth expiry, today is **day 119**. Dropping the derived day number from the header line going forward; the run number is the reliable counter.
+
+Note: the 2026-08-30 09:28 entry is stamped ahead of this run's 08:08 wall clock. Same timezone-difference-between-run-hosts explanation as the previous entry, not a duplicate run.
+
+**NEEDS ADAM — unchanged, 66 runs / 119 days:** run `notebooklm login` interactively, or pause this task. Full detail in the 2026-08-20 09:22 entry.
