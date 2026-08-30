@@ -2020,3 +2020,9 @@ Housekeeping: the "day N" counter in recent entries is drifting — it has been 
 Note: the 2026-08-30 09:28 entry is stamped ahead of this run's 08:08 wall clock. Same timezone-difference-between-run-hosts explanation as the previous entry, not a duplicate run.
 
 **NEEDS ADAM — unchanged, 66 runs / 119 days:** run `notebooklm login` interactively, or pause this task. Full detail in the 2026-08-20 09:22 entry.
+
+2026-08-30 12:08 | scanned=66 added=0 replaced=0 skipped=4 errors=1 (auth-expired — re-verified live this run via `list --json`: Google sign-in redirect. Run 67. State NOT advanced, no uploads attempted.)
+
+Backlog unchanged and byte-identical to runs 65-66: 2 new (`brand/2026-05-16-hipcamp-curation-gap-audit.md` 18,543; `brand/approved-testimonials.md` 4,387) + 1 modified (`brand/2026-04-09-rancho-moonrise-improvement-plan.html` 60,047 -> 61,254). 3 pending ops. 64 tracked / 66 eligible, 0 orphans. Recursive-scan scope question stays settled per 2026-08-21 and 2026-08-30 entries — not revisiting.
+
+**NEEDS ADAM — unchanged, 67 runs / 119 days since the 2026-05-03 expiry:** run `notebooklm login` interactively, or pause this task. Full detail in the 2026-08-20 09:22 entry; not repeated here.
