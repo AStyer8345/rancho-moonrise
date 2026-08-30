@@ -2026,3 +2026,9 @@ Note: the 2026-08-30 09:28 entry is stamped ahead of this run's 08:08 wall clock
 Backlog unchanged and byte-identical to runs 65-66: 2 new (`brand/2026-05-16-hipcamp-curation-gap-audit.md` 18,543; `brand/approved-testimonials.md` 4,387) + 1 modified (`brand/2026-04-09-rancho-moonrise-improvement-plan.html` 60,047 -> 61,254). 3 pending ops. 64 tracked / 66 eligible, 0 orphans. Recursive-scan scope question stays settled per 2026-08-21 and 2026-08-30 entries — not revisiting.
 
 **NEEDS ADAM — unchanged, 67 runs / 119 days since the 2026-05-03 expiry:** run `notebooklm login` interactively, or pause this task. Full detail in the 2026-08-20 09:22 entry; not repeated here.
+
+2026-08-30 16:05 | scanned=66 added=0 replaced=0 skipped=4 errors=1 (auth-expired — re-verified live this run via `list --json`: Google sign-in redirect, not cached. Run 68. State NOT advanced, no uploads attempted.)
+
+Backlog byte-identical to runs 65-67, no drift: 3 pending ops (2 new + 1 modified). Detail in the run-67 entry above; not restating it a fourth time. 64 tracked / 66 eligible / 0 orphans. Skips: 3 oversize PDFs (>10MB) + `brand/review-aggregate.json` (extension not in sync scope).
+
+**NEEDS ADAM — unchanged, 68 runs / 119 days since the 2026-05-03 expiry:** run `notebooklm login` interactively, or pause this task. Full detail in the 2026-08-20 09:22 entry.
