@@ -131,7 +131,7 @@ unchanged, neither re-confirmed, neither recorded as changed.
 
 ---
 
-## Re-Verify Gate — 18 claims
+## Re-Verify Gate — 19 claims
 
 ```
 [2026-08-30 06:38] re-verify google-count-130          — blocked      — live=UNREADABLE prior=130 (103d stale)
