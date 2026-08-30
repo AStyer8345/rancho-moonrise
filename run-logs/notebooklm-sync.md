@@ -1988,3 +1988,9 @@ Backlog byte-verified, unchanged: 2 new (`brand/2026-05-16-hipcamp-curation-gap-
 Backlog byte-verified, unchanged: 2 new (`brand/2026-05-16-hipcamp-curation-gap-audit.md` 18,543; `brand/approved-testimonials.md` 4,387) + 1 modified (`brand/2026-04-09-rancho-moonrise-improvement-plan.html`, 60,047 -> 61,254). Three >10 MB PDFs + `brand/review-aggregate.json` still skipped by rule. Non-recursive scan unchanged and still correct — the subdirectory files are generated output.
 
 **NEEDS ADAM — unchanged:** run `notebooklm login` interactively, or pause this task. Full detail in the 2026-08-20 09:22 entry.
+
+2026-08-29 20:08 | scanned=69 added=0 replaced=0 skipped=4 errors=1 (auth-expired — re-verified live: `use` renders the Google sign-in warning; `list --json` and `source list --json` both return the redirect error. Run 63, day 105. State NOT advanced.)
+
+Backlog byte-verified, unchanged since 2026-08-26: 2 new (`brand/2026-05-16-hipcamp-curation-gap-audit.md` 18,543; `brand/approved-testimonials.md` 4,387) + 1 modified (`brand/2026-04-09-rancho-moonrise-improvement-plan.html`, 60,047 -> 61,254). Three >10 MB PDFs + `brand/review-aggregate.json` skipped by rule. 64 tracked / 66 eligible, no orphans.
+
+**NEEDS ADAM — unchanged:** run `notebooklm login` interactively, or pause this task. Full detail in the 2026-08-20 09:22 entry.
