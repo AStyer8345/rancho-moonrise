@@ -2000,3 +2000,11 @@ Backlog byte-verified, unchanged since 2026-08-26: 2 new (`brand/2026-05-16-hipc
 Backlog byte-verified, unchanged since 2026-08-26: 2 new (`brand/2026-05-16-hipcamp-curation-gap-audit.md` 18,543; `brand/approved-testimonials.md` 4,387) + 1 modified (`brand/2026-04-09-rancho-moonrise-improvement-plan.html`, 60,047 -> 61,254). Three >10 MB PDFs + `brand/review-aggregate.json` skipped by rule. 64 tracked / 66 eligible, 0 orphans.
 
 **NEEDS ADAM — unchanged:** run `notebooklm login` interactively, or pause this task. Full detail in the 2026-08-20 09:22 entry.
+
+2026-08-30 04:08 | scanned=66 added=0 replaced=0 skipped=4 errors=1 (auth-expired — re-verified live this run: `list --json` returns the Google sign-in redirect. Run 65, day 107. State NOT advanced, no uploads attempted.)
+
+Backlog unchanged from the previous entry: 2 new (`brand/2026-05-16-hipcamp-curation-gap-audit.md`, `brand/approved-testimonials.md`) + 1 modified (`brand/2026-04-09-rancho-moonrise-improvement-plan.html`). 3 pending ops, well under the 20-op cap. 64 tracked / 66 eligible, 0 orphans. Three >10 MB PDFs + `brand/review-aggregate.json` skipped by rule.
+
+Note: the preceding entry is stamped 09:28 today, ahead of this run's 04:08 wall clock — the log is not strictly monotonic. Likely a timezone difference between run hosts, not a duplicate run.
+
+**NEEDS ADAM — unchanged:** run `notebooklm login` interactively, or pause this task. Full detail in the 2026-08-20 09:22 entry.
