@@ -13,6 +13,7 @@ Append-only. If a live verification path fails 3 consecutive runs for the same c
 - **Status:** Claim remains STALE. Unreplied count remains verifiable via done-log (currently 0, RESOLVED by Adam 2026-04-15).
 - **Resolution path:** Either (a) Adam provides a Google Places API key so the agent can call `places.googleapis.com/v1/places/{placeId}?fields=reviews,rating,userRatingCount`, or (b) accept the done-log signal for unreplied=0 and mark the count/rating as "stale, trusted until GBP monthly email arrives." Surfacing here for Adam's decision.
 - **Logged:** 2026-04-17
+- **Update 2026-08-30 (RUN_072) — the Googlebot-UA lead is TRIED and CLOSED.** `rancho-site-daily` established on 2026-08-25 that Google Maps serves a JS shell to `WebFetch` *and* to a default `curl` UA, and that **only a Googlebot UA renders the page title** — it used that to derive and confirm the canonical GBP entity from the `fid` in `memory/reference_rancho_gbp.md`. This task had **never tried that UA**, so it was a genuinely untried path on the oldest blocker here, not a retry of a known-dead one. Tried today: `curl -A "…Googlebot/2.1…" "https://www.google.com/maps?cid=10788924849497903065"` → **HTTP 200, 4,160 bytes**. The title renders (`<title>Rancho Moonrise - Google Maps</title>`) and so does `content="View details about Rancho Moonrise on Google Maps"`. **Zero** `rating`/`review`/`aggregateRating`/`reviewCount` tokens appear anywhere in the document; there is no `/maps/place/` canonical in the body and `url_effective` does not redirect. **Conclusion: the Googlebot UA unlocks entity identity only, never review data.** Recorded as a **closed lead** so no future run spends a fetch on it expecting a count. It remains the correct path for confirming *which* GBP entity is ours. Authoritative 130 @ 4.9★ is now **103 days stale**; the search-snippet path stays retired (RUN_070 proved it echoes the site's own `reviewCount:"125"`) and was deliberately not re-run for the 2nd consecutive run. Resolution paths (a) and (b) are unchanged and are still the only two.
 
 ---
 
@@ -115,3 +116,23 @@ Append-only. If a live verification path fails 3 consecutive runs for the same c
   - (c) Rendering/residential-proxy scraper (Apify) — same answer already proposed for Hipcamp, The Knot and TripAdvisor. At four blocked platforms this is starting to look like one purchase rather than four workarounds.
   - (d) Retry with backoff on a later cadence — 429 is transient by nature, so this may self-heal; worth one attempt per run before declaring it permanent.
 - **Logged:** 2026-08-21
+- **Update 2026-08-30 (RUN_072):** HTTP 429 a **4th consecutive time**. **Resolution path (d) is now disconfirmed once, and on the most generous terms it will get:** the retry came after a **9-day gap** (the task did not fire 8/22–8/29), so this was not a tight-cadence throttle being re-tripped by our own traffic — it is a 429 that survives nine days of zero requests from this client. That is not what a transient rate-limit looks like. Path (d) should not be counted as a live option after one more failure. **No Expedia search query was issued this run, deliberately:** the count-6 promotion question is a **rule** question (the hard rule demands a direct scrape; the direct scrape is a formal blocker), it was escalated to Adam in RUN_071, and a 4th snippet confirmation cannot move a rule. Rating 8.0 and count 6 both carry unchanged, neither re-confirmed, neither recorded as changed.
+
+---
+
+## WATCH (NOT YET A BLOCKER — 1 of 3): resortpass-direct-fetch — Cloudflare 403
+
+> Logged below threshold **on purpose**. The runbook opens a blocker at 3 consecutive failures and this is failure **1**. It is recorded here anyway because of what it was: the only working direct path this task had.
+
+- **Claim:** ResortPass review count and rating for `https://www.resortpass.com/hotels/rancho-moonrise` (held at **53 @ 4.8★**, four independent reads: this task 8/17, `rancho-competitive-weekly` 8/17, this task 8/18, this task 8/21).
+- **Verification path attempted:** WebFetch of the listing page, then `curl` with a desktop Chrome UA as a cross-check.
+- **Failure mode:** **HTTP 403 on both clients.** Body is a **Cloudflare "Attention Required!" captcha challenge** (4,549 bytes, saved to `raw/2026-08-30/resortpass.html`). Because two independent clients get the same result, this is **site-level bot detection, not a WebFetch-layer quirk** — worth distinguishing, since the two prior ResortPass failures were neither.
+- **Third distinct failure mode on this one platform:**
+  - RUN_070 (8/19): HTTP 200, products + star class rendered, **rating block absent** → *extraction* failure. Held rather than recorded as a decline — **vindicated** by RUN_071.
+  - RUN_071 (8/21): HTTP 200, everything rendered cleanly → path declared working.
+  - RUN_072 (8/30): HTTP 403 Cloudflare → *access* failure.
+- **Status:** **53 @ 4.8★ HELD, entirely unchanged.** An access failure is not a data change. This is the same discipline that stopped RUN_070 from manufacturing a second consecutive decline on the one platform carrying this year's only real one.
+- **Why this is logged early — the systemic fact:** checked against `brand/review-aggregate.json` rather than asserted, every other monitored platform was already blocked on direct fetch — google / airbnb / hotels-com (2026-04-17), theknot (05-23), hipcamp (06-03), tripadvisor (07-18), facebook (08-19), expedia (08-21). **ResortPass was the sole survivor. As of today the number of working direct-scrape paths across all monitored platforms is zero, and every held value on this property rests on search snippets.** The standing "8 blockers, 4 of them naming the same remedy" flag has stopped being a question of coverage breadth: direct verification is simply gone.
+- **Resolution path:** unchanged from the family, and now materially stronger — a **rendering/residential-proxy scraper (Apify)** is the single remedy that reopens Google-adjacent, Hipcamp, The Knot, TripAdvisor, Expedia *and* ResortPass. That is now **one purchase against six platforms**, not four. Alternatively, if it stays 403 for two more runs, ResortPass joins the quarterly-manual-check pattern with the rest.
+- **Do not escalate on a single 403** — retry once per run. If RUN_073 and RUN_074 also return 403, open the blocker.
+- **Logged:** 2026-08-30
