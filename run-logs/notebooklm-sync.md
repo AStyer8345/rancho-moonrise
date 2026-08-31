@@ -2032,3 +2032,11 @@ Backlog unchanged and byte-identical to runs 65-66: 2 new (`brand/2026-05-16-hip
 Backlog byte-identical to runs 65-67, no drift: 3 pending ops (2 new + 1 modified). Detail in the run-67 entry above; not restating it a fourth time. 64 tracked / 66 eligible / 0 orphans. Skips: 3 oversize PDFs (>10MB) + `brand/review-aggregate.json` (extension not in sync scope).
 
 **NEEDS ADAM — unchanged, 68 runs / 119 days since the 2026-05-03 expiry:** run `notebooklm login` interactively, or pause this task. Full detail in the 2026-08-20 09:22 entry.
+
+2026-08-30 20:08 | scanned=66 added=0 replaced=0 skipped=4 errors=1 (auth-expired — re-verified live this run via `list --json`: Google sign-in redirect, not cached. Run 69. State NOT advanced, no uploads attempted.)
+
+Backlog byte-identical to runs 65-68, no drift: 3 pending ops (2 new + 1 modified). Detail in the run-67 entry above. 64 tracked / 66 eligible / 0 orphans. Skips: 3 oversize PDFs (>10MB) + `brand/review-aggregate.json` (extension not in sync scope).
+
+**Scope note (new this run, no action taken):** this run also ran a *recursive* scan to sanity-check the `scanned=66` figure. Recursive scope would see 81 eligible files — 15 more than the flat scan, all in subdirectories that have **never** been tracked: `brand/gbp-posts/` (5), `brand/review-reports/` (8, incl. `raw-data/`), `brand/review-log/` (1), `brand/fonts/` (1, a Monotype EULA). All 64 state entries are top-level, confirming every prior run was non-recursive. Kept the flat scope so the numbers stay comparable and the state file stays consistent. Flagging rather than fixing: most of the untracked files are agent-generated run reports and a font license, which arguably do not belong in a brand/deal knowledge notebook at all. Whether to widen scope — and if so, with what exclusions — is Adam's call, not this job's.
+
+**NEEDS ADAM — unchanged, 69 runs / 119 days since the 2026-05-03 expiry:** run `notebooklm login` interactively, or pause this task. Full detail in the 2026-08-20 09:22 entry.
