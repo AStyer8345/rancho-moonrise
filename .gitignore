@@ -5,3 +5,6 @@ site/images/original/_manifest.json
 site/images/original/_all-urls.txt
 .vercel
 .env*.local
+
+# macOS/iCloud file-sync conflict duplicates ("styles 2.css", "weddings 3.html")
+* [2-9].*
