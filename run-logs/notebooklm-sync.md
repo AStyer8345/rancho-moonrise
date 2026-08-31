@@ -2053,3 +2053,9 @@ Backlog unchanged from runs 65-69, no drift. 3 pending ops:
 Recursive-scope question raised in run 69 is unchanged and still Adam's call — not re-litigated here.
 
 **NEEDS ADAM — unchanged, 70 runs / 120 days since the 2026-05-03 expiry:** run `notebooklm login` interactively, or pause this task. Every run since has been a verified no-op. Full detail in the 2026-08-20 09:22 entry.
+
+2026-08-31 11:47 | scanned=69 added=0 replaced=0 skipped=4 errors=1 (auth-expired — re-verified live this run via `list --json`: Google sign-in redirect. Run 71. State NOT advanced, no uploads attempted.)
+
+Backlog byte-identical to runs 65-70, no drift: 2 NEW + 1 MOD. 64 tracked / 66 eligible-and-under-cap / 0 orphans. Skips: 3 oversize PDFs + `brand/review-aggregate.json` (out of scope). Recursive-scope question from run 69 still open, still Adam's call.
+
+**NEEDS ADAM — 71 runs / 120 days since the 2026-05-03 expiry.** Every run since has been a verified no-op producing only a log line. This job cannot self-heal: `notebooklm login` is an interactive browser flow. Two options, both Adam's: run the login, or pause `rancho-notebooklm-sync` until he does. Recommend the pause — the backlog is 3 files and has not moved in 7 runs, so nothing is accumulating that a single post-login run would not clear.
