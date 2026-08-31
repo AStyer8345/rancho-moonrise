@@ -2059,3 +2059,20 @@ Recursive-scope question raised in run 69 is unchanged and still Adam's call —
 Backlog byte-identical to runs 65-70, no drift: 2 NEW + 1 MOD. 64 tracked / 66 eligible-and-under-cap / 0 orphans. Skips: 3 oversize PDFs + `brand/review-aggregate.json` (out of scope). Recursive-scope question from run 69 still open, still Adam's call.
 
 **NEEDS ADAM — 71 runs / 120 days since the 2026-05-03 expiry.** Every run since has been a verified no-op producing only a log line. This job cannot self-heal: `notebooklm login` is an interactive browser flow. Two options, both Adam's: run the login, or pause `rancho-notebooklm-sync` until he does. Recommend the pause — the backlog is 3 files and has not moved in 7 runs, so nothing is accumulating that a single post-login run would not clear.
+
+2026-08-31 12:08 | scanned=66 added=0 replaced=0 skipped=4 errors=1 (auth-expired — re-verified live this run via TWO different commands: `list --json` AND `source list --json`, both returned the same Google sign-in redirect. Run 72. State NOT advanced, no uploads attempted.)
+
+Flat backlog unchanged from runs 65-71: 2 NEW + 1 MOD. 64 tracked / 66 eligible-and-under-cap / 0 orphans. Skips: 3 oversize PDFs (`ALL INCLUSIVE RETREATS` 36.9 MB, `PRIVATE EVENTS` 28.8 MB, `INTIMATE EVENTS` 20.7 MB) + `brand/review-aggregate.json` (extension out of scope).
+
+**Recursive-scope question from run 69 — now quantified.** Prior runs never put a number on it, which is why it kept getting deferred as "Adam's call" with no cost attached. Measured this run:
+
+| Scan mode | Eligible files | NEW | MODIFIED | Ops if auth were live |
+|---|---|---|---|---|
+| Flat (what runs 1-71 used) | 66 | 2 | 1 | 3 |
+| Recursive (`rglob`) | 81 | 17 | 1 | 18 |
+
+The 15-file delta is entirely in subdirectories the flat scan never opened: `brand/gbp-posts/` (5), `brand/review-reports/` (7, incl. `raw-data/`), `brand/review-log/` (1), `brand/fonts/` (1). 18 ops is still under the 20-op/run cap, so a recursive first run would clear in one pass — but only 15 of the 18 are arguably notebook-worthy: `brand/fonts/Monotype Font Software End User License Agreement.html` is a font vendor EULA and is noise in a brand/deal knowledge notebook regardless of which scan mode wins.
+
+**Also found this run — a real duplicate-upload landmine, unrelated to auth.** The state file keys on BARE FILENAME (`{"2023-11-weddings-deck.txt": {mtime, path, size}}`), not on relative path. A first scan keyed on relative path reports `new=81 / removed=64` — a total false-positive wipe-and-reupload. Any future rewrite of this job that switches to path keys, or that adds recursion without preserving basename keys, will re-upload all 64 tracked sources and duplicate the entire notebook on the first post-login run. Basename keys also mean two same-named files in different subdirs would silently collide — which recursion makes reachable for the first time. Recursion and the key format have to be decided together, not separately.
+
+**NEEDS ADAM — 72 runs / 120 days since the 2026-05-03 expiry.** Every run since has been a verified no-op producing only a log line. This job cannot self-heal: `notebooklm login` is an interactive browser flow requiring Adam at the keyboard. Recommendation unchanged and now firmer: **pause `rancho-notebooklm-sync`.** The flat backlog is 3 files and has not moved in 8 runs; nothing is accumulating that one post-login run would not clear. If Adam does log in, do the recursion + key-format decision BEFORE the first sync run, not after — the first run after login is exactly when the duplicate landmine above detonates.
