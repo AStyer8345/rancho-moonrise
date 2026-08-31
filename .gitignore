@@ -8,3 +8,11 @@ site/images/original/_all-urls.txt
 
 # macOS/iCloud file-sync conflict duplicates ("styles 2.css", "weddings 3.html")
 * [2-9].*
+
+# Large binary source material — kept on disk, never in git (~1.45 GB combined).
+# Deliverables are the generated WebP ladder under site/images/, not these.
+rancho-moonrise-assets/
+youtube-uploads/
+
+# Leftover temp files from interrupted concurrent writers
+*.md.tmp.*
