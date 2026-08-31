@@ -2040,3 +2040,16 @@ Backlog byte-identical to runs 65-68, no drift: 3 pending ops (2 new + 1 modifie
 **Scope note (new this run, no action taken):** this run also ran a *recursive* scan to sanity-check the `scanned=66` figure. Recursive scope would see 81 eligible files — 15 more than the flat scan, all in subdirectories that have **never** been tracked: `brand/gbp-posts/` (5), `brand/review-reports/` (8, incl. `raw-data/`), `brand/review-log/` (1), `brand/fonts/` (1, a Monotype EULA). All 64 state entries are top-level, confirming every prior run was non-recursive. Kept the flat scope so the numbers stay comparable and the state file stays consistent. Flagging rather than fixing: most of the untracked files are agent-generated run reports and a font license, which arguably do not belong in a brand/deal knowledge notebook at all. Whether to widen scope — and if so, with what exclusions — is Adam's call, not this job's.
 
 **NEEDS ADAM — unchanged, 69 runs / 119 days since the 2026-05-03 expiry:** run `notebooklm login` interactively, or pause this task. Full detail in the 2026-08-20 09:22 entry.
+
+2026-08-31 10:50 | scanned=69 added=0 replaced=0 skipped=4 errors=1 (auth-expired — re-verified live this run via `list --json`: Google sign-in redirect, not a cached failure. Run 70. State NOT advanced, no uploads attempted.)
+
+Backlog unchanged from runs 65-69, no drift. 3 pending ops:
+- NEW  `brand/2026-05-16-hipcamp-curation-gap-audit.md`
+- NEW  `brand/approved-testimonials.md`
+- MOD  `brand/2026-04-09-rancho-moonrise-improvement-plan.html`
+
+64 tracked / 69 eligible by flat scan / 0 orphans. Skips: 3 oversize PDFs (`ALL INCLUSIVE RETREATS` 36.9 MB, `PRIVATE EVENTS` 28.8 MB, `INTIMATE EVENTS` 20.7 MB — all >10MB cap) + `brand/review-aggregate.json` (extension out of scope). Note the run-69 count of `scanned=66` excluded the 3 oversize PDFs from its total; 69 counts them then skips them. Same file universe, no new files this run.
+
+Recursive-scope question raised in run 69 is unchanged and still Adam's call — not re-litigated here.
+
+**NEEDS ADAM — unchanged, 70 runs / 120 days since the 2026-05-03 expiry:** run `notebooklm login` interactively, or pause this task. Every run since has been a verified no-op. Full detail in the 2026-08-20 09:22 entry.
