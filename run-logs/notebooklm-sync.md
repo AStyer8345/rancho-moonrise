@@ -2082,3 +2082,7 @@ The 15-file delta is entirely in subdirectories the flat scan never opened: `bra
 Backlog identical to runs 65-72, still flat: 2 NEW + 1 MOD (flat scan) / 17 NEW + 1 MOD (recursive). No drift. Corroborating detail this run: `~/.notebooklm/context.json` is dated today 10:14 while `storage_state.json` is still Mar 23 09:17 — that is an earlier run's `use` call writing context under a dead session, i.e. the false-success behavior, observed in the wild rather than inferred.
 
 **NEEDS ADAM — 73 runs / 120 days.** Nothing new to report. Analysis is complete and unchanged since run 72 (recursion delta + basename-key landmine documented there; do not re-measure). Deliberately keeping this entry short — runs 69-72 each re-derived the same findings at increasing length, which inflates the log without adding information. Decision still open and still Adam's: run `notebooklm login`, or pause this task. Recommendation stands at **pause**.
+
+2026-09-01 00:07 | scanned=69 added=0 replaced=0 skipped=3 errors=1 (auth-expired — re-verified live via `list --json`: Google sign-in redirect. Run 74. State NOT advanced, no uploads attempted.)
+
+Backlog unchanged: 2 NEW + 1 MOD (flat scan). **NEEDS ADAM — 74 runs / 121 days.** No new analysis; see run 72 for the recursion/basename-key details. Decision remains Adam's: run `notebooklm login`, or pause this task. Recommendation stands at **pause**.
