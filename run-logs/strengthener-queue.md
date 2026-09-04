@@ -12,7 +12,7 @@ Priority: broken/placeholder assets first, then highest-impression landing pages
 | `weddings.html` | 2026-04-22 | BLOCKED — no approved wedding testimonial (author block now unblocked) |
 | `accommodations.html` | **2026-07-22** | ✅ **STRENGTHENED** — 3 of 4 elements shipped (photos, author block, local detail). Testimonial still NEEDS ADAM. |
 | `host-your-event.html` | **2026-08-19** | ✅ **STRENGTHENED** — 3 of 4 elements shipped (photos, author block, local detail). Testimonial still NEEDS ADAM. |
-| `events.html` | — | Pending — **next up** |
+| `events.html` | **2026-09-04** | ✅ **STRENGTHENED** — 3 of 4 elements shipped (photos, author block, local detail). Testimonial still NEEDS ADAM (T-001 doesn't serve this page type anyway). |
 | `pool-day-pass-austin.html` | — | Pending |
 | `glamping-near-austin-texas.html` | — | Pending |
 | `bachelorette-party-austin-texas.html` | — | Pending |
@@ -192,3 +192,31 @@ Both hard stops re-verified live still true (`find brand site -iname "*testimoni
 **Left alone deliberately:** the page states **200** capacity in the AEO block and **1,000+** in the FAQ, and the `EventVenue` schema declares `maximumAttendeeCapacity: 200` while VOICE-GUIDE says "Events up to 200". That is a three-way contradiction in published copy and schema, it predates this run, and picking a number is a facts decision, not a content-strengthening one → logged to TODO.
 
 **Next run:** `events.html`. If T-001 lands as APPROVED with an event date before then, **jump the queue back to `host-your-event.html` or `corporate-retreat-near-austin.html`** — either would reach 4 of 4 on a single short pass.
+
+---
+
+### 2026-09-04 — events.html — ✅ SHIPPED (run 12; third consecutive productive run)
+
+**Gate re-checked live, not inherited.** GOALS.md read from disk: `## Settled Decisions` still carries the Ashley byline, and `rancho-content-weekly` is still under **Keep running**. Author block remains unblocked.
+
+**Testimonial — STILL BLOCKED, re-verified.** `brand/approved-testimonials.md` read fresh: T-001 is still `STATUS: UNAPPROVED — awaiting Adam`, `EVENT DATE: UNKNOWN`, unchanged for 51 days. Moot for this specific page regardless — T-001 is corporate-retreat content and its own note says it doesn't serve wedding/accommodation/glamping pages; `events.html` (the public event calendar) isn't its target page type either. → **NEEDS ADAM**, TODO.md header re-verified and bumped.
+
+**Page picked:** `events.html` — held the #1 queue slot, named "next up" by the 8/19 run.
+
+**Shipped (1 file, +53/−0):**
+
+- **3 real photos, each opened and visually verified before alt text was written.** All three were **orphaned assets** — present in the responsive ladder (480w/1024w), referenced nowhere in the repo:
+  - `event-porch-yellow-umbrella` — the stone-faced Lodge porch, wood picnic table, open yellow umbrella, rocking chairs, cedar log posts, golden hour. A different building from the other two photos.
+  - `event-rm-exterior-firepit` — Adirondack chairs circled around a fire pit outside the black event barn, string lights, a nearby picnic table.
+  - `mural-be-here-now-night` — the hand-painted thunderbird-and-sunburst mural on the event barn's wall, lit by string lights at night.
+  - New section "Where the Nights Happen" placed between the blog cross-links and the AEO block, using the existing `.features` / `.feature-card` grid class already established on `host-your-event.html` — no new CSS.
+- **Named author block** — `Ashley · Rancho Moonrise` + role line + review date, matching the inline-style convention from the two prior pages (still no dedicated CSS class). Matching `author` Person added to the page's `WebPage` JSON-LD alongside `dateModified: 2026-09-04` — this page's `WebPage` block previously carried neither.
+- **Local detail** — the barn's mural is hand-painted directly on the metal siding, not printed or a decal; described from the photo itself (sunburst, wingspan, wildflowers either side) without guessing at the small artist-credit text visible in-frame, which wasn't legible enough at this resolution to state as fact. Paired with a second, previously-unpublished-on-this-page detail pulled straight from `VOICE-GUIDE.md`'s Property Facts: the same barn is the Event Barn by day and the **Neon Moon Barn Lounge** by night, and that lounge is event-guest-only, never a walk-in bar — relevant precisely because this page is the one selling public, walk-up nights.
+
+**Distinctness check against `host-your-event.html` (8/19):** that page already features the same mural in daytime (`event-picnic-thunderbird`) as part of its courtyard photo. This run's mural photo is a different file, shot at night, and used for a different reason (events-page night-energy, not courtyard-for-private-events context) — not a duplicate placement.
+
+**Verification:** `npm run validate:site` passes. All 3 JSON-LD blocks parse; `WebPage.author.name = Ashley` and `dateModified = 2026-09-04` asserted by parse, not grep. All 6 image variants (3 × 480w/1024w) exist and decode at their real dimensions (`event-porch-yellow-umbrella` 1024×1821 portrait, `event-rm-exterior-firepit` 1024×768 — already 4:3, no crop — `mural-be-here-now-night` 1024×1366 portrait). HTML tag balance checked programmatically — 0 unclosed, 0 mismatched. 0 banned filler words (checked against the task's list), 0 emoji. `Manor` appears only in pre-existing schema/footer postal-address contexts — no new instance. Committed by explicit pathspec (`site/pages/events.html` only) — the 5 pre-existing uncommitted files from other workstreams (`api/inquiry.js`, `site/css/styles.css`, `site/js/main.js`, `site/pages/contact.html`, `site/pages/weddings.html`) were left untouched, per the standing NEEDS OWNER flag. Pushed to `origin/main` (`cdffcec`) and verified at the destination three ways: `git ls-remote` matches local HEAD, `git show origin/main:site/pages/events.html` contains the new section, and the Vercel production deployment for that commit (`dpl_3ZpFeBdnjJBW5QrSKFHCA8b4oG1p`) reached `READY` and aliased to `ranchomoonrise.com` — confirmed with a live `curl` of `/events/` returning the new section headings.
+
+**Portrait-crop note (same caveat as 8/19):** two of the three new photos are portrait sources landing in `.feature-card`'s `aspect-ratio: 4/3` container with `object-fit: cover`, so they center-crop. The crop was reasoned through against each photo's real pixel dimensions and the subject placement holds up, but — as with the 8/19 run — no dev server could be started from this unattended run to see it rendered. Worth a human glance next time someone's on the page.
+
+**Next run:** `pool-day-pass-austin.html`.

@@ -300,9 +300,9 @@ The video card **"Escape to Rancho Moonrise"** on `/videos/` points at YouTube I
 
 I've left the card in place rather than silently removing visible content, since deleting published content is your call, not mine.
 
-### NEEDS ADAM — Approve testimonial T-001 (unblocks the 4th element of every content-weekly run) — added 2026-07-22, **re-verified 2026-08-19** by `rancho-content-weekly`
+### NEEDS ADAM — Approve testimonial T-001 (unblocks the 4th element of every content-weekly run) — added 2026-07-22, **re-verified 2026-09-04** by `rancho-content-weekly`
 
-**Re-verified live 2026-08-19 (not recycled):** `brand/approved-testimonials.md` re-read this run — T-001 is still `STATUS: UNAPPROVED — awaiting Adam` with `EVENT DATE: UNKNOWN`, unchanged for **35 days**. This run strengthened **`host-your-event.html`** — which that file's own header names as a suggested page for T-001 — so **this is the exact page that would have reached 4 of 4** instead of 3 of 4. Same again for `corporate-retreat-near-austin.html` when it comes up in the queue. The ask below has not changed; only the cost of not doing it has.
+**Re-verified live 2026-09-04 (not recycled):** `brand/approved-testimonials.md` re-read this run — T-001 is still `STATUS: UNAPPROVED — awaiting Adam` with `EVENT DATE: UNKNOWN`, unchanged for **51 days**. This run strengthened **`events.html`** (queue's next-up page); T-001 doesn't serve it either way (events.html isn't corporate-retreat content), so this run shipped 3 of 4 elements — photos, author block, local detail — same as the two before it. The unblock target is still `host-your-event.html` and `corporate-retreat-near-austin.html`, per T-001's own suggested-pages note. The ask below has not changed; only the cost of not doing it has.
 
 **Status: the byline half is DONE, the testimonial half is one checkbox away.** Thank you — the `## Settled Decisions` line in GOALS.md ("byline: Ashley · Rancho Moonrise") plus creating `brand/approved-testimonials.md` broke a 10-run, 91-day block. `accommodations.html` shipped its first strengthening pass today with 3 of the 4 required elements.
 
