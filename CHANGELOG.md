@@ -1,5 +1,14 @@
 # Rancho Moonrise — Changelog
 
+## 2026-09-04
+
+- **rancho-site-daily:** WeddingWire's `sameAs` contradiction (open since 8/19) resolved; today's assigned "extend AEO measurement to a second answer engine" slot came back negative, and the negative result is useful. 4-claim Re-Verify Gate, brand canary passed first.
+  - **WeddingWire added to the entity graph (`sameAs` 14 → 15)** by varying the query rather than retrying the known-403 direct fetch: `Rancho Moonrise weddingwire.com` returned `https://www.weddingwire.com/biz/rancho-moonrise/f38c5e35e5491216.html`, cross-confirmed by a second independent query, and matched against the property's operational address (20117 Lockwood Rd, Manor, TX 78653). Same two-factor bar used for Expedia/GBP. `npm run validate:site` passes.
+  - **Tested whether `WebFetch` unlocks a second AEO answer engine where bare `curl` failed — it doesn't.** `WebFetch` on both `bing.com/search` and `google.com/search` for the brand canary returned the identical dead-path signature bare curl produced on 8/17 (Bing: gorancho.com/Wikipedia/Merriam-Webster instead of the site; Google: an error interstitial). Not recorded as "0 citations" per the shared runbook's mandatory-void rule. Closes the "different fetch mechanism" hypothesis: true second-engine measurement needs a paid API key, not a different code path. Extended the shared `client-ops/templates/re-verify-before-report.md` "Known-dead verification paths" table with this finding.
+  - **Apple Maps re-checked via `WebFetch`** (a third tool path, after `curl`+Googlebot-UA and review-monitor's own method) — cross-verifies review-monitor's 8/30 read exactly (80%, 5 ratings). New finding within this task's remit: Apple lists hours as **"3:00 PM – 5:00 PM daily"**, almost certainly wrong for an events venue and liable to make Siri/Spotlight tell people the property is closed. Flagged NEEDS ADAM (Apple Business Connect correction) — not something this task can fix.
+  - Re-verified and carried unchanged: site health (200s, TTFB 0.20–0.31s), `/safari-tents-near-austin/` still absent from a `site:` query for "safari tents" (still closed on-site, per standing 8/31 instruction not to queue further on-site work against it), and the 5-file NEEDS OWNER uncommitted set from 8/31 (untouched, not this task's).
+  - Gate: 4 claims — 1 resolved (WeddingWire), 3 still_true. Run-log: `run-logs/2026-09-04-seo.md`.
+
 ## 2026-08-31
 
 - **rancho-site-daily:** The 8/25 run is deployed at last — six days after it reported itself shipped — and the `/safari-tents-near-austin/` indexing question is closed on the on-site side. 3 commits, 9 files, 9-claim Re-Verify Gate, brand canary passed first.
