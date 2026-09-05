@@ -2260,6 +2260,14 @@ Launch-blocker sweep and conversion sharpening across the primary pages, ahead o
 - Rejected: the TripAdvisor cross-property bleed set recurred ("120 acre ranch", "15 minutes from downtown Austin") — **3rd sighting** — along with a `$35–$70` price band that arrived inside that same rejected summary and is **not** recorded against the held `$45–$154` (STALE:2026-06-30).
 - Re-Verify Gate: **19 claims — 7 still_true, 1 REVERSED (`resortpass-direct-fetch-works` true→false), 2 held, 4 blocked/stale, 1 closed_lead, 1 not_requeried, 1 rejected, 1 no_attempt, 1 new, 0 resolved.** 6 FLAG_FOR_ADAM. Run-log: `run-logs/2026-08-30-review-monitor.md`; raw: `tasks/review-monitor/raw/2026-08-30/`.
 
+## 2026-09-05 — rancho-site-daily (quiet cruise-control — no defects found, no on-page work manufactured)
+
+- **Repo state clean:** local HEAD == `origin/main` (`d577a6d7`) — nothing pending from a prior run needed landing today, unlike the 8/25→8/31 gap. The standing 5-file NEEDS OWNER uncommitted set (`weddings.html` 44-line deletion + 4 others) is unchanged and still not this task's.
+- **Site health:** `server: Vercel`, sitemap + robots 200, all **30/30** sitemap URLs individually checked and returning 200 (no broken links), 6 spot-checked routes 200 at TTFB 0.23–0.60s. PageSpeed Insights API hit a quota-exceeded wall (same missing-API-key family as the SERP/Places asks already on file) — not logged as a new finding.
+- **Re-Verify Gate:** brand canary passed; `/safari-tents-near-austin/` re-checked via `site:` query — **still unindexed**, ~131 days now (126d @ 8/31 + 5). On-site diagnosis stays closed per 8/31's exhaustive finding; no further on-site work queued against this URL. 2/2 claims checked, 2 still_true, 0 resolved.
+- **No on-page edit shipped.** Checked for a genuine defect (the kind 8/25 and 8/31 each found) before concluding there wasn't one today, rather than defaulting to a cosmetic pass — CONTEXT.md explicitly warns that further on-page passes "pass every validator and change nothing" on this property. Off-page levers (Glamping Hub submission, Hipcamp curation) remain the real next moves and remain outside this task's authority (form submission on Adam's behalf, or Ashley's decision).
+- Run-log: `run-logs/2026-09-05-seo.md`.
+
 ## 2026-09-04 — rancho-content-weekly (run 12 — events.html strengthened)
 
 - **`events.html` strengthened, 3 of 4 elements** (photos, author block, local detail — testimonial still blocked, T-001 unapproved and not this page's content type anyway). Third consecutive productive content-weekly run after the 10-run block broke 7/22.
