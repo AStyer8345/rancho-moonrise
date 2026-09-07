@@ -1,5 +1,13 @@
 # Rancho Moonrise — Changelog
 
+## 2026-09-07
+
+- **rancho-site-daily:** Trimmed 4 over-length SERP meta descriptions — a genuine on-page defect not previously flagged in this repo's history, found by checking something the last two "quiet cruise-control" runs hadn't: meta description length across all pages, not just schema/links/word-count (the levers already measured and disconfirmed as ranking factors). 2-claim Re-Verify Gate, brand canary passed first.
+  - `blog.html` (172 chars), `faqs.html` (171), `videos.html` (167), and `wedding-venues-near-austin.html` (180) all exceeded Google's ~155-160 char SERP truncation point on the `<meta name="description">` tag — meaning Google would cut the sentence mid-thought in search results, which hurts CTR even though it doesn't touch ranking. Trimmed all four to 121-132 chars. No banned VOICE-GUIDE terms introduced; `og:description`/`twitter:description` tags (already shorter, already distinct) left untouched. `npm run validate:site` passes. Committed (`4f4534f`), pushed, and confirmed live via `curl` on all 4 URLs post-deploy — not just from the working tree.
+  - Re-Verify Gate: `/safari-tents-near-austin/` re-checked via a topically-exact `site:` query (`safari tents`) — still absent from 8 owned URLs returned, same as every prior read; still_true, on-site diagnosis stays closed per the 8/31 finding, no further on-site work queued. The 5-file NEEDS OWNER uncommitted set (`api/inquiry.js`, `site/css/styles.css`, `site/js/main.js`, `site/pages/contact.html`, `site/pages/weddings.html`) confirmed unchanged via `git status` — still not this task's to touch.
+  - Also observed, not new: the harness's own AI-generated answer for the brand-canary query ("Rancho Moonrise") still surfaces the banned syndicated line — *"20 luxury cabins and safari tents for up to 50 guests"* — meaning the off-domain Knot/Hotels.com copy this task flagged 8/19 is still being read back as the property's own description. No new action taken; the fix remains with Adam (NEEDS ADAM item already open).
+  - Gate: 2 claims, 2 still_true. Run-log: `run-logs/2026-09-07-seo.md`.
+
 ## 2026-09-04
 
 - **rancho-site-daily:** WeddingWire's `sameAs` contradiction (open since 8/19) resolved; today's assigned "extend AEO measurement to a second answer engine" slot came back negative, and the negative result is useful. 4-claim Re-Verify Gate, brand canary passed first.
