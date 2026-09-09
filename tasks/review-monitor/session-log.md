@@ -2372,3 +2372,40 @@ Adding ResortPass (53 reviews) and Expedia's confirmed pool (6) to the monitored
 **6 FLAG_FOR_ADAM:** (1) the rendering-scraper purchase is now **one purchase against six platforms**, with direct verification at zero; (2) Haylee L. day 185; (3) two drafts unposted day 103; (4) Facebook review text still a 60-second fix, 5th run; (5) the Expedia count-6 **rule** question still open from RUN_071; (6) new — Apple Maps is a live readable surface on the Siri/Spotlight entity with reply coverage never checked.
 
 Run-log: `run-logs/2026-08-30-review-monitor.md`. Raw: `tasks/review-monitor/raw/2026-08-30/`.
+
+---
+
+## RUN_073 — 2026-09-07 12:55 CT
+
+**8-day gap (task did not fire 8/31–9/6). No new reviews confirmed on any platform. Brand canary PASSED before any absence was recorded. Status: urgent (carried).**
+
+**HEADLINE — A GENUINE VERIFICATION GAP OPENED ON FACEBOOK'S REVIEW AGGREGATE.** After 5 straight successful confirmations of 6 reviews / 86% recommend (RUN_068 through RUN_072), this run's **4 independent WebSearch queries** (`site:facebook.com ... reviews recommend`, a plain recommend/rating query, a quoted-URL + "86%" query, and a "reviews section star rating" query) **all failed to surface the figure** — each returned only page metadata (1,137 likes / 333 talking about it / 576 visited) or bled in Hotels.com's unrelated 9.0 rating. A direct `WebFetch` of the `/reviews` path also failed, truncated/incomplete — the same JS-gated failure family as the existing `facebook-review-text` blocker, now shown to also block the *aggregate*, not just the review body. Per the Re-Verify Gate: **do not assume changed, do not assume resolved** — 6/86% is HELD, `aggregate_verification_gap_count` set to 1 of 3 before this opens its own blocker.
+
+**EXPEDIA — RESOLUTION PATH (d) NOW FULLY CLOSED.** Direct `WebFetch` of the `h89565924` entity returned **HTTP 429 a 5th time**, after a **17-day gap** since the last attempt (8/21) — a longer silence than the 9-day gap that disconfirmed the same path once already in RUN_072. Per RUN_072's own stated threshold ("should not be counted as a live option after one more failure"), **path (d) is closed.** Remaining options: (a) Adam's 30 seconds in the Expedia extranet, (b) a rule change authorizing search-confirmed promotion, or (c) a rendering/residential-proxy scraper. A WebSearch this run surfaced *"On Expedia, Rancho Moonrise has a rating of 9.0 out of 10 rating with 15 reviews"* — almost certainly the recurring Hotels.com-under-Expedia-label bleed (same family as the documented 8.0/8.6/9.0 split). Logged as a new divergent value (**15**), **not promoted**. 8.0 and count-null carry unchanged.
+
+**APPLE MAPS — 3RD CONSECUTIVE IDENTICAL READ; ATTRIBUTION QUESTION CLOSED.** Re-fetched `maps.apple.com/place?place-id=IECFC57C438E79EC4`: **80% overall (5 ratings)**, Accommodations 100%/4, Customer Service 100%/3, Location 100%/4 — byte-identical to both 8/30 reads. Stability now confirmed across 3 reads. Separately re-checked Yelp (`Yelp Rancho Moonrise Manor Texas rating reviews`) and got the **same single pool-day-pass review body** as before, confirming **Yelp = 1 review** for the 2nd independent time. Since Yelp's own count cannot be the source of a 5-rating aggregate, the icon-based "Yelp" attribution on Apple Maps is now **concluded wrong (or a blend), not merely unresolved**. This closes the attribution question only — the 80%/5-ratings figure itself remains unpromoted and Apple Maps stays out of monitored scope.
+
+**HIPCAMP — INCONCLUSIVE READ, NOT A RESOLUTION.** A domain-restricted query (`site:hipcamp.com Rancho Moonrise Texas`) returned listing copy (cabins, family safari tent, pool/lounge access) but **did not reproduce** the "34-acre" or "a bar" verbatim strings for the first time after **6 straight prior confirmations**. Not recorded as resolved — no "36-acre" or bar-removed replacement text appeared either; this reads as a different excerpt slice of the same listing, not a copy change. Violations HELD pending a verbatim-confirming re-read. Count 0 HELD (no count signal in either direction).
+
+**HELD:** The Knot — Haylee L.'s review body re-confirmed still indexed verbatim ("a neighboring property played extremely loud amplified music... impossible to sleep... no ability to control or prevent this"), no owner-response text found; unreplied now **day 193 / 27.6 wks** (+8 days). TripAdvisor 0/unclaimed HELD — canonical `g56224-d33307272` surfaced with no count/rating in its title snippet. Google authoritative 130/4.9★ (RUN_034) now **111 days stale**; snippet path deliberately not re-run (contamination risk unchanged). Airbnb **73rd** consecutive no-attempt (403 pattern, NEEDS_ADAM_VERIFY standing). Two drafts unposted **day 111**.
+
+**CROSS-REFERENCE, NOT THIS TASK'S SCRAPE:** `rancho-competitive-weekly` independently re-verified ResortPass live today and closed its own `resortpass-access-blocked-2026-08-31` blocker — Rancho $20/$15, 4.8★/53 unchanged through the two-report blackout; Lucky Arrow review count moved 201→209. Noted here for continuity only. ResortPass stays out of this task's ownership table (unchanged recommendation, 4th run carrying it).
+
+**Gate: 9 claims checked — 5 still_true (google, tripadvisor, theknot-count, airbnb, hipcamp-count) · 1 verification_gap (facebook-aggregate, 1 of 3) · 1 closed (expedia-backoff-path-d) · 1 stability-confirmed+attribution-resolved (apple_maps) · 1 inconclusive-not-resolved (hipcamp-voice-violations). 0 resolved, 0 new reviews.** No review-log written — nothing new to draft.
+
+**5 FLAG_FOR_ADAM (carried, unchanged in substance):**
+1. Haylee L. unreplied, now day 193 / 27.6 weeks.
+2. Two drafts unposted, now day 111.
+3. Facebook review text still a 60-second fix — now also blocking the aggregate figure, not just the body.
+4. Expedia count-6 promotion is a **rule** question with all evidence preconditions met; direct-scrape path (d) is now fully closed, strengthening the case for a rule decision.
+5. Eight open blockers, four naming the identical remedy (rendering/residential-proxy scraper) — still one purchase, not four workarounds.
+
+### Ownership violation check
+
+None found.
+
+### Scope change NOT made unilaterally
+
+ResortPass (53) and Expedia's confirmed pool (6) remain recommended additions to the monitored-scope ownership table in `master-agent.md` and remain **not executed** — 4th consecutive run carrying the recommendation.
+
+Run-log: `run-logs/2026-09-07-review-monitor.md`. Raw: `tasks/review-monitor/raw/2026-09-07/`.
