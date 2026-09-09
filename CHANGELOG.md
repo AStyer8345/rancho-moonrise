@@ -1,5 +1,9 @@
 # Rancho Moonrise — Changelog
 
+## 2026-09-09
+
+- **rancho-content-weekly:** `pool-day-pass-austin.html` strengthened, 3 of 4 elements (existing real photo gallery verified rather than churned, author block, local detail). Fourth consecutive productive content-weekly run. Testimonial still blocked — T-001 unapproved 56 days, and doesn't cover pool day pass content anyway per its own Coverage-gaps table. `BlogPosting` author moved from `Organization` to `Person` Ashley on this page only (16-page-wide question, not decided here). Local detail verified against the actual photo: depth marker stenciled into the pool deck tile with a checkerboard border, plus on-request hot tub and no-lifeguard facts pulled from already-published policy pages. `npm run validate:site` passes, all 4 JSON-LD blocks parse. Committed by explicit pathspec — a concurrent workstream (10 files) left untouched. Full detail: `run-logs/strengthener-queue.md`.
+
 ## 2026-09-07
 
 - **rancho-site-daily:** Trimmed 4 over-length SERP meta descriptions — a genuine on-page defect not previously flagged in this repo's history, found by checking something the last two "quiet cruise-control" runs hadn't: meta description length across all pages, not just schema/links/word-count (the levers already measured and disconfirmed as ranking factors). 2-claim Re-Verify Gate, brand canary passed first.

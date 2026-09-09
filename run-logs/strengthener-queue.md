@@ -13,7 +13,7 @@ Priority: broken/placeholder assets first, then highest-impression landing pages
 | `accommodations.html` | **2026-07-22** | ✅ **STRENGTHENED** — 3 of 4 elements shipped (photos, author block, local detail). Testimonial still NEEDS ADAM. |
 | `host-your-event.html` | **2026-08-19** | ✅ **STRENGTHENED** — 3 of 4 elements shipped (photos, author block, local detail). Testimonial still NEEDS ADAM. |
 | `events.html` | **2026-09-04** | ✅ **STRENGTHENED** — 3 of 4 elements shipped (photos, author block, local detail). Testimonial still NEEDS ADAM (T-001 doesn't serve this page type anyway). |
-| `pool-day-pass-austin.html` | — | Pending |
+| `pool-day-pass-austin.html` | **2026-09-09** | ✅ **STRENGTHENED** — 3 of 4 elements (existing real photos verified, author block, local detail). Testimonial still NEEDS ADAM (page not in T-001's coverage anyway). |
 | `glamping-near-austin-texas.html` | — | Pending |
 | `bachelorette-party-austin-texas.html` | — | Pending |
 | `ranch-wedding-texas.html` | — | Pending |
@@ -220,3 +220,24 @@ Both hard stops re-verified live still true (`find brand site -iname "*testimoni
 **Portrait-crop note (same caveat as 8/19):** two of the three new photos are portrait sources landing in `.feature-card`'s `aspect-ratio: 4/3` container with `object-fit: cover`, so they center-crop. The crop was reasoned through against each photo's real pixel dimensions and the subject placement holds up, but — as with the 8/19 run — no dev server could be started from this unattended run to see it rendered. Worth a human glance next time someone's on the page.
 
 **Next run:** `pool-day-pass-austin.html`.
+
+---
+
+### 2026-09-09 — pool-day-pass-austin.html — ✅ SHIPPED (run 13; fourth consecutive productive run)
+
+**Gate re-checked live, not inherited.** GOALS.md read from disk: `## Settled Decisions` still carries the Ashley byline, `rancho-content-weekly` still under **Keep running**.
+
+**Testimonial — STILL BLOCKED, re-verified.** `brand/approved-testimonials.md` read fresh: T-001 is still `STATUS: UNAPPROVED — awaiting Adam`, unchanged for 56 days. Moot here regardless — the file's own Coverage-gaps table lists Pool day pass as **"No — only the unattributed Yelp fragment"** on file, and T-001 is corporate-retreat content that doesn't serve this page type either. → **NEEDS ADAM**, TODO.md re-verified and bumped rather than duplicated.
+
+**Page picked:** `pool-day-pass-austin.html` — held the #5 queue slot, named "next up" by the 9/04 run. Note: this page (and most of the remaining queue) is structurally a **blog post** (`BlogPosting` schema, `/blog/` canonical), not a landing page like the three pages strengthened before it — the queue file's "landing pages only" label is a pre-existing mislabel, not something this run corrected (out of scope for a content pass).
+
+**Photo element — verified, not churned.** Unlike the three prior pages, this one already carries a real, non-placeholder gallery: a hero image plus 6 distinct gallery photos, each with descriptive alt text, none duplicated within the page. Checked every candidate "orphaned" pool photo across the repo before deciding not to add a 7th: `venue-poolside` and `event-free-friday-pool` are real but already placed on other pages (host-your-event/index and events/index); the only genuinely unused pool asset, `brand-cup-poolside.jpg`, is a 382×510 source — too small for the responsive ladder and would reproduce the exact low-res-thumbnail problem already logged in CONTEXT.md's "Low-res source JPGs" section. Adding it would have manufactured a new instance of a known defect. Counted the existing verified-real gallery toward the photo element instead of forcing a swap that would either duplicate a photo cross-page or introduce a new low-res asset.
+
+**Shipped (2 files, +8/−2 on the page, 1 line on the sitemap):**
+
+- **Named author block** — `Ashley · Rancho Moonrise` + role line + review date, matching the inline-style convention from the three prior pages (still no dedicated CSS class; 4 pages now carry one). `BlogPosting` JSON-LD's `author` changed from `Organization` (the site-wide default on all 16 blog posts) to `Person` Ashley, matching the `Person`/`jobTitle`/`worksFor` shape used on the landing pages' `WebPage` schema — and `dateModified` bumped 2026-05-26 → 2026-09-09. **Scoped to this one page only**, per "zero new URLs / one page per run" — whether the other 15 `BlogPosting` pages should also move off the Organization-author default is a separate, larger decision, not made here.
+- **Local detail, verified against the photo itself before writing:** opened `pool-thunderbird-empty-1024.webp` — the pool's shallow-end depth marker (`3 FT 6 IN`) is stenciled directly into the poured deck tile, bordered by a black-and-white checkerboard tile pattern tracing the sun shelf and spa steps, not a bolted-on plastic sign. Paired with two verifiable operational facts pulled from `policies.html`/`faqs.html` (published elsewhere, not yet stated on this page): the hot tub runs **on request**, not continuously, and there's **no lifeguard on duty**. None of the three facts are guessable by a competitor's generic pool-day-pass copy — they're specific to this build and this operation.
+
+**Verification:** `npm run validate:site` passes. All 4 JSON-LD blocks (`BlogPosting`, `BreadcrumbList`, `FAQPage`, `WebPage`+`ReservePage`) parse cleanly via `json.loads` per-block, confirming `BlogPosting.author.name = Ashley` and `dateModified = 2026-09-09` by parse, not grep. 0 banned filler words, 0 emoji, and the sole `Manor` occurrence is the pre-existing footer postal address (untouched). Committed by explicit pathspec (`site/pages/pool-day-pass-austin.html` + `site/sitemap.xml` only) — a concurrent workstream had `CONTEXT.md`, `api/inquiry.js`, `brand/review-aggregate.json`, `site/admin/dashboard-state.json`, `site/css/styles.css`, `site/js/main.js`, `site/pages/contact.html`, `site/pages/safari-tents-near-austin.html`, `site/pages/weddings.html`, and two `review-monitor` task files dirty in the working tree at the time — all left untouched, none of it this run's.
+
+**Next run:** `glamping-near-austin-texas.html`.
