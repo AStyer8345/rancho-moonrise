@@ -2409,3 +2409,35 @@ None found.
 ResortPass (53) and Expedia's confirmed pool (6) remain recommended additions to the monitored-scope ownership table in `master-agent.md` and remain **not executed** — 4th consecutive run carrying the recommendation.
 
 Run-log: `run-logs/2026-09-07-review-monitor.md`. Raw: `tasks/review-monitor/raw/2026-09-07/`.
+
+---
+
+## RUN_074 — 2026-09-09 13:10 CT
+
+**Summary:** First act was landing RUN_073's own output (review-aggregate.json, dashboard-state.json, BLOCKERS.md, session-log.md, run-log, raw dir), which had sat uncommitted for 2 days and was flagged by `rancho-site-daily` on 2026-09-09 — the same shipped-but-not-committed failure family this property has hit repeatedly. Committed by explicit pathspec (this task's 6 files only, leaving the unrelated 5-file NEEDS OWNER set from other workstreams untouched), pushed, confirmed on `origin/main` before any new verification work began (commit `1e26d81`).
+
+**Structural defect found and fixed:** while landing RUN_073, `site/admin/dashboard-state.json` was found to carry a second, duplicate top-level block (`last_run`/`run_number`/`status`/`status_reason`/`flags`/etc.) as a sibling of the `review_monitor` key rather than a field inside it — a JSON-shape defect RUN_073 introduced, not a data error. Merged back into `review_monitor` this run; no data lost.
+
+Brand canary PASSED (own-name query returned the site correctly, 20-minute distance). No new reviews on any platform.
+
+**Re-verify log lines:**
+```
+[2026-09-09 13:10] re-verify facebook-aggregate — verification_gap (2 of 3) — live=NOT_SURFACED prior=6/86%(2026-08-21) — HELD, not assumed changed
+[2026-09-09 13:10] re-verify hipcamp-voice-violations — resolved(inconclusive→confirmed) — live=VERBATIM_MATCH prior=inconclusive(RUN_073) — treated as excerpt-slice gap, not drift
+[2026-09-09 13:10] re-verify expedia-rating — still_true — live=8.0"Very Good"(search) prior=8.0
+[2026-09-09 13:10] re-verify theknot-haylee — still_true — live=still indexed, unreplied, day 195 prior=day 193
+[2026-09-09 13:10] re-verify tripadvisor-status — still_true — live=0/unclaimed(search, no bleed artifacts) prior=0/unclaimed
+[2026-09-09 13:10] re-verify google-reviews-count — deliberately not re-run (contamination discipline) — carries 130@4.9star, 113d stale
+```
+
+**Done-log check:** re-read `rancho-done-log.md` at repo root — no new review-reply RESOLVED entries since RUN_073. Google unreplied=1, Facebook unreplied>=1, Knot unreplied=1 all HELD. Two drafts (Cassie Google 5★, Haylee Knot 1★) remain UNPOSTED, day count 111→113.
+
+**Status:** stays URGENT on the standing condition (Haylee unreplied + 2 unposted drafts), not a new one. No claim fully resolved this run — no done-log write.
+
+**Files written this run:**
+- `brand/review-aggregate.json` — RUN_074 note + platform updates (facebook, hipcamp, expedia, theknot); note rotation trimmed (dropped oldest `note_run_066`/`note_prior_run_064`)
+- `site/admin/dashboard-state.json` — structural fix (duplicate root block merged into `review_monitor`) + RUN_074 status
+- `tasks/review-monitor/BLOCKERS.md` — hipcamp blocker updated (verbatim re-read resolves RUN_073's gap)
+- `tasks/review-monitor/session-log.md` — this entry
+
+Full detail: `run-logs/2026-09-09-review-monitor.md`.
