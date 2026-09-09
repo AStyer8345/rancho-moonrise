@@ -2123,3 +2123,7 @@ Backlog (flat scan): 2 NEW + 1 MOD, consistent with run 72-82 baseline. **NEEDS 
 2026-09-07 12:19 | scanned=0 added=0 replaced=0 skipped=0 errors=1 (auth-expired — re-verified live via `list --json`: Google sign-in redirect. Run 84. No scan performed, state NOT advanced.)
 
 **NEEDS ADAM — 84 runs / 127 days.** No new analysis; see run 72 for details. Decision remains Adam's: run `notebooklm login`, or pause this task. Recommendation stands at **pause**.
+
+2026-09-09 14:41 | scanned=64 added=0 replaced=0 skipped=5 errors=1 (auth-expired — re-verified live via `list --json`: Google sign-in redirect. Run 85. No notebook operations attempted, state NOT advanced.)
+
+**NEEDS ADAM — 85 runs / 129 days.** No new analysis; see run 72 for the recursion/basename-key details. Decision remains Adam's: run `notebooklm login`, or pause this task. Recommendation stands at **pause**.
