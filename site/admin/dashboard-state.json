@@ -1,11 +1,11 @@
 {
   "review_monitor": {
-    "last_run": "2026-09-09T13:10:00Z",
+    "last_run": "2026-09-10T09:40:00Z",
     "status": "urgent",
-    "status_reason": "RUN_074 (2026-09-09 13:10 CT). First act: landed RUN_073's own output, uncommitted 2 days, flagged by rancho-site-daily 2026-09-09 (same shipped-but-not-committed failure family this property has hit repeatedly). STRUCTURAL FIX: RUN_073 had also written a second, duplicate top-level block (last_run/run_number/status/status_reason/flags) as a SIBLING of review_monitor instead of a field inside it — a JSON-shape defect, not a data error. Merged back into this object this run; no data was lost, RUN_073's content is preserved below as status_reason_run_073. Brand canary PASSED. Status stays URGENT on the standing condition, not a new one: Haylee L.'s 1-star on The Knot unreplied DAY 195 / 27.9 weeks, two drafts unposted DAY 113. No new reviews on any platform. Facebook aggregate verification gap widens to 2 of 3 (6/86% not re-surfaced 2nd consecutive run — held, not assumed changed). Hipcamp voice violations RE-CONFIRMED verbatim, resolving RUN_073's inconclusive read as a different excerpt slice, not drift. Expedia 8.0 re-confirmed via search; direct-fetch rule question unchanged, still with Adam. TripAdvisor 0/unclaimed HELD, no bleed artifacts. Google authoritative 130/4.9star now 113 days stale, snippet path deliberately not re-run (contamination discipline). See review-aggregate.json note for full detail.",
-    "status_reason_run_073": "RUN_073 (2026-09-07 12:55 CT). 8-day gap. No new reviews on any platform. Facebook aggregate verification gap opened (1 of 3) after 5 straight confirmations. Expedia 429 a 5th time, 17-day gap — resolution path (d) fully disconfirmed and closed. Apple Maps 3rd consecutive identical read (80%/5) confirms stability; Yelp cross-check concludes the Apple 'Yelp' icon attribution is wrong or a blend. Hipcamp read inconclusive (different excerpt, violations held pending re-read). The Knot Haylee unreplied day 193/27.6wks. TripAdvisor 0/unclaimed held. Cross-reference only: rancho-competitive-weekly independently closed its own ResortPass blocker same day. Drafts unposted day 111. Status stayed URGENT on the standing condition.",
-    "status_reason_run_072": "RUN_072 (2026-08-30 06:38 CT). 9-day gap - task did not fire 8/22-8/29. NO NEW REVIEWS ON ANY PLATFORM. Brand canary PASSED before any absence was recorded. Status stays URGENT on the standing condition, not a new one: Haylee L.'s 1-star on The Knot is unreplied at DAY 185 / 26.4 weeks and two drafts sit unposted at DAY 103. HEADLINE: THE LAST WORKING DIRECT-SCRAPE PATH ON ANY MONITORED PLATFORM CLOSED THIS RUN. ResortPass - which RUN_071 recorded as direct_fetch_works:true, 'a WORKING PATH, re-proven' - now returns HTTP 403 behind a Cloudflare captcha on BOTH WebFetch and a desktop-UA curl, so it is site-level bot detection, not a fetcher quirk. THE COUNT OF WORKING DIRECT PATHS IS NOW ZERO and every held value on this property rests on search snippets. OFFSETTING FIND, SAME RUN: APPLE MAPS RENDERS REVIEW AGGREGATES — first read ever by this task. Two reads, identical: 80% overall (5 ratings). NOT PROMOTED. Attribution to Yelp is by ICON not stated text. THIRD: THE GOOGLEBOT-UA LEAD IS TRIED AND CLOSED — confirms entity identity only, useless for a review count. Authoritative Google 130 is 103 DAYS STALE. FOURTH: Expedia 429 a 4th consecutive time. HELD: Facebook 6/86% 5th consecutive confirmation, body still unreadable. Hipcamp both voice violations 6th consecutive. TripAdvisor 0/unclaimed. Yelp 1 @ 5.0. Airbnb 72nd no-attempt.",
-    "status_reason_run_070": "RUN_070 (2026-08-19 06:30 CT). NO NEW REVIEWS, NO RATING MOVED ON ANY PLATFORM. Status stays URGENT: Haylee L. unreplied at day 174 / ~24.9 weeks, two drafts unposted at day 92. (1) EXPEDIA CARRIES 6 REVIEWS — first count ever recorded for the OTA cluster, search-confirmed only, NOT promoted (no direct scrape). (2) GOOGLE SNIPPET PATH CONTAMINATED BY THE SITE'S OWN SCHEMA — retires the snippet as a count signal in either direction. Live-authoritative 130 is 92 DAYS STALE. (3) RUN_069 (2026-08-18) never completed its writes — recovered and folded in this run. Facebook 6/86% HELD, 3rd consecutive confirmation; review text unobtainable 3rd run running -> NEW BLOCKER facebook-review-text opened. ResortPass rating block did NOT render — recorded as an EXTRACTION failure, not a data change, HELD at 53 @ 4.8 STALE. Hipcamp voice violations re-confirmed 4th consecutive run.",
+    "status_reason": "RUN_075 (2026-09-10 09:40 CT). 1-day gap since RUN_074. Brand canary PASSED. NO NEW REVIEWS on any platform. FACEBOOK AGGREGATE VERIFICATION GAP HIT THRESHOLD (3 of 3): new blocker facebook-aggregate-verification opened, distinct from facebook-review-text. 6/86% HELD, not assumed changed. HIPCAMP: a plausible-looking resolution signal (no '34-acre', no 'bar') was rejected as suspected contamination echo of Rancho's own site copy, not acted on - violations HELD. THE KNOT: an implausible AI synthesis was rejected wholesale; Haylee L.'s review reconfirmed still indexed verbatim, unreplied, DAY 196 / 28.0 WEEKS. Two drafts unposted DAY 114. EXPEDIA 8.0 anchor not reconfirmed this run (only the known 9.0 bleed value surfaced), held on absence of a contradicting signal. TRIPADVISOR 0/unclaimed HELD, bleed rejected again. Google authoritative 130/4.9star now 114 days stale, snippet path deliberately not re-run. Status stays URGENT on the standing condition, not a new one.",
+    "status_reason_run_073": "RUN_073 (2026-09-07 12:55 CT). 8-day gap. No new reviews on any platform. Facebook aggregate verification gap opened (1 of 3) after 5 straight confirmations. Expedia 429 a 5th time, 17-day gap \u2014 resolution path (d) fully disconfirmed and closed. Apple Maps 3rd consecutive identical read (80%/5) confirms stability; Yelp cross-check concludes the Apple 'Yelp' icon attribution is wrong or a blend. Hipcamp read inconclusive (different excerpt, violations held pending re-read). The Knot Haylee unreplied day 193/27.6wks. TripAdvisor 0/unclaimed held. Cross-reference only: rancho-competitive-weekly independently closed its own ResortPass blocker same day. Drafts unposted day 111. Status stayed URGENT on the standing condition.",
+    "status_reason_run_072": "RUN_072 (2026-08-30 06:38 CT). 9-day gap - task did not fire 8/22-8/29. NO NEW REVIEWS ON ANY PLATFORM. Brand canary PASSED before any absence was recorded. Status stays URGENT on the standing condition, not a new one: Haylee L.'s 1-star on The Knot is unreplied at DAY 185 / 26.4 weeks and two drafts sit unposted at DAY 103. HEADLINE: THE LAST WORKING DIRECT-SCRAPE PATH ON ANY MONITORED PLATFORM CLOSED THIS RUN. ResortPass - which RUN_071 recorded as direct_fetch_works:true, 'a WORKING PATH, re-proven' - now returns HTTP 403 behind a Cloudflare captcha on BOTH WebFetch and a desktop-UA curl, so it is site-level bot detection, not a fetcher quirk. THE COUNT OF WORKING DIRECT PATHS IS NOW ZERO and every held value on this property rests on search snippets. OFFSETTING FIND, SAME RUN: APPLE MAPS RENDERS REVIEW AGGREGATES \u2014 first read ever by this task. Two reads, identical: 80% overall (5 ratings). NOT PROMOTED. Attribution to Yelp is by ICON not stated text. THIRD: THE GOOGLEBOT-UA LEAD IS TRIED AND CLOSED \u2014 confirms entity identity only, useless for a review count. Authoritative Google 130 is 103 DAYS STALE. FOURTH: Expedia 429 a 4th consecutive time. HELD: Facebook 6/86% 5th consecutive confirmation, body still unreadable. Hipcamp both voice violations 6th consecutive. TripAdvisor 0/unclaimed. Yelp 1 @ 5.0. Airbnb 72nd no-attempt.",
+    "status_reason_run_070": "RUN_070 (2026-08-19 06:30 CT). NO NEW REVIEWS, NO RATING MOVED ON ANY PLATFORM. Status stays URGENT: Haylee L. unreplied at day 174 / ~24.9 weeks, two drafts unposted at day 92. (1) EXPEDIA CARRIES 6 REVIEWS \u2014 first count ever recorded for the OTA cluster, search-confirmed only, NOT promoted (no direct scrape). (2) GOOGLE SNIPPET PATH CONTAMINATED BY THE SITE'S OWN SCHEMA \u2014 retires the snippet as a count signal in either direction. Live-authoritative 130 is 92 DAYS STALE. (3) RUN_069 (2026-08-18) never completed its writes \u2014 recovered and folded in this run. Facebook 6/86% HELD, 3rd consecutive confirmation; review text unobtainable 3rd run running -> NEW BLOCKER facebook-review-text opened. ResortPass rating block did NOT render \u2014 recorded as an EXTRACTION failure, not a data change, HELD at 53 @ 4.8 STALE. Hipcamp voice violations re-confirmed 4th consecutive run.",
     "new_reviews_pending_response": 0,
     "new_reviews_pending_response_detail": [
       {
@@ -17,7 +17,7 @@
         "unreplied_weeks": 27.9,
         "draft_location": "drafted RUN_034 2026-05-19, unposted day 113",
         "draft_status": "awaiting Adam/Ashley to paste",
-        "re_verified": "2026-09-09 — body still indexed verbatim on a theknot.com-restricted query; result explicitly could not locate any owner response"
+        "re_verified": "2026-09-09 \u2014 body still indexed verbatim on a theknot.com-restricted query; result explicitly could not locate any owner response"
       },
       {
         "platform": "google",
@@ -27,7 +27,7 @@
         "unreplied_days": null,
         "draft_location": "drafted RUN_034 2026-05-19, unposted day 113",
         "draft_status": "awaiting Adam/Ashley to paste",
-        "re_verified": "2026-09-09 — root done-log last resolution still 2026-04-15, no Cassie entry"
+        "re_verified": "2026-09-09 \u2014 root done-log last resolution still 2026-04-15, no Cassie entry"
       },
       {
         "platform": "facebook",
@@ -35,8 +35,8 @@
         "stars": "non-recommend",
         "posted": "between 2026-07-23 and 2026-08-17",
         "draft_location": null,
-        "draft_status": "NO DRAFT POSSIBLE — review text unobtainable; blocker facebook-review-text open since 2026-08-19. Still a 60-second fix for whoever holds the Page.",
-        "re_verified": "2026-09-09 — aggregate itself not re-surfaced 2nd consecutive run (verification_gap_count 2 of 3); 6/86% HELD from 2026-08-21, not assumed changed"
+        "draft_status": "NO DRAFT POSSIBLE \u2014 review text unobtainable; blocker facebook-review-text open since 2026-08-19. Still a 60-second fix for whoever holds the Page.",
+        "re_verified": "2026-09-09 \u2014 aggregate itself not re-surfaced 2nd consecutive run (verification_gap_count 2 of 3); 6/86% HELD from 2026-08-21, not assumed changed"
       }
     ],
     "total_reviews_tracked": 198,
@@ -58,14 +58,14 @@
       "agoda"
     ],
     "flags": [
-      "REVIEW-MONITOR-JSON-SHAPE-DEFECT-FIXED-run073-duplicate-root-block-merged-back",
-      "FACEBOOK-AGGREGATE-VERIFICATION-GAP-2of3-second-consecutive-gap",
-      "HIPCAMP-VOICE-VIOLATIONS-RECONFIRMED-run073-inconclusive-resolved-as-excerpt-slice-not-drift",
-      "EXPEDIA-8.0-RECONFIRMED-VIA-SEARCH-direct-fetch-rule-question-unchanged-still-with-Adam",
-      "TRIPADVISOR-0-UNCLAIMED-HELD-no-bleed-artifacts",
-      "GOOGLE-AUTHORITATIVE-COUNT-113-DAYS-STALE-snippet-deliberately-not-rerun",
-      "HAYLEE-L-1-STAR-UNREPLIED-DAY-195",
-      "TWO-DRAFTS-UNPOSTED-DAY-113"
+      "FACEBOOK-AGGREGATE-VERIFICATION-GAP-3of3-THRESHOLD-MET-new-blocker-opened",
+      "HIPCAMP-RESOLUTION-SIGNAL-REJECTED-AS-CONTAMINATION-ECHO-violations-held",
+      "THEKNOT-IMPLAUSIBLE-SYNTHESIS-REJECTED-haylee-review-reconfirmed-verbatim",
+      "EXPEDIA-8.0-NOT-RECONFIRMED-only-9.0-bleed-surfaced-held-on-absence-of-contradiction",
+      "TRIPADVISOR-0-UNCLAIMED-HELD-bleed-rejected-again",
+      "GOOGLE-AUTHORITATIVE-COUNT-114-DAYS-STALE-snippet-deliberately-not-rerun",
+      "HAYLEE-L-1-STAR-UNREPLIED-DAY-196",
+      "TWO-DRAFTS-UNPOSTED-DAY-114"
     ],
     "blockers": [
       "google-reviews-count",
@@ -75,12 +75,13 @@
       "theknot-direct-fetch",
       "hipcamp-direct-fetch",
       "tripadvisor-direct-fetch",
-      "facebook-review-text"
+      "facebook-review-text",
+      "facebook-aggregate-verification"
     ],
     "watch": [
-      "facebook aggregate verification gap — 2 of 3 consecutive failures to re-surface 6/86% via search; one more opens a dedicated blocker distinct from facebook-review-text.",
-      "expedia review count 6 — search-confirmed, promotion precondition met, write still blocked by the direct-scrape hard rule (now itself a formal blocker, path (d) closed). Needs a rule decision from Adam, not more evidence.",
-      "tripadvisor Travelers' Choice artifact — seen twice (RUN_061, RUN_071) on a 0-review unclaimed listing. Recurring, not one-off. Reject on sight if it resurfaces."
+      "facebook aggregate verification gap \u2014 2 of 3 consecutive failures to re-surface 6/86% via search; one more opens a dedicated blocker distinct from facebook-review-text.",
+      "expedia review count 6 \u2014 search-confirmed, promotion precondition met, write still blocked by the direct-scrape hard rule (now itself a formal blocker, path (d) closed). Needs a rule decision from Adam, not more evidence.",
+      "tripadvisor Travelers' Choice artifact \u2014 seen twice (RUN_061, RUN_071) on a 0-review unclaimed listing. Recurring, not one-off. Reject on sight if it resurfaces."
     ],
     "new_platforms_noted": [
       "yelp",
@@ -89,17 +90,18 @@
       "resortpass",
       "apple_maps"
     ],
-    "run_number": 74,
-    "total_reviews_tracked_composition": "in-scope: google 130 (stale auth 2026-05-19, 113d) + facebook 6 + the_knot 8 + hipcamp 0 + tripadvisor 0 = 144. Expedia's confirmed 6 is STILL NOT added — search-confirmed only, expedia.count remains null pending a direct scrape that is now itself a blocker; see count_promotion_decision in review-aggregate.json. Out-of-scope pools not counted: resortpass 53, yelp 1, apple_maps 5 (attribution concluded wrong/blend, not promoted).",
-    "unreplied_by_platform_note": "resortpass = null, not zero: 53 reviews with NO per-review enumeration path (/reviews = 404), so reply coverage is genuinely unknown. expedia = null: 6 reviews known to exist, no enumeration path ever attempted — reply coverage there is unknown for the same reason.",
+    "run_number": 75,
+    "total_reviews_tracked_composition": "in-scope: google 130 (stale auth 2026-05-19, 113d) + facebook 6 + the_knot 8 + hipcamp 0 + tripadvisor 0 = 144. Expedia's confirmed 6 is STILL NOT added \u2014 search-confirmed only, expedia.count remains null pending a direct scrape that is now itself a blocker; see count_promotion_decision in review-aggregate.json. Out-of-scope pools not counted: resortpass 53, yelp 1, apple_maps 5 (attribution concluded wrong/blend, not promoted).",
+    "unreplied_by_platform_note": "resortpass = null, not zero: 53 reviews with NO per-review enumeration path (/reviews = 404), so reply coverage is genuinely unknown. expedia = null: 6 reviews known to exist, no enumeration path ever attempted \u2014 reply coverage there is unknown for the same reason.",
     "out_of_scope_platforms_with_live_reviews": [
-      "resortpass (53 @ 4.8star — RECOMMEND ADDING TO SCOPE)",
+      "resortpass (53 @ 4.8star \u2014 RECOMMEND ADDING TO SCOPE)",
       "yelp (1 @ 5.0)",
       "agoda (8.6, stale)",
       "apple_maps (80%/5 ratings, attribution unresolved)"
     ],
-    "oldest_unreplied_days": 195,
-    "drafts_unposted_days": 113,
-    "working_direct_scrape_paths": 0
+    "oldest_unreplied_days": 196,
+    "drafts_unposted_days": 114,
+    "working_direct_scrape_paths": 0,
+    "status_reason_run_074": "RUN_074 (2026-09-09 13:10 CT). First act: landed RUN_073's own output, uncommitted 2 days, flagged by rancho-site-daily 2026-09-09 (same shipped-but-not-committed failure family this property has hit repeatedly). STRUCTURAL FIX: RUN_073 had also written a second, duplicate top-level block (last_run/run_number/status/status_reason/flags) as a SIBLING of review_monitor instead of a field inside it \u2014 a JSON-shape defect, not a data error. Merged back into this object this run; no data was lost, RUN_073's content is preserved below as status_reason_run_073. Brand canary PASSED. Status stays URGENT on the standing condition, not a new one: Haylee L.'s 1-star on The Knot unreplied DAY 195 / 27.9 weeks, two drafts unposted DAY 113. No new reviews on any platform. Facebook aggregate verification gap widens to 2 of 3 (6/86% not re-surfaced 2nd consecutive run \u2014 held, not assumed changed). Hipcamp voice violations RE-CONFIRMED verbatim, resolving RUN_073's inconclusive read as a different excerpt slice, not drift. Expedia 8.0 re-confirmed via search; direct-fetch rule question unchanged, still with Adam. TripAdvisor 0/unclaimed HELD, no bleed artifacts. Google authoritative 130/4.9star now 113 days stale, snippet path deliberately not re-run (contamination discipline). See review-aggregate.json note for full detail."
   }
 }

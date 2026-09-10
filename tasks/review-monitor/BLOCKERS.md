@@ -55,6 +55,7 @@ Append-only. If a live verification path fails 3 consecutive runs for the same c
 - **Logged:** 2026-06-03
 - **Update 2026-09-07 (RUN_073):** the domain-restricted WebSearch fallback that had confirmed both voice violations verbatim on 6 straight runs returned a different excerpt this time — listing copy about cabins/safari-tent/pool access, but neither "34-acre" nor "a bar" nor any corrected replacement text. Not recorded as resolved (nothing contradicts the violations) and not re-confirmed either — genuinely inconclusive, most likely just a different slice of the same page surfacing. Held pending a verbatim-confirming re-read next run. Count 0 still held (no count signal in either direction).
 - **Update 2026-09-09 (RUN_074) — verbatim re-read resolves the gap:** a fresh hipcamp.com-restricted query reproduced both strings exactly ("a 34-acre ranch just outside of vibrant Austin, Texas"; "an inviting pool, a bar, and a cozy lounge area"). RUN_073's gap reads as a different excerpt slice of the same listing, not drift. Direct-fetch blocker itself unchanged (not attempted, no contradicting signal). Count 0 still held.
+- **Update 2026-09-10 (RUN_075) — a plausible-looking resolution signal deliberately not acted on:** this run's read said "36-acre... 20 minutes east of downtown Austin" and "pool and lounge area" — no "34-acre", no "bar". Not treated as a resolution: the phrasing matches Rancho's own site copy verbatim, the same shape as the RUN_070 Google-snippet echo of the site's own schema — read as contamination, not a clean hipcamp.com read. Violations HELD at the RUN_074 verbatim-confirmed state pending a cleaner re-read. Count 0 still held.
 
 ---
 
@@ -100,6 +101,21 @@ Append-only. If a live verification path fails 3 consecutive runs for the same c
 - **Logged:** 2026-08-19
 - **Update 2026-08-21 (RUN_071):** aggregate 6 / 86% re-confirmed a **4th** consecutive time, and for the first time on a `facebook.com` **domain-restricted** query — the cleanest attribution the figure has had. Review body still not surfaced; direct fetch not re-attempted (no contradicting signal). **4th run with no draft, still deliberate.** Blocker unchanged and still a 60-second fix.
 - **Update 2026-09-07 (RUN_073):** the blocker widens from "review text unobtainable" to "the aggregate itself is now sometimes unobtainable too." After **5 consecutive successful confirmations** of 6/86% (RUN_068–072), this run's **4 independently-phrased WebSearch queries plus 1 direct `WebFetch`** of the `/reviews` path **all failed to surface the figure** — searches returned only page metadata (likes/talking-about/visited counts) or bled in Hotels.com's unrelated 9.0 rating; the direct fetch came back truncated, same JS-gated failure mode as always. 6/86% HELD, not assumed changed, per the Re-Verify Gate. Tracked as a new sub-counter (`aggregate_verification_gap_count = 1 of 3`) in `brand/review-aggregate.json` — if this happens 2 more times, it becomes its own line here distinct from the review-*text* failure. Review text itself remains unobtainable, still a 60-second fix on the Page.
+- **Update 2026-09-09 (RUN_074):** gap 2 of 3 — a `facebook.com`-restricted WebSearch again failed to surface 6/86%. HELD, not assumed changed.
+- **Update 2026-09-10 (RUN_075) — threshold met, see new blocker below.**
+
+---
+
+## BLOCKER: facebook-aggregate-verification — aggregate figure unreadable 3 consecutive runs
+
+- **Claim:** Facebook review aggregate for Rancho Moonrise — count and recommend percentage (held at **6 reviews / 86% recommend** since RUN_068, 2026-08-17).
+- **Distinct from `facebook-review-text` above:** that blocker covers the review *body* text (never readable since RUN_068). This blocker covers the *aggregate* count/percentage, which WAS reliably readable via WebSearch for 5 consecutive runs (RUN_068–072) before failing.
+- **Verification path attempted:** WebSearch, multiple independently-phrased queries per run (domain-restricted `site:facebook.com`, plain recommend/rating query, quoted-URL + "86%" query, "reviews section star rating" query). RUN_073 additionally tried a direct `WebFetch` of the `/reviews` path.
+- **Failure mode:** every query returns only page metadata (likes/talking-about/visited counts, currently 1,137/333/576) or bleeds in an unrelated third-party rating (usually Hotels.com's 9.0). No count or percentage token for Facebook itself surfaces in any query, any phrasing.
+- **Consecutive failures:** 3 (RUN_073 2026-09-07, RUN_074 2026-09-09, RUN_075 2026-09-10)
+- **Status:** 6/86% HELD, unchanged, `STALE:2026-08-21` (last successful confirmation, RUN_071). A verification gap is not a data change.
+- **Resolution path:** same family as `facebook-review-text` — 60 seconds on the actual Page (open Reviews tab, read the current count/percentage directly) resolves both blockers at once. Alternatively, a rendering/residential-proxy scraper (Apify) — same remedy already proposed for Hipcamp, The Knot, TripAdvisor, Expedia.
+- **Logged:** 2026-09-10
 
 ---
 
