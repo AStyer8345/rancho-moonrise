@@ -2144,3 +2144,6 @@ Backlog unchanged from run 88: 17 NEW + 1 MOD against .rancho-notebook-sync-stat
 
 Backlog unchanged from run 88/89: 17 NEW + 1 MOD against .rancho-notebook-sync-state.json (still dated 2026-05-02 — cannot advance without a successful run). Oversize skips unchanged at 3 (brand/*.pdf event flyers >10MB). **NEEDS ADAM — 90 runs / 131 days on one dead Google credential.** Only fix is Adam running `notebooklm login` interactively. Recommendation stands at **pause** this task until login is done.
 2026-09-11 00:13 | push FAILED after commit e7fd346 (SSH connection closed by 140.82.114.3:22, network error). Commit is local only, not on origin/main. Leaving for next run or Adam per task rule (no retry).
+2026-09-11 09:07 | scanned=81 added=0 replaced=0 skipped=3 errors=1 (auth-expired — re-verified live via `list --json`: Google sign-in redirect. Run 91. No notebook operations attempted, state NOT advanced.)
+
+Backlog unchanged from run 88-90: 17 NEW + 1 MOD against .rancho-notebook-sync-state.json (still dated 2026-05-02 — cannot advance without a successful run). Oversize skips unchanged at 3 (brand/*.pdf event flyers >10MB). **NEEDS ADAM — 91 runs / 131 days on one dead Google credential.** Only fix is Adam running `notebooklm login` interactively. Recommendation stands at **pause** this task until login is done.
