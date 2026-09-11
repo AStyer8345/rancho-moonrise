@@ -56,6 +56,7 @@ Append-only. If a live verification path fails 3 consecutive runs for the same c
 - **Update 2026-09-07 (RUN_073):** the domain-restricted WebSearch fallback that had confirmed both voice violations verbatim on 6 straight runs returned a different excerpt this time — listing copy about cabins/safari-tent/pool access, but neither "34-acre" nor "a bar" nor any corrected replacement text. Not recorded as resolved (nothing contradicts the violations) and not re-confirmed either — genuinely inconclusive, most likely just a different slice of the same page surfacing. Held pending a verbatim-confirming re-read next run. Count 0 still held (no count signal in either direction).
 - **Update 2026-09-09 (RUN_074) — verbatim re-read resolves the gap:** a fresh hipcamp.com-restricted query reproduced both strings exactly ("a 34-acre ranch just outside of vibrant Austin, Texas"; "an inviting pool, a bar, and a cozy lounge area"). RUN_073's gap reads as a different excerpt slice of the same listing, not drift. Direct-fetch blocker itself unchanged (not attempted, no contradicting signal). Count 0 still held.
 - **Update 2026-09-10 (RUN_075) — a plausible-looking resolution signal deliberately not acted on:** this run's read said "36-acre... 20 minutes east of downtown Austin" and "pool and lounge area" — no "34-acre", no "bar". Not treated as a resolution: the phrasing matches Rancho's own site copy verbatim, the same shape as the RUN_070 Google-snippet echo of the site's own schema — read as contamination, not a clean hipcamp.com read. Violations HELD at the RUN_074 verbatim-confirmed state pending a cleaner re-read. Count 0 still held.
+- **Update 2026-09-11 (RUN_076) — the cleaner re-read landed, RUN_075's read stays classified as contamination:** a hipcamp.com-sourced result this run reproduced both strings exactly — "Rancho Moonrise is a 34-acre ranch just outside of vibrant Austin, Texas" and "a refreshing pool, a bar, and a cozy lounge area." Both violations HELD, freshly confirmed live. RUN_075's ambiguous read is not retroactively promoted to anything — it was correctly held rather than acted on. Count 0 still held.
 
 ---
 
@@ -116,6 +117,7 @@ Append-only. If a live verification path fails 3 consecutive runs for the same c
 - **Status:** 6/86% HELD, unchanged, `STALE:2026-08-21` (last successful confirmation, RUN_071). A verification gap is not a data change.
 - **Resolution path:** same family as `facebook-review-text` — 60 seconds on the actual Page (open Reviews tab, read the current count/percentage directly) resolves both blockers at once. Alternatively, a rendering/residential-proxy scraper (Apify) — same remedy already proposed for Hipcamp, The Knot, TripAdvisor, Expedia.
 - **Logged:** 2026-09-10
+- **Update 2026-09-11 (RUN_076):** 6/86% NOT re-surfaced a 4th consecutive run — a `site:facebook.com` query returned only unrelated OTA/travel results, no Facebook aggregate token. This is a continuation under the already-open blocker, not a new threshold event. HELD, not assumed changed.
 
 ---
 
