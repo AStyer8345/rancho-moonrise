@@ -2549,3 +2549,59 @@ None found.
 ResortPass (53) and Expedia's confirmed pool (6) remain recommended additions to the monitored-scope ownership table in `master-agent.md` and remain **not executed**.
 
 Run-log: `run-logs/2026-09-11-review-monitor.md`. Raw: `tasks/review-monitor/raw/2026-09-11/` (WebSearch-only run, no raw HTML to cache).
+
+---
+
+## RUN_077 — 2026-09-12 09:30 CT
+
+1-day gap since RUN_076. Brand canary PASSED (9 owned URLs incl. agoda/hotels.com/tripadvisor/theknot/facebook/yelp/site, plus 2 organic mentions) before any absence was recorded. No new reviews confirmed on any platform. Status stays **URGENT** on the standing condition (Haylee L. unreplied + 2 unposted drafts), not a new one.
+
+**Hipcamp** — voice violations re-confirmed verbatim again on a hipcamp.com-sourced result: "a 34-acre ranch just outside of vibrant Austin, Texas" and "an inviting pool, a bar, and a cozy lounge area". Both HELD. A new descriptive detail surfaced for the first time — "22 sites offering tents and lodging" — logged only, not a violation, not independently cross-checked. Count 0 still held.
+
+**The Knot** — Haylee L.'s review body re-confirmed still indexed verbatim, no owner response found. Unreplied day count 197 → 198 (28.3 weeks, from 2026-02-26).
+
+**Facebook** — 6/86% NOT re-surfaced a 5th consecutive run (query returned only page metadata — 1,137 likes/333 talking-about/576 check-ins — plus the recurring 9.0 Hotels.com bleed). Continuation under the `facebook-aggregate-verification` blocker (open since RUN_075), not a new threshold event. HELD.
+
+**TripAdvisor** — 0/unclaimed HELD. Clean read this run: neither the recurring "Travelers' Choice award" page-template artifact nor the cross-property bleed set (120-acre ranch, "15 minutes from downtown Austin", Lonesome Dove, $35–70) resurfaced — first clean read of either artifact family in several runs.
+
+**Expedia — headline of this run:** 8.0 anchor DIRECTLY RECONFIRMED via an expedia.com-restricted query ("a solid guest review rating of 8.0"), bound to entity h89565924's listing page. First direct reconfirmation since RUN_074 — RUN_075 and RUN_076 each held the anchor only on absence of a contradicting signal, not a fresh read. The recurring 9.0 Hotels.com-bleed value did not surface this run.
+
+**Google** — deliberately not re-queried (contamination discipline, RUN_070+). Authoritative 130/4.9★ now 116 days stale.
+
+### Done-log check
+
+Re-read `rancho-done-log.md` — no new review-reply RESOLVED entries since RUN_076 (last relevant is still 2026-04-15). Google unreplied=1, Facebook unreplied≥1, Knot unreplied=1 all HELD. Two drafts (Cassie Google 5★, Haylee Knot 1★) remain UNPOSTED, day count 115 → 116.
+
+### Re-Verify Gate log
+
+```
+[2026-09-12 09:30] re-verify hipcamp-voice-violations   — still_true — live=both strings verbatim prior=verbatim-confirmed(RUN_076)
+[2026-09-12 09:30] re-verify hipcamp-count               — still_true — live=no count signal prior=0
+[2026-09-12 09:30] re-verify facebook-aggregate          — verification_gap (continuation, blocker already open) — live=NOT_SURFACED prior=6/86%(2026-08-21)
+[2026-09-12 09:30] re-verify theknot-haylee               — still_true — live=still indexed verbatim, unreplied, day 198 prior=day 197
+[2026-09-12 09:30] re-verify theknot-count-rating         — not_reconfirmed — live=no numeric signal this run prior=8/4.5star (held)
+[2026-09-12 09:30] re-verify tripadvisor-status            — still_true — live=0/unclaimed, clean read (no artifacts) prior=0/unclaimed
+[2026-09-12 09:30] re-verify expedia-rating                — resolved(reconfirmed) — live=8.0 directly reconfirmed prior=not_reconfirmed(RUN_075/076)
+[2026-09-12 09:30] re-verify google-reviews-count           — deliberately not re-run (contamination discipline) — carries 130@4.9star, now 116d stale
+[2026-09-12 09:30] re-verify two-drafts-unposted            — still_true — live=day 116 prior=day 115
+```
+
+**Tally:** 5 still_true · 1 resolved(direct reconfirmation) · 1 not_reconfirmed · 1 verification-gap (continuation, no new blocker) · 1 deliberately-skipped. 0 net resolved to done-log, 0 new reviews.
+
+### FLAG_FOR_ADAM (5, carried)
+
+1. Haylee L. unreplied, now day 198 / 28.3 weeks.
+2. Two drafts unposted, now day 116.
+3. Facebook review text still a 60-second fix — the aggregate figure has now failed to surface 5 runs running.
+4. Expedia count-6 promotion remains a rule question with all evidence preconditions met; still with Adam.
+5. Eight-plus open blockers, most naming the identical remedy (rendering/residential-proxy scraper) — still one purchase, not several workarounds.
+
+### Ownership violation check
+
+None found.
+
+### Scope change NOT made unilaterally
+
+ResortPass (53) and Expedia's confirmed pool (6) remain recommended additions to the monitored-scope ownership table in `master-agent.md` and remain **not executed** — 5th consecutive run carrying the recommendation.
+
+Run-log: `run-logs/2026-09-12-review-monitor.md`. Raw: WebSearch-only run, no raw HTML to cache.

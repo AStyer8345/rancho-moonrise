@@ -2341,3 +2341,14 @@ Launch-blocker sweep and conversion sharpening across the primary pages, ahead o
 - Site health clean: sitemap + robots 200, all 30 sitemap URLs individually 200, `validate:site` passes, TTFB 0.20-0.33s across 6 spot-checked routes. PageSpeed Insights API still quota-exceeded — same known blocker family, not a new finding.
 - **Two on-page levers checked for the first time in this task's run history, both clean:** broken internal links (965 `<a href>` links across the 32-page public set resolved against sitemap + `vercel.json` rewrite routes — `validate-site.py` checks asset `src`/`srcset` resolution but not link targets — 0 broken); and duplicate `<title>`/meta description across all 32 pages (only duplicate pair is `site/pages/weddings.html` vs. the known untracked, `.gitignore`d, byte-identical `weddings 2.html` copy — never deployed or crawlable, not a real duplicate-content defect).
 - `site/pages/weddings 2.html` duplicate still present, still not actioned (same family logged 8/31, 9/10, 9/11). Run-log: `run-logs/2026-09-12-seo.md`.
+
+## 2026-09-12 — rancho-review-monitor (RUN_077; Expedia 8.0 anchor directly reconfirmed, TripAdvisor clean read)
+
+- 1-day gap since RUN_076. Brand canary PASSED. No new reviews on any platform.
+- **Headline: Expedia's 8.0/h89565924 anchor directly reconfirmed for the first time since RUN_074** — an expedia.com-restricted query returned "a solid guest review rating of 8.0"; the recurring 9.0 Hotels.com-bleed value did not surface this run. RUN_075/RUN_076 had each held the anchor only on absence of a contradicting signal.
+- Hipcamp voice violations ("34-acre ranch", "a bar") re-confirmed verbatim again — HELD. A new descriptive detail ("22 sites") surfaced for the first time, logged only, not a violation.
+- The Knot: Haylee L.'s 1-star review body re-confirmed still indexed verbatim, no owner response found. Unreplied day count 197→198 (28.3 weeks).
+- Facebook: 6/86% aggregate not re-surfaced a 5th consecutive run — continuation under the existing `facebook-aggregate-verification` blocker (open since RUN_075), not a new threshold event.
+- TripAdvisor: 0/unclaimed HELD — first clean read in several runs (neither the recurring Travelers' Choice artifact nor the cross-property bleed set resurfaced).
+- Google: deliberately not re-queried (contamination discipline, RUN_070+); authoritative 130/4.9★ now 116 days stale.
+- Two drafts (Cassie Google 5★, Haylee Knot 1★) remain unposted, day 116. Status stays URGENT on the standing condition, not a new one. Run-log: `run-logs/2026-09-12-review-monitor.md`.

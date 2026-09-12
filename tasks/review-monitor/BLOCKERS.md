@@ -118,6 +118,7 @@ Append-only. If a live verification path fails 3 consecutive runs for the same c
 - **Resolution path:** same family as `facebook-review-text` — 60 seconds on the actual Page (open Reviews tab, read the current count/percentage directly) resolves both blockers at once. Alternatively, a rendering/residential-proxy scraper (Apify) — same remedy already proposed for Hipcamp, The Knot, TripAdvisor, Expedia.
 - **Logged:** 2026-09-10
 - **Update 2026-09-11 (RUN_076):** 6/86% NOT re-surfaced a 4th consecutive run — a `site:facebook.com` query returned only unrelated OTA/travel results, no Facebook aggregate token. This is a continuation under the already-open blocker, not a new threshold event. HELD, not assumed changed.
+- **Update 2026-09-12 (RUN_077):** 6/86% NOT re-surfaced a 5th consecutive run — a `facebook.com`-restricted query returned only page metadata (1,137 likes/333 talking-about/576 check-ins) plus the recurring 9.0 Hotels.com bleed, no Facebook aggregate token. Continuation, not a new threshold event. HELD, not assumed changed.
 
 ---
 
