@@ -1,0 +1,259 @@
+{
+  "before": {
+    "fetchTime": "2026-09-16T16:39:01.127Z",
+    "url": "https://ranchomoonrise.com/",
+    "lighthouseVersion": "13.4.1",
+    "scores": {
+      "performance": 0.7,
+      "accessibility": 0.93,
+      "best-practices": 1,
+      "seo": 0.92
+    },
+    "metrics": {
+      "first-contentful-paint": 2856.5564999999997,
+      "largest-contentful-paint": 5433.054,
+      "total-blocking-time": 16,
+      "cumulative-layout-shift": 0
+    }
+  },
+  "after": {
+    "fetchTime": "2026-09-16T16:51:39.393Z",
+    "url": "https://ranchomoonrise.com/",
+    "lighthouseVersion": "13.4.1",
+    "scores": {
+      "performance": 0.99,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    },
+    "metrics": {
+      "first-contentful-paint": 1107.25,
+      "largest-contentful-paint": 2138.992,
+      "total-blocking-time": 0,
+      "cumulative-layout-shift": 0.003927879064184538
+    }
+  },
+  "browser": {
+    "rows": [
+      {
+        "route": "/",
+        "styled": true,
+        "script": true,
+        "overflow": false,
+        "broken": []
+      },
+      {
+        "route": "/accommodations/",
+        "styled": true,
+        "script": true,
+        "overflow": false,
+        "broken": []
+      },
+      {
+        "route": "/weddings/",
+        "styled": true,
+        "script": true,
+        "overflow": false,
+        "broken": []
+      },
+      {
+        "route": "/events/",
+        "styled": true,
+        "script": true,
+        "overflow": false,
+        "broken": []
+      },
+      {
+        "route": "/host-your-event/",
+        "styled": true,
+        "script": true,
+        "overflow": false,
+        "broken": []
+      },
+      {
+        "route": "/contact/",
+        "styled": true,
+        "script": true,
+        "overflow": false,
+        "broken": []
+      },
+      {
+        "route": "/faqs/",
+        "styled": true,
+        "script": true,
+        "overflow": false,
+        "broken": []
+      },
+      {
+        "route": "/policies/",
+        "styled": true,
+        "script": true,
+        "overflow": false,
+        "broken": []
+      },
+      {
+        "route": "/accessibility/",
+        "styled": true,
+        "script": true,
+        "overflow": false,
+        "broken": []
+      },
+      {
+        "route": "/videos/",
+        "styled": true,
+        "script": true,
+        "overflow": false,
+        "broken": []
+      },
+      {
+        "route": "/safari-tents-near-austin/",
+        "styled": true,
+        "script": true,
+        "overflow": false,
+        "broken": []
+      },
+      {
+        "route": "/corporate-retreats/",
+        "styled": true,
+        "script": true,
+        "overflow": false,
+        "broken": []
+      },
+      {
+        "route": "/blog/",
+        "styled": true,
+        "script": true,
+        "overflow": false,
+        "broken": []
+      },
+      {
+        "route": "/blog/glamping-near-austin-texas/",
+        "styled": true,
+        "script": true,
+        "overflow": false,
+        "broken": []
+      },
+      {
+        "route": "/blog/wedding-venues-near-austin/",
+        "styled": true,
+        "script": true,
+        "overflow": false,
+        "broken": []
+      },
+      {
+        "route": "/blog/corporate-retreat-near-austin/",
+        "styled": true,
+        "script": true,
+        "overflow": false,
+        "broken": []
+      },
+      {
+        "route": "/blog/corporate-retreat-planning-guide-texas/",
+        "styled": true,
+        "script": true,
+        "overflow": false,
+        "broken": []
+      },
+      {
+        "route": "/blog/things-to-do-manor-tx/",
+        "styled": true,
+        "script": true,
+        "overflow": false,
+        "broken": []
+      },
+      {
+        "route": "/blog/things-to-do-near-austin-with-kids/",
+        "styled": true,
+        "script": true,
+        "overflow": false,
+        "broken": []
+      },
+      {
+        "route": "/blog/bachelorette-party-austin-texas/",
+        "styled": true,
+        "script": true,
+        "overflow": false,
+        "broken": []
+      },
+      {
+        "route": "/blog/ranch-wedding-texas/",
+        "styled": true,
+        "script": true,
+        "overflow": false,
+        "broken": []
+      },
+      {
+        "route": "/blog/weekend-getaways-near-austin/",
+        "styled": true,
+        "script": true,
+        "overflow": false,
+        "broken": []
+      },
+      {
+        "route": "/blog/pool-day-pass-austin/",
+        "styled": true,
+        "script": true,
+        "overflow": false,
+        "broken": []
+      },
+      {
+        "route": "/blog/glamping-vs-camping/",
+        "styled": true,
+        "script": true,
+        "overflow": false,
+        "broken": []
+      },
+      {
+        "route": "/blog/summer-glamping-near-austin/",
+        "styled": true,
+        "script": true,
+        "overflow": false,
+        "broken": []
+      },
+      {
+        "route": "/blog/austin-bachelorette-ranch-vs-bar-crawl/",
+        "styled": true,
+        "script": true,
+        "overflow": false,
+        "broken": []
+      },
+      {
+        "route": "/blog/corporate-retreat-ranch-vs-hotel/",
+        "styled": true,
+        "script": true,
+        "overflow": false,
+        "broken": []
+      },
+      {
+        "route": "/blog/mothers-day-near-austin/",
+        "styled": true,
+        "script": true,
+        "overflow": false,
+        "broken": []
+      },
+      {
+        "route": "/blog/birthday-party-venue-near-austin/",
+        "styled": true,
+        "script": true,
+        "overflow": false,
+        "broken": []
+      },
+      {
+        "route": "/blog/yoga-retreat-near-austin/",
+        "styled": true,
+        "script": true,
+        "overflow": false,
+        "broken": []
+      }
+    ],
+    "errors": []
+  },
+  "formChecks": [
+    "FAQ state",
+    "menu escape/focus",
+    "mock inquiry duplicate guard",
+    "error input retention and escaped text",
+    "success and attribution",
+    "no-JS contact fallback"
+  ]
+}

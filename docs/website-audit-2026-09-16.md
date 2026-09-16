@@ -6,20 +6,20 @@ The site has a recognizable ranch identity, useful booking paths, genuine proper
 
 The main uncertainty is business performance: a technically healthy page does not prove that organic traffic, AI referrals, or qualified inquiries are increasing. Current Search Console and conversion reports were not available for this audit.
 
-## Baseline: live mobile Lighthouse
-| Check | Before |
-|---|---:|
-| Performance | 70/100 |
-| Accessibility | 93/100 |
-| Best practices | 100/100 |
-| Technical SEO | 92/100 |
-| Largest contentful paint | 5.4 seconds |
-| First contentful paint | 2.9 seconds |
+## Before and after: live mobile Lighthouse
+| Check | Before | After |
+|---|---:|---:|
+| Performance | 70/100 | 99/100 |
+| Accessibility | 93/100 | 100/100 |
+| Best practices | 100/100 | 100/100 |
+| Technical SEO | 92/100 | 100/100 |
+| Largest contentful paint | 5.4 seconds | 2.1 seconds |
+| First contentful paint | 2.9 seconds | 1.1 seconds |
 
-One controlled browser lab run, not real-user Core Web Vitals or a ranking score. The same configuration will be rerun after deployment. Local preview scores are not compared with production because the local server does not apply production compression/caching.
+One before/after pair of browser lab runs with the same Lighthouse configuration on the live homepage; not real-user Core Web Vitals, a sitewide score, or a ranking score. Normal test variability applies. After measurement: September 16, release ae5160d, production deployment READY. Local preview scores are not compared with production because the local server does not apply production compression/caching.
 
 ## Repairs in this release
-- **Broken blog assets:** fixed root-relative paths for stylesheets, scripts and images. Nested `/blog/.../` URLs previously resolved `../css` and `../js` under `/blog/`, producing 404s despite the page itself returning 200. The validator now resolves assets against their public routes and checks stylesheet links; it reproduced the original failure and passed after the repair.
+- **Broken blog assets:** fixed root-relative paths for stylesheets, scripts and images. Nested `/blog/.../` URLs previously resolved `../css` and `../js` under `/blog/`, producing 404s despite the page itself returning 200. Also made the ranch-versus-hotel comparison cards stack on narrow screens. The validator now resolves assets against their public routes and checks stylesheet links; it reproduced the original failure and passed after the repair.
 - **Photography and speed:** versioned, compressed WebP derivatives; a 768px option for phones; smaller transparent navigation logo. Like-for-like retained derivatives total 9.73 MB versus 14.46 MB previously, about 33% smaller across the asset set. This is not the download size of a single page visit. Originals remain available. The new 768px homepage cabin image is 62 KB; the old 1024px opening image was 175 KB.
 - **First impression:** the homepage opens on actual cabins, with distinct event and stay calls to action. The about section shows ranch grounds; the stay image shows the tent interior instead of a pillow detail. The mobile wedding hero uses an existing portrait photograph instead of heavily cropping a landscape close-up.
 - **Honest image descriptions:** corrected photos mislabeled as sunset, aerial views, evening scenes, or dinner setups. This helps visitors using screen readers and improves descriptive accuracy for search.
@@ -62,4 +62,4 @@ Remaining image work: replace genuinely low-resolution accommodation thumbnails 
 6. **Keep maintenance focused.** Avoid repeated schema additions that do not improve the guest experience. Preserve the existing five-file unpublished work in the original checkout; review that separate work on its own merits.
 
 ## Verification boundaries
-Seven main pages were inspected at a 390px mobile viewport; no horizontal overflow, broken loaded images or JavaScript errors were found. Keyboard navigation and FAQ state were checked. Contact success/error behavior was tested with a local mocked endpoint, including duplicate prevention, input retention, escaping and attribution. JavaScript-disabled contact fallback was checked. No live inquiry, guest email, payment or booking was submitted. A real-user speed assessment and an authenticated analytics/CRM delivery audit remain separate follow-ups.
+All 30 sitemap pages were browser-checked at a 390px mobile viewport after the asset-path and comparison-grid repairs; no horizontal overflow, broken loaded images or JavaScript errors were found. Keyboard navigation and FAQ state were checked. Contact success/error behavior was tested with a local mocked endpoint, including duplicate prevention, input retention, escaping and attribution. JavaScript-disabled contact fallback was checked. No live inquiry, guest email, payment or booking was submitted. A real-user speed assessment and an authenticated analytics/CRM delivery audit remain separate follow-ups.

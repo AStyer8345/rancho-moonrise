@@ -63,8 +63,8 @@ The 4 accommodation files are literally 340×340 thumbnails masquerading as cont
 
 ## Last Worked On
 
-- 2026-09-16 — Website audit and focused repairs prepared in isolated `codex/rancho-site-audit-2026-09-16`; original five-file uncommitted set preserved. Report: `docs/website-audit-2026-09-16.md`. Baseline mobile Lighthouse 70 performance / 93 accessibility / 100 best practices / 92 SEO; production recheck follows deployment.
-- Repaired responsive photo delivery, photo/alt mismatches, expired event fallbacks, slideshow controls, navigation/FAQ accessibility, mobile chat overlap and client-side inquiry feedback. All 30 live sitemap routes healthy; seven-page local browser checks and mocked form tests pass. No live test inquiries or guest messages.
+- 2026-09-16 — Website audit and focused repairs prepared in isolated `codex/rancho-site-audit-2026-09-16`; original five-file uncommitted set preserved. Report: `docs/website-audit-2026-09-16.md`. Baseline mobile Lighthouse 70 performance / 93 accessibility / 100 best practices / 92 SEO; live recheck improved to 99 / 100 / 100 / 100, with LCP 5.4s → 2.1s (one lab pair).
+- Repaired responsive photo delivery, photo/alt mismatches, expired event fallbacks, slideshow controls, navigation/FAQ accessibility, mobile chat overlap and client-side inquiry feedback. All 30 live sitemap routes healthy; all-30-page local browser checks and mocked form tests pass; nested blog asset 404s and comparison-card overflow repaired. No live test inquiries or guest messages.
 - Ashley’s private Friday training packet remains in `/Users/adamstyer/Documents/Rancho Moonrise Ashley Training/`. Audit correction: the custom admin edits selected content; page-specific wiring must be taught accurately. Guest replies remain reviewed Gmail drafts; Ashley’s access and delivery need verification.
 - Vercel CLI access works; connector team scope returned 403. Website GitHub repository public, CRM private. Older operational and review-monitor history remains in CHANGELOG.md and run-logs.
 
