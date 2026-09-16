@@ -41,6 +41,14 @@ Found 2026-09-09 by `rancho-site-daily`; landed the same day by `rancho-review-m
 
 ## 🔥 NEEDS ADAM (highest leverage this week)
 
+### Ashley training on Friday September 18 — added 2026-09-16
+
+- [x] Prepare private homework, connector inventory, operations guide and Friday lesson; inspect current code, GitHub visibility and live n8n workflow configuration.
+- [ ] Share the local training packet with Ashley; collect her computer type, ChatGPT access and GitHub username, then arrange named invitations to both repositories and existing business services.
+- [ ] Verify Ashley’s CRM sign-in and events@ draft access; trace an existing inquiry to actual draft/internal delivery; confirm Flodesk signup handling and last-contact semantics.
+- [ ] Reconnect Vercel connector to the existing team (403 during audit); CLI production inspection works.
+
+
 ### NEEDS ADAM — Apple Maps hours are almost certainly wrong (~2 min) — added 2026-09-04 by `rancho-site-daily`
 
 Live-verified via `maps.apple.com/place?place-id=IECFC57C438E79EC4` (`WebFetch`): listed hours read **"3:00 PM – 5:00 PM daily."** A 2-hour daily window reads like a stale or default value, not real hours for an events and glamping venue. This is the entity behind **Siri and Spotlight** — if either answers a "when is Rancho Moonrise open" or "is Rancho Moonrise open now" question from this data, it will tell people the property is closed almost all day, every day. This task has no Apple Business Connect access to fix it.

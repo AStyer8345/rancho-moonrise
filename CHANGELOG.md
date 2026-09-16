@@ -2352,3 +2352,5 @@ Launch-blocker sweep and conversion sharpening across the primary pages, ahead o
 - TripAdvisor: 0/unclaimed HELD — first clean read in several runs (neither the recurring Travelers' Choice artifact nor the cross-property bleed set resurfaced).
 - Google: deliberately not re-queried (contamination discipline, RUN_070+); authoritative 130/4.9★ now 116 days stale.
 - Two drafts (Cassie Google 5★, Haylee Knot 1★) remain unposted, day 116. Status stays URGENT on the standing condition, not a new one. Run-log: `run-logs/2026-09-12-review-monitor.md`.
+
+- 2026-09-16 — Prepared private Ashley website/CRM/AI training packet for September 18; mapped two repositories and live n8n draft/capture workflows; corrected obsolete no-CRM blocker in CONTEXT. Documented account invitations, connector setup, draft-versus-send behavior and delivery-verification gaps. No application changes, guest messages, test leads or account invitations.
