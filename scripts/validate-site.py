@@ -8,12 +8,18 @@ import re
 import sys
 from html.parser import HTMLParser
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import urlparse, urljoin
 
 
 ROOT = Path(__file__).resolve().parents[1]
 SITE = ROOT / "site"
 APEX = "ranchomoonrise.com"
+# Assets resolve against the public URL, not the rewritten file on disk.
+PUBLIC_ROUTES = {
+    item["destination"]: item["source"]
+    for item in json.loads((ROOT / "vercel.json").read_text())["rewrites"]
+}
+PUBLIC_ROUTES["/index.html"] = "/"
 BANNED_PUBLIC_PATTERNS = (
     "event-lone-star-400.webp",
     "event-lone-star-800.webp",
@@ -89,6 +95,9 @@ def is_internal_asset(value: str) -> bool:
 
 def asset_path(page: Path, value: str) -> Path:
     cleaned = value.split("?", 1)[0].split("#", 1)[0]
+    public_route = PUBLIC_ROUTES.get("/" + page.relative_to(SITE).as_posix())
+    if public_route:
+        return SITE / urljoin(public_route, cleaned).lstrip("/")
     if cleaned.startswith("/"):
         return SITE / cleaned.lstrip("/")
     return page.parent / cleaned
@@ -159,6 +168,10 @@ def main() -> int:
                 value = attrs.get(attr, "")
                 if is_internal_asset(value) and not asset_path(page, value).exists():
                     failures.append(f"{rel}: missing asset {attr}={value}")
+            if tag == "link" and attrs.get("rel") == "stylesheet":
+                value = attrs.get("href", "")
+                if is_internal_asset(value) and not asset_path(page, value).exists():
+                    failures.append(f"{rel}: missing stylesheet at public route: {value}")
             for attr in ("srcset", "data-srcset"):
                 for candidate in attrs.get(attr, "").split(","):
                     value = candidate.strip().split(" ")[0]
