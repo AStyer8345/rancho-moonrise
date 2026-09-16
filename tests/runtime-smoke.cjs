@@ -32,7 +32,7 @@ function response() {
   assert.equal(res.code, 401); assert.equal(calls.length, 0);
   global.fetch = async (url, options) => {
     calls.push({ url, options });
-    if (options.method === 'PUT') return { ok: true };
+    if (options.method === 'PUT') return { ok: true, json: async () => ({ content: { sha: 'offline-updated' } }) };
     return { ok: true, json: async () => ({ content: Buffer.from('Existing log\n').toString('base64'), sha: 'offline-sha' }) };
   };
   res = response();
