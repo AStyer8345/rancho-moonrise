@@ -2360,3 +2360,5 @@ Launch-blocker sweep and conversion sharpening across the primary pages, ahead o
 - 2026-09-16 — Deeper audit found nested blog URLs resolving relative styles/scripts/images under nonexistent `/blog/` asset directories. Repaired public-page asset paths and strengthened route-aware validation, including stylesheet href checks; reproduced failures before repair and confirmed they pass afterward.
 
 - 2026-09-16 — Live homepage Lighthouse improved from 70/93/100/92 to 99/100/100/100 (performance/accessibility/best practices/SEO); LCP 5.4s → 2.1s in one comparable lab pair. All 30 routes browser-checked locally after repairing a narrow-screen comparison grid. Vercel production deployment ae5160d READY and apex alias verified; audit evidence recorded in docs.
+
+- 2026-09-16 — Upgraded package runtime to Node 24 ahead of Vercel’s October 1 Node 20 deployment cutoff. Added offline runtime smoke checks for inquiry field mapping/validation and authenticated task completion; no external writes occur in tests.
