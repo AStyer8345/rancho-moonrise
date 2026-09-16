@@ -14,7 +14,7 @@
 
     var STORAGE_KEY = 'rmEventsPopup';
     var CAP_MS = 3 * 24 * 60 * 60 * 1000; // 3 days
-    var SHOW_DELAY_MS = 2000;
+    var SHOW_DELAY_MS = 10000;
     var lastFocus = null;
 
     function escapeHtml(str) {
@@ -73,7 +73,7 @@
         if (ev.ticket_url) {
             return '<a class="rm-popup-btn" href="' + escapeHtml(ev.ticket_url) + '" target="_blank" rel="noopener">Get Tickets</a>';
         }
-        return '<a class="rm-popup-btn" href="/pages/events.html">Learn More</a>';
+        return '<a class="rm-popup-btn" href="/events/">Learn More</a>';
     }
 
     function buildMarkup(events) {
@@ -157,7 +157,9 @@
                 if (!events || !events.length) { return; }
                 var signature = events.map(function (e) { return e.id; }).sort().join(',');
                 if (!shouldShow(signature)) { return; }
-                setTimeout(function () { open(events, signature); }, SHOW_DELAY_MS);
+                setTimeout(function () {
+                    if (!document.hidden && !document.querySelector('.nav__mobile.is-open')) open(events, signature);
+                }, SHOW_DELAY_MS);
             });
     }
 

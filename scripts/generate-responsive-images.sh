@@ -4,7 +4,7 @@
 #
 # Regenerate the WebP responsive ladder for site/images/.
 #
-# For each source JPG, emits multiple width variants as WebP at q88 so the
+# For each source JPG, emits multiple width variants as WebP at q80 (override with QUALITY=88) so the
 # browser can pick the right one via <img srcset>. Idempotent — re-run after
 # adding new photos and it will skip anything already built.
 #
@@ -26,7 +26,7 @@
 set -euo pipefail
 
 IMG_DIR="$(cd "$(dirname "$0")/../site/images" && pwd)"
-QUALITY=88
+QUALITY=${QUALITY:-80}
 
 # --- Classification ----------------------------------------------------------
 # Basenames in each tier. Anything listed here gets regenerated; anything

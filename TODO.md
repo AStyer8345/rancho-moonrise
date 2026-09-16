@@ -41,6 +41,14 @@ Found 2026-09-09 by `rancho-site-daily`; landed the same day by `rancho-review-m
 
 ## 🔥 NEEDS ADAM (highest leverage this week)
 
+### Website audit follow-up — September 16, 2026
+- [x] Audit 30 sitemap routes and seven main visitor flows; optimize selected images, repair photo descriptions, expired event fallbacks and accessibility/form feedback.
+- [ ] Verify the production deployment and record live Lighthouse results in `docs/website-audit-2026-09-16.md`.
+- [ ] Connect/verify analytics destination; obtain Search Console performance and URL Inspection evidence.
+- [ ] Map and finish custom-admin page wiring before Ashley edits independently; sync important CMS content into static HTML.
+- [ ] Verify current review count/quote provenance; collect full-resolution accommodation originals.
+
+
 ### Ashley training on Friday September 18 — added 2026-09-16
 
 - [x] Prepare private homework, connector inventory, operations guide and Friday lesson; inspect current code, GitHub visibility and live n8n workflow configuration.

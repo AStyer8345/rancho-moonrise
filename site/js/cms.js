@@ -19,9 +19,12 @@
     // Simple fetch wrapper with timeout
     function query(table, params) {
         var url = REST + table + '?' + params + '&select=*';
-        return fetch(url, { headers: HEADERS })
+        var controller = new AbortController();
+        var timer = setTimeout(function () { controller.abort(); }, 8000);
+        return fetch(url, { headers: HEADERS, signal: controller.signal })
             .then(function (r) { return r.ok ? r.json() : []; })
-            .catch(function () { return []; });
+            .catch(function () { return []; })
+            .finally(function () { clearTimeout(timer); });
     }
 
     function formatDate(d) {
@@ -95,14 +98,16 @@
         var slideshow = document.getElementById('eventSlideshow');
         var eventsGrid = document.querySelector('.events-grid');
 
-        var today = new Date().toISOString().slice(0, 10);
+        if (!slideshow && !eventsGrid) return;
+        var today = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Chicago' });
         query('rancho_events', 'is_active=eq.true&event_date=gte.' + today + '&order=event_date')
             .then(function (data) {
                 if (!data.length) return; // Keep hardcoded fallback
 
                 // Update the event slideshow (artwork images)
                 if (slideshow) {
-                    var slidesHtml = data.map(function (ev, i) {
+                    var artworkEvents = data.filter(function (ev) { return ev.artwork_url; });
+                    var slidesHtml = artworkEvents.map(function (ev, i) {
                         return '<div class="event-slideshow__slide' + (i === 0 ? ' is-active' : '') + '">' +
                             (ev.artwork_url
                                 ? '<img src="' + escapeHtml(ev.artwork_url) + '" alt="' + escapeHtml(ev.title) + '" width="800" height="800" loading="lazy">'
@@ -110,11 +115,11 @@
                         '</div>';
                     }).join('');
 
-                    var dotsHtml = data.map(function (ev, i) {
+                    var dotsHtml = artworkEvents.map(function (ev, i) {
                         return '<button class="event-slideshow__dot' + (i === 0 ? ' is-active' : '') + '" aria-label="Event ' + (i + 1) + '" data-slide="' + i + '"></button>';
                     }).join('');
 
-                    slideshow.innerHTML = slidesHtml +
+                    if (artworkEvents.length) slideshow.innerHTML = slidesHtml +
                         '<div class="event-slideshow__dots">' + dotsHtml + '</div>';
 
                     // Re-init slideshow JS for new elements
@@ -131,7 +136,7 @@
                                 '<p class="event-card__date">' + formatDate(ev.event_date) + '</p>' +
                                 '<h3 class="event-card__title">' + escapeHtml(ev.title) + '</h3>' +
                                 '<p class="event-card__desc">' + escapeHtml(ev.description) + '</p>' +
-                                '<a href="/pages/events.html" class="event-card__link">Learn More &rarr;</a>' +
+                                '<a href="/events/" class="event-card__link">View event details &rarr;</a>' +
                             '</div>' +
                         '</div>';
                     }).join('');
@@ -148,8 +153,6 @@
         var dots = show.querySelectorAll('.event-slideshow__dot');
         var current = 0;
         var count = slides.length;
-        var interval = null;
-
         function goTo(index) {
             if (slides[current]) {
                 slides[current].classList.remove('is-active');
@@ -160,21 +163,13 @@
             dots[current].classList.add('is-active');
         }
 
-        function start() {
-            if (interval) clearInterval(interval);
-            interval = setInterval(function () { goTo(current + 1); }, 4000);
-        }
-
         dots.forEach(function (dot) {
             dot.addEventListener('click', function () {
                 goTo(parseInt(this.dataset.slide, 10));
-                start();
             });
         });
 
-        show.addEventListener('mouseenter', function () { if (interval) clearInterval(interval); });
-        show.addEventListener('mouseleave', start);
-        start();
+
     }
 
     // ---- Load Hero Photos ----

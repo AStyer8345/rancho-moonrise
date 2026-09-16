@@ -9,7 +9,6 @@
     // ---------- Nav scroll effect ----------
     const nav = document.querySelector('.nav');
     if (nav) {
-        let lastScroll = 0;
         window.addEventListener('scroll', function () {
             const scrollY = window.scrollY;
             if (scrollY > 60) {
@@ -17,7 +16,6 @@
             } else {
                 nav.classList.remove('nav--scrolled');
             }
-            lastScroll = scrollY;
         }, { passive: true });
     }
 
@@ -31,6 +29,7 @@
             mobileMenu.classList.add('is-open');
             toggle.setAttribute('aria-expanded', 'true');
             document.body.style.overflow = 'hidden';
+            if (closeBtn) closeBtn.focus();
         });
 
         if (closeBtn) {
@@ -44,6 +43,13 @@
 
         // Close on escape
         document.addEventListener('keydown', function (e) {
+            if (e.key === 'Tab' && mobileMenu.classList.contains('is-open')) {
+                var controls = Array.from(mobileMenu.querySelectorAll('a[href], button:not([disabled])'));
+                var first = controls[0];
+                var last = controls[controls.length - 1];
+                if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+                else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+            }
             if (e.key === 'Escape' && mobileMenu.classList.contains('is-open')) {
                 closeMobile();
             }
@@ -55,6 +61,7 @@
             mobileMenu.classList.remove('is-open');
             if (toggle) toggle.setAttribute('aria-expanded', 'false');
             document.body.style.overflow = '';
+            if (toggle) toggle.focus();
         }
     }
 
@@ -83,12 +90,15 @@
         var answer = item.querySelector('.faq-answer');
 
         if (question && answer) {
+            question.setAttribute('aria-expanded', item.classList.contains('is-open') ? 'true' : 'false');
             question.addEventListener('click', function () {
                 var isOpen = item.classList.contains('is-open');
 
                 // Close all others
                 faqItems.forEach(function (other) {
                     other.classList.remove('is-open');
+                    var otherQuestion = other.querySelector('.faq-question');
+                    if (otherQuestion) otherQuestion.setAttribute('aria-expanded', 'false');
                     var otherAnswer = other.querySelector('.faq-answer');
                     if (otherAnswer) otherAnswer.style.maxHeight = null;
                 });
@@ -96,6 +106,7 @@
                 // Toggle current
                 if (!isOpen) {
                     item.classList.add('is-open');
+                    question.setAttribute('aria-expanded', 'true');
                     answer.style.maxHeight = answer.scrollHeight + 'px';
                 }
             });
@@ -112,6 +123,19 @@
         var slideCount = slides.length;
         var autoplayInterval = null;
         var autoplayDelay = 5000;
+        var pauseButton = slideshow.querySelector('.hero__pause');
+        var userPaused = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        function updatePauseLabel() {
+            if (!pauseButton) return;
+            pauseButton.textContent = userPaused ? 'Play' : 'Pause';
+            pauseButton.setAttribute('aria-label', userPaused ? 'Play slideshow' : 'Pause slideshow');
+        }
+        if (pauseButton) pauseButton.addEventListener('click', function () {
+            userPaused = !userPaused;
+            updatePauseLabel();
+            if (userPaused) stopAutoplay(); else startAutoplay();
+        });
+        updatePauseLabel();
 
         // Lazy-load slide images on first display. The slides are stacked at
         // inset:0 so the browser treats them all as "in viewport" — native
@@ -159,7 +183,7 @@
 
         function startAutoplay() {
             stopAutoplay();
-            autoplayInterval = setInterval(nextSlide, autoplayDelay);
+            if (!userPaused && !document.hidden) autoplayInterval = setInterval(nextSlide, autoplayDelay);
         }
 
         function stopAutoplay() {
@@ -189,43 +213,18 @@
         slideshow.addEventListener('mouseenter', stopAutoplay);
         slideshow.addEventListener('mouseleave', startAutoplay);
 
+        slideshow.addEventListener('focusin', stopAutoplay);
+        slideshow.addEventListener('focusout', function (e) {
+            if (!slideshow.contains(e.relatedTarget)) startAutoplay();
+        });
+        document.addEventListener('visibilitychange', function () {
+            if (document.hidden) stopAutoplay(); else startAutoplay();
+        });
         // Start autoplay
         startAutoplay();
     }
 
-    // ---------- Event Slideshow ----------
-    var eventShow = document.getElementById('eventSlideshow');
-    if (eventShow) {
-        var eSlides = eventShow.querySelectorAll('.event-slideshow__slide');
-        var eDots = eventShow.querySelectorAll('.event-slideshow__dot');
-        var eCurrent = 0;
-        var eCount = eSlides.length;
-        var eInterval = null;
-
-        function goToEvent(index) {
-            eSlides[eCurrent].classList.remove('is-active');
-            eDots[eCurrent].classList.remove('is-active');
-            eCurrent = (index + eCount) % eCount;
-            eSlides[eCurrent].classList.add('is-active');
-            eDots[eCurrent].classList.add('is-active');
-        }
-
-        function startEventAutoplay() {
-            if (eInterval) clearInterval(eInterval);
-            eInterval = setInterval(function () { goToEvent(eCurrent + 1); }, 4000);
-        }
-
-        eDots.forEach(function (dot) {
-            dot.addEventListener('click', function () {
-                goToEvent(parseInt(this.getAttribute('data-slide'), 10));
-                startEventAutoplay();
-            });
-        });
-
-        eventShow.addEventListener('mouseenter', function () { if (eInterval) clearInterval(eInterval); });
-        eventShow.addEventListener('mouseleave', startEventAutoplay);
-        startEventAutoplay();
-    }
+    // Event artwork is hydrated and controlled by cms.js.
 
     // ---------- Review marquee: touch-pause so mobile users can finish reading ----------
     // The marquee itself is CSS-driven (`animation: marquee-scroll 120s linear`).
@@ -252,7 +251,7 @@
     // ---------- Smooth scroll for anchor links ----------
     document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
         anchor.addEventListener('click', function (e) {
-            var target = document.querySelector(this.getAttribute('href'));
+            var target = document.getElementById(this.getAttribute('href').slice(1));
             if (target) {
                 e.preventDefault();
                 target.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -421,8 +420,11 @@
             }
         }
 
+        var submitting = false;
+        var submitted = false;
         form.addEventListener('submit', function (e) {
             e.preventDefault();
+            if (submitting || submitted) return;
 
             if (typeof form.reportValidity === 'function' && !form.reportValidity()) {
                 return;
@@ -458,6 +460,9 @@
                 form.appendChild(status);
             }
 
+            status.setAttribute('role', 'status');
+            status.setAttribute('aria-live', 'polite');
+            submitting = true;
             var submitBtn = form.querySelector('button[type="submit"]');
             var submitBtnLabel = submitBtn ? submitBtn.textContent : null;
             if (submitBtn) {
@@ -478,6 +483,7 @@
                 });
             }).then(function (result) {
                 if (result.ok) {
+                    submitted = true;
                     status.innerHTML = 'Thanks — we got your inquiry. Our team will follow up shortly with availability and the right next steps. If you don\'t hear from us within a business day, call <a href="tel:+17372911260" data-event="phone_click">737-291-1260</a>.';
                     rmTrack('form_submit_success', { inquiry_type: inquiryType });
                     rmTrack(inquiryType + '_inquiry_submit', { page_path: payload.page_path });
@@ -487,9 +493,11 @@
                         // Keep disabled so they can't fire another on the reset form.
                     }
                 } else {
+                    submitting = false;
                     var msg = (result.body && result.body.error) ||
                         'Something went wrong on our side. Please call 737-291-1260 or email events@ranchomoonrise.com.';
-                    status.innerHTML = msg + ' <a href="tel:+17372911260" data-event="phone_click">Call 737-291-1260</a> or <a href="mailto:events@ranchomoonrise.com" data-event="email_click">events@ranchomoonrise.com</a>.';
+                    status.textContent = msg;
+                    status.insertAdjacentHTML('beforeend', ' <a href="tel:+17372911260" data-event="phone_click">Call 737-291-1260</a> or <a href="mailto:events@ranchomoonrise.com" data-event="email_click">events@ranchomoonrise.com</a>.');
                     rmTrack('form_submit_error', { inquiry_type: inquiryType, status: result.status });
                     if (submitBtn) {
                         submitBtn.disabled = false;
@@ -497,6 +505,7 @@
                     }
                 }
             }).catch(function (err) {
+                submitting = false;
                 console.error('inquiry submit failed', err);
                 status.innerHTML = 'We couldn\'t reach our inquiry system. Please call <a href="tel:+17372911260" data-event="phone_click">737-291-1260</a> or email <a href="mailto:events@ranchomoonrise.com" data-event="email_click">events@ranchomoonrise.com</a>.';
                 rmTrack('form_submit_error', { inquiry_type: inquiryType, status: 'network' });
