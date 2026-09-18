@@ -2355,6 +2355,12 @@ Launch-blocker sweep and conversion sharpening across the primary pages, ahead o
 
 - 2026-09-16 — Prepared private Ashley website/CRM/AI training packet for September 18; mapped two repositories and live n8n draft/capture workflows; corrected obsolete no-CRM blocker in CONTEXT. Documented account invitations, connector setup, draft-versus-send behavior and delivery-verification gaps. No application changes, guest messages, test leads or account invitations.
 
+## 2026-09-18 — rancho-review-monitor (RUN_078)
+- Scraped 6 platforms (Facebook, Hipcamp, The Knot, TripAdvisor, Expedia, Google) via WebSearch, no new reviews found.
+- Resolved 1 stale claim: `facebook-aggregate-verification` blocker (6/86% re-surfaced after 5-run gap).
+- Held: Hipcamp voice violations, The Knot Haylee L. unreplied (day 204), TripAdvisor 0/unclaimed, Expedia 8.0 (not reconfirmed this run), Google 130/4.9★ (122 days stale, deliberately not re-queried).
+- No responses drafted (no new actionable reviews). Two drafts remain unposted (day 122).
+
 - 2026-09-16 — Audited flow, photos, mobile speed, SEO/AEO and admin wiring. Focused release adds versioned optimized photography, phone-sized variants, accurate alt text, cabin-first homepage and portrait mobile wedding hero; removes expired homepage event fallbacks and duplicate carousel timers; improves focus/FAQ/slideshow controls, contrast, mobile chat placement and safe duplicate-resistant inquiry feedback. Static, syntax, seven-page browser and mocked inquiry tests pass. See `docs/website-audit-2026-09-16.md`. Original unpublished work preserved.
 
 - 2026-09-16 — Deeper audit found nested blog URLs resolving relative styles/scripts/images under nonexistent `/blog/` asset directories. Repaired public-page asset paths and strengthened route-aware validation, including stylesheet href checks; reproduced failures before repair and confirmed they pass afterward.

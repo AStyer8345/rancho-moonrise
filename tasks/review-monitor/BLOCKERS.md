@@ -119,6 +119,7 @@ Append-only. If a live verification path fails 3 consecutive runs for the same c
 - **Logged:** 2026-09-10
 - **Update 2026-09-11 (RUN_076):** 6/86% NOT re-surfaced a 4th consecutive run — a `site:facebook.com` query returned only unrelated OTA/travel results, no Facebook aggregate token. This is a continuation under the already-open blocker, not a new threshold event. HELD, not assumed changed.
 - **Update 2026-09-12 (RUN_077):** 6/86% NOT re-surfaced a 5th consecutive run — a `facebook.com`-restricted query returned only page metadata (1,137 likes/333 talking-about/576 check-ins) plus the recurring 9.0 Hotels.com bleed, no Facebook aggregate token. Continuation, not a new threshold event. HELD, not assumed changed.
+- **RESOLVED 2026-09-18 (RUN_078):** 6/86% RE-SURFACED after 5 consecutive gaps (RUN_073–077) — a `site:facebook.com` query returned "Rancho Moonrise has an 86% recommendation rate based on 6 reviews on its Facebook page." Value unchanged from the last confirmed read (RUN_071, 2026-08-21). Verification path is working again; blocker closed. **`facebook-review-text` (review body) remains open, unaffected by this resolution — still a 60-second fix on the Page.**
 
 ---
 
