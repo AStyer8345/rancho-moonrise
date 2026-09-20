@@ -1046,6 +1046,8 @@ All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms. Li
 
 ## Done
 
+- [x] 2026-09-20 — Add Adam Styer contributor bio, mortgage backlink and footer-only discovery at `/website-credits/`.
+
 ### April 10, 2026
 - [x] Mark Done system shipped — `/api/complete` serverless fn + GitHub Contents API log append + Bearer auth via shared `BRIEFING_AUTH_TOKEN`
 - [x] Done tab added to improvement-plan.html — completed tasks physically relocate into `#done-tasks-container` (newest on top), not just faded in place

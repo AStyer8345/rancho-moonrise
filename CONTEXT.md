@@ -63,10 +63,10 @@ The 4 accommodation files are literally 340×340 thumbnails masquerading as cont
 
 ## Last Worked On
 
-- 2026-09-16 — Website audit and focused repairs published in isolated `codex/rancho-site-audit-2026-09-16`; original five-file uncommitted set preserved. Report: `docs/website-audit-2026-09-16.md`. Baseline mobile Lighthouse 70 performance / 93 accessibility / 100 best practices / 92 SEO; live recheck improved to 99 / 100 / 100 / 100, with LCP 5.4s → 2.1s (one lab pair).
-- Repaired responsive photo delivery, photo/alt mismatches, expired event fallbacks, slideshow controls, navigation/FAQ accessibility, mobile chat overlap and client-side inquiry feedback. All 30 live sitemap routes healthy; all-30-page local browser checks and mocked form tests pass; nested blog asset 404s and comparison-card overflow repaired. Node 24 runtime upgrade and offline API checks address the October 1 hosting cutoff. No live test inquiries or guest messages.
-- Ashley’s private Friday training packet remains in `/Users/adamstyer/Documents/Rancho Moonrise Ashley Training/`. Audit correction: the custom admin edits selected content; page-specific wiring must be taught accurately. Guest replies remain reviewed Gmail drafts; Ashley’s access and delivery need verification.
-- Vercel CLI access works; connector team scope returned 403. Website GitHub repository public, CRM private. Older operational and review-monitor history remains in CHANGELOG.md and run-logs.
+- 2026-09-20 — Added `/website-credits/` with an accurate Adam Styer website-contributor bio and a visible link to `https://styermortgage.com/`. Footer-only discovery; main navigation, booking, inquiry forms, guest content and Ashley bylines unchanged. Added canonical, matching Person/WebPage data and sitemap entry.
+- Worked from current remote main in an isolated clone. All 30 affected existing public pages matched production byte-for-byte before editing. Site validation and offline runtime checks pass; browser and release verification recorded with this change.
+- Ashley’s private Friday training packet remains in `/Users/adamstyer/Documents/Rancho Moonrise Ashley Training/`. Admin routing plan remains a separate workstream; guest replies remain reviewed Gmail drafts and Ashley’s access/delivery need verification.
+- Vercel CLI access works; website GitHub repository is public and CRM private. Prior audit evidence: `docs/website-audit-2026-09-16.md`. Earlier operational and review-monitor history remains in CHANGELOG.md and run-logs.
 
 ## Mark Done System — How It Works
 

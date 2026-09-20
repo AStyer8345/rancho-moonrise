@@ -2362,3 +2362,11 @@ Launch-blocker sweep and conversion sharpening across the primary pages, ahead o
 - 2026-09-16 — Live homepage Lighthouse improved from 70/93/100/92 to 99/100/100/100 (performance/accessibility/best practices/SEO); LCP 5.4s → 2.1s in one comparable lab pair. All 30 routes browser-checked locally after repairing a narrow-screen comparison grid. Vercel production deployment ae5160d READY and apex alias verified; audit evidence recorded in docs.
 
 - 2026-09-16 — Upgraded package runtime to Node 24 ahead of Vercel’s October 1 Node 20 deployment cutoff. Added offline runtime smoke checks for inquiry field mapping/validation and authenticated task completion; no external writes occur in tests.
+
+
+## 2026-09-20 — Website contributor bio
+
+- Added a short Adam Styer bio at `/website-credits/`, accurately crediting website development and linking to `https://styermortgage.com/`; no mortgage endorsement or ownership claim.
+- Linked from public page footers and the sitemap; no main-navigation additions. Kept forms, APIs, booking links and existing page content unchanged.
+- Added matching WebPage/Person structured data and an indexable canonical route. Scoped mobile-menu layering to the new page.
+- Validation: production baseline matched all 30 affected existing public pages; `validate:site` and `test:runtime` passed. Browser verification covers 320/390/1440px, visible backlink, assets, footer discovery and mobile menu.

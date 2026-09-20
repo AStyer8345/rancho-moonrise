@@ -40,6 +40,7 @@
     { "source": "/faqs/", "destination": "/pages/faqs.html" },
     { "source": "/policies/", "destination": "/pages/policies.html" },
     { "source": "/accessibility/", "destination": "/pages/accessibility.html" },
+    { "source": "/website-credits/", "destination": "/pages/website-credits.html" },
     { "source": "/videos/", "destination": "/pages/videos.html" },
     { "source": "/safari-tents-near-austin/", "destination": "/pages/safari-tents-near-austin.html" },
     { "source": "/corporate-retreats/", "destination": "/pages/corporate-retreats.html" },
