@@ -100,17 +100,33 @@
 
         if (!slideshow && !eventsGrid) return;
         var today = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Chicago' });
-        query('rancho_events', 'is_active=eq.true&event_date=gte.' + today + '&order=event_date')
-            .then(function (data) {
+        Promise.all([
+            query('rancho_events', 'is_active=eq.true&event_date=gte.' + today + '&order=event_date'),
+            query('site_content', 'block_key=eq.home_event_spotlight')
+        ])
+            .then(function (result) {
+                var data = result[0];
+                var spotlight = result[1][0];
                 if (!data.length) return; // Keep hardcoded fallback
 
                 // Update the event slideshow (artwork images)
                 if (slideshow) {
                     var artworkEvents = data.filter(function (ev) { return ev.artwork_url; });
+                    // The admin can choose one active event to lead the homepage artwork.
+                    // Everything else remains available through the slideshow dots.
+                    if (spotlight && spotlight.body) {
+                        var selectedIndex = artworkEvents.findIndex(function (ev) { return ev.id === spotlight.body; });
+                        if (selectedIndex > 0) {
+                            artworkEvents.unshift(artworkEvents.splice(selectedIndex, 1)[0]);
+                        }
+                    }
                     var slidesHtml = artworkEvents.map(function (ev, i) {
+                        var eventUrl = ev.ticket_url || '/events/';
+                        var external = /^https?:/i.test(eventUrl);
+                        var attrs = external ? ' target="_blank" rel="noopener"' : '';
                         return '<div class="event-slideshow__slide' + (i === 0 ? ' is-active' : '') + '">' +
                             (ev.artwork_url
-                                ? '<img src="' + escapeHtml(ev.artwork_url) + '" alt="' + escapeHtml(ev.title) + '" width="800" height="800" loading="lazy">'
+                                ? '<a class="event-slideshow__link" href="' + escapeHtml(eventUrl) + '" aria-label="View ' + escapeHtml(ev.title) + '"' + attrs + '><img src="' + escapeHtml(ev.artwork_url) + '" alt="' + escapeHtml(ev.title) + '" width="800" height="800" loading="lazy"></a>'
                                 : '') +
                         '</div>';
                     }).join('');

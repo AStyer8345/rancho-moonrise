@@ -1088,8 +1088,13 @@ $$('.tab-btn').forEach(function(btn) {
 // ============================================================
 async function loadEvents() {
     var container = $('#eventsList');
-    var { data, error } = await sb.from('rancho_events')
-        .select('*').order('event_date', { ascending: true }).order('sort_order', { ascending: true });
+    var results = await Promise.all([
+        sb.from('rancho_events').select('*').order('event_date', { ascending: true }).order('sort_order', { ascending: true }),
+        sb.from('site_content').select('body').eq('block_key', 'home_event_spotlight').maybeSingle()
+    ]);
+    var data = results[0].data;
+    var error = results[0].error;
+    var homepageSpotlightId = results[1].data ? results[1].data.body : '';
 
     if (error) { container.innerHTML = '<p class="empty-state">Error loading events.</p>'; return; }
     if (!data.length) { container.innerHTML = '<div class="empty-state"><p>No events yet.</p></div>'; return; }
@@ -1103,6 +1108,7 @@ async function loadEvents() {
         .forEach(function(ev){ inPopup[ev.id] = true; });
 
     container.innerHTML =
+        '<p class="events-hint">Use <strong>Use on homepage</strong> to choose the first event image in the homepage artwork carousel. Clicking the artwork takes visitors to that event\'s ticket link, or the Events page if no ticket link is set.</p>' +
         '<p class="events-hint">The homepage popup shows up to 3 featured upcoming events, soonest first. An event must be <strong>Active</strong> and dated today or later to appear.</p>' +
         data.map(function(ev) {
         var thumb = ev.artwork_url
@@ -1134,12 +1140,29 @@ async function loadEvents() {
             '</div>' +
             '<div class="content-card__actions">' +
                 '<button class="btn btn--secondary btn--sm" onclick="editEvent(\'' + ev.id + '\')">Edit</button>' +
+                '<button class="btn btn--secondary btn--sm" onclick="setHomepageSpotlight(\'' + ev.id + '\')">' + (homepageSpotlightId === ev.id ? 'On Homepage ✓' : 'Use on Homepage') + '</button>' +
                 '<button class="btn btn--secondary btn--sm" onclick="toggleFeatured(\'' + ev.id + '\',' + !ev.show_in_popup + ',' + ev.is_active + ')">' + (ev.show_in_popup ? 'Unfeature' : 'Feature') + '</button>' +
                 '<button class="btn btn--danger btn--sm" onclick="toggleEvent(\'' + ev.id + '\',' + !ev.is_active + ')">' + (ev.is_active ? 'Hide' : 'Show') + '</button>' +
                 '<button class="btn btn--danger btn--sm" onclick="deleteEvent(\'' + ev.id + '\')">Delete</button>' +
             '</div>' +
         '</div>';
     }).join('');
+}
+
+async function setHomepageSpotlight(id) {
+    var { error } = await sb.from('site_content').upsert({
+        block_key: 'home_event_spotlight',
+        page: 'home',
+        label: 'Homepage event artwork',
+        body: id,
+        updated_at: new Date().toISOString()
+    });
+    if (error) {
+        toast('Could not set homepage event: ' + error.message, 'error');
+        return;
+    }
+    toast('Homepage event image selected');
+    loadEvents();
 }
 
 $('#addEventBtn').addEventListener('click', function() {
