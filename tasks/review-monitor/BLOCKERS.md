@@ -160,3 +160,22 @@ Append-only. If a live verification path fails 3 consecutive runs for the same c
 - **Resolution path:** unchanged from the family, and now materially stronger — a **rendering/residential-proxy scraper (Apify)** is the single remedy that reopens Google-adjacent, Hipcamp, The Knot, TripAdvisor, Expedia *and* ResortPass. That is now **one purchase against six platforms**, not four. Alternatively, if it stays 403 for two more runs, ResortPass joins the quarterly-manual-check pattern with the rest.
 - **Do not escalate on a single 403** — retry once per run. If RUN_073 and RUN_074 also return 403, open the blocker.
 - **Logged:** 2026-08-30
+
+---
+
+## RESOLVED 2026-09-20 (RUN_079): airbnb-listing-existence — the "403" was stale, the listing is real and Rancho's
+
+- **Original claim (2026-04-17):** cannot confirm whether `airbnb.com/rooms/1284193976615696223` is a Rancho Moonrise listing; 403 Forbidden on every attempt (3 consecutive, RUN_001–003).
+- **What actually happened:** after the 3rd failure this path was **never attempted again — 72 consecutive no-attempt runs**. Retried once on 2026-09-20: `WebFetch` returns the page. The listing is hosted by "Rancho Moonrise" (co-host Ashley) and reads **3.67★ / 3 reviews**. Two more Rancho listings surfaced: `1277623094650338119` Tiny Home Cabin (4.71★ / 7) and `1284213223278884167` Bunkhouse Safari Tent (4.0 / 1; already linked from `site/improvement-plan.html:2207`). Host total 15 reviews @ 4.47.
+- **Resolution:** blocker closed; Airbnb moved into monitored scope (`platforms.airbnb` in `brand/review-aggregate.json`). Written under the hard rule — this is a fresh direct scrape.
+- **Lesson recorded so it is not re-learned:** a blocker logged at "3 consecutive failures" and then never re-tested is an assumption, not an observation. The other direct-path blockers were each re-tried once today for exactly that reason and **all still hold** (The Knot 403, TripAdvisor 403, Hipcamp wrong-page, Expedia 429, Hotels.com timeout).
+
+## WATCH (NOT YET A BLOCKER — 1 of 3): airbnb-review-text — reviews and host replies not extractable
+
+- **Claim:** Reply coverage and review text for the 11 reviews on the three Rancho-hosted Airbnb listings; specifically the **two 3★ reviews** on `1284193976615696223`.
+- **Verification path attempted:** `WebFetch` of the listing page and of `/rooms/1284193976615696223/reviews`.
+- **Failure mode:** page content is aggregate-only (rating, count, percentage breakdown, category scores, host stats). No review bodies, reviewer names, dates or host responses. Identical on both paths. Not a 403 — the fetch succeeds and simply does not contain the reviews (JS-rendered modal).
+- **Status:** unreplied count for Airbnb recorded as `null` (unknown), **not** 0. **No draft written** — drafting a reply in Ashley's voice to reviews nobody in this pipeline has read would be fabrication.
+- **Resolution path:** 30 seconds in the Airbnb host dashboard (Ashley is co-host) — read the two 3★ reviews and whether they have public responses, paste text into this repo, and a real draft follows next run. Alternatively a rendering scraper (same family as the other blocked platforms).
+- **Threshold:** logged below 3 on purpose. One more distinct-run failure to enumerate review text = 2 of 3.
+- **Logged:** 2026-09-20

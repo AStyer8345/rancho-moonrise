@@ -2661,3 +2661,68 @@ None found.
 ResortPass (53) and Expedia's confirmed pool (6) remain recommended additions to the monitored-scope ownership table in `master-agent.md` and remain **not executed** — 6th consecutive run carrying the recommendation.
 
 Run-log: `run-logs/2026-09-18-review-monitor.md`. Raw: WebSearch-only run, no raw HTML to cache.
+
+---
+
+## RUN_079 — 2026-09-20 13:30 CT
+
+2-day gap since RUN_078. Brand canary PASSED (airbnb, facebook, tripadvisor, yelp, romanticspotsaustin, wellcityguide, site, wheree all returned for the brand query). Status stays **URGENT** on the standing condition (Haylee L. unreplied + 2 unposted drafts).
+
+**Repo state:** the main checkout `/Users/adamstyer/Documents/rancho-moonrise` is on a detached HEAD in an interrupted `git rebase` (since 2026-09-18; RUN_078's commit `ab1b210` was stranded there, unpushed). Not touched — no `--continue`/`--abort`/reset/stash. Worked in worktree `../rancho-moonrise-review-20260920` cut from `origin/main`; RUN_078's commit was **cherry-picked onto current `origin/main`** (only conflict: CONTEXT.md "Last Worked On", resolved by keeping origin's newer block and replacing this task's bullet) so that work finally reaches origin. The 7 notebooklm-sync commits in the same broken rebase are not this task's and were not landed.
+
+**Headline — Airbnb is a real, unmonitored review surface (blocker `airbnb-listing-existence` RESOLVED).** For 72 consecutive runs this task carried "Airbnb 403 / cannot confirm listing / NEEDS_ADAM_VERIFY" and never re-attempted after 2026-04-17. Today a direct `WebFetch` of the live listing pages simply worked:
+
+| Listing | Rating / count | Breakdown |
+|---|---|---|
+| `/rooms/1284193976615696223` Glamping Safari Tent | **3.67 / 3** | 1×5★ + 2×3★ |
+| `/rooms/1277623094650338119` Tiny Home Cabin | 4.71 / 7 | 5×5★ + 2×4★ |
+| `/rooms/1284213223278884167` Bunkhouse Safari Tent | 4.0 / 1 | (avg shows after 3) |
+
+Host = "Rancho Moonrise", co-host Ashley, 2 yrs hosting, 100% response rate, host total **15 reviews @ 4.47** (11 located; 4 on an unlocated listing). Both percentage breakdowns reproduce the displayed averages arithmetically. The third listing was **already linked from `site/improvement-plan.html:2207` as "Airbnb — Family Safari Tent · Live"** — the surface was known to the site and invisible to this task. Review text and host replies are **not extractable** (aggregate-only page content, `/reviews` path identical), so reply coverage is unknown, **no draft written** (would be fabrication — same discipline as Facebook).
+
+The search snippet was unreliable on this very fact: an unrestricted query said 3.67/3, an `airbnb.com`-restricted query said **5.0/3**. The restricted one was wrong; the direct fetch settled it.
+
+**Direct-path retest** (first attempt in many runs on each — all still blocked as documented): The Knot HTTP 403 · TripAdvisor HTTP 403 · Hipcamp resolved to a Texas campground list page · Expedia HTTP 429 · Hotels.com 60s timeout. Airbnb is the only path that reopened. `working_direct_scrape_paths` 0 → 1 (aggregate-level only).
+
+**Facebook** 6/86% re-confirmed a 2nd consecutive run (`facebook.com`-restricted). Review body still unobtainable (`facebook-review-text` open). **Hipcamp** both voice violations re-confirmed verbatim on a `hipcamp.com`-restricted query ("34-acre ranch just outside of vibrant Austin, Texas"; "a refreshing pool, a bar, and a cozy lounge area"); count 0 held. **The Knot** Haylee L. body re-confirmed still indexed, no owner response found; day 204 → 206. A positive "first wedding at Rancho Moonrise... only grown in excellence since" excerpt surfaced — consistent with the existing 8-review profile, not treated as a new review. Banned Knot syndicated line ("20 luxury cabins and safari tents for up to 50 guests") echoed again — existing NEEDS ADAM item, not new. **TripAdvisor** 0/unclaimed held; a "120 acre ranch… Lonesome Dove" description bled in from another property and was rejected. **Expedia** 8.0 re-confirmed on an `expedia.com`-restricted query. **Google** deliberately not re-queried (contamination discipline); authoritative 130/4.9★ now 124 days stale.
+
+### Done-log check
+
+Re-read `rancho-done-log.md` tail — no review-reply RESOLVED entries since 2026-04-15. Google unreplied=1, Facebook ≥1, Knot 1 all HELD. Two drafts (Cassie Google 5★, Haylee Knot 1★) remain UNPOSTED, day 122 → 124.
+
+### Re-Verify Gate log
+
+```
+[2026-09-20 13:30] re-verify airbnb-listing-existence        — resolved — live=3 Rancho-hosted listings, 11 reviews (direct fetch) prior=403/unverifiable(72 runs)
+[2026-09-20 13:30] re-verify airbnb-review-reply-coverage    — not_verifiable — live=review text/replies not in fetch content prior=never checked
+[2026-09-20 13:30] re-verify facebook-aggregate              — still_true — live=6/86% (2nd consecutive) prior=6/86%
+[2026-09-20 13:30] re-verify hipcamp-voice-violations        — still_true — live=both strings verbatim prior=verbatim-confirmed(RUN_078)
+[2026-09-20 13:30] re-verify hipcamp-count                   — still_true — live=no count signal prior=0
+[2026-09-20 13:30] re-verify theknot-haylee                  — still_true — live=indexed verbatim, no owner reply, day 206 prior=day 204
+[2026-09-20 13:30] re-verify tripadvisor-status              — still_true — live=0/unclaimed (bleed rejected) prior=0/unclaimed
+[2026-09-20 13:30] re-verify expedia-rating                  — still_true — live=8.0 (expedia.com-restricted) prior=8.0
+[2026-09-20 13:30] re-verify google-reviews-count            — deliberately not re-run (contamination discipline) — carries 130@4.9star, 124d stale
+[2026-09-20 13:30] re-verify two-drafts-unposted             — still_true — live=day 124 prior=day 122
+[2026-09-20 13:30] re-verify direct-paths(knot/tripadvisor/hipcamp/expedia/hotels) — still_true(blocked) — 403/403/wrong-page/429/timeout prior=blocked
+```
+
+**Tally:** 7 still_true · 1 resolved · 1 not_verifiable · 1 deliberately-skipped · direct-path retest 5/5 still blocked. 1 blocker resolved (`airbnb-listing-existence`), 0 new reviews on previously-monitored platforms; 11 previously-unmonitored Airbnb reviews now tracked.
+
+### FLAG_FOR_ADAM (5 carried, 1 new)
+
+1. **NEW — Airbnb: 3 listings, 11 reviews, two 3★ on the safari tent, reply coverage never checked (~30 sec in the Airbnb host dashboard).**
+2. Haylee L. unreplied, now day 206.
+3. Two drafts unposted, now day 124.
+4. Facebook review text still a 60-second fix.
+5. Expedia count-6 promotion remains a rule question with Adam.
+6. Eight-plus open blockers naming the same remedy — but note today's lesson: **one blocked path (Airbnb) had healed unnoticed for months because it was never re-tried.** The other five were re-tried today and are genuinely still blocked; a cheap periodic re-test (one attempt per path per ~2 weeks) is now the cheaper fix than a purchase for any path that has gone 20+ runs without an attempt.
+
+### Ownership violation check
+
+None found. (`site/improvement-plan.html:2207` listing Airbnb as "Live" alongside this task's "cannot confirm" is a *coverage* gap in this task, not another task's violation.)
+
+### Scope change NOT made unilaterally
+
+Airbnb is added to `brand/review-aggregate.json` and the dashboard (it is a review/reply claim this task already owns per `master-agent.md`'s ownership table — Airbnb is row 4). ResortPass (53) and Expedia's confirmed pool (6) remain recommended additions to the ownership table and remain **not executed** — 7th consecutive run carrying the recommendation.
+
+Run-log: `run-logs/2026-09-20-review-monitor.md`. Raw: WebFetch/WebSearch-only run, nothing cached.

@@ -41,6 +41,12 @@ Prior: 2026-07-22 (rancho-site-daily — **cruise-control streak BROKEN at 39; f
 
 Found 2026-09-09 by `rancho-site-daily`; landed the same day by `rancho-review-monitor`. Commit `1e26d81`, pushed, confirmed on `origin/main` — `brand/review-aggregate.json`, `site/admin/dashboard-state.json`, `tasks/review-monitor/BLOCKERS.md`, `tasks/review-monitor/session-log.md`, `run-logs/2026-09-07-review-monitor.md`, `tasks/review-monitor/raw/2026-09-07/`. Same failure family this property has hit repeatedly; committing your own task's output the same run it's flagged is the correct fix. **Do not re-surface.**
 
+## 🔥 NEEDS ADAM — Airbnb: 3 Rancho listings, 11 reviews, two 3★ on the safari tent, reply coverage never checked (~30 sec) — added 2026-09-20 by `rancho-review-monitor` RUN_079
+
+- [ ] Open the Airbnb host dashboard (Ashley is co-host) and read the **two 3★ reviews on the Glamping Safari Tent listing** (`/rooms/1284193976615696223`, 3.67★ / 3 reviews). Are they replied to? Paste the review text into this repo and RUN_080 drafts a reply in Ashley's voice (nothing is drafted today — the text is unreadable by the agent, and a draft would be invented).
+- [ ] Also confirm which listing holds the **4 unaccounted reviews** — host total is 15 @ 4.47, but the three located listings sum to 11 (safari tent 3, tiny home cabin 7, bunkhouse tent 1).
+- Context: this surface was carried as "403 / can't confirm it's ours" for 72 runs. It healed unnoticed; `site/improvement-plan.html:2207` was already linking it as "Live". Blocker `airbnb-listing-existence` is RESOLVED; `airbnb-review-text` is a new WATCH (1 of 3). Do not re-surface the old "verify possible Airbnb listing" item — it's done.
+
 ## 🔥 NEEDS ADAM / OWNER — main checkout is stuck mid-rebase; 8 commits unpushed — added 2026-09-20 by `rancho-site-daily`
 
 - [ ] `/Users/adamstyer/Documents/rancho-moonrise` is a **detached HEAD in an interrupted `git rebase`** (last touched 2026-09-18 10:38; nothing running). `main` ref = `ab1b210`: **8 unpushed commits** (7 notebooklm-sync + `rancho-review-monitor` RUN_078 `ab1b210`) and 10+ behind `origin/main`. notebooklm-sync flagged it 9/18 and correctly refused to touch it; site-daily did the same and worked from a worktree off `origin/main` instead. Fix = someone finishes (`git rebase --continue`) or aborts it and pushes; nothing is at risk of loss (`main` ref + reflog hold all 8). Review-monitor's RUN_078 commit is the one that matters — it isn't on `origin/main`.
@@ -1013,7 +1019,7 @@ All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms. Li
 - [x] AggregateRating treatment for the 2 remaining utility pages (`faqs.html` + `contact.html`) — DONE 2026-04-30. `contact.html` extended its existing nested `LocalBusiness` (under `mainEntity` of `ContactPage`) with `aggregateRating`. `faqs.html` got a stand-alone `LocalBusiness` JSON-LD with the rating + full address + phone. Coverage now 16/17 customer-facing pages.
 
 ### NEEDS ADAM — Review monitor flags (from 2026-04-15 rancho-review-monitor run)
-- [ ] **Verify possible Airbnb listing** — search surfaced `/rooms/1284193976615696223` ("Glamping Safari Tent 25 mins from downtown Austin, Manor TX"). April 9 baseline said no Airbnb listing. Confirm if this is a Rancho Moonrise listing — if yes, add to review coverage scope. (Page returned 403 when fetched by agent.)
+- [x] ~~**Verify possible Airbnb listing**~~ ✅ RESOLVED 2026-09-20 (RUN_079) — it IS a Rancho listing (3 exist, 11 reviews); see the new NEEDS ADAM item at top. Original text: — search surfaced `/rooms/1284193976615696223` ("Glamping Safari Tent 25 mins from downtown Austin, Manor TX"). April 9 baseline said no Airbnb listing. Confirm if this is a Rancho Moonrise listing — if yes, add to review coverage scope. (Page returned 403 when fetched by agent.)
 
 ### NEEDS ADAM — YouTube channel
 - [ ] **Upload remaining 7 videos (01-07)** — hit YouTube daily upload limit. Try again tomorrow. Files are in `youtube-uploads/` folder with manifest spreadsheet.
