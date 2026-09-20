@@ -2370,3 +2370,11 @@ Launch-blocker sweep and conversion sharpening across the primary pages, ahead o
 - Linked from public page footers and the sitemap; no main-navigation additions. Kept forms, APIs, booking links and existing page content unchanged.
 - Added matching WebPage/Person structured data and an indexable canonical route. Scoped mobile-menu layering to the new page.
 - Validation: production baseline matched all 30 affected existing public pages; `validate:site` and `test:runtime` passed. Browser verification covers 320/390/1440px, visible backlink, assets, footer discovery and mobile menu.
+
+## 2026-09-20 — rancho-site-daily
+
+- Shipped: added Open Graph + Twitter card tags to `site/pages/blog.html` and `site/pages/policies.html` (commit `2f30443`). Live sweep of all 30 sitemap pages found these were the only two with no `og:image` (and no OG/Twitter block at all). Reused each page's existing title/description verbatim and the site-default `og-image.jpg`; omitted `og:image:width/height` because that file is 2134×1412, not 1200×630. Share-preview fix, not a ranking lever. Verified in the pushed blob, on the live URLs, and via Vercel `list_deployments` (production, READY).
+- Re-swept every on-page lever on live HTML after the 9/16 audit and 9/19–20 homepage/footer changes: meta description length, canonical, H1 count, noindex, duplicate title/description, alt text, JSON-LD parse validity — all clean. Titles at 65–68 chars on 4 pages left unchanged (brand suffix is the tail; no measured benefit).
+- Re-Verify Gate 4/4: `/safari-tents-near-austin/` still absent from `site:` (9 owned URLs, ~146 days, owner GSC action); sitemap 31/31 200 (+`/website-credits/` from another writer); schema 30/30 clean; 5-file NEEDS OWNER set = partial — intact but moved from the working tree to `stash@{0}`.
+- Found the main checkout stuck mid-rebase since 2026-09-18 (detached HEAD, 8 unpushed commits incl. review-monitor RUN_078). Not touched; worked in worktree `../rancho-moonrise-daily-20260920` cut from `origin/main`. Flagged in TODO.md and CONTEXT.md.
+- No improvement-plan task IDs mapped; no done-log lines written.
