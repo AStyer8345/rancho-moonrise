@@ -2386,3 +2386,11 @@ Launch-blocker sweep and conversion sharpening across the primary pages, ahead o
 - No improvement-plan task IDs mapped; no done-log lines written.
 
 - 2026-09-20 rancho-review-monitor (RUN_079): scraped reviews across 7 platforms, resolved 1 stale claim (`airbnb-listing-existence` — the April "403" had healed; direct fetch now reads 3 Rancho-hosted Airbnb listings, 11 reviews, two 3★ on the safari tent, host 15 @ 4.47), drafted 0 responses (review text unreadable — deliberate). Retested 5 other direct paths: all still blocked. Landed RUN_078's stranded commit via cherry-pick onto `origin/main` (main checkout left mid-rebase, untouched).
+
+## 2026-09-21 — rancho-site-daily
+
+- Shipped: `BreadcrumbList` JSON-LD on `/website-credits/` (`site/pages/website-credits.html`, +9 lines). It was the only one of 31 sitemap pages with no breadcrumb. Same `Home > Page` shape as `/policies/`. No `speakable` on purpose (credits page isn't voice-answer content). Consistency fix, not a ranking lever. `validate:site` passes; JSON-LD parses.
+- Re-Verify Gate: brand canary passed; `/safari-tents-near-austin/` still absent from a 9-owned-URL `site:` result (~147 days, owner GSC action, on-site diagnosis stays closed); sitemap 31/31 200; TODO "Schema gaps" #1–#3 resolved (live matrix: all pages carry breadcrumb + WebPage-family + speakable; s4 already RESOLVED 8/16); "RUN_078 not on origin/main" resolved (landed as `1ffb25a`); main checkout mid-rebase still true, untouched (worktree `../rancho-moonrise-daily-20260921`).
+- Rejected lever: sitemap `lastmod` — git dates read stale on 30/31 pages but the 9/19–20 footer-link commit touched every page, so bumping all would fake freshness. Left alone.
+- Not this task's (skipped): review count/reply state, GBP cadence (review-monitor / gbp-weekly). "1,000+ guests" FAQ vs 200 barn capacity still live on `/host-your-event/` — existing owner question, unchanged.
+- No improvement-plan task IDs mapped; no done-log lines written.
