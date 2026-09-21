@@ -412,7 +412,17 @@ Blog cluster is now complete: 17/17 on `BlogPosting`, `BreadcrumbList`, `WebPage
 
 **CONTEXT.md hygiene (for the owning tasks):** trimmed 251 → 204 lines this run by collapsing 20 duplicate `site-daily` cruise-control entries + 9 stacked headers. Still over the 150-line cap in CLAUDE.md. The remaining bulk is 10 `review-monitor` and 5 `competitive-weekly` "Nth consecutive quiet sweep" entries — **those tasks should collapse their own history**; site-daily won't prune another task's records.
 
-## 📌 Competitive intel quick wins (refreshed 2026-09-07)
+## 📌 Competitive intel quick wins (refreshed 2026-09-21)
+
+**🔄 2026-09-21 refresh — supersedes the matching 9/7 bullets below:**
+- **2️⃣ The Knot fix is now the top item.** 5th confirmed read, and the brand-query answer (phrase not in the query) carries the banned sentence again — the "2 clean reads" watch below is **void**. Direct fetch of the Knot page now returns 403 (search-level confirmation only). Yodel (`events.yodel.today/manor-tx/profile/Rancho-Moonrise/113759`) is a likely downstream copy; re-check it after the Knot edit.
+- **1️⃣ WeddingWire "carries the banned copy" is NOT confirmed** — 0/3 reproductions on 9/21; the 9/7 read is discounted (exact-phrase-in-query contamination). Still needs a logged-in human look because the page is unreadable; do not treat it as a known carrier.
+- **Day-pass gap still true (2nd live read):** Rancho $20 / $15 (now shown 9.4 / 57 on a 10-pt scale) vs Lucky Arrow $35 (9.2 / 217, plus $175 pool cabanas and $90 yurt day room). Prices unchanged.
+- **New fact, not a recommendation:** Lucky Arrow publishes a buyout "from $19,500/night" + $545–650 pp/night. "Publish flat buyout pricing" stays retired.
+- **5️⃣ Glamping Hub ~22 weeks; 6️⃣ Hipcamp 12th consecutive absence; 4️⃣ safari-tents ~147 days** (re-tested independently 9/21).
+- **Repo hygiene (NEEDS OWNER):** main checkout is a detached HEAD diverged from `origin/main` and holds the unpushed `Weekly metrics update — 2026-09-20` commit `157efd1`. Land it (cherry-pick onto a worktree off origin/main) before anyone resets the checkout.
+
+*(9/7 bullets below — read alongside the 9/21 refresh above.)*
 
 **Read this first: items 1–3 were the 8/25 quick wins and were never published anywhere Adam or Ashley would see them.** They have not been declined. They have never been asked. The 8/25 Intel card never reached either dashboard (see NEEDS ADAM above).
 
