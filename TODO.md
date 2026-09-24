@@ -1,5 +1,7 @@
 # Rancho Moonrise — TODO
-Last updated: 2026-09-21 (rancho-site-daily — **Shipped `BreadcrumbList` on `/website-credits/` (only page of 31 without one).** Gate 5 claims: safari-tents still absent (~147 days, owner GSC action), sitemap 31/31 — still_true; "Schema gaps" #1–#3 and "RUN_078 not on origin/main" — resolved; main checkout still mid-rebase — still_true. Run-log: `run-logs/2026-09-21-seo.md`. Prior header ↓.)
+Last updated: 2026-09-24 (rancho-site-daily — **No on-page defect found; closed 5 stale TODO items instead.** Gate: safari-tents still absent from `site:` (~150 days, owner GSC action), sitemap 31/31 200, dead `/videos/` card `_klefu2vTwM` still thumb 404 / oembed 403 (day ~63), `/host-your-event/` "1,000+ guests" still live — all still_true. Stale items closed with evidence: review-monitor task + Re-Verify Gate in site-daily/competitive SKILLs (all exist), and both "wire wedding form backend" items (forms POST to `/api/inquiry/` via main.js). Run-log: `run-logs/2026-09-24-seo.md`. Prior header ↓.)
+
+Prior: 2026-09-21 (rancho-site-daily — **Shipped `BreadcrumbList` on `/website-credits/` (only page of 31 without one).** Gate 5 claims: safari-tents still absent (~147 days, owner GSC action), sitemap 31/31 — still_true; "Schema gaps" #1–#3 and "RUN_078 not on origin/main" — resolved; main checkout still mid-rebase — still_true. Run-log: `run-logs/2026-09-21-seo.md`. Prior header ↓.)
 
 Prior: 2026-09-20 (rancho-site-daily — shipped OG/Twitter tags for `/blog/` + `/policies/` (`2f30443`); found main checkout mid-rebase.)
 
@@ -887,7 +889,7 @@ Logo size bump site-wide (`.nav__logo-img` 72→112 px desktop, 44→68 px scrol
 Button visibility fix (root cause: `.btn--primary` was transparent + white text on cream), nav logo swap (Secondary lockup → Tertiary wordmark, 88×88), nav social icons moved right of Pool Passes across 15 pages, weddings FAQ renamed + shortened + FAQPage schema, new `#wedding-inquiry` form on weddings.html, and **pre-existing `.reveal` bug fixed** (section labels were permanently invisible site-wide — `main.js` IntersectionObserver only watched `.fade-in`). Commits `ddf556e` + `36fb00d`, live on `https://rancho-moonrise.vercel.app/`. See CHANGELOG 2026-04-10 "Phase 2 UI Fixes".
 
 **Open follow-up (carried forward from Phase 2):**
-- [ ] **Wedding inquiry form backend** — `weddings.html#wedding-inquiry` and `contact.html` wedding section both use `action="#"` placeholder. Now that Phase 3 made the two forms identical (same field schema), one backend wire-up covers both. Needs Formspree / Netlify Forms / Vercel serverless → email + Salesforce create_lead. Current UX: form submits and does nothing. Flag on the DNS cutover checklist.
+- [x] ~~**Wedding inquiry form backend**~~ — DONE (verified 2026-09-24: `site/js/main.js` intercepts submit and POSTs to `/api/inquiry/` (`api/inquiry.js`); `action="#"` is only the no-JS fallback) — `weddings.html#wedding-inquiry` and `contact.html` wedding section both use `action="#"` placeholder. Now that Phase 3 made the two forms identical (same field schema), one backend wire-up covers both. Needs Formspree / Netlify Forms / Vercel serverless → email + Salesforce create_lead. Current UX: form submits and does nothing. Flag on the DNS cutover checklist.
 
 ## ✅ DONE 2026-04-10 — Brand-facts site sweep
 
@@ -919,9 +921,9 @@ All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms. Li
 - [ ] **Ashley:** confirm admin login (howdy@ranchomoonrise.com Outlook draft #2)
 
 ### CLAUDE (next task to build) — Re-verify gate for Rancho
-- [ ] **Create `rancho-review-monitor` scheduled task** — mirror `acr-review-monitor` pattern, own Rancho GBP review-reply state as a live claim. Use the shared gate at `/Users/adamstyer/Documents/client-ops/templates/re-verify-before-report.md`. Verification path: public GBP page scrape or Places API `place.reviews[].reply` presence. First-run responsibility: re-verify every live-claim finding currently in CONTEXT.md Active Blockers + improvement-plan.html Plan-tab task cards, auto-resolve stale ones into `rancho-done-log.md`. Expected ~30 min fork of acr SKILL.md.
-- [ ] **Add Re-Verify Gate to `rancho-site-daily` SKILL** — same runbook, for SERP/indexing claims it currently surfaces without re-checking.
-- [ ] **Add Re-Verify Gate to `rancho-competitive-weekly` SKILL** — same runbook, for competitor-state claims.
+- [x] ~~**Create `rancho-review-monitor` scheduled task**~~ — DONE (verified 2026-09-24: task exists, RUN_079 ran 9/20) — mirror `acr-review-monitor` pattern, own Rancho GBP review-reply state as a live claim. Use the shared gate at `/Users/adamstyer/Documents/client-ops/templates/re-verify-before-report.md`. Verification path: public GBP page scrape or Places API `place.reviews[].reply` presence. First-run responsibility: re-verify every live-claim finding currently in CONTEXT.md Active Blockers + improvement-plan.html Plan-tab task cards, auto-resolve stale ones into `rancho-done-log.md`. Expected ~30 min fork of acr SKILL.md.
+- [x] ~~**Add Re-Verify Gate to `rancho-site-daily` SKILL**~~ — DONE (verified 2026-09-24: SKILL.md carries the gate section) — same runbook, for SERP/indexing claims it currently surfaces without re-checking.
+- [x] ~~**Add Re-Verify Gate to `rancho-competitive-weekly` SKILL**~~ — DONE (verified 2026-09-24: SKILL.md carries the gate section) — same runbook, for competitor-state claims.
 
 
 ### NEEDS ADAM — Weekly Strengthener Blockers (added 2026-04-22, **3rd consecutive blocked run 2026-05-06**)
@@ -982,7 +984,7 @@ All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms. Li
 ### NEEDS ADAM — From 2026-04-23 Bi-Weekly Audit
 - [ ] **Claim TripAdvisor listing** — 20 minutes, free. Still 0 reviews / unclaimed at audit time. Biggest multi-platform discoverability gap on the books.
 - [ ] **Open WeddingWire listing** — 30 minutes, free. No listing exists.
-- [ ] **Wire wedding inquiry form backend** — contact.html and weddings.html both still `action="#"`. Formspree or Vercel serverless → email + Salesforce create_lead. One-day job, unblocks all downstream nurture automation.
+- [x] ~~**Wire wedding inquiry form backend**~~ — DONE (same evidence as above, 2026-09-24) — contact.html and weddings.html both still `action="#"`. Formspree or Vercel serverless → email + Salesforce create_lead. One-day job, unblocks all downstream nurture automation.
 - [ ] **Submit to ResortPass before May 1** — Lucky Arrow's ResortPass has no active products through May 1 (per 04-20 competitive intel). 10-day competitive window to be the only non-hotel glamping pool pass in Austin. resortpass.com/list-property.
 - [ ] **Re-upload 8 low-res source JPGs at 2560px+** — especially `feature-wedding.jpg` (bride-critical). Responsive pipeline can't upscale past source dimensions; 4 accommodation cards are currently 340×340 thumbnails.
 - [ ] **Seed stay-type-routed post-event review request** — glamping → Hipcamp, wedding → The Knot/WeddingWire, event → Google. Even a manual template routed by Ashley beats the current ad-hoc state.

@@ -2403,3 +2403,11 @@ Launch-blocker sweep and conversion sharpening across the primary pages, ahead o
 - **Lucky Arrow buyout price newly recorded:** direct fetch shows "beginning at $19,500 per night" plus $545–650 pp/night; 41 guests private lodging, event spaces to 200. Serana still no price (3rd read), page now says groups of 5–9. "Do not re-propose published buyout pricing" stands.
 - **SERP:** 10 baseline keywords 3/10 vs 4/10 on 8/18 — only loss is `wedding venue Austin TX ranch` (was 9 of 9, tail of set); corporate retreat venue improved blog #8 → #4 with landing page also present. Head-term slides (corporate ~#7, weekend getaways ~#8) coincide with new listicle entrants; single reads, not actioned. Broad-glamping floor confirmed a 3rd read (1 owned URL). Hipcamp curated absence 12th read; Glamping Hub ~22 weeks; `/safari-tents-near-austin/` re-tested independently, still absent (~147 days). `laketravisyachtrentals.com` closed (irrelevant). Competitor GBP unverifiable; Hotels.com timed out twice.
 - **Repo state found, not fixed:** the main checkout is a detached HEAD at `157efd1`, diverged from `origin/main` (9 local-only commits, 17 origin-only). The local-only set includes `Weekly metrics update — 2026-09-20`, which is **not on origin/main** and would be lost if the checkout were reset. Committed this run's work from a clean worktree cut off `origin/main` instead of touching the checkout. No 9/14 report exists (14-day gap).
+
+## 2026-09-24 — rancho-site-daily
+- Worked from worktree `../rancho-moonrise-daily-20260924` off `origin/main`; main checkout still mid-rebase, untouched.
+- Re-Verify Gate 5/5 still_true: safari-tents still absent from `site:` (9 owned URLs); sitemap 31/31 200; dead `/videos/` card `_klefu2vTwM` (thumb 404 / oembed 403, ~day 63); `/host-your-event/` "1,000+ guests" still live; main checkout still rebasing.
+- New sweeps, both clean: image width/height (28 missing, all absolutely positioned or on unlinked pages — no CLS risk) and live canonical/robots meta (31/31 self-canonical, no noindex).
+- No site change. Closed 5 stale TODO items after checking each live: review-monitor task exists, Re-Verify Gate present in site-daily + competitive SKILLs, wedding forms already POST to `/api/inquiry/`.
+- Run-log: `run-logs/2026-09-24-seo.md`.
+
