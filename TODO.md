@@ -941,6 +941,9 @@ All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms. Li
 - [x] ~~**Add Re-Verify Gate to `rancho-competitive-weekly` SKILL**~~ — DONE (verified 2026-09-24: SKILL.md carries the gate section) — same runbook, for competitor-state claims.
 
 
+### NEEDS ADAM — Off The Grid page is live but not in git (2026-09-24, URGENT)
+- [ ] **Commit the `/offthegrid/` page + the `js/main.js` "Off The Grid" nav link to `main`.** They were CLI-deployed 9/23 22:12 CT by `howdy-4829` and exist nowhere in git. Production is rolled back and pinned to that deploy (`dpl_C479dkHeRwyReAvbyAcRQmuFjtbc`), so **git pushes from every scheduled task are not going live** until someone runs `vercel promote`. Promote only after the source is committed, then confirm `/offthegrid/` still returns 200.
+
 ### NEEDS ADAM — Weekly Strengthener Blockers (added 2026-04-22, **3rd consecutive blocked run 2026-05-06**)
 **Status:** rancho-content-weekly produced zero website edits for three weeks running (4/22, 4/29, 5/06) because both prerequisites are unowned. **Single ask** (not A/B menu anymore — both options were offered 7 days ago and 14 days ago without movement): pick one of (1) settle both decisions in next Monday's GOALS.md update (2026-05-11) — both items are <30 min combined, or (2) pause `rancho-content-weekly` in `GOALS.md` → "Paused Workstreams". If 5/11 lands and neither is done, the 5/13 run will recommend pausing by default.
 - [ ] **Create approved testimonials list for website use.** `rancho-content-weekly` strengthener task needs real guest quotes tied to verified event dates to place on landing pages (weddings, accommodations, events, etc.). The review report has some snippets but none are verified or on an approved list. Curate 10–15 real quotes from Google/Knot reviews, note the event date, and save as `brand/approved-testimonials.md`. Required before the weekly strengthener can add social proof to any page.

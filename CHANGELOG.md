@@ -2420,4 +2420,4 @@ Launch-blocker sweep and conversion sharpening across the primary pages, ahead o
 - New sweeps, both clean: image width/height (28 missing, all absolutely positioned or on unlinked pages — no CLS risk) and live canonical/robots meta (31/31 self-canonical, no noindex).
 - No site change. Closed 5 stale TODO items after checking each live: review-monitor task exists, Re-Verify Gate present in site-daily + competitive SKILLs, wedding forms already POST to `/api/inquiry/`.
 - Run-log: `run-logs/2026-09-24-seo.md`.
-
+- **Incident, fixed:** the git build from this run replaced a 9/23 CLI deploy (`howdy-4829`) that carries `/offthegrid/` + an Off The Grid nav link not in git. The page 404'd for ~3 min. Rolled production back to `dpl_C479dkHeRwyReAvbyAcRQmuFjtbc` and verified `/offthegrid/` 200. Production is now pinned; git pushes will not go live until the source is committed and someone runs `vercel promote`.
