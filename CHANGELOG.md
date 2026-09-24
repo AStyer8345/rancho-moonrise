@@ -2421,3 +2421,9 @@ Launch-blocker sweep and conversion sharpening across the primary pages, ahead o
 - No site change. Closed 5 stale TODO items after checking each live: review-monitor task exists, Re-Verify Gate present in site-daily + competitive SKILLs, wedding forms already POST to `/api/inquiry/`.
 - Run-log: `run-logs/2026-09-24-seo.md`.
 - **Incident, fixed:** the git build from this run replaced a 9/23 CLI deploy (`howdy-4829`) that carries `/offthegrid/` + an Off The Grid nav link not in git. The page 404'd for ~3 min. Rolled production back to `dpl_C479dkHeRwyReAvbyAcRQmuFjtbc` and verified `/offthegrid/` 200. Production is now pinned; git pushes will not go live until the source is committed and someone runs `vercel promote`.
+
+
+## 2026-09-24 — Off The Grid page and new-tab link
+- Recovered the active `/offthegrid/` page and all six referenced images from the 9/23 Vercel deployment into the website source. Saved the live desktop/mobile menu behavior in `site/js/main.js` and changed the event link to open in a new tab with `rel="noopener"`. Commit `28f79fb` is on `main`.
+- Replaced one specific "breakfast tacos" promise with "breakfast" because the site validator flags that stale claim; other event content and ticket/room links were preserved. Site validation, offline runtime checks, preview routes/assets, and browser click checks passed.
+- Promoted Git deployment `dpl_3N4cACwmbo3BF33eHb9tAbhKZdr2` to production. Live `/offthegrid/`, its images, the September 24 business audit, and the desktop/mobile new-tab link were verified. The prior CLI-deployment pin is resolved; the original checkout's interrupted rebase remains untouched.

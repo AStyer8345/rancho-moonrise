@@ -1,5 +1,5 @@
 # Rancho Moonrise — TODO
-Last updated: 2026-09-24 (rancho-site-daily — **No on-page defect found; closed 5 stale TODO items instead.** Gate: safari-tents still absent from `site:` (~150 days, owner GSC action), sitemap 31/31 200, dead `/videos/` card `_klefu2vTwM` still thumb 404 / oembed 403 (day ~63), `/host-your-event/` "1,000+ guests" still live — all still_true. Stale items closed with evidence: review-monitor task + Re-Verify Gate in site-daily/competitive SKILLs (all exist), and both "wire wedding form backend" items (forms POST to `/api/inquiry/` via main.js). Run-log: `run-logs/2026-09-24-seo.md`. Prior header ↓.)
+Last updated: 2026-09-24 (Off The Grid page and six images recovered into Git, new-tab navigation live on desktop and mobile, prior Vercel production pin resolved. The separate main-checkout rebase remains unfinished. Earlier site-daily details remain in `CHANGELOG.md` and `run-logs/2026-09-24-seo.md`.)
 
 Prior: 2026-09-21 (rancho-site-daily — **Shipped `BreadcrumbList` on `/website-credits/` (only page of 31 without one).** Gate 5 claims: safari-tents still absent (~147 days, owner GSC action), sitemap 31/31 — still_true; "Schema gaps" #1–#3 and "RUN_078 not on origin/main" — resolved; main checkout still mid-rebase — still_true. Run-log: `run-logs/2026-09-21-seo.md`. Prior header ↓.)
 
@@ -941,8 +941,8 @@ All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms. Li
 - [x] ~~**Add Re-Verify Gate to `rancho-competitive-weekly` SKILL**~~ — DONE (verified 2026-09-24: SKILL.md carries the gate section) — same runbook, for competitor-state claims.
 
 
-### NEEDS ADAM — Off The Grid page is live but not in git (2026-09-24, URGENT)
-- [ ] **Commit the `/offthegrid/` page + the `js/main.js` "Off The Grid" nav link to `main`.** They were CLI-deployed 9/23 22:12 CT by `howdy-4829` and exist nowhere in git. Production is rolled back and pinned to that deploy (`dpl_C479dkHeRwyReAvbyAcRQmuFjtbc`), so **git pushes from every scheduled task are not going live** until someone runs `vercel promote`. Promote only after the source is committed, then confirm `/offthegrid/` still returns 200.
+### DONE — Off The Grid page saved in Git and live (2026-09-24)
+- [x] **Commit the `/offthegrid/` page, six images, and `js/main.js` header link to `main`.** Recovered from the 9/23 live deploy as commit `28f79fb`, then promoted the verified Git build `dpl_3N4cACwmbo3BF33eHb9tAbhKZdr2`. The page and images return 200, and the header link opens a new tab on desktop and mobile. The original checkout remains mid-rebase; this work used an isolated checkout.
 
 ### NEEDS ADAM — Weekly Strengthener Blockers (added 2026-04-22, **3rd consecutive blocked run 2026-05-06**)
 **Status:** rancho-content-weekly produced zero website edits for three weeks running (4/22, 4/29, 5/06) because both prerequisites are unowned. **Single ask** (not A/B menu anymore — both options were offered 7 days ago and 14 days ago without movement): pick one of (1) settle both decisions in next Monday's GOALS.md update (2026-05-11) — both items are <30 min combined, or (2) pause `rancho-content-weekly` in `GOALS.md` → "Paused Workstreams". If 5/11 lands and neither is done, the 5/13 run will recommend pausing by default.

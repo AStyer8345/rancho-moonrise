@@ -2,6 +2,16 @@
 
 ---
 
+## 2026-09-24 — Off The Grid Opens in a New Tab
+
+**Decision:** The desktop and mobile header links to the on-site `/offthegrid/` page open in a new browser tab.
+
+**Why:** Adam specifically requested this behavior for the temporary retreat page. The link remains on the Rancho Moonrise domain and its page and images are saved in Git so later site publishes preserve it.
+
+**Context:** Implemented in commit `28f79fb` and verified on the live site after promoting Git deployment `dpl_3N4cACwmbo3BF33eHb9tAbhKZdr2`.
+
+---
+
 ## 2026-06-09 — Events Popup Is Controlled by a Per-Event Flag, Not a Settings Panel
 
 **Decision:** The homepage events popup is driven by a single `show_in_popup` boolean on each `rancho_events` row, surfaced in the admin as a "Feature in Popup" toggle (mirroring the existing Active/Hidden Show/Hide pattern). The popup shows up to 3 featured + active + upcoming events. Frequency cap is a 3-day localStorage window keyed to a *signature of featured event IDs*. Popup styles are injected by `event-popup.js` itself (no separate CSS file).
