@@ -19,10 +19,35 @@
         }, { passive: true });
     }
 
+    // ---------- Off The Grid event link ----------
+    // The header is repeated across the static site, so add the event link
+    // once here to keep desktop and mobile navigation in sync everywhere.
+    var offTheGridUrl = '/offthegrid/';
+    var desktopLinks = document.querySelector('.nav__links');
+    if (desktopLinks && !desktopLinks.querySelector('[data-nav="off-the-grid"]')) {
+        var desktopItem = document.createElement('li');
+        desktopItem.innerHTML = '<a href="' + offTheGridUrl + '" target="_blank" rel="noopener" aria-label="Off The Grid (opens in a new tab)" data-nav="off-the-grid" data-event="off_the_grid_click">Off The Grid</a>';
+        var desktopContact = desktopLinks.querySelector('a[href="/contact/"]');
+        desktopLinks.insertBefore(desktopItem, desktopContact ? desktopContact.parentElement : null);
+    }
+
     // ---------- Mobile menu ----------
     const toggle = document.querySelector('.nav__toggle');
-    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileMenu = document.getElementById('mobileMenu') || document.getElementById('nav-menu');
     const closeBtn = document.querySelector('.nav__close');
+
+    if (mobileMenu && !mobileMenu.querySelector('[data-nav="off-the-grid"]')) {
+        var mobileItem = document.createElement('a');
+        mobileItem.href = offTheGridUrl;
+        mobileItem.textContent = 'Off The Grid';
+        mobileItem.target = '_blank';
+        mobileItem.rel = 'noopener';
+        mobileItem.setAttribute('aria-label', 'Off The Grid (opens in a new tab)');
+        mobileItem.setAttribute('data-nav', 'off-the-grid');
+        mobileItem.setAttribute('data-event', 'off_the_grid_click');
+        var mobileContact = mobileMenu.querySelector('a[href="/contact/"]');
+        mobileMenu.insertBefore(mobileItem, mobileContact || null);
+    }
 
     if (toggle && mobileMenu) {
         toggle.addEventListener('click', function () {
