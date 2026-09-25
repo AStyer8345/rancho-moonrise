@@ -191,7 +191,9 @@ def main() -> int:
                 failures.append(f"{rel}: internal link should use clean route instead of {old_path}")
 
     for path in sitemap_paths():
-        if path != "/" and path not in rewrites:
+        # Directory pages (site/<path>/index.html) are served statically, no rewrite needed.
+        is_static_dir = (SITE / path.strip("/") / "index.html").is_file()
+        if path != "/" and path not in rewrites and not is_static_dir:
             failures.append(f"site/sitemap.xml: {path} has no matching vercel rewrite")
 
     if failures:

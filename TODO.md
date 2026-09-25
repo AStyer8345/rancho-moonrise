@@ -1,5 +1,7 @@
 # Rancho Moonrise — TODO
-Last updated: 2026-09-24 (Off The Grid page and six images recovered into Git, new-tab navigation live on desktop and mobile, prior Vercel production pin resolved. The separate main-checkout rebase remains unfinished. Earlier site-daily details remain in `CHANGELOG.md` and `run-logs/2026-09-24-seo.md`.)
+Last updated: 2026-09-25 (rancho-site-daily — `/offthegrid/` SEO basics shipped: canonical, OG/Twitter, Event + BreadcrumbList JSON-LD, sitemap. Gate 5/5 still_true. Run-log: `run-logs/2026-09-25-seo.md`.)
+
+Prior: 2026-09-24 (Off The Grid page and six images recovered into Git, new-tab navigation live on desktop and mobile, prior Vercel production pin resolved. The separate main-checkout rebase remains unfinished. Earlier site-daily details remain in `CHANGELOG.md` and `run-logs/2026-09-24-seo.md`.)
 
 Prior: 2026-09-21 (rancho-site-daily — **Shipped `BreadcrumbList` on `/website-credits/` (only page of 31 without one).** Gate 5 claims: safari-tents still absent (~147 days, owner GSC action), sitemap 31/31 — still_true; "Schema gaps" #1–#3 and "RUN_078 not on origin/main" — resolved; main checkout still mid-rebase — still_true. Run-log: `run-logs/2026-09-21-seo.md`. Prior header ↓.)
 
@@ -940,6 +942,12 @@ All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms. Li
 - [x] ~~**Add Re-Verify Gate to `rancho-site-daily` SKILL**~~ — DONE (verified 2026-09-24: SKILL.md carries the gate section) — same runbook, for SERP/indexing claims it currently surfaces without re-checking.
 - [x] ~~**Add Re-Verify Gate to `rancho-competitive-weekly` SKILL**~~ — DONE (verified 2026-09-24: SKILL.md carries the gate section) — same runbook, for competitor-state claims.
 
+
+### rancho-site-daily — queued levers (2026-09-25)
+- [x] `/offthegrid/`: canonical, OG/Twitter, Event + BreadcrumbList JSON-LD, sitemap entry (2026-09-25).
+- [ ] `/offthegrid/` hero is a 3.0 MB PNG (`site/offthegrid/images/hero-pool.png`, CSS background, likely LCP). Convert to WebP (~300 KB) and update the CSS `url()`. Keep the PNG until the live page is verified.
+- [ ] `/events/` has 4 Event JSON-LD blocks, all past-dated (May–July 2026), and no link to the one upcoming event (Off the Grid, Nov 14). Check whether events are CRM-loaded before editing. Then drop or refresh the expired schema and add an HTML link to `/offthegrid/`, so discovery doesn't depend on JS nav injection alone.
+- [ ] Owner: in GSC, URL-Inspect and request indexing for `/offthegrid/`. It's time-sensitive: the event is Nov 14 and the page was not indexed on 9/25.
 
 ### DONE — Off The Grid page saved in Git and live (2026-09-24)
 - [x] **Commit the `/offthegrid/` page, six images, and `js/main.js` header link to `main`.** Recovered from the 9/23 live deploy as commit `28f79fb`, then promoted the verified Git build `dpl_3N4cACwmbo3BF33eHb9tAbhKZdr2`. The page and images return 200, and the header link opens a new tab on desktop and mobile. The original checkout remains mid-rebase; this work used an isolated checkout.

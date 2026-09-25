@@ -2427,3 +2427,9 @@ Launch-blocker sweep and conversion sharpening across the primary pages, ahead o
 - Recovered the active `/offthegrid/` page and all six referenced images from the 9/23 Vercel deployment into the website source. Saved the live desktop/mobile menu behavior in `site/js/main.js` and changed the event link to open in a new tab with `rel="noopener"`. Commit `28f79fb` is on `main`.
 - Replaced one specific "breakfast tacos" promise with "breakfast" because the site validator flags that stale claim; other event content and ticket/room links were preserved. Site validation, offline runtime checks, preview routes/assets, and browser click checks passed.
 - Promoted Git deployment `dpl_3N4cACwmbo3BF33eHb9tAbhKZdr2` to production. Live `/offthegrid/`, its images, the September 24 business audit, and the desktop/mobile new-tab link were verified. The prior CLI-deployment pin is resolved; the original checkout's interrupted rebase remains untouched.
+
+## 2026-09-25 — rancho-site-daily
+- `/offthegrid/`: added canonical, OG + Twitter card tags, and a new 1200×630 `og-off-the-grid.jpg` cropped from the page hero. Added `Event` JSON-LD (Nov 14 2026 12:00–18:00 CST, Rancho Moonrise + Swift Fit Social, Square offer URL, no invented price) and `BreadcrumbList`.
+- `site/sitemap.xml`: added `/offthegrid/` (32 URLs).
+- `scripts/validate-site.py`: sitemap paths served as static `site/<path>/index.html` no longer require a `vercel.json` rewrite (negative test still fails a bogus path).
+- Re-Verify Gate 5/5 still_true. Run-log: `run-logs/2026-09-25-seo.md`.
