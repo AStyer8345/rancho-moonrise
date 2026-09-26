@@ -2434,3 +2434,7 @@ Launch-blocker sweep and conversion sharpening across the primary pages, ahead o
 - `scripts/validate-site.py`: sitemap paths served as static `site/<path>/index.html` no longer require a `vercel.json` rewrite (negative test still fails a bogus path).
 - Re-Verify Gate 5/5 still_true. Run-log: `run-logs/2026-09-25-seo.md`.
 - 2026-09-25 — rancho-review-monitor RUN_080: scraped 11 Airbnb reviews (direct) plus search-level checks on 7 more platforms. No new reviews. 0 stale claims resolved, 0 responses drafted. Swimply listing discovered (page 404). airbnb-review-text watch now 2 of 3.
+
+## 2026-09-26 — rancho-site-daily
+- `/offthegrid/`: hero background converted from `hero-pool.png` (3.0 MB, 1536×1024) to `hero-pool.webp` (342 KB, cwebp q85, −89%). Added a `<link rel="preload" as="image" fetchpriority="high">` because a CSS background image is discovered late. It's likely the LCP element. The PNG is kept until the live page is verified.
+- Re-Verify Gate 6/6 still_true. `/offthegrid/` not indexed yet (day 3). Run-log: `run-logs/2026-09-26-seo.md`.
