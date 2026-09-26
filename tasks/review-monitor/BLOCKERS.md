@@ -179,3 +179,9 @@ Append-only. If a live verification path fails 3 consecutive runs for the same c
 - **Resolution path:** 30 seconds in the Airbnb host dashboard (Ashley is co-host) — read the two 3★ reviews and whether they have public responses, paste text into this repo, and a real draft follows next run. Alternatively a rendering scraper (same family as the other blocked platforms).
 - **Threshold:** logged below 3 on purpose. One more distinct-run failure to enumerate review text = 2 of 3.
 - **Logged:** 2026-09-20
+
+### UPDATE 2026-09-25 (RUN_080): airbnb-review-text — WATCH 2 of 3
+
+- Direct WebFetch of all three listings again returns aggregates only (Tiny Home Cabin page literally reports "0 of 0 items showing" in the reviews section). Aggregates identical to RUN_079.
+- **New path tried:** the in-app JS-rendering browser (Claude Browser pane) — `preview_start` and `navigate` both **timed out** on the Airbnb URL. Not retried (unattended run; most likely a site-permission prompt with nobody to approve it). This is a path failure, not evidence about the reviews.
+- One more distinct-run failure opens the blocker. Remedy unchanged: 30 seconds in the Airbnb host dashboard, or an interactive session where the browser pane can be approved for airbnb.com.

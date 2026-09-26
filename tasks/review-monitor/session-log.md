@@ -2726,3 +2726,45 @@ None found. (`site/improvement-plan.html:2207` listing Airbnb as "Live" alongsid
 Airbnb is added to `brand/review-aggregate.json` and the dashboard (it is a review/reply claim this task already owns per `master-agent.md`'s ownership table — Airbnb is row 4). ResortPass (53) and Expedia's confirmed pool (6) remain recommended additions to the ownership table and remain **not executed** — 7th consecutive run carrying the recommendation.
 
 Run-log: `run-logs/2026-09-20-review-monitor.md`. Raw: WebFetch/WebSearch-only run, nothing cached.
+
+## RUN_080 — 2026-09-25 21:00 CT (started 2026-09-23 13:27 CT)
+
+5-day gap since RUN_079. The run started 9/23; two in-app-browser calls each hung for their full timeout, so the scrape actually happened 9/25. Brand canary PASSED (tripadvisor, swimply, facebook, hotels.com, theknot, apple maps, yelp, romanticspotsaustin, wheree). **No new reviews on any monitored platform.** Status stays **URGENT** on the standing condition (Haylee L. unreplied + 2 unposted drafts).
+
+**Repo state:** main checkout still detached/diverged (not touched). Worked in worktree `../rancho-moonrise-review-20260923`, moved to `origin/main` 52caf0d before writing.
+
+- **Airbnb** (direct fetch, 2nd consecutive): 3.67/3 · 4.71/7 · 4.0/1 · host 15 @ 4.47 — all identical. Safari-tent listing **retitled** "Glamping Tent with Private Bathroom on a Ranch". Review text still absent → `airbnb-review-text` WATCH **2 of 3**. JS-rendering browser tried for the first time; timed out, not retried. Unreplied stays `null`, no draft.
+- **Swimply — new surface.** "Rancho Moonrise Pool – Private Pool in Manor" (`/pooldetails/54117`) is indexed; direct fetch returns **HTTP 404**, so it may be delisted. Logged `in_scope: false`, no review numbers recorded.
+- **Hotels.com** 9.0 / 14 reviews, now attributed to Hotels.com in the snippet prose. This is the 2nd sighting of the 14 count (RUN_078 first). Recorded as an observation, not promoted.
+- **Facebook** 6/86% (3rd consecutive). **The Knot** 4.5/8, Haylee L. still indexed, no owner response, day 211. **Hipcamp** voice strings present, count 0. **Expedia** 8.0. **TripAdvisor** 0/unclaimed; "120 acres / Lonesome Dove / $35–$70" bleed rejected again. **Google** not re-queried (contamination discipline); 130/4.9★ now 129 days stale.
+
+### Done-log check
+No review-reply RESOLVED entries since 2026-04-15. Two drafts (Cassie Google 5★, Haylee Knot 1★) unposted, day 129.
+
+### Re-Verify Gate log
+
+```
+[2026-09-25 21:00] re-verify airbnb-aggregates                — still_true — live=3.67/3, 4.71/7, 4.0/1, host 15@4.47 prior=same
+[2026-09-25 21:00] re-verify airbnb-review-reply-coverage     — not_verifiable — live=aggregate-only; browser timed out prior=not_verifiable
+[2026-09-25 21:00] re-verify facebook-aggregate               — still_true — live=6/86% prior=6/86%
+[2026-09-25 21:00] re-verify hipcamp-voice-violations         — still_true — live=both strings present prior=same
+[2026-09-25 21:00] re-verify hipcamp-count                    — still_true — live=no count signal prior=0
+[2026-09-25 21:00] re-verify theknot-haylee                   — still_true — live=indexed, no owner reply, day 211 prior=day 206
+[2026-09-25 21:00] re-verify tripadvisor-status               — still_true — live=0/unclaimed (bleed rejected) prior=0/unclaimed
+[2026-09-25 21:00] re-verify expedia-rating                   — still_true — live=8.0 (expedia.com-restricted) prior=8.0
+[2026-09-25 21:00] re-verify google-reviews-count             — deliberately not re-run — carries 130@4.9, 129d stale
+[2026-09-25 21:00] re-verify two-drafts-unposted              — still_true — live=day 129 prior=day 124
+[2026-09-25 21:00] new       swimply-listing                  — observed — indexed, direct 404, in_scope false
+```
+
+**Tally:** 8 still_true · 1 not_verifiable · 1 deliberately skipped · 1 new surface · 0 resolved. No drafts written.
+
+### FLAG_FOR_ADAM (carried)
+1. Airbnb: two 3★ reviews on the safari tent, reply coverage never checked (~30 sec in the host dashboard).
+2. Haylee L. 1★ on The Knot unreplied, day 211.
+3. Two drafts unposted, day 129.
+4. Facebook non-recommend review text (60-second fix for whoever holds the Page).
+5. NEW (low): Is the Swimply pool listing still active? Search shows it; the page 404s.
+
+### Ownership violation check
+None found this run.

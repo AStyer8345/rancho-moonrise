@@ -48,6 +48,8 @@ Found 2026-09-09 by `rancho-site-daily`; landed the same day by `rancho-review-m
 
 - [ ] Open the Airbnb host dashboard (Ashley is co-host) and read the **two 3★ reviews on the Glamping Safari Tent listing** (`/rooms/1284193976615696223`, 3.67★ / 3 reviews). Are they replied to? Paste the review text into this repo and RUN_080 drafts a reply in Ashley's voice (nothing is drafted today — the text is unreadable by the agent, and a draft would be invented).
 - [ ] Also confirm which listing holds the **4 unaccounted reviews** — host total is 15 @ 4.47, but the three located listings sum to 11 (safari tent 3, tiny home cabin 7, bunkhouse tent 1).
+- Still open as of 2026-09-25 (RUN_080): aggregates unchanged, review text still unreadable by the agent.
+- [ ] (low) Swimply: is `swimply.com/pooldetails/54117` ("Rancho Moonrise Pool") still active? It shows in search but the page 404s. If it's live, it is another review surface. Added 2026-09-25 by RUN_080.
 - Context: this surface was carried as "403 / can't confirm it's ours" for 72 runs. It healed unnoticed; `site/improvement-plan.html:2207` was already linking it as "Live". Blocker `airbnb-listing-existence` is RESOLVED; `airbnb-review-text` is a new WATCH (1 of 3). Do not re-surface the old "verify possible Airbnb listing" item — it's done.
 
 ## 🔥 NEEDS ADAM / OWNER — main checkout is stuck mid-rebase; 8 commits unpushed — added 2026-09-20 by `rancho-site-daily`

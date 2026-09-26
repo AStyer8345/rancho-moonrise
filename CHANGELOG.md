@@ -2433,3 +2433,4 @@ Launch-blocker sweep and conversion sharpening across the primary pages, ahead o
 - `site/sitemap.xml`: added `/offthegrid/` (32 URLs).
 - `scripts/validate-site.py`: sitemap paths served as static `site/<path>/index.html` no longer require a `vercel.json` rewrite (negative test still fails a bogus path).
 - Re-Verify Gate 5/5 still_true. Run-log: `run-logs/2026-09-25-seo.md`.
+- 2026-09-25 — rancho-review-monitor RUN_080: scraped 11 Airbnb reviews (direct) plus search-level checks on 7 more platforms. No new reviews. 0 stale claims resolved, 0 responses drafted. Swimply listing discovered (page 404). airbnb-review-text watch now 2 of 3.

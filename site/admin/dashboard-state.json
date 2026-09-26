@@ -1,6 +1,6 @@
 {
   "review_monitor": {
-    "last_run": "2026-09-20T18:30:00Z",
+    "last_run": "2026-09-26T02:05:00Z",
     "status": "urgent",
     "new_reviews_pending_response": 0,
     "new_reviews_pending_response_detail": [
@@ -9,11 +9,11 @@
         "reviewer": "Haylee L.",
         "stars": 1,
         "posted": "2026-02-26",
-        "unreplied_days": 204,
-        "unreplied_weeks": 29.1,
-        "draft_location": "drafted RUN_034 2026-05-19, unposted day 113",
+        "unreplied_days": 211,
+        "unreplied_weeks": 30.1,
+        "draft_location": "drafted RUN_034 2026-05-19, unposted day 129",
         "draft_status": "awaiting Adam/Ashley to paste",
-        "re_verified": "2026-09-18 \u2014 body still indexed verbatim on a theknot.com-restricted query; no owner response found"
+        "re_verified": "2026-09-25 - body still indexed on theknot.com-restricted query; no owner response found"
       },
       {
         "platform": "google",
@@ -21,9 +21,9 @@
         "stars": 5,
         "posted": "~2026-03-12",
         "unreplied_days": null,
-        "draft_location": "drafted RUN_034 2026-05-19, unposted day 113",
+        "draft_location": "drafted RUN_034 2026-05-19, unposted day 129",
         "draft_status": "awaiting Adam/Ashley to paste",
-        "re_verified": "2026-09-18 \u2014 root done-log last resolution still 2026-04-15, no Cassie entry"
+        "re_verified": "2026-09-25 - done-log last review-reply resolution still 2026-04-15"
       },
       {
         "platform": "facebook",
@@ -32,7 +32,7 @@
         "posted": "between 2026-07-23 and 2026-08-17",
         "draft_location": null,
         "draft_status": "NO DRAFT POSSIBLE \u2014 review text unobtainable; blocker facebook-review-text open since 2026-08-19. Still a 60-second fix for whoever holds the Page.",
-        "re_verified": "2026-09-18 \u2014 aggregate RE-SURFACED this run (86% recommendation rate based on 6 reviews); 6/86% HELD, gap streak broken"
+        "re_verified": "2026-09-25 - 6/86% held (3rd consecutive)"
       }
     ],
     "total_reviews_tracked": 209,
@@ -55,14 +55,16 @@
       "agoda"
     ],
     "flags": [
-      "AIRBNB-IS-A-REAL-REVIEW-SURFACE-3-listings-11-reviews-two-3star-reply-coverage-unknown-blocker-airbnb-listing-existence-RESOLVED",
-      "FACEBOOK-6-86-RECONFIRMED-2nd-consecutive-run",
-      "HIPCAMP-VOICE-VIOLATIONS-RECONFIRMED",
-      "EXPEDIA-8.0-RECONFIRMED-search",
-      "DIRECT-FETCH-RETEST-knot-403-tripadvisor-403-hipcamp-wrongpage-expedia-429-hotels-timeout-all-still-blocked",
-      "GOOGLE-AUTHORITATIVE-COUNT-124-DAYS-STALE-snippet-deliberately-not-rerun",
-      "HAYLEE-L-1-STAR-UNREPLIED-DAY-206",
-      "TWO-DRAFTS-UNPOSTED-DAY-124"
+      "NO-NEW-REVIEWS-RUN_080",
+      "AIRBNB-AGGREGATES-HELD-2nd-direct-fetch-review-text-WATCH-2-of-3",
+      "AIRBNB-SAFARI-TENT-TITLE-CHANGED",
+      "SWIMPLY-LISTING-DISCOVERED-direct-404",
+      "HOTELS-COM-9.0-14-2nd-sighting-not-promoted",
+      "FACEBOOK-6-86-3rd-consecutive",
+      "HAYLEE-L-1-STAR-UNREPLIED-DAY-211",
+      "TWO-DRAFTS-UNPOSTED-DAY-129",
+      "GOOGLE-AUTHORITATIVE-COUNT-129-DAYS-STALE",
+      "IN-APP-BROWSER-TIMED-OUT-not-retried"
     ],
     "blockers": [
       "google-reviews-count",
