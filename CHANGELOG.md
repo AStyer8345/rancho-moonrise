@@ -2438,3 +2438,8 @@ Launch-blocker sweep and conversion sharpening across the primary pages, ahead o
 ## 2026-09-26 — rancho-site-daily
 - `/offthegrid/`: hero background converted from `hero-pool.png` (3.0 MB, 1536×1024) to `hero-pool.webp` (342 KB, cwebp q85, −89%). Added a `<link rel="preload" as="image" fetchpriority="high">` because a CSS background image is discovered late. It's likely the LCP element. The PNG is kept until the live page is verified.
 - Re-Verify Gate 6/6 still_true. `/offthegrid/` not indexed yet (day 3). Run-log: `run-logs/2026-09-26-seo.md`.
+
+## 2026-09-27 — rancho-site-daily
+- `/events/`: dropped the static Event JSON-LD, which advertised 4 past events (May 2 – Jul 4 2026) as `EventScheduled`. The visible list is hydrated from Supabase and is current (7 upcoming through Dec 5). Added a static HTML link to `/offthegrid/` in the list intro; until now its only internal link was JS-injected nav. WebPage `dateModified` and sitemap lastmod → 2026-09-27. Commit `202134c`.
+- `/offthegrid/`: deleted the now-unreferenced `hero-pool.png` (3.0 MB) after verifying the WebP live. Commit `e10d1f2`.
+- Re-Verify Gate 6/6 still_true. `/offthegrid/` not indexed yet (day 4). Run-log: `run-logs/2026-09-27-seo.md`.

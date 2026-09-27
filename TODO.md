@@ -1,5 +1,5 @@
 # Rancho Moonrise — TODO
-Last updated: 2026-09-26 (rancho-site-daily — `/offthegrid/` hero PNG → WebP (3.0 MB → 342 KB) + preload. Gate 6/6 still_true. Run-log: `run-logs/2026-09-26-seo.md`.)
+Last updated: 2026-09-27 (rancho-site-daily — `/events/` expired Event schema dropped + static `/offthegrid/` link; unreferenced 3.0 MB hero PNG deleted. Gate 6/6 still_true. Run-log: `run-logs/2026-09-27-seo.md`.)
 
 Prior: 2026-09-24 (Off The Grid page and six images recovered into Git, new-tab navigation live on desktop and mobile, prior Vercel production pin resolved. The separate main-checkout rebase remains unfinished. Earlier site-daily details remain in `CHANGELOG.md` and `run-logs/2026-09-24-seo.md`.)
 
@@ -948,7 +948,10 @@ All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms. Li
 ### rancho-site-daily — queued levers (2026-09-25)
 - [x] `/offthegrid/`: canonical, OG/Twitter, Event + BreadcrumbList JSON-LD, sitemap entry (2026-09-25).
 - [x] (2026-09-26 → `hero-pool.webp`, 342 KB, + preload) `/offthegrid/` hero is a 3.0 MB PNG (`site/offthegrid/images/hero-pool.png`, CSS background, likely LCP). Convert to WebP (~300 KB) and update the CSS `url()`. Keep the PNG until the live page is verified.
-- [ ] `/events/` has 4 Event JSON-LD blocks, all past-dated (May–July 2026), and no link to the one upcoming event (Off the Grid, Nov 14). Check whether events are CRM-loaded before editing. Then drop or refresh the expired schema and add an HTML link to `/offthegrid/`, so discovery doesn't depend on JS nav injection alone.
+- [x] (2026-09-27, `202134c`) `/events/` expired Event JSON-LD (4 blocks, May–Jul) dropped; the list is Supabase-hydrated and current, only the schema was stale. Static HTML link to `/offthegrid/` added in the list intro.
+- [ ] `/events/` static HTML fallback cards are still May–July 2026 under "Upcoming on the ranch" (seen by non-JS crawlers before hydration). Make the fallback evergreen, the way the 9/16 homepage fix did.
+- [ ] Backlog (only with a measured benefit): generate `/events/` Event JSON-LD from the Supabase `rancho_events` feed instead of static dates.
+- [ ] Ashley/CRM: Nov 14 `rancho_events` row "SwiftFit x Rancho Moonrise Yoga Retreat" says "More info coming soon" with no ticket URL; it's likely the same event as `/offthegrid/`. Point its link there.
 - [ ] Owner: in GSC, URL-Inspect and request indexing for `/offthegrid/`. It's time-sensitive: the event is Nov 14 and the page was not indexed on 9/25.
 
 ### DONE — Off The Grid page saved in Git and live (2026-09-24)
@@ -1143,4 +1146,4 @@ All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms. Li
 - [ ] **Stop treating the Google search snippet as a count signal in any form.** It is now demonstrated to echo the site's own `reviewCount: 125` (`site/index.html:90`). Do not nudge the site's AggregateRating anchor toward any snippet value, and do not record snippet deltas as review movement. Only the GBP dashboard or a Places API key produces a real number.
 - [ ] **Guard against silent run loss** — RUN_069 scraped every platform and died before step 6, leaving raw notes **untracked in git**, no session-log heading and no run-log. Nothing downstream could tell it had run; RUN_070's "prior value" would have silently reached back two days. Worth writing the aggregate/session-log **incrementally** rather than only at the end of the 9-step procedure, so a partial run still leaves a legible trace.
 - [ ] **CONTEXT.md is 166 lines, over the 150-line cap in `CLAUDE.md`** — and it was over before this task touched it. This run folded its own superseded RUN_068 entry into the collapsed review-monitor block; the review-monitor workstream is now down to two lines total. **The remaining bulk is `site-daily`'s stacked header block (lines 3–11) and its five recent entries** — those belong to that task to prune, and this one won't rewrite another workstream's record.
-- [ ] After the 2026-09-26 WebP hero deploy is verified live on `/offthegrid/`, delete `site/offthegrid/images/hero-pool.png` (3.0 MB, now unreferenced).
+- [x] (2026-09-27, `e10d1f2`) Deleted `site/offthegrid/images/hero-pool.png` (3.0 MB) after the WebP was verified live; 0 references in repo or live HTML.
