@@ -2443,3 +2443,5 @@ Launch-blocker sweep and conversion sharpening across the primary pages, ahead o
 - `/events/`: dropped the static Event JSON-LD, which advertised 4 past events (May 2 – Jul 4 2026) as `EventScheduled`. The visible list is hydrated from Supabase and is current (7 upcoming through Dec 5). Added a static HTML link to `/offthegrid/` in the list intro; until now its only internal link was JS-injected nav. WebPage `dateModified` and sitemap lastmod → 2026-09-27. Commit `202134c`.
 - `/offthegrid/`: deleted the now-unreferenced `hero-pool.png` (3.0 MB) after verifying the WebP live. Commit `e10d1f2`.
 - Re-Verify Gate 6/6 still_true. `/offthegrid/` not indexed yet (day 4). Run-log: `run-logs/2026-09-27-seo.md`.
+## 2026-09-27 — rancho-review-monitor
+- rancho-review-monitor: RUN_081 scraped 6 platforms and found 0 new reviews. Resolved 0 stale claims, drafted 0 responses. Opened blocker `airbnb-review-text` (3 of 3: api/v2 reviews 404, reviews GraphQL lazy-loaded, in-app browser hung). Run-log: `run-logs/2026-09-27-review-monitor.md`.

@@ -170,7 +170,7 @@ Append-only. If a live verification path fails 3 consecutive runs for the same c
 - **Resolution:** blocker closed; Airbnb moved into monitored scope (`platforms.airbnb` in `brand/review-aggregate.json`). Written under the hard rule — this is a fresh direct scrape.
 - **Lesson recorded so it is not re-learned:** a blocker logged at "3 consecutive failures" and then never re-tested is an assumption, not an observation. The other direct-path blockers were each re-tried once today for exactly that reason and **all still hold** (The Knot 403, TripAdvisor 403, Hipcamp wrong-page, Expedia 429, Hotels.com timeout).
 
-## WATCH (NOT YET A BLOCKER — 1 of 3): airbnb-review-text — reviews and host replies not extractable
+## WATCH → PROMOTED TO BLOCKER 2026-09-27 (RUN_081, see bottom of file): airbnb-review-text — reviews and host replies not extractable
 
 - **Claim:** Reply coverage and review text for the 11 reviews on the three Rancho-hosted Airbnb listings; specifically the **two 3★ reviews** on `1284193976615696223`.
 - **Verification path attempted:** `WebFetch` of the listing page and of `/rooms/1284193976615696223/reviews`.
@@ -185,3 +185,19 @@ Append-only. If a live verification path fails 3 consecutive runs for the same c
 - Direct WebFetch of all three listings again returns aggregates only (Tiny Home Cabin page literally reports "0 of 0 items showing" in the reviews section). Aggregates identical to RUN_079.
 - **New path tried:** the in-app JS-rendering browser (Claude Browser pane) — `preview_start` and `navigate` both **timed out** on the Airbnb URL. Not retried (unattended run; most likely a site-permission prompt with nobody to approve it). This is a path failure, not evidence about the reviews.
 - One more distinct-run failure opens the blocker. Remedy unchanged: 30 seconds in the Airbnb host dashboard, or an interactive session where the browser pane can be approved for airbnb.com.
+
+---
+
+## BLOCKER: airbnb-review-text — review bodies and host replies unreadable 3 consecutive runs (opened 2026-09-27, RUN_081)
+
+- **Claim:** Reply coverage and review text for the 11 reviews on the three Rancho-hosted Airbnb listings, above all the **two 3★ reviews** on `1284193976615696223` ("Glamping Tent with Private Bathroom on a Ranch", 3.67 from 3 reviews).
+- **Consecutive failures:** 3. RUN_079 (2026-09-20), RUN_080 (2026-09-25), RUN_081 (2026-09-27).
+- **Paths tried on RUN_081, all failed:**
+  1. `WebFetch` of all three listing pages. Aggregates only, identical to RUN_080. No review bodies.
+  2. **New:** Airbnb's public `api/v2/reviews` endpoint, using the public `api_config.key` embedded in the page. It returns **HTTP 404 `route_not_found`**. That endpoint is retired, so this is a closed lead.
+  3. **New:** raw `curl` of the listing HTML (200, 468 KB). The page has a `StaysPdpReviewsSection` placeholder but no review JSON (no `comments`, `localizedDate` or reviewer fields). The GraphQL reviews query isn't in any of the 44 initially loaded JS bundles either; it lives in a lazy-loaded chunk. Not pursued further.
+  4. In-app browser `navigate` to `/rooms/1284193976615696223/reviews`. **Hung until timeout again** (2nd of 2 attempts, and the hang pushed this run past midnight). **Closed for unattended runs:** do not try the in-app browser again from a scheduled run.
+- **Status:** Airbnb `unreplied` stays `null` (unknown), not 0. No draft written.
+- **Resolution path:** 30 seconds in the Airbnb host dashboard (Ashley is co-host). Read the two 3★ reviews and whether they have public responses, then paste the text into `brand/review-log/`. A real draft follows on the next run. The only automated alternative is a paid rendering scraper (e.g. an Apify Airbnb-reviews actor). That is a spend decision for Adam, and it's the same remedy the other blocked platforms name.
+- **Re-test cadence:** re-run the `WebFetch` aggregate check every run, since it's cheap and still working. Re-attempt review text only when a new path exists.
+- **Logged:** 2026-09-27
