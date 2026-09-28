@@ -2824,3 +2824,48 @@ No review-reply RESOLVED entries since 2026-04-15. The two drafts (Cassie Google
 None found this run.
 
 Run-log: `run-logs/2026-09-27-review-monitor.md`. Raw: WebFetch/WebSearch/curl only; the raw Airbnb HTML wasn't cached (468 KB with no review data in it).
+
+---
+
+## RUN_082 — 2026-09-28 09:30 CT
+
+1-day gap since RUN_081. Worked in a scratch worktree cut from `origin/main` (`dc91c18`); the main checkout is still detached/stuck and was not touched. **No new reviews on any monitored platform.** Status stays **URGENT** on the standing condition (Haylee L. unreplied + 2 unposted drafts + Airbnb 3★ reply coverage unknown).
+
+**Airbnb:** 4th direct fetch, all three listings identical — 3.67/3 (33% 5★ / 67% 3★, reconciles), 4.71/7 (71% / 29%, reconciles), 4.0/1; host 15 @ 4.47. No review text, names, dates or host responses in the payload — `airbnb-review-text` blocker stays open, unreplied stays `null`, no draft.
+
+**Facebook:** 6/86% (5th consecutive), `site:facebook.com` query. **The Knot:** 4.5/8 surfaced numerically again (RUN_081 had no numeric signal); Haylee L.'s body still indexed, no owner response, day 214. Syndicated "20 luxury cabins and safari tents for up to 50 guests" echoed again (existing NEEDS ADAM item). **Hipcamp:** both voice strings present ("34-acre ranch just outside of vibrant Austin"; "a refreshing pool, a bar, and a cozy lounge area"), count 0 held. **Expedia:** 8.0 on `expedia.com`-restricted query. **TripAdvisor:** canonical `g56224-d33307272` indexed, unclaimed held; the "120 acre / 15 minutes / Lonesome Dove" bleed rejected again. **Google:** not re-queried (contamination discipline), 130/4.9★ now 132 days stale.
+
+**Direct-path retests:** not due. Last full retest of the five blocked paths was RUN_079 (2026-09-20); per the 2026-09-20 re-test-cadence lesson, next full retest ~2026-10-04.
+
+### Done-log check
+No review-reply RESOLVED entries since 2026-04-15. Two drafts (Cassie Google 5★, Haylee Knot 1★) unposted, day 132.
+
+### Re-Verify Gate log
+
+```
+[2026-09-28 09:30] re-verify airbnb-aggregates                — still_true — live=3.67/3, 4.71/7, 4.0/1, host 15@4.47 prior=same
+[2026-09-28 09:30] re-verify airbnb-review-reply-coverage     — not_verifiable (blocker open) — live=aggregates only prior=not_verifiable
+[2026-09-28 09:30] re-verify facebook-aggregate               — still_true — live=6/86% prior=6/86%
+[2026-09-28 09:30] re-verify hipcamp-voice-violations         — still_true — live=both strings present prior=same
+[2026-09-28 09:30] re-verify hipcamp-count                    — still_true — live=no count signal prior=0
+[2026-09-28 09:30] re-verify theknot-haylee                   — still_true — live=indexed, no owner reply, day 214 prior=day 213
+[2026-09-28 09:30] re-verify theknot-count-rating             — still_true — live=4.5/8 prior=not_reconfirmed(held 4.5/8)
+[2026-09-28 09:30] re-verify tripadvisor-status               — still_true — live=unclaimed (bleed rejected) prior=0/unclaimed
+[2026-09-28 09:30] re-verify expedia-rating                   — still_true — live=8.0 (expedia.com-restricted) prior=8.0
+[2026-09-28 09:30] re-verify google-reviews-count             — deliberately not re-run — carries 130@4.9, 132d stale
+[2026-09-28 09:30] re-verify two-drafts-unposted              — still_true — live=day 132 prior=day 131
+```
+
+**Tally:** 9 still_true · 1 not_verifiable (blocker open) · 1 deliberately skipped · 0 resolved. No drafts written.
+
+### FLAG_FOR_ADAM (carried)
+1. Airbnb: two 3★ reviews on the safari tent, reply coverage unknown — 30 seconds in the host dashboard, or a paid rendering scraper.
+2. Haylee L. 1★ on The Knot unreplied, day 214.
+3. Two drafts unposted, day 132.
+4. Facebook non-recommend review text (60-second fix for whoever holds the Page).
+5. Swimply pool listing: active or delisted? (low)
+
+### Ownership violation check
+None found this run.
+
+Run-log: `run-logs/2026-09-28-review-monitor.md`. Raw: WebFetch/WebSearch only, nothing cached (aggregate-only payloads).

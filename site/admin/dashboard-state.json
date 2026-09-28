@@ -1,6 +1,6 @@
 {
   "review_monitor": {
-    "last_run": "2026-09-27T16:10:00Z",
+    "last_run": "2026-09-28T14:30:00Z",
     "status": "urgent",
     "new_reviews_pending_response": 0,
     "new_reviews_pending_response_detail": [
@@ -9,11 +9,11 @@
         "reviewer": "Haylee L.",
         "stars": 1,
         "posted": "2026-02-26",
-        "unreplied_days": 213,
-        "unreplied_weeks": 30.4,
-        "draft_location": "drafted RUN_034 2026-05-19, unposted day 131",
+        "unreplied_days": 214,
+        "unreplied_weeks": 30.6,
+        "draft_location": "drafted RUN_034 2026-05-19, unposted day 132",
         "draft_status": "awaiting Adam/Ashley to paste",
-        "re_verified": "2026-09-27 - body still indexed on theknot.com-restricted query; no owner response found"
+        "re_verified": "2026-09-28 - body still indexed; 4.5/8 surfaced; no owner response found"
       },
       {
         "platform": "google",
@@ -21,9 +21,9 @@
         "stars": 5,
         "posted": "~2026-03-12",
         "unreplied_days": null,
-        "draft_location": "drafted RUN_034 2026-05-19, unposted day 131",
+        "draft_location": "drafted RUN_034 2026-05-19, unposted day 132",
         "draft_status": "awaiting Adam/Ashley to paste",
-        "re_verified": "2026-09-27 - done-log last review-reply resolution still 2026-04-15"
+        "re_verified": "2026-09-28 - done-log last review-reply resolution still 2026-04-15"
       },
       {
         "platform": "facebook",
@@ -32,7 +32,7 @@
         "posted": "between 2026-07-23 and 2026-08-17",
         "draft_location": null,
         "draft_status": "NO DRAFT POSSIBLE \u2014 review text unobtainable; blocker facebook-review-text open since 2026-08-19. Still a 60-second fix for whoever holds the Page.",
-        "re_verified": "2026-09-27 - 6/86% held (4th consecutive)"
+        "re_verified": "2026-09-28 - 6/86% held (5th consecutive)"
       }
     ],
     "total_reviews_tracked": 209,
@@ -55,14 +55,14 @@
       "agoda"
     ],
     "flags": [
-      "NO-NEW-REVIEWS-RUN_081",
-      "AIRBNB-AGGREGATES-HELD-3rd-direct-fetch",
-      "AIRBNB-REVIEW-TEXT-BLOCKER-OPENED-3-of-3",
+      "NO-NEW-REVIEWS-RUN_082",
+      "AIRBNB-AGGREGATES-HELD-4th-direct-fetch",
+      "AIRBNB-REVIEW-TEXT-BLOCKER-OPEN",
       "AIRBNB-TWO-3STAR-REPLY-COVERAGE-UNKNOWN",
-      "FACEBOOK-6-86-4th-consecutive",
-      "HAYLEE-L-1-STAR-UNREPLIED-DAY-213",
-      "TWO-DRAFTS-UNPOSTED-DAY-131",
-      "GOOGLE-AUTHORITATIVE-COUNT-131-DAYS-STALE",
+      "FACEBOOK-6-86-5th-consecutive",
+      "HAYLEE-L-1-STAR-UNREPLIED-DAY-214",
+      "TWO-DRAFTS-UNPOSTED-DAY-132",
+      "GOOGLE-AUTHORITATIVE-COUNT-132-DAYS-STALE",
       "IN-APP-BROWSER-CLOSED-FOR-UNATTENDED-RUNS"
     ],
     "blockers": [
