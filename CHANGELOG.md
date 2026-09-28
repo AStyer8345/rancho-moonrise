@@ -2445,3 +2445,10 @@ Launch-blocker sweep and conversion sharpening across the primary pages, ahead o
 - Re-Verify Gate 6/6 still_true. `/offthegrid/` not indexed yet (day 4). Run-log: `run-logs/2026-09-27-seo.md`.
 ## 2026-09-27 — rancho-review-monitor
 - rancho-review-monitor: RUN_081 scraped 6 platforms and found 0 new reviews. Resolved 0 stale claims, drafted 0 responses. Opened blocker `airbnb-review-text` (3 of 3: api/v2 reviews 404, reviews GraphQL lazy-loaded, in-app browser hung). Run-log: `run-logs/2026-09-27-review-monitor.md`.
+
+## 2026-09-28 — rancho-competitive-weekly
+- Weekly competitive intel: rewrote `site/competitive-intelligence.md`, re-rendered `.html`, and dual-wrote the Intel card to both improvement-plan files (byte-identical).
+- SERP: 3/10 baseline held (same keywords as 9/21). NEW: `weekend getaway near austin glamping` returns the weekend-getaways blog ~#5 (was absent 3 reads). Corporate head term ~#7 confirmed on a 2nd read; Camp Lucy ~#2 assessed (282 ac, 300 attendees, no pricing).
+- Copy hygiene: The Knot 6th read and now #1 on the brand query; brand answer dirty 2nd read; Yodel confirmed 2nd uncontaminated read; Hotels.com clean 6th; WeddingWire still unreproduced; Wheree noted as a surface (presence only).
+- ResortPass 403 on both listings via WebFetch + curl: values held `STALE:2026-09-21`. Lucky Arrow corporate/buyout pricing and Serana (no price) re-verified live. Hipcamp: Lucky Arrow #9, Ranch 3232 #17, Rancho absent (13th). Glamping Hub absent ~23 wk.
+- Done-log: 2 RESOLVED (weekend-getaway-glamping-absence, hipcamp-curated-positions-2026-09-21).

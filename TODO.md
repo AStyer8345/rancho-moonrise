@@ -1,5 +1,7 @@
 # Rancho Moonrise — TODO
-Last updated: 2026-09-27 (rancho-site-daily — `/events/` expired Event schema dropped + static `/offthegrid/` link; unreferenced 3.0 MB hero PNG deleted. Gate 6/6 still_true. Run-log: `run-logs/2026-09-27-seo.md`.)
+Last updated: 2026-09-28 (rancho-competitive-weekly — gained `weekend getaway near austin glamping` ~#5 (1 read, confirm next week); baseline 3/10 held; brand answer dirty 2nd read, Knot now #1 on brand query; ResortPass 403 → day-pass values STALE:2026-09-21. Knot description fix remains the top human action — it feeds the brand answer and Yodel.)
+
+Prior: 2026-09-27 (rancho-site-daily — `/events/` expired Event schema dropped + static `/offthegrid/` link; unreferenced 3.0 MB hero PNG deleted. Gate 6/6 still_true. Run-log: `run-logs/2026-09-27-seo.md`.)
 
 Prior: 2026-09-24 (Off The Grid page and six images recovered into Git, new-tab navigation live on desktop and mobile, prior Vercel production pin resolved. The separate main-checkout rebase remains unfinished. Earlier site-daily details remain in `CHANGELOG.md` and `run-logs/2026-09-24-seo.md`.)
 

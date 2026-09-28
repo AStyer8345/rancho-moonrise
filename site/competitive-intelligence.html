@@ -206,8 +206,8 @@
     <div class="meta">
       <strong>Prepared for:</strong> Rancho Moonrise Operations<br>
       <strong>Subject Property:</strong> Rancho Moonrise &middot; 20117 Lockwood Rd, 78653 (20 min from downtown Austin)<br>
-      <strong>Research Date:</strong> September 21, 2026<br>
-      <strong>Previous Report:</strong> September 7, 2026 (no September 14 report was produced &mdash; this run covers a 14-day gap)
+      <strong>Research Date:</strong> September 28, 2026<br>
+      <strong>Previous Report:</strong> September 21, 2026
     </div>
   </div>
 </header>
@@ -216,148 +216,161 @@
 <div class="container">
 
 <h2>Executive Summary</h2>
-<p><strong>The banned copy is back in the brand answer, and this time the evidence is clean.</strong> On September 7 the brand-query answer had been free of <em>"20 luxury cabins and safari tents for up to 50 guests"</em> for two reads in a row, and that report flagged it as a pattern forming, not a claim. It did not hold. This week's brand query &mdash; <code>Rancho Moonrise Manor Texas</code>, which does <strong>not</strong> contain the phrase &mdash; returned an answer stating <em>"The ranch contains 20 luxury cabins and safari tents for up to 50 guests,"</em> with The Knot listing in the result set. That read is uncontaminated: nothing in the query could have supplied the sentence. The Knot listing itself again returned #1 on an exact-phrase query (5th read). One new fact: a <strong>direct fetch of The Knot returned HTTP 403</strong> this run &mdash; the first time that path has failed &mdash; so this week's Knot confirmation is search-level, not page-level.</p>
-<p><strong>The WeddingWire hypothesis from September 7 did not reproduce.</strong> 0 of 3 attempts this week surfaced the phrase on WeddingWire: a <code>site:weddingwire.com</code> exact-phrase query returned The Knot, Yodel, and Rancho's own pages but no WeddingWire URL; a WeddingWire-restricted query returned only the listing's title (<em>"Rancho Moonrise - Barn &amp; Farm Weddings - Manor, TX"</em>) with no description; and direct fetch again fell back to a Barn &amp; Farm category page. There is also a methodological reason to discount the 9/7 read: an exact-phrase query puts the phrase in the query, and this week the search engine's synthesized answer repeated the sentence back <strong>even when no returned page matched it</strong> ("The search didn't return results from WeddingWire.com… Rancho Moonrise contains 20 luxury cabins…"). Synthesized answer text is not independent evidence when the phrase is in the query; only the returned URL set is. <strong>WeddingWire is downgraded from "suspected, 2 reads" to "unconfirmed."</strong> It stays on the human-check list because it is unreadable, not because it is cleared.</p>
-<p><strong>A different third surface is now the better lead: Yodel.</strong> <code>events.yodel.today/manor-tx/profile/Rancho-Moonrise/113759</code> was returned by both exact-phrase queries, and a Yodel-restricted query (phrase <strong>not</strong> in the query) produced an answer describing <em>"luxury cabins and safari tents that can host up to 50 guests."</em> Page fetch returned 403. Snippet-level, one uncontaminated read. Yodel is a scraped events directory, so it is most likely inheriting the sentence from The Knot rather than being a separate defect &mdash; which would mean fixing The Knot is the upstream fix.</p>
-<p><strong>ResortPass changed its rating display and both properties gained reviews.</strong> Rancho now shows <strong>9.4 "Exceptional" from 57 reviews</strong> (was 4.8★ / 53); Lucky Arrow shows <strong>9.2 from 217</strong> (was 4.6★ / 209). The platform now presents a 10-point scale. Lucky Arrow's 9.2 is exactly its old 4.6★ doubled; Rancho's 9.4 is 4.7★ doubled against a prior 4.8★ &mdash; either a real 0.1★ dip after four new reviews or a rounding artifact of the scale change. This report cannot tell which, so it is recorded as a <strong>watch</strong>, not a decline. <strong>Prices are unchanged: Rancho $20 day / $15 half-day, Lucky Arrow $35.</strong> The 43% day-pass gap is re-verified live for the second consecutive report.</p>
-<p><strong>Lucky Arrow's published pricing is fuller than this report had recorded.</strong> A direct fetch of its private-events page shows <strong>$545–$650 per person per night</strong> <em>and</em> <strong>private buyout "beginning at $19,500 per night,"</strong> capacity 41 guests in private accommodations (54 double occupancy), event spaces to 200, 31 rooms + 10 yurts. Prior reports carried only the per-person range. Whether the buyout figure is new or was previously unrecorded cannot be determined from history. It is a verified fact from a direct fetch &mdash; recorded as a fact, <strong>not</strong> a recommendation to publish Rancho pricing (that recommendation stays withdrawn; see Serana below).</p>
-<p><strong>⚡ Top 3 Actionable Findings (Week of September 21):</strong></p>
+<p><strong>Rancho picked up a glamping keyword it has never held in this report.</strong> <code>weekend getaway near austin glamping</code> was absent on three straight reads through September 7 (it was not re-run on 9/21). This week it returns <code>/blog/weekend-getaways-near-austin/</code> at ~#5 of 9, and the engine's synthesized answer opens its property list with Rancho: <em>"The closest overnight getaway to Austin is Rancho Moonrise."</em> One read, so it is recorded as a gain to confirm, not a trend. It is the same blog URL that holds the broad <code>glamping weekend getaway from Austin</code> query (4th read at ~#5). That one page is now carrying Rancho's entire glamping-intent presence.</p>
+<p><strong>The rest of the ranking picture held.</strong> The 10-keyword baseline is <strong>3/10 again, the same three keywords as 9/21</strong>: corporate retreat venue (blog #4 + landing #8), bachelorette (blog #7), overnight event venue (blog #7). The 9/21 slide on the corporate head term (~#4–5 → ~#7) reproduced at ~#7. That makes two reads at the lower level, so it is now a settled position rather than noise. Camp Lucy held ~#2 on that term for a second read. On the 200-guest wedding-with-lodging query, <code>/weddings/</code> (~#4) and the wedding blog (~#5) held. The engine's answer called Rancho <em>"the best fit"</em> for that query and listed it first.</p>
+<p><strong>The banned copy is still in the brand answer (2nd consecutive dirty read), and The Knot moved to #1 in the brand result set.</strong> <code>Rancho Moonrise Manor Texas</code> (phrase not in the query) returned <em>"Rancho Moonrise contains 20 luxury cabins and safari tents for up to 50 guests."</em> The Knot listing was the first link returned (on 9/21 it sat second, behind Hipcamp). The exact-phrase query again returned The Knot #1 (<strong>6th read</strong>). <strong>Yodel reproduced on a second uncontaminated read</strong>: a Yodel-restricted query with no phrase in it described <em>"luxury cabins and safari tents that can host up to 50 guests."</em> <strong>Hotels.com read clean</strong> on a domain-restricted query (6th clean read). The Knot fix is still the upstream fix.</p>
+<p><strong>ResortPass is blocked again. Both day-pass values are held, not re-verified.</strong> Both listings returned HTTP 403 through WebFetch <em>and</em> through a browser-header curl, and the search path returns no price or rating. This is the 8/25–8/31 blackout pattern. The last live values (9/21) are carried as <strong><code>STALE:2026-09-21</code></strong>: Rancho $20 / $15, 9.4 / 57; Lucky Arrow $35, 9.2 / 217. <strong>This is not a price or rating change.</strong> The day-pass gap ($20 vs $35) was not re-verified this week.</p>
+<p><strong>⚡ Top 3 Actionable Findings (Week of September 28):</strong></p>
 <ol>
-<li><strong>Fix The Knot description first &mdash; it is now the upstream fix for at least two surfaces.</strong> Five confirmed reads, and the brand-level answer re-acquired the banned sentence. Yodel very likely inherits from it. A human with a Knot vendor login is the only path.</li>
-<li><strong>The day-pass gap ($20 vs $35, 43%) stands, and Lucky Arrow now shows pool cabanas at $175 (4 guests) and a $90 private-yurt day room</strong> alongside its passes. Whether those extras were on the 9/7 listing is unknown (that read recorded only three products) &mdash; treat as "newly recorded," not "newly launched."</li>
-<li><strong>Rancho's tracked-keyword footprint is 3/10 against the 8/18 baseline of 4/10.</strong> The only loss is <code>wedding venue Austin TX ranch</code>, which sat at the very tail of its result set (9 of 9) on 8/18. Three keywords hold; nothing moved into the top 3 anywhere.</li>
+<li><strong>Fix The Knot description.</strong> It is the one fix with a demonstrated downstream footprint: the brand answer (dirty 2 reads running) and Yodel (2 uncontaminated reads). The Knot is now the #1 link on the brand query, so the defect sits in the most visible slot in Rancho's own brand result.</li>
+<li><strong>Protect <code>/blog/weekend-getaways-near-austin/</code>.</strong> It is now Rancho's only URL on two glamping-intent queries, one of them newly gained. Any edit that changes its title, H1 or the "20 minutes east of downtown" framing risks the only glamping foothold the site has. Coordinate with <code>rancho-site-daily</code> before touching it.</li>
+<li><strong>The corporate head-term position is now ~#7 on two reads.</strong> New listicle and resort entrants (Camp Lucy ~#2 twice) explain it. The owned page didn't regress. No action proposed; stop describing it as ~#4–5.</li>
 </ol>
 <hr>
-<h2>Re-Verify Gate &mdash; Claims Checked Live (September 21)</h2>
-<p>Brand canary run first: <code>Rancho Moonrise Manor Texas</code> returned <code>ranchomoonrise.com</code> (home + blog) in the result set. Measurement session valid &mdash; absences below are real.</p>
+<h2>Re-Verify Gate &mdash; Claims Checked Live (September 28)</h2>
+<p>Brand canary run first: <code>Rancho Moonrise Manor Texas</code> returned <code>ranchomoonrise.com</code> (home + <code>/blog/things-to-do-manor-tx/</code>) in the result set. Measurement session valid. Absences below are real.</p>
 <div class="table-wrap">
 <table>
-<thead><tr><th>Claim</th><th>Live Verification (September 21)</th><th>Result</th></tr></thead>
+<thead><tr><th>Claim</th><th>Live Verification (September 28)</th><th>Result</th></tr></thead>
 <tbody>
-<tr><td>Brand snippet clean &mdash; 2nd consecutive read (9/7)</td><td>Brand-query answer (phrase not in query) again states <em>"20 luxury cabins and safari tents for up to 50 guests."</em></td><td>❌ <strong>NO LONGER TRUE</strong> &mdash; streak broken; brand snippet is dirty again</td></tr>
-<tr><td>The Knot carries <em>"20 luxury cabins and safari tents for up to 50 guests"</em></td><td>Exact-phrase query returns The Knot listing #1. <strong>Direct fetch: HTTP 403</strong> (first failure of this path).</td><td>✅ <strong>CONFIRMED &mdash; 5th read</strong> (search-level only this run)</td></tr>
-<tr><td>WeddingWire carries the same banned phrase (snippet-level, 2 reads, 9/7)</td><td>0 of 3 attempts reproduced it (see Executive Summary). Direct fetch again returns a category page, not the listing.</td><td>⚠️ <strong>NOT REPRODUCED &mdash; downgraded to unconfirmed</strong></td></tr>
-<tr><td>Rancho ResortPass: $20 / $15, 4.8★ / 53 reviews</td><td>$20 day / $15 half-day unchanged. Rating now <strong>9.4 (10-pt scale), 57 reviews</strong>. Same value on two fetches with different prompts.</td><td>⚠️ <strong>PARTIAL &mdash; price held; rating display changed; reviews +4; possible 0.1★ dip, unresolvable</strong></td></tr>
-<tr><td>Lucky Arrow ResortPass: $35, 4.6★ / 209, $75 family bundle</td><td>$35 adult and family-pool passes, $75 family pass (4 guests) unchanged. Rating <strong>9.2 (= 4.6★ doubled)</strong>, reviews <strong>217 (+8)</strong>. Also listed: Family/Adult Pool Cabana $175 (4 guests), Day Room (Private Yurt) $90 (2 guests).</td><td>⚠️ <strong>PARTIAL &mdash; prices held; +8 reviews; cabana/yurt products newly recorded</strong></td></tr>
-<tr><td>Day-pass underpricing: Rancho $20 vs Lucky Arrow $35</td><td>Both re-fetched this run.</td><td>✅ <strong>STILL TRUE &mdash; 2nd consecutive live read</strong></td></tr>
-<tr><td>Serana publishes no price</td><td>Direct fetch of <code>seranatx.com/austin-corporate-retreats/</code>: still <em>"Pricing is offered as a flat package rate based on the size of your group and the length of your stay."</em> No number. Page describes groups of <strong>5–9 (max 9)</strong>.</td><td>✅ <strong>STILL TRUE &mdash; 3rd read</strong></td></tr>
-<tr><td>Serana is 21+ wellness retreat (8/31, other domain)</td><td>This page states no age restriction; the 21+ claim rested on <code>seranaretreats.com</code>, <strong>not re-fetched this run</strong>.</td><td>⚠️ <strong>CARRIED &mdash; not re-tested</strong></td></tr>
-<tr><td>Broad-glamping regression (3 owned URLs → 1)</td><td>Identical tracked query <code>glamping weekend getaway from Austin</code>: exactly 1 owned URL (<code>/blog/weekend-getaways-near-austin/</code>, ~#5).</td><td>✅ <strong>CONFIRMED &mdash; 3rd read at the same reduced level</strong></td></tr>
-<tr><td>Hipcamp curated "20 Best" &mdash; Lucky Arrow #8, Ranch 3232 #16, Rancho absent</td><td>Full 20-item list read directly. Lucky Arrow #8, Ranch 3232 #16, Rancho not on page.</td><td>✅ <strong>STILL TRUE &mdash; 12th consecutive read</strong></td></tr>
-<tr><td>Glamping Hub &mdash; Rancho absent (~21 wk)</td><td>Domain-restricted search returns only region pages; direct page fetch does not render individual property names (JS), so the check rests on the search.</td><td>✅ STILL TRUE &mdash; <strong>~22 weeks</strong> (drifted +1)</td></tr>
-<tr><td><code>/safari-tents-near-austin/</code> not indexed</td><td><code>site:ranchomoonrise.com safari tents</code> returns 9 owned URLs (accommodations, faqs, corporate-retreats, corporate-retreat blog, host-your-event, weddings, home, things-to-do-manor-tx, glamping-vs-camping) &mdash; <code>/safari-tents-near-austin/</code> absent. ~147 days by the established count (site-daily re-confirmed the same figure 9/21).</td><td>✅ <strong>STILL TRUE &mdash; independently re-tested here</strong></td></tr>
-<tr><td>7744 Ranch &mdash; 20 min from downtown, 100 guests / 10 overnight</td><td>Direct fetch: unchanged. Five mobile estates, cowboy pool, hot tub, sauna, cold plunge. No published pricing.</td><td>✅ STILL TRUE</td></tr>
-<tr><td><code>laketravisyachtrentals.com</code> &mdash; new listicle entrant (flagged 9/7, unassessed)</td><td>Fetched. Eight generic destinations (Lake Travis, Zilker, Pedernales, Enchanted Rock, San Antonio, etc.). Mentions neither Rancho nor any glamping/ranch venue.</td><td>✅ <strong>CLOSED &mdash; irrelevant, not a competitor</strong></td></tr>
-<tr><td>Hotels.com does not carry banned copy (5 clean reads)</td><td>Two direct fetches timed out. Hotels.com appears in the brand result set but its text was not read.</td><td>⚠️ <strong>NOT RE-VERIFIED (timeout ×2)</strong> &mdash; carried at 5 reads</td></tr>
-<tr><td>Competitor GBP posts/reviews/photos</td><td>Not readable through the harness search or fetch path (only third-party review sites surface).</td><td><strong>UNVERIFIED</strong> &mdash; no live path</td></tr>
+<tr><td>Brand answer carries banned copy (dirty, 1 read, 9/21)</td><td>Brand query (phrase not in query) again states <em>"Rancho Moonrise contains 20 luxury cabins and safari tents for up to 50 guests."</em> The Knot is now <strong>link #1</strong> in the brand set (was #2 behind Hipcamp).</td><td>❌ <strong>STILL DIRTY &mdash; 2nd consecutive read</strong></td></tr>
+<tr><td>The Knot carries the banned sentence</td><td>Exact-phrase query returns The Knot #1. Direct fetch <strong>403</strong> (WebFetch and curl), 2nd consecutive page-level failure.</td><td>✅ <strong>CONFIRMED &mdash; 6th read</strong> (search-level)</td></tr>
+<tr><td>Yodel carries a Knot-derived version (1 uncontaminated read, 9/21)</td><td>Yodel-restricted query, phrase <strong>not</strong> in query → <em>"luxury cabins and safari tents that can host up to 50 guests."</em> Page fetch 403 (WebFetch + curl). Yodel did <strong>not</strong> appear in this week's exact-phrase result set.</td><td>✅ <strong>CONFIRMED &mdash; 2nd uncontaminated read</strong> (snippet-level)</td></tr>
+<tr><td>WeddingWire carries the banned phrase (unconfirmed since 9/21)</td><td>Exact-phrase query returned The Knot, Tribeza, Rancho's own pages and Wheree, with <strong>no WeddingWire URL</strong>.</td><td>⚠️ <strong>STILL NOT REPRODUCED</strong> &mdash; stays unconfirmed; human check only</td></tr>
+<tr><td>Hotels.com clean (5 reads; not re-read 9/21)</td><td>Hotels.com-restricted query, phrase not in query: <em>"WiFi and parking are free… outdoor pool… climate control."</em> No unit count, no "luxury."</td><td>✅ <strong>STILL TRUE &mdash; 6th clean read</strong></td></tr>
+<tr><td>Rancho ResortPass: $20 / $15, 9.4 / 57 (9/21)</td><td>WebFetch <strong>403</strong>; browser-header curl <strong>403</strong>; domain-restricted search returns the listing but no price, rating or count.</td><td>⚠️ <strong>STALE:2026-09-21</strong> &mdash; held, not re-verified (1st failure after the 9/7 recovery)</td></tr>
+<tr><td>Lucky Arrow ResortPass: $35, 9.2 / 217, $75 family, $175 cabanas, $90 day room</td><td>Same 403 on both paths; search returns amenity text only (cabanas confirmed present, no prices).</td><td>⚠️ <strong>STALE:2026-09-21</strong> &mdash; held</td></tr>
+<tr><td>Day-pass underpricing: Rancho $20 vs Lucky Arrow $35</td><td>Neither side readable.</td><td>⚠️ <strong>STALE:2026-09-21</strong> &mdash; carried, not re-verified</td></tr>
+<tr><td>Lucky Arrow: $545–650 pp/night; buyout from $19,500/night; 41 private / 54 double; events to 200</td><td>Direct fetch <code>/private-events</code>: all four figures unchanged. Page now says <em>"Just 35 Minutes from Austin"</em> and <em>"40+ Corporate Retreats Annually."</em></td><td>✅ <strong>STILL TRUE &mdash; 2nd read</strong></td></tr>
+<tr><td>Serana publishes no price; groups 5–9</td><td>Direct fetch: still <em>"flat package rate based on the size of your group and the length of your stay."</em> Up to 9 overnight.</td><td>✅ <strong>STILL TRUE &mdash; 4th read</strong></td></tr>
+<tr><td>7744 Ranch &mdash; 20 min, 100 events / 10 overnight, 5 mobile estates, no pricing</td><td>Direct fetch: unchanged. The same page also says it can <em>"comfortably sleep up to 18 guests"</em>, an internal inconsistency on their side.</td><td>✅ STILL TRUE</td></tr>
+<tr><td>Camp Lucy entered corporate head term ~#2 (1 read, 9/21, unassessed)</td><td>Re-appeared ~#2. Direct fetch of <code>/meetings-events/corporate-packages/</code>: 282 acres, six venues, 50,000+ sq ft event space, up to 300 attendees, <strong>no published pricing</strong>, overnight count not stated.</td><td>✅ <strong>CONFIRMED &mdash; 2nd read; now assessed</strong></td></tr>
+<tr><td>Corporate head-term slide (~#4–5 → ~#7, 1 read)</td><td><code>corporate retreat near austin texas</code>: Rancho blog ~#7 of 9 again.</td><td>✅ <strong>CONFIRMED &mdash; 2nd read at ~#7</strong></td></tr>
+<tr><td>Broad-glamping floor &mdash; 1 owned URL (3 reads)</td><td><code>glamping weekend getaway from Austin</code>: exactly 1 owned URL (weekend-getaways blog, ~#5); engine names Rancho first in its answer.</td><td>✅ <strong>CONFIRMED &mdash; 4th read</strong></td></tr>
+<tr><td><code>weekend getaway near austin glamping</code> &mdash; Rancho absent (3 reads through 9/7; not run 9/21)</td><td>Rancho's weekend-getaways blog returned ~#5 of 9; engine answer: <em>"The closest overnight getaway to Austin is Rancho Moonrise."</em></td><td>❌ <strong>NO LONGER TRUE &mdash; Rancho now present</strong> (1 read)</td></tr>
+<tr><td>Hipcamp "20 Best" &mdash; Lucky Arrow #8, Ranch 3232 #16, Rancho absent</td><td>Full list read directly. <strong>Lucky Arrow #9, Ranch 3232 #17</strong> (a new entry landed above both). Rancho not on page.</td><td>⚠️ <strong>PARTIAL</strong> &mdash; Rancho absence holds (<strong>13th read</strong>); competitor positions each moved −1 (1st list change in 12 reads)</td></tr>
+<tr><td>Glamping Hub &mdash; Rancho absent (~22 wk)</td><td>Domain-restricted search for Rancho returns only unrelated California region pages.</td><td>✅ STILL TRUE &mdash; <strong>~23 weeks</strong></td></tr>
+<tr><td><code>/safari-tents-near-austin/</code> not indexed</td><td>Not re-run here. <code>rancho-site-daily</code> re-confirmed absent from <code>site:</code> on 9/27, one day before this report.</td><td>✅ CARRIED (site-daily's 9/27 read)</td></tr>
+<tr><td>Serana 21+ positioning (other domain)</td><td>Not re-fetched.</td><td>⚠️ CARRIED &mdash; not re-tested</td></tr>
+<tr><td>Competitor GBP posts/reviews/photos</td><td>No live read path through harness search or fetch.</td><td><strong>UNVERIFIED</strong> &mdash; no live path</td></tr>
 </tbody></table></div>
-<p><strong>Resolution summary:</strong> 6 still_true / confirmed, 1 claim no longer true (brand snippet), 1 not reproduced (WeddingWire), 2 partial (ResortPass, both properties), 1 closed (laketravisyachtrentals), 3 carried or unverifiable (Serana 21+, Hotels.com, competitor GBP).</p>
+<p><strong>Resolution summary:</strong> 10 still_true / confirmed, 1 still dirty, 1 no longer true (a Rancho gain), 1 partial (Hipcamp positions), 3 stale (ResortPass), 1 still not reproduced (WeddingWire), 3 carried or unverifiable. Two prior claims auto-resolved to the done-log.</p>
 <hr>
-<h2>Section 1 &mdash; SERP Rankings Summary (September 21, 2026)</h2>
-<blockquote><p>Methodology note: SERP ordering is from the harness <code>WebSearch</code> tool &mdash; a US logged-out, non-geolocated web-search proxy &mdash; directional, not pixel-exact. Presence/absence is reliable; exact ranks are approximate. Brand canary passed before any absence was recorded.</p></blockquote>
-<h3>A. The 10 tracked baseline keywords (phrasing per <code>scripts/serp-baseline.py</code>) vs the 8/18 baseline</h3>
+<h2>Section 1 &mdash; SERP Rankings Summary (September 28, 2026)</h2>
+<blockquote><p>Methodology note: SERP ordering is from the harness <code>WebSearch</code> tool (a US logged-out, non-geolocated web-search proxy). It's directional, not pixel-exact. Presence/absence is reliable; exact ranks are approximate. The brand canary passed before any absence was recorded.</p></blockquote>
+<h3>A. The 10 tracked baseline keywords (phrasing per <code>scripts/serp-baseline.py</code>)</h3>
 <div class="table-wrap">
 <table>
-<thead><tr><th>#</th><th>Keyword</th><th>8/18 baseline</th><th>9/21</th><th>Δ</th></tr></thead>
+<thead><tr><th>#</th><th>Keyword</th><th>8/18 baseline</th><th>9/21</th><th>9/28</th><th>Δ vs 9/21</th></tr></thead>
 <tbody>
-<tr><td>1</td><td>glamping near Austin TX</td><td>absent</td><td>absent (aggregators #1–2)</td><td>=</td></tr>
-<tr><td>2</td><td>wedding venue Austin TX ranch</td><td>✅ <code>/weddings/</code> 9 of 9</td><td>❌ absent (0 of 10)</td><td><strong>⬇ lost tail position</strong></td></tr>
-<tr><td>3</td><td>unique wedding venues near Austin</td><td>absent</td><td>absent</td><td>=</td></tr>
-<tr><td>4</td><td>corporate retreat venue Austin TX</td><td>✅ blog 8 of 8</td><td>✅ <strong>blog #4 + landing #8</strong> (of 9)</td><td><strong>⬆ improved; second URL now present</strong></td></tr>
-<tr><td>5</td><td>pool day pass Austin TX</td><td>absent</td><td>absent</td><td>=</td></tr>
-<tr><td>6</td><td>things to do Manor TX</td><td>absent</td><td>absent (Eventbrite/TripAdvisor/Yelp)</td><td>=</td></tr>
-<tr><td>7</td><td>bachelorette party Austin ranch</td><td>✅ blog 5 of 9</td><td>✅ blog #6 of 9</td><td>≈ (−1)</td></tr>
-<tr><td>8</td><td>events venue Austin TX</td><td>absent</td><td>absent</td><td>=</td></tr>
-<tr><td>9</td><td>glamping with pool Texas</td><td>absent</td><td>absent</td><td>=</td></tr>
-<tr><td>10</td><td>overnight event venue Austin</td><td>✅ blog 4 of 8</td><td>✅ blog #6 of 9</td><td>⬇ (−2)</td></tr>
+<tr><td>1</td><td>glamping near Austin TX</td><td>absent</td><td>absent</td><td>absent (Glamping Hub, Hipcamp, atasteofkoko, Talula Mesa, Walden, Safari for the Soul, Camposanto, Udoscape, Green Acres)</td><td>=</td></tr>
+<tr><td>2</td><td>wedding venue Austin TX ranch</td><td><code>/weddings/</code> 9 of 9</td><td>absent</td><td>absent (Ranch Austin on 5 of 10 surfaces)</td><td>=</td></tr>
+<tr><td>3</td><td>unique wedding venues near Austin</td><td>absent</td><td>absent</td><td>absent (Camp Lucy named in answer)</td><td>=</td></tr>
+<tr><td>4</td><td>corporate retreat venue Austin TX</td><td>blog 8 of 8</td><td>blog #4 + landing #8</td><td>✅ <strong>blog #4 + landing #8</strong> (of 9)</td><td>= exact</td></tr>
+<tr><td>5</td><td>pool day pass Austin TX</td><td>absent</td><td>absent</td><td>absent</td><td>=</td></tr>
+<tr><td>6</td><td>things to do Manor TX</td><td>absent</td><td>absent</td><td>absent (Eventbrite ×3, TripAdvisor, Yelp ×2)</td><td>=</td></tr>
+<tr><td>7</td><td>bachelorette party Austin ranch</td><td>blog 5 of 9</td><td>blog #6</td><td>✅ blog #7 of 9</td><td>≈ (−1)</td></tr>
+<tr><td>8</td><td>events venue Austin TX</td><td>absent</td><td>absent</td><td>absent</td><td>=</td></tr>
+<tr><td>9</td><td>glamping with pool Texas</td><td>absent</td><td>absent</td><td>absent (Spoon Mountain ×2, Talula Mesa; Lucky Arrow named)</td><td>=</td></tr>
+<tr><td>10</td><td>overnight event venue Austin</td><td>blog 4 of 8</td><td>blog #6</td><td>✅ blog #7 of 9 (wedding-venues blog)</td><td>≈ (−1)</td></tr>
 </tbody></table></div>
-<p><strong>Result: 3 / 10 ranking (was 4 / 10).</strong> The single loss is a tail-of-set position on a keyword this task's own 9/7 report already carried as "not ranking," so it reads as flicker at the edge of the result set rather than a lost ranking. Note: <code>CONTEXT.md</code>'s Key Metrics table still describes the 4/10 as "corporate retreat #3 + #4, glamping w/ pool #6, bachelorette #6" (the 8/17 framing); the 8/18 baseline file lists a different four. That table is <code>rancho-metrics-weekly</code>'s to reconcile &mdash; flagged, not edited here.</p>
+<p><strong>Result: 3 / 10 ranking, the same three keywords as 9/21.</strong> The two −1 moves are within the proxy's precision. On both queries the engine's answer still names Rancho with accurate copy (36 acres, cabins and safari tents, Event Barn, 20 minutes east of downtown).</p>
 <h3>B. Additional tracked queries (this report's own set)</h3>
 <div class="table-wrap">
 <table>
-<thead><tr><th>Keyword</th><th>Top SERP Sites (approx. order)</th><th>Rancho Position</th><th>Δ vs 9/7</th></tr></thead>
+<thead><tr><th>Keyword</th><th>Top SERP Sites (approx. order)</th><th>Rancho Position</th><th>Δ vs 9/21</th></tr></thead>
 <tbody>
-<tr><td>corporate retreat near austin texas</td><td>Teamout, <strong>Camp Lucy (new)</strong>, Sage Hill, Lucky Arrow, Wilder, Element Ranch, <strong>Rancho (blog)</strong>, Peaceful Waters, Lucky Arrow</td><td>✅ <strong>~#7 (blog)</strong></td><td>⬇ was ~#4–5</td></tr>
-<tr><td>corporate retreat venue near austin ranch</td><td>Milk and Honey (×3), Rancho blog, Element Ranch, Rancho landing, Artemis, 7744, Wrenwood</td><td>✅ <strong>~#4 blog, ~#6 landing</strong></td><td>≈ was ~#3 / ~#6</td></tr>
-<tr><td>ranch wedding venue + overnight lodging, 200 guests</td><td>WeddingWire (Ranch Austin), Knot (Ranch Austin), wedsociety, <strong>Rancho <code>/weddings/</code></strong>, <strong>Rancho blog</strong>, ranchaustin.com, <strong>Rancho home</strong>, Hudson Bend, Zola</td><td>✅ <strong>~#4 <code>/weddings/</code>, ~#5 blog, ~#7 home</strong> &mdash; all three owned URLs present</td><td>⬇ blog was ~#3, home was ~#6 (home now confirmed, not just carried)</td></tr>
-<tr><td>best weekend getaways near austin texas 2026</td><td>GetYourGuide, solotripsandtips, Royal Caribbean, Tribeza, atasteofkoko, Texas Travel Talk, laketravisyachtrentals, <strong>Rancho blog</strong>, hotelthemedrooms</td><td>✅ <strong>~#8 (blog)</strong></td><td>⬇ was ~#5; set churned (Vrbo out; GetYourGuide, Royal Caribbean, Tribeza, Texas Travel Talk in)</td></tr>
-<tr><td>glamping weekend getaway from Austin (broad, exact phrasing)</td><td>Glamping Hub, Hipcamp, atasteofkoko, onechelofanadventure, <strong>Rancho blog</strong>, Cameron Ranch, Retreat on the Hill, Udoscape, Travelocity</td><td>⚠️ <strong>~#5 (blog only)</strong></td><td>= (3rd read at 1 owned URL; engine's answer still names Rancho first, accurately)</td></tr>
-<tr><td>glamping near austin tx</td><td>Glamping Hub, Hipcamp, Yelp, Talula Mesa, Walden, Udoscape, Green Acres, Retreat on the Hill, Expedia</td><td>❌ Absent</td><td>=</td></tr>
-<tr><td>glamping with pool near Austin</td><td>Outdoorsy, Glamping Hub, Hipcamp, atasteofkoko, Talula Mesa, Udoscape, Spoon Mountain</td><td>❌ Absent</td><td>(new phrasing)</td></tr>
-<tr><td>safari tent austin texas</td><td>Glamping Hub, Vrbo, Hipcamp, Safari for the Soul (×2), Wahwahtaysee, Spoon Mountain, Expedia (×2)</td><td>❌ Absent; <code>/safari-tents-near-austin/</code> not surfacing</td><td>=</td></tr>
-<tr><td>romantic weekend getaways near austin</td><td>So Much Life, HomeToGo, Yelp, Sage Hill, Spoon Mountain, Romantic Spots Austin, Visit Austin</td><td>❌ Absent (re-run this week, not carried)</td><td>=</td></tr>
-<tr><td>pool day pass Austin TX</td><td>do512, ResortPass, Austin Motel, Dayuse, Tribeza, Fairmont, East Austin Hotel, 365 Things</td><td>❌ Absent (ResortPass is Rancho's <em>listing host</em>, not Rancho's page)</td><td>=</td></tr>
-<tr><td>wedding venue Austin TX ranch</td><td>wedsociety, WeddingWire (Ranch Austin), Knot (Ranch Austin), herecomestheguide, ranchaustin.com, Pecan Springs, Star Hill, Rambling Rose, Twisted Ranch</td><td>❌ Absent</td><td>= (narrow-query absence as established)</td></tr>
-<tr><td>Rancho Moonrise Manor Texas (brand canary)</td><td>Hipcamp, The Knot, Apple Maps, Facebook, LinkedIn, Hotels.com, Do512, Yelp, ranchomoonrise.com (blog + home)</td><td>✅ Ranking, #9–10 of 10 links</td><td>⚠️ <strong>brand answer carries banned copy again</strong></td></tr>
+<tr><td>corporate retreat near austin texas</td><td>Teamout, Camp Lucy, Sage Hill, Lucky Arrow, Wilder, Element Ranch, <strong>Rancho blog</strong>, Peaceful Waters, Lucky Arrow (2nd URL)</td><td>✅ ~#7 (blog)</td><td>= (<strong>2nd read at ~#7</strong>, slide confirmed)</td></tr>
+<tr><td>corporate retreat venue near austin ranch</td><td>Milk and Honey ×3, <strong>Rancho blog</strong>, Element Ranch, Artemis, <strong>Rancho landing</strong>, 7744, Peaceful Waters</td><td>✅ ~#4 blog, ~#7 landing</td><td>≈ (landing −1)</td></tr>
+<tr><td>ranch wedding venue + overnight lodging, 200 guests</td><td>WeddingWire (Ranch Austin), Knot (Ranch Austin), wedsociety, <strong>Rancho <code>/weddings/</code></strong>, <strong>Rancho blog</strong>, ranchaustin.com/lodging, Hudson Bend, ranchaustin.com, Zola</td><td>✅ ~#4 <code>/weddings/</code>, ~#5 blog. Home not in this read's set (was ~#7). Engine answer lists Rancho <strong>first</strong> and calls it <em>"the best fit"</em></td><td>≈ (home dropped out; one read, not actioned)</td></tr>
+<tr><td>best weekend getaways near austin texas 2026</td><td><strong>Vrbo (back)</strong>, Royal Caribbean, GetYourGuide, solotripsandtips, Tribeza, atasteofkoko, laketravisyachtrentals, <strong>Rancho blog</strong>, hotelthemedrooms</td><td>✅ ~#8 (blog)</td><td>=</td></tr>
+<tr><td>glamping weekend getaway from Austin (broad, exact phrasing)</td><td>Hipcamp, Glamping Hub, atasteofkoko, onechelofanadventure, <strong>Rancho blog</strong>, Cameron Ranch, Retreat on the Hill, Udoscape, Travelocity</td><td>⚠️ ~#5 (blog only); engine answer names Rancho first</td><td>= (4th read at 1 owned URL)</td></tr>
+<tr><td><strong>weekend getaway near austin glamping</strong></td><td>Hipcamp, Glamping Hub, onechelofanadventure, texplorevibe (new), <strong>Rancho blog</strong>, Udoscape, Cameron Ranch, Walden, Expedia</td><td>✅ <strong>~#5 (blog)</strong>; engine answer: <em>"The closest overnight getaway to Austin is Rancho Moonrise"</em></td><td>⬆ <strong>NEW (was absent 3 reads through 9/7)</strong></td></tr>
+<tr><td>glamping near austin tx</td><td>(see baseline #1)</td><td>❌ Absent</td><td>=</td></tr>
+<tr><td>safari tent austin texas</td><td>Glamping Hub, Vrbo, Hipcamp, Safari for the Soul ×2, Wahwahtaysee, Spoon Mountain, Expedia ×2</td><td>❌ Absent; <code>/safari-tents-near-austin/</code> not surfacing</td><td>=</td></tr>
+<tr><td>romantic weekend getaways near austin</td><td>Austin Monthly (new), HomeToGo, Yelp, Spoon Mountain, hotels-austin, Romantic Spots Austin, Visit Austin, vacationidea, Expedia</td><td>❌ Absent</td><td>=</td></tr>
+<tr><td>pool day pass Austin TX</td><td>Swimply, ResortPass ×2, Austin Motel, Tribeza, Dayuse, 365 Things, Visit Austin, TimeOut</td><td>❌ Absent (ResortPass hosts Rancho's listing, not Rancho's page)</td><td>=</td></tr>
+<tr><td>Rancho Moonrise Manor Texas (brand canary)</td><td><strong>The Knot</strong>, Hipcamp, Apple Maps, Facebook, LinkedIn, Hotels.com, Do512, Yelp, ranchomoonrise.com (blog + home)</td><td>✅ Ranking, #9–10 of 10</td><td>⚠️ Knot now #1; banned copy in answer (2nd read)</td></tr>
 </tbody></table></div>
-<p><code>weekend getaway near austin glamping</code> (a 9/7 row) was <strong>not re-run this week</strong> &mdash; carried, no reason to expect movement.</p>
-<p><strong>Read:</strong> corporate-retreat and wedding-cluster presence is intact; the mild slide on two head-term queries (corporate ~#4–5 → ~#7, weekend getaways ~#5 → ~#8) coincides with new listicle entrants (Camp Lucy, GetYourGuide, Royal Caribbean, Tribeza, Texas Travel Talk), not with any owned-page change. Both are single reads at the directional-proxy level; neither is actioned.</p>
+<p><strong>Read:</strong> the owned footprint is stable to slightly better. One glamping keyword was gained, and the corporate head-term position settled at ~#7. Every glamping-intent placement Rancho holds runs through a single URL, <code>/blog/weekend-getaways-near-austin/</code>. The dedicated glamping pages (<code>/accommodations/</code>, <code>/safari-tents-near-austin/</code>) rank for none of them.</p>
 <hr>
 <h2>Section 2 &mdash; Competitor Highlights</h2>
-<h3>Lucky Arrow Retreat &mdash; <a href="https://luckyarrowretreat.com">luckyarrowretreat.com</a></h3>
-<p>Direct fetch of <code>/private-events</code>: <strong>$545–$650 per person per night</strong> (includes lodging, catering, meeting space, AV, planning, taxes, fees, gratuities) and <strong>private buyout beginning at $19,500 per night</strong>. Capacity 41 in private accommodations (54 double occupancy), event spaces to 200. Lodging: 31 standard rooms + 10 luxury yurts. ResortPass: 9.2 / <strong>217 reviews (+8)</strong>; adult day pass $35, family pool pass $35, family pass $75 (4 guests), <strong>pool cabanas $175 (4 guests), private-yurt day room $90 (2 guests)</strong>. Hipcamp curated position #8, unchanged. Yelp shows 66 reviews (incidental &mdash; no baseline to compare). Corporate SERP presence unchanged.</p>
+<h3>Camp Lucy &mdash; <a href="https://www.camplucy.com/meetings-events/corporate-packages/">camplucy.com/meetings-events/corporate-packages</a></h3>
+<p>Now confirmed at ~#2 on <code>corporate retreat near austin texas</code> for a second read, and named in the answer for <code>unique wedding venues near Austin</code>. Assessed this week: <strong>282 acres, six venues, 50,000+ sq ft of event space, up to 300 attendees</strong>, Hill Country (Dripping Springs). No published pricing; overnight capacity not stated on the corporate page. Camp Lucy is a scale competitor, not a like-for-like one: bigger and farther out than Rancho. Its presence explains the head-term slide. It doesn't signal anything about Rancho's page.</p>
+<h3>Lucky Arrow Retreat &mdash; <a href="https://luckyarrowretreat.com/private-events">luckyarrowretreat.com</a></h3>
+<p>Corporate pricing unchanged on a 2nd direct read: <strong>$545–$650 pp/night; private buyout from $19,500/night</strong>; 41 guests private / 54 double; events to 200; 31 rooms + 10 yurts. The page now says <em>"Just 35 Minutes from Austin"</em> and <em>"40+ Corporate Retreats Annually."</em> ResortPass values are held at 9/21 (blocked this run). Hipcamp curated position slipped #8 → #9 because a new entry landed above it, not because of anything Lucky Arrow did.</p>
 <h3>Serana &mdash; <a href="https://www.seranatx.com/austin-corporate-retreats/">seranatx.com</a></h3>
-<p>Still no published price (3rd read, direct fetch). New detail on this read: the page addresses groups of <strong>5–9, maximum 9</strong> &mdash; not a large-group competitor for Rancho's 20–200 corporate positioning. Did not appear in this week's <code>corporate retreat near austin texas</code> answer at all (it had a price-free mention on 9/7). The "publish flat buyout pricing" recommendation stays withdrawn.</p>
+<p>4th direct read: no published price, groups up to 9. Not in this week's corporate result set. Outside Rancho's 20–200 lane; nothing to do.</p>
 <h3>7744 Ranch &mdash; <a href="https://www.7744ranch.com/corporate-rentals">7744ranch.com/corporate-rentals</a></h3>
-<p>Re-fetched: 100 guests for events, 10 overnight in five mobile estates, ~20 minutes from downtown, cowboy pool + hot tub + sauna + cold plunge. No published pricing, no new lodging. Unchanged. Its Expedia listing (added 8/31) was not re-checked.</p>
-<h3>New surfaces noted this run</h3>
-<ul>
-<li><strong>Camp Lucy</strong> entered the <code>corporate retreat near austin texas</code> set at ~#2 (Hill Country, "corporate packages" page). Not previously tracked; not assessed beyond presence &mdash; a future-read item.</li>
-<li><strong>Artemis Ranch</strong> slid from ~#2 to ~#6 on the ranch-corporate query; <strong>Wrenwood Ranch</strong> entered. Single read.</li>
-<li><strong>Yodel</strong> (<code>events.yodel.today</code>) surfaced as a likely Knot-copy carrier (see Executive Summary).</li>
-</ul>
-<hr>
-<h2>Section 3 &mdash; Content Gap Analysis (Updated September 21)</h2>
+<p>Unchanged: 100 for events, 5 mobile estates, ~20 minutes from downtown, no pricing. One detail: the page states both "10 overnight guests" and "comfortably sleep up to 18." That's their inconsistency, noted only because 7744 is the closest like-for-like competitor on distance.</p>
+<h3>Third-party copy carriers &mdash; state of the map</h3>
 <div class="table-wrap">
 <table>
-<thead><tr><th>Content Type</th><th>Who Has It</th><th>Rancho Moonrise Status</th><th>Δ vs. September 7</th></tr></thead>
+<thead><tr><th>Surface</th><th>Carries banned sentence?</th><th>Evidence level</th><th>Reads</th></tr></thead>
 <tbody>
-<tr><td>Published flat buyout pricing</td><td>Lucky Arrow ($19,500/night from; $545–650 pp/night)</td><td>Custom-quoted</td><td>Lucky Arrow buyout figure newly recorded; Serana still withdrawn &mdash; no change to the "do not re-propose" stance</td></tr>
-<tr><td>Day-pass pricing vs. market</td><td>Lucky Arrow $35 (9.2 / 217) + $175 cabanas + $90 day room</td><td>$20 / $15 (9.4 / 57)</td><td>Gap confirmed 2nd live read; Lucky Arrow adds upsell tiers to the record</td></tr>
-<tr><td>Third-party listing copy hygiene</td><td>n/a</td><td>Knot: <strong>5th read</strong>, brand answer <strong>dirty again</strong>. WeddingWire: <strong>unconfirmed</strong>. Yodel: <strong>new lead</strong>. Hotels.com: not re-read.</td><td>Brand streak broken; WeddingWire downgraded</td></tr>
-<tr><td>Broad-glamping SERP presence</td><td>Aggregators + one blog URL</td><td>1 owned URL, 3rd read</td><td>Floor holds</td></tr>
-<tr><td>Hipcamp curated "20 Best Glamping"</td><td>Lucky Arrow (#8), Ranch 3232 (#16)</td><td>Absent, 12th read</td><td>Gap holds</td></tr>
-<tr><td>Glamping Hub listing</td><td>Talula Mesa, others</td><td>Still absent</td><td>~22 weeks (was ~21)</td></tr>
-<tr><td><code>/safari-tents-near-austin/</code> indexing</td><td>&mdash;</td><td>Not surfacing, ~147 days</td><td>Independently re-tested</td></tr>
+<tr><td>The Knot</td><td>Yes</td><td>Search #1 on exact phrase; page 403</td><td>6</td></tr>
+<tr><td>Brand-query answer</td><td>Yes</td><td>Uncontaminated brand query</td><td>2 consecutive</td></tr>
+<tr><td>Yodel</td><td>Yes (paraphrase: "luxury cabins and safari tents… up to 50 guests")</td><td>Uncontaminated domain query; page 403</td><td>2</td></tr>
+<tr><td>WeddingWire</td><td>Unconfirmed</td><td>Not in exact-phrase set</td><td>0 of 4 since 9/21</td></tr>
+<tr><td>Hotels.com</td><td>No</td><td>Uncontaminated domain query</td><td>6 clean</td></tr>
+<tr><td>Wheree (<code>rancho-moonrise.wheree.com</code>)</td><td>Unknown</td><td>Appeared in the exact-phrase result set; page 403</td><td>1 (presence only)</td></tr>
+</tbody></table></div>
+<p>Wheree is a scraped directory, like Yodel. It showed up in the exact-phrase result set, but that query contains the phrase, so its presence there is <strong>not</strong> evidence it carries the sentence. It is logged as a surface to watch, not a carrier.</p>
+<hr>
+<h2>Section 3 &mdash; Content Gap Analysis (Updated September 28)</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Content Type</th><th>Who Has It</th><th>Rancho Moonrise Status</th><th>Δ vs. September 21</th></tr></thead>
+<tbody>
+<tr><td>Published flat buyout pricing</td><td>Lucky Arrow ($19,500/night from; $545–650 pp/night)</td><td>Custom-quoted</td><td>Unchanged (2nd read). No recommendation to publish.</td></tr>
+<tr><td>Day-pass pricing vs. market</td><td>Lucky Arrow $35 (held)</td><td>$20 / $15 (held)</td><td><strong>STALE:2026-09-21</strong>, ResortPass 403</td></tr>
+<tr><td>Glamping-intent SERP presence</td><td>Aggregators + one Rancho blog URL</td><td><strong>1 URL on 2 queries</strong> (was 1 on 1)</td><td>⬆ one query gained</td></tr>
+<tr><td>Dedicated glamping/safari pages ranking</td><td>Safari for the Soul, Spoon Mountain, Wahwahtaysee</td><td><code>/accommodations/</code>, <code>/safari-tents-near-austin/</code> rank for nothing tracked</td><td>=</td></tr>
+<tr><td>Third-party listing copy hygiene</td><td>n/a</td><td>Knot 6th read; brand answer dirty ×2; Yodel ×2; Hotels.com clean ×6</td><td>Yodel firmed up</td></tr>
+<tr><td>Hipcamp curated "20 Best Glamping"</td><td>Lucky Arrow (#9), Ranch 3232 (#17)</td><td>Absent, 13th read</td><td>Competitors −1 each</td></tr>
+<tr><td>Glamping Hub listing</td><td>Talula Mesa, others</td><td>Still absent</td><td>~23 weeks</td></tr>
+<tr><td>Large-scale corporate venue</td><td>Camp Lucy (300 attendees, 282 ac)</td><td>20–200 guests, 36 ac</td><td>New competitor assessed, different tier</td></tr>
 </tbody></table></div>
 <hr>
 <h2>Section 4 &mdash; Quick Wins This Week</h2>
 <ol>
-<li><strong>Fix the venue description on The Knot (Ashley or Adam, ~15 min).</strong> Five confirmed reads and the brand-level answer has re-acquired the banned sentence. Highest-leverage half hour on this property &mdash; it is now upstream of at least Yodel and possibly WeddingWire.</li>
-<li><strong>Open the WeddingWire listing as a logged-in owner (~15 min).</strong> This report cannot render the page. Check the description directly; do not assume the 9/7 read was right.</li>
-<li><strong>After the Knot fix, re-check Yodel.</strong> If Yodel updates on its own, that confirms the inheritance and closes it without a separate edit.</li>
-<li><strong>Glamping Hub submission &mdash; ~22 weeks absent, free, ~15 min</strong> at <code>glampinghub.com/list-your-property</code>.</li>
-<li><strong>Hipcamp curation question for Ashley &mdash; 12th read.</strong> <em>"Is the Hipcamp listing intentionally private &mdash; SEO presence only &mdash; or do we want bookings from it?"</em></li>
-<li><strong>Day-pass pricing: gap re-verified twice live.</strong> Whether to test a higher price or add a cabana-style upsell is an operations call for Adam and Ashley; this report only supplies the comparison.</li>
+<li><strong>Fix the venue description on The Knot (Ashley or Adam, ~15 min).</strong> 6th confirmed read. The Knot is now the #1 link on Rancho's brand query, and Yodel is confirmed downstream on a 2nd read.</li>
+<li><strong>After the Knot fix, re-check Yodel and the brand answer.</strong> If both clean up without a separate edit, the inheritance is confirmed and the whole copy-hygiene bucket closes with one login.</li>
+<li><strong>Open the WeddingWire listing as a logged-in owner (~15 min).</strong> Still unreadable by automation; still unconfirmed.</li>
+<li><strong>Glamping Hub submission, ~23 weeks absent, free, ~15 min</strong> at <code>glampinghub.com/list-your-property</code>.</li>
+<li><strong>Hipcamp curation question for Ashley (13th read).</strong> <em>"Is the Hipcamp listing intentionally private (SEO presence only), or do we want bookings from it?"</em></li>
+<li><strong>ResortPass numbers: read them from the host dashboard if the pricing conversation happens this week.</strong> The public listing is behind a 403 again; the last public read is 9/21.</li>
 </ol>
 <hr>
 <h2>Section 5 &mdash; Recommendations for This Week</h2>
-<p><strong>Priority 1 &mdash; The Knot description.</strong> It is the one fix with a demonstrated downstream footprint. Everything else in the "copy hygiene" bucket is contingent on it.</p>
-<p><strong>Priority 2 &mdash; Do not act on WeddingWire as a confirmed carrier.</strong> The 9/7 read is discounted (query contamination) and this week's three attempts found nothing. It needs a human eye, not another automated fetch.</p>
-<p><strong>Priority 3 &mdash; Do not treat the two-point SERP slides as a trend.</strong> Corporate ~#7 and weekend-getaways ~#8 are single reads at directional-proxy precision with new listicle entrants explaining the shift. Re-read next week before saying anything more.</p>
-<p><strong>Priority 4 &mdash; Do not re-open Serana pricing.</strong> Third direct read, still no number, and its stated group size (5–9) puts it outside Rancho's corporate lane anyway.</p>
-<p><strong>Priority 5 &mdash; Watch the ResortPass rating.</strong> A 9.4 vs a doubled-4.8 (9.6) could be a real dip or a scale-change artifact. If next week's read shows 9.4 again with more reviews, treat the 4.7★ equivalent as the new baseline.</p>
+<p><strong>Priority 1: The Knot description.</strong> Unchanged, and stronger evidence than last week: two confirmed downstream surfaces (brand answer, Yodel) and the #1 brand-query slot.</p>
+<p><strong>Priority 2: Treat the weekend-getaways blog as load-bearing.</strong> It holds Rancho's only glamping-intent rankings, now on two queries. <code>rancho-site-daily</code> owns on-site changes. This report flags the dependency so nobody edits that page casually.</p>
+<p><strong>Priority 3: Don't restate the day-pass gap as current.</strong> It is held at 9/21. Two blocked reads in a row would match the August pattern; three would trigger a BLOCKERS entry per the gate.</p>
+<p><strong>Priority 4: Re-read the new glamping gain before claiming it.</strong> One read. Confirm next week on the identical phrasing.</p>
+<p><strong>Priority 5: Don't chase Camp Lucy.</strong> It is a 300-person, 282-acre operation farther out. It outranks Rancho on the corporate head term by scale and domain age, not content. Rancho's corporate position is intact on the ranch-specific variant (blog ~#4) and the venue baseline keyword (blog #4 + landing #8).</p>
 <hr>
-<h2>Appendix: Rancho Moonrise Competitive Positioning (September 21, 2026)</h2>
+<h2>Appendix: Rancho Moonrise Competitive Positioning (September 28, 2026)</h2>
 <div class="table-wrap">
 <table>
-<thead><tr><th>Attribute</th><th>Current State</th><th>Change Since September 7</th></tr></thead>
+<thead><tr><th>Attribute</th><th>Current State</th><th>Change Since September 21</th></tr></thead>
 <tbody>
-<tr><td>Tracked-keyword ranking (10-keyword baseline)</td><td>3 / 10 (blog #4 + landing #8 on corporate retreat, bachelorette #6, overnight event #6)</td><td>⬇ 4/10 → 3/10 vs 8/18; loss is a tail position</td></tr>
-<tr><td>Organic ranking &mdash; wedding cluster</td><td><code>/weddings/</code> ~#4, blog ~#5, home ~#7 (all three present)</td><td>Blog ⬇ ~#3 → ~#5</td></tr>
-<tr><td>Organic ranking &mdash; corporate retreat</td><td>Head term ~#7 (blog); ranch variant blog ~#4 + landing ~#6</td><td>Head term ⬇</td></tr>
-<tr><td>Organic ranking &mdash; broad glamping</td><td>1 owned URL, 3rd read</td><td>Floor holds</td></tr>
-<tr><td>Rancho day-pass value</td><td>$20 / $15, 9.4 / 57 reviews</td><td>Price held; rating display changed; reviews +4</td></tr>
-<tr><td>Lucky Arrow day-pass value</td><td>$35, 9.2 / 217; cabanas $175; day room $90</td><td>Reviews +8; cabana/yurt newly recorded</td></tr>
-<tr><td>Lucky Arrow buyout</td><td>From $19,500/night; $545–650 pp/night</td><td>Buyout figure newly recorded</td></tr>
-<tr><td>Serana pricing</td><td>Still no published price; group size 5–9</td><td>Unchanged</td></tr>
-<tr><td>The Knot listing copy</td><td>Confirmed, 5th read (search-level; page 403)</td><td>Unchanged</td></tr>
-<tr><td>WeddingWire listing copy</td><td>Unconfirmed</td><td>⬇ Downgraded from "suspected"</td></tr>
-<tr><td>Yodel listing copy</td><td>Snippet-level lead, 1 uncontaminated read</td><td>⚠️ New</td></tr>
-<tr><td>Brand snippet copy</td><td><strong>Dirty</strong> &mdash; banned copy returned</td><td>❌ Streak broken</td></tr>
-<tr><td>Hipcamp curated list</td><td>Absent, 12th read; Lucky Arrow #8, Ranch 3232 #16</td><td>Unchanged</td></tr>
-<tr><td>Glamping Hub</td><td>Absent</td><td>~22 weeks</td></tr>
-<tr><td><code>/safari-tents-near-austin/</code></td><td>Not surfacing</td><td>~147 days; independently re-tested</td></tr>
+<tr><td>Tracked-keyword ranking (10-keyword baseline)</td><td>3 / 10 (corporate venue blog #4 + landing #8, bachelorette #7, overnight event #7)</td><td>= same three keywords</td></tr>
+<tr><td>Organic ranking &mdash; glamping intent</td><td>Weekend-getaways blog ~#5 on <strong>two</strong> queries</td><td>⬆ <code>weekend getaway near austin glamping</code> gained (1 read)</td></tr>
+<tr><td>Organic ranking &mdash; corporate retreat</td><td>Head term ~#7 (2nd read); ranch variant blog ~#4, landing ~#7</td><td>Head-term slide confirmed</td></tr>
+<tr><td>Organic ranking &mdash; wedding cluster</td><td><code>/weddings/</code> ~#4, blog ~#5; home not in set</td><td>Home dropped out (1 read)</td></tr>
+<tr><td>Rancho day-pass value</td><td>$20 / $15, 9.4 / 57</td><td><strong>STALE:2026-09-21</strong> (ResortPass 403)</td></tr>
+<tr><td>Lucky Arrow day-pass value</td><td>$35, 9.2 / 217</td><td><strong>STALE:2026-09-21</strong></td></tr>
+<tr><td>Lucky Arrow corporate / buyout</td><td>$545–650 pp/night; from $19,500/night</td><td>Unchanged, 2nd read</td></tr>
+<tr><td>Camp Lucy</td><td>~#2 corporate head term; 282 ac, 300 attendees, no pricing</td><td>Confirmed 2nd read; assessed</td></tr>
+<tr><td>Serana pricing</td><td>None published; up to 9 guests</td><td>Unchanged, 4th read</td></tr>
+<tr><td>The Knot listing copy</td><td>Confirmed, 6th read; now #1 on brand query</td><td>Brand-slot position up</td></tr>
+<tr><td>Brand answer copy</td><td>Dirty, 2nd consecutive read</td><td>Still dirty</td></tr>
+<tr><td>Yodel listing copy</td><td>Confirmed, 2nd uncontaminated read</td><td>Firmed up</td></tr>
+<tr><td>WeddingWire listing copy</td><td>Unconfirmed</td><td>=</td></tr>
+<tr><td>Hotels.com listing copy</td><td>Clean, 6th read</td><td>=</td></tr>
+<tr><td>Hipcamp curated list</td><td>Absent, 13th read; Lucky Arrow #9, Ranch 3232 #17</td><td>Competitors −1</td></tr>
+<tr><td>Glamping Hub</td><td>Absent</td><td>~23 weeks</td></tr>
+<tr><td><code>/safari-tents-near-austin/</code></td><td>Not surfacing</td><td>Carried at site-daily's 9/27 read</td></tr>
 </tbody></table></div>
 
 </div><!-- /.container -->
