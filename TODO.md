@@ -957,6 +957,8 @@ All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms. Li
 - [ ] (low) `/events/` JS `EVENTS` calendar seed array is still May–July 2026; only shown if Supabase hydration fails and the visitor pages back to those months. Could be emptied.
 - [ ] Backlog (only with a measured benefit): generate `/events/` Event JSON-LD from the Supabase `rancho_events` feed instead of static dates.
 - [ ] Ashley/CRM: Nov 14 `rancho_events` row "SwiftFit x Rancho Moonrise Yoga Retreat" says "More info coming soon" with no ticket URL; it's likely the same event as `/offthegrid/`. Point its link there.
+- [x] ✅ 2026-09-29 (rancho-site-daily) — 301s added for indexed legacy 404s: `/gallery/` → `/accommodations/`, `/single-testimonial/*` → `/`.
+- [ ] Enumerate the remaining legacy WordPress URLs via the Wayback CDX API (`web.archive.org/cdx/search/cdx?url=ranchomoonrise.com/*`; it was offline 9/29) and redirect any that were indexed and still 404. Don't redirect guessed paths.
 - [ ] Owner: in GSC, URL-Inspect and request indexing for `/offthegrid/`. It's time-sensitive: the event is Nov 14 and the page was not indexed on 9/25.
 
 ### DONE — Off The Grid page saved in Git and live (2026-09-24)
