@@ -952,7 +952,9 @@ All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms. Li
 - [x] `/offthegrid/`: canonical, OG/Twitter, Event + BreadcrumbList JSON-LD, sitemap entry (2026-09-25).
 - [x] (2026-09-26 → `hero-pool.webp`, 342 KB, + preload) `/offthegrid/` hero is a 3.0 MB PNG (`site/offthegrid/images/hero-pool.png`, CSS background, likely LCP). Convert to WebP (~300 KB) and update the CSS `url()`. Keep the PNG until the live page is verified.
 - [x] (2026-09-27, `202134c`) `/events/` expired Event JSON-LD (4 blocks, May–Jul) dropped; the list is Supabase-hydrated and current, only the schema was stale. Static HTML link to `/offthegrid/` added in the list intro.
-- [ ] `/events/` static HTML fallback cards are still May–July 2026 under "Upcoming on the ranch" (seen by non-JS crawlers before hydration). Make the fallback evergreen, the way the 9/16 homepage fix did.
+- [x] ✅ 2026-09-28 (rancho-site-daily, `65e821f`) — `/events/` May–July fallback cards replaced with one evergreen, undated card; hydrator still swaps in live rows.
+- [ ] `/events/` list intro hard-codes "Saturday, November 14: Off the Grid" — remove or replace after Nov 14 so it doesn't become the next stale-date claim.
+- [ ] (low) `/events/` JS `EVENTS` calendar seed array is still May–July 2026; only shown if Supabase hydration fails and the visitor pages back to those months. Could be emptied.
 - [ ] Backlog (only with a measured benefit): generate `/events/` Event JSON-LD from the Supabase `rancho_events` feed instead of static dates.
 - [ ] Ashley/CRM: Nov 14 `rancho_events` row "SwiftFit x Rancho Moonrise Yoga Retreat" says "More info coming soon" with no ticket URL; it's likely the same event as `/offthegrid/`. Point its link there.
 - [ ] Owner: in GSC, URL-Inspect and request indexing for `/offthegrid/`. It's time-sensitive: the event is Nov 14 and the page was not indexed on 9/25.
