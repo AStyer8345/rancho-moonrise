@@ -606,7 +606,7 @@
         var isExternal = /^https?:/i.test(ticketUrl);
         var linkAttrs = isExternal ? ' target="_blank" rel="noopener"' : '';
         var linkText;
-        if (ticketUrl.indexOf('contact.html') !== -1) {
+        if (ticketUrl.indexOf('/contact') !== -1) {
             linkText = (row.title || '').toLowerCase().indexOf('free friday') !== -1 ? 'RSVP Free' : 'Inquire';
         } else {
             linkText = 'Get Tickets';
@@ -663,7 +663,7 @@
         EVENTS = rows.map(function (r) {
             var ticketUrl = r.ticket_url || ('/contact/?intent=event&event=' + encodeURIComponent(r.title || ''));
             var linkText;
-            if (ticketUrl.indexOf('contact.html') !== -1) {
+            if (ticketUrl.indexOf('/contact') !== -1) {
                 linkText = (r.title || '').toLowerCase().indexOf('free friday') !== -1 ? 'RSVP Free' : 'Inquire';
             } else {
                 linkText = 'Get Tickets';
