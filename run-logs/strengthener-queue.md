@@ -14,7 +14,7 @@ Priority: broken/placeholder assets first, then highest-impression landing pages
 | `host-your-event.html` | **2026-08-19** | ✅ **STRENGTHENED** — 3 of 4 elements shipped (photos, author block, local detail). Testimonial still NEEDS ADAM. |
 | `events.html` | **2026-09-04** | ✅ **STRENGTHENED** — 3 of 4 elements shipped (photos, author block, local detail). Testimonial still NEEDS ADAM (T-001 doesn't serve this page type anyway). |
 | `pool-day-pass-austin.html` | **2026-09-09** | ✅ **STRENGTHENED** — 3 of 4 elements (existing real photos verified, author block, local detail). Testimonial still NEEDS ADAM (page not in T-001's coverage anyway). |
-| `glamping-near-austin-texas.html` | — | Pending |
+| `glamping-near-austin-texas.html` | **2026-10-01** | ✅ **STRENGTHENED**: 3 of 4 elements (photos, author block, local detail). Testimonial still NEEDS ADAM (glamping is a listed coverage gap; T-001 doesn't serve it). |
 | `bachelorette-party-austin-texas.html` | — | Pending |
 | `ranch-wedding-texas.html` | — | Pending |
 | `wedding-venues-near-austin.html` | — | Pending |
@@ -241,3 +241,32 @@ Both hard stops re-verified live still true (`find brand site -iname "*testimoni
 **Verification:** `npm run validate:site` passes. All 4 JSON-LD blocks (`BlogPosting`, `BreadcrumbList`, `FAQPage`, `WebPage`+`ReservePage`) parse cleanly via `json.loads` per-block, confirming `BlogPosting.author.name = Ashley` and `dateModified = 2026-09-09` by parse, not grep. 0 banned filler words, 0 emoji, and the sole `Manor` occurrence is the pre-existing footer postal address (untouched). Committed by explicit pathspec (`site/pages/pool-day-pass-austin.html` + `site/sitemap.xml` only) — a concurrent workstream had `CONTEXT.md`, `api/inquiry.js`, `brand/review-aggregate.json`, `site/admin/dashboard-state.json`, `site/css/styles.css`, `site/js/main.js`, `site/pages/contact.html`, `site/pages/safari-tents-near-austin.html`, `site/pages/weddings.html`, and two `review-monitor` task files dirty in the working tree at the time — all left untouched, none of it this run's.
 
 **Next run:** `glamping-near-austin-texas.html`.
+
+---
+
+### 2026-10-01 — glamping-near-austin-texas.html — ✅ SHIPPED (run 14; fifth consecutive productive run)
+
+**Gap noted:** no strengthener run is logged between 9/09 and today (three Wednesdays, 9/16, 9/23 and 9/30, have no entry). No cause was found in the repo. This run picks up the queue where 9/09 left it.
+
+**Gates re-checked live:** GOALS.md `## Settled Decisions` still lists the Ashley byline, and `rancho-content-weekly` is still under Keep running. `brand/approved-testimonials.md` still has T-001 as the only candidate, `UNAPPROVED`, event date unknown. Its Coverage-gaps table lists accommodations and glamping as **"No — nothing on file"** → testimonial is **NEEDS ADAM** (TODO re-verified and bumped).
+
+**Deploy safety checked before pushing:** the 9/24 CLI-deploy pin (`/offthegrid/` live but not in git) is **resolved**. `site/offthegrid/index.html` is now in `origin/main`, and git pushes promote again: `c39c1cf` was pushed 08:52:16 on 9/30, and the production deploy was created 08:52:22. The main checkout is **still mid-rebase** (detached at `f878a47`, "rebasing main"), so this run used a clean worktree (`rancho-moonrise-content-20261001`) cut from `origin/main` and left the main checkout alone.
+
+**Shipped (2 files: the page plus the sitemap `lastmod`):**
+- **3 real photos, each opened and checked before alt text was written.** All three were used only on `accommodations.html` before this run, and each illustrates a claim this guide already makes:
+  - `accom-safari-tent-exterior`: safari tent **#13** on its raised deck, with the number marker staked in the grass.
+  - `accom-cabin-dusk`: a black-framed cabin with a glass front, next to a fire-pit circle and picnic table.
+  - `accom-outdoor-bath`: inside the shared bathhouse (corrugated metal walls, cedar floor, river-rock sink, walk-in shower).
+  - All three are portrait 1024×1366 sources in `.feature-card` 4:3 crops, the same caveat as 8/19 and 9/04. They have not been seen rendered from a local server.
+- **Named author block:** `Ashley · Rancho Moonrise`, inside the article column after the CTA. `BlogPosting.author` changed from Organization to Person (Ashley), the same shape as on pool-day-pass. `dateModified` changed 2026-05-26 → 2026-10-01.
+- **Local detail (verifiable, already published in `faqs.html`/`policies.html`):** the tent-number → bathroom map. **Tents #13–#20 are ensuite; cabins and tents #1–#12 use the shared bathhouse.** It replaces the vague "some share… others have…" line and ties to photo #1, which shows tent 13's marker. The fire-pit bullet also now says fires are out by midnight and paused during an active **Travis County** burn ban.
+
+**Verification:** `npm run validate:site` passes. All 4 JSON-LD blocks parse, and author and dateModified were confirmed by parsing, not grep. HTML tag balance is 0 unclosed and 0 mismatched. The page has 0 banned filler words and 0 emoji. All 6 image variants exist.
+
+**Left alone deliberately (pre-existing, outside the scope of a content pass):**
+- `publisher.aggregateRating.reviewCount: 125` is stale; live Google was 143 on 9/29.
+- "Manor, TX" appears in body copy twice (lines 225 and 284 before this edit) as part of the street address. VOICE-GUIDE bans "Manor" as a location descriptor, but these are address contexts, so they were not touched.
+- The page mentions the 9:30 PM quiet hours. That is consistent with policies; no conflict.
+
+**Next run:** `bachelorette-party-austin-texas.html`.
+

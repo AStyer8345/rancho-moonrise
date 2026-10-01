@@ -356,7 +356,9 @@ The video card **"Escape to Rancho Moonrise"** on `/videos/` points at YouTube I
 
 I've left the card in place rather than silently removing visible content, since deleting published content is your call, not mine.
 
-### NEEDS ADAM — Approve testimonial T-001 (unblocks the 4th element of every content-weekly run) — added 2026-07-22, **re-verified 2026-09-09** by `rancho-content-weekly`
+### NEEDS ADAM — Approve testimonial T-001 (unblocks the 4th element of every content-weekly run) — added 2026-07-22, **re-verified 2026-10-01** by `rancho-content-weekly`
+
+**Re-verified live 2026-10-01:** T-001 is still `UNAPPROVED` with event date unknown (**79 days**). This run strengthened `glamping-near-austin-texas.html` to 3 of 4 elements. Glamping and accommodations have **no** testimonial candidate on file at all. The 9/29 review report shows Google at 143 reviews, so the fastest close is still for Ashley to pull 2–3 dated quotes from guests who stayed overnight.
 
 **Re-verified live 2026-09-09 (not recycled):** `brand/approved-testimonials.md` re-read this run — T-001 is still `STATUS: UNAPPROVED — awaiting Adam` with `EVENT DATE: UNKNOWN`, unchanged for **56 days**. This run strengthened **`pool-day-pass-austin.html`** (queue's next-up page, a blog post rather than a landing page); the file's own Coverage-gaps table already lists pool day pass as **"No — only the unattributed Yelp fragment"**, so T-001 wouldn't serve it even once approved. Photos on this page were already real and non-duplicated from an earlier build, so this run shipped author block + local detail + the pre-existing real-photo gallery (verified, not re-churned) — 3 of 4 elements, same bar as the three before it. The unblock target is still `host-your-event.html` and `corporate-retreat-near-austin.html`, per T-001's own suggested-pages note. The ask below has not changed; only the cost of not doing it has.
 
