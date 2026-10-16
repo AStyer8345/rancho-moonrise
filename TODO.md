@@ -360,7 +360,14 @@ The video card **"Escape to Rancho Moonrise"** on `/videos/` points at YouTube I
 
 I've left the card in place rather than silently removing visible content, since deleting published content is your call, not mine.
 
-### NEEDS ADAM — Approve testimonial T-001 (unblocks the 4th element of every content-weekly run) — added 2026-07-22, **re-verified 2026-10-01** by `rancho-content-weekly`
+### NEEDS ADAM — Approve testimonial T-001 (unblocks the 4th element of every content-weekly run) — added 2026-07-22, **re-verified 2026-10-16** by `rancho-content-weekly`
+
+**Re-verified live 2026-10-16:** `brand/approved-testimonials.md` unchanged since 2026-07-20; T-001 still `UNAPPROVED`, event date unknown (**94 days**). This run strengthened `bachelorette-party-austin-texas.html` to 3 of 4. Bachelorette is a listed coverage gap ("Nothing on file"), so even an approved T-001 would not fill it. **Ask for Ashley:** one bachelorette quote with a real event date from HoneyBook or her inbox.
+
+### Photo `accom-campfire-evening` is not a campfire (~5 min fix, any session) — found 2026-10-16 by `rancho-content-weekly`
+
+The image (all sizes: 480/1024/1920/2560 + .jpg) is the **front of The Lodge**: limestone walls, cedar posts, rocking chairs, orange door. No fire, no tents. But its alt text says "Evening campfire surrounded by safari tents" on `site/index.html` (lines ~371 and ~528) and "Guests gathered around a fire pit at dusk" / "Guests relaxing by a campfire outside their safari tent" on `site/pages/accommodations.html` (lines ~269 and ~356, the fire-pit amenity slot and the check-in slot). The admin slot labels in `site/admin/index.html` (lines ~967, 978, 982) say "campfire" too. So the accommodations **Fire Pits** amenity card shows a building with no fire pit. Fix: correct the alt text on those 4 placements, and either swap the fire-pit amenity slot to a real fire photo (`event-rm-exterior-firepit` or `cta-campfire-night`) or relabel the card. Not done in this run because the rules allow one page per run. `bachelorette-party-austin-texas.html` now uses the photo with correct Lodge alt text.
+
 
 **Re-verified live 2026-10-01:** T-001 is still `UNAPPROVED` with event date unknown (**79 days**). This run strengthened `glamping-near-austin-texas.html` to 3 of 4 elements. Glamping and accommodations have **no** testimonial candidate on file at all. The 9/29 review report shows Google at 143 reviews, so the fastest close is still for Ashley to pull 2–3 dated quotes from guests who stayed overnight.
 

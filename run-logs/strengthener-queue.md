@@ -15,7 +15,7 @@ Priority: broken/placeholder assets first, then highest-impression landing pages
 | `events.html` | **2026-09-04** | ✅ **STRENGTHENED** — 3 of 4 elements shipped (photos, author block, local detail). Testimonial still NEEDS ADAM (T-001 doesn't serve this page type anyway). |
 | `pool-day-pass-austin.html` | **2026-09-09** | ✅ **STRENGTHENED** — 3 of 4 elements (existing real photos verified, author block, local detail). Testimonial still NEEDS ADAM (page not in T-001's coverage anyway). |
 | `glamping-near-austin-texas.html` | **2026-10-01** | ✅ **STRENGTHENED**: 3 of 4 elements (photos, author block, local detail). Testimonial still NEEDS ADAM (glamping is a listed coverage gap; T-001 doesn't serve it). |
-| `bachelorette-party-austin-texas.html` | — | Pending |
+| `bachelorette-party-austin-texas.html` | **2026-10-16** | ✅ **STRENGTHENED**: 3 of 4 elements (photos, author block, local detail). Testimonial still NEEDS ADAM (bachelorette is a listed coverage gap). |
 | `ranch-wedding-texas.html` | — | Pending |
 | `wedding-venues-near-austin.html` | — | Pending |
 | `corporate-retreat-near-austin.html` | — | Pending |
@@ -270,3 +270,28 @@ Both hard stops re-verified live still true (`find brand site -iname "*testimoni
 
 **Next run:** `bachelorette-party-austin-texas.html`.
 
+---
+
+### 2026-10-16 — bachelorette-party-austin-texas.html — ✅ SHIPPED (run 15; sixth consecutive productive run)
+
+**Gap noted:** no entries for 10/08 or 10/15. Nothing in the repo explains it, same as the 9/16–9/30 gap. This run continues the queue from where 10/01 stopped.
+
+**Gates re-checked live:** GOALS.md `## Settled Decisions` still names Ashley as the byline, and `rancho-content-weekly` is still under Keep running. `brand/approved-testimonials.md` hasn't changed since 2026-07-20. T-001 is still `UNAPPROVED`, and the Coverage-gaps table lists Bachelorette as "Nothing on file", so the testimonial is **NEEDS ADAM** (TODO updated, not duplicated).
+
+**Repo state:** the main checkout is **still mid-rebase** (detached at `5160813`, with weekly-metrics commits from 9/20, 9/30 and 10/07 that never reached `origin/main`). This run used a clean worktree (`rancho-moonrise-content-20261016`) cut from `origin/main` `590db96` and did not touch the main checkout.
+
+**Shipped (2 files: the page plus the sitemap `lastmod`):**
+- **3 real photos.** I opened each one and checked it before writing alt text. Before this run, each was used on only one other page:
+  - `pool-striped-umbrella-guests` (also on pool-day-pass): guests in the pool, an orange-striped umbrella, the breeze-block wall, and the barn mural.
+  - `accom-safari-tent-bunks` (also on accommodations): a bunk bed plus a second bed, with a wall-mounted AC. It supports the page's "sleep the whole party on-site" line without stating a bed count.
+  - `accom-campfire-evening`: **the file name is wrong.** The photo shows the front of The Lodge (limestone, cedar posts, rocking chairs, orange door). On this page its alt text describes what's actually in the photo. Everywhere else on the site it's still described as a campfire → logged to TODO as a separate fix (out of scope for one page per run).
+  - The new section "Where the Weekend Actually Happens" sits after the article, using the existing `.features` / `.feature-card` grid. No new CSS. Two of the sources are portrait (1024×1536 and 1024×1366) going into 4:3 crops, the same caveat as earlier runs. Not seen rendered.
+- **Named author block:** `Ashley · Rancho Moonrise` after the CTA, in the same inline-style form as glamping. `BlogPosting.author` changed from Organization to Person (Ashley). `dateModified` changed 2026-08-16 → 2026-10-16.
+- **Local detail (verifiable, already published in `policies.html` / `faqs.html`):** for groups that book rooms rather than a private event, the ranch is shared with families and quiet hours begin at **9:30 PM**. Fires can burn until midnight unless there's an active **Travis County** burn ban, and firewood is sold at **The Lodge**. This is the most useful planning fact a bachelorette page can carry, and the page had left it out.
+- **Two existing lines corrected so they agree with that policy:** "fire pits you can use until late" became "until midnight". The packing tip "a Bluetooth speaker is the right call" for the fire pit now applies to the pool deck in the afternoon, turned down at 9:30. The statement is limited to room bookings on purpose. Whether quiet hours apply to *private events* is still the open question logged 8/19 for Ashley, and this run doesn't answer it.
+
+**Verification:** `npm run validate:site` passes. All 4 JSON-LD blocks parse, and author/dateModified were confirmed by parsing them. HTML tag balance: 0 unclosed, 0 mismatched. No banned filler words and no emoji. All 6 image variants exist.
+
+**Left alone deliberately (already there, outside a content pass):** `publisher.aggregateRating.reviewCount: 125` is stale. Body copy says "a night sky that doesn't have any light pollution in it", which overstates things 20 minutes from downtown but isn't a facts-file contradiction. The FAQ copy says "on-property bar access"; that's consistent with the pool bar and The Lodge, and the Neon Moon lounge isn't mentioned.
+
+**Next run:** `ranch-wedding-texas.html`.

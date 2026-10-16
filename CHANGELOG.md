@@ -4,6 +4,8 @@
 
 - **rancho-site-daily:** Fixed a bathroom contradiction on `/blog/glamping-vs-camping/`. It claimed cabins have private bathrooms and safari tents use a bathhouse, the reverse of the FAQ and seven other on-site statements (tents #13–#20 have ensuites; cabins and tents #1–#12 share the bathhouse). The extended WebSearch answer was surfacing the conflict to searchers. `dateModified` bumped to 2026-10-16.
 - Gate 8/8 still_true: canary passes (extended), safari-tents absent, `/offthegrid/` absent (day 21), sitemap 32/32, dead `/videos/` embed, "1,000+ guests" x2, Square early-bird prices still $129/$189, main checkout still mid-rebase plus a stale `index.lock`. Production follows git (the 10-02 Offers are live). Worked from worktree `../rancho-moonrise-site-20261016`. Run-log: `run-logs/2026-10-16-seo.md`.
+- **rancho-content-weekly:** `bachelorette-party-austin-texas.html` strengthened, 3 of 4 elements: 3 real photos (pool, safari tent with bunks, The Lodge) with alt text checked against each photo, an `Ashley · Rancho Moonrise` author block with `BlogPosting.author` changed to Person, and a local detail (9:30 PM quiet hours for room bookings, fires out by midnight, Travis County burn ban, firewood at The Lodge). Two existing lines now agree with policy ("until late" → "until midnight"; speaker tip moved to the pool deck before 9:30). `dateModified` and sitemap `lastmod` set to 2026-10-16. Testimonial still NEEDS ADAM (bachelorette is a coverage gap).
+- Found: photo `accom-campfire-evening` shows The Lodge, not a campfire, but its alt text on `index.html` and `accommodations.html` says campfire. The accommodations Fire Pits card shows no fire pit. Logged to TODO; not fixed here (one page per run).
 
 ## 2026-09-24
 

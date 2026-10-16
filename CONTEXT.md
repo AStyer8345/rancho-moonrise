@@ -62,6 +62,7 @@ The 4 accommodation files are literally 340×340 thumbnails masquerading as cont
 
 ## Last Worked On
 
+- 2026-10-16 — rancho-content-weekly: `bachelorette-party-austin-texas.html` strengthened, 3 of 4 elements (photos, Ashley byline, quiet-hours/burn-ban local detail). Found that `accom-campfire-evening` is a photo of The Lodge but is described as a campfire on home and accommodations (TODO). Next: `ranch-wedding-texas.html`.
 - 2026-10-01 — rancho-site-daily: 15 legacy-URL 301 rules, built from a 488-path Wayback CDX enumeration, now 301 all 221 content-bearing 404s; only `/slider/*` and `/cdn-cgi/*` are left as 404. Brand canary failed, so SERP measurement was blocked and 0 rows were recorded.
 - 2026-09-28 — rancho-site-daily: `/events/` static fallback (11 cards, May–Jul 2026) replaced with an evergreen card (`65e821f`, live). TODO: remove the hard-coded Nov 14 intro line after the event. Run-log `run-logs/2026-09-28-seo.md`.
 - 2026-09-28 — rancho-competitive-weekly: weekly intel card dual-written (rancho-moonrise + client-ops). Gate: 10 still_true, 2 RESOLVED (glamping-keyword absence, Hipcamp positions), 3 STALE (ResortPass 403), brand answer still dirty. Full report `site/competitive-intelligence.md`.
