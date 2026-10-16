@@ -1,5 +1,7 @@
 # Rancho Moonrise — TODO
-Last updated: 2026-10-02 (rancho-site-daily — `/offthegrid/` Event Offers now carry Square prices $129 / $189 InStock. **Follow-up:** update the Offer prices when Square early-bird pricing ends. Brand canary passes in extended WebSearch mode; standard mode suppresses first-party domains. Run-log: `run-logs/2026-10-02-seo.md`.)
+Last updated: 2026-10-16 (rancho-site-daily — fixed reversed bathroom claim on `/blog/glamping-vs-camping/` (cabins ≠ ensuite). Gate 8/8 still_true; Square early-bird prices still $129/$189. Run-log: `run-logs/2026-10-16-seo.md`.)
+
+Prior: 2026-10-02 (rancho-site-daily — `/offthegrid/` Event Offers now carry Square prices $129 / $189 InStock. **Follow-up:** update the Offer prices when Square early-bird pricing ends. Brand canary passes in extended WebSearch mode; standard mode suppresses first-party domains. Run-log: `run-logs/2026-10-02-seo.md`.)
 
 Prior: 2026-09-28 (rancho-competitive-weekly — gained `weekend getaway near austin glamping` ~#5 (1 read, confirm next week); baseline 3/10 held; brand answer dirty 2nd read, Knot now #1 on brand query; ResortPass 403 → day-pass values STALE:2026-09-21. Knot description fix remains the top human action — it feeds the brand answer and Yodel.)
 

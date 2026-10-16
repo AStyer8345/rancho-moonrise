@@ -1,5 +1,10 @@
 # Rancho Moonrise — Changelog
 
+## 2026-10-16
+
+- **rancho-site-daily:** Fixed a bathroom contradiction on `/blog/glamping-vs-camping/`. It claimed cabins have private bathrooms and safari tents use a bathhouse, the reverse of the FAQ and seven other on-site statements (tents #13–#20 have ensuites; cabins and tents #1–#12 share the bathhouse). The extended WebSearch answer was surfacing the conflict to searchers. `dateModified` bumped to 2026-10-16.
+- Gate 8/8 still_true: canary passes (extended), safari-tents absent, `/offthegrid/` absent (day 21), sitemap 32/32, dead `/videos/` embed, "1,000+ guests" x2, Square early-bird prices still $129/$189, main checkout still mid-rebase plus a stale `index.lock`. Production follows git (the 10-02 Offers are live). Worked from worktree `../rancho-moonrise-site-20261016`. Run-log: `run-logs/2026-10-16-seo.md`.
+
 ## 2026-09-24
 
 - **rancho-biweekly-audit:** Bi-weekly business audit #3 generated and shipped: `site/audits/2026-09-24-business-audit.html`. Covers 98 days since 06-18 (no July/August audit ran).
