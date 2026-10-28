@@ -6,6 +6,7 @@
 - Switched every browser anon use to the project publishable key: `site/js/cms.js`, `site/js/event-popup.js`, `site/admin/index.html`, `site/pages/events.html` (3 copies), `site/pages/weddings.html`, `site/pages/accommodations.html`, `site/pages/pool-day-pass-austin.html`. No secret key was added.
 - Repo sweep: the only remaining copy of that JWT is in `docs/superpowers/plans/2026-04-23-site-copy-editor.md`, a historical plan that is not served. Left it in place.
 - Preflight (before deploy): `GET /rest/v1/rancho_events` with the publishable key returned HTTP 200 and upcoming rows. `POST /auth/v1/token?grant_type=password` with a fake login returned `invalid_credentials`. The old anon JWT still returns HTTP 401 `Legacy API keys are disabled`.
+- Production verification after merge `6296440` (GitHub deployment `7390910635`, state success, environment Production): `https://ranchomoonrise.com/events/` and `https://ranchomoonrise.com/admin/` both serve the publishable key and not the legacy JWT. The live events query returned HTTP 200 and 6 upcoming rows. Admin `GET /auth/v1/settings` returned HTTP 200. A fake password grant returned HTTP 400 `invalid_credentials`, with no legacy-key error and no permission error.
 
 ## 2026-10-16
 
