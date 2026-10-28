@@ -2,6 +2,14 @@
 
 ---
 
+## 2026-10-28 — Version the Supabase client scripts; do not year-cache `/js/`
+
+**Decision:** `cms.js` and `event-popup.js` are loaded with `?v=20261028`. HTML responses use `Cache-Control: public, max-age=0, must-revalidate`. `/js/` stays on that same short cache. `/images/` and `/css/` stay immutable for a year.
+
+**Why:** After the publishable-key swap, Supabase logs still showed the disabled anon JWT from cached copies of those two scripts. A new query string makes browsers request the new file even if they stored the old URL. Year-caching all of `/js/` would also pin `main.js` and `scroll-effects.js`, which are not versioned.
+
+---
+
 ## 2026-10-28 — Browser clients use the Supabase publishable key
 
 **Decision:** Public site and admin JavaScript send the Supabase publishable key (`sb_publishable_…`) as the client API key. The legacy anon JWT stays retired.

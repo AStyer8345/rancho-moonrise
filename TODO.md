@@ -1,5 +1,5 @@
 # Rancho Moonrise — TODO
-Last updated: 2026-10-28 (production outage — Supabase legacy anon JWT replaced with the publishable key. Live `/events/` query returned 6 upcoming rows; `/admin/` auth no longer returns the legacy-key error. Deploy `6296440` is Production success.)
+Last updated: 2026-10-28 (cache-bust — `cms.js` and `event-popup.js` script tags use `?v=20261028` so browsers drop the cached legacy-key files. HTML cache is `max-age=0`.)
 
 Prior: 2026-10-16 (rancho-site-daily — fixed reversed bathroom claim on `/blog/glamping-vs-camping/` (cabins ≠ ensuite). Gate 8/8 still_true; Square early-bird prices still $129/$189. Run-log: `run-logs/2026-10-16-seo.md`.)
 
@@ -52,6 +52,7 @@ Prior: 2026-07-22 (rancho-site-daily — **cruise-control streak BROKEN at 39; f
 
 - [x] Replace the disabled browser anon JWT with the publishable key in `site/js/cms.js`, `site/js/event-popup.js`, `site/admin/index.html`, `site/pages/events.html`, `site/pages/weddings.html`, `site/pages/accommodations.html`, and `site/pages/pool-day-pass-austin.html`. No secret key. Historical plan doc still quotes the old JWT and is not served.
 - [x] Production check: events query HTTP 200 with 6 upcoming rows; admin auth returns `invalid_credentials` for a fake login.
+- [x] Cache-bust `cms.js` and `event-popup.js` with `?v=20261028` on every HTML page that loads them. HTML is not year-cached.
 
 ## ~~NEEDS OWNER (not site-daily's) — review-monitor's 2026-09-07 RUN_073 update sat uncommitted~~ → ✅ **RESOLVED 2026-09-09 by `rancho-review-monitor` RUN_074**
 
