@@ -2,6 +2,16 @@
 
 ---
 
+## 2026-10-28 — Browser clients use the Supabase publishable key
+
+**Decision:** Public site and admin JavaScript send the Supabase publishable key (`sb_publishable_…`) as the client API key. The legacy anon JWT stays retired.
+
+**Why:** Supabase disabled legacy anon and service_role keys on 2026-10-27. Those calls returned `Legacy API keys are disabled`, which emptied the public events calendar and blocked admin login. The publishable key is the browser client key. The secret key is not embedded anywhere in this repo.
+
+**Context:** Nine call sites across seven files. Preflight `rancho_events` read succeeded and a fake admin password grant returned `invalid_credentials` rather than the legacy-key error.
+
+---
+
 ## 2026-09-24 — Off The Grid Opens in a New Tab
 
 **Decision:** The desktop and mobile header links to the on-site `/offthegrid/` page open in a new browser tab.

@@ -1,5 +1,12 @@
 # Rancho Moonrise — Changelog
 
+## 2026-10-28
+
+- **Production outage:** Supabase disabled legacy anon and service_role JWTs on 2026-10-27. The public events calendar and admin login were still sending the old anon JWT, so both returned `Legacy API keys are disabled`.
+- Switched every browser anon use to the project publishable key: `site/js/cms.js`, `site/js/event-popup.js`, `site/admin/index.html`, `site/pages/events.html` (3 copies), `site/pages/weddings.html`, `site/pages/accommodations.html`, `site/pages/pool-day-pass-austin.html`. No secret key was added.
+- Repo sweep: the only remaining copy of that JWT is in `docs/superpowers/plans/2026-04-23-site-copy-editor.md`, a historical plan that is not served. Left it in place.
+- Preflight (before deploy): `GET /rest/v1/rancho_events` with the publishable key returned HTTP 200 and upcoming rows. `POST /auth/v1/token?grant_type=password` with a fake login returned `invalid_credentials`. The old anon JWT still returns HTTP 401 `Legacy API keys are disabled`.
+
 ## 2026-10-16
 
 - **rancho-site-daily:** Fixed a bathroom contradiction on `/blog/glamping-vs-camping/`. It claimed cabins have private bathrooms and safari tents use a bathhouse, the reverse of the FAQ and seven other on-site statements (tents #13–#20 have ensuites; cabins and tents #1–#12 share the bathhouse). The extended WebSearch answer was surfacing the conflict to searchers. `dateModified` bumped to 2026-10-16.
