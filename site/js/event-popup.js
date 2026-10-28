@@ -8,7 +8,7 @@
     'use strict';
 
     var SUPABASE_URL = 'https://uuqedsvjlkeszrbwzizl.supabase.co';
-    var SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV1cWVkc3ZqbGtlc3pyYnd6aXpsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI5ODcwMjYsImV4cCI6MjA4ODU2MzAyNn0.Wu1DKotPPigTpVpQvmdRMpa7NW9-WnEou6bTV3kakFM';
+    var SUPABASE_ANON_KEY = 'sb_publishable_z_haqYVOm22q9tGRZVhVDg_YkrkIWLh';
     var REST = SUPABASE_URL + '/rest/v1/';
     var HEADERS = { 'apikey': SUPABASE_ANON_KEY, 'Authorization': 'Bearer ' + SUPABASE_ANON_KEY };
 
