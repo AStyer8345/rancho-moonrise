@@ -30,7 +30,7 @@ Advisory engagement for Rancho Moonrise — glamping, events, and retreat ranch 
 
 ## Active Blockers
 
-- ~~Supabase legacy anon keys disabled (2026-10-28 outage)~~ ✅ **RESOLVED 2026-10-28** — browser clients send the publishable key. The disabled anon JWT returned `Legacy API keys are disabled` on the events query and admin login.
+- ~~Supabase legacy anon keys disabled (2026-10-28 outage)~~ ✅ **RESOLVED 2026-10-28** — production `/events/` and `/admin/` send the publishable key. Live events query returned 6 upcoming rows. Admin auth returns `invalid_credentials` for a fake login, not the legacy-key error.
 - **Main checkout stuck mid-rebase since 2026-09-18 (found 2026-09-20 by `rancho-site-daily`).** `/Users/adamstyer/Documents/rancho-moonrise` is a detached HEAD in an interrupted `git rebase` (finalization never ran). Real `main` = `ab1b210`: 8 commits **unpushed** (7 notebooklm-sync + `ab1b210` = review-monitor RUN_078, **whose content already landed on `origin/main` as `1ffb25a`** — re-verified 2026-09-21; only the 7 benign sync commits are actually stranded) and 10+ behind `origin/main`. Every task that commits from that checkout (notebooklm-sync every ~4h, review-monitor) is now blocked from pushing. **The 5-file NEEDS OWNER set (api/inquiry.js, styles.css, main.js, contact.html, weddings.html) is in `stash@{0}`, byte-identical to the 8/31 baseline** — apply it deliberately; don't pop blindly (stash stack is shared). Needs Adam or a dedicated session: finish or abort the rebase, then push the 8 commits. Until then, work from a fresh worktree off `origin/main`.
 - **Paul/Donna step-away in flight (2026-04-23)** — Paul and Donna emailed that they want to step away; Ben and Robert countered "hand over the books and financials, we're taking control." Donna hasn't replied and is still acting unilaterally (renewing insurance, micromanaging Ashley). Governance conflict in the open until Nancy weighs in. See `meetings/2026-04-23-ashley-onsite.md` in the Cowork workspace for the full record.
 - **Beth (bookkeeper) cannot be a QuickBooks channel** — she's a Donna loyalist, reports everything back to the Hirschmans. Even Beth thinks Donna is unreasonable. Need an alternate path to books/financials.
@@ -44,7 +44,6 @@ Advisory engagement for Rancho Moonrise — glamping, events, and retreat ranch 
 
 ## What's Next
 
-- Confirm the 2026-10-28 publishable-key deploy on production: `/events/` hydration and `/admin/` auth must not return the legacy-key error.
 - Finish Friday September 18 handoff: named access, one inquiry/draft review and one website preview; explain the actual custom-admin edit map. Training materials remain private.
 - Verify GA4/GTM destination and Search Console access; establish current clicks, queries, indexing and qualified-inquiry measurements. Blank analytics IDs remain a blocker. Use URL Inspection for `/safari-tents-near-austin/`; prior search snippets are not definitive indexing evidence.
 - Wire and verify the remaining admin copy controls and define how CMS edits publish to static HTML. Current home/accommodations loaders and events/wedding-specific loaders are not equivalent.
@@ -64,7 +63,7 @@ The 4 accommodation files are literally 340×340 thumbnails masquerading as cont
 
 ## Last Worked On
 
-- 2026-10-28 — Production outage: Supabase disabled legacy anon JWTs on 2026-10-27. Replaced the browser anon key with the project publishable key in `site/js/cms.js`, `site/js/event-popup.js`, `site/admin/index.html`, `site/pages/events.html` (3), `site/pages/weddings.html`, `site/pages/accommodations.html`, and `site/pages/pool-day-pass-austin.html`. No secret key added. Preflight: events query HTTP 200 with upcoming rows; a fake admin password grant returns `invalid_credentials`, not the legacy-key error. Older notes remain in `CHANGELOG.md`.
+- 2026-10-28 — Production outage fixed and verified live. Supabase disabled legacy anon JWTs on 2026-10-27. Browser call sites now send the publishable key (merge `6296440`). Production deploy succeeded. `https://ranchomoonrise.com/events/` contains the new key; the same events query returned HTTP 200 and 6 upcoming rows (Mini Photoshoot Session through Holiday Honky Tonk & Market). `/admin/` auth settings returned HTTP 200, and a fake password grant returned `invalid_credentials`. No secret key added. Older notes remain in `CHANGELOG.md`.
 
 ## Mark Done System — How It Works
 
