@@ -1097,6 +1097,8 @@ $$('.tab-btn').forEach(function(btn) {
 // ============================================================
 async function loadEvents() {
     var container = $('#eventsList');
+    var previousArchive = $('#pastEvents');
+    var archiveOpen = previousArchive && previousArchive.open;
     var results = await Promise.all([
         sb.from('rancho_events').select('*').order('event_date', { ascending: true }).order('sort_order', { ascending: true }),
         sb.from('site_content').select('body').eq('block_key', 'home_event_spotlight').maybeSingle()
@@ -1108,7 +1110,15 @@ async function loadEvents() {
     if (error) { container.innerHTML = '<p class="empty-state">Error loading events.</p>'; return; }
     if (!data.length) { container.innerHTML = '<div class="empty-state"><p>No events yet.</p></div>'; return; }
 
-    var todayStr = new Date().toISOString().slice(0, 10);
+    var dateParts = new Intl.DateTimeFormat('en-US', {
+        timeZone: 'America/Chicago', year: 'numeric', month: '2-digit', day: '2-digit'
+    }).formatToParts(new Date());
+    var dateValues = {};
+    dateParts.forEach(function(part) { dateValues[part.type] = part.value; });
+    var todayStr = dateValues.year + '-' + dateValues.month + '-' + dateValues.day;
+    var upcomingEvents = data.filter(function(ev) { return !ev.event_date || ev.event_date >= todayStr; });
+    var pastEvents = data.filter(function(ev) { return ev.event_date && ev.event_date < todayStr; })
+        .sort(function(a, b) { return b.event_date.localeCompare(a.event_date); });
 
     // Which featured events actually appear in the popup: active + upcoming, soonest first, top 3.
     var inPopup = {};
@@ -1116,10 +1126,8 @@ async function loadEvents() {
         .slice(0, 3)
         .forEach(function(ev){ inPopup[ev.id] = true; });
 
-    container.innerHTML =
-        '<p class="events-hint">Use <strong>Use on homepage</strong> to choose the first event image in the homepage artwork carousel. Clicking the artwork takes visitors to that event\'s ticket link, or the Events page if no ticket link is set.</p>' +
-        '<p class="events-hint">The homepage popup shows up to 3 featured upcoming events, soonest first. An event must be <strong>Active</strong> and dated today or later to appear.</p>' +
-        data.map(function(ev) {
+    function renderEvent(ev) {
+
         var thumb = ev.artwork_url
             ? '<img class="content-card__thumb" src="' + escapeHtml(ev.artwork_url) + '" alt="">'
             : '<div class="content-card__thumb" style="display:flex;align-items:center;justify-content:center;font-size:2rem;">📅</div>';
@@ -1155,7 +1163,20 @@ async function loadEvents() {
                 '<button class="btn btn--danger btn--sm" onclick="deleteEvent(\'' + ev.id + '\')">Delete</button>' +
             '</div>' +
         '</div>';
-    }).join('');
+    }
+
+    container.innerHTML =
+        '<p class="events-hint">Use <strong>Use on homepage</strong> to choose the first event image in the homepage artwork carousel. Clicking the artwork takes visitors to that event\'s ticket link, or the Events page if no ticket link is set.</p>' +
+        '<p class="events-hint">The homepage popup shows up to 3 featured upcoming events, soonest first. An event must be <strong>Active</strong> and dated today or later to appear.</p>' +
+        '<h3 style="margin:20px 0 12px;">Upcoming Events (' + upcomingEvents.length + ')</h3>' +
+        (upcomingEvents.length ? upcomingEvents.map(renderEvent).join('') : '<p class="empty-state">No upcoming events.</p>') +
+        '<details id="pastEvents" class="page-group"' + (archiveOpen ? ' open' : '') + '>' +
+            '<summary>Past Events <span class="page-group__count">' + pastEvents.length + '</span></summary>' +
+            '<div class="page-group__body">' +
+                '<p class="events-hint">Events move here after their date passes, using Austin time. Open any event to edit it. Changing its date to today or later moves it back to Upcoming Events.</p>' +
+                (pastEvents.length ? pastEvents.map(renderEvent).join('') : '<p class="empty-state">No past events.</p>') +
+            '</div>' +
+        '</details>';
 }
 
 async function setHomepageSpotlight(id) {
