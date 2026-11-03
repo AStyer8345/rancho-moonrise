@@ -491,6 +491,7 @@
         <button class="tab-btn" data-tab="galleries">Galleries</button>
         <button class="tab-btn" data-tab="site-images">Site Images</button>
         <button class="tab-btn" data-tab="site-copy">Site Copy</button>
+        <button class="tab-btn" data-tab="faqs">FAQs</button>
         <button class="tab-btn" data-tab="reviews">Reviews</button>
     </div>
 
@@ -556,6 +557,13 @@
         </div>
         <p style="color: var(--text-muted); margin-bottom: 16px; font-size: 0.9rem;">Edit text blocks on the public site — grouped by page. Changes go live immediately on next page reload — no deploy needed.</p>
         <div id="siteCopyList" class="loading">Loading site copy...</div>
+    </div>
+
+    <!-- FAQ EDITOR TAB -->
+    <div class="tab-content" id="tab-faqs">
+        <div class="section-header"><h2>FAQs</h2><a href="/faqs/" target="_blank" rel="noopener">View live page</a></div>
+        <p style="color: var(--text-muted); margin-bottom: 16px;">Edit each question and answer below. Save one FAQ at a time. Changes appear on the public page after a reload.</p>
+        <div id="faqEditorList" class="loading">Loading FAQs...</div>
     </div>
 
     <!-- REVIEWS TAB -->
@@ -1080,6 +1088,7 @@ $$('.tab-btn').forEach(function(btn) {
         $$('.tab-content').forEach(function(c) { c.classList.remove('is-active'); });
         this.classList.add('is-active');
         $('#tab-' + this.dataset.tab).classList.add('is-active');
+        if (this.dataset.tab === 'faqs') loadFAQEditor();
     });
 });
 
@@ -1699,6 +1708,59 @@ $('#copyBlockForm').addEventListener('submit', async function(e) {
     closeModal('copyBlockModal');
     toast('Block added! Add data-copy-key="' + row.block_key + '" to the HTML to make it appear.');
     loadSiteCopy();
+});
+
+
+async function loadFAQEditor() {
+    var container = $('#faqEditorList');
+    container.textContent = 'Loading FAQs...';
+    try {
+        var response = await fetch('/faqs/');
+        if (!response.ok) throw new Error('Could not load the FAQ page');
+        var documentCopy = new DOMParser().parseFromString(await response.text(), 'text/html');
+        var items = Array.from(documentCopy.querySelectorAll('.faq-list .faq-item'));
+        var result = await sb.from('site_content').select('block_key,body').eq('page', 'faqs');
+        if (result.error) throw result.error;
+        var saved = {};
+        (result.data || []).forEach(function(row) { saved[row.block_key] = row.body; });
+        container.innerHTML = items.map(function(item, index) {
+            var number = index + 1;
+            var questionKey = 'faqs_q_' + number;
+            var answerKey = 'faqs_a_' + number;
+            var question = saved[questionKey] !== undefined ? saved[questionKey] : item.querySelector('.faq-question').textContent.trim();
+            var answer = saved[answerKey] !== undefined ? saved[answerKey] : item.querySelector('.faq-answer__inner').innerHTML.trim();
+            return '<div class="copy-block" data-faq-index="' + number + '">' +
+                '<label>Question ' + number + '</label>' +
+                '<input class="faq-editor-question" type="text" value="' + escapeHtml(question) + '" style="width:100%;margin:8px 0 12px;padding:10px;">' +
+                '<label>Answer</label>' +
+                '<div class="faq-editor-answer" contenteditable="true" role="textbox" aria-label="Answer ' + number + '" style="min-height:90px;border:1px solid var(--border);padding:12px;margin:8px 0 12px;background:white;">' + answer + '</div>' +
+                '<button class="btn btn--primary btn--sm faq-editor-save" data-index="' + number + '">Save FAQ</button>' +
+                '</div>';
+        }).join('');
+    } catch (error) {
+        container.textContent = 'Could not load FAQs: ' + error.message;
+    }
+}
+
+$('#faqEditorList').addEventListener('click', async function(event) {
+    var button = event.target.closest('.faq-editor-save');
+    if (!button) return;
+    var number = button.dataset.index;
+    var card = button.closest('[data-faq-index]');
+    var question = card.querySelector('.faq-editor-question').value.trim();
+    var answer = card.querySelector('.faq-editor-answer').innerHTML.trim();
+    if (!question || !answer) { toast('Question and answer are required', 'error'); return; }
+    button.disabled = true;
+    button.textContent = 'Saving...';
+    var rows = [
+        { page: 'faqs', block_key: 'faqs_q_' + number, label: 'FAQ ' + number + ' — question', body: question },
+        { page: 'faqs', block_key: 'faqs_a_' + number, label: 'FAQ ' + number + ' — answer (HTML)', body: answer }
+    ];
+    var result = await sb.from('site_content').upsert(rows, { onConflict: 'block_key' });
+    button.disabled = false;
+    button.textContent = 'Save FAQ';
+    if (result.error) { toast('Save failed: ' + result.error.message, 'error'); return; }
+    toast('FAQ saved. Reload the public FAQ page to see it.');
 });
 
 // ============================================================
