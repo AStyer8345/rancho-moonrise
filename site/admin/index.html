@@ -1648,7 +1648,7 @@ async function loadSiteCopy() {
     var html = '';
     pages.forEach(function(page) {
         var label = PAGE_LABELS[page] || (page.charAt(0).toUpperCase() + page.slice(1));
-        html += '<details class="page-group" open>' +
+        html += '<details class="page-group">' +
             '<summary>' + escapeHtml(label) + ' <span class="page-group__count">' + byPage[page].length + '</span></summary>' +
             '<div class="page-group__body">';
         byPage[page].forEach(function(row) {
