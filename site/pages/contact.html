@@ -87,6 +87,26 @@
     <link rel="stylesheet" href="/css/styles.css?v=16">
     <link rel="icon" href="/images/favicon.png" type="image/png">
 <noscript><style>.fade-in,.reveal,.reveal-stagger > *{opacity:1!important;transform:none!important}.faq-answer{max-height:none!important}form[action="#"]{display:none!important}</style></noscript>
+
+<style>
+/* Use the full row until a visitor selects an inquiry form. */
+.split--contact:not(:has(.intent-form:not([hidden]))) {
+    grid-template-columns: minmax(0, 1fr);
+}
+.split--contact:not(:has(.intent-form:not([hidden]))) > .split__content {
+    display: none;
+}
+.split--contact:not(:has(.intent-form:not([hidden]))) > div:last-child {
+    position: static;
+}
+@media (min-width: 768px) {
+    .split--contact:not(:has(.intent-form:not([hidden]))) .visit-ranch__details {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: var(--space-md);
+    }
+}
+</style>
 </head>
 <body data-page="contact">
 
@@ -401,9 +421,11 @@
 
             <!-- Contact Info Sidebar -->
             <div>
-                <div style="padding: var(--space-lg); background: var(--color-bg-alt); border: 1px solid rgba(201,148,74,0.15);">
+                <div class="visit-ranch" style="padding: var(--space-lg); background: var(--color-bg-alt); border: 1px solid rgba(201,148,74,0.15);">
                     <h2 style="margin-bottom: var(--space-md);">Visit the Ranch</h2>
 
+<div class="visit-ranch__details">
+<div>
                     <h3 style="font-size: 0.75rem; font-family: var(--font-body); letter-spacing: 2px; text-transform: uppercase; color: var(--color-orange); margin-bottom: var(--space-xs);">Address</h3>
                     <p style="margin-bottom: var(--space-md);">
                         <a href="https://www.google.com/maps/place/20117+Lockwood+Rd,+Manor,+TX+78653" target="_blank" rel="noopener" style="color: var(--color-text);">
@@ -411,16 +433,24 @@
                         </a>
                     </p>
 
+</div>
+<div>
                     <h3 style="font-size: 0.75rem; font-family: var(--font-body); letter-spacing: 2px; text-transform: uppercase; color: var(--color-orange); margin-bottom: var(--space-xs);">Phone</h3>
                     <p style="margin-bottom: var(--space-md);"><a href="tel:+17372911260" style="color: var(--color-text);">737-291-1260</a></p>
 
+</div>
+<div>
                     <h3 style="font-size: 0.75rem; font-family: var(--font-body); letter-spacing: 2px; text-transform: uppercase; color: var(--color-orange); margin-bottom: var(--space-xs);">Check-In Hours</h3>
                     <p style="margin-bottom: var(--space-md);">3:00 PM – 5:00 PM daily</p>
 
+</div>
+<div>
                     <h3 style="font-size: 0.75rem; font-family: var(--font-body); letter-spacing: 2px; text-transform: uppercase; color: var(--color-orange); margin-bottom: var(--space-xs);">Prefer to Talk?</h3>
                     <p style="margin-bottom: var(--space-xs);">Call <a href="tel:+17372911260">737-291-1260</a> or</p>
                     <a href="https://calendly.com/monet-b30w/30min" target="_blank" rel="noopener" class="btn btn--outline calendly-placeholder" data-calendly="call" style="width: 100%; text-align: center; margin-bottom: var(--space-md);">Schedule a Call</a>
 
+</div>
+<div>
                     <h3 style="font-size: 0.75rem; font-family: var(--font-body); letter-spacing: 2px; text-transform: uppercase; color: var(--color-orange); margin-bottom: var(--space-xs);">Quick Links</h3>
                     <ul style="list-style: none;">
                         <li style="margin-bottom: 8px;"><a href="https://hotels.cloudbeds.com/en/reservation/5tzv1r" target="_blank" rel="noopener">Book a Stay &rarr;</a></li>
@@ -428,6 +458,8 @@
                         <li style="margin-bottom: 8px;"><a href="/host-your-event/">Event Info &rarr;</a></li>
                         <li><a href="/faqs/">View FAQs &rarr;</a></li>
                     </ul>
+</div>
+</div>
                 </div>
 
                 <!-- Testimonials -->
