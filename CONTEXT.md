@@ -63,7 +63,7 @@ The 4 accommodation files are literally 340×340 thumbnails masquerading as cont
 
 ## Last Worked On
 
-- 2026-10-28 — Cache-bust for the Supabase key swap. Homepage and accommodations script tags for `cms.js` and `event-popup.js` now use `?v=20261028`. Those are the only external scripts that hold the key. `vercel.json` keeps year-long cache on `/images/` and `/css/` only; HTML and `/js/` are `public, max-age=0, must-revalidate`. Admin stays `no-store`. Older notes remain in `CHANGELOG.md`.
+- 2026-11-04 — Removed the shared Off The Grid navigation insertion from `site/js/main.js` for desktop and mobile at Ashley's request. JavaScript syntax verified. No change to the event page itself.
 
 ## Mark Done System — How It Works
 
