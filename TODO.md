@@ -1,4 +1,6 @@
 # Rancho Moonrise — TODO
+
+- [x] 2026-11-04 — Remove Off The Grid from shared desktop/mobile navigation at Ashley's request.
 Last updated: 2026-10-28 (cache-bust — `cms.js` and `event-popup.js` script tags use `?v=20261028` so browsers drop the cached legacy-key files. HTML cache is `max-age=0`.)
 
 Prior: 2026-10-16 (rancho-site-daily — fixed reversed bathroom claim on `/blog/glamping-vs-camping/` (cabins ≠ ensuite). Gate 8/8 still_true; Square early-bird prices still $129/$189. Run-log: `run-logs/2026-10-16-seo.md`.)
