@@ -63,7 +63,7 @@ The 4 accommodation files are literally 340×340 thumbnails masquerading as cont
 
 ## Last Worked On
 
-- 2026-11-04 — Removed the shared Off The Grid navigation insertion from `site/js/main.js` for desktop and mobile at Ashley's request. JavaScript syntax verified. No change to the event page itself.
+- 2026-11-12 — Removed the Off the Grid callout paragraph beneath “Upcoming on the ranch” in `site/pages/events.html` at Ashley's request. Exact single-paragraph removal verified before commit.
 
 ## Mark Done System — How It Works
 
