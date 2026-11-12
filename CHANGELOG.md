@@ -2489,3 +2489,5 @@ Launch-blocker sweep and conversion sharpening across the primary pages, ahead o
 - `validate:site` and `test:runtime` pass.
 
 - 2026-11-04 — Removed Off The Grid from shared desktop and mobile navigation in `site/js/main.js`. JavaScript syntax verified; event page content unchanged.
+
+- 2026-11-12 — Removed Off the Grid callout beneath “Upcoming on the ranch” on the Happenings page, as requested by Ashley.
