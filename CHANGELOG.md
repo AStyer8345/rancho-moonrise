@@ -2491,3 +2491,8 @@ Launch-blocker sweep and conversion sharpening across the primary pages, ahead o
 - 2026-11-04 — Removed Off The Grid from shared desktop and mobile navigation in `site/js/main.js`. JavaScript syntax verified; event page content unchanged.
 
 - 2026-11-12 — Removed Off the Grid callout beneath “Upcoming on the ranch” on the Happenings page, as requested by Ashley.
+
+## 2026-11-13 — rancho-site-daily
+- Pet policy aligned to Ashley's 2026-11-02 FAQ edit (safari tents only, $50 pet fee per night, 60 lb limit, up to 2 dogs per stay; casitas and cabins not dog friendly) on `accommodations.html` (2 spots), `policies.html`, `safari-tents-near-austin.html`, `glamping-near-austin-texas.html` (FAQPage JSON-LD + 2 visible), `summer-glamping-near-austin.html`, `wedding-venues-near-austin.html`, and the `faqs.html` FAQPage JSON-LD answer. `dateModified` bumped to 2026-11-13 on the four pages that carry it. `VOICE-GUIDE.md` Property Facts pet row updated.
+- Not changed: Supabase `site_content` row `accommodations_amenity_pets_desc` (old text, last updated 2026-05-27) still overrides the static HTML at runtime. Needs an admin edit.
+- Re-Verify Gate 4/4 still_true (canary pass in extended mode; safari-tents and offthegrid not indexed; sitemap 32/32). `validate:site` and `test:runtime` pass. PageSpeed API 429.

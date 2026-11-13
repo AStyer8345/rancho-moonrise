@@ -275,7 +275,7 @@ Follows a clear formula: hook → description → schedule details → CTA. Emoj
 | Pool passes | ResortPass — daily pool passes available to overnight guests too |
 | Star rating | 4.9 / ~125 reviews on Google |
 | Capacity | Safari tents and cabins (inventory fluctuates — do not list a unit count). Events up to 200. |
-| Pet policy | Welcome, $50 fee, 60 lb limit, 1 per reservation |
+| Pet policy | Dogs welcome in **safari tents only** (casitas and cabins are not dog friendly). $50 pet fee per night, 60 lb limit, max 2 dogs per stay. Source: Ashley's FAQ edit 2026-11-02. |
 | Check-in | 3–5 PM (guests routinely check in after 5 — don't make this sound rigid) |
 | Check-out | 11 AM |
 | Noise curfew | 9:30 PM |

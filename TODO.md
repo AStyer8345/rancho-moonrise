@@ -976,7 +976,10 @@ All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms. Li
 - [x] (2026-09-26 → `hero-pool.webp`, 342 KB, + preload) `/offthegrid/` hero is a 3.0 MB PNG (`site/offthegrid/images/hero-pool.png`, CSS background, likely LCP). Convert to WebP (~300 KB) and update the CSS `url()`. Keep the PNG until the live page is verified.
 - [x] (2026-09-27, `202134c`) `/events/` expired Event JSON-LD (4 blocks, May–Jul) dropped; the list is Supabase-hydrated and current, only the schema was stale. Static HTML link to `/offthegrid/` added in the list intro.
 - [x] ✅ 2026-09-28 (rancho-site-daily, `65e821f`) — `/events/` May–July fallback cards replaced with one evergreen, undated card; hydrator still swaps in live rows.
-- [ ] `/events/` list intro hard-codes "Saturday, November 14: Off the Grid" — remove or replace after Nov 14 so it doesn't become the next stale-date claim.
+- [x] ✅ 2026-11-12 (owner commit `e5c1cfb`, verified 2026-11-13) `/events/` list intro no longer hard-codes "Saturday, November 14: Off the Grid".
+- [ ] **Ashley (2 min):** admin → Site Copy → Accommodations → pets amenity description still says "1 dog per reservation" and overwrites the corrected page text in the browser. Change it to: "Dogs welcome in safari tents ($50 pet fee per night, 60 lb limit, up to 2 dogs per stay). Casitas and cabins are not dog friendly. Relief stations provided." (2026-11-13)
+- [ ] After Nov 14: `/offthegrid/` is a past event. Decide with Ashley whether to keep it as a recap, redirect it, or remove it; until then its Event JSON-LD (`InStock` offers) and sitemap entry are stale. Nav and Happenings links were already removed by the owner (11/4, 11/12).
+- [ ] Confirm with Ashley: pet fee is **$50 per night** (FAQ wording, now used sitewide). `policies.html` previously said "$50 per stay". (2026-11-13)
 - [ ] (low) `/events/` JS `EVENTS` calendar seed array is still May–July 2026; only shown if Supabase hydration fails and the visitor pages back to those months. Could be emptied.
 - [ ] Backlog (only with a measured benefit): generate `/events/` Event JSON-LD from the Supabase `rancho_events` feed instead of static dates.
 - [ ] Ashley/CRM: Nov 14 `rancho_events` row "SwiftFit x Rancho Moonrise Yoga Retreat" says "More info coming soon" with no ticket URL; it's likely the same event as `/offthegrid/`. Point its link there.
