@@ -2500,3 +2500,5 @@ Launch-blocker sweep and conversion sharpening across the primary pages, ahead o
 - 2026-11-13 — Made all five wedding accommodations-strip photos editable under Admin → Site Images → Weddings; added independent 4:5 crop/upload slots and wedding-page image hydration with original fallbacks. Verified script syntax and replacement/responsive/alt/error behavior.
 
 - 2026-11-13 — Grouped Site Images by expandable page sections; initially collapsed, with expanded state preserved after image updates.
+
+- 2026-11-13 — Added all remaining wedding-page image controls (22 total), including mobile hero, six feature cards, ceremony photos, badges, logo and CTA. Linked the existing gallery editor from Site Images; preserved existing slots and uploads.

@@ -966,6 +966,24 @@ function showDashboard(user) {
 // thumbnail when no Supabase row exists yet so Ashley can see what's there
 // before replacing it. Path is absolute from site root.
 var SITE_IMAGE_SLOTS = [
+    // Wedding page images; existing accommodation slot keys remain unchanged.
+    {"slotKey":"weddings_logo","page":"weddings","label":"Navigation — Rancho Moonrise logo","aspectRatio":"1:1","defaultUrl":"/images/rancho-logo-300.webp"},
+    {"slotKey":"weddings_hero","page":"weddings","label":"Hero — desktop background","aspectRatio":"16:9","defaultUrl":"/images/wedding-hero-1920.q80.webp"},
+    {"slotKey":"weddings_hero_mobile","page":"weddings","label":"Hero — mobile background","aspectRatio":"4:5","defaultUrl":"/images/wedding-lodge-porch-veil-768.q80.webp"},
+    {"slotKey":"weddings_feature_1","page":"weddings","label":"Feature card — Exclusive Private Access","aspectRatio":"4:3","defaultUrl":"/images/accom-group-aerial-1024.webp"},
+    {"slotKey":"weddings_feature_2","page":"weddings","label":"Feature card — 200+ Guest Capacity","aspectRatio":"4:3","defaultUrl":"/images/wedding-event-barn-1024.webp"},
+    {"slotKey":"weddings_feature_3","page":"weddings","label":"Feature card — Wedding Party Sleeps On-Site","aspectRatio":"4:3","defaultUrl":"/images/accom-safari-tent-1024.webp"},
+    {"slotKey":"weddings_feature_4","page":"weddings","label":"Feature card — Unlimited Ceremony Layouts","aspectRatio":"4:3","defaultUrl":"/images/wedding-ceremony-corral-1024.q80.webp"},
+    {"slotKey":"weddings_feature_5","page":"weddings","label":"Feature card — Full Bar Service","aspectRatio":"4:3","defaultUrl":"/images/venue-neon-moon-1024.webp"},
+    {"slotKey":"weddings_feature_6","page":"weddings","label":"Feature card — Kid & Pet Friendly","aspectRatio":"4:3","defaultUrl":"/images/wedding-poolside-1024.webp"},
+    {"slotKey":"weddings_ceremony_1","page":"weddings","label":"Ceremony sites — Rustic Corral","aspectRatio":"4:3","defaultUrl":"/images/wedding-ceremony-corral-1920.q80.webp"},
+    {"slotKey":"weddings_ceremony_2","page":"weddings","label":"Ceremony sites — Event Barn","aspectRatio":"4:3","defaultUrl":"/images/wedding-event-barn-1024.webp"},
+    {"slotKey":"weddings_ceremony_3","page":"weddings","label":"Ceremony sites — Poolside & Open Fields","aspectRatio":"4:3","defaultUrl":"/images/wedding-poolside-1920.webp"},
+    {"slotKey":"weddings_badge_1","page":"weddings","label":"Wedding community badge — Brides of Austin 2023","aspectRatio":"1:1","defaultUrl":"/images/badge-brides-of-austin-2023.webp"},
+    {"slotKey":"weddings_badge_2","page":"weddings","label":"Wedding community badge — Brides of Austin 2025","aspectRatio":"1:1","defaultUrl":"/images/badge-brides-of-austin-2025.webp"},
+    {"slotKey":"weddings_badge_3","page":"weddings","label":"Wedding community badge — WeddingWire Austin","aspectRatio":"1:1","defaultUrl":"/images/badge-weddingwire-austin.webp"},
+    {"slotKey":"weddings_badge_4","page":"weddings","label":"Wedding community badge — Wedding Chicks","aspectRatio":"1:1","defaultUrl":"/images/badge-wedding-chicks.webp"},
+    {"slotKey":"weddings_cta","page":"weddings","label":"Bottom banner — Walk the Ranch Before You Commit","aspectRatio":"16:9","defaultUrl":"/images/wedding-cta-sunset-1920.webp"},
     // ===== WEDDINGS: accommodations strip, left to right =====
     {"slotKey":"weddings_stay_casita_exterior","page":"weddings","label":"Accommodations strip — photo 1 (Casita exterior)","aspectRatio":"4:5","defaultUrl":"/images/accommodation-cabin.webp"},
     {"slotKey":"weddings_stay_casita_interior","page":"weddings","label":"Accommodations strip — photo 2 (Casita interior)","aspectRatio":"4:5","defaultUrl":"/images/accom-cabin-interior-clean-1024.webp"},
@@ -1059,11 +1077,17 @@ async function loadSiteImages() {
         }).join('');
         return '<details class="page-group site-image-page" data-image-page="' + escapeHtml(page) + '"' + (openPages.indexOf(page) !== -1 ? ' open' : '') + '>' +
             '<summary><span class="site-image-page__name">' + escapeHtml(pageLabel) + '</span><span class="page-group__count">' + slots.length + ' images</span></summary>' +
-            '<div class="page-group__body"><div class="site-image-grid">' + cards + '</div></div>' +
+            '<div class="page-group__body">' + (page === 'weddings' ? '<p style="margin-bottom:16px;"><button class="btn btn--secondary" onclick="openWeddingGallery()">Edit Moments from the Ranch gallery</button></p>' : '') + '<div class="site-image-grid">' + cards + '</div></div>' +
         '</details>';
     }).join('');
 
     container.innerHTML = html;
+}
+
+function openWeddingGallery() {
+    $('#gallerySelect').value = 'weddings';
+    document.querySelector('[data-tab="galleries"]').click();
+    loadGalleryPhotos();
 }
 
 function replaceSlotImage(slotKey) {

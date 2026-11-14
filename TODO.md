@@ -1187,3 +1187,5 @@ All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms. Li
 - [x] 2026-11-13 — Ashley: expose the wedding accommodations strip's five photos in Admin → Site Images → Weddings, with individual replace and reset controls.
 
 - [x] 2026-11-13 — Grouped Site Images by expandable page sections; initially collapsed, with expanded state preserved after image updates.
+
+- [x] 2026-11-13 — Added all remaining wedding-page image controls (22 total), including mobile hero, six feature cards, ceremony photos, badges, logo and CTA. Linked the existing gallery editor from Site Images; preserved existing slots and uploads.

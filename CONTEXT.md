@@ -63,7 +63,7 @@ The 4 accommodation files are literally 340×340 thumbnails masquerading as cont
 
 ## Last Worked On
 
-- 2026-11-13 — Site Images now groups each website page in a collapsed native details section, matching Site Copy. Five wedding accommodations image controls are live. Expand/collapse uses native keyboard support, and uploads preserve expanded sections.
+- 2026-11-13 — All fixed wedding-page images now have Admin → Site Images → Weddings controls (22 slots including separate mobile hero). The same dropdown links directly to the existing Moments from the Ranch gallery editor. Existing uploaded accommodation images and gallery records are preserved. Script syntax, slot coverage, responsive/mobile replacements, alt text and fallback checks passed.
 
 ## Mark Done System — How It Works
 
