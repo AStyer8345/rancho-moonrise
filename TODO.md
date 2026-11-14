@@ -1193,3 +1193,5 @@ All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms. Li
 - [x] 2026-11-13 — Removed the entire What the Photos Don't Tell You section from Accommodations at Ashley's request, including bathhouse image, all three paragraphs and Ashley credit. Adjacent sections preserved.
 
 - [x] 2026-11-13 — Exposed all wedding main-page copy under Admin → Site Copy → Weddings (114 labeled fields, including accommodations, features, CTAs, inquiry labels/placeholders, FAQs and related links). Defaults render without seeding; Save upserts individual fields and preserves existing saved content. Public hydration uses textContent and updates FAQPage metadata.
+
+- [x] 2026-11-14 — Accommodations hero now loads the generated 2560px custom-upload variant instead of stretching the 1024px file. Bumped this page's CMS script version; other image slots unchanged. Syntax and slot-selection checks passed.

@@ -264,7 +264,11 @@
             if (el.tagName === 'IMG') {
                 applyResponsiveImage(el, row.public_url, row.alt_text);
             } else {
-                el.style.backgroundImage = "url('" + row.public_url + "')";
+                // Full-width accommodations hero needs the largest generated upload.
+                var backgroundUrl = row.slot_key === 'accommodations_hero_bg'
+                    ? row.public_url.replace(/-1024\.webp$/i, '-2560.webp')
+                    : row.public_url;
+                el.style.backgroundImage = "url('" + backgroundUrl + "')";
             }
         });
     }

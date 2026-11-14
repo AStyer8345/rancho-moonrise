@@ -63,7 +63,7 @@ The 4 accommodation files are literally 340×340 thumbnails masquerading as cont
 
 ## Last Worked On
 
-- 2026-11-13 — Exposed all wedding main-page copy under Admin → Site Copy → Weddings (114 labeled fields, including accommodations, features, CTAs, inquiry labels/placeholders, FAQs and related links). Defaults render without seeding; Save upserts individual fields and preserves existing saved content. Public hydration uses textContent and updates FAQPage metadata.
+- 2026-11-14 — Accommodations hero now loads the generated 2560px custom-upload variant instead of stretching the 1024px file. Bumped this page's CMS script version; other image slots unchanged. Syntax and slot-selection checks passed.
 
 ## Mark Done System — How It Works
 
