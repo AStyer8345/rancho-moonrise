@@ -2517,3 +2517,5 @@ Launch-blocker sweep and conversion sharpening across the primary pages, ahead o
 ## 2026-11-14 — Host Your Event photo strip
 
 - 2026-11-14 — Replaced Host Your Event planning notes (Courtyard and Outdoor Bar) with a full-width five-photo guest accommodations section matching Weddings. Added three copy fields and five independent 4:5 image controls in admin; retired the removed section controls. Reused the current wedding photo uploads with responsive image sources. Checked inline script syntax, five-slot coverage and copy wiring.
+
+- 2026-11-14 — Moved Host Your Event’s What Drives Event Pricing section to the end of main content, after the FAQ and inquiry CTA and before the footer. Preserved copy and admin editing keys. Verified section order and unchanged remaining markup.
