@@ -63,7 +63,7 @@ The 4 accommodation files are literally 340×340 thumbnails masquerading as cont
 
 ## Last Worked On
 
-- 2026-11-14 — Accommodations hero now loads the generated 2560px custom-upload variant instead of stretching the 1024px file. Bumped this page's CMS script version; other image slots unchanged. Syntax and slot-selection checks passed.
+- 2026-11-14 — Moved the Where to Stay overview heading and both paragraphs beneath the Around Rancho Moonrise gallery, at the bottom of Accommodations. Updated the card direction from below to above.
 
 ## Mark Done System — How It Works
 

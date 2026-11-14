@@ -2508,3 +2508,5 @@ Launch-blocker sweep and conversion sharpening across the primary pages, ahead o
 - 2026-11-13 — Exposed all wedding main-page copy under Admin → Site Copy → Weddings (114 labeled fields, including accommodations, features, CTAs, inquiry labels/placeholders, FAQs and related links). Defaults render without seeding; Save upserts individual fields and preserves existing saved content. Public hydration uses textContent and updates FAQPage metadata.
 
 - 2026-11-14 — Accommodations hero now loads the generated 2560px custom-upload variant instead of stretching the 1024px file. Bumped this page's CMS script version; other image slots unchanged. Syntax and slot-selection checks passed.
+
+- 2026-11-14 — Moved the Where to Stay overview heading and both paragraphs beneath the Around Rancho Moonrise gallery, at the bottom of Accommodations. Updated the card direction from below to above.
