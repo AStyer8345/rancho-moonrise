@@ -1659,6 +1659,693 @@ function pageSortRank(p) {
     return idx === -1 ? 100 + p.charCodeAt(0) : idx;
 }
 
+var WEDDING_COPY_DEFAULTS = [
+  {
+    "block_key": "weddings_copy_001",
+    "page": "weddings",
+    "label": "Weddings — text — To send an inquiry, please enable JavaScript, call",
+    "body": "To send an inquiry, please enable JavaScript, call"
+  },
+  {
+    "block_key": "weddings_copy_002",
+    "page": "weddings",
+    "label": "Weddings — text — 737-291-1260",
+    "body": "737-291-1260"
+  },
+  {
+    "block_key": "weddings_copy_003",
+    "page": "weddings",
+    "label": "Weddings — text — , or email",
+    "body": ", or email"
+  },
+  {
+    "block_key": "weddings_copy_004",
+    "page": "weddings",
+    "label": "Weddings — text — events@ranchomoonrise.com",
+    "body": "events@ranchomoonrise.com"
+  },
+  {
+    "block_key": "weddings_copy_005",
+    "page": "weddings",
+    "label": "Hero — text — Weddings at Rancho Moonrise",
+    "body": "Weddings at Rancho Moonrise"
+  },
+  {
+    "block_key": "weddings_hero_headline",
+    "page": "weddings",
+    "label": "Hero — heading — Your Dream Ranch Wedding",
+    "body": "Your Dream Ranch Wedding"
+  },
+  {
+    "block_key": "weddings_hero_body",
+    "page": "weddings",
+    "label": "Hero — text — Exclusive full-ranch access — the entire 36-acre ranch is yours, ",
+    "body": "Exclusive full-ranch access — the entire 36-acre ranch is yours, no outside guests."
+  },
+  {
+    "block_key": "weddings_copy_006",
+    "page": "weddings",
+    "label": "Hero — button / link — Schedule a Venue Tour",
+    "body": "Schedule a Venue Tour"
+  },
+  {
+    "block_key": "weddings_copy_007",
+    "page": "weddings",
+    "label": "Hero — button / link — Send a Wedding Inquiry",
+    "body": "Send a Wedding Inquiry"
+  },
+  {
+    "block_key": "weddings_copy_008",
+    "page": "weddings",
+    "label": "Wedding features — heading — An Exclusive Wedding Experience",
+    "body": "An Exclusive Wedding Experience"
+  },
+  {
+    "block_key": "weddings_copy_009",
+    "page": "weddings",
+    "label": "Wedding features — text — When you book your wedding at Rancho Moonrise, the entire ranch i",
+    "body": "When you book your wedding at Rancho Moonrise, the entire ranch is yours. No outside guests will be on the property during your day."
+  },
+  {
+    "block_key": "weddings_copy_010",
+    "page": "weddings",
+    "label": "Wedding features — heading — Exclusive Private Access",
+    "body": "Exclusive Private Access"
+  },
+  {
+    "block_key": "weddings_copy_011",
+    "page": "weddings",
+    "label": "Wedding features — text — The entire ranch — every venue, every acre — is reserved solely f",
+    "body": "The entire ranch — every venue, every acre — is reserved solely for your wedding party."
+  },
+  {
+    "block_key": "weddings_copy_012",
+    "page": "weddings",
+    "label": "Wedding features — heading — 200+ Guest Capacity",
+    "body": "200+ Guest Capacity"
+  },
+  {
+    "block_key": "weddings_copy_013",
+    "page": "weddings",
+    "label": "Wedding features — text — Space for large celebrations with multiple indoor and outdoor gat",
+    "body": "Space for large celebrations with multiple indoor and outdoor gathering areas."
+  },
+  {
+    "block_key": "weddings_copy_014",
+    "page": "weddings",
+    "label": "Wedding features — heading — Wedding Party Sleeps On-Site",
+    "body": "Wedding Party Sleeps On-Site"
+  },
+  {
+    "block_key": "weddings_copy_015",
+    "page": "weddings",
+    "label": "Wedding features — text — Cabins and safari tents across the property — no hotel block to c",
+    "body": "Cabins and safari tents across the property — no hotel block to coordinate, no late-night rides back to Austin."
+  },
+  {
+    "block_key": "weddings_copy_016",
+    "page": "weddings",
+    "label": "Wedding features — heading — Unlimited Ceremony Layouts",
+    "body": "Unlimited Ceremony Layouts"
+  },
+  {
+    "block_key": "weddings_copy_017",
+    "page": "weddings",
+    "label": "Wedding features — text — Poolside, the rustic corral, open fields, or inside the Event Bar",
+    "body": "Poolside, the rustic corral, open fields, or inside the Event Barn — design a ceremony that's entirely your own."
+  },
+  {
+    "block_key": "weddings_copy_018",
+    "page": "weddings",
+    "label": "Wedding features — heading — Full Bar Service",
+    "body": "Full Bar Service"
+  },
+  {
+    "block_key": "weddings_copy_019",
+    "page": "weddings",
+    "label": "Wedding features — text — Professional bar service for your reception, staffed and stocked ",
+    "body": "Professional bar service for your reception, staffed and stocked for your celebration."
+  },
+  {
+    "block_key": "weddings_copy_020",
+    "page": "weddings",
+    "label": "Wedding features — heading — Kid & Pet Friendly",
+    "body": "Kid & Pet Friendly"
+  },
+  {
+    "block_key": "weddings_copy_021",
+    "page": "weddings",
+    "label": "Wedding features — text — The whole family is welcome — including the four-legged members o",
+    "body": "The whole family is welcome — including the four-legged members of the wedding party."
+  },
+  {
+    "block_key": "weddings_copy_022",
+    "page": "weddings",
+    "label": "Ceremony Sites — text — Ceremony & Reception",
+    "body": "Ceremony & Reception"
+  },
+  {
+    "block_key": "weddings_copy_023",
+    "page": "weddings",
+    "label": "Ceremony Sites — heading — Ceremony Sites for Every Vision",
+    "body": "Ceremony Sites for Every Vision"
+  },
+  {
+    "block_key": "weddings_copy_024",
+    "page": "weddings",
+    "label": "Ceremony Sites — text — Unlimited layouts across 36 acres. Design a ceremony that's entir",
+    "body": "Unlimited layouts across 36 acres. Design a ceremony that's entirely your own — anywhere on the property."
+  },
+  {
+    "block_key": "weddings_copy_025",
+    "page": "weddings",
+    "label": "Ceremony Sites — heading — Rustic Corral",
+    "body": "Rustic Corral"
+  },
+  {
+    "block_key": "weddings_copy_026",
+    "page": "weddings",
+    "label": "Ceremony Sites — text — Exchange vows in our circular corral, surrounded by wildflowers a",
+    "body": "Exchange vows in our circular corral, surrounded by wildflowers and the authentic character of a working Texas ranch. A setting that photographs like a dream."
+  },
+  {
+    "block_key": "weddings_copy_027",
+    "page": "weddings",
+    "label": "Ceremony Sites — heading — Event Barn",
+    "body": "Event Barn"
+  },
+  {
+    "block_key": "weddings_copy_028",
+    "page": "weddings",
+    "label": "Ceremony Sites — text — Our modern Event Barn offers covered, climate-controlled space fo",
+    "body": "Our modern Event Barn offers covered, climate-controlled space for ceremonies or receptions. Flexible layout accommodates seated dinners, dance floors, and cocktail hours."
+  },
+  {
+    "block_key": "weddings_copy_029",
+    "page": "weddings",
+    "label": "Ceremony Sites — heading — Poolside & Open Fields",
+    "body": "Poolside & Open Fields"
+  },
+  {
+    "block_key": "weddings_copy_030",
+    "page": "weddings",
+    "label": "Ceremony Sites — text — Say \"I do\" beside the pool or in our sweeping open fields with pa",
+    "body": "Say \"I do\" beside the pool or in our sweeping open fields with panoramic views of the Texas landscape. Then dance beneath a blanket of stars with the whole ranch as your backdrop."
+  },
+  {
+    "block_key": "weddings_copy_031",
+    "page": "weddings",
+    "label": "Accommodations — text — Guest Accommodations",
+    "body": "Guest Accommodations"
+  },
+  {
+    "block_key": "weddings_copy_032",
+    "page": "weddings",
+    "label": "Accommodations — heading — Guests Can Stay on the Ranch",
+    "body": "Guests Can Stay on the Ranch"
+  },
+  {
+    "block_key": "weddings_copy_033",
+    "page": "weddings",
+    "label": "Accommodations — text — Hand-crafted casitas and safari tents for your wedding party — al",
+    "body": "Hand-crafted casitas and safari tents for your wedding party — all with A/C, heat, and real beds. Fire pits throughout the property."
+  },
+  {
+    "block_key": "weddings_copy_034",
+    "page": "weddings",
+    "label": "Wedding Gallery — text — Real Weddings",
+    "body": "Real Weddings"
+  },
+  {
+    "block_key": "weddings_copy_035",
+    "page": "weddings",
+    "label": "Wedding Gallery — heading — Moments from the Ranch",
+    "body": "Moments from the Ranch"
+  },
+  {
+    "block_key": "weddings_copy_036",
+    "page": "weddings",
+    "label": "Wedding Gallery — text — Tap any photo to view full-size. Swipe or use arrow keys to brows",
+    "body": "Tap any photo to view full-size. Swipe or use arrow keys to browse."
+  },
+  {
+    "block_key": "weddings_copy_037",
+    "page": "weddings",
+    "label": "Recognition — text — As Featured In",
+    "body": "As Featured In"
+  },
+  {
+    "block_key": "weddings_copy_038",
+    "page": "weddings",
+    "label": "Recognition — heading — Trusted by Austin's Wedding Community",
+    "body": "Trusted by Austin's Wedding Community"
+  },
+  {
+    "block_key": "weddings_copy_039",
+    "page": "weddings",
+    "label": "Recognition — text — We're proud to be recognized by the industry's leading wedding pu",
+    "body": "We're proud to be recognized by the industry's leading wedding publications and platforms."
+  },
+  {
+    "block_key": "weddings_copy_040",
+    "page": "weddings",
+    "label": "Social Proof + Urgency — text — 4.9",
+    "body": "4.9"
+  },
+  {
+    "block_key": "weddings_copy_041",
+    "page": "weddings",
+    "label": "Social Proof + Urgency — text — / 125 Reviews",
+    "body": "/ 125 Reviews"
+  },
+  {
+    "block_key": "weddings_copy_042",
+    "page": "weddings",
+    "label": "Social Proof + Urgency — text — 2026 dates are booking fast",
+    "body": "2026 dates are booking fast"
+  },
+  {
+    "block_key": "weddings_copy_043",
+    "page": "weddings",
+    "label": "Social Proof + Urgency — text — — only limited Saturday availability remaining.",
+    "body": "— only limited Saturday availability remaining."
+  },
+  {
+    "block_key": "weddings_copy_044",
+    "page": "weddings",
+    "label": "Social Proof + Urgency — text — Schedule a tour today →",
+    "body": "Schedule a tour today →"
+  },
+  {
+    "block_key": "weddings_copy_045",
+    "page": "weddings",
+    "label": "Schedule a Tour — text — See It in Person",
+    "body": "See It in Person"
+  },
+  {
+    "block_key": "weddings_copy_046",
+    "page": "weddings",
+    "label": "Schedule a Tour — heading — Schedule a Venue Tour",
+    "body": "Schedule a Venue Tour"
+  },
+  {
+    "block_key": "weddings_copy_047",
+    "page": "weddings",
+    "label": "Schedule a Tour — text — Walk the property, see the ceremony sites, meet the team, and sta",
+    "body": "Walk the property, see the ceremony sites, meet the team, and start picturing your day. Tours are the #1 way couples decide on their venue."
+  },
+  {
+    "block_key": "weddings_copy_048",
+    "page": "weddings",
+    "label": "Schedule a Tour — button / link — In-Person Tour (60 min)",
+    "body": "In-Person Tour (60 min)"
+  },
+  {
+    "block_key": "weddings_copy_049",
+    "page": "weddings",
+    "label": "Schedule a Tour — button / link — Ask About a Virtual Tour",
+    "body": "Ask About a Virtual Tour"
+  },
+  {
+    "block_key": "weddings_copy_050",
+    "page": "weddings",
+    "label": "Schedule a Tour — text — Or call",
+    "body": "Or call"
+  },
+  {
+    "block_key": "weddings_copy_051",
+    "page": "weddings",
+    "label": "Schedule a Tour — text — 737-291-1260",
+    "body": "737-291-1260"
+  },
+  {
+    "block_key": "weddings_copy_052",
+    "page": "weddings",
+    "label": "Schedule a Tour — text — to schedule by phone",
+    "body": "to schedule by phone"
+  },
+  {
+    "block_key": "weddings_copy_053",
+    "page": "weddings",
+    "label": "Pricing Frame — text — What to Know",
+    "body": "What to Know"
+  },
+  {
+    "block_key": "weddings_copy_054",
+    "page": "weddings",
+    "label": "Pricing Frame — heading — What Drives Wedding Pricing",
+    "body": "What Drives Wedding Pricing"
+  },
+  {
+    "block_key": "weddings_copy_055",
+    "page": "weddings",
+    "label": "Pricing Frame — text — Wedding pricing depends on date, guest count, bar package, lodgin",
+    "body": "Wedding pricing depends on date, guest count, bar package, lodging, and how much of the ranch you want for your event. Saturdays in peak season (March–May, September–November) book 12–18 months out. Packages aren't published online on purpose — a tour matches you to the right tier and we can build an accurate quote on the spot."
+  },
+  {
+    "block_key": "weddings_copy_056",
+    "page": "weddings",
+    "label": "Pricing Frame — text — Alcohol is handled through the venue (open bar, per person, per h",
+    "body": "Alcohol is handled through the venue (open bar, per person, per hour) — no outside alcohol or BYOB."
+  },
+  {
+    "block_key": "weddings_copy_057",
+    "page": "weddings",
+    "label": "Pricing Frame — text — Catering, photography, and florals stay flexible — bring your own",
+    "body": "Catering, photography, and florals stay flexible — bring your own preferred vendors."
+  },
+  {
+    "block_key": "weddings_copy_058",
+    "page": "weddings",
+    "label": "Wedding Inquiry Form — text — Let's Talk",
+    "body": "Let's Talk"
+  },
+  {
+    "block_key": "weddings_copy_059",
+    "page": "weddings",
+    "label": "Wedding Inquiry Form — heading — Wedding Inquiry",
+    "body": "Wedding Inquiry"
+  },
+  {
+    "block_key": "weddings_copy_060",
+    "page": "weddings",
+    "label": "Wedding Inquiry Form — text — Tell us about your wedding and we'll follow up with availability,",
+    "body": "Tell us about your wedding and we'll follow up with availability, package details, and the right next step. A venue tour is the fastest way to get an accurate quote. Have a quick question? Our"
+  },
+  {
+    "block_key": "weddings_copy_061",
+    "page": "weddings",
+    "label": "Wedding Inquiry Form — text — AI concierge",
+    "body": "AI concierge"
+  },
+  {
+    "block_key": "weddings_copy_062",
+    "page": "weddings",
+    "label": "Wedding Inquiry Form — text — in the bottom-right corner can answer right now.",
+    "body": "in the bottom-right corner can answer right now."
+  },
+  {
+    "block_key": "weddings_copy_063",
+    "page": "weddings",
+    "label": "Wedding Inquiry Form — form label — Full Name",
+    "body": "Full Name"
+  },
+  {
+    "block_key": "weddings_copy_064",
+    "page": "weddings",
+    "label": "Wedding Inquiry Form — form label — Partner's Name",
+    "body": "Partner's Name"
+  },
+  {
+    "block_key": "weddings_copy_065",
+    "page": "weddings",
+    "label": "Wedding Inquiry Form — form label — Email",
+    "body": "Email"
+  },
+  {
+    "block_key": "weddings_copy_066",
+    "page": "weddings",
+    "label": "Wedding Inquiry Form — form label — Phone",
+    "body": "Phone"
+  },
+  {
+    "block_key": "weddings_copy_067",
+    "page": "weddings",
+    "label": "Wedding Inquiry Form — form label — Preferred Date Range",
+    "body": "Preferred Date Range"
+  },
+  {
+    "block_key": "weddings_copy_068",
+    "page": "weddings",
+    "label": "Wedding Inquiry Form — form label — Estimated Guest Count",
+    "body": "Estimated Guest Count"
+  },
+  {
+    "block_key": "weddings_copy_069",
+    "page": "weddings",
+    "label": "Wedding Inquiry Form — text — Total Wedding Budget",
+    "body": "Total Wedding Budget"
+  },
+  {
+    "block_key": "weddings_copy_070",
+    "page": "weddings",
+    "label": "Wedding Inquiry Form — form option — Select a budget range...",
+    "body": "Select a budget range..."
+  },
+  {
+    "block_key": "weddings_copy_071",
+    "page": "weddings",
+    "label": "Wedding Inquiry Form — form option — $5,000 – $20,000",
+    "body": "$5,000 – $20,000"
+  },
+  {
+    "block_key": "weddings_copy_072",
+    "page": "weddings",
+    "label": "Wedding Inquiry Form — form option — $20,000 – $40,000",
+    "body": "$20,000 – $40,000"
+  },
+  {
+    "block_key": "weddings_copy_073",
+    "page": "weddings",
+    "label": "Wedding Inquiry Form — form option — $40,000 – $60,000",
+    "body": "$40,000 – $60,000"
+  },
+  {
+    "block_key": "weddings_copy_074",
+    "page": "weddings",
+    "label": "Wedding Inquiry Form — form option — $60,000+",
+    "body": "$60,000+"
+  },
+  {
+    "block_key": "weddings_copy_075",
+    "page": "weddings",
+    "label": "Wedding Inquiry Form — text — Helps us recommend the right package and tailor your tour.",
+    "body": "Helps us recommend the right package and tailor your tour."
+  },
+  {
+    "block_key": "weddings_copy_076",
+    "page": "weddings",
+    "label": "Wedding Inquiry Form — form label — Tell Us About Your Vision",
+    "body": "Tell Us About Your Vision"
+  },
+  {
+    "block_key": "weddings_copy_077",
+    "page": "weddings",
+    "label": "Wedding Inquiry Form — form label — How Did You Hear About Us?",
+    "body": "How Did You Hear About Us?"
+  },
+  {
+    "block_key": "weddings_copy_078",
+    "page": "weddings",
+    "label": "Wedding Inquiry Form — button / link — Send Wedding Inquiry",
+    "body": "Send Wedding Inquiry"
+  },
+  {
+    "block_key": "weddings_copy_079",
+    "page": "weddings",
+    "label": "About ranch weddings — text — The Short Answer",
+    "body": "The Short Answer"
+  },
+  {
+    "block_key": "weddings_copy_080",
+    "page": "weddings",
+    "label": "About ranch weddings — heading — What Is a Ranch Wedding Venue Near Austin?",
+    "body": "What Is a Ranch Wedding Venue Near Austin?"
+  },
+  {
+    "block_key": "weddings_copy_081",
+    "page": "weddings",
+    "label": "About ranch weddings — text — A ranch wedding venue near Austin gives couples full outdoor spac",
+    "body": "A ranch wedding venue near Austin gives couples full outdoor space, flexible ceremony layouts, and an authentic Texas setting — without a 4-hour drive. Rancho Moonrise is 20 minutes from downtown Austin on 36 acres. When you book a wedding here, the entire property is yours for the day. No other guests, no shared timelines, no strangers wandering through your photos."
+  },
+  {
+    "block_key": "weddings_copy_082",
+    "page": "weddings",
+    "label": "About ranch weddings — text — Most wedding venues near Austin rent a space. Rancho Moonrise giv",
+    "body": "Most wedding venues near Austin rent a space. Rancho Moonrise gives you the whole ranch — the Event Barn (climate-controlled, up to 200 guests), the pool, the open fields, the rustic corral, the donkeys at the fence, and on-site overnight accommodations for your wedding party across hand-crafted cabins and safari tents. The wedding party wakes up on the property the next morning."
+  },
+  {
+    "block_key": "weddings_copy_083",
+    "page": "weddings",
+    "label": "About ranch weddings — text — Saturday dates for peak season (March–May, September–November) bo",
+    "body": "Saturday dates for peak season (March–May, September–November) book 12–18 months out. If you have a 2026 or 2027 date in mind, the right move is to schedule a venue tour now — no commitment required, just a walk of the property and a conversation about your vision."
+  },
+  {
+    "block_key": "weddings_copy_084",
+    "page": "weddings",
+    "label": "About ranch weddings — button / link — Schedule a Venue Tour",
+    "body": "Schedule a Venue Tour"
+  },
+  {
+    "block_key": "weddings_copy_085",
+    "page": "weddings",
+    "label": "Wedding FAQs — text — Common Questions",
+    "body": "Common Questions"
+  },
+  {
+    "block_key": "weddings_copy_086",
+    "page": "weddings",
+    "label": "Wedding FAQs — heading — Frequently Asked Questions",
+    "body": "Frequently Asked Questions"
+  },
+  {
+    "block_key": "weddings_copy_087",
+    "page": "weddings",
+    "label": "Wedding FAQs — button / link — Where is Rancho Moonrise?",
+    "body": "Where is Rancho Moonrise?"
+  },
+  {
+    "block_key": "weddings_copy_088",
+    "page": "weddings",
+    "label": "Wedding FAQs — text — Rancho Moonrise is a full-service ranch wedding venue 20 minutes ",
+    "body": "Rancho Moonrise is a full-service ranch wedding venue 20 minutes from downtown Austin. The property offers exclusive full-ranch buyouts for weddings, meaning no outside guests will be on the property during your event. With unlimited ceremony layouts across 36 acres, an indoor Event Barn, a pool, and capacity for 200+ guests, it's one of the few venues near Austin that handles ceremony, reception, and overnight stays all in one location."
+  },
+  {
+    "block_key": "weddings_copy_089",
+    "page": "weddings",
+    "label": "Wedding FAQs — button / link — What makes Rancho Moonrise different?",
+    "body": "What makes Rancho Moonrise different?"
+  },
+  {
+    "block_key": "weddings_copy_090",
+    "page": "weddings",
+    "label": "Wedding FAQs — text — The combination of exclusivity and on-site overnight accommodatio",
+    "body": "The combination of exclusivity and on-site overnight accommodations sets Rancho Moonrise apart from most Austin-area wedding venues. When you book a wedding here, you're not sharing the property with other events or day guests — the entire 36-acre ranch is yours. Your wedding party can sleep on-site in hand-crafted cabins and safari tents, eliminating the hotel block coordination problem that trips up most wedding planners. Austin has dozens of wedding venues, but very few offer this level of full-property exclusivity with overnight stays built in."
+  },
+  {
+    "block_key": "weddings_copy_091",
+    "page": "weddings",
+    "label": "Wedding FAQs — button / link — How many guests can attend?",
+    "body": "How many guests can attend?"
+  },
+  {
+    "block_key": "weddings_copy_092",
+    "page": "weddings",
+    "label": "Wedding FAQs — text — Rancho Moonrise accommodates up to 200+ guests for ceremonies and",
+    "body": "Rancho Moonrise accommodates up to 200+ guests for ceremonies and receptions, with on-site overnight accommodations for your wedding party across cabins and safari tents. Close friends and family can stay on the ranch itself — with A/C, heat, real beds, and fire pits throughout the property — while remaining guests can find hotels in nearby Austin."
+  },
+  {
+    "block_key": "weddings_copy_093",
+    "page": "weddings",
+    "label": "Wedding FAQs — button / link — Can we bring outside vendors?",
+    "body": "Can we bring outside vendors?"
+  },
+  {
+    "block_key": "weddings_copy_094",
+    "page": "weddings",
+    "label": "Wedding FAQs — text — Yes — Rancho Moonrise works with outside caterers, photographers,",
+    "body": "Yes — Rancho Moonrise works with outside caterers, photographers, florists, officiants, and other vendors. The venue provides the space, bar service, and the ranch infrastructure. Couples bring their own preferred vendors for catering and ceremony specifics. Schedule a venue tour to get a full list of what's included versus what you'd source externally."
+  },
+  {
+    "block_key": "weddings_copy_095",
+    "page": "weddings",
+    "label": "Wedding FAQs — button / link — How far in advance should we book?",
+    "body": "How far in advance should we book?"
+  },
+  {
+    "block_key": "weddings_copy_096",
+    "page": "weddings",
+    "label": "Wedding FAQs — text — For peak wedding season (March–May and September–November), booki",
+    "body": "For peak wedding season (March–May and September–November), booking 12–18 months in advance is common for Saturday dates. Rancho Moonrise's 2026 Saturday availability is already limited. If you have a specific date in mind, schedule a tour and discuss availability as early as possible — there's no waitlist, and dates are held on a first-come basis."
+  },
+  {
+    "block_key": "weddings_copy_097",
+    "page": "weddings",
+    "label": "Related reading — heading — Related Reading",
+    "body": "Related Reading"
+  },
+  {
+    "block_key": "weddings_copy_098",
+    "page": "weddings",
+    "label": "Related reading — button / link — Ranch Wedding in Texas — Planning Your Outdoor Ceremony",
+    "body": "Ranch Wedding in Texas — Planning Your Outdoor Ceremony"
+  },
+  {
+    "block_key": "weddings_copy_099",
+    "page": "weddings",
+    "label": "Related reading — button / link — Wedding Venues Near Austin, TX — Compare Your Options",
+    "body": "Wedding Venues Near Austin, TX — Compare Your Options"
+  },
+  {
+    "block_key": "weddings_copy_100",
+    "page": "weddings",
+    "label": "Related reading — button / link — Bachelorette Party Near Austin — Plan a Ranch Weekend",
+    "body": "Bachelorette Party Near Austin — Plan a Ranch Weekend"
+  },
+  {
+    "block_key": "weddings_copy_101",
+    "page": "weddings",
+    "label": "Related reading — button / link — Overnight Accommodations for Wedding Guests",
+    "body": "Overnight Accommodations for Wedding Guests"
+  },
+  {
+    "block_key": "weddings_copy_102",
+    "page": "weddings",
+    "label": "Related reading — button / link — Corporate Retreats at Rancho Moonrise",
+    "body": "Corporate Retreats at Rancho Moonrise"
+  },
+  {
+    "block_key": "weddings_copy_103",
+    "page": "weddings",
+    "label": "Related reading — button / link — Summer Glamping Near Austin — Pool, A/C & Live Events",
+    "body": "Summer Glamping Near Austin — Pool, A/C & Live Events"
+  },
+  {
+    "block_key": "weddings_copy_104",
+    "page": "weddings",
+    "label": "Related reading — button / link — More from the Rancho Moonrise Blog",
+    "body": "More from the Rancho Moonrise Blog"
+  },
+  {
+    "block_key": "weddings_copy_105",
+    "page": "weddings",
+    "label": "Bottom banner — text — See It In Person",
+    "body": "See It In Person"
+  },
+  {
+    "block_key": "weddings_copy_106",
+    "page": "weddings",
+    "label": "Bottom banner — heading — Walk the Ranch Before You Commit",
+    "body": "Walk the Ranch Before You Commit"
+  },
+  {
+    "block_key": "weddings_copy_107",
+    "page": "weddings",
+    "label": "Bottom banner — text — The best way to know if Rancho Moonrise is your venue is to stand",
+    "body": "The best way to know if Rancho Moonrise is your venue is to stand on it. Schedule a tour and we'll walk you through every ceremony option."
+  },
+  {
+    "block_key": "weddings_copy_108",
+    "page": "weddings",
+    "label": "Bottom banner — button / link — Send an Inquiry",
+    "body": "Send an Inquiry"
+  },
+  {
+    "block_key": "weddings_copy_109",
+    "page": "weddings",
+    "label": "Bottom banner — button / link — Schedule a Tour",
+    "body": "Schedule a Tour"
+  },
+  {
+    "block_key": "weddings_placeholder_112",
+    "page": "weddings",
+    "label": "Wedding inquiry — placeholder — e.g. Fall 2026, October 2026",
+    "body": "e.g. Fall 2026, October 2026"
+  },
+  {
+    "block_key": "weddings_placeholder_113",
+    "page": "weddings",
+    "label": "Wedding inquiry — placeholder — e.g. 150",
+    "body": "e.g. 150"
+  },
+  {
+    "block_key": "weddings_placeholder_114",
+    "page": "weddings",
+    "label": "Wedding inquiry — placeholder — Indoor or outdoor ceremony? Reception style? Any special requests?",
+    "body": "Indoor or outdoor ceremony? Reception style? Any special requests?"
+  }
+];
+
 async function loadSiteCopy() {
     var container = $('#siteCopyList');
     var { data, error } = await sb.from('site_content')
@@ -1667,6 +2354,13 @@ async function loadSiteCopy() {
         container.innerHTML = '<p class="empty-state">Error loading site copy.</p>';
         return;
     }
+    var savedWeddingCopy = {};
+    data.forEach(function(row) { savedWeddingCopy[row.block_key] = row; });
+    data = data.filter(function(row) {
+        return !WEDDING_COPY_DEFAULTS.some(function(item) { return item.block_key === row.block_key; });
+    }).concat(WEDDING_COPY_DEFAULTS.map(function(item) {
+        return Object.assign({}, item, savedWeddingCopy[item.block_key] || {}, { label: item.label, page: 'weddings' });
+    }));
     if (!data.length) {
         container.innerHTML = '<p class="empty-state">No content blocks yet. Click "+ Add Copy Block" to create one.</p>';
         return;
@@ -1711,9 +2405,14 @@ async function saveCopyBlock(key, btn) {
     var body = textarea.value;
     btn.disabled = true;
     btn.textContent = 'Saving\u2026';
-    var { error } = await sb.from('site_content')
-        .update({ body: body, updated_at: new Date().toISOString() })
-        .eq('block_key', key);
+    var weddingDefault = WEDDING_COPY_DEFAULTS.find(function(item) { return item.block_key === key; });
+    var result = weddingDefault
+        ? await sb.from('site_content').upsert({
+            block_key: key, page: 'weddings', label: weddingDefault.label,
+            body: body, updated_at: new Date().toISOString()
+        }, { onConflict: 'block_key' })
+        : await sb.from('site_content').update({ body: body, updated_at: new Date().toISOString() }).eq('block_key', key);
+    var error = result.error;
     if (error) {
         btn.textContent = 'Error';
         btn.style.background = 'var(--danger)';

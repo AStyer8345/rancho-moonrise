@@ -63,7 +63,7 @@ The 4 accommodation files are literally 340×340 thumbnails masquerading as cont
 
 ## Last Worked On
 
-- 2026-11-13 — Removed the entire What the Photos Don't Tell You section from Accommodations at Ashley's request, including bathhouse image, all three paragraphs and Ashley credit. Adjacent sections preserved.
+- 2026-11-13 — Exposed all wedding main-page copy under Admin → Site Copy → Weddings (114 labeled fields, including accommodations, features, CTAs, inquiry labels/placeholders, FAQs and related links). Defaults render without seeding; Save upserts individual fields and preserves existing saved content. Public hydration uses textContent and updates FAQPage metadata.
 
 ## Mark Done System — How It Works
 
