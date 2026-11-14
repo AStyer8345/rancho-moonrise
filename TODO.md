@@ -1183,3 +1183,5 @@ All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms. Li
 - [x] (2026-09-27, `e10d1f2`) Deleted `site/offthegrid/images/hero-pool.png` (3.0 MB) after the WebP was verified live; 0 references in repo or live HTML.
 
 - [x] 2026-11-12 — Removed Off the Grid callout beneath “Upcoming on the ranch” on the Happenings page, as requested by Ashley.
+
+- [x] 2026-11-13 — Ashley: expose the wedding accommodations strip's five photos in Admin → Site Images → Weddings, with individual replace and reset controls.

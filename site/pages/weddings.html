@@ -326,11 +326,11 @@
 
     </div>
         <div class="wedding-stay-collage" role="group" aria-label="Casitas and safari tent accommodations">
-            <img src="/images/accommodation-cabin.webp" alt="Casita with a private covered porch at Rancho Moonrise" width="600" height="600" loading="lazy" decoding="async">
-            <img src="/images/accom-cabin-interior-clean-1024.webp" alt="Casita interior with a comfortable bed and vaulted ceiling" width="800" height="800" loading="lazy" decoding="async">
-            <img src="/images/accommodation-family-safari.webp" alt="Family safari tent with a queen bed and bunk beds" width="600" height="600" loading="lazy" decoding="async">
-            <img src="/images/accommodation-premium-safari.webp" alt="Premium safari tent with a king bed" width="600" height="600" loading="lazy" decoding="async">
-            <img src="/images/accom-outdoor-bath-1024.webp" alt="Ranch bathhouse with a stone sink and corrugated metal walls" width="800" height="600" loading="lazy" decoding="async">
+            <img data-image-slot="weddings_stay_casita_exterior" sizes="(min-width: 901px) 20vw, (min-width: 601px) 33vw, 50vw" src="/images/accommodation-cabin.webp" alt="Casita with a private covered porch at Rancho Moonrise" width="600" height="600" loading="lazy" decoding="async">
+            <img data-image-slot="weddings_stay_casita_interior" sizes="(min-width: 901px) 20vw, (min-width: 601px) 33vw, 50vw" src="/images/accom-cabin-interior-clean-1024.webp" alt="Casita interior with a comfortable bed and vaulted ceiling" width="800" height="800" loading="lazy" decoding="async">
+            <img data-image-slot="weddings_stay_family_safari" sizes="(min-width: 901px) 20vw, (min-width: 601px) 33vw, 50vw" src="/images/accommodation-family-safari.webp" alt="Family safari tent with a queen bed and bunk beds" width="600" height="600" loading="lazy" decoding="async">
+            <img data-image-slot="weddings_stay_premium_safari" sizes="(min-width: 901px) 20vw, (min-width: 601px) 33vw, 50vw" src="/images/accommodation-premium-safari.webp" alt="Premium safari tent with a king bed" width="600" height="600" loading="lazy" decoding="async">
+            <img data-image-slot="weddings_stay_bathhouse" sizes="(min-width: 901px) 20vw, (min-width: 601px) 33vw, 50vw" src="/images/accom-outdoor-bath-1024.webp" alt="Ranch bathhouse with a stone sink and corrugated metal walls" width="800" height="600" loading="lazy" decoding="async">
         </div>
 </section>
 
@@ -896,6 +896,43 @@
             if (window.console) console.warn('[gallery:' + section + '] hydration failed:', err);
         });
     }
+
+    // The five guest-accommodation photos use the same Site Images upload controls
+    // as the homepage. Keep the original photos when no replacement is saved.
+    function hydrateStayImages() {
+        if (!('fetch' in window)) return;
+        fetch(SUPABASE_URL + '/rest/v1/rancho_site_images?page=eq.weddings&is_active=eq.true&select=slot_key,public_url,alt_text', {
+            headers: {
+                'apikey': SUPABASE_ANON_KEY,
+                'Authorization': 'Bearer ' + SUPABASE_ANON_KEY
+            }
+        }).then(function (r) {
+            if (!r.ok) throw new Error('Supabase ' + r.status);
+            return r.json();
+        }).then(function (rows) {
+            var images = document.querySelectorAll('.wedding-stay-collage [data-image-slot]');
+            images.forEach(function (img) {
+                var row = rows.find(function (item) {
+                    return item.slot_key === img.getAttribute('data-image-slot');
+                });
+                if (!row || !row.public_url) return;
+                var match = /^(.*)-1024\.webp$/i.exec(row.public_url);
+                img.src = row.public_url;
+                if (match) {
+                    img.srcset = [480, 1024, 1920, 2560].map(function (size) {
+                        return match[1] + '-' + size + '.webp ' + size + 'w';
+                    }).join(', ');
+                } else {
+                    img.removeAttribute('srcset');
+                }
+                if (row.alt_text) img.alt = row.alt_text;
+            });
+        }).catch(function (err) {
+            if (window.console) console.warn('[wedding-stay] image hydration failed:', err);
+        });
+    }
+
+    hydrateStayImages();
 
     var galleries = document.querySelectorAll('[data-gallery]');
     galleries.forEach(function (el) {
