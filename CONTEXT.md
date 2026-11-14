@@ -63,7 +63,7 @@ The 4 accommodation files are literally 340×340 thumbnails masquerading as cont
 
 ## Last Worked On
 
-- 2026-11-13 — All fixed wedding-page images now have Admin → Site Images → Weddings controls (22 slots including separate mobile hero). The same dropdown links directly to the existing Moments from the Ranch gallery editor. Existing uploaded accommodation images and gallery records are preserved. Script syntax, slot coverage, responsive/mobile replacements, alt text and fallback checks passed.
+- 2026-11-13 — Removed the entire What the Photos Don't Tell You section from Accommodations at Ashley's request, including bathhouse image, all three paragraphs and Ashley credit. Adjacent sections preserved.
 
 ## Mark Done System — How It Works
 

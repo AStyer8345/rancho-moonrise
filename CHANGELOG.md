@@ -2502,3 +2502,5 @@ Launch-blocker sweep and conversion sharpening across the primary pages, ahead o
 - 2026-11-13 — Grouped Site Images by expandable page sections; initially collapsed, with expanded state preserved after image updates.
 
 - 2026-11-13 — Added all remaining wedding-page image controls (22 total), including mobile hero, six feature cards, ceremony photos, badges, logo and CTA. Linked the existing gallery editor from Site Images; preserved existing slots and uploads.
+
+- 2026-11-13 — Removed the entire What the Photos Don't Tell You section from Accommodations at Ashley's request, including bathhouse image, all three paragraphs and Ashley credit. Adjacent sections preserved.
