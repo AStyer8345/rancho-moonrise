@@ -966,6 +966,19 @@ function showDashboard(user) {
 // thumbnail when no Supabase row exists yet so Ashley can see what's there
 // before replacing it. Path is absolute from site root.
 var SITE_IMAGE_SLOTS = [
+    {"slotKey":"host_event_image_1","page":"host_event","label":"Navigation logo","aspectRatio":"1:1","defaultUrl":"/images/rancho-logo-300.webp"},
+    {"slotKey":"host_event_image_2","page":"host_event","label":"Hero background","aspectRatio":"16:9","defaultUrl":"/images/events-hero-barn-1024.webp"},
+    {"slotKey":"host_event_image_3","page":"host_event","label":"Event type — Corporate Retreats","aspectRatio":"4:3","defaultUrl":"/images/feature-event-barn-1024.webp"},
+    {"slotKey":"host_event_image_4","page":"host_event","label":"Event type — Birthday Parties","aspectRatio":"4:3","defaultUrl":"/images/event-lone-star-party-800.webp"},
+    {"slotKey":"host_event_image_5","page":"host_event","label":"Event type — Conferences & Luncheons","aspectRatio":"4:3","defaultUrl":"/images/event-fringe-pergola-1024.webp"},
+    {"slotKey":"host_event_image_6","page":"host_event","label":"Event type — Private Parties","aspectRatio":"4:3","defaultUrl":"/images/event-paella-dinner-800.webp"},
+    {"slotKey":"host_event_image_7","page":"host_event","label":"Event type — Festivals & Expos","aspectRatio":"4:3","defaultUrl":"/images/accom-group-aerial-1024.webp"},
+    {"slotKey":"host_event_image_8","page":"host_event","label":"Event type — Day Retreats","aspectRatio":"4:3","defaultUrl":"/images/event-day-retreats-square-v2-800.jpg"},
+    {"slotKey":"host_event_image_9","page":"host_event","label":"Venue — Event Barn","aspectRatio":"4:3","defaultUrl":"/images/venue-event-barn-1024.q80.webp"},
+    {"slotKey":"host_event_image_10","page":"host_event","label":"Venue — Neon Moon Bar & Lounge","aspectRatio":"4:3","defaultUrl":"/images/venue-neon-moon-1920.webp"},
+    {"slotKey":"host_event_image_11","page":"host_event","label":"Venue — Pool, Pastures & Corral","aspectRatio":"4:3","defaultUrl":"/images/venue-poolside-1920.q80.webp"},
+    {"slotKey":"host_event_image_12","page":"host_event","label":"Planning notes — The Courtyard","aspectRatio":"4:3","defaultUrl":"/images/event-picnic-thunderbird-1024.webp"},
+    {"slotKey":"host_event_image_13","page":"host_event","label":"Planning notes — The Outdoor Bar","aspectRatio":"4:3","defaultUrl":"/images/event-outdoor-bar-disco-1024.webp"},
     // Wedding page images; existing accommodation slot keys remain unchanged.
     {"slotKey":"weddings_logo","page":"weddings","label":"Navigation — Rancho Moonrise logo","aspectRatio":"1:1","defaultUrl":"/images/rancho-logo-300.webp"},
     {"slotKey":"weddings_hero","page":"weddings","label":"Hero — desktop background","aspectRatio":"16:9","defaultUrl":"/images/wedding-hero-1920.q80.webp"},
@@ -2346,6 +2359,562 @@ var WEDDING_COPY_DEFAULTS = [
   }
 ];
 
+var HOST_EVENT_COPY_DEFAULTS = [
+  {
+    "block_key": "host_event_copy_001",
+    "page": "host_event",
+    "label": "Hero — To send an inquiry, please enable JavaScript, call",
+    "body": "To send an inquiry, please enable JavaScript, call"
+  },
+  {
+    "block_key": "host_event_copy_002",
+    "page": "host_event",
+    "label": "Hero — 737-291-1260",
+    "body": "737-291-1260"
+  },
+  {
+    "block_key": "host_event_copy_003",
+    "page": "host_event",
+    "label": "Hero — , or email",
+    "body": ", or email"
+  },
+  {
+    "block_key": "host_event_copy_004",
+    "page": "host_event",
+    "label": "Hero — events@ranchomoonrise.com",
+    "body": "events@ranchomoonrise.com"
+  },
+  {
+    "block_key": "host_event_copy_005",
+    "page": "host_event",
+    "label": "Hero — Private Events",
+    "body": "Private Events"
+  },
+  {
+    "block_key": "host_event_hero_headline",
+    "page": "host_event",
+    "label": "Hero — Host Your Event at the Ranch",
+    "body": "Host Your Event at the Ranch"
+  },
+  {
+    "block_key": "host_event_hero_body",
+    "page": "host_event",
+    "label": "Hero — Corporate retreats, milestone birthdays, private parties, and full-ranch bu",
+    "body": "Corporate retreats, milestone birthdays, private parties, and full-ranch buyouts on 36 acres — 20 minutes from downtown Austin."
+  },
+  {
+    "block_key": "host_event_copy_006",
+    "page": "host_event",
+    "label": "Hero — Send an Event Inquiry",
+    "body": "Send an Event Inquiry"
+  },
+  {
+    "block_key": "host_event_copy_007",
+    "page": "host_event",
+    "label": "Hero — Schedule a Planning Call",
+    "body": "Schedule a Planning Call"
+  },
+  {
+    "block_key": "host_event_copy_008",
+    "page": "host_event",
+    "label": "Overview — An Event Venue Near Austin Built for What You're Planning",
+    "body": "An Event Venue Near Austin Built for What You're Planning"
+  },
+  {
+    "block_key": "host_event_copy_009",
+    "page": "host_event",
+    "label": "Overview — Rancho Moonrise is a 36-acre event property 20 minutes east of downtown Aus",
+    "body": "Rancho Moonrise is a 36-acre event property 20 minutes east of downtown Austin. The climate-controlled Event Barn holds up to 200 guests, with a resort-style pool and open pastures under the Texas sky. Available for hourly rentals, partial bookings, or full ranch buyouts — with on-site overnight accommodations across cabins and safari tents."
+  },
+  {
+    "block_key": "host_event_copy_010",
+    "page": "host_event",
+    "label": "Overview — Whether you're hosting a corporate off-site for 30 or a festival for 200, w",
+    "body": "Whether you're hosting a corporate off-site for 30 or a festival for 200, we'll build the setup around your event."
+  },
+  {
+    "block_key": "host_event_copy_011",
+    "page": "host_event",
+    "label": "Event Types — What We Host",
+    "body": "What We Host"
+  },
+  {
+    "block_key": "host_event_copy_012",
+    "page": "host_event",
+    "label": "Event Types — Every Event, Your Way",
+    "body": "Every Event, Your Way"
+  },
+  {
+    "block_key": "host_event_copy_013",
+    "page": "host_event",
+    "label": "Event Types — Available for hourly rentals or full ranch buyouts. Tell us your vision — w",
+    "body": "Available for hourly rentals or full ranch buyouts. Tell us your vision — we'll make it happen."
+  },
+  {
+    "block_key": "host_event_copy_014",
+    "page": "host_event",
+    "label": "Event Types — Corporate Retreats",
+    "body": "Corporate Retreats"
+  },
+  {
+    "block_key": "host_event_copy_015",
+    "page": "host_event",
+    "label": "Event Types — Team building, off-sites, and strategy sessions in a setting that inspires ",
+    "body": "Team building, off-sites, and strategy sessions in a setting that inspires creativity."
+  },
+  {
+    "block_key": "host_event_copy_016",
+    "page": "host_event",
+    "label": "Event Types — Birthday Parties",
+    "body": "Birthday Parties"
+  },
+  {
+    "block_key": "host_event_copy_017",
+    "page": "host_event",
+    "label": "Event Types — From intimate dinners to blowout celebrations — the ranch scales to your vi",
+    "body": "From intimate dinners to blowout celebrations — the ranch scales to your vision."
+  },
+  {
+    "block_key": "host_event_copy_018",
+    "page": "host_event",
+    "label": "Event Types — Conferences & Luncheons",
+    "body": "Conferences & Luncheons"
+  },
+  {
+    "block_key": "host_event_copy_019",
+    "page": "host_event",
+    "label": "Event Types — The Event Barn accommodates presentations, panels, and seated dining.",
+    "body": "The Event Barn accommodates presentations, panels, and seated dining."
+  },
+  {
+    "block_key": "host_event_copy_020",
+    "page": "host_event",
+    "label": "Event Types — Private Parties",
+    "body": "Private Parties"
+  },
+  {
+    "block_key": "host_event_copy_021",
+    "page": "host_event",
+    "label": "Event Types — Rehearsal dinners, holiday parties, reunions — any occasion worth celebrati",
+    "body": "Rehearsal dinners, holiday parties, reunions — any occasion worth celebrating."
+  },
+  {
+    "block_key": "host_event_copy_022",
+    "page": "host_event",
+    "label": "Event Types — Festivals & Expos",
+    "body": "Festivals & Expos"
+  },
+  {
+    "block_key": "host_event_copy_023",
+    "page": "host_event",
+    "label": "Event Types — 36 acres of outdoor space for larger-format events, markets, and festivals.",
+    "body": "36 acres of outdoor space for larger-format events, markets, and festivals."
+  },
+  {
+    "block_key": "host_event_copy_024",
+    "page": "host_event",
+    "label": "Event Types — Day Retreats",
+    "body": "Day Retreats"
+  },
+  {
+    "block_key": "host_event_copy_025",
+    "page": "host_event",
+    "label": "Event Types — Wellness days, yoga retreats, and team wellness events — no overnight requi",
+    "body": "Wellness days, yoga retreats, and team wellness events — no overnight required."
+  },
+  {
+    "block_key": "host_event_copy_026",
+    "page": "host_event",
+    "label": "Venue Spaces — Our Spaces",
+    "body": "Our Spaces"
+  },
+  {
+    "block_key": "host_event_copy_027",
+    "page": "host_event",
+    "label": "Venue Spaces — Venue Options",
+    "body": "Venue Options"
+  },
+  {
+    "block_key": "host_event_copy_028",
+    "page": "host_event",
+    "label": "Venue Spaces — Event Barn",
+    "body": "Event Barn"
+  },
+  {
+    "block_key": "host_event_copy_029",
+    "page": "host_event",
+    "label": "Venue Spaces — Climate-controlled indoor space with flexible layout. Perfect for presentat",
+    "body": "Climate-controlled indoor space with flexible layout. Perfect for presentations, seated dinners, cocktail receptions, and dance floors. Modern ranch aesthetic with all the infrastructure you need."
+  },
+  {
+    "block_key": "host_event_copy_030",
+    "page": "host_event",
+    "label": "Venue Spaces — Neon Moon Bar & Lounge",
+    "body": "Neon Moon Bar & Lounge"
+  },
+  {
+    "block_key": "host_event_copy_031",
+    "page": "host_event",
+    "label": "Venue Spaces — Full bar service in a one-of-a-kind setting. The Neon Moon is the social he",
+    "body": "Full bar service in a one-of-a-kind setting. The Neon Moon is the social heart of the ranch — perfect for cocktail hours, after-parties, and celebrations that go late."
+  },
+  {
+    "block_key": "host_event_copy_032",
+    "page": "host_event",
+    "label": "Venue Spaces — Pool, Pastures & Corral",
+    "body": "Pool, Pastures & Corral"
+  },
+  {
+    "block_key": "host_event_copy_033",
+    "page": "host_event",
+    "label": "Venue Spaces — Outdoor spaces that range from the resort-style pool deck to wildflower-dot",
+    "body": "Outdoor spaces that range from the resort-style pool deck to wildflower-dotted pastures, the rustic horse corral, and sweeping open Texas views. The Texas sky is your ceiling."
+  },
+  {
+    "block_key": "host_event_copy_034",
+    "page": "host_event",
+    "label": "Pricing Frame — What to Know",
+    "body": "What to Know"
+  },
+  {
+    "block_key": "host_event_copy_035",
+    "page": "host_event",
+    "label": "Pricing Frame — What Drives Event Pricing",
+    "body": "What Drives Event Pricing"
+  },
+  {
+    "block_key": "host_event_copy_036",
+    "page": "host_event",
+    "label": "Pricing Frame — Event pricing depends on date, guest count, bar package, lodging needs, and",
+    "body": "Event pricing depends on date, guest count, bar package, lodging needs, and how much of the ranch you want for your event. Small daytime gatherings start with an hourly barn rental; larger parties move into per-person packages with bar service and overnight stays. Bar service is available through the venue with flexible packages to fit your event — reach out and we'll walk you through options."
+  },
+  {
+    "block_key": "host_event_copy_037",
+    "page": "host_event",
+    "label": "Pricing Frame — A planning call or tour is the fastest way to get an accurate quote — we'll",
+    "body": "A planning call or tour is the fastest way to get an accurate quote — we'll match you to the right setup based on what you're trying to pull off."
+  },
+  {
+    "block_key": "host_event_copy_038",
+    "page": "host_event",
+    "label": "Planning Notes — The Small Print Worth Reading",
+    "body": "The Small Print Worth Reading"
+  },
+  {
+    "block_key": "host_event_copy_039",
+    "page": "host_event",
+    "label": "Planning Notes — What the Photos Don't Tell You",
+    "body": "What the Photos Don't Tell You"
+  },
+  {
+    "block_key": "host_event_copy_040",
+    "page": "host_event",
+    "label": "Planning Notes — The Courtyard",
+    "body": "The Courtyard"
+  },
+  {
+    "block_key": "host_event_copy_041",
+    "page": "host_event",
+    "label": "Planning Notes — Between the Event Barn and the pasture sits a gravel courtyard lined with p",
+    "body": "Between the Event Barn and the pasture sits a gravel courtyard lined with picnic tables — where guests drift between the scheduled parts of the day. The barn's black metal wall carries a painted thunderbird with its wings spread wide,"
+  },
+  {
+    "block_key": "host_event_copy_042",
+    "page": "host_event",
+    "label": "Planning Notes — BE HERE NOW",
+    "body": "BE HERE NOW"
+  },
+  {
+    "block_key": "host_event_copy_043",
+    "page": "host_event",
+    "label": "Planning Notes — arced above it in amber, and wildflower branches running off to either side",
+    "body": "arced above it in amber, and wildflower branches running off to either side. A white breeze-block wall closes the opposite edge, agave planted straight into the gravel, string lights along the rail. Put cocktail hour here and you don't need to bring in a backdrop."
+  },
+  {
+    "block_key": "host_event_copy_044",
+    "page": "host_event",
+    "label": "Planning Notes — Fire pits sit throughout the property and firewood is sold at The Lodge. Wo",
+    "body": "Fire pits sit throughout the property and firewood is sold at The Lodge. Worth knowing before you build an evening around one: fires are out by midnight, and fire pit use pauses whenever Travis County has an active burn ban. That happens most summers here."
+  },
+  {
+    "block_key": "host_event_copy_045",
+    "page": "host_event",
+    "label": "Planning Notes — The Outdoor Bar",
+    "body": "The Outdoor Bar"
+  },
+  {
+    "block_key": "host_event_copy_046",
+    "page": "host_event",
+    "label": "Planning Notes — The outdoor bar is a permanent build, not a unit rolled in for the day — co",
+    "body": "The outdoor bar is a permanent build, not a unit rolled in for the day — corrugated metal cladding, a wood counter, prickly pear in terracotta pots along the top, and a pergola of raw cut branches overhead with a disco ball hung in the middle of it."
+  },
+  {
+    "block_key": "host_event_copy_047",
+    "page": "host_event",
+    "label": "Planning Notes — Bar service runs through the venue, sold per person and per hour as part of",
+    "body": "Bar service runs through the venue, sold per person and per hour as part of your event. No outside alcohol. Tell us your guest count and how long you want the bar open and we'll build the package around that — it's one of the first numbers we'll ask for on a planning call."
+  },
+  {
+    "block_key": "host_event_copy_048",
+    "page": "host_event",
+    "label": "Inquiry Form — Get Started",
+    "body": "Get Started"
+  },
+  {
+    "block_key": "host_event_copy_049",
+    "page": "host_event",
+    "label": "Inquiry Form — Tell Us About Your Event",
+    "body": "Tell Us About Your Event"
+  },
+  {
+    "block_key": "host_event_copy_050",
+    "page": "host_event",
+    "label": "Inquiry Form — Tell us what you're planning and we'll follow up with availability and the ",
+    "body": "Tell us what you're planning and we'll follow up with availability and the right next step."
+  },
+  {
+    "block_key": "host_event_copy_051",
+    "page": "host_event",
+    "label": "Calendly CTA — Want to discuss your event first?",
+    "body": "Want to discuss your event first?"
+  },
+  {
+    "block_key": "host_event_copy_052",
+    "page": "host_event",
+    "label": "Calendly CTA — Schedule a Planning Call",
+    "body": "Schedule a Planning Call"
+  },
+  {
+    "block_key": "host_event_copy_053",
+    "page": "host_event",
+    "label": "Calendly CTA — Or fill out the form below and we'll follow up shortly.",
+    "body": "Or fill out the form below and we'll follow up shortly."
+  },
+  {
+    "block_key": "host_event_copy_054",
+    "page": "host_event",
+    "label": "Calendly CTA — Full Name *",
+    "body": "Full Name *"
+  },
+  {
+    "block_key": "host_event_copy_055",
+    "page": "host_event",
+    "label": "Calendly CTA — Phone *",
+    "body": "Phone *"
+  },
+  {
+    "block_key": "host_event_copy_056",
+    "page": "host_event",
+    "label": "Calendly CTA — Email *",
+    "body": "Email *"
+  },
+  {
+    "block_key": "host_event_copy_057",
+    "page": "host_event",
+    "label": "Calendly CTA — Estimated Guest Count *",
+    "body": "Estimated Guest Count *"
+  },
+  {
+    "block_key": "host_event_copy_058",
+    "page": "host_event",
+    "label": "Calendly CTA — Preferred Date(s) *",
+    "body": "Preferred Date(s) *"
+  },
+  {
+    "block_key": "host_event_copy_059",
+    "page": "host_event",
+    "label": "Calendly CTA — Event Type *",
+    "body": "Event Type *"
+  },
+  {
+    "block_key": "host_event_copy_060",
+    "page": "host_event",
+    "label": "Calendly CTA — Select one...",
+    "body": "Select one..."
+  },
+  {
+    "block_key": "host_event_copy_061",
+    "page": "host_event",
+    "label": "Calendly CTA — Corporate Retreat / Off-Site",
+    "body": "Corporate Retreat / Off-Site"
+  },
+  {
+    "block_key": "host_event_copy_062",
+    "page": "host_event",
+    "label": "Calendly CTA — Birthday Party",
+    "body": "Birthday Party"
+  },
+  {
+    "block_key": "host_event_copy_063",
+    "page": "host_event",
+    "label": "Calendly CTA — Conference / Luncheon",
+    "body": "Conference / Luncheon"
+  },
+  {
+    "block_key": "host_event_copy_064",
+    "page": "host_event",
+    "label": "Calendly CTA — Private Party",
+    "body": "Private Party"
+  },
+  {
+    "block_key": "host_event_copy_065",
+    "page": "host_event",
+    "label": "Calendly CTA — Festival / Expo",
+    "body": "Festival / Expo"
+  },
+  {
+    "block_key": "host_event_copy_066",
+    "page": "host_event",
+    "label": "Calendly CTA — Day Retreat / Wellness",
+    "body": "Day Retreat / Wellness"
+  },
+  {
+    "block_key": "host_event_copy_067",
+    "page": "host_event",
+    "label": "Calendly CTA — Other",
+    "body": "Other"
+  },
+  {
+    "block_key": "host_event_copy_068",
+    "page": "host_event",
+    "label": "Calendly CTA — Estimated Budget *",
+    "body": "Estimated Budget *"
+  },
+  {
+    "block_key": "host_event_copy_069",
+    "page": "host_event",
+    "label": "Calendly CTA — Tell Us More",
+    "body": "Tell Us More"
+  },
+  {
+    "block_key": "host_event_copy_070",
+    "page": "host_event",
+    "label": "Calendly CTA — How Did You Hear About Us?",
+    "body": "How Did You Hear About Us?"
+  },
+  {
+    "block_key": "host_event_copy_071",
+    "page": "host_event",
+    "label": "Calendly CTA — Submit Inquiry",
+    "body": "Submit Inquiry"
+  },
+  {
+    "block_key": "host_event_copy_072",
+    "page": "host_event",
+    "label": "FAQs — Common Questions",
+    "body": "Common Questions"
+  },
+  {
+    "block_key": "host_event_copy_073",
+    "page": "host_event",
+    "label": "FAQs — Frequently Asked Questions",
+    "body": "Frequently Asked Questions"
+  },
+  {
+    "block_key": "host_event_copy_074",
+    "page": "host_event",
+    "label": "FAQs — What kind of events can be hosted here?",
+    "body": "What kind of events can be hosted here?"
+  },
+  {
+    "block_key": "host_event_copy_075",
+    "page": "host_event",
+    "label": "FAQs — Rancho Moonrise hosts corporate retreats, birthday parties, conferences, re",
+    "body": "Rancho Moonrise hosts corporate retreats, birthday parties, conferences, rehearsal dinners, holiday parties, private festivals, and day retreats. The property is available for hourly rentals or full ranch buyouts. The Event Barn accommodates seated dinners and presentations for up to 200 guests, while the outdoor spaces — pool deck, open pastures, and rustic corral — expand the footprint for larger-format events."
+  },
+  {
+    "block_key": "host_event_copy_076",
+    "page": "host_event",
+    "label": "FAQs — How far is Rancho Moonrise from downtown Austin?",
+    "body": "How far is Rancho Moonrise from downtown Austin?"
+  },
+  {
+    "block_key": "host_event_copy_077",
+    "page": "host_event",
+    "label": "FAQs — Rancho Moonrise is 20 minutes east of downtown Austin on 36 acres. Close en",
+    "body": "Rancho Moonrise is 20 minutes east of downtown Austin on 36 acres. Close enough for a day-trip off-site. Far enough to feel like a real escape from the office."
+  },
+  {
+    "block_key": "host_event_copy_078",
+    "page": "host_event",
+    "label": "FAQs — Can guests stay overnight after a private event?",
+    "body": "Can guests stay overnight after a private event?"
+  },
+  {
+    "block_key": "host_event_copy_079",
+    "page": "host_event",
+    "label": "FAQs — Yes — Rancho Moonrise has on-site overnight accommodations across hand-craf",
+    "body": "Yes — Rancho Moonrise has on-site overnight accommodations across hand-crafted cabins and safari tents, all with A/C, heat, and real beds. For corporate retreats or private parties, this means your group can arrive, celebrate, and sleep on-site without coordinating hotel blocks or rides back into Austin."
+  },
+  {
+    "block_key": "host_event_copy_080",
+    "page": "host_event",
+    "label": "FAQs — What is the maximum capacity?",
+    "body": "What is the maximum capacity?"
+  },
+  {
+    "block_key": "host_event_copy_081",
+    "page": "host_event",
+    "label": "FAQs — Up to 1,000+ guests for private events and festivals. The Event Barn handle",
+    "body": "Up to 1,000+ guests for private events and festivals. The Event Barn handles seated dinners and indoor receptions up to 200; outdoor spaces expand capacity for cocktail-style and festival-format events. Corporate retreats work well for groups as small as 20."
+  },
+  {
+    "block_key": "host_event_copy_082",
+    "page": "host_event",
+    "label": "FAQs — What is included with a private event rental?",
+    "body": "What is included with a private event rental?"
+  },
+  {
+    "block_key": "host_event_copy_083",
+    "page": "host_event",
+    "label": "FAQs — Private event rentals include exclusive access to the rented spaces, bar se",
+    "body": "Private event rentals include exclusive access to the rented spaces, bar service options, and ranch infrastructure — tables, chairs, AV basics, and Event Barn setup. Catering is bring-your-own-vendor. Schedule a planning call to get a full breakdown for your specific event type and date."
+  },
+  {
+    "block_key": "host_event_copy_084",
+    "page": "host_event",
+    "label": "FAQs — Ready to start planning? Send an inquiry and we'll follow up shortly.",
+    "body": "Ready to start planning? Send an inquiry and we'll follow up shortly."
+  },
+  {
+    "block_key": "host_event_copy_085",
+    "page": "host_event",
+    "label": "FAQs — Send an Inquiry",
+    "body": "Send an Inquiry"
+  },
+  {
+    "block_key": "host_event_copy_086",
+    "page": "host_event",
+    "label": "FAQs — Send an Event Inquiry",
+    "body": "Send an Event Inquiry"
+  },
+  {
+    "block_key": "host_event_placeholder_87",
+    "page": "host_event",
+    "label": "Inquiry form — placeholder — 1000+ for larger events",
+    "body": "1000+ for larger events"
+  },
+  {
+    "block_key": "host_event_placeholder_88",
+    "page": "host_event",
+    "label": "Inquiry form — placeholder — e.g. June 15, 2026 or flexible",
+    "body": "e.g. June 15, 2026 or flexible"
+  },
+  {
+    "block_key": "host_event_placeholder_89",
+    "page": "host_event",
+    "label": "Inquiry form — placeholder — e.g. $10,000 or a range",
+    "body": "e.g. $10,000 or a range"
+  },
+  {
+    "block_key": "host_event_placeholder_90",
+    "page": "host_event",
+    "label": "Inquiry form — placeholder — What's your vision? Any special requirements?",
+    "body": "What's your vision? Any special requirements?"
+  }
+];
+var EDITABLE_COPY_DEFAULTS = WEDDING_COPY_DEFAULTS.concat(HOST_EVENT_COPY_DEFAULTS);
+
 async function loadSiteCopy() {
     var container = $('#siteCopyList');
     var { data, error } = await sb.from('site_content')
@@ -2357,9 +2926,9 @@ async function loadSiteCopy() {
     var savedWeddingCopy = {};
     data.forEach(function(row) { savedWeddingCopy[row.block_key] = row; });
     data = data.filter(function(row) {
-        return !WEDDING_COPY_DEFAULTS.some(function(item) { return item.block_key === row.block_key; });
-    }).concat(WEDDING_COPY_DEFAULTS.map(function(item) {
-        return Object.assign({}, item, savedWeddingCopy[item.block_key] || {}, { label: item.label, page: 'weddings' });
+        return !EDITABLE_COPY_DEFAULTS.some(function(item) { return item.block_key === row.block_key; });
+    }).concat(EDITABLE_COPY_DEFAULTS.map(function(item) {
+        return Object.assign({}, item, savedWeddingCopy[item.block_key] || {}, { label: item.label, page: item.page });
     }));
     if (!data.length) {
         container.innerHTML = '<p class="empty-state">No content blocks yet. Click "+ Add Copy Block" to create one.</p>';
@@ -2405,10 +2974,10 @@ async function saveCopyBlock(key, btn) {
     var body = textarea.value;
     btn.disabled = true;
     btn.textContent = 'Saving\u2026';
-    var weddingDefault = WEDDING_COPY_DEFAULTS.find(function(item) { return item.block_key === key; });
+    var weddingDefault = EDITABLE_COPY_DEFAULTS.find(function(item) { return item.block_key === key; });
     var result = weddingDefault
         ? await sb.from('site_content').upsert({
-            block_key: key, page: 'weddings', label: weddingDefault.label,
+            block_key: key, page: weddingDefault.page, label: weddingDefault.label,
             body: body, updated_at: new Date().toISOString()
         }, { onConflict: 'block_key' })
         : await sb.from('site_content').update({ body: body, updated_at: new Date().toISOString() }).eq('block_key', key);

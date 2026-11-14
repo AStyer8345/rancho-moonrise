@@ -63,7 +63,7 @@ The 4 accommodation files are literally 340×340 thumbnails masquerading as cont
 
 ## Last Worked On
 
-- 2026-11-14 — Moved the Where to Stay overview heading and both paragraphs beneath the Around Rancho Moonrise gallery, at the bottom of Accommodations. Updated the card direction from below to above.
+- 2026-11-14 — Added Host Your Event admin editing for 92 copy fields and all 13 images. Retained existing saved hero keys, shared editable-default save handling with Weddings, added page hydration and FAQ metadata synchronization. Checked syntax, coverage, save routing and responsive replacements.
 
 ## Mark Done System — How It Works
 

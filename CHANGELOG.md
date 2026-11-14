@@ -2510,3 +2510,5 @@ Launch-blocker sweep and conversion sharpening across the primary pages, ahead o
 - 2026-11-14 — Accommodations hero now loads the generated 2560px custom-upload variant instead of stretching the 1024px file. Bumped this page's CMS script version; other image slots unchanged. Syntax and slot-selection checks passed.
 
 - 2026-11-14 — Moved the Where to Stay overview heading and both paragraphs beneath the Around Rancho Moonrise gallery, at the bottom of Accommodations. Updated the card direction from below to above.
+
+- 2026-11-14 — Added Host Your Event admin editing for 92 copy fields and all 13 images. Retained existing saved hero keys, shared editable-default save handling with Weddings, added page hydration and FAQ metadata synchronization. Checked syntax, coverage, save routing and responsive replacements.
