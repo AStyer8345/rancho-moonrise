@@ -2498,3 +2498,5 @@ Launch-blocker sweep and conversion sharpening across the primary pages, ahead o
 - Re-Verify Gate 4/4 still_true (canary pass in extended mode; safari-tents and offthegrid not indexed; sitemap 32/32). `validate:site` and `test:runtime` pass. PageSpeed API 429.
 
 - 2026-11-13 — Made all five wedding accommodations-strip photos editable under Admin → Site Images → Weddings; added independent 4:5 crop/upload slots and wedding-page image hydration with original fallbacks. Verified script syntax and replacement/responsive/alt/error behavior.
+
+- 2026-11-13 — Grouped Site Images by expandable page sections; initially collapsed, with expanded state preserved after image updates.

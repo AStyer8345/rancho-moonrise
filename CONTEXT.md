@@ -63,7 +63,7 @@ The 4 accommodation files are literally 340×340 thumbnails masquerading as cont
 
 ## Last Worked On
 
-- 2026-11-13 — Added five Weddings accommodations-strip controls under admin → Site Images. Each uses the existing crop/upload/reset flow and its own slot key. Wedding page hydrates those slots while preserving original-photo fallbacks. Checked script syntax and mocked replacement/responsive/alt/fallback behavior; production verification follows deployment.
+- 2026-11-13 — Site Images now groups each website page in a collapsed native details section, matching Site Copy. Five wedding accommodations image controls are live. Expand/collapse uses native keyboard support, and uploads preserve expanded sections.
 
 ## Mark Done System — How It Works
 

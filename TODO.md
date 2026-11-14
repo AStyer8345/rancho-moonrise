@@ -1185,3 +1185,5 @@ All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms. Li
 - [x] 2026-11-12 — Removed Off the Grid callout beneath “Upcoming on the ranch” on the Happenings page, as requested by Ashley.
 
 - [x] 2026-11-13 — Ashley: expose the wedding accommodations strip's five photos in Admin → Site Images → Weddings, with individual replace and reset controls.
+
+- [x] 2026-11-13 — Grouped Site Images by expandable page sections; initially collapsed, with expanded state preserved after image updates.
