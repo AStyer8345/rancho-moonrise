@@ -2512,3 +2512,8 @@ Launch-blocker sweep and conversion sharpening across the primary pages, ahead o
 - 2026-11-14 — Moved the Where to Stay overview heading and both paragraphs beneath the Around Rancho Moonrise gallery, at the bottom of Accommodations. Updated the card direction from below to above.
 
 - 2026-11-14 — Added Host Your Event admin editing for 92 copy fields and all 13 images. Retained existing saved hero keys, shared editable-default save handling with Weddings, added page hydration and FAQ metadata synchronization. Checked syntax, coverage, save routing and responsive replacements.
+
+
+## 2026-11-14 — Host Your Event photo strip
+
+- 2026-11-14 — Replaced Host Your Event planning notes (Courtyard and Outdoor Bar) with a full-width five-photo guest accommodations section matching Weddings. Added three copy fields and five independent 4:5 image controls in admin; retired the removed section controls. Reused the current wedding photo uploads with responsive image sources. Checked inline script syntax, five-slot coverage and copy wiring.

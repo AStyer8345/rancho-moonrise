@@ -966,6 +966,11 @@ function showDashboard(user) {
 // thumbnail when no Supabase row exists yet so Ashley can see what's there
 // before replacing it. Path is absolute from site root.
 var SITE_IMAGE_SLOTS = [
+    {"slotKey":"host_event_stay_1","page":"host_event","label":"Guest accommodations — Photo 1 — Casita exterior","aspectRatio":"4:5","defaultUrl":"https://uuqedsvjlkeszrbwzizl.supabase.co/storage/v1/object/public/rancho-moonrise/site-images/weddings_stay_casita_exterior/v1794632094410-1024.webp"},
+    {"slotKey":"host_event_stay_2","page":"host_event","label":"Guest accommodations — Photo 2 — Double-bed safari tent","aspectRatio":"4:5","defaultUrl":"https://uuqedsvjlkeszrbwzizl.supabase.co/storage/v1/object/public/rancho-moonrise/site-images/weddings_stay_casita_interior/v1794632231763-1024.webp"},
+    {"slotKey":"host_event_stay_3","page":"host_event","label":"Guest accommodations — Photo 3 — Rustic accommodation interior","aspectRatio":"4:5","defaultUrl":"https://uuqedsvjlkeszrbwzizl.supabase.co/storage/v1/object/public/rancho-moonrise/site-images/weddings_stay_family_safari/v1794632243038-1024.webp"},
+    {"slotKey":"host_event_stay_4","page":"host_event","label":"Guest accommodations — Photo 4 — Safari tent interior","aspectRatio":"4:5","defaultUrl":"https://uuqedsvjlkeszrbwzizl.supabase.co/storage/v1/object/public/rancho-moonrise/site-images/weddings_stay_premium_safari/v1794632184592-1024.webp"},
+    {"slotKey":"host_event_stay_5","page":"host_event","label":"Guest accommodations — Photo 5 — Bathroom","aspectRatio":"4:5","defaultUrl":"https://uuqedsvjlkeszrbwzizl.supabase.co/storage/v1/object/public/rancho-moonrise/site-images/weddings_stay_bathhouse/v1794632200868-1024.webp"},
     {"slotKey":"host_event_image_1","page":"host_event","label":"Navigation logo","aspectRatio":"1:1","defaultUrl":"/images/rancho-logo-300.webp"},
     {"slotKey":"host_event_image_2","page":"host_event","label":"Hero background","aspectRatio":"16:9","defaultUrl":"/images/events-hero-barn-1024.webp"},
     {"slotKey":"host_event_image_3","page":"host_event","label":"Event type — Corporate Retreats","aspectRatio":"4:3","defaultUrl":"/images/feature-event-barn-1024.webp"},
@@ -977,8 +982,6 @@ var SITE_IMAGE_SLOTS = [
     {"slotKey":"host_event_image_9","page":"host_event","label":"Venue — Event Barn","aspectRatio":"4:3","defaultUrl":"/images/venue-event-barn-1024.q80.webp"},
     {"slotKey":"host_event_image_10","page":"host_event","label":"Venue — Neon Moon Bar & Lounge","aspectRatio":"4:3","defaultUrl":"/images/venue-neon-moon-1920.webp"},
     {"slotKey":"host_event_image_11","page":"host_event","label":"Venue — Pool, Pastures & Corral","aspectRatio":"4:3","defaultUrl":"/images/venue-poolside-1920.q80.webp"},
-    {"slotKey":"host_event_image_12","page":"host_event","label":"Planning notes — The Courtyard","aspectRatio":"4:3","defaultUrl":"/images/event-picnic-thunderbird-1024.webp"},
-    {"slotKey":"host_event_image_13","page":"host_event","label":"Planning notes — The Outdoor Bar","aspectRatio":"4:3","defaultUrl":"/images/event-outdoor-bar-disco-1024.webp"},
     // Wedding page images; existing accommodation slot keys remain unchanged.
     {"slotKey":"weddings_logo","page":"weddings","label":"Navigation — Rancho Moonrise logo","aspectRatio":"1:1","defaultUrl":"/images/rancho-logo-300.webp"},
     {"slotKey":"weddings_hero","page":"weddings","label":"Hero — desktop background","aspectRatio":"16:9","defaultUrl":"/images/wedding-hero-1920.q80.webp"},
@@ -2595,66 +2598,6 @@ var HOST_EVENT_COPY_DEFAULTS = [
     "body": "A planning call or tour is the fastest way to get an accurate quote — we'll match you to the right setup based on what you're trying to pull off."
   },
   {
-    "block_key": "host_event_copy_038",
-    "page": "host_event",
-    "label": "Planning Notes — The Small Print Worth Reading",
-    "body": "The Small Print Worth Reading"
-  },
-  {
-    "block_key": "host_event_copy_039",
-    "page": "host_event",
-    "label": "Planning Notes — What the Photos Don't Tell You",
-    "body": "What the Photos Don't Tell You"
-  },
-  {
-    "block_key": "host_event_copy_040",
-    "page": "host_event",
-    "label": "Planning Notes — The Courtyard",
-    "body": "The Courtyard"
-  },
-  {
-    "block_key": "host_event_copy_041",
-    "page": "host_event",
-    "label": "Planning Notes — Between the Event Barn and the pasture sits a gravel courtyard lined with p",
-    "body": "Between the Event Barn and the pasture sits a gravel courtyard lined with picnic tables — where guests drift between the scheduled parts of the day. The barn's black metal wall carries a painted thunderbird with its wings spread wide,"
-  },
-  {
-    "block_key": "host_event_copy_042",
-    "page": "host_event",
-    "label": "Planning Notes — BE HERE NOW",
-    "body": "BE HERE NOW"
-  },
-  {
-    "block_key": "host_event_copy_043",
-    "page": "host_event",
-    "label": "Planning Notes — arced above it in amber, and wildflower branches running off to either side",
-    "body": "arced above it in amber, and wildflower branches running off to either side. A white breeze-block wall closes the opposite edge, agave planted straight into the gravel, string lights along the rail. Put cocktail hour here and you don't need to bring in a backdrop."
-  },
-  {
-    "block_key": "host_event_copy_044",
-    "page": "host_event",
-    "label": "Planning Notes — Fire pits sit throughout the property and firewood is sold at The Lodge. Wo",
-    "body": "Fire pits sit throughout the property and firewood is sold at The Lodge. Worth knowing before you build an evening around one: fires are out by midnight, and fire pit use pauses whenever Travis County has an active burn ban. That happens most summers here."
-  },
-  {
-    "block_key": "host_event_copy_045",
-    "page": "host_event",
-    "label": "Planning Notes — The Outdoor Bar",
-    "body": "The Outdoor Bar"
-  },
-  {
-    "block_key": "host_event_copy_046",
-    "page": "host_event",
-    "label": "Planning Notes — The outdoor bar is a permanent build, not a unit rolled in for the day — co",
-    "body": "The outdoor bar is a permanent build, not a unit rolled in for the day — corrugated metal cladding, a wood counter, prickly pear in terracotta pots along the top, and a pergola of raw cut branches overhead with a disco ball hung in the middle of it."
-  },
-  {
-    "block_key": "host_event_copy_047",
-    "page": "host_event",
-    "label": "Planning Notes — Bar service runs through the venue, sold per person and per hour as part of",
-    "body": "Bar service runs through the venue, sold per person and per hour as part of your event. No outside alcohol. Tell us your guest count and how long you want the bar open and we'll build the package around that — it's one of the first numbers we'll ask for on a planning call."
-  },
-  {
     "block_key": "host_event_copy_048",
     "page": "host_event",
     "label": "Inquiry Form — Get Started",
@@ -2911,6 +2854,24 @@ var HOST_EVENT_COPY_DEFAULTS = [
     "page": "host_event",
     "label": "Inquiry form — placeholder — What's your vision? Any special requirements?",
     "body": "What's your vision? Any special requirements?"
+  },
+  {
+    "block_key": "host_event_stay_label",
+    "page": "host_event",
+    "label": "Guest accommodations — Section label",
+    "body": "Guest Accommodations"
+  },
+  {
+    "block_key": "host_event_stay_heading",
+    "page": "host_event",
+    "label": "Guest accommodations — Heading",
+    "body": "Guests Can Stay on the Ranch"
+  },
+  {
+    "block_key": "host_event_stay_body",
+    "page": "host_event",
+    "label": "Guest accommodations — Description",
+    "body": "Hand-crafted casitas and safari tents for your group — all with A/C, heat, and real beds. Fire pits throughout the property."
   }
 ];
 var EDITABLE_COPY_DEFAULTS = WEDDING_COPY_DEFAULTS.concat(HOST_EVENT_COPY_DEFAULTS);
@@ -2926,7 +2887,7 @@ async function loadSiteCopy() {
     var savedWeddingCopy = {};
     data.forEach(function(row) { savedWeddingCopy[row.block_key] = row; });
     data = data.filter(function(row) {
-        return !EDITABLE_COPY_DEFAULTS.some(function(item) { return item.block_key === row.block_key; });
+        return ["host_event_copy_038","host_event_copy_039","host_event_copy_040","host_event_copy_041","host_event_copy_042","host_event_copy_043","host_event_copy_044","host_event_copy_045","host_event_copy_046","host_event_copy_047"].indexOf(row.block_key) === -1 && !EDITABLE_COPY_DEFAULTS.some(function(item) { return item.block_key === row.block_key; });
     }).concat(EDITABLE_COPY_DEFAULTS.map(function(item) {
         return Object.assign({}, item, savedWeddingCopy[item.block_key] || {}, { label: item.label, page: item.page });
     }));
