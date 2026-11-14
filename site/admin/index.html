@@ -420,7 +420,10 @@
         .tabs::-webkit-scrollbar { display: none; }
 
         /* Site Images grid */
-        .site-image-page { margin-bottom: 32px; }
+        .site-image-page { margin-bottom: 16px; }
+        .site-image-page__name::before { content: '▸'; display: inline-block; margin-right: 10px; }
+        .site-image-page[open] .site-image-page__name::before { content: '▾'; }
+        .site-image-page > summary:focus-visible { outline: 2px solid var(--orange); outline-offset: -3px; }
         .site-image-page__title { font-size: 1.05rem; color: var(--orange); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
         .site-image-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
         .site-image-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; }
@@ -1003,6 +1006,9 @@ var SITE_IMAGE_SLOTS = [
 
 async function loadSiteImages() {
     var container = $('#siteImagesList');
+    var openPages = Array.from(container.querySelectorAll('details[data-image-page][open]')).map(function(group) {
+        return group.getAttribute('data-image-page');
+    });
     container.innerHTML = '<div class="loading">Loading image slots…</div>';
 
     var { data: rows, error } = await sb
@@ -1051,10 +1057,10 @@ async function loadSiteImages() {
                 '</div>' +
             '</div>';
         }).join('');
-        return '<div class="site-image-page">' +
-            '<h3 class="site-image-page__title">' + escapeHtml(pageLabel) + ' <span style="color: var(--text-muted); font-weight: normal; font-size: 0.85rem;">(' + slots.length + ' image slots)</span></h3>' +
-            '<div class="site-image-grid">' + cards + '</div>' +
-        '</div>';
+        return '<details class="page-group site-image-page" data-image-page="' + escapeHtml(page) + '"' + (openPages.indexOf(page) !== -1 ? ' open' : '') + '>' +
+            '<summary><span class="site-image-page__name">' + escapeHtml(pageLabel) + '</span><span class="page-group__count">' + slots.length + ' images</span></summary>' +
+            '<div class="page-group__body"><div class="site-image-grid">' + cards + '</div></div>' +
+        '</details>';
     }).join('');
 
     container.innerHTML = html;
