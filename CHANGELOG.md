@@ -2525,3 +2525,9 @@ Launch-blocker sweep and conversion sharpening across the primary pages, ahead o
 - `sitemap.xml`: removed `/offthegrid/` (32 → 31 URLs). The page still resolves.
 - Checked, no change needed: owner admin commits `99cebd4..0685071` kept H1/H2/FAQ/JSON-LD on `/weddings/`, `/host-your-event/`, `/accommodations/`. CMS pets row updated by owner 11/14.
 - Re-Verify Gate: canary pass (extended); safari-tents still not surfacing; sitemap routes all 200. `validate:site` and `test:runtime` pass. Search Console and PageSpeed not checked.
+
+## 2026-11-15 — rancho-site-daily
+- Static fallback copy now matches the admin-saved copy in Supabase `site_content`: 17 drifted blocks rewritten on `/accommodations/` (8), `/host-your-event/` (6), `/faqs/` (2), `/weddings/` (1). Text is Ashley's, unedited.
+- FAQ schema: `/faqs/` rates answer now includes the $75 damage deposit; `/host-your-event/` capacity answer now says Event Barn up to 175, matching the visible answer.
+- Added `scripts/sync-cms-copy.py` (report by default, `--write` to apply). Mirrors `applyCopyBlock()` in `cms.js`.
+- Re-Verify Gate: canary pass (extended); safari-tents still not surfacing; sitemap 200 and 31/31 routes 200. `validate:site` and `test:runtime` pass. Search Console and PageSpeed not checked.

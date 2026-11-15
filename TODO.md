@@ -1,7 +1,9 @@
 # Rancho Moonrise — TODO
 
 - [x] 2026-11-04 — Remove Off The Grid from shared desktop/mobile navigation at Ashley's request.
-Last updated: 2026-10-28 (cache-bust — `cms.js` and `event-popup.js` script tags use `?v=20261028` so browsers drop the cached legacy-key files. HTML cache is `max-age=0`.)
+Last updated: 2026-11-15 (rancho-site-daily — baked 17 admin-saved copy blocks into the static HTML on four pages; added `scripts/sync-cms-copy.py`. Run-log: `run-logs/2026-11-15-seo.md`.)
+
+Prior: 2026-10-28 (cache-bust — `cms.js` and `event-popup.js` script tags use `?v=20261028` so browsers drop the cached legacy-key files. HTML cache is `max-age=0`.)
 
 Prior: 2026-10-16 (rancho-site-daily — fixed reversed bathroom claim on `/blog/glamping-vs-camping/` (cabins ≠ ensuite). Gate 8/8 still_true; Square early-bird prices still $129/$189. Run-log: `run-logs/2026-10-16-seo.md`.)
 
@@ -68,6 +70,14 @@ Found 2026-09-09 by `rancho-site-daily`; landed the same day by `rancho-review-m
 - **2026-09-27 (RUN_081): the agent's automated paths are exhausted.** Blocker `airbnb-review-text` is open (3 of 3): the public API returns 404, the reviews query is lazy-loaded, and the in-app browser hangs in unattended runs. A human look in the host dashboard is now the only free path. The alternative is a paid rendering scraper, which is your call.
 - [ ] (low) Swimply: is `swimply.com/pooldetails/54117` ("Rancho Moonrise Pool") still active? It shows in search but the page 404s. If it's live, it is another review surface. Added 2026-09-25 by RUN_080.
 - Context: this surface was carried as "403 / can't confirm it's ours" for 72 runs. It healed unnoticed; `site/improvement-plan.html:2207` was already linking it as "Live". Blocker `airbnb-listing-existence` is RESOLVED; `airbnb-review-text` is a new WATCH (1 of 3). Do not re-surface the old "verify possible Airbnb listing" item — it's done.
+
+## NEEDS ASHLEY — Event Barn capacity reads 175 in one place and 200 everywhere else — added 2026-11-15 by `rancho-site-daily`
+
+- `/host-your-event/` FAQ "How many guests can Rancho Moonrise accommodate?" says the Event Barn seats **175** (saved in the admin 11/14).
+- The FAQ answer above it, saved the same morning, says **200**. So do the page intro, the homepage, the `/weddings/` title ("Up to 200 Guests") and the venue schema.
+- Pick one number. Site-daily will then align every page and the schema. Nothing was changed beyond the answer Ashley edited.
+- Small typo in the admin, `/faqs/` rates answer: "737-291-1260.A $75" is missing a space after the period. Left as saved.
+- After any admin copy edit, run `python3 scripts/sync-cms-copy.py` (report) or `--write` (apply) so crawlers see the same text as visitors. Site-daily runs it each day.
 
 ## 🔥 NEEDS ADAM / OWNER — main checkout is stuck mid-rebase; 8 commits unpushed — added 2026-09-20 by `rancho-site-daily`
 
