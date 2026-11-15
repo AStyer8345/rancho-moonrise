@@ -2519,3 +2519,9 @@ Launch-blocker sweep and conversion sharpening across the primary pages, ahead o
 - 2026-11-14 — Replaced Host Your Event planning notes (Courtyard and Outdoor Bar) with a full-width five-photo guest accommodations section matching Weddings. Added three copy fields and five independent 4:5 image controls in admin; retired the removed section controls. Reused the current wedding photo uploads with responsive image sources. Checked inline script syntax, five-slot coverage and copy wiring.
 
 - 2026-11-14 — Moved Host Your Event’s What Drives Event Pricing section to the end of main content, after the FAQ and inquiry CTA and before the footer. Preserved copy and admin editing keys. Verified section order and unchanged remaining markup.
+
+## 2026-11-15 — rancho-site-daily (11/14 run)
+- `/offthegrid/`: removed the two `InStock` ticket Offers from the Event JSON-LD now that the event (11/14, 12–6 PM) is over. Event entity, breadcrumb and all visible copy unchanged.
+- `sitemap.xml`: removed `/offthegrid/` (32 → 31 URLs). The page still resolves.
+- Checked, no change needed: owner admin commits `99cebd4..0685071` kept H1/H2/FAQ/JSON-LD on `/weddings/`, `/host-your-event/`, `/accommodations/`. CMS pets row updated by owner 11/14.
+- Re-Verify Gate: canary pass (extended); safari-tents still not surfacing; sitemap routes all 200. `validate:site` and `test:runtime` pass. Search Console and PageSpeed not checked.
