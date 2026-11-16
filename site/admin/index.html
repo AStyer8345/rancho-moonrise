@@ -1000,6 +1000,16 @@ var SITE_IMAGE_SLOTS = [
     {"slotKey":"weddings_badge_3","page":"weddings","label":"Wedding community badge — WeddingWire Austin","aspectRatio":"1:1","defaultUrl":"/images/badge-weddingwire-austin.webp"},
     {"slotKey":"weddings_badge_4","page":"weddings","label":"Wedding community badge — Wedding Chicks","aspectRatio":"1:1","defaultUrl":"/images/badge-wedding-chicks.webp"},
     {"slotKey":"weddings_cta","page":"weddings","label":"Bottom banner — Walk the Ranch Before You Commit","aspectRatio":"16:9","defaultUrl":"/images/wedding-cta-sunset-1920.webp"},
+    // ===== WEDDINGS: teal story and edge-to-edge image row =====
+    {"slotKey":"weddings_story_portrait","page":"weddings","label":"Teal wedding story — overlapping portrait","aspectRatio":"4:5","defaultUrl":"/images/wedding-lodge-porch-veil-1024.webp"},
+    {"slotKey":"weddings_story_gallery_1","page":"weddings","label":"Teal wedding story — image row 1","aspectRatio":"1:1","defaultUrl":"/images/feature-wedding-1024.webp"},
+    {"slotKey":"weddings_story_gallery_2","page":"weddings","label":"Teal wedding story — image row 2","aspectRatio":"1:1","defaultUrl":"/images/wedding-event-barn-1024.webp"},
+    {"slotKey":"weddings_story_gallery_3","page":"weddings","label":"Teal wedding story — image row 3","aspectRatio":"1:1","defaultUrl":"/images/wedding-ceremony-corral-1024.q80.webp"},
+    {"slotKey":"weddings_story_gallery_4","page":"weddings","label":"Teal wedding story — image row 4","aspectRatio":"1:1","defaultUrl":"/images/wedding-cta-sunset-1024.webp"},
+    {"slotKey":"weddings_story_gallery_5","page":"weddings","label":"Teal wedding story — image row 5","aspectRatio":"1:1","defaultUrl":"/images/wedding-longtable-sunset-1024.webp"},
+    {"slotKey":"weddings_story_gallery_6","page":"weddings","label":"Teal wedding story — image row 6","aspectRatio":"1:1","defaultUrl":"/images/wedding-poolside-1024.webp"},
+    {"slotKey":"weddings_story_gallery_7","page":"weddings","label":"Teal wedding story — image row 7","aspectRatio":"1:1","defaultUrl":"/images/wedding-hero-1024.q80.webp"},
+
     // ===== WEDDINGS: accommodations strip, left to right =====
     {"slotKey":"weddings_stay_casita_exterior","page":"weddings","label":"Accommodations strip — photo 1 (Casita exterior)","aspectRatio":"4:5","defaultUrl":"/images/accommodation-cabin.webp"},
     {"slotKey":"weddings_stay_casita_interior","page":"weddings","label":"Accommodations strip — photo 2 (Casita interior)","aspectRatio":"4:5","defaultUrl":"/images/accom-cabin-interior-clean-1024.webp"},
@@ -2919,7 +2929,15 @@ var WEDDING_INCLUSIONS_DEFAULTS = [
     "body": "CHECK AVAILABILITY & PRICING"
   }
 ];
-var EDITABLE_COPY_DEFAULTS = WEDDING_COPY_DEFAULTS.concat(WEDDING_INCLUSIONS_DEFAULTS, HOST_EVENT_COPY_DEFAULTS);
+var WEDDING_STORY_DEFAULTS = [
+  {"block_key":"weddings_story_eyebrow","page":"weddings","label":"Teal wedding story — Small heading","body":"A RANCH ALL YOURS"},
+  {"block_key":"weddings_story_heading","page":"weddings","label":"Teal wedding story — Main heading","body":"One place for every part of your day."},
+  {"block_key":"weddings_story_body","page":"weddings","label":"Teal wedding story — First paragraph","body":"Start with vows beneath the Texas sky. Gather for cocktails, dinner, and dancing across the ranch. When the night winds down, your closest people can stay right here in our casitas and safari tents."},
+  {"block_key":"weddings_story_closing","page":"weddings","label":"Teal wedding story — Closing paragraph","body":"The whole 36-acre property is yours to celebrate in your own way."},
+  {"block_key":"weddings_story_cta","page":"weddings","label":"Teal wedding story — Link text","body":"Let's plan your wedding"},
+  {"block_key":"weddings_story_cta_url","page":"weddings","label":"Teal wedding story — Link destination","body":"#wedding-inquiry"}
+];
+var EDITABLE_COPY_DEFAULTS = WEDDING_COPY_DEFAULTS.concat(WEDDING_INCLUSIONS_DEFAULTS, HOST_EVENT_COPY_DEFAULTS, WEDDING_STORY_DEFAULTS);
 
 async function loadSiteCopy() {
     var container = $('#siteCopyList');
