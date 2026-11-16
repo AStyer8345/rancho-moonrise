@@ -409,6 +409,10 @@
         .page-group > summary::-webkit-details-marker { display: none; }
         .page-group__count { background: var(--bg); color: var(--text-muted); padding: 2px 10px; border-radius: 999px; font-size: 0.7rem; font-weight: 600; }
         .page-group__body { padding: 16px 18px 8px; border-top: 1px solid var(--border); }
+        .copy-section { margin-bottom: 10px; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
+        .copy-section > summary { padding: 12px 14px; cursor: pointer; font-weight: 600; font-size: 0.85rem; color: var(--text); display: flex; align-items: center; justify-content: space-between; list-style: none; }
+        .copy-section > summary::-webkit-details-marker { display: none; }
+        .copy-section__body { padding: 14px 16px 4px; border-top: 1px solid var(--border); }
         .copy-block { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
         .copy-block:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
         .copy-block__label { display: block; font-size: 0.85rem; font-weight: 600; color: var(--text); margin-bottom: 6px; }
@@ -2976,17 +2980,38 @@ async function loadSiteCopy() {
         html += '<details class="page-group">' +
             '<summary>' + escapeHtml(label) + ' <span class="page-group__count">' + byPage[page].length + '</span></summary>' +
             '<div class="page-group__body">';
+        var bySection = {};
+        var sections = [];
         byPage[page].forEach(function(row) {
-            var safeKey = escapeHtml(row.block_key);
-            html += '<div class="copy-block">' +
-                '<label class="copy-block__label">' + escapeHtml(row.label) + '</label>' +
-                '<textarea class="copy-block__body" data-key="' + safeKey + '">' + escapeHtml(row.body) + '</textarea>' +
-                '<div class="copy-block__actions">' +
-                    '<span class="copy-block__key">' + safeKey + '</span>' +
-                    '<button class="btn btn--danger btn--sm" onclick="deleteCopyBlock(\'' + safeKey + '\')">Delete</button>' +
-                    '<button class="btn btn--primary btn--sm" onclick="saveCopyBlock(\'' + safeKey + '\', this)">Save</button>' +
-                '</div>' +
-            '</div>';
+            var separator = row.label.indexOf(' — ');
+            var section = separator === -1 ? 'Other content' : row.label.slice(0, separator);
+            if (page === 'weddings') {
+                if (section === 'Weddings') section = 'Page notices';
+                if (section === 'Wedding inquiry') section = 'Wedding Inquiry Form';
+            }
+            if (!bySection[section]) {
+                bySection[section] = [];
+                sections.push(section);
+            }
+            bySection[section].push(row);
+        });
+        sections.forEach(function(section) {
+            html += '<details class="copy-section">' +
+                '<summary>' + escapeHtml(section) + ' <span class="page-group__count">' + bySection[section].length + '</span></summary>' +
+                '<div class="copy-section__body">';
+            bySection[section].forEach(function(row) {
+                var safeKey = escapeHtml(row.block_key);
+                html += '<div class="copy-block">' +
+                    '<label class="copy-block__label">' + escapeHtml(row.label) + '</label>' +
+                    '<textarea class="copy-block__body" data-key="' + safeKey + '">' + escapeHtml(row.body) + '</textarea>' +
+                    '<div class="copy-block__actions">' +
+                        '<span class="copy-block__key">' + safeKey + '</span>' +
+                        '<button class="btn btn--danger btn--sm" onclick="deleteCopyBlock(\'' + safeKey + '\')">Delete</button>' +
+                        '<button class="btn btn--primary btn--sm" onclick="saveCopyBlock(\'' + safeKey + '\', this)">Save</button>' +
+                    '</div>' +
+                '</div>';
+            });
+            html += '</div></details>';
         });
         html += '</div></details>';
     });
