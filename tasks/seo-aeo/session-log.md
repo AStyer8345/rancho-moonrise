@@ -28,3 +28,4 @@ SESSION_START: 2026-04-09T05:00:00-05:00
 - Baselined GBP: 50,500 views, 127 reviews (4.9★), 9/10 unreplied, blog post as description
 - Built initial backlog with pre-launch and post-launch priorities
 - Key finding: launching the Vercel site on the main domain is THE single biggest SEO/AEO unlock
+[2026-11-16 08:15] rancho-site-daily — baked 2 wedding copy blocks; fixed /faqs/ schema family answer. Skipped review count / reply state / GBP cadence (owned by rancho-review-monitor / rancho-gbp-weekly).

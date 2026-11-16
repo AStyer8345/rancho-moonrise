@@ -1,7 +1,9 @@
 # Rancho Moonrise — TODO
 
 - [x] 2026-11-04 — Remove Off The Grid from shared desktop/mobile navigation at Ashley's request.
-Last updated: 2026-11-15 (rancho-site-daily — baked 17 admin-saved copy blocks into the static HTML on four pages; added `scripts/sync-cms-copy.py`. Run-log: `run-logs/2026-11-15-seo.md`.)
+Last updated: 2026-11-16 (rancho-site-daily — baked Ashley's two 11/15 wedding copy edits into the static HTML; `/faqs/` schema family answer now says Bunkhouse Tents like the visible page. Run-log: `run-logs/2026-11-16-seo.md`.)
+
+Prior: 2026-11-15 (rancho-site-daily — baked 17 admin-saved copy blocks into the static HTML on four pages; added `scripts/sync-cms-copy.py`. Run-log: `run-logs/2026-11-15-seo.md`.)
 
 Prior: 2026-10-28 (cache-bust — `cms.js` and `event-popup.js` script tags use `?v=20261028` so browsers drop the cached legacy-key files. HTML cache is `max-age=0`.)
 

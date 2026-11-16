@@ -2543,3 +2543,9 @@ Launch-blocker sweep and conversion sharpening across the primary pages, ahead o
 - Re-Verify Gate: 11 still true, 6 no longer true, 2 partial, 1 stale, 1 not reproduced, 2 carried or unverifiable. Five resolved claims appended to `rancho-done-log.md`.
 - Not run: `best weekend getaways near austin texas 2026`, `romantic weekend getaways near austin`. Competitor GBP still has no live read path.
 - Verified live: `ranchomoonrise.com/improvement-plan.html` shows the 11/16 and 10/16 cards and `/competitive-intelligence.html` shows the 11/16 report. The client-ops mirror is pushed (`dd31401`) but **not live**: client-ops Vercel builds have failed since 2026-09-29 (Node 20.x discontinued). Logged under NEEDS ADAM in `TODO.md`.
+
+## 2026-11-16 — rancho-site-daily
+- `/weddings/`: baked two copy blocks Ashley saved in the admin on 11/15 (hero line `weddings_hero_body`, gallery caption `weddings_copy_036`) into the static HTML via `scripts/sync-cms-copy.py --write`. Drift re-run: 0.
+- `/faqs/` FAQPage schema: the family answer said "Safari tents #7-#8"; the visible answer has said "Bunkhouse Tents" since Ashley's 11/14 edit. Schema now matches. Other schema answers checked against the visible text: same facts, different wording, unchanged.
+- Re-Verify Gate: canary pass (extended); `/safari-tents-near-austin/` still absent; sitemap 200; 31/31 routes 200; 31/31 pages carry JSON-LD; main checkout still mid-rebase. Nothing resolved.
+- Not checked: Search Console (no API access), PageSpeed (quota).
