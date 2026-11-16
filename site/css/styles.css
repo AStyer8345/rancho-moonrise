@@ -3355,14 +3355,14 @@ p { margin-bottom: 1em; }
     position: relative;
     z-index: 2;
     margin-top: -82px;
-    background: var(--color-teal-deep);
+    background: #A1AFAD;
 }
 .wedding-scroll-story__stage {
     position: relative;
     overflow: visible;
     padding-bottom: clamp(58px, 7vh, 80px);
-    color: var(--color-white);
-    background: var(--color-teal-deep);
+    color: #26332F;
+    background: #A1AFAD;
 }
 .wedding-scroll-story__inner {
     position: relative;
@@ -3376,7 +3376,7 @@ p { margin-bottom: 1em; }
     margin-bottom: 20px;
     font: 700 12px/1.4 var(--font-body);
     letter-spacing: .24em;
-    color: #f3d3ac;
+    color: #334A44;
 }
 .wedding-scroll-story h2 {
     max-width: 660px;
@@ -3386,14 +3386,14 @@ p { margin-bottom: 1em; }
     font-weight: 400;
     line-height: 1.08;
     letter-spacing: -.035em;
-    color: var(--color-white);
+    color: #26332F;
 }
 .wedding-scroll-story p {
     max-width: 610px;
     margin-bottom: 16px;
     font-size: clamp(16px, 1.1vw, 19px);
     line-height: 1.65;
-    color: rgba(255,255,255,.92);
+    color: #26332F;
 }
 .wedding-scroll-story__link {
     display: inline-flex;
@@ -3401,15 +3401,15 @@ p { margin-bottom: 1em; }
     align-items: center;
     margin-top: 24px;
     padding-bottom: 5px;
-    border-bottom: 1px solid rgba(255,255,255,.78);
-    color: var(--color-white);
+    border-bottom: 1px solid #26332F;
+    color: #26332F;
     font-size: 13px;
     font-weight: 700;
     letter-spacing: .13em;
     text-transform: uppercase;
 }
 .wedding-scroll-story__link:hover,
-.wedding-scroll-story__link:focus-visible { color: #f3d3ac; border-color: #f3d3ac; }
+.wedding-scroll-story__link:focus-visible { color: #405C54; border-color: #405C54; }
 .wedding-scroll-story__gallery {
     display: grid;
     grid-template-columns: repeat(7, minmax(0, 1fr));
@@ -3440,13 +3440,13 @@ p { margin-bottom: 1em; }
     .wedding-scroll-story h2 { font-size: clamp(42px, 4.5vw, 54px); }
 }
 @media (max-width: 900px) {
-    .wedding-scroll-story { height: auto; min-height: 0; margin-top: -48px; background: var(--color-teal-deep); }
+    .wedding-scroll-story { height: auto; min-height: 0; margin-top: -48px; background: #A1AFAD; }
     .wedding-scroll-story__stage {
         position: relative;
         height: auto;
         min-height: 0;
         overflow: visible;
-        background: var(--color-teal-deep);
+        background: #A1AFAD;
         padding: 0 24px 72px;
     }
     .wedding-scroll-story__photo {
