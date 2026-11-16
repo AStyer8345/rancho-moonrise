@@ -3353,14 +3353,16 @@ p { margin-bottom: 1em; }
 /* Wedding page: full-width editorial color panel. */
 .wedding-scroll-story {
     position: relative;
+    z-index: 2;
+    margin-top: -82px;
     background: var(--color-teal-deep);
 }
 .wedding-scroll-story__stage {
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     padding-bottom: clamp(58px, 7vh, 80px);
     color: var(--color-white);
-    background: linear-gradient(to bottom, var(--color-cream) 0 90px, var(--color-teal-deep) 90px 100%);
+    background: var(--color-teal-deep);
 }
 .wedding-scroll-story__inner {
     position: relative;
@@ -3411,7 +3413,7 @@ p { margin-bottom: 1em; }
 .wedding-scroll-story__photo {
     position: absolute;
     z-index: 2;
-    top: 5vh;
+    top: -54px;
     right: max(7vw, calc((100vw - 1260px) / 2));
     width: min(27vw, 360px);
     height: min(53vh, 480px);
@@ -3425,7 +3427,7 @@ p { margin-bottom: 1em; }
     .wedding-scroll-story h2 { font-size: clamp(42px, 4.5vw, 54px); }
 }
 @media (max-width: 900px) {
-    .wedding-scroll-story { height: auto; min-height: 0; background: var(--color-teal-deep); }
+    .wedding-scroll-story { height: auto; min-height: 0; margin-top: -48px; background: var(--color-teal-deep); }
     .wedding-scroll-story__stage {
         position: relative;
         height: auto;
