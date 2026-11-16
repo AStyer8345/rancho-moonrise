@@ -2874,7 +2874,52 @@ var HOST_EVENT_COPY_DEFAULTS = [
     "body": "Hand-crafted casitas and safari tents for your group — all with A/C, heat, and real beds. Fire pits throughout the property."
   }
 ];
-var EDITABLE_COPY_DEFAULTS = WEDDING_COPY_DEFAULTS.concat(HOST_EVENT_COPY_DEFAULTS);
+// Published inclusions reuse the saved draft keys so Ashley's edits are preserved.
+var WEDDING_INCLUSIONS_DEFAULTS = [
+  {
+    "page": "weddings",
+    "block_key": "weddings_draft_inclusions_heading",
+    "label": "Wedding inclusions — Heading",
+    "body": "What’s Included"
+  },
+  {
+    "page": "weddings",
+    "block_key": "weddings_draft_inclusions_list",
+    "label": "Wedding inclusions — Included items (one per line)",
+    "body": "Exclusive use of our 36-acre ranch for your wedding day or wedding weekend\nIndoor and outdoor ceremony and reception spaces: the Event Barn, Neon Moon Bar & Lounge, Lodge, Pool, and all outdoor celebration areas\nTwo separate getting-ready spaces: the Bridal Suite & a groom’s private Safari Tent\nA complimentary Moonrise Suite overnight accommodation for the wedding couple on their wedding night\nCeremony benches & reception chairs\nA day-of venue manager to keep the property running smoothly\nOn-site parking for guests and vendors\nOne-hour rehearsal (when no event is booked)"
+  },
+  {
+    "page": "weddings",
+    "block_key": "weddings_draft_rental_heading",
+    "label": "Wedding inclusions — Pricing heading",
+    "body": "Venue Rental"
+  },
+  {
+    "page": "weddings",
+    "block_key": "weddings_draft_rental_price",
+    "label": "Wedding inclusions — Starting price",
+    "body": "$2,000+"
+  },
+  {
+    "page": "weddings",
+    "block_key": "weddings_draft_rental_season",
+    "label": "Wedding inclusions — Pricing note",
+    "body": "Pricing varies by day of the week and season."
+  },
+  {
+    "page": "weddings",
+    "block_key": "weddings_draft_rental_details",
+    "label": "Wedding inclusions — Taxes and packages",
+    "body": "Taxes and fees not included. Reach out to learn more about lodging, bar packages, and more."
+  },
+  {
+    "page": "weddings",
+    "block_key": "weddings_draft_rental_cta",
+    "label": "Wedding inclusions — Button text",
+    "body": "CHECK AVAILABILITY & PRICING"
+  }
+];
+var EDITABLE_COPY_DEFAULTS = WEDDING_COPY_DEFAULTS.concat(WEDDING_INCLUSIONS_DEFAULTS, HOST_EVENT_COPY_DEFAULTS);
 
 async function loadSiteCopy() {
     var container = $('#siteCopyList');
