@@ -3350,21 +3350,17 @@ p { margin-bottom: 1em; }
     body { padding-bottom: 76px; }
 }
 
-/* Wedding page: sticky editorial story, inspired by a full-width scrolling color panel. */
+/* Wedding page: full-width editorial color panel. */
 .wedding-scroll-story {
     position: relative;
-    height: 165vh;
-    min-height: 1050px;
-    background: var(--color-cream);
+    background: var(--color-teal-deep);
 }
 .wedding-scroll-story__stage {
-    position: sticky;
-    top: 0;
-    height: 100vh;
-    min-height: 650px;
+    position: relative;
     overflow: hidden;
+    padding-bottom: clamp(58px, 7vh, 80px);
     color: var(--color-white);
-    background: linear-gradient(to bottom, var(--color-cream) 0 13%, var(--color-teal-deep) 13% 100%);
+    background: linear-gradient(to bottom, var(--color-cream) 0 90px, var(--color-teal-deep) 90px 100%);
 }
 .wedding-scroll-story__inner {
     position: relative;
