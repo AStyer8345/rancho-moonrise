@@ -150,17 +150,17 @@
 
 /* Wedding inclusions and venue pricing */
 #wedding-inquiry, #wedding-inclusions { scroll-margin-top: 110px; }
-.wedding-inclusions__grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 80px); align-items: start; }
+.wedding-inclusions__grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 80px); align-items: stretch; }
 .wedding-inclusions h2 { font-family: var(--font-accent); font-weight: 400; font-size: clamp(32px, 3.5vw, 48px); margin: 0 0 30px; }
 .wedding-inclusions__list { list-style: none; margin: 0; padding: 0; }
 .wedding-inclusions__list li { position: relative; padding: 19px 0 19px 28px; border-top: 1px solid var(--color-border); line-height: 1.65; }
 .wedding-inclusions__list li:last-child { border-bottom: 1px solid var(--color-border); }
 .wedding-inclusions__list li::before { content: '–'; position: absolute; left: 0; color: var(--color-terracotta); }
-.wedding-inclusions__pricing { background: var(--color-cream-dark); padding: clamp(26px, 3.5vw, 48px); min-width: 0; }
+.wedding-inclusions__pricing { display: flex; flex-direction: column; background: var(--color-cream-dark); padding: clamp(26px, 3.5vw, 48px); min-width: 0; }
 .wedding-inclusions__eyebrow { text-transform: uppercase; letter-spacing: 3px; font-size: 14px; color: var(--color-heading); }
 .wedding-inclusions__price { font-family: var(--font-accent); font-size: clamp(48px, 5vw, 72px); line-height: 1.2; letter-spacing: -2px; color: var(--color-heading); margin: 18px 0 28px; overflow-wrap: anywhere; }
 .wedding-inclusions__pricing hr { border: 0; border-top: 1px solid var(--color-border); margin: 30px 0; }
-.wedding-inclusions__cta { display: flex; justify-content: center; width: 100%; text-align: center; margin-top: 32px; white-space: normal; }
+.wedding-inclusions__cta { display: flex; justify-content: center; width: 100%; text-align: center; margin-top: auto; padding-top: 0; white-space: normal; }
 @media (max-width: 760px) { .wedding-inclusions__grid { grid-template-columns: 1fr; gap: 32px; } }
 </style>
 </head>
