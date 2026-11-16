@@ -2531,3 +2531,14 @@ Launch-blocker sweep and conversion sharpening across the primary pages, ahead o
 - FAQ schema: `/faqs/` rates answer now includes the $75 damage deposit; `/host-your-event/` capacity answer now says Event Barn up to 175, matching the visible answer.
 - Added `scripts/sync-cms-copy.py` (report by default, `--write` to apply). Mirrors `applyCopyBlock()` in `cms.js`.
 - Re-Verify Gate: canary pass (extended); safari-tents still not surfacing; sitemap 200 and 31/31 routes 200. `validate:site` and `test:runtime` pass. Search Console and PageSpeed not checked.
+
+## 2026-11-16 — rancho-competitive-weekly
+- Weekly competitive report rewritten (`site/competitive-intelligence.md` + `.html`) and Intel card dual-written to `site/improvement-plan.html` and the client-ops mirror, byte-identical.
+- Recovered the October 16 Intel card. That run wrote it to the client-ops mirror only and committed neither repo; it is now in both dashboards below the new card. No intel report was published between 9/28 and 11/16.
+- Baseline 6/10 in extended search mode (10/16: 5/10). Standard mode fails the brand canary (OTA listings only), so all queries ran extended.
+- New placements, one read each: `safari tent austin texas` → `/accommodations/` ~#3; `things to do Manor TX` → blog #6. `glamping weekend getaway from Austin` now returns 2 owned URLs (blog ~#1, home ~#6).
+- Lucky Arrow rebranded to Lucky Arrow Resort: `luckyarrowretreat.com` 301s to `luckyarrowresort.com`; 41 stays including 3 safari tents; listed in Roam Hospitality's portfolio. Corporate prices not readable on the new site, held `STALE:2026-10-16`.
+- Copy hygiene: brand answer dirty again; The Knot 8th read; Wed Society 2020 carrier article now 404; Wed Society vendor profile is an empty stub; Hotels.com clean (8th).
+- ResortPass read live: Rancho $20 / $15, 9.4 / 57; Lucky Arrow $35, 9.2 / 224.
+- Re-Verify Gate: 11 still true, 6 no longer true, 2 partial, 1 stale, 1 not reproduced, 2 carried or unverifiable. Five resolved claims appended to `rancho-done-log.md`.
+- Not run: `best weekend getaways near austin texas 2026`, `romantic weekend getaways near austin`. Competitor GBP still has no live read path.

@@ -469,9 +469,21 @@ Blog cluster is now complete: 17/17 on `BlogPosting`, `BreadcrumbList`, `WebPage
 
 **CONTEXT.md hygiene (for the owning tasks):** trimmed 251 → 204 lines this run by collapsing 20 duplicate `site-daily` cruise-control entries + 9 stacked headers. Still over the 150-line cap in CLAUDE.md. The remaining bulk is 10 `review-monitor` and 5 `competitive-weekly` "Nth consecutive quiet sweep" entries — **those tasks should collapse their own history**; site-daily won't prune another task's records.
 
-## 📌 Competitive intel quick wins (refreshed 2026-09-21)
+## 📌 Competitive intel quick wins (refreshed 2026-11-16)
 
-**🔄 2026-09-21 refresh — supersedes the matching 9/7 bullets below:**
+**🔄 2026-11-16 refresh — supersedes the matching bullets below:**
+- **1️⃣ The Knot description fix (Ashley or Adam, ~15 min).** 8th confirmed read. The search engine now names The Knot as the only source of "20 luxury cabins and safari tents for up to 50 guests", and that sentence is back in Rancho's brand answer.
+- **2️⃣ NEW — Wed Society vendor profile is an empty stub.** `austin.wedsociety.com/vendors/rancho-moonrise/` reads "hasn't shared their full story with us just yet." Their October 19 "Venues With On-Site Lodging" article ranks #1 on the 200-guest lodging query and omits Rancho. Fill in the profile and ask about the article; confirm cost first. The 10/16 idea of asking Wed Society to correct its 2020 article is void: that page now 404s.
+- **3️⃣ WeddingWire owner login (~15 min).** Still unreadable by automation.
+- **4️⃣ Glamping Hub submission — ~30 weeks absent.** Glamping Hub is #2 on `safari tent austin texas`, which Rancho just entered at ~#3.
+- **5️⃣ Hipcamp question for Ashley — 15th consecutive absence** from the curated list. Bookable, or presence only?
+- **6️⃣ NEW — acreage is wrong on Hipcamp (37) and Yodel (34).** Site says 36.
+- **⚠️ Don't change title or H1** on `/blog/weekend-getaways-near-austin/`, `/blog/glamping-near-austin-texas/`, `/accommodations/`, `/blog/things-to-do-manor-tx/`. They hold every glamping, safari-tent and local placement Rancho has. (For `rancho-site-daily`.)
+- **⚠️ WATCH — re-read next week:** `safari tent austin texas` and `things to do Manor TX` gains (1 read each); Lucky Arrow Resort's new corporate page (prices held `STALE:2026-10-16`).
+- **ℹ️ Lucky Arrow is now "Lucky Arrow Resort"** at `luckyarrowresort.com`, with 3 safari tents. Use the new name and domain in any future comparison.
+- **ℹ️ For whoever owns the scheduler:** no intel report landed between 9/28 and 11/16, and the 10/16 run wrote one dashboard and committed nothing. Recovered 11/16.
+
+**🔄 2026-09-21 refresh (history) — supersedes the matching 9/7 bullets below:**
 - **2️⃣ The Knot fix is now the top item.** 5th confirmed read, and the brand-query answer (phrase not in the query) carries the banned sentence again — the "2 clean reads" watch below is **void**. Direct fetch of the Knot page now returns 403 (search-level confirmation only). Yodel (`events.yodel.today/manor-tx/profile/Rancho-Moonrise/113759`) is a likely downstream copy; re-check it after the Knot edit.
 - **1️⃣ WeddingWire "carries the banned copy" is NOT confirmed** — 0/3 reproductions on 9/21; the 9/7 read is discounted (exact-phrase-in-query contamination). Still needs a logged-in human look because the page is unreadable; do not treat it as a known carrier.
 - **Day-pass gap still true (2nd live read):** Rancho $20 / $15 (now shown 9.4 / 57 on a 10-pt scale) vs Lucky Arrow $35 (9.2 / 217, plus $175 pool cabanas and $90 yurt day room). Prices unchanged.
