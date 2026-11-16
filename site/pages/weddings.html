@@ -160,7 +160,8 @@
 .wedding-inclusions__eyebrow { text-transform: uppercase; letter-spacing: 3px; font-size: 14px; color: var(--color-heading); }
 .wedding-inclusions__price { font-family: var(--font-accent); font-size: clamp(48px, 5vw, 72px); line-height: 1.2; letter-spacing: -2px; color: var(--color-heading); margin: 18px 0 28px; overflow-wrap: anywhere; }
 .wedding-inclusions__pricing hr { border: 0; border-top: 1px solid var(--color-border); margin: 30px 0; }
-.wedding-inclusions__cta { display: flex; justify-content: center; width: 100%; text-align: center; margin-top: auto; padding-top: 0; white-space: normal; }
+.wedding-inclusions__photo { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; margin-top: auto; }
+.wedding-inclusions__cta { display: flex; justify-content: center; width: 100%; text-align: center; margin-top: 24px; padding-top: 0; white-space: normal; }
 @media (max-width: 760px) { .wedding-inclusions__grid { grid-template-columns: 1fr; gap: 32px; } }
 </style>
 </head>
@@ -581,6 +582,7 @@
             <p data-copy-key="weddings_draft_rental_season">Pricing varies by day of the week and season.</p>
             <hr>
             <p data-copy-key="weddings_draft_rental_details">Taxes and fees not included. Reach out to learn more about lodging, bar packages, and more.</p>
+            <img class="wedding-inclusions__photo" data-image-slot="weddings_inclusions_photo" src="/images/wedding-longtable-dusk-1024.webp" srcset="/images/wedding-longtable-dusk-480.webp 480w, /images/wedding-longtable-dusk-1024.webp 1024w" sizes="(min-width: 761px) 36vw, 100vw" alt="Wedding reception table at dusk on the ranch" width="1024" height="576" loading="lazy" decoding="async">
             <a href="#wedding-inquiry" class="btn btn--primary wedding-inclusions__cta" data-event="wedding_cta_click" data-cta-source="inclusions" data-copy-key="weddings_draft_rental_cta">CHECK AVAILABILITY &amp; PRICING</a>
         </aside>
     </div>
