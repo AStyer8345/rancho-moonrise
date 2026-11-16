@@ -2542,3 +2542,4 @@ Launch-blocker sweep and conversion sharpening across the primary pages, ahead o
 - ResortPass read live: Rancho $20 / $15, 9.4 / 57; Lucky Arrow $35, 9.2 / 224.
 - Re-Verify Gate: 11 still true, 6 no longer true, 2 partial, 1 stale, 1 not reproduced, 2 carried or unverifiable. Five resolved claims appended to `rancho-done-log.md`.
 - Not run: `best weekend getaways near austin texas 2026`, `romantic weekend getaways near austin`. Competitor GBP still has no live read path.
+- Verified live: `ranchomoonrise.com/improvement-plan.html` shows the 11/16 and 10/16 cards and `/competitive-intelligence.html` shows the 11/16 report. The client-ops mirror is pushed (`dd31401`) but **not live**: client-ops Vercel builds have failed since 2026-09-29 (Node 20.x discontinued). Logged under NEEDS ADAM in `TODO.md`.
