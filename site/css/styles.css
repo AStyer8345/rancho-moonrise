@@ -3410,6 +3410,19 @@ p { margin-bottom: 1em; }
 }
 .wedding-scroll-story__link:hover,
 .wedding-scroll-story__link:focus-visible { color: #f3d3ac; border-color: #f3d3ac; }
+.wedding-scroll-story__gallery {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    width: 100%;
+    overflow: hidden;
+}
+.wedding-scroll-story__gallery img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
 .wedding-scroll-story__photo {
     position: absolute;
     z-index: 2;
@@ -3449,6 +3462,15 @@ p { margin-bottom: 1em; }
     }
     .wedding-scroll-story__inner { width: min(100%, 640px); margin: -20px auto 0; padding-top: 0; }
     .wedding-scroll-story h2 { font-size: clamp(40px, 8vw, 60px); }
+    .wedding-scroll-story__gallery {
+        grid-template-columns: none;
+        grid-auto-flow: column;
+        grid-auto-columns: 34vw;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+    .wedding-scroll-story__gallery img { scroll-snap-align: start; }
 }
 @media (prefers-reduced-motion: reduce) {
     .wedding-scroll-story__stage { position: relative; }
