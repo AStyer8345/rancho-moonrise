@@ -1,7 +1,9 @@
 # Rancho Moonrise — TODO
 
 - [x] 2026-11-04 — Remove Off The Grid from shared desktop/mobile navigation at Ashley's request.
-Last updated: 2026-11-16 (rancho-site-daily — baked Ashley's two 11/15 wedding copy edits into the static HTML; `/faqs/` schema family answer now says Bunkhouse Tents like the visible page. Run-log: `run-logs/2026-11-16-seo.md`.)
+Last updated: 2026-11-17 (rancho-site-daily — baked 17 admin-saved wedding copy blocks into the static HTML; new wedding posts load site fonts and cross-link. Two new questions for Ashley added to the capacity item below. Run-log: `run-logs/2026-11-17-seo.md`.)
+
+Prior: 2026-11-16 (rancho-site-daily — baked Ashley's two 11/15 wedding copy edits into the static HTML; `/faqs/` schema family answer now says Bunkhouse Tents like the visible page. Run-log: `run-logs/2026-11-16-seo.md`.)
 
 Prior: 2026-11-15 (rancho-site-daily — baked 17 admin-saved copy blocks into the static HTML on four pages; added `scripts/sync-cms-copy.py`. Run-log: `run-logs/2026-11-15-seo.md`.)
 
@@ -78,6 +80,8 @@ Found 2026-09-09 by `rancho-site-daily`; landed the same day by `rancho-review-m
 - `/host-your-event/` FAQ "How many guests can Rancho Moonrise accommodate?" says the Event Barn seats **175** (saved in the admin 11/14).
 - The FAQ answer above it, saved the same morning, says **200**. So do the page intro, the homepage, the `/weddings/` title ("Up to 200 Guests") and the venue schema.
 - Pick one number. Site-daily will then align every page and the schema. Nothing was changed beyond the answer Ashley edited.
+- **Added 2026-11-17:** the `/weddings/` capacity card was saved as **250+ Guest Capacity** on 11/16. The page title ("Up to 200 Guests"), meta description, wedding FAQ and venue schema still say 200. Same decision: one number, then site-daily aligns title, meta, FAQ and schema.
+- **Added 2026-11-17:** the `/weddings/` "After Party" card was saved ending "Mimosas and breakfast tacos poolside ~ yes please!". The breakfast-taco offer was retired (no on-site food) and the site validator bans the phrase. Visitors see the sentence now; the static copy leaves it out. Either remove it in the admin, or confirm tacos are offered and site-daily will lift the ban and bake it in.
 - Small typo in the admin, `/faqs/` rates answer: "737-291-1260.A $75" is missing a space after the period. Left as saved.
 - After any admin copy edit, run `python3 scripts/sync-cms-copy.py` (report) or `--write` (apply) so crawlers see the same text as visitors. Site-daily runs it each day.
 

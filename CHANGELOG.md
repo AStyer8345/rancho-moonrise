@@ -2549,3 +2549,9 @@ Launch-blocker sweep and conversion sharpening across the primary pages, ahead o
 - `/faqs/` FAQPage schema: the family answer said "Safari tents #7-#8"; the visible answer has said "Bunkhouse Tents" since Ashley's 11/14 edit. Schema now matches. Other schema answers checked against the visible text: same facts, different wording, unchanged.
 - Re-Verify Gate: canary pass (extended); `/safari-tents-near-austin/` still absent; sitemap 200; 31/31 routes 200; 31/31 pages carry JSON-LD; main checkout still mid-rebase. Nothing resolved.
 - Not checked: Search Console (no API access), PageSpeed (quota).
+
+## 2026-11-17 — rancho-site-daily
+- `/weddings/`: baked 17 copy blocks saved in the admin on 11/16 into the static HTML via `scripts/sync-cms-copy.py --write` (story panel, ceremony section, three venue cards, feature cards incl. capacity 200+ → 250+). One saved sentence containing "breakfast tacos" held out of the static copy (validator ban); drift report shows 1 block by design.
+- `/blog/ranch-wedding-venue-near-austin/` and `/blog/wedding-pricing-rancho-moonrise/`: added the Google Fonts links and no-JS fallback style the other posts carry; removed "in Manor"; added links between the two posts and to `/blog/ranch-wedding-texas/`.
+- Re-Verify Gate: canary pass (extended); `/safari-tents-near-austin/` still absent; sitemap 200; 33/33 routes 200; 33/33 pages carry JSON-LD; main checkout still mid-rebase. Nothing resolved.
+- Not checked: Search Console (no API access), PageSpeed (429 quota).
