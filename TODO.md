@@ -1,5 +1,7 @@
 # Rancho Moonrise — TODO
 
+- [x] 2026-11-17 — Publish wedding weekend and lodging checklist articles to the blog only; add blog discovery, metadata, routes and sitemap. Six additional Tuesday publications scheduled November 24–December 29, with ChatGPT notifications for Ashley.
+
 - [x] 2026-11-04 — Remove Off The Grid from shared desktop/mobile navigation at Ashley's request.
 Last updated: 2026-11-17 (rancho-site-daily — baked 17 admin-saved wedding copy blocks into the static HTML; new wedding posts load site fonts and cross-link. Two new questions for Ashley added to the capacity item below. Run-log: `run-logs/2026-11-17-seo.md`.)
 

@@ -49,6 +49,8 @@
     { "source": "/yoga-retreat-near-austin/", "destination": "/blog/yoga-retreat-near-austin/", "permanent": true }
   ],
   "rewrites": [
+    { "source": "/blog/wedding-weekend-near-austin/", "destination": "/pages/wedding-weekend-near-austin.html" },
+    { "source": "/blog/wedding-venue-lodging-checklist/", "destination": "/pages/wedding-venue-lodging-checklist.html" },
     { "source": "/accommodations/", "destination": "/pages/accommodations.html" },
     { "source": "/weddings/", "destination": "/pages/weddings.html" },
     { "source": "/events/", "destination": "/pages/events.html" },

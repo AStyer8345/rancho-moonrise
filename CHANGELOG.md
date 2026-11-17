@@ -2555,3 +2555,9 @@ Launch-blocker sweep and conversion sharpening across the primary pages, ahead o
 - `/blog/ranch-wedding-venue-near-austin/` and `/blog/wedding-pricing-rancho-moonrise/`: added the Google Fonts links and no-JS fallback style the other posts carry; removed "in Manor"; added links between the two posts and to `/blog/ranch-wedding-texas/`.
 - Re-Verify Gate: canary pass (extended); `/safari-tents-near-austin/` still absent; sitemap 200; 33/33 routes 200; 33/33 pages carry JSON-LD; main checkout still mid-rebase. Nothing resolved.
 - Not checked: Search Console (no API access), PageSpeed (429 quota).
+
+## 2026-11-17 — Wedding blog publication
+- Published two original wedding guides: wedding-weekend-near-austin and wedding-venue-lodging-checklist, using the existing article template and ranch images.
+- Added both to the blog index, index structured data, clean URL rewrites, and sitemap. Publication is blog-only at Ashley's request; no wedding page or other public page changes.
+- Copy distinguishes sample itinerary ideas from included services and avoids unconfirmed lodging counts, prices and availability.
+- Scheduled six further blog-only wedding posts for Tuesdays, November 24–December 29, with post-publication notifications to Ashley for review.
