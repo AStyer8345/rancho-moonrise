@@ -67,7 +67,7 @@ The 4 accommodation files are literally 340×340 thumbnails masquerading as cont
 
 ## Last Worked On
 
-- 2026-11-17 — Extended the wedding page story portrait downward by 80–92px on desktop to match Ashley's marked screenshot. Existing image, width, top position, admin image slot, and mobile layout preserved.
+- 2026-11-17 — Extended the wedding story portrait downward to Ashley's marked edge on desktop and moved Private Events' complete inquiry section directly below Every Event, Your Way. Forms, admin keys, and existing content preserved.
 
 ## Mark Done System — How It Works
 

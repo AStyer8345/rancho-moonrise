@@ -1,5 +1,7 @@
 # Rancho Moonrise — TODO
 
+- [x] 2026-11-17 — Move Private Events inquiry directly below Every Event, Your Way and its event cards.
+
 - [x] 2026-11-17 — Extend wedding story portrait down to Ashley's marked lower edge on desktop.
 
 - [x] 2026-11-17 — Publish wedding weekend and lodging checklist articles to the blog only; add blog discovery, metadata, routes and sitemap. Six additional Tuesday publications scheduled November 24–December 29, with ChatGPT notifications for Ashley.

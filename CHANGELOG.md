@@ -2565,3 +2565,7 @@ Launch-blocker sweep and conversion sharpening across the primary pages, ahead o
 ## 2026-11-17 — Wedding portrait height
 - Increased the wedding page story portrait height by 80–92px at desktop widths, extending its lower edge to match Ashley's annotated screenshot while preserving its width and top position.
 - Kept the current admin-managed image and the existing mobile layout.
+
+## 2026-11-17 — Private event inquiry placement
+- Moved the complete Tell Us About Your Event section, including planning-call link and inquiry form, directly after Every Event, Your Way and its event cards.
+- Preserved the form markup, fields, IDs, admin copy keys, links, and all other page content. Verified the new section order and that only the inquiry block moved.
