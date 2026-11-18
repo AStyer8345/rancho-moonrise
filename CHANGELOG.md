@@ -2576,3 +2576,7 @@ Launch-blocker sweep and conversion sharpening across the primary pages, ahead o
 - Added wedding rental specifics already published on the weddings page (two getting-ready spaces, benches and chairs, day-of venue manager, one-hour rehearsal).
 - Removed "unforgettable" from the og and schema descriptions. Testimonial still blocked: no approved wedding quote on file.
 
+## 2026-11-18 — rancho-site-daily
+- Baked the wedding hero subtitle saved in the admin on 11/17 (2:28 PM CT) into `site/pages/weddings.html`, so the no-JS copy matches what visitors see (`2d805ee`, verified live).
+- Gate: brand canary passes (extended); `/safari-tents-near-austin/` still not surfacing; sitemap 200; 35/35 routes 200; 35/35 with JSON-LD. The two posts published 11/17 needed no fixes.
+- Not checked: Search Console (no API access), PageSpeed (429 quota). Run-log: `run-logs/2026-11-18-seo.md`.
