@@ -392,7 +392,11 @@ The video card **"Escape to Rancho Moonrise"** on `/videos/` points at YouTube I
 
 I've left the card in place rather than silently removing visible content, since deleting published content is your call, not mine.
 
-### NEEDS ADAM — Approve testimonial T-001 (unblocks the 4th element of every content-weekly run) — added 2026-07-22, **re-verified 2026-10-16** by `rancho-content-weekly`
+### NEEDS ADAM — Approve testimonial T-001 (unblocks the 4th element of every content-weekly run) — added 2026-07-22, **re-verified 2026-11-18** by `rancho-content-weekly`
+
+**Re-verified live 2026-11-18:** `brand/approved-testimonials.md` unchanged; T-001 still `UNAPPROVED`, event date unknown (**126 days**). This run strengthened `ranch-wedding-texas.html` to 3 of 4. Weddings are the file's highest-value gap (no quote on file), and the next two queue pages are also wedding pages. **Ask for Ashley:** 2–3 wedding quotes with real event dates from HoneyBook or her inbox.
+
+**Also found 2026-11-18 (~5 min, any session):** `wedding-event-barn` is not the Event Barn. The photo is an outdoor long-table dinner at sunset. `weddings.html` (slot `weddings_ceremony_2`) still describes it in alt text as the Event Barn set for a reception. Same family as the `accom-campfire-evening` item below.
 
 **Re-verified live 2026-10-16:** `brand/approved-testimonials.md` unchanged since 2026-07-20; T-001 still `UNAPPROVED`, event date unknown (**94 days**). This run strengthened `bachelorette-party-austin-texas.html` to 3 of 4. Bachelorette is a listed coverage gap ("Nothing on file"), so even an approved T-001 would not fill it. **Ask for Ashley:** one bachelorette quote with a real event date from HoneyBook or her inbox.
 

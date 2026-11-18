@@ -67,6 +67,7 @@ The 4 accommodation files are literally 340×340 thumbnails masquerading as cont
 
 ## Last Worked On
 
+- 2026-11-18 — content-weekly: `ranch-wedding-texas.html` strengthened to 3 of 4 (photos, Ashley byline, wedding rental specifics). No approved wedding testimonial on file. Next page: `wedding-venues-near-austin.html`. Detail in `run-logs/strengthener-queue.md`.
 - 2026-11-17 — Extended the wedding story portrait downward to Ashley's marked edge on desktop and moved Private Events' complete inquiry section directly below Every Event, Your Way. Forms, admin keys, and existing content preserved.
 
 ## Mark Done System — How It Works

@@ -2569,3 +2569,10 @@ Launch-blocker sweep and conversion sharpening across the primary pages, ahead o
 ## 2026-11-17 — Private event inquiry placement
 - Moved the complete Tell Us About Your Event section, including planning-call link and inquiry form, directly after Every Event, Your Way and its event cards.
 - Preserved the form markup, fields, IDs, admin copy keys, links, and all other page content. Verified the new section order and that only the inquiry block moved.
+
+## 2026-11-18 — rancho-content-weekly: ranch-wedding-texas strengthened
+- Added three real wedding photos (dinner on the grass, long tables with the cabins behind, The Lodge porch) in a new "What It Looks Like Here" section; the page had no body images before.
+- Added the `Ashley · Rancho Moonrise` author block, switched `BlogPosting.author` to Ashley, and bumped `dateModified` and the sitemap `lastmod` to 2026-11-18.
+- Added wedding rental specifics already published on the weddings page (two getting-ready spaces, benches and chairs, day-of venue manager, one-hour rehearsal).
+- Removed "unforgettable" from the og and schema descriptions. Testimonial still blocked: no approved wedding quote on file.
+
