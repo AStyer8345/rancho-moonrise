@@ -67,9 +67,7 @@ The 4 accommodation files are literally 340×340 thumbnails masquerading as cont
 
 ## Last Worked On
 
-- 2026-11-17 — Published two blog-only wedding planning guides (wedding-weekend-near-austin, wedding-venue-lodging-checklist), with blog index, metadata, route and sitemap updates. Wedding page untouched. Ashley requested six additional weekly blog-only publications; scheduled Tuesdays November 24–December 29 with post-publication ChatGPT notifications.
-
-- 2026-11-14 — Moved Host Your Event’s What Drives Event Pricing section to the end of main content, after the FAQ and inquiry CTA and before the footer. Preserved copy and admin editing keys. Verified section order and unchanged remaining markup.
+- 2026-11-17 — Extended the wedding page story portrait downward by 80–92px on desktop to match Ashley's marked screenshot. Existing image, width, top position, admin image slot, and mobile layout preserved.
 
 ## Mark Done System — How It Works
 

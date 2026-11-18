@@ -132,6 +132,13 @@
     </script>
 <noscript><style>.fade-in,.reveal,.reveal-stagger > *{opacity:1!important;transform:none!important}.faq-answer{max-height:none!important}form[action="#"]{display:none!important}</style></noscript>
 <style>
+/* Extend the desktop story portrait down to the requested lower edge. */
+@media (min-width: 901px) {
+    .wedding-scroll-story__photo {
+        height: calc(min(53vh, 480px) + clamp(80px, 7vw, 92px));
+    }
+}
+
 .wedding-stay-collage {
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));

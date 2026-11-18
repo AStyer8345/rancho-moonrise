@@ -2561,3 +2561,7 @@ Launch-blocker sweep and conversion sharpening across the primary pages, ahead o
 - Added both to the blog index, index structured data, clean URL rewrites, and sitemap. Publication is blog-only at Ashley's request; no wedding page or other public page changes.
 - Copy distinguishes sample itinerary ideas from included services and avoids unconfirmed lodging counts, prices and availability.
 - Scheduled six further blog-only wedding posts for Tuesdays, November 24–December 29, with post-publication notifications to Ashley for review.
+
+## 2026-11-17 — Wedding portrait height
+- Increased the wedding page story portrait height by 80–92px at desktop widths, extending its lower edge to match Ashley's annotated screenshot while preserving its width and top position.
+- Kept the current admin-managed image and the existing mobile layout.
