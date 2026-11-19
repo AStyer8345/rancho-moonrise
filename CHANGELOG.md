@@ -1,5 +1,15 @@
 # Rancho Moonrise — Changelog
 
+## 2026-11-19
+
+- **rancho-biweekly-audit:** Published audit #4, `site/audits/2026-11-19-business-audit.html`. Covers 56 days since 09-24. The 10/15 and 11/5 audits exist only as untracked files in the stuck main checkout and were never published; this audit compares against 09-24 and the 04-09 baseline.
+- **Grades:** Website A (flat), GBP B- → **C+** (down), Social B- (flat, unverified), Reviews D (flat), Booking B+ (flat), HoneyBook B (flat, unverified), Operations B → **B-** (down).
+- **What moved:** 7 of 10 tracked keywords in the top 10 (4 on 9/24), first wedding ranking, wedding page rebuilt and edited by Ashley through the admin. GBP dropped because the full live read (11/17) shows 17 of 148 reviews replied and two 1★ unanswered. Operations dropped because the stuck checkout has kept two audits, six metrics updates and eight review reports off `origin/main`.
+- **Live checks 11/19:** both domains 200 from Vercel; sitemap 35 URLs; homepage still "125+" / `reviewCount: 125` (live 148); `ga4MeasurementId` blank; 3 of 4 YouTube thumbnails on `/videos/` return 404 (was 1 on 9/24); `/host-your-event/` still says 200 and 1,000+; Cloudbeds 200; ResortPass 9.4 / 57, $15 / $20; The Knot 8 / 4.5★ with the banned description sentence; TripAdvisor 0, unclaimed; the WeddingWire URL loads a category page. Extended search: owned URLs returned for pool-glamping (3) and corporate-retreat (5) queries, none for "best wedding venues near Austin Texas 2026".
+- **Dashboard:** new teal card added at the top of the Audits tab (newest first, same order the 09-24 run used) in `site/improvement-plan.html` and `brand/2026-04-09-rancho-moonrise-improvement-plan.html`. April 9 gold baseline card untouched. Audits blocks identical in both files.
+- **Git:** committed from a clean worktree (`../rancho-moonrise-audit-20261119`) off `origin/main` `e74b674`. The main checkout is still mid-rebase and was not modified, except that a copy of the audit file was placed in its `site/audits/` so the next run's 13-day gate reads correctly.
+- **Surfaced TODO:** `### NEEDS ADAM — From 2026-11-19 Bi-Weekly Audit` in TODO.md.
+
 ## 2026-10-28
 
 - **Production outage:** Supabase disabled legacy anon and service_role JWTs on 2026-10-27. The public events calendar and admin login were still sending the old anon JWT, so both returned `Legacy API keys are disabled`.

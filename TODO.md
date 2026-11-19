@@ -432,6 +432,21 @@ The image (all sizes: 480/1024/1920/2560 + .jpg) is the **front of The Lodge**: 
 
 **Do not re-surface the old framing.** The pre-2026-07-15 version of this item asked you to either settle the byline or pause the task. Both are resolved — the task is correctly unpaused in GOALS.md → Keep running, and it is shipping. This item is now scoped only to the testimonial approval above.
 
+### NEEDS ADAM — From 2026-11-19 Bi-Weekly Audit
+
+Source: `site/audits/2026-11-19-business-audit.html`. Ordered by impact. The first three decide whether the next audit reads GBP back to B- and Operations back to B.
+
+1. **Fix the stuck main checkout (~15 min, with a session watching).** Detached HEAD mid-rebase since 9/18, 134 commits behind `origin/main`. Sitting in it and not on the live site: the 10/15 and 11/5 audits, weekly metrics 9/20 → 11/18 (3 local commits + uncommitted dashboard edits), 8 review reports (9/29 → 11/17), 3 GBP post drafts. Suggested path: abort the rebase, copy the untracked and modified files out, reset to `origin/main`, re-apply what is worth keeping. The 5-file set in `stash@{0}` is separate; don't pop it blindly.
+2. **Post the 1★ replies (~10 min).** Google: Joaly Segura Cervantes (~4 months, draft in the 10/13 report) and Stacey Kawakami (3 weeks, draft in the 10/27 report; confirm onsite facts with Ashley first). The Knot: Haylee L., 266 days. 17 of 148 Google reviews have a reply; 20+ more drafts are ready to batch-post.
+3. **Check Hipcamp and WeddingWire (~10 min).** Hipcamp listing URL redirects to a category page (11/17). The WeddingWire URL loads a category page (11/19). Log in to each and find out whether the listing is paused, removed or moved.
+4. **Approve the homepage review-count fix (~1 min to approve, 5 min to ship).** Hero "125+", reviews block "125", schema `reviewCount: 125`. Live count is 148. Open since 9/24.
+5. **Claim TripAdvisor (`d33307272`) (~20 min).** 0 reviews, no photos, unclaimed. 224 days since baseline.
+6. **Supply the GA4 / GTM ID (~2 min).** `ga4MeasurementId: ''` still blank live 11/19.
+7. **Ashley decisions (one each):** event capacity (`/host-your-event/` says 200 and 1,000+, The Knot says 300+, TODO already tracks 175 / 200 / 250); whether wedding pricing is now public (pricing went live 11/15–11/16, VOICE-GUIDE still says tours only); replacements for the 3 dead video cards on `/videos/`.
+8. **Confirm Publer posting history.** Nine GBP post drafts since 9/21, none confirmed posted; nothing confirmed live since 4/13. Give the weekly post task one real dated event.
+9. **Fix The Knot description.** Still carries the banned adjective and a fixed count of cabins and tents (read live 11/19).
+10. **Carried from 9/24, unchanged:** GSC indexing request on `/safari-tents-near-austin/`; trace one real inquiry form → draft and note the response time; corporate-retreat HoneyBook flow; $25–30 day pass test; screenshot the four social follower counts.
+
 ### NEEDS ADAM — From 2026-09-24 Bi-Weekly Audit
 
 Source: `site/audits/2026-09-24-business-audit.html`. Ordered by impact. None of these need code. Together they're about a one-hour owner sprint, and doing them moves Reviews D → C+, GBP B- → B+, Operations B → B+ next audit.
