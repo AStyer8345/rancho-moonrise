@@ -7,7 +7,9 @@
 - [x] 2026-11-17 — Publish wedding weekend and lodging checklist articles to the blog only; add blog discovery, metadata, routes and sitemap. Six additional Tuesday publications scheduled November 24–December 29, with ChatGPT notifications for Ashley.
 
 - [x] 2026-11-04 — Remove Off The Grid from shared desktop/mobile navigation at Ashley's request.
-Last updated: 2026-11-18 (rancho-site-daily — baked the 11/17 admin wedding hero subtitle into the static HTML. Nothing new for Ashley; the capacity and breakfast-tacos questions below are still open. Run-log: `run-logs/2026-11-18-seo.md`.)
+Last updated: 2026-11-19 (rancho-site-daily — removed the three dead YouTube cards from `/videos/` and their schema entries. Open for Ashley: whether the three videos get re-uploaded; capacity and breakfast-tacos questions below are still open. Run-log: `run-logs/2026-11-19-seo.md`.)
+
+Prior: 2026-11-18 (rancho-site-daily — baked the 11/17 admin wedding hero subtitle into the static HTML. Nothing new for Ashley; the capacity and breakfast-tacos questions below are still open. Run-log: `run-logs/2026-11-18-seo.md`.)
 
 Prior: 2026-11-17 (rancho-site-daily — baked 17 admin-saved wedding copy blocks into the static HTML; new wedding posts load site fonts and cross-link. Two new questions for Ashley added to the capacity item below. Run-log: `run-logs/2026-11-17-seo.md`.)
 
@@ -382,7 +384,9 @@ The Bing failure is the dangerous one. It produced a clean, well-formed table re
 
 Drop it in Vercel env and tell me the variable name; `scripts/serp-baseline.py` is already built and waiting. Until then the harness correctly refuses to emit numbers rather than inventing them.
 
-### NEEDS ADAM — Dead YouTube video live on `/videos/` (30 seconds) — day 25, added 2026-07-23 by `rancho-site-daily`
+### ~~NEEDS ADAM — Dead YouTube video live on `/videos/`~~ — CLOSED 2026-11-19 by `rancho-site-daily`
+
+> **Closed 2026-11-19.** By today three of the four YouTube cards were dead (`_klefu2vTwM` private; `l-tOXqwDHAI` and `IouPSeoTC5I` unavailable). All three cards and the two matching schema entries were removed in `81cbc16`. Undo with `git revert 81cbc16`. Still open, optional: re-upload the videos (or shoot the walkthrough the 11/19 audit suggests) and hand over the new IDs. Original text kept below for history.
 
 The video card **"Escape to Rancho Moonrise"** on `/videos/` points at YouTube ID `_klefu2vTwM`, which is **removed or private**. Re-verified live today (2026-08-17): thumbnail returns **404**, oembed returns **403**. The other three video IDs on the page all return 200/200, so this is isolated to one card.
 
