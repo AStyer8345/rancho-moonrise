@@ -7,7 +7,9 @@
 - [x] 2026-11-17 — Publish wedding weekend and lodging checklist articles to the blog only; add blog discovery, metadata, routes and sitemap. Six additional Tuesday publications scheduled November 24–December 29, with ChatGPT notifications for Ashley.
 
 - [x] 2026-11-04 — Remove Off The Grid from shared desktop/mobile navigation at Ashley's request.
-Last updated: 2026-11-19 (rancho-site-daily — removed the three dead YouTube cards from `/videos/` and their schema entries. Open for Ashley: whether the three videos get re-uploaded; capacity and breakfast-tacos questions below are still open. Run-log: `run-logs/2026-11-19-seo.md`.)
+Last updated: 2026-11-20 (rancho-site-daily — `/weddings/` now links the two 11/17 wedding guides; four new wedding posts got `BreadcrumbList`. Follow-up: add `BreadcrumbList` to each Tuesday post as it publishes (11/24–12/29), or add it to the publish template. Capacity and breakfast-tacos questions below are still open. Run-log: `run-logs/2026-11-20-seo.md`.)
+
+Prior: 2026-11-19 (rancho-site-daily — removed the three dead YouTube cards from `/videos/` and their schema entries. Open for Ashley: whether the three videos get re-uploaded; capacity and breakfast-tacos questions below are still open. Run-log: `run-logs/2026-11-19-seo.md`.)
 
 Prior: 2026-11-18 (rancho-site-daily — baked the 11/17 admin wedding hero subtitle into the static HTML. Nothing new for Ashley; the capacity and breakfast-tacos questions below are still open. Run-log: `run-logs/2026-11-18-seo.md`.)
 

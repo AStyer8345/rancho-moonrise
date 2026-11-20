@@ -2595,3 +2595,8 @@ Launch-blocker sweep and conversion sharpening across the primary pages, ahead o
 - Removed three dead YouTube cards from `/videos/` (`_klefu2vTwM` private; `l-tOXqwDHAI` and `IouPSeoTC5I` unavailable) and the two matching `VideoObject` schema entries (`81cbc16`, verified live). One YouTube card remains; TikTok, Instagram and Facebook cards untouched.
 - Gate: brand canary passes (extended); `/safari-tents-near-austin/` still not surfacing; sitemap 200; 35/35 routes 200; 35/35 with JSON-LD; CMS drift 1 block (held on purpose).
 - Not checked: Search Console (no API access), PageSpeed (429 quota). Run-log: `run-logs/2026-11-19-seo.md`.
+
+## 2026-11-20 — rancho-site-daily
+- `/weddings/` Related Reading now links the two guides published 11/17 (wedding weekend, lodging checklist); they were reachable only from the blog index. Added `BreadcrumbList` to the four wedding posts published 11/16–11/17 (`bb7b7bb`, verified live). Article copy untouched.
+- Gate: brand canary passes (extended); `/safari-tents-near-austin/` still not surfacing; sitemap 200; 35/35 routes 200; 35/35 with JSON-LD; CMS drift 1 block (held on purpose).
+- Not checked: Search Console (no API access), PageSpeed (429 quota). Run-log: `run-logs/2026-11-20-seo.md`.

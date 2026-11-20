@@ -1,6 +1,8 @@
 # Rancho Moonrise — Project Context
 
-**Last updated:** 2026-11-19 (rancho-site-daily — removed three dead YouTube cards and two dead `VideoObject` schema entries from `/videos/` (`81cbc16`, live). One YouTube video still plays; TikTok, Instagram and Facebook cards untouched. Revert with `git revert 81cbc16` if the videos come back. Gate: canary passes, `/safari-tents-near-austin/` still not surfacing, 35/35 routes 200 with JSON-LD. Run-log: `run-logs/2026-11-19-seo.md`.)
+**Last updated:** 2026-11-20 (rancho-site-daily — `/weddings/` Related Reading now links the two 11/17 guides (wedding weekend, lodging checklist), which were reachable only from the blog index; `BreadcrumbList` added to the four wedding posts published 11/16–11/17 (`bb7b7bb`, live). The post publisher does not emit breadcrumbs, so the six Tuesday posts scheduled through 12/29 will each need one. Gate: canary passes, `/safari-tents-near-austin/` still not surfacing, 35/35 routes 200 with JSON-LD. Run-log: `run-logs/2026-11-20-seo.md`.)
+
+**Prior entry (site-daily):** 2026-11-19 — removed three dead YouTube cards and two dead `VideoObject` entries from `/videos/` (`81cbc16`, live; `git revert 81cbc16` restores). Run-log: `run-logs/2026-11-19-seo.md`.
 
 **Prior entry (audit):** 2026-11-19 (rancho-biweekly-audit — **published audit #4: Website A, GBP C+ (down from B-), Social B-, Reviews D, Booking B+, HoneyBook B, Operations B- (down from B).** Search 7 of 10 keywords top 10; wedding page rebuilt. GBP: 17 of 148 reviews replied, two 1★ unanswered. Hipcamp and WeddingWire listing URLs both land on category pages. Homepage still says "125+" reviews (live 148); 3 of 4 `/videos/` thumbnails 404 (fixed later the same day); GA4 blank. Main checkout still mid-rebase (62 days) and holds two unpublished audits (10/15, 11/5), six metrics updates and eight review reports. Worked from worktree `../rancho-moonrise-audit-20261119`. Site-daily state from 11/18 is unchanged: see `run-logs/2026-11-18-seo.md`.)
 
@@ -67,10 +69,10 @@ The 4 accommodation files are literally 340×340 thumbnails masquerading as cont
 
 ## Last Worked On
 
+- 2026-11-20 — rancho-site-daily linked the two 11/17 wedding guides from `/weddings/` and added `BreadcrumbList` to four new wedding posts (`bb7b7bb`, live).
 - 2026-11-19 — rancho-site-daily removed three dead YouTube cards and two dead schema entries from `site/pages/videos.html` (`81cbc16`, live).
 - 2026-11-18 — rancho-site-daily baked the 11/17 admin wedding hero subtitle into `site/pages/weddings.html` (`2d805ee`, live).
 - 2026-11-18 — content-weekly: `ranch-wedding-texas.html` strengthened to 3 of 4 (photos, Ashley byline, wedding rental specifics). No approved wedding testimonial on file. Next page: `wedding-venues-near-austin.html`. Detail in `run-logs/strengthener-queue.md`.
-- 2026-11-17 — Extended the wedding story portrait downward to Ashley's marked edge on desktop and moved Private Events' complete inquiry section directly below Every Event, Your Way. Forms, admin keys, and existing content preserved.
 
 ## Mark Done System — How It Works
 
