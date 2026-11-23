@@ -2613,3 +2613,5 @@ Launch-blocker sweep and conversion sharpening across the primary pages, ahead o
 - 2026-11-23 — Ashley: published /horses/ by direct URL with her saved copy and five uploaded photos. Preserved Ranch Rides → Horses + Pilates → Private Parties → Horse Photoshoots order; added route and sitemap entry. No Horses link was added to site navigation. Admin copy/image controls and the saved-content preview remain available.
 
 - 2026-11-23 — Ashley: changed Horses hero to the same full-width photo, centered white copy and buttons used on Private Events. Preserved all editable copy/image keys and the no-navigation-link instruction; admin preview updated to match.
+
+- 2026-11-23 — Ashley: set the fourth Horses section (Horse Photoshoots) background to #8D9B79; updated the admin preview to match.
