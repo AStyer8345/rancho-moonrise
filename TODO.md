@@ -1272,3 +1272,5 @@ All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms. Li
 - [x] 2026-11-23 — Ashley: publish the four new wedding FAQ questions and answers, retaining Admin → Site Copy editing.
 
 - [x] 2026-11-23 — Ashley: keep Horses unpublished; add copy and image editors plus a saved-content draft preview to admin, with Pilates before Photoshoots.
+
+- [x] 2026-11-23 — Publish the Horses page with latest admin content; keep it out of site navigation until Ashley requests otherwise.

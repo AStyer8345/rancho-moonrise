@@ -12,145 +12,430 @@
     }
   },
   "redirects": [
-    { "source": "/event/:slug*/", "destination": "/events/", "permanent": true },
-    { "source": "/gallery/", "destination": "/accommodations/", "permanent": true },
-    { "source": "/single-testimonial/:path*/", "destination": "/", "permanent": true },
-    { "source": "/testimonial-category/:path*/", "destination": "/", "permanent": true },
-    { "source": "/events/:path+/", "destination": "/events/", "permanent": true },
-    { "source": "/ranchomoonriseevents/", "destination": "/events/", "permanent": true },
-    { "source": "/accommodation-item/:path*/", "destination": "/accommodations/", "permanent": true },
-    { "source": "/room-item/overnight-retreats-group-bookings/", "destination": "/corporate-retreats/", "permanent": true },
-    { "source": "/room-item/:path*/", "destination": "/accommodations/", "permanent": true },
-    { "source": "/overnight-retreats/", "destination": "/corporate-retreats/", "permanent": true },
-    { "source": "/amenities/", "destination": "/accommodations/", "permanent": true },
-    { "source": "/amenities-old/", "destination": "/accommodations/", "permanent": true },
-    { "source": "/single-amenities/events/", "destination": "/host-your-event/", "permanent": true },
-    { "source": "/single-amenities/neon-moon-bar-lounge/", "destination": "/host-your-event/", "permanent": true },
-    { "source": "/single-amenities/:path*/", "destination": "/accommodations/", "permanent": true },
-    { "source": "/category_media/:cat(weddings|ashleys-wedding)/:path*/", "destination": "/weddings/", "permanent": true },
-    { "source": "/category_media/:cat(events|event-barn|neon-moon)/:path*/", "destination": "/host-your-event/", "permanent": true },
-    { "source": "/category_media/:path*/", "destination": "/accommodations/", "permanent": true },
-    { "source": "/glamping-near-austin-texas/", "destination": "/blog/glamping-near-austin-texas/", "permanent": true },
-    { "source": "/wedding-venues-near-austin/", "destination": "/blog/wedding-venues-near-austin/", "permanent": true },
-    { "source": "/corporate-retreat-near-austin/", "destination": "/blog/corporate-retreat-near-austin/", "permanent": true },
-    { "source": "/corporate-retreat-planning-guide-texas/", "destination": "/blog/corporate-retreat-planning-guide-texas/", "permanent": true },
-    { "source": "/things-to-do-manor-tx/", "destination": "/blog/things-to-do-manor-tx/", "permanent": true },
-    { "source": "/things-to-do-near-austin-with-kids/", "destination": "/blog/things-to-do-near-austin-with-kids/", "permanent": true },
-    { "source": "/bachelorette-party-austin-texas/", "destination": "/blog/bachelorette-party-austin-texas/", "permanent": true },
-    { "source": "/ranch-wedding-texas/", "destination": "/blog/ranch-wedding-texas/", "permanent": true },
-    { "source": "/weekend-getaways-near-austin/", "destination": "/blog/weekend-getaways-near-austin/", "permanent": true },
-    { "source": "/pool-day-pass-austin/", "destination": "/blog/pool-day-pass-austin/", "permanent": true },
-    { "source": "/glamping-vs-camping/", "destination": "/blog/glamping-vs-camping/", "permanent": true },
-    { "source": "/summer-glamping-near-austin/", "destination": "/blog/summer-glamping-near-austin/", "permanent": true },
-    { "source": "/austin-bachelorette-ranch-vs-bar-crawl/", "destination": "/blog/austin-bachelorette-ranch-vs-bar-crawl/", "permanent": true },
-    { "source": "/corporate-retreat-ranch-vs-hotel/", "destination": "/blog/corporate-retreat-ranch-vs-hotel/", "permanent": true },
-    { "source": "/mothers-day-near-austin/", "destination": "/blog/mothers-day-near-austin/", "permanent": true },
-    { "source": "/birthday-party-venue-near-austin/", "destination": "/blog/birthday-party-venue-near-austin/", "permanent": true },
-    { "source": "/yoga-retreat-near-austin/", "destination": "/blog/yoga-retreat-near-austin/", "permanent": true }
+    {
+      "source": "/event/:slug*/",
+      "destination": "/events/",
+      "permanent": true
+    },
+    {
+      "source": "/gallery/",
+      "destination": "/accommodations/",
+      "permanent": true
+    },
+    {
+      "source": "/single-testimonial/:path*/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/testimonial-category/:path*/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/events/:path+/",
+      "destination": "/events/",
+      "permanent": true
+    },
+    {
+      "source": "/ranchomoonriseevents/",
+      "destination": "/events/",
+      "permanent": true
+    },
+    {
+      "source": "/accommodation-item/:path*/",
+      "destination": "/accommodations/",
+      "permanent": true
+    },
+    {
+      "source": "/room-item/overnight-retreats-group-bookings/",
+      "destination": "/corporate-retreats/",
+      "permanent": true
+    },
+    {
+      "source": "/room-item/:path*/",
+      "destination": "/accommodations/",
+      "permanent": true
+    },
+    {
+      "source": "/overnight-retreats/",
+      "destination": "/corporate-retreats/",
+      "permanent": true
+    },
+    {
+      "source": "/amenities/",
+      "destination": "/accommodations/",
+      "permanent": true
+    },
+    {
+      "source": "/amenities-old/",
+      "destination": "/accommodations/",
+      "permanent": true
+    },
+    {
+      "source": "/single-amenities/events/",
+      "destination": "/host-your-event/",
+      "permanent": true
+    },
+    {
+      "source": "/single-amenities/neon-moon-bar-lounge/",
+      "destination": "/host-your-event/",
+      "permanent": true
+    },
+    {
+      "source": "/single-amenities/:path*/",
+      "destination": "/accommodations/",
+      "permanent": true
+    },
+    {
+      "source": "/category_media/:cat(weddings|ashleys-wedding)/:path*/",
+      "destination": "/weddings/",
+      "permanent": true
+    },
+    {
+      "source": "/category_media/:cat(events|event-barn|neon-moon)/:path*/",
+      "destination": "/host-your-event/",
+      "permanent": true
+    },
+    {
+      "source": "/category_media/:path*/",
+      "destination": "/accommodations/",
+      "permanent": true
+    },
+    {
+      "source": "/glamping-near-austin-texas/",
+      "destination": "/blog/glamping-near-austin-texas/",
+      "permanent": true
+    },
+    {
+      "source": "/wedding-venues-near-austin/",
+      "destination": "/blog/wedding-venues-near-austin/",
+      "permanent": true
+    },
+    {
+      "source": "/corporate-retreat-near-austin/",
+      "destination": "/blog/corporate-retreat-near-austin/",
+      "permanent": true
+    },
+    {
+      "source": "/corporate-retreat-planning-guide-texas/",
+      "destination": "/blog/corporate-retreat-planning-guide-texas/",
+      "permanent": true
+    },
+    {
+      "source": "/things-to-do-manor-tx/",
+      "destination": "/blog/things-to-do-manor-tx/",
+      "permanent": true
+    },
+    {
+      "source": "/things-to-do-near-austin-with-kids/",
+      "destination": "/blog/things-to-do-near-austin-with-kids/",
+      "permanent": true
+    },
+    {
+      "source": "/bachelorette-party-austin-texas/",
+      "destination": "/blog/bachelorette-party-austin-texas/",
+      "permanent": true
+    },
+    {
+      "source": "/ranch-wedding-texas/",
+      "destination": "/blog/ranch-wedding-texas/",
+      "permanent": true
+    },
+    {
+      "source": "/weekend-getaways-near-austin/",
+      "destination": "/blog/weekend-getaways-near-austin/",
+      "permanent": true
+    },
+    {
+      "source": "/pool-day-pass-austin/",
+      "destination": "/blog/pool-day-pass-austin/",
+      "permanent": true
+    },
+    {
+      "source": "/glamping-vs-camping/",
+      "destination": "/blog/glamping-vs-camping/",
+      "permanent": true
+    },
+    {
+      "source": "/summer-glamping-near-austin/",
+      "destination": "/blog/summer-glamping-near-austin/",
+      "permanent": true
+    },
+    {
+      "source": "/austin-bachelorette-ranch-vs-bar-crawl/",
+      "destination": "/blog/austin-bachelorette-ranch-vs-bar-crawl/",
+      "permanent": true
+    },
+    {
+      "source": "/corporate-retreat-ranch-vs-hotel/",
+      "destination": "/blog/corporate-retreat-ranch-vs-hotel/",
+      "permanent": true
+    },
+    {
+      "source": "/mothers-day-near-austin/",
+      "destination": "/blog/mothers-day-near-austin/",
+      "permanent": true
+    },
+    {
+      "source": "/birthday-party-venue-near-austin/",
+      "destination": "/blog/birthday-party-venue-near-austin/",
+      "permanent": true
+    },
+    {
+      "source": "/yoga-retreat-near-austin/",
+      "destination": "/blog/yoga-retreat-near-austin/",
+      "permanent": true
+    }
   ],
   "rewrites": [
-    { "source": "/blog/wedding-weekend-near-austin/", "destination": "/pages/wedding-weekend-near-austin.html" },
-    { "source": "/blog/wedding-venue-lodging-checklist/", "destination": "/pages/wedding-venue-lodging-checklist.html" },
-    { "source": "/accommodations/", "destination": "/pages/accommodations.html" },
-    { "source": "/weddings/", "destination": "/pages/weddings.html" },
-    { "source": "/events/", "destination": "/pages/events.html" },
-    { "source": "/host-your-event/", "destination": "/pages/host-your-event.html" },
-    { "source": "/contact/", "destination": "/pages/contact.html" },
-    { "source": "/faqs/", "destination": "/pages/faqs.html" },
-    { "source": "/policies/", "destination": "/pages/policies.html" },
-    { "source": "/accessibility/", "destination": "/pages/accessibility.html" },
-    { "source": "/website-credits/", "destination": "/pages/website-credits.html" },
-    { "source": "/videos/", "destination": "/pages/videos.html" },
-    { "source": "/safari-tents-near-austin/", "destination": "/pages/safari-tents-near-austin.html" },
-    { "source": "/corporate-retreats/", "destination": "/pages/corporate-retreats.html" },
-    { "source": "/blog/", "destination": "/pages/blog.html" },
-    { "source": "/blog/glamping-near-austin-texas/", "destination": "/pages/glamping-near-austin-texas.html" },
-    { "source": "/blog/wedding-venues-near-austin/", "destination": "/pages/wedding-venues-near-austin.html" },
-    { "source": "/blog/corporate-retreat-near-austin/", "destination": "/pages/corporate-retreat-near-austin.html" },
-    { "source": "/blog/corporate-retreat-planning-guide-texas/", "destination": "/pages/corporate-retreat-planning-guide-texas.html" },
-    { "source": "/blog/things-to-do-manor-tx/", "destination": "/pages/things-to-do-manor-tx.html" },
-    { "source": "/blog/things-to-do-near-austin-with-kids/", "destination": "/pages/things-to-do-near-austin-with-kids.html" },
-    { "source": "/blog/bachelorette-party-austin-texas/", "destination": "/pages/bachelorette-party-austin-texas.html" },
-    { "source": "/blog/wedding-pricing-rancho-moonrise/", "destination": "/pages/wedding-pricing-rancho-moonrise.html" },
-    { "source": "/blog/ranch-wedding-venue-near-austin/", "destination": "/pages/ranch-wedding-venue-near-austin.html" },
-    { "source": "/blog/ranch-wedding-texas/", "destination": "/pages/ranch-wedding-texas.html" },
-    { "source": "/blog/weekend-getaways-near-austin/", "destination": "/pages/weekend-getaways-near-austin.html" },
-    { "source": "/blog/pool-day-pass-austin/", "destination": "/pages/pool-day-pass-austin.html" },
-    { "source": "/blog/glamping-vs-camping/", "destination": "/pages/glamping-vs-camping.html" },
-    { "source": "/blog/summer-glamping-near-austin/", "destination": "/pages/summer-glamping-near-austin.html" },
-    { "source": "/blog/austin-bachelorette-ranch-vs-bar-crawl/", "destination": "/pages/austin-bachelorette-ranch-vs-bar-crawl.html" },
-    { "source": "/blog/corporate-retreat-ranch-vs-hotel/", "destination": "/pages/corporate-retreat-ranch-vs-hotel.html" },
-    { "source": "/blog/mothers-day-near-austin/", "destination": "/pages/mothers-day-near-austin.html" },
-    { "source": "/blog/birthday-party-venue-near-austin/", "destination": "/pages/birthday-party-venue-near-austin.html" },
-    { "source": "/blog/yoga-retreat-near-austin/", "destination": "/pages/yoga-retreat-near-austin.html" }
+    {
+      "source": "/blog/wedding-weekend-near-austin/",
+      "destination": "/pages/wedding-weekend-near-austin.html"
+    },
+    {
+      "source": "/blog/wedding-venue-lodging-checklist/",
+      "destination": "/pages/wedding-venue-lodging-checklist.html"
+    },
+    {
+      "source": "/accommodations/",
+      "destination": "/pages/accommodations.html"
+    },
+    {
+      "source": "/weddings/",
+      "destination": "/pages/weddings.html"
+    },
+    {
+      "source": "/events/",
+      "destination": "/pages/events.html"
+    },
+    {
+      "source": "/host-your-event/",
+      "destination": "/pages/host-your-event.html"
+    },
+    {
+      "source": "/contact/",
+      "destination": "/pages/contact.html"
+    },
+    {
+      "source": "/faqs/",
+      "destination": "/pages/faqs.html"
+    },
+    {
+      "source": "/policies/",
+      "destination": "/pages/policies.html"
+    },
+    {
+      "source": "/accessibility/",
+      "destination": "/pages/accessibility.html"
+    },
+    {
+      "source": "/website-credits/",
+      "destination": "/pages/website-credits.html"
+    },
+    {
+      "source": "/videos/",
+      "destination": "/pages/videos.html"
+    },
+    {
+      "source": "/safari-tents-near-austin/",
+      "destination": "/pages/safari-tents-near-austin.html"
+    },
+    {
+      "source": "/corporate-retreats/",
+      "destination": "/pages/corporate-retreats.html"
+    },
+    {
+      "source": "/blog/",
+      "destination": "/pages/blog.html"
+    },
+    {
+      "source": "/blog/glamping-near-austin-texas/",
+      "destination": "/pages/glamping-near-austin-texas.html"
+    },
+    {
+      "source": "/blog/wedding-venues-near-austin/",
+      "destination": "/pages/wedding-venues-near-austin.html"
+    },
+    {
+      "source": "/blog/corporate-retreat-near-austin/",
+      "destination": "/pages/corporate-retreat-near-austin.html"
+    },
+    {
+      "source": "/blog/corporate-retreat-planning-guide-texas/",
+      "destination": "/pages/corporate-retreat-planning-guide-texas.html"
+    },
+    {
+      "source": "/blog/things-to-do-manor-tx/",
+      "destination": "/pages/things-to-do-manor-tx.html"
+    },
+    {
+      "source": "/blog/things-to-do-near-austin-with-kids/",
+      "destination": "/pages/things-to-do-near-austin-with-kids.html"
+    },
+    {
+      "source": "/blog/bachelorette-party-austin-texas/",
+      "destination": "/pages/bachelorette-party-austin-texas.html"
+    },
+    {
+      "source": "/blog/wedding-pricing-rancho-moonrise/",
+      "destination": "/pages/wedding-pricing-rancho-moonrise.html"
+    },
+    {
+      "source": "/blog/ranch-wedding-venue-near-austin/",
+      "destination": "/pages/ranch-wedding-venue-near-austin.html"
+    },
+    {
+      "source": "/blog/ranch-wedding-texas/",
+      "destination": "/pages/ranch-wedding-texas.html"
+    },
+    {
+      "source": "/blog/weekend-getaways-near-austin/",
+      "destination": "/pages/weekend-getaways-near-austin.html"
+    },
+    {
+      "source": "/blog/pool-day-pass-austin/",
+      "destination": "/pages/pool-day-pass-austin.html"
+    },
+    {
+      "source": "/blog/glamping-vs-camping/",
+      "destination": "/pages/glamping-vs-camping.html"
+    },
+    {
+      "source": "/blog/summer-glamping-near-austin/",
+      "destination": "/pages/summer-glamping-near-austin.html"
+    },
+    {
+      "source": "/blog/austin-bachelorette-ranch-vs-bar-crawl/",
+      "destination": "/pages/austin-bachelorette-ranch-vs-bar-crawl.html"
+    },
+    {
+      "source": "/blog/corporate-retreat-ranch-vs-hotel/",
+      "destination": "/pages/corporate-retreat-ranch-vs-hotel.html"
+    },
+    {
+      "source": "/blog/mothers-day-near-austin/",
+      "destination": "/pages/mothers-day-near-austin.html"
+    },
+    {
+      "source": "/blog/birthday-party-venue-near-austin/",
+      "destination": "/pages/birthday-party-venue-near-austin.html"
+    },
+    {
+      "source": "/blog/yoga-retreat-near-austin/",
+      "destination": "/pages/yoga-retreat-near-austin.html"
+    },
+    {
+      "source": "/horses/",
+      "destination": "/pages/horses.html"
+    }
   ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
       ]
     },
     {
       "source": "/images/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/css/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/admin/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" },
-        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
       ]
     },
     {
       "source": "/improvement-plan.html",
       "headers": [
-        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" },
-        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
       ]
     },
     {
       "source": "/brand-audit.html",
       "headers": [
-        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
       ]
     },
     {
       "source": "/mockup-preview.html",
       "headers": [
-        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
       ]
     },
     {
       "source": "/dashboard.html",
       "headers": [
-        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
       ]
     },
     {
       "source": "/report.html",
       "headers": [
-        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
       ]
     },
     {
       "source": "/competitive-intelligence.html",
       "headers": [
-        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
       ]
     },
     {
       "source": "/audits/(.*)",
       "headers": [
-        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
       ]
     }
   ]
