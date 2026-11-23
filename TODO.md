@@ -1286,3 +1286,5 @@ All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms. Li
 - [x] 2026-11-23 — Reduce blank space above Horses hero text.
 
 - [x] 2026-11-23 — Match Private Parties photo size to the other three Horses experience sections.
+
+- [x] 2026-11-23 — Link Horses next to Private Events in desktop/mobile main navigation across the site.

@@ -69,6 +69,8 @@ The 4 accommodation files are literally 340×340 thumbnails masquerading as cont
 
 ## Last Worked On
 
+- 2026-11-23 — Ashley authorized adding Horses immediately after Private Events in desktop and mobile main navigation across all 36 public page templates; admin Horses preview matches. Supersedes the earlier instruction to leave Horses out of navigation.
+
 - 2026-11-23 — Ashley: removed the Private Parties portrait image override so all four Horses experience photos use the same full-column 4:3 landscape frame; admin preview matches.
 
 - 2026-11-23 — Ashley: vertically centered the shorter Horses hero copy and reduced its vertical padding to remove excess space above the heading; admin preview matches.
