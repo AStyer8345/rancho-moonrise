@@ -2617,3 +2617,5 @@ Launch-blocker sweep and conversion sharpening across the primary pages, ahead o
 - 2026-11-23 — Ashley: set the fourth Horses section (Horse Photoshoots) background to #8D9B79; updated the admin preview to match.
 
 - 2026-11-23 — Fixed Horses hero image upload crop from 1:1 to 16:9, matching other desktop full-width heroes; existing uploads are preserved.
+
+- 2026-11-23 — Ashley: removed the Horses hero experiences-list sentence and its admin copy control, including any saved legacy row in the editor. Kept “A little more ranch in your plans.” as the single sentence beneath the heading; admin preview matches.

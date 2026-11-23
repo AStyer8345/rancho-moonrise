@@ -1280,3 +1280,5 @@ All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms. Li
 - [x] 2026-11-23 — Set fourth Horses section background to #8D9B79.
 
 - [x] 2026-11-23 — Correct Horses hero cropper to 16:9.
+
+- [x] 2026-11-23 — Remove the experiences-list sentence from the Horses hero and admin; keep the short tagline.
