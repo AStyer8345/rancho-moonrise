@@ -1284,3 +1284,5 @@ All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms. Li
 - [x] 2026-11-23 — Remove the experiences-list sentence from the Horses hero and admin; keep the short tagline.
 
 - [x] 2026-11-23 — Reduce blank space above Horses hero text.
+
+- [x] 2026-11-23 — Match Private Parties photo size to the other three Horses experience sections.
