@@ -1,5 +1,10 @@
 # Rancho Moonrise — Changelog
 
+## 2026-11-23 — Horses photo strip
+
+- Added five contiguous square horse photos after the inquiry form, with responsive mobile scrolling.
+- Added five editable Horses image slots and synced the admin preview.
+
 ## 2026-11-19
 
 - **rancho-biweekly-audit:** Published audit #4, `site/audits/2026-11-19-business-audit.html`. Covers 56 days since 09-24. The 10/15 and 11/5 audits exist only as untracked files in the stuck main checkout and were never published; this audit compares against 09-24 and the 04-09 baseline.

@@ -1,5 +1,7 @@
 # Rancho Moonrise — TODO
 
+- [x] 2026-11-23 — Add an admin-editable photo strip after the Horses inquiry section.
+
 - [x] 2026-11-17 — Move Private Events inquiry directly below Every Event, Your Way and its event cards.
 
 - [x] 2026-11-17 — Extend wedding story portrait down to Ashley's marked lower edge on desktop.

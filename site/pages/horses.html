@@ -28,6 +28,16 @@
 /* Center the shorter Horses hero copy vertically instead of bottom-aligning it. */
 body[data-page="horses"] .hero { align-items: center; }
 body[data-page="horses"] .hero__content--centered { padding-block: 48px; }
+
+/* Edge-to-edge photo bar, editable under Site Images > Horses. */
+.horses-photo-bar { margin:0; padding:32px 0 0; background:#a1afad; }
+.horses-photo-bar__images { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); }
+.horses-photo-bar__images img { display:block; width:100%; height:auto; aspect-ratio:1/1; object-fit:cover; }
+@media(max-width:700px) {
+  .horses-photo-bar__images { display:flex; overflow-x:auto; scroll-snap-type:x mandatory; }
+  .horses-photo-bar__images img { flex:0 0 45%; width:45%; scroll-snap-align:start; }
+}
+
 html { scroll-behavior:smooth; }
 .horses-jump { display:flex;justify-content:center;gap:clamp(18px,4vw,65px);padding:25px 22px;border-bottom:1px solid #d7ccba;flex-wrap:wrap;background:#eee6d8; }
 .horses-jump a { font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.08em; }
@@ -181,7 +191,16 @@ html { scroll-behavior:smooth; }
 <button type="submit" class="btn btn--primary" style="width:100%"><span data-copy-key="horses_inquiry_submit">Send Inquiry</span></button>
 </form>
 <p class="horses-small text-center"><span data-copy-key="horses_inquiry_rides_prompt">Looking for a ranch ride?</span> <a href="/events/#calendar" data-copy-key="horses_inquiry_rides_link">See dates on the event calendar.</a></p>
-</div></section></main>
+</div></section>
+<div class="horses-photo-bar" role="group" aria-label="Horse experiences at Rancho Moonrise">
+<div class="horses-photo-bar__images">
+<img data-image-slot="horses_gallery_1" src="https://uuqedsvjlkeszrbwzizl.supabase.co/storage/v1/object/public/rancho-moonrise/site-images/horses_hero/v1795465454759-1024.webp" alt="Horses at Rancho Moonrise" width="600" height="600" sizes="(max-width:700px) 45vw, 20vw" loading="lazy" decoding="async">
+<img data-image-slot="horses_gallery_2" src="https://uuqedsvjlkeszrbwzizl.supabase.co/storage/v1/object/public/rancho-moonrise/site-images/horses_rides/v1795465499327-1024.webp" alt="Horseback riding at the ranch" width="600" height="600" sizes="(max-width:700px) 45vw, 20vw" loading="lazy" decoding="async">
+<img data-image-slot="horses_gallery_3" src="https://uuqedsvjlkeszrbwzizl.supabase.co/storage/v1/object/public/rancho-moonrise/site-images/horses_pilates/v1795465528185-1024.webp" alt="Horses and Pilates at Rancho Moonrise" width="600" height="600" sizes="(max-width:700px) 45vw, 20vw" loading="lazy" decoding="async">
+<img data-image-slot="horses_gallery_4" src="https://uuqedsvjlkeszrbwzizl.supabase.co/storage/v1/object/public/rancho-moonrise/site-images/horses_parties/v1795465597553-1024.webp" alt="Horse and bull appearances at a ranch party" width="600" height="600" sizes="(max-width:700px) 45vw, 20vw" loading="lazy" decoding="async">
+<img data-image-slot="horses_gallery_5" src="https://uuqedsvjlkeszrbwzizl.supabase.co/storage/v1/object/public/rancho-moonrise/site-images/horses_photoshoots/v1795465570372-1024.webp" alt="Horse photoshoot at Rancho Moonrise" width="600" height="600" sizes="(max-width:700px) 45vw, 20vw" loading="lazy" decoding="async">
+</div></div>
+</main>
 
 <footer class="footer" role="contentinfo">
     <div class="container">

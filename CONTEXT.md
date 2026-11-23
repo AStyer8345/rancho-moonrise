@@ -69,6 +69,8 @@ The 4 accommodation files are literally 340×340 thumbnails masquerading as cont
 
 ## Last Worked On
 
+- 2026-11-23 — Ashley: added a full-width five-photo horse image bar immediately after the Horses inquiry section. Square photo slots are editable in Site Images → Horses, with horizontal swipe on mobile and a matching admin page preview.
+
 - 2026-11-23 — Ashley authorized adding Horses immediately after Private Events in desktop and mobile main navigation across all 36 public page templates; admin Horses preview matches. Supersedes the earlier instruction to leave Horses out of navigation.
 
 - 2026-11-23 — Ashley: removed the Private Parties portrait image override so all four Horses experience photos use the same full-column 4:3 landscape frame; admin preview matches.
