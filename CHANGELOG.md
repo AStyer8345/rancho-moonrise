@@ -2615,3 +2615,5 @@ Launch-blocker sweep and conversion sharpening across the primary pages, ahead o
 - 2026-11-23 — Ashley: changed Horses hero to the same full-width photo, centered white copy and buttons used on Private Events. Preserved all editable copy/image keys and the no-navigation-link instruction; admin preview updated to match.
 
 - 2026-11-23 — Ashley: set the fourth Horses section (Horse Photoshoots) background to #8D9B79; updated the admin preview to match.
+
+- 2026-11-23 — Fixed Horses hero image upload crop from 1:1 to 16:9, matching other desktop full-width heroes; existing uploads are preserved.

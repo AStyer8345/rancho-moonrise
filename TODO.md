@@ -1278,3 +1278,5 @@ All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms. Li
 - [x] 2026-11-23 — Match Horses hero to the full-width, centered Private Events layout.
 
 - [x] 2026-11-23 — Set fourth Horses section background to #8D9B79.
+
+- [x] 2026-11-23 — Correct Horses hero cropper to 16:9.
