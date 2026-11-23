@@ -26,13 +26,6 @@
 <noscript><style>.fade-in,.reveal,.reveal-stagger > *{opacity:1!important;transform:none!important}.faq-answer{max-height:none!important}form[action="#"]{display:none!important}</style></noscript>
 <style>
 html { scroll-behavior:smooth; }
-.horses-hero { display:grid;grid-template-columns:1.1fr 1fr;min-height:650px;background:#eee6d8;padding-top:90px; }
-.horses-hero__copy { align-self:center;padding:70px max(36px,6vw); }
-.horses-hero h1 { font-family:var(--font-accent);font-weight:400;font-size:clamp(80px,9vw,148px);line-height:1;margin:10px 0 24px; }
-.horses-hero__intro { font-size:clamp(24px,2.4vw,36px);line-height:1.25;max-width:460px; }
-.horses-hero__copy>p { margin-bottom:24px; }
-.horses-hero__image { min-height:540px;overflow:hidden; }
-.horses-hero__image img { width:100%;height:100%;object-fit:cover; }
 .horses-jump { display:flex;justify-content:center;gap:clamp(18px,4vw,65px);padding:25px 22px;border-bottom:1px solid #d7ccba;flex-wrap:wrap;background:#eee6d8; }
 .horses-jump a { font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.08em; }
 .horses-section,.horses-inquiry { scroll-margin-top:100px; }
@@ -53,15 +46,12 @@ html { scroll-behavior:smooth; }
 .horses-inquiry form { margin-top:42px; }
 .horses-form-grid { display:grid;grid-template-columns:1fr 1fr;gap:0 24px; }
 @media(max-width:900px) {
- .horses-hero { grid-template-columns:1fr;min-height:0; }
- .horses-hero__copy { padding:60px 24px 40px; }
- .horses-hero__image { min-height:0;height:360px; }
- .horses-split { grid-template-columns:1fr;gap:32px; }
+    .horses-split { grid-template-columns:1fr;gap:32px; }
  .horses-split--reverse .horses-photo { order:0; }
  .horses-jump { gap:16px 25px; }
  .horses-jump a { font-size:11px; }
 }
-@media(max-width:560px) { .horses-form-grid { grid-template-columns:1fr; } .horses-hero .btn-group { flex-direction:column;align-items:stretch; } .horses-hero .btn { text-align:center;white-space:normal; } }
+@media(max-width:560px) { .horses-form-grid { grid-template-columns:1fr; } }
 @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
 </style>
 </head>
@@ -119,15 +109,19 @@ html { scroll-behavior:smooth; }
 </div>
 
 <main id="main">
-<header class="horses-hero">
-<div class="horses-hero__copy">
-<span data-copy-key="horses_hero_label" class="section-label">RANCHO MOONRISE</span>
-<h1 data-copy-key="horses_hero_title">Horses.</h1>
-<p data-copy-key="horses_hero_heading" class="horses-hero__intro">A little more ranch in your plans.</p>
-<p data-copy-key="horses_hero_body">Ranch rides, horses + pilates, photoshoots, horse + bull appearances - all at Rancho Moonrise.</p>
+<section class="hero hero--page" aria-label="Horses at Rancho Moonrise">
+    <div class="hero__bg parallax-hero">
+        <img srcset="https://uuqedsvjlkeszrbwzizl.supabase.co/storage/v1/object/public/rancho-moonrise/site-images/horses_hero/v1795465454759-480.webp 480w, https://uuqedsvjlkeszrbwzizl.supabase.co/storage/v1/object/public/rancho-moonrise/site-images/horses_hero/v1795465454759-1024.webp 1024w, https://uuqedsvjlkeszrbwzizl.supabase.co/storage/v1/object/public/rancho-moonrise/site-images/horses_hero/v1795465454759-1920.webp 1920w, https://uuqedsvjlkeszrbwzizl.supabase.co/storage/v1/object/public/rancho-moonrise/site-images/horses_hero/v1795465454759-2560.webp 2560w" sizes="100vw" data-image-slot="horses_hero" src="https://uuqedsvjlkeszrbwzizl.supabase.co/storage/v1/object/public/rancho-moonrise/site-images/horses_hero/v1795465454759-1024.webp" alt="Horse experiences at Rancho Moonrise" width="1024" height="768" fetchpriority="high" decoding="async">
+    </div>
+    <div class="hero__content hero__content--centered">
+
+<span data-copy-key="horses_hero_label" class="hero__label">RANCHO MOONRISE</span>
+<h1 class="hero__title" data-copy-key="horses_hero_title">Horses.</h1>
+<p data-copy-key="horses_hero_heading" class="hero__subtitle hero__subtitle--small">A little more ranch in your plans.</p>
+<p class="hero__subtitle hero__subtitle--small" data-copy-key="horses_hero_body">Ranch rides, horses + pilates, photoshoots, horse + bull appearances - all at Rancho Moonrise.</p>
 <div class="btn-group"><a class="btn btn--primary" href="/events/#calendar" data-copy-key="horses_hero_calendar_url" data-copy-attr="href" ><span data-copy-key="horses_hero_calendar">Explore Ranch Rides</span></a><a class="btn btn--outline" href="#horse-inquiry"><span data-copy-key="horses_hero_inquire">Plan a Private Experience</span></a></div>
-</div><div class="horses-hero__image"><img srcset="https://uuqedsvjlkeszrbwzizl.supabase.co/storage/v1/object/public/rancho-moonrise/site-images/horses_hero/v1795465454759-480.webp 480w, https://uuqedsvjlkeszrbwzizl.supabase.co/storage/v1/object/public/rancho-moonrise/site-images/horses_hero/v1795465454759-1024.webp 1024w, https://uuqedsvjlkeszrbwzizl.supabase.co/storage/v1/object/public/rancho-moonrise/site-images/horses_hero/v1795465454759-1920.webp 1920w, https://uuqedsvjlkeszrbwzizl.supabase.co/storage/v1/object/public/rancho-moonrise/site-images/horses_hero/v1795465454759-2560.webp 2560w" sizes="(min-width: 901px) 50vw, 100vw" data-image-slot="horses_hero" src="https://uuqedsvjlkeszrbwzizl.supabase.co/storage/v1/object/public/rancho-moonrise/site-images/horses_hero/v1795465454759-1024.webp" alt="Horse experiences at Rancho Moonrise" width="1024" height="768" fetchpriority="high" decoding="async"></div>
-</header>
+    </div>
+</section>
 <nav class="horses-jump" aria-label="Horse experiences"><a href="#ranch-rides" data-copy-key="horses_jump_ranch_rides">Ranch Rides</a><a href="#horses-pilates" data-copy-key="horses_jump_horses_pilates">Horses + Pilates</a><a href="#horse-parties" data-copy-key="horses_jump_horse_parties">Private Parties</a><a href="#horse-photoshoots" data-copy-key="horses_jump_horse_photoshoots">Photoshoots</a></nav>
 <section id="ranch-rides" class="section horses-section" aria-labelledby="rides-title">
 <div class="container horses-split"><div class="horses-photo"><img srcset="https://uuqedsvjlkeszrbwzizl.supabase.co/storage/v1/object/public/rancho-moonrise/site-images/horses_rides/v1795465499327-480.webp 480w, https://uuqedsvjlkeszrbwzizl.supabase.co/storage/v1/object/public/rancho-moonrise/site-images/horses_rides/v1795465499327-1024.webp 1024w, https://uuqedsvjlkeszrbwzizl.supabase.co/storage/v1/object/public/rancho-moonrise/site-images/horses_rides/v1795465499327-1920.webp 1920w, https://uuqedsvjlkeszrbwzizl.supabase.co/storage/v1/object/public/rancho-moonrise/site-images/horses_rides/v1795465499327-2560.webp 2560w" sizes="(min-width: 901px) 50vw, 100vw" data-image-slot="horses_rides" src="https://uuqedsvjlkeszrbwzizl.supabase.co/storage/v1/object/public/rancho-moonrise/site-images/horses_rides/v1795465499327-1024.webp" alt="Ranch rides at Rancho Moonrise" width="1024" height="768" loading="lazy" decoding="async"></div><div class="horses-copy">
