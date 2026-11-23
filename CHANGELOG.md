@@ -2600,3 +2600,8 @@ Launch-blocker sweep and conversion sharpening across the primary pages, ahead o
 - `/weddings/` Related Reading now links the two guides published 11/17 (wedding weekend, lodging checklist); they were reachable only from the blog index. Added `BreadcrumbList` to the four wedding posts published 11/16–11/17 (`bb7b7bb`, verified live). Article copy untouched.
 - Gate: brand canary passes (extended); `/safari-tents-near-austin/` still not surfacing; sitemap 200; 35/35 routes 200; 35/35 with JSON-LD; CMS drift 1 block (held on purpose).
 - Not checked: Search Console (no API access), PageSpeed (429 quota). Run-log: `run-logs/2026-11-20-seo.md`.
+
+## 2026-11-23 — rancho-site-daily
+- `<title>` on `/blog/wedding-weekend-near-austin/` and `/blog/wedding-venue-lodging-checklist/` cut from 80 and 83 characters to the headline alone (61 and 64) by dropping the ` | Rancho Moonrise` suffix. Headline, H1, OG and schema text untouched. Added a Twitter card to `/videos/`, mirroring its Open Graph values (`48aac73`, verified live).
+- Gate: brand canary passes (extended); `/safari-tents-near-austin/` still not surfacing; sitemap 200; 35/35 routes 200; 35/35 with JSON-LD; CMS drift as reported in the run-log.
+- Not checked: Search Console (no API access), PageSpeed. Run-log: `run-logs/2026-11-23-seo.md`.

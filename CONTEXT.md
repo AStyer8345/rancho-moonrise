@@ -1,8 +1,8 @@
 # Rancho Moonrise — Project Context
 
-**Last updated:** 2026-11-20 (rancho-site-daily — `/weddings/` Related Reading now links the two 11/17 guides (wedding weekend, lodging checklist), which were reachable only from the blog index; `BreadcrumbList` added to the four wedding posts published 11/16–11/17 (`bb7b7bb`, live). The post publisher does not emit breadcrumbs, so the six Tuesday posts scheduled through 12/29 will each need one. Gate: canary passes, `/safari-tents-near-austin/` still not surfacing, 35/35 routes 200 with JSON-LD. Run-log: `run-logs/2026-11-20-seo.md`.)
+**Last updated:** 2026-11-23 (rancho-site-daily — trimmed the `<title>` on the two 11/17 wedding posts from 80 and 83 characters to the headline alone (61 and 64) so Google stops cutting them off; added a Twitter card to `/videos/`, the only page without one (`48aac73`, live). Gate: canary passes, `/safari-tents-near-austin/` still not surfacing, 35/35 routes 200 with JSON-LD. No run 11/21–11/22. Run-log: `run-logs/2026-11-23-seo.md`.)
 
-**Prior entry (site-daily):** 2026-11-19 — removed three dead YouTube cards and two dead `VideoObject` entries from `/videos/` (`81cbc16`, live; `git revert 81cbc16` restores). Run-log: `run-logs/2026-11-19-seo.md`.
+**Prior entry (site-daily):** 2026-11-20 — `/weddings/` Related Reading links the two 11/17 guides; `BreadcrumbList` added to the four 11/16–11/17 wedding posts (`bb7b7bb`, live). The post publisher does not emit breadcrumbs, so the six Tuesday posts scheduled through 12/29 will each need one. 2026-11-19 — removed three dead YouTube cards and two dead `VideoObject` entries from `/videos/` (`81cbc16`, live). Run-logs: `run-logs/2026-11-20-seo.md`, `run-logs/2026-11-19-seo.md`.
 
 **Prior entry (audit):** 2026-11-19 (rancho-biweekly-audit — **published audit #4: Website A, GBP C+ (down from B-), Social B-, Reviews D, Booking B+, HoneyBook B, Operations B- (down from B).** Search 7 of 10 keywords top 10; wedding page rebuilt. GBP: 17 of 148 reviews replied, two 1★ unanswered. Hipcamp and WeddingWire listing URLs both land on category pages. Homepage still says "125+" reviews (live 148); 3 of 4 `/videos/` thumbnails 404 (fixed later the same day); GA4 blank. Main checkout still mid-rebase (62 days) and holds two unpublished audits (10/15, 11/5), six metrics updates and eight review reports. Worked from worktree `../rancho-moonrise-audit-20261119`. Site-daily state from 11/18 is unchanged: see `run-logs/2026-11-18-seo.md`.)
 
@@ -69,9 +69,9 @@ The 4 accommodation files are literally 340×340 thumbnails masquerading as cont
 
 ## Last Worked On
 
+- 2026-11-23 — rancho-site-daily trimmed two over-long wedding post titles and added a Twitter card to `/videos/` (`48aac73`, live).
 - 2026-11-20 — rancho-site-daily linked the two 11/17 wedding guides from `/weddings/` and added `BreadcrumbList` to four new wedding posts (`bb7b7bb`, live).
 - 2026-11-19 — rancho-site-daily removed three dead YouTube cards and two dead schema entries from `site/pages/videos.html` (`81cbc16`, live).
-- 2026-11-18 — rancho-site-daily baked the 11/17 admin wedding hero subtitle into `site/pages/weddings.html` (`2d805ee`, live).
 - 2026-11-18 — content-weekly: `ranch-wedding-texas.html` strengthened to 3 of 4 (photos, Ashley byline, wedding rental specifics). No approved wedding testimonial on file. Next page: `wedding-venues-near-austin.html`. Detail in `run-logs/strengthener-queue.md`.
 
 ## Mark Done System — How It Works
