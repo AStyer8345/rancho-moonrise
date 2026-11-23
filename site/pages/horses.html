@@ -25,6 +25,9 @@
     <link rel="icon" href="/images/favicon.png" type="image/png">
 <noscript><style>.fade-in,.reveal,.reveal-stagger > *{opacity:1!important;transform:none!important}.faq-answer{max-height:none!important}form[action="#"]{display:none!important}</style></noscript>
 <style>
+/* Center the shorter Horses hero copy vertically instead of bottom-aligning it. */
+body[data-page="horses"] .hero { align-items: center; }
+body[data-page="horses"] .hero__content--centered { padding-block: 48px; }
 html { scroll-behavior:smooth; }
 .horses-jump { display:flex;justify-content:center;gap:clamp(18px,4vw,65px);padding:25px 22px;border-bottom:1px solid #d7ccba;flex-wrap:wrap;background:#eee6d8; }
 .horses-jump a { font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.08em; }

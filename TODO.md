@@ -1282,3 +1282,5 @@ All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms. Li
 - [x] 2026-11-23 — Correct Horses hero cropper to 16:9.
 
 - [x] 2026-11-23 — Remove the experiences-list sentence from the Horses hero and admin; keep the short tagline.
+
+- [x] 2026-11-23 — Reduce blank space above Horses hero text.
