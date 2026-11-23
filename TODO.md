@@ -1270,3 +1270,5 @@ All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms. Li
 - [x] 2026-11-14 — Moved Host Your Event’s What Drives Event Pricing section to the end of main content, after the FAQ and inquiry CTA and before the footer. Preserved copy and admin editing keys. Verified section order and unchanged remaining markup.
 
 - [x] 2026-11-23 — Ashley: publish the four new wedding FAQ questions and answers, retaining Admin → Site Copy editing.
+
+- [x] 2026-11-23 — Ashley: keep Horses unpublished; add copy and image editors plus a saved-content draft preview to admin, with Pilates before Photoshoots.

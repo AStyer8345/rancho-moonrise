@@ -2607,3 +2607,5 @@ Launch-blocker sweep and conversion sharpening across the primary pages, ahead o
 - Not checked: Search Console (no API access), PageSpeed. Run-log: `run-logs/2026-11-23-seo.md`.
 
 - 2026-11-23 — Published Ashley’s four wedding FAQs (rain plan, optional lodging and complimentary couple’s room, private guest booking/buyout, and one-day versus full-weekend access); connected all eight saved admin fields and added matching FAQ search metadata.
+
+- 2026-11-23 — Ashley: added an unpublished Horse Page Draft inside the authenticated admin with saved-content preview, 53 editable copy fields and five replaceable image slots. Section order is Ranch Rides, Horses + Pilates, Private Parties, Horse Photoshoots. Draft source is drafts/horses.html; no public /horses/ route, sitemap or navigation change.

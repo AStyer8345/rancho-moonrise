@@ -69,6 +69,8 @@ The 4 accommodation files are literally 340×340 thumbnails masquerading as cont
 
 ## Last Worked On
 
+- 2026-11-23 — Ashley: added an unpublished Horse Page Draft inside the authenticated admin with saved-content preview, 53 editable copy fields and five replaceable image slots. Section order is Ranch Rides, Horses + Pilates, Private Parties, Horse Photoshoots. Draft source is drafts/horses.html; no public /horses/ route, sitemap or navigation change.
+
 - 2026-11-23 — Published Ashley’s four wedding FAQs (rain plan, optional lodging and complimentary couple’s room, private guest booking/buyout, and one-day versus full-weekend access); connected all eight saved admin fields and added matching FAQ search metadata.
 
 - 2026-11-23 — rancho-site-daily trimmed two over-long wedding post titles and added a Twitter card to `/videos/` (`48aac73`, live).

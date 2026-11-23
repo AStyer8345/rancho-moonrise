@@ -498,6 +498,7 @@
         <button class="tab-btn" data-tab="galleries">Galleries</button>
         <button class="tab-btn" data-tab="site-images">Site Images</button>
         <button class="tab-btn" data-tab="site-copy">Site Copy</button>
+        <button class="tab-btn" data-tab="horse-draft">Horse Page Draft</button>
         <button class="tab-btn" data-tab="faqs">FAQs</button>
         <button class="tab-btn" data-tab="reviews">Reviews</button>
     </div>
@@ -564,6 +565,19 @@
         </div>
         <p style="color: var(--text-muted); margin-bottom: 16px; font-size: 0.9rem;">Edit text blocks on the public site — grouped by page. Changes go live immediately on next page reload — no deploy needed.</p>
         <div id="siteCopyList" class="loading">Loading site copy...</div>
+    </div>
+
+
+    <div class="tab-content" id="tab-horse-draft">
+        <div class="section-header"><h2>Horse Page Draft</h2><span>Unpublished</span></div>
+        <p style="margin-bottom:16px;color:var(--text-muted)">Review the draft here. Edit its copy and five photos using the buttons below, save each change, then refresh the preview. The public Horses page is not published.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px">
+            <button class="btn btn--secondary" id="horseEditCopy">Edit Horse Copy</button>
+            <button class="btn btn--secondary" id="horseEditImages">Edit Horse Images</button>
+            <button class="btn btn--primary" id="horseRefresh">Refresh Draft Preview</button>
+        </div>
+        <p id="horseDraftStatus" role="status" style="margin-bottom:12px"></p>
+        <iframe id="horseDraftFrame" title="Unpublished horse page preview" sandbox="allow-same-origin" style="width:100%;height:900px;border:1px solid var(--border);background:white"></iframe>
     </div>
 
     <!-- FAQ EDITOR TAB -->
@@ -771,6 +785,7 @@
                     <option value="weddings">Weddings</option>
                     <option value="events">Events</option>
                     <option value="host_event">Host Your Event</option>
+                    <option value="horses">Horses (Draft)</option>
                     <option value="pool">Pool Day Pass</option>
                     <option value="contact">Contact</option>
                     <option value="faqs">FAQs</option>
@@ -970,6 +985,12 @@ function showDashboard(user) {
 // thumbnail when no Supabase row exists yet so Ashley can see what's there
 // before replacing it. Path is absolute from site root.
 var SITE_IMAGE_SLOTS = [
+    {"slotKey": "horses_hero", "page": "horses", "label": "Hero — Main photo", "aspectRatio": "1:1", "defaultUrl": "/images/corral-waylon-texas-1024.webp"},
+    {"slotKey": "horses_rides", "page": "horses", "label": "Ranch Rides — Photo", "aspectRatio": "4:3", "defaultUrl": "/images/about-ranch-aerial-1024.webp"},
+    {"slotKey": "horses_pilates", "page": "horses", "label": "Horses + Pilates — Class photo", "aspectRatio": "4:3", "defaultUrl": "/images/retreat-yoga-barn.jpg"},
+    {"slotKey": "horses_parties", "page": "horses", "label": "Private Parties — Horse + bull photo", "aspectRatio": "4:3", "defaultUrl": "/images/bachelorette-bull.jpg"},
+    {"slotKey": "horses_photoshoots", "page": "horses", "label": "Horse Photoshoots — Photo", "aspectRatio": "4:3", "defaultUrl": "/images/corral-hank-willie-1024.webp"},
+
     {"slotKey":"host_event_stay_1","page":"host_event","label":"Guest accommodations — Photo 1 — Casita exterior","aspectRatio":"4:5","defaultUrl":"https://uuqedsvjlkeszrbwzizl.supabase.co/storage/v1/object/public/rancho-moonrise/site-images/weddings_stay_casita_exterior/v1794632094410-1024.webp"},
     {"slotKey":"host_event_stay_2","page":"host_event","label":"Guest accommodations — Photo 2 — Double-bed safari tent","aspectRatio":"4:5","defaultUrl":"https://uuqedsvjlkeszrbwzizl.supabase.co/storage/v1/object/public/rancho-moonrise/site-images/weddings_stay_casita_interior/v1794632231763-1024.webp"},
     {"slotKey":"host_event_stay_3","page":"host_event","label":"Guest accommodations — Photo 3 — Rustic accommodation interior","aspectRatio":"4:5","defaultUrl":"https://uuqedsvjlkeszrbwzizl.supabase.co/storage/v1/object/public/rancho-moonrise/site-images/weddings_stay_family_safari/v1794632243038-1024.webp"},
@@ -1157,6 +1178,7 @@ $$('.tab-btn').forEach(function(btn) {
         this.classList.add('is-active');
         $('#tab-' + this.dataset.tab).classList.add('is-active');
         if (this.dataset.tab === 'faqs') loadFAQEditor();
+        if (this.dataset.tab === 'horse-draft') loadHorseDraft();
     });
 });
 
@@ -1678,6 +1700,7 @@ var PAGE_LABELS = {
     weddings: 'Weddings',
     events: 'Events',
     host_event: 'Host Your Event',
+    horses: 'Horses (Draft)',
     pool: 'Pool Day Pass',
     contact: 'Contact',
     faqs: 'FAQs',
@@ -1685,7 +1708,7 @@ var PAGE_LABELS = {
 };
 
 function pageSortRank(p) {
-    var order = ['home','accommodations','weddings','events','host_event','pool','contact','faqs','global'];
+    var order = ['home','accommodations','weddings','events','host_event','horses','pool','contact','faqs','global'];
     var idx = order.indexOf(p);
     return idx === -1 ? 100 + p.charCodeAt(0) : idx;
 }
@@ -2942,7 +2965,328 @@ var WEDDING_STORY_DEFAULTS = [
   {"block_key":"weddings_story_cta","page":"weddings","label":"Teal wedding story — Link text","body":"Let's plan your wedding"},
   {"block_key":"weddings_story_cta_url","page":"weddings","label":"Teal wedding story — Link destination","body":"#wedding-inquiry"}
 ];
-var EDITABLE_COPY_DEFAULTS = WEDDING_COPY_DEFAULTS.concat(WEDDING_INCLUSIONS_DEFAULTS, HOST_EVENT_COPY_DEFAULTS, WEDDING_STORY_DEFAULTS);
+var HORSES_COPY_DEFAULTS = [
+  {
+    "block_key": "horses_hero_label",
+    "page": "horses",
+    "label": "Hero — hero label",
+    "body": "RANCHO MOONRISE"
+  },
+  {
+    "block_key": "horses_hero_title",
+    "page": "horses",
+    "label": "Hero — hero title",
+    "body": "Horses."
+  },
+  {
+    "block_key": "horses_hero_heading",
+    "page": "horses",
+    "label": "Hero — hero heading",
+    "body": "A little more ranch in your plans."
+  },
+  {
+    "block_key": "horses_hero_body",
+    "page": "horses",
+    "label": "Hero — hero body",
+    "body": "Ranch rides, horse photoshoots, horse + bull appearances, and private Horses + Pilates classes — all at Rancho Moonrise, 20 minutes from downtown Austin."
+  },
+  {
+    "block_key": "horses_hero_calendar_url",
+    "page": "horses",
+    "label": "Hero — hero calendar url",
+    "body": "/events/#calendar"
+  },
+  {
+    "block_key": "horses_hero_calendar",
+    "page": "horses",
+    "label": "Hero — hero calendar",
+    "body": "Explore Ranch Rides"
+  },
+  {
+    "block_key": "horses_hero_inquire",
+    "page": "horses",
+    "label": "Hero — hero inquire",
+    "body": "Plan a Private Experience"
+  },
+  {
+    "block_key": "horses_jump_ranch_rides",
+    "page": "horses",
+    "label": "Experience navigation — ranch rides",
+    "body": "Ranch Rides"
+  },
+  {
+    "block_key": "horses_jump_horses_pilates",
+    "page": "horses",
+    "label": "Experience navigation — horses pilates",
+    "body": "Horses + Pilates"
+  },
+  {
+    "block_key": "horses_jump_horse_parties",
+    "page": "horses",
+    "label": "Experience navigation — horse parties",
+    "body": "Private Parties"
+  },
+  {
+    "block_key": "horses_jump_horse_photoshoots",
+    "page": "horses",
+    "label": "Experience navigation — horse photoshoots",
+    "body": "Photoshoots"
+  },
+  {
+    "block_key": "horses_rides_label",
+    "page": "horses",
+    "label": "Ranch Rides — rides label",
+    "body": "01 / SADDLE UP"
+  },
+  {
+    "block_key": "horses_rides_title",
+    "page": "horses",
+    "label": "Ranch Rides — rides title",
+    "body": "Ranch Rides"
+  },
+  {
+    "block_key": "horses_rides_body",
+    "page": "horses",
+    "label": "Ranch Rides — rides body",
+    "body": "See the ranch from the saddle. Join us for a horseback ride and a little time out in the fresh air at Rancho Moonrise."
+  },
+  {
+    "block_key": "horses_rides_details",
+    "page": "horses",
+    "label": "Ranch Rides — rides details",
+    "body": "Visit our event calendar for upcoming ranch ride dates and booking details."
+  },
+  {
+    "block_key": "horses_rides_cta_url",
+    "page": "horses",
+    "label": "Ranch Rides — rides cta url",
+    "body": "/events/#calendar"
+  },
+  {
+    "block_key": "horses_rides_cta",
+    "page": "horses",
+    "label": "Ranch Rides — rides cta",
+    "body": "View the Event Calendar"
+  },
+  {
+    "block_key": "horses_pilates_label",
+    "page": "horses",
+    "label": "Horses + Pilates — pilates label",
+    "body": "02 / MOVE. CONNECT. UNWIND."
+  },
+  {
+    "block_key": "horses_pilates_title",
+    "page": "horses",
+    "label": "Horses + Pilates — pilates title",
+    "body": "Horses + Pilates"
+  },
+  {
+    "block_key": "horses_pilates_body",
+    "page": "horses",
+    "label": "Horses + Pilates — pilates body",
+    "body": "A private class, your favorite people, and a little ranch time. Bring your group together for Horses + Pilates at Rancho Moonrise."
+  },
+  {
+    "block_key": "horses_pilates_details",
+    "page": "horses",
+    "label": "Horses + Pilates — pilates details",
+    "body": "Planning a birthday, bachelorette gathering, or a day with friends? Send us your date and group size. We’ll share class details, availability, and pricing to help you plan."
+  },
+  {
+    "block_key": "horses_pilates_cta_url",
+    "page": "horses",
+    "label": "Horses + Pilates — pilates cta url",
+    "body": "#horse-inquiry"
+  },
+  {
+    "block_key": "horses_pilates_cta",
+    "page": "horses",
+    "label": "Horses + Pilates — pilates cta",
+    "body": "Inquire About a Private Class"
+  },
+  {
+    "block_key": "horses_parties_label",
+    "page": "horses",
+    "label": "Private Parties — parties label",
+    "body": "03 / BRING THE RANCH TO THE PARTY"
+  },
+  {
+    "block_key": "horses_parties_title",
+    "page": "horses",
+    "label": "Private Parties — parties title",
+    "body": "Horses + Bulls. Private Parties."
+  },
+  {
+    "block_key": "horses_parties_body",
+    "page": "horses",
+    "label": "Private Parties — parties body",
+    "body": "Make your celebration a little more Rancho. Ask about adding horses, a bull, or both to your private party at the ranch."
+  },
+  {
+    "block_key": "horses_parties_details",
+    "page": "horses",
+    "label": "Private Parties — parties details",
+    "body": "Share your event date, guest count, and the experience you’re picturing. Our team will help you explore the options for your celebration."
+  },
+  {
+    "block_key": "horses_parties_cta_url",
+    "page": "horses",
+    "label": "Private Parties — parties cta url",
+    "body": "#horse-inquiry"
+  },
+  {
+    "block_key": "horses_parties_cta",
+    "page": "horses",
+    "label": "Private Parties — parties cta",
+    "body": "Inquire About Your Party"
+  },
+  {
+    "block_key": "horses_photoshoots_label",
+    "page": "horses",
+    "label": "Horse Photoshoots — photoshoots label",
+    "body": "04 / MAKE IT A MOMENT"
+  },
+  {
+    "block_key": "horses_photoshoots_title",
+    "page": "horses",
+    "label": "Horse Photoshoots — photoshoots title",
+    "body": "Horse Photoshoots"
+  },
+  {
+    "block_key": "horses_photoshoots_body",
+    "page": "horses",
+    "label": "Horse Photoshoots — photoshoots body",
+    "body": "Bring a little Western character to your next shoot. Plan a horse photoshoot at Rancho Moonrise, with open ranch views and a setting that feels entirely its own."
+  },
+  {
+    "block_key": "horses_photoshoots_details",
+    "page": "horses",
+    "label": "Horse Photoshoots — photoshoots details",
+    "body": "Tell us your preferred date, the type of shoot, and what you have in mind. We’ll follow up with availability and details."
+  },
+  {
+    "block_key": "horses_photoshoots_cta_url",
+    "page": "horses",
+    "label": "Horse Photoshoots — photoshoots cta url",
+    "body": "#horse-inquiry"
+  },
+  {
+    "block_key": "horses_photoshoots_cta",
+    "page": "horses",
+    "label": "Horse Photoshoots — photoshoots cta",
+    "body": "Inquire About a Photoshoot"
+  },
+  {
+    "block_key": "horses_inquiry_label",
+    "page": "horses",
+    "label": "Inquiry — inquiry label",
+    "body": "LET’S MAKE A PLAN"
+  },
+  {
+    "block_key": "horses_inquiry_title",
+    "page": "horses",
+    "label": "Inquiry — inquiry title",
+    "body": "Tell Us What You Have in Mind"
+  },
+  {
+    "block_key": "horses_inquiry_intro",
+    "page": "horses",
+    "label": "Inquiry — inquiry intro",
+    "body": "Choose your experience and share a few details. We’ll follow up with availability, pricing, and next steps."
+  },
+  {
+    "block_key": "horses_form_experience_label",
+    "page": "horses",
+    "label": "Inquiry — form experience label",
+    "body": "I’m Interested In *"
+  },
+  {
+    "block_key": "horses_form_name_label",
+    "page": "horses",
+    "label": "Inquiry — form name label",
+    "body": "Full Name *"
+  },
+  {
+    "block_key": "horses_form_phone_label",
+    "page": "horses",
+    "label": "Inquiry — form phone label",
+    "body": "Phone *"
+  },
+  {
+    "block_key": "horses_form_email_label",
+    "page": "horses",
+    "label": "Inquiry — form email label",
+    "body": "Email *"
+  },
+  {
+    "block_key": "horses_form_date_label",
+    "page": "horses",
+    "label": "Inquiry — form date label",
+    "body": "Preferred Date(s) *"
+  },
+  {
+    "block_key": "horses_form_date_placeholder",
+    "page": "horses",
+    "label": "Inquiry — form date placeholder",
+    "body": "A date or flexible date range"
+  },
+  {
+    "block_key": "horses_form_guests_label",
+    "page": "horses",
+    "label": "Inquiry — form guests label",
+    "body": "Group Size *"
+  },
+  {
+    "block_key": "horses_form_budget_label",
+    "page": "horses",
+    "label": "Inquiry — form budget label",
+    "body": "Estimated Budget"
+  },
+  {
+    "block_key": "horses_form_budget_placeholder",
+    "page": "horses",
+    "label": "Inquiry — form budget placeholder",
+    "body": "Optional"
+  },
+  {
+    "block_key": "horses_form_details_label",
+    "page": "horses",
+    "label": "Inquiry — form details label",
+    "body": "Tell Us More"
+  },
+  {
+    "block_key": "horses_form_details_placeholder",
+    "page": "horses",
+    "label": "Inquiry — form details placeholder",
+    "body": "Tell us about your plans and any questions."
+  },
+  {
+    "block_key": "horses_inquiry_submit",
+    "page": "horses",
+    "label": "Inquiry — inquiry submit",
+    "body": "Send Inquiry"
+  },
+  {
+    "block_key": "horses_inquiry_rides_prompt",
+    "page": "horses",
+    "label": "Inquiry — inquiry rides prompt",
+    "body": "Looking for a ranch ride?"
+  },
+  {
+    "block_key": "horses_inquiry_rides_link",
+    "page": "horses",
+    "label": "Inquiry — inquiry rides link",
+    "body": "See dates on the event calendar."
+  },
+  {
+    "block_key": "horses_sticky_cta",
+    "page": "horses",
+    "label": "Inquiry — sticky cta",
+    "body": "Inquire About a Private Experience"
+  }
+];
+
+var EDITABLE_COPY_DEFAULTS = WEDDING_COPY_DEFAULTS.concat(WEDDING_INCLUSIONS_DEFAULTS, HOST_EVENT_COPY_DEFAULTS, WEDDING_STORY_DEFAULTS, HORSES_COPY_DEFAULTS);
 
 async function loadSiteCopy() {
     var container = $('#siteCopyList');
@@ -3423,7 +3767,66 @@ document.addEventListener('keydown', function(e) {
         $$('.modal-overlay.is-open').forEach(function(m) { m.classList.remove('is-open'); });
     }
 });
+
+var HORSE_DRAFT_HTML = "\u003c!DOCTYPE html>\n\u003chtml lang=\"en\">\n\u003chead>\n    \u003cmeta name=\"robots\" content=\"noindex,nofollow\">\n    \u003cmeta charset=\"UTF-8\">\n    \u003cmeta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    \u003ctitle>Horses — Ranch Rides, Photoshoots &amp; Pilates | Rancho Moonrise\u003c/title>\n    \u003cmeta name=\"description\" content=\"Ranch rides, horse photoshoots, horse and bull appearances, and private Horses + Pilates classes at Rancho Moonrise, 20 minutes from downtown Austin.\">\n    \u003clink rel=\"canonical\" href=\"https://ranchomoonrise.com/horses/\">\n    \u003cmeta property=\"og:title\" content=\"Horses at Rancho Moonrise\">\n    \u003cmeta property=\"og:description\" content=\"Ranch rides, horse photoshoots, horse and bull appearances, and private Horses + Pilates classes at Rancho Moonrise, 20 minutes from downtown Austin.\">\n    \u003cmeta property=\"og:type\" content=\"website\">\n    \u003cmeta property=\"og:url\" content=\"https://ranchomoonrise.com/horses/\">\n    \u003cmeta property=\"og:image\" content=\"https://ranchomoonrise.com/images/corral-waylon-texas-1024.webp\">\n    \u003cmeta property=\"og:site_name\" content=\"Rancho Moonrise\">\n    \u003cmeta name=\"twitter:card\" content=\"summary_large_image\">\n    \u003cmeta name=\"twitter:title\" content=\"Horses at Rancho Moonrise\">\n    \u003cmeta name=\"twitter:description\" content=\"Ranch rides, horse photoshoots, horse and bull appearances, and private Horses + Pilates classes at Rancho Moonrise, 20 minutes from downtown Austin.\">\n    \u003cmeta name=\"twitter:image\" content=\"https://ranchomoonrise.com/images/corral-waylon-texas-1024.webp\">\n    \u003cscript type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"WebPage\",\"name\":\"Horses at Rancho Moonrise\",\"description\":\"Ranch rides, horse photoshoots, horse and bull appearances, and private Horses + Pilates classes at Rancho Moonrise, 20 minutes from downtown Austin.\",\"url\":\"https://ranchomoonrise.com/horses/\",\"isPartOf\":{\"@type\":\"WebSite\",\"name\":\"Rancho Moonrise\",\"url\":\"https://ranchomoonrise.com/\"}}\u003c/script>\n    \u003clink rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n    \u003clink rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n    \u003clink href=\"https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Overpass:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap\" rel=\"stylesheet\" media=\"print\" onload=\"this.media='all'\">\n    \u003cnoscript>\u003clink href=\"https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Overpass:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap\" rel=\"stylesheet\">\u003c/noscript>\n    \u003clink rel=\"stylesheet\" href=\"/css/styles.css?v=22\">\n    \u003clink rel=\"icon\" href=\"/images/favicon.png\" type=\"image/png\">\n\u003cnoscript>\u003cstyle>.fade-in,.reveal,.reveal-stagger > *{opacity:1!important;transform:none!important}.faq-answer{max-height:none!important}form[action=\"#\"]{display:none!important}\u003c/style>\u003c/noscript>\n\u003cstyle>\nhtml { scroll-behavior:smooth; }\n.horses-hero { display:grid;grid-template-columns:1.1fr 1fr;min-height:650px;background:#eee6d8;padding-top:90px; }\n.horses-hero__copy { align-self:center;padding:70px max(36px,6vw); }\n.horses-hero h1 { font-family:var(--font-accent);font-weight:400;font-size:clamp(80px,9vw,148px);line-height:1;margin:10px 0 24px; }\n.horses-hero__intro { font-size:clamp(24px,2.4vw,36px);line-height:1.25;max-width:460px; }\n.horses-hero__copy>p { margin-bottom:24px; }\n.horses-hero__image { min-height:540px;overflow:hidden; }\n.horses-hero__image img { width:100%;height:100%;object-fit:cover; }\n.horses-jump { display:flex;justify-content:center;gap:clamp(18px,4vw,65px);padding:25px 22px;border-bottom:1px solid #d7ccba;flex-wrap:wrap;background:#eee6d8; }\n.horses-jump a { font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.08em; }\n.horses-section,.horses-inquiry { scroll-margin-top:100px; }\n.horses-split { display:grid;grid-template-columns:1fr 1fr;gap:clamp(35px,7vw,100px);align-items:center; }\n.horses-split--reverse .horses-photo { order:2; }\n.horses-photo { aspect-ratio:4/3;overflow:hidden; }\n.horses-photo img { width:100%;height:100%;object-fit:cover; }\n.horses-photo--portrait { max-width:382px;width:100%;aspect-ratio:382/510;margin:auto; }\n.horses-copy h2 { font-family:var(--font-accent);font-size:clamp(40px,4.4vw,64px);font-weight:400;line-height:1.08;margin:15px 0 25px; }\n.horses-copy p { margin:0 0 22px;line-height:1.7; }\n.horses-copy .btn { margin-top:8px; }\n.horses-section--cream { background:#eee6d8; }\n.horses-section--sage { background:#a1afad; }\n.horses-small { margin-top:24px!important;font-size:14px; }\n.horses-small a { text-decoration:underline;text-underline-offset:4px; }\n.horses-inquiry .container--narrow { max-width:800px;margin:auto;padding:0 24px; }\n.horses-inquiry h2 { font-size:clamp(34px,4vw,52px); }\n.horses-inquiry form { margin-top:42px; }\n.horses-form-grid { display:grid;grid-template-columns:1fr 1fr;gap:0 24px; }\n@media(max-width:900px) {\n .horses-hero { grid-template-columns:1fr;min-height:0; }\n .horses-hero__copy { padding:60px 24px 40px; }\n .horses-hero__image { min-height:0;height:360px; }\n .horses-split { grid-template-columns:1fr;gap:32px; }\n .horses-split--reverse .horses-photo { order:0; }\n .horses-jump { gap:16px 25px; }\n .horses-jump a { font-size:11px; }\n}\n@media(max-width:560px) { .horses-form-grid { grid-template-columns:1fr; } .horses-hero .btn-group { flex-direction:column;align-items:stretch; } .horses-hero .btn { text-align:center;white-space:normal; } }\n@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }\n\u003c/style>\n\u003c/head>\n\u003cbody data-page=\"horses\">\n\n\u003ca href=\"#main\" class=\"skip-link\">Skip to main content\u003c/a>\n\n\u003cnav class=\"nav\" role=\"navigation\" aria-label=\"Main navigation\">\n    \u003cdiv class=\"nav__inner\">\n        \u003ca href=\"/events/\" class=\"nav__pre-link\" data-event=\"happenings_click\">Happenings\u003c/a>\n        \u003ca href=\"/\" class=\"nav__logo\" aria-label=\"Rancho Moonrise — Home\">\n            \u003cimg src=\"/images/rancho-logo-300.webp\" alt=\"Rancho Moonrise\" class=\"nav__logo-img\" width=\"88\" height=\"88\">\n        \u003c/a>\n\n        \u003cul class=\"nav__links\">\n            \u003cli>\u003ca href=\"/accommodations/\">Accommodations\u003c/a>\u003c/li>\n            \u003cli>\u003ca href=\"/weddings/\">Weddings\u003c/a>\u003c/li>\n            \u003cli>\u003ca href=\"/host-your-event/\">Private Events\u003c/a>\u003c/li>\n            \u003cli>\u003ca href=\"/horses/\">Horses\u003c/a>\u003c/li>\n            \u003cli>\u003ca href=\"/contact/\">Contact\u003c/a>\u003c/li>\n            \u003cli>\u003ca href=\"https://hotels.cloudbeds.com/en/reservation/5tzv1r\" class=\"btn btn--primary\" target=\"_blank\" rel=\"noopener\">Book Now\u003c/a>\u003c/li>\n            \u003cli>\u003ca href=\"https://www.resortpass.com/hotels/rancho-moonrise\" class=\"btn btn--primary\" target=\"_blank\" rel=\"noopener\">Pool Passes\u003c/a>\u003c/li>\n            \u003cli class=\"nav__social-group\" aria-label=\"Social media links\">\n                \u003ca href=\"https://www.instagram.com/rancho_moonrise/\" class=\"nav__social nav__social--primary\" target=\"_blank\" rel=\"noopener\" aria-label=\"Rancho Moonrise on Instagram (13K+ followers)\">\n                    \u003csvg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\">\u003crect x=\"2\" y=\"2\" width=\"20\" height=\"20\" rx=\"5\" ry=\"5\"/>\u003cpath d=\"M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z\"/>\u003cline x1=\"17.5\" y1=\"6.5\" x2=\"17.51\" y2=\"6.5\"/>\u003c/svg>\n                \u003c/a>\n                \u003ca href=\"https://www.tiktok.com/@rancho_moonrise\" class=\"nav__social\" target=\"_blank\" rel=\"noopener\" aria-label=\"Rancho Moonrise on TikTok\">\n                    \u003csvg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\">\u003cpath d=\"M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.84-.1z\"/>\u003c/svg>\n                \u003c/a>\n            \u003c/li>\n        \u003c/ul>\n\n        \u003cbutton class=\"nav__toggle\" aria-label=\"Open navigation menu\" aria-expanded=\"false\">\n            \u003cspan>\u003c/span>\u003cspan>\u003c/span>\u003cspan>\u003c/span>\n        \u003c/button>\n    \u003c/div>\n\u003c/nav>\n\u003cdiv class=\"nav__mobile\" id=\"mobileMenu\" role=\"dialog\" aria-label=\"Mobile navigation\">\n    \u003cbutton class=\"nav__close\" aria-label=\"Close navigation menu\">&times;\u003c/button>\n    \u003ca href=\"/\">Home\u003c/a>\n    \u003ca href=\"/accommodations/\">Accommodations\u003c/a>\n    \u003ca href=\"/weddings/\">Weddings\u003c/a>\n    \u003ca href=\"/events/\">Happenings\u003c/a>\n    \u003ca href=\"/host-your-event/\">Private Events\u003c/a>\n    \u003ca href=\"/horses/\">Horses\u003c/a>\n    \u003ca href=\"/contact/\">Contact\u003c/a>\n    \u003ca href=\"https://hotels.cloudbeds.com/en/reservation/5tzv1r\" class=\"btn btn--primary\" target=\"_blank\" rel=\"noopener\">Book Now\u003c/a>\n    \u003ca href=\"https://www.resortpass.com/hotels/rancho-moonrise\" class=\"btn btn--primary\" target=\"_blank\" rel=\"noopener\">Pool Passes\u003c/a>\n    \u003cdiv class=\"nav__mobile-social\" aria-label=\"Social media links\">\n        \u003ca href=\"https://www.instagram.com/rancho_moonrise/\" target=\"_blank\" rel=\"noopener\" aria-label=\"Rancho Moonrise on Instagram\">\n            \u003csvg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\">\u003crect x=\"2\" y=\"2\" width=\"20\" height=\"20\" rx=\"5\" ry=\"5\"/>\u003cpath d=\"M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z\"/>\u003cline x1=\"17.5\" y1=\"6.5\" x2=\"17.51\" y2=\"6.5\"/>\u003c/svg>\n        \u003c/a>\n        \u003ca href=\"https://www.tiktok.com/@rancho_moonrise\" target=\"_blank\" rel=\"noopener\" aria-label=\"Rancho Moonrise on TikTok\">\n            \u003csvg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\">\u003cpath d=\"M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.84-.1z\"/>\u003c/svg>\n        \u003c/a>\n    \u003c/div>\n\u003c/div>\n\n\u003cmain id=\"main\">\n\u003cheader class=\"horses-hero\">\n\u003cdiv class=\"horses-hero__copy\">\n\u003cspan data-copy-key=\"horses_hero_label\" class=\"section-label\">RANCHO MOONRISE\u003c/span>\n\u003ch1 data-copy-key=\"horses_hero_title\">Horses.\u003c/h1>\n\u003cp data-copy-key=\"horses_hero_heading\" class=\"horses-hero__intro\">A little more ranch in your plans.\u003c/p>\n\u003cp data-copy-key=\"horses_hero_body\">Ranch rides, horse photoshoots, horse + bull appearances, and private Horses + Pilates classes — all at Rancho Moonrise, 20 minutes from downtown Austin.\u003c/p>\n\u003cdiv class=\"btn-group\">\u003ca class=\"btn btn--primary\" href=\"/events/#calendar\" data-copy-key=\"horses_hero_calendar_url\" data-copy-attr=\"href\" >\u003cspan data-copy-key=\"horses_hero_calendar\">Explore Ranch Rides\u003c/span>\u003c/a>\u003ca class=\"btn btn--outline\" href=\"#horse-inquiry\">\u003cspan data-copy-key=\"horses_hero_inquire\">Plan a Private Experience\u003c/span>\u003c/a>\u003c/div>\n\u003c/div>\u003cdiv class=\"horses-hero__image\">\u003cimg data-image-slot=\"horses_hero\" src=\"/images/corral-waylon-texas-1024.webp\" alt=\"Western corral signs and open ranch setting at Rancho Moonrise\" width=\"1024\" height=\"768\" fetchpriority=\"high\" decoding=\"async\">\u003c/div>\n\u003c/header>\n\u003cnav class=\"horses-jump\" aria-label=\"Horse experiences\">\u003ca href=\"#ranch-rides\" data-copy-key=\"horses_jump_ranch_rides\">Ranch Rides\u003c/a>\u003ca href=\"#horses-pilates\" data-copy-key=\"horses_jump_horses_pilates\">Horses + Pilates\u003c/a>\u003ca href=\"#horse-parties\" data-copy-key=\"horses_jump_horse_parties\">Private Parties\u003c/a>\u003ca href=\"#horse-photoshoots\" data-copy-key=\"horses_jump_horse_photoshoots\">Photoshoots\u003c/a>\u003c/nav>\n\u003csection id=\"ranch-rides\" class=\"section horses-section\" aria-labelledby=\"rides-title\">\n\u003cdiv class=\"container horses-split\">\u003cdiv class=\"horses-photo\">\u003cimg data-image-slot=\"horses_rides\" src=\"/images/about-ranch-aerial-1024.webp\" alt=\"Aerial view of the open grounds at Rancho Moonrise\" width=\"1024\" height=\"768\" loading=\"lazy\" decoding=\"async\">\u003c/div>\u003cdiv class=\"horses-copy\">\n\u003cspan data-copy-key=\"horses_rides_label\" class=\"section-label\">01 / SADDLE UP\u003c/span>\n\u003ch2 data-copy-key=\"horses_rides_title\" id=\"rides-title\">Ranch Rides\u003c/h2>\n\u003cp data-copy-key=\"horses_rides_body\">See the ranch from the saddle. Join us for a horseback ride and a little time out in the fresh air at Rancho Moonrise.\u003c/p>\n\u003cp data-copy-key=\"horses_rides_details\">Visit our event calendar for upcoming ranch ride dates and booking details.\u003c/p>\n\u003ca class=\"btn btn--primary\" href=\"/events/#calendar\" data-copy-key=\"horses_rides_cta_url\" data-copy-attr=\"href\" >\u003cspan data-copy-key=\"horses_rides_cta\">View the Event Calendar\u003c/span>\u003c/a>\n\u003c/div>\u003c/div>\u003c/section>\n\u003csection id=\"horses-pilates\" class=\"section horses-section horses-section--sage\" aria-labelledby=\"pilates-title\">\n\u003cdiv class=\"container horses-split horses-split--reverse\">\u003cdiv class=\"horses-photo\">\u003cimg data-image-slot=\"horses_pilates\" src=\"/images/retreat-yoga-barn.jpg\" alt=\"Group movement class in the Event Barn at Rancho Moonrise\" width=\"1024\" height=\"768\" loading=\"lazy\" decoding=\"async\">\u003c/div>\u003cdiv class=\"horses-copy\">\n\u003cspan data-copy-key=\"horses_pilates_label\" class=\"section-label\">02 / MOVE. CONNECT. UNWIND.\u003c/span>\n\u003ch2 data-copy-key=\"horses_pilates_title\" id=\"pilates-title\">Horses + Pilates\u003c/h2>\n\u003cp data-copy-key=\"horses_pilates_body\">A private class, your favorite people, and a little ranch time. Bring your group together for Horses + Pilates at Rancho Moonrise.\u003c/p>\n\u003cp data-copy-key=\"horses_pilates_details\">Planning a birthday, bachelorette gathering, or a day with friends? Send us your date and group size. We’ll share class details, availability, and pricing to help you plan.\u003c/p>\n\u003ca class=\"btn btn--primary\" href=\"#horse-inquiry\" data-copy-key=\"horses_pilates_cta_url\" data-copy-attr=\"href\" data-horse-experience=\"Private Horses + Pilates Class\">\u003cspan data-copy-key=\"horses_pilates_cta\">Inquire About a Private Class\u003c/span>\u003c/a>\n\u003c/div>\u003c/div>\u003c/section>\n\u003csection id=\"horse-parties\" class=\"section horses-section\" aria-labelledby=\"parties-title\">\n\u003cdiv class=\"container horses-split\">\u003cdiv class=\"horses-photo horses-photo--portrait\">\u003cimg data-image-slot=\"horses_parties\" src=\"/images/bachelorette-bull.jpg\" alt=\"Guest with a longhorn bull at Rancho Moonrise\" width=\"1024\" height=\"768\" loading=\"lazy\" decoding=\"async\">\u003c/div>\u003cdiv class=\"horses-copy\">\n\u003cspan data-copy-key=\"horses_parties_label\" class=\"section-label\">03 / BRING THE RANCH TO THE PARTY\u003c/span>\n\u003ch2 data-copy-key=\"horses_parties_title\" id=\"parties-title\">Horses + Bulls. Private Parties.\u003c/h2>\n\u003cp data-copy-key=\"horses_parties_body\">Make your celebration a little more Rancho. Ask about adding horses, a bull, or both to your private party at the ranch.\u003c/p>\n\u003cp data-copy-key=\"horses_parties_details\">Share your event date, guest count, and the experience you’re picturing. Our team will help you explore the options for your celebration.\u003c/p>\n\u003ca class=\"btn btn--primary\" href=\"#horse-inquiry\" data-copy-key=\"horses_parties_cta_url\" data-copy-attr=\"href\" data-horse-experience=\"Horse + Bull at a Private Party\">\u003cspan data-copy-key=\"horses_parties_cta\">Inquire About Your Party\u003c/span>\u003c/a>\n\u003cp class=\"horses-small\">\u003ca href=\"/host-your-event/\">Explore private events at Rancho Moonrise →\u003c/a>\u003c/p>\n\u003c/div>\u003c/div>\u003c/section>\n\u003csection id=\"horse-photoshoots\" class=\"section horses-section horses-section--cream\" aria-labelledby=\"photoshoots-title\">\n\u003cdiv class=\"container horses-split horses-split--reverse\">\u003cdiv class=\"horses-photo\">\u003cimg data-image-slot=\"horses_photoshoots\" src=\"/images/corral-hank-willie-1024.webp\" alt=\"Hand-painted corral signs at Rancho Moonrise\" width=\"1024\" height=\"768\" loading=\"lazy\" decoding=\"async\">\u003c/div>\u003cdiv class=\"horses-copy\">\n\u003cspan data-copy-key=\"horses_photoshoots_label\" class=\"section-label\">04 / MAKE IT A MOMENT\u003c/span>\n\u003ch2 data-copy-key=\"horses_photoshoots_title\" id=\"photoshoots-title\">Horse Photoshoots\u003c/h2>\n\u003cp data-copy-key=\"horses_photoshoots_body\">Bring a little Western character to your next shoot. Plan a horse photoshoot at Rancho Moonrise, with open ranch views and a setting that feels entirely its own.\u003c/p>\n\u003cp data-copy-key=\"horses_photoshoots_details\">Tell us your preferred date, the type of shoot, and what you have in mind. We’ll follow up with availability and details.\u003c/p>\n\u003ca class=\"btn btn--primary\" href=\"#horse-inquiry\" data-copy-key=\"horses_photoshoots_cta_url\" data-copy-attr=\"href\" data-horse-experience=\"Horse Photoshoot\">\u003cspan data-copy-key=\"horses_photoshoots_cta\">Inquire About a Photoshoot\u003c/span>\u003c/a>\n\u003c/div>\u003c/div>\u003c/section>\n\u003csection id=\"horse-inquiry\" class=\"section horses-inquiry\" aria-labelledby=\"horse-inquiry-title\">\u003cdiv class=\"container--narrow\">\n\u003cdiv class=\"text-center\">\n\u003cspan data-copy-key=\"horses_inquiry_label\" class=\"section-label\">LET’S MAKE A PLAN\u003c/span>\n\u003ch2 data-copy-key=\"horses_inquiry_title\" id=\"horse-inquiry-title\">Tell Us What You Have in Mind\u003c/h2>\n\u003cp data-copy-key=\"horses_inquiry_intro\">Choose your experience and share a few details. We’ll follow up with availability, pricing, and next steps.\u003c/p>\n\u003c/div>\n\u003cnoscript>\u003cp>To send an inquiry, please enable JavaScript, call \u003ca href=\"tel:+17372911260\">737-291-1260\u003c/a>, or email \u003ca href=\"mailto:events@ranchomoonrise.com\">events@ranchomoonrise.com\u003c/a>.\u003c/p>\u003c/noscript>\n\u003cform action=\"#\" method=\"POST\" aria-label=\"Horse experience inquiry form\">\n\u003cinput type=\"hidden\" name=\"inquiry_type\" value=\"event\">\u003cinput type=\"hidden\" name=\"event_type\" value=\"private\">\u003cinput type=\"hidden\" name=\"source_page\" value=\"horses\">\n\u003cdiv class=\"form-group\">\u003clabel for=\"horse-experience\" data-copy-key=\"horses_form_experience_label\">I’m Interested In *\u003c/label>\u003cselect id=\"horse-experience\" name=\"experience\" required>\u003coption value=\"\">Choose an experience...\u003c/option>\u003coption value=\"Horse Photoshoot\">Horse Photoshoot\u003c/option>\u003coption value=\"Horse + Bull at a Private Party\">Horse + Bull at a Private Party\u003c/option>\u003coption value=\"Private Horses + Pilates Class\">Private Horses + Pilates Class\u003c/option>\u003c/select>\u003c/div>\n\u003cdiv class=\"horses-form-grid\">\n\u003cdiv class=\"form-group\">\u003clabel for=\"horse-name\" data-copy-key=\"horses_form_name_label\">Full Name *\u003c/label>\u003cinput id=\"horse-name\" name=\"name\" type=\"text\" autocomplete=\"name\" required>\u003c/div>\n\u003cdiv class=\"form-group\">\u003clabel for=\"horse-phone\" data-copy-key=\"horses_form_phone_label\">Phone *\u003c/label>\u003cinput id=\"horse-phone\" name=\"phone\" type=\"tel\" autocomplete=\"tel\" required>\u003c/div>\n\u003cdiv class=\"form-group\">\u003clabel for=\"horse-email\" data-copy-key=\"horses_form_email_label\">Email *\u003c/label>\u003cinput id=\"horse-email\" name=\"email\" type=\"email\" autocomplete=\"email\" required>\u003c/div>\n\u003cdiv class=\"form-group\">\u003clabel for=\"horse-date\" data-copy-key=\"horses_form_date_label\">Preferred Date(s) *\u003c/label>\u003cinput id=\"horse-date\" name=\"dates\" type=\"text\" placeholder=\"A date or flexible date range\" required data-copy-key=\"horses_form_date_placeholder\" data-copy-attr=\"placeholder\">\u003c/div>\n\u003cdiv class=\"form-group\">\u003clabel for=\"horse-guests\" data-copy-key=\"horses_form_guests_label\">Group Size *\u003c/label>\u003cinput id=\"horse-guests\" name=\"guests\" type=\"number\" min=\"1\" required>\u003c/div>\n\u003cdiv class=\"form-group\">\u003clabel for=\"horse-budget\" data-copy-key=\"horses_form_budget_label\">Estimated Budget\u003c/label>\u003cinput id=\"horse-budget\" name=\"budget\" type=\"text\" placeholder=\"Optional\" data-copy-key=\"horses_form_budget_placeholder\" data-copy-attr=\"placeholder\">\u003c/div>\n\u003c/div>\n\u003cdiv class=\"form-group\">\u003clabel for=\"horse-details\" data-copy-key=\"horses_form_details_label\">Tell Us More\u003c/label>\u003ctextarea id=\"horse-details\" name=\"details\" rows=\"4\" placeholder=\"Tell us about your plans and any questions.\" data-copy-key=\"horses_form_details_placeholder\" data-copy-attr=\"placeholder\">\u003c/textarea>\u003c/div>\n\u003cbutton type=\"submit\" class=\"btn btn--primary\" style=\"width:100%\">\u003cspan data-copy-key=\"horses_inquiry_submit\">Send Inquiry\u003c/span>\u003c/button>\n\u003c/form>\n\u003cp class=\"horses-small text-center\">\u003cspan data-copy-key=\"horses_inquiry_rides_prompt\">Looking for a ranch ride?\u003c/span> \u003ca href=\"/events/#calendar\" data-copy-key=\"horses_inquiry_rides_link\">See dates on the event calendar.\u003c/a>\u003c/p>\n\u003c/div>\u003c/section>\u003c/main>\n\n\u003cfooter class=\"footer\" role=\"contentinfo\">\n    \u003cdiv class=\"container\">\n        \u003cdiv class=\"footer__grid\">\n            \u003cdiv>\n                \u003cp class=\"footer__brand\">Rancho Moonrise\u003c/p>\n                \u003cp class=\"footer__desc\">Austin's glamping and events ranch. 36 acres, 20 minutes from downtown Austin.\u003c/p>\n                \u003cdiv class=\"footer__social\">\n                    \u003ca href=\"https://www.instagram.com/rancho_moonrise/\" target=\"_blank\" rel=\"noopener\">Instagram\u003c/a>\n                    \u003ca href=\"https://www.facebook.com/RanchoMoonrise/\" target=\"_blank\" rel=\"noopener\">Facebook\u003c/a>\n                    \u003ca href=\"https://www.tiktok.com/@rancho_moonrise\" target=\"_blank\" rel=\"noopener\">TikTok\u003c/a>\n                    \u003ca href=\"https://www.linkedin.com/company/rancho-moonrise/\" target=\"_blank\" rel=\"noopener\">LinkedIn\u003c/a>\n                \u003c/div>\n            \u003c/div>\n            \u003cdiv>\n                \u003cp class=\"footer__heading\">Stay\u003c/p>\n                \u003cul class=\"footer__links\">\u003cli>\u003ca href=\"/accommodations/\">Accommodations\u003c/a>\u003c/li>\u003cli>\u003ca href=\"https://hotels.cloudbeds.com/en/reservation/5tzv1r\" target=\"_blank\" rel=\"noopener\">Book Now\u003c/a>\u003c/li>\u003cli>\u003ca href=\"/faqs/\">FAQs\u003c/a>\u003c/li>\u003c/ul>\n            \u003c/div>\n            \u003cdiv>\n                \u003cp class=\"footer__heading\">Celebrate\u003c/p>\n                \u003cul class=\"footer__links\">\u003cli>\u003ca href=\"/weddings/\">Weddings\u003c/a>\u003c/li>\u003cli>\u003ca href=\"/host-your-event/\">Private Events\u003c/a>\u003c/li>\u003cli>\u003ca href=\"/horses/\">Horses\u003c/a>\u003c/li>\u003cli>\u003ca href=\"/blog/\">Blog\u003c/a>\u003c/li>\n                    \u003cli>\u003ca href=\"/videos/\">Videos\u003c/a>\u003c/li>\u003c/ul>\n            \u003c/div>\n            \u003cdiv>\n                \u003cp class=\"footer__heading\">Contact\u003c/p>\n                \u003cdiv class=\"footer__contact\">\n                    \u003cp>\u003ca href=\"tel:+17372911260\">737-291-1260\u003c/a>\u003c/p>\n                    \u003cp>20117 Lockwood Road\u003cbr>Manor, TX 78653\u003c/p>\n                \u003c/div>\n            \u003c/div>\n        \u003c/div>\n        \u003cdiv class=\"footer__bottom\">\n            \u003cp>&copy; 2026 Rancho Moonrise. All rights reserved.\u003c/p>\n            \u003cdiv>\u003ca href=\"/policies/\">Policies\u003c/a> &middot; \u003ca href=\"/accessibility/\">Accessibility\u003c/a> &middot;\n                \u003ca href=\"/website-credits/\">Website Credits\u003c/a>\u003c/div>\n        \u003c/div>\n    \u003c/div>\n\u003c/footer>\n\n\u003cscript src=\"/js/main.js\" defer>\u003c/script>\n\u003cscript src=\"/js/cms.js?v=20261028\" defer>\u003c/script>\n\n\u003c!-- Mobile Sticky CTA -->\n\u003cdiv class=\"mobile-cta\">\u003ca href=\"#horse-inquiry\" data-copy-key=\"horses_sticky_cta\">Inquire About a Private Experience\u003c/a>\u003c/div>\n\n\u003c!-- Scroll Reveal -->\n\u003cscript>\n(function() {\n    var reveals = document.querySelectorAll('.reveal');\n    if (!reveals.length) return;\n    var observer = new IntersectionObserver(function(entries) {\n        entries.forEach(function(entry) {\n            if (entry.isIntersecting) entry.target.classList.add('is-visible');\n        });\n    }, { threshold: 0.15 });\n    reveals.forEach(function(el) { observer.observe(el); });\n})();\n\u003c/script>\n\u003cscript>\ndocument.querySelectorAll('[data-horse-experience]').forEach(function(link) {\n link.addEventListener('click',function() {\n  var select=document.getElementById('horse-experience');\n  select.value=link.getAttribute('data-horse-experience');\n  select.dispatchEvent(new Event('change',{bubbles:true}));\n });\n});\n\u003c/script>\n\u003c/body>\n\u003c/html>\n";
+
+// Draft is rendered only inside the authenticated dashboard, never as a public route.
+async function loadHorseDraft() {
+    var status = $('#horseDraftStatus');
+    status.textContent = 'Loading saved copy and images…';
+    try {
+        var session = await sb.auth.getSession();
+        if (!session.data.session) throw new Error('Please sign in to preview the draft.');
+        var results = await Promise.all([
+            sb.from('site_content').select('block_key,body').eq('page','horses'),
+            sb.from('rancho_site_images').select('slot_key,public_url,alt_text,is_active').eq('page','horses')
+        ]);
+        results.forEach(function(r) { if (r.error) throw new Error(r.error.message); });
+        var doc = new DOMParser().parseFromString(HORSE_DRAFT_HTML, 'text/html');
+        doc.querySelectorAll('script,noscript').forEach(function(s) { s.remove(); });
+        var base = doc.createElement('base'); base.href = location.origin + '/'; doc.head.prepend(base);
+        var saved = {};
+        results[0].data.forEach(function(r) { saved[r.block_key] = r.body; });
+        doc.querySelectorAll('[data-copy-key]').forEach(function(el) {
+            var body = saved[el.getAttribute('data-copy-key')];
+            if (typeof body !== 'string') return;
+            var attr = el.getAttribute('data-copy-attr');
+            if (attr) {
+                if (attr !== 'href' || /^(https?:|\/|#|mailto:|tel:)/i.test(body)) el.setAttribute(attr,body);
+            } else el.textContent = body;
+        });
+        results[1].data.forEach(function(row) {
+            if (row.is_active === false || !row.public_url) return;
+            doc.querySelectorAll('[data-image-slot]').forEach(function(img) {
+                if (img.getAttribute('data-image-slot') !== row.slot_key) return;
+                img.src = row.public_url; img.removeAttribute('srcset');
+                if (row.alt_text) img.alt = row.alt_text;
+            });
+        });
+        var style = doc.createElement('style');
+        style.textContent = '.reveal,.fade-in{opacity:1!important;transform:none!important}form button[type=submit]{cursor:default}';
+        doc.head.appendChild(style);
+        doc.querySelectorAll('form').forEach(function(form) {
+            form.querySelectorAll('button[type=submit]').forEach(function(button) { button.disabled = true; });
+        });
+        $('#horseDraftFrame').srcdoc = '<!DOCTYPE html>' + doc.documentElement.outerHTML;
+        status.textContent = 'Unpublished draft · Saved copy and images loaded · Inquiry submission disabled in preview';
+    } catch (error) { status.textContent = 'Could not load draft: ' + error.message; }
+}
+function openHorseEditor(kind) {
+    document.querySelector('.tab-btn[data-tab="' + kind + '"]').click();
+    var container = kind === 'site-copy' ? $('#siteCopyList') : $('#siteImagesList');
+    container.querySelectorAll('details.page-group').forEach(function(group) {
+        if (group.getAttribute('data-image-page') === 'horses' || /^Horses/.test(group.querySelector('summary').textContent.trim())) {
+            group.open = true; group.scrollIntoView({block:'start',behavior:'smooth'});
+        }
+    });
+}
+$('#horseEditCopy').addEventListener('click', function() { openHorseEditor('site-copy'); });
+$('#horseEditImages').addEventListener('click', function() { openHorseEditor('site-images'); });
+$('#horseRefresh').addEventListener('click', loadHorseDraft);
 </script>
 
 </body>
 </html>
+
