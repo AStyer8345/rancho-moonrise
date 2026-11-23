@@ -3809,7 +3809,39 @@ async function loadHorseDraft() {
         doc.querySelectorAll('form').forEach(function(form) {
             form.querySelectorAll('button[type=submit]').forEach(function(button) { button.disabled = true; });
         });
-        $('#horseDraftFrame').srcdoc = '<!DOCTYPE html>' + doc.documentElement.outerHTML;
+        var frame = $('#horseDraftFrame');
+        frame.onload = function() {
+            var preview = frame.contentDocument;
+            preview.addEventListener('click', function(event) {
+                var link = event.target.closest('a');
+                if (!link) return;
+                var href = link.getAttribute('href') || '';
+                if (href.charAt(0) !== '#') return;
+                event.preventDefault();
+                var target = preview.getElementById(href.slice(1));
+                if (target) target.scrollIntoView({behavior:'smooth',block:'start'});
+                var experience = link.getAttribute('data-horse-experience');
+                if (experience) preview.getElementById('horse-experience').value = experience;
+            });
+            var menu = preview.getElementById('mobileMenu');
+            var toggle = preview.querySelector('.nav__toggle');
+            function closeMenu() {
+                menu.classList.remove('is-open'); toggle.setAttribute('aria-expanded','false');
+                preview.body.style.overflow = '';
+            }
+            if (menu && toggle) {
+                toggle.addEventListener('click', function() {
+                    menu.classList.add('is-open'); toggle.setAttribute('aria-expanded','true');
+                    preview.body.style.overflow = 'hidden';
+                });
+                preview.querySelector('.nav__close').addEventListener('click', closeMenu);
+                preview.addEventListener('keydown', function(event) { if (event.key === 'Escape') closeMenu(); });
+            }
+            preview.querySelectorAll('form').forEach(function(form) {
+                form.addEventListener('submit',function(event) { event.preventDefault(); });
+            });
+        };
+        frame.srcdoc = '<!DOCTYPE html>' + doc.documentElement.outerHTML;
         status.textContent = 'Unpublished draft · Saved copy and images loaded · Inquiry submission disabled in preview';
     } catch (error) { status.textContent = 'Could not load draft: ' + error.message; }
 }
