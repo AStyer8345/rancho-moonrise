@@ -69,6 +69,8 @@ The 4 accommodation files are literally 340×340 thumbnails masquerading as cont
 
 ## Last Worked On
 
+- 2026-11-24 — Wedding blog 1/6: published `/blog/outdoor-wedding-near-austin-rain-plan/`, with a guest-focused rain-layout, communication, route and comfort checklist. Used the 11/23 wedding rain FAQ; no unconfirmed weather-backup capacity or pricing. Added blog index/card/schema, route, sitemap and BlogPosting/BreadcrumbList metadata only; existing wedding/home/events pages untouched. Next sequence topic: one-day wedding vs full weekend, scoped beyond the existing weekend itinerary.
+
 - 2026-11-23 — Ashley: added a full-width five-photo horse image bar immediately after the Horses inquiry section. Square photo slots are editable in Site Images → Horses, with horizontal swipe on mobile and a matching admin page preview.
 
 - 2026-11-23 — Ashley authorized adding Horses immediately after Private Events in desktop and mobile main navigation across all 36 public page templates; admin Horses preview matches. Supersedes the earlier instruction to leave Horses out of navigation.

@@ -189,6 +189,7 @@
     }
   ],
   "rewrites": [
+    { "source": "/blog/outdoor-wedding-near-austin-rain-plan/", "destination": "/pages/outdoor-wedding-near-austin-rain-plan.html" },
     {
       "source": "/blog/wedding-weekend-near-austin/",
       "destination": "/pages/wedding-weekend-near-austin.html"

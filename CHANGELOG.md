@@ -2630,3 +2630,11 @@ Launch-blocker sweep and conversion sharpening across the primary pages, ahead o
 - 2026-11-23 — Ashley: removed the Private Parties portrait image override so all four Horses experience photos use the same full-column 4:3 landscape frame; admin preview matches.
 
 - 2026-11-23 — Ashley authorized adding Horses immediately after Private Events in desktop and mobile main navigation across all 36 public page templates; admin Horses preview matches. Supersedes the earlier instruction to leave Horses out of navigation.
+
+## 2026-11-24 — Wedding blog 1/6
+- Added `/blog/outdoor-wedding-near-austin-rain-plan/`: original rain-layout, weather decision process, guest routes, comfort, communications and optional-rental planning guidance.
+- Grounded venue-specific rain details in Ashley's published 11/23 wedding FAQ: Event Barn indoor space, covered pavilion, covered open-air Neon Moon, umbrellas and optional tenting. No weather-backup guest capacity, new pricing, availability or testimonials claimed.
+- Reused the existing article template and actual Event Barn image; included BlogPosting and BreadcrumbList, canonical, social metadata and publication date.
+- Added a blog index card and ItemList entry, one clean URL rewrite, and sitemap entry. Existing wedding page, homepage, events, social and email unchanged.
+- Verified the current tour destination returns HTTP 200 and identifies itself as Rancho Moonrise Tour; retained the Monet tour URL rather than the separate phone-call URL.
+- Validation: repository static validator passed for the changed article and blog index using 33 downloaded live assets; metadata, schema, routes, sitemap uniqueness, links and blog-only scope checks passed.

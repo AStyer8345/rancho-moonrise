@@ -1,5 +1,7 @@
 # Rancho Moonrise — TODO
 
+- [x] 2026-11-24 — Wedding blog 1/6: publish outdoor wedding rain-plan and guest-comfort guide to blog only, including metadata, blog discovery and sitemap.
+
 - [x] 2026-11-23 — Add an admin-editable photo strip after the Horses inquiry section.
 
 - [x] 2026-11-17 — Move Private Events inquiry directly below Every Event, Your Way and its event cards.
