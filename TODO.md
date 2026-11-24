@@ -514,9 +514,20 @@ Blog cluster is now complete: 17/17 on `BlogPosting`, `BreadcrumbList`, `WebPage
 
 **CONTEXT.md hygiene (for the owning tasks):** trimmed 251 → 204 lines this run by collapsing 20 duplicate `site-daily` cruise-control entries + 9 stacked headers. Still over the 150-line cap in CLAUDE.md. The remaining bulk is 10 `review-monitor` and 5 `competitive-weekly` "Nth consecutive quiet sweep" entries — **those tasks should collapse their own history**; site-daily won't prune another task's records.
 
-## 📌 Competitive intel quick wins (refreshed 2026-11-16)
+## 📌 Competitive intel quick wins (refreshed 2026-11-23)
 
-**🔄 2026-11-16 refresh — supersedes the matching bullets below:**
+**🔄 2026-11-23 refresh — supersedes the matching bullets below:**
+- **1️⃣ The Knot description fix (Ashley or Adam, ~15 min).** 9th confirmed read. Still the only source of "20 luxury cabins and safari tents for up to 50 guests"; the sentence is still in the brand answer, and Yodel's 50-guest paraphrase is back.
+- **2️⃣ Wed Society vendor profile is still an empty stub.** Wed Society holds #1 and #2 on the 200-guest lodging query; its lodging article still omits Rancho. Confirm cost first.
+- **3️⃣ WeddingWire owner login (~15 min).** A listing URL surfaced this week (`weddingwire.com/biz/rancho-moonrise/f38c5e35e5491216.html`) but returns 403 to automation.
+- **4️⃣ Glamping Hub submission — ~31 weeks absent.** Not in search and not on Glamping Hub's Travis County page.
+- **5️⃣ Hipcamp question for Ashley — 16th consecutive absence** from the curated list. Bookable, or presence only?
+- **6️⃣ Wrong facts off-site:** Yodel says 34 acres; The Knot says 300+ guests. Site says 36 acres and 200.
+- **⚠️ Don't change title or H1** on `/blog/weekend-getaways-near-austin/`, `/blog/glamping-near-austin-texas/`, `/accommodations/`, `/blog/things-to-do-manor-tx/`, and now `/blog/pool-day-pass-austin/` (new #6 on `pool day pass Austin TX`). (For `rancho-site-daily`.)
+- **⚠️ WATCH — re-read next week:** the `pool day pass Austin TX` gain and the `glamping near Austin TX` loss (1 read each; the "Texas" spelling still ranks the guide at #7); three corporate blog placements that dropped out; Lucky Arrow's corporate page (`STALE:2026-10-16`, 2 failed reads; a 3rd goes to `BLOCKERS.md`).
+- **🔥 NEEDS ADAM — the client-ops dashboard still has not deployed since 2026-09-29** (re-verified 2026-11-24: the live mirror's newest Intel card is September 28; `package.json` still pins Node `20.x`). The 11/23, 11/16 and 10/16 cards are committed in `client-ops` and will appear on the first successful build. One-line engines bump, but it changes the runtime of `api/complete.js`, so it was not made from an unattended run.
+
+**🔄 2026-11-16 refresh (history):**
 - **1️⃣ The Knot description fix (Ashley or Adam, ~15 min).** 8th confirmed read. The search engine now names The Knot as the only source of "20 luxury cabins and safari tents for up to 50 guests", and that sentence is back in Rancho's brand answer.
 - **2️⃣ NEW — Wed Society vendor profile is an empty stub.** `austin.wedsociety.com/vendors/rancho-moonrise/` reads "hasn't shared their full story with us just yet." Their October 19 "Venues With On-Site Lodging" article ranks #1 on the 200-guest lodging query and omits Rancho. Fill in the profile and ask about the article; confirm cost first. The 10/16 idea of asking Wed Society to correct its 2020 article is void: that page now 404s.
 - **3️⃣ WeddingWire owner login (~15 min).** Still unreadable by automation.

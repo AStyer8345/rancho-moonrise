@@ -2638,3 +2638,11 @@ Launch-blocker sweep and conversion sharpening across the primary pages, ahead o
 - Added a blog index card and ItemList entry, one clean URL rewrite, and sitemap entry. Existing wedding page, homepage, events, social and email unchanged.
 - Verified the current tour destination returns HTTP 200 and identifies itself as Rancho Moonrise Tour; retained the Monet tour URL rather than the separate phone-call URL.
 - Validation: repository static validator passed for the changed article and blog index using 33 downloaded live assets; metadata, schema, routes, sitemap uniqueness, links and blog-only scope checks passed.
+
+## 2026-11-24 — rancho-competitive-weekly (research 11/23)
+
+- Weekly competitive report rewritten (`site/competitive-intelligence.md`, `.html` re-rendered) and the 11/23 Intel card dual-written to `site/improvement-plan.html` and the client-ops mirror, byte-identical.
+- Baseline 6/10 (same count as 11/16, different six): gained `pool day pass Austin TX` (blog #6), lost `glamping near Austin TX` on the tracked phrasing. Safari-tent and Manor gains reproduced.
+- Re-verify gate: 29 claims, 19 still true or confirmed, 2 no longer true, 4 partial, 1 stale, 1 unconfirmed, 2 carried or unverifiable. Four RESOLVED lines appended to `rancho-done-log.md`.
+- Competitors unchanged on direct fetch (Lucky Arrow Resort, Serana, 7744, both ResortPass listings). Lucky Arrow corporate pricing held `STALE:2026-10-16` (2nd failed read).
+- A browser render attempt hung the run for about a day; research is dated 11/23, publish 11/24. Run-log: `run-logs/2026-11-23-competitive.md`.

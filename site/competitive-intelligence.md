@@ -1,204 +1,207 @@
 # Rancho Moonrise — Competitive Intelligence Report
 **Prepared for:** Rancho Moonrise Operations
 **Subject Property:** Rancho Moonrise · 20117 Lockwood Rd, 78653 (20 min from downtown Austin)
-**Research Date:** November 16, 2026
-**Previous Report:** September 28, 2026 (published). An October 16 run wrote its card to the client-ops mirror only and never published; it is recovered this week and used below as the most recent prior read.
+**Research Date:** November 23, 2026 (published November 24)
+**Previous Report:** November 16, 2026
 
 ---
 
 ## Executive Summary
 
-**The 10-keyword baseline reads 6/10, the highest this report has recorded.** Six tracked keywords return an owned URL: glamping near Austin (blog #6), ranch wedding venue (`/weddings/` #6), corporate retreat venue (landing #7 + blog #8), things to do in Manor (blog #6, new), bachelorette (blog #8) and overnight event venue (blog #6). The published 9/28 report read 3/10 and the unpublished 10/16 run read 5/10. **One caveat carries over from 10/16:** standard-mode search fails the brand canary (it returns only Expedia-family listings), so every query here ran in extended mode. 9/28 most likely did not. Compare 11/16 with 10/16 (same mode, 5 → 6), not with 9/28.
+**The 10-keyword baseline reads 6/10 again, with a different six.** Rancho gained `pool day pass Austin TX` (the pool-day-pass blog at #6 of 9, first time on this keyword) and lost `glamping near Austin TX` (absent from a 9-result set; it was #6 last week). The same glamping query spelled with "Texas" returns the glamping guide at #7, so the page still ranks; the tracked "TX" phrasing did not return it on this read. Both moves are one read each.
 
-**Rancho now ranks for a safari-tent query, on the page built for it.** `safari tent austin texas` returns `/accommodations/` at ~#3 of 10, and the engine's answer opens with Rancho as *"the closest option, about 20 minutes from downtown."* Rancho was absent from this query on every prior read. One read, so it is a gain to confirm next week.
+**Last week's two new gains reproduced.** `safari tent austin texas` returns `/accommodations/` at ~#3 for a second week, and `things to do Manor TX` returns the Manor blog at #7 of 9 (was #6). Both now count as confirmed.
 
-**The glamping floor broke upward.** `glamping weekend getaway from Austin` returns the weekend-getaways blog at ~#1 and the homepage at ~#6. That is two owned URLs after five reads at one. `weekend getaway near austin glamping` holds the blog at ~#3 and adds the homepage at ~#8 (3rd read present).
+**The corporate cluster thinned.** On `corporate retreat venue Austin TX` the landing page holds #7 and the blog dropped out of the set. On the ranch variant Rancho holds #4 and #5 but the two extra blog URLs from last week are gone (4 owned URLs → 2). The head term is unchanged at ~#8 and ~#9.
 
-**Lucky Arrow rebranded and is now a direct safari-tent competitor.** `luckyarrowretreat.com` 301-redirects to `luckyarrowresort.com`. The property is now "Lucky Arrow Resort", describes itself as a boutique resort with *"Forty-one private cabins, yurts and safari tents across 15 acres"*, and appears in Roam Hospitality's managed-hotel portfolio. Its stay page lists 3 safari tents (king bed, clawfoot tub, private bath) and calls them *"one of our newest additions."* Earlier reports described 31 rooms plus 10 yurts and no tents.
+**The banned sentence is still in the brand answer.** *"20 luxury cabins and safari tents for up to 50 guests"* appeared again on a brand query that does not contain it. The Knot is the #1 result on the exact phrase for a 9th read, and the engine again says the unit count comes from The Knot alone. Yodel's paraphrase is back to its fuller form ("luxury cabins and safari tents that can host up to 50 guests", "34 acres").
 
-**The banned copy is back in the brand answer.** The 10/16 clean read did not hold. This week's brand query (phrase not in the query) again says the property *"has 20 luxury cabins and safari tents for up to 50 guests."* On the exact-phrase query the engine states that The Knot is *"the only source that gives this number."* The Knot is still the fix.
+**Competitors did not move.** Lucky Arrow Resort, Serana and 7744 Ranch all read the same as last week on direct fetch. ResortPass is unchanged on both sides: Rancho $20 / $15, 9.4 from 57; Lucky Arrow $35, 9.2 from 224.
 
-**ResortPass is readable. The day-pass gap is re-verified.** Rancho $20 / $15 half-day, 9.4 from 57 reviews (unchanged). Lucky Arrow $35, 9.2 from 224 reviews (+2 since 10/16).
+**⚡ Top 3 Actionable Findings (Week of November 23):**
 
-**⚡ Top 3 Actionable Findings (Week of November 16):**
-
-1. **Fix The Knot description (Ashley or Adam, ~15 min).** 8th confirmed read. The engine now names it as the single source of the "20 units / 50 guests" claim, and that claim is in Rancho's brand answer again.
-2. **Fill in the Wed Society vendor profile.** Rancho's page at `austin.wedsociety.com/vendors/rancho-moonrise/` is an empty stub (*"Rancho Moonrise hasn't shared their full story with us just yet"*). Wed Society published a new "Austin-Area Wedding Venues With On-Site Lodging" article on October 19. It ranks #1 on the 200-guest ranch-wedding-with-lodging query and does not mention Rancho. Check whether the profile is free before committing.
-3. **Lucky Arrow now sells safari tents and has professional hotel management behind it.** No action on Rancho's side this week. Stop describing Lucky Arrow as cabins and yurts only, and use its new name and domain.
+1. **Fix The Knot description (Ashley or Adam, ~15 min).** 9th confirmed read. It feeds the brand answer and Yodel.
+2. **Fill in the Wed Society vendor profile.** Still an empty stub. Wed Society holds #1 and #2 on the 200-guest ranch-wedding-with-lodging query, and its lodging article still does not mention Rancho. Confirm cost first.
+3. **Leave `/blog/pool-day-pass-austin/` alone.** It just entered a keyword Rancho has never held, in a set otherwise owned by ResortPass, Tribeza and Do512. `rancho-site-daily` owns on-site changes.
 
 ---
 
-## Re-Verify Gate — Claims Checked Live (November 16)
+## Re-Verify Gate — Claims Checked Live (November 23)
 
-Brand canary run first. `Rancho Moonrise Manor Texas` in **standard mode failed**: 19 results, all Expedia-family OTA listings, no `ranchomoonrise.com`. The same query in **extended mode passed**: `ranchomoonrise.com/blog/things-to-do-manor-tx/` and `/contact/` in the set. All queries below ran in extended mode. Absences are real within that mode.
+Brand canary run first, extended mode: **passed.** `Rancho Moonrise Manor Texas` returned `ranchomoonrise.com/blog/things-to-do-manor-tx/` and `/contact/` at #8–9 of 10. All queries below ran in extended mode. Direct page reads used a browser-header fetch.
 
-Prior claims come from the published 9/28 report and the unpublished 10/16 card.
-
-| Claim | Live Verification (November 16) | Result |
+| Claim (from 11/16) | Live Verification (November 23) | Result |
 |---|---|---|
-| Brand answer read clean (10/16, 1 read) | Brand query, phrase not in query: *"One says the property has 20 luxury cabins and safari tents for up to 50 guests."* The Knot is link #3 in the brand set. | ❌ **NO LONGER TRUE** — dirty again (3 of the last 4 reads) |
-| The Knot carries the banned sentence | Exact-phrase query returns The Knot #1; engine: *"The Knot's listing is the only source that gives this number."* Page fetch 403. | ✅ **CONFIRMED — 8th read** (search-level) |
-| Wed Society Dec-2020 article carries "20 luxury cabins and safari tents" (10/16, page-level) | `/article/comfy-cozy-austin-venues-lodging/` returns **404** on WebFetch and on browser-header curl, with and without the trailing slash. Replacement article published 2026-10-19 contains zero mentions of Rancho (raw HTML). | ❌ **NO LONGER TRUE** — carrier page is gone |
-| Yodel carries a Knot-derived paraphrase | Yodel-restricted query, phrase not in query: *"cabins and safari tents… The property covers 34 acres."* No "luxury", no "50 guests" in this read. | ⚠️ **PARTIAL** — only the "34 acres" error surfaced (snippet-level, 1 read) |
-| WeddingWire carries the banned phrase (unconfirmed since 9/21) | WeddingWire-restricted query returned other venues and no Rancho listing. | ⚠️ **STILL NOT REPRODUCED** — human check only |
-| Hotels.com clean (7 reads) | Hotels.com-restricted query: pool, free parking and WiFi, pet-friendly, cafe, bar. No unit count, no "luxury". | ✅ **STILL TRUE — 8th clean read** |
-| Rancho ResortPass: $20 / $15, 9.4 / 57 | Direct fetch: Day Pass from $20, Half-Day from $15, 9.4 "Exceptional", 57 verified reviews. | ✅ **STILL TRUE** |
-| Lucky Arrow ResortPass: $35, 9.2 / 222; $75 family; $175 cabanas; $90 day room | Direct fetch: all four prices unchanged; 9.2, **224** reviews. | ✅ **STILL TRUE** (+2 reviews) |
+| Brand answer carries the banned sentence | Brand query, phrase not in query: *"It also has 20 luxury cabins and safari tents for up to 50 guests. The Knot lists the venue for 300+ guests."* | ✅ **STILL TRUE** — dirty 4 of the last 5 reads |
+| The Knot carries the banned sentence | Exact-phrase query returns The Knot #1; engine: the count *"rests on The Knot alone."* Page fetch 403. | ✅ **CONFIRMED — 9th read** (search-level) |
+| Wed Society 2020 carrier article is gone | 404 again. Replacement lodging article fetched: zero mentions of Rancho in the raw HTML. | ✅ **STILL TRUE** |
+| Wed Society vendor profile is an empty stub | Direct fetch: *"Rancho Moonrise hasn't shared their full story with us just yet."* | ✅ **STILL TRUE** |
+| Yodel: only the "34 acres" error surfaced | Yodel-restricted query, phrase not in query: *"luxury cabins and safari tents that can host up to 50 guests… set on 34 acres."* Page fetch 403. | ⚠️ **PARTIAL** — the 50-guest paraphrase is back (snippet-level) |
+| WeddingWire: no Rancho listing surfaces | A `/biz/rancho-moonrise/` URL surfaced, but under a category-page title ("10 Best Barn & Farm Wedding Venues in Austin"). Its snippet (142 acres, from $3,900, 200 guests) cannot be tied to Rancho. Page fetch 403. No banned phrase. | ⚠️ **STILL UNCONFIRMED** — human check only |
+| Hotels.com clean (8 reads) | Hotels.com-restricted query: pool, cafe, bar, pet friendly, free parking and WiFi. No unit count, no "luxury". | ✅ **STILL TRUE — 9th clean read** |
+| Rancho ResortPass: $20 / $15, 9.4 / 57 | Direct fetch: Day Pass from $20, Half-Day from $15, 9.4 "Exceptional", 57 reviews. The review block further down the same page shows 9.5. Newest review is dated September 16. | ✅ **STILL TRUE** |
+| Lucky Arrow ResortPass: $35, 9.2 / 224; $75 family; $175 cabanas; $90 day room | Direct fetch: all four prices and the rating unchanged, 224 reviews. Listing title now reads "Lucky Arrow Resort - Dripping Springs". | ✅ **STILL TRUE** |
 | Day-pass gap: Rancho $20 vs Lucky Arrow $35 | Both sides read live. | ✅ **STILL TRUE** |
-| Lucky Arrow is "Lucky Arrow Retreat", 31 rooms + 10 yurts | `luckyarrowretreat.com` 301s to `luckyarrowresort.com`. Name is Lucky Arrow Resort. 41 stays: Courtyard Cabin 16, Yurt 10, Breezeway Cabin 6, Porch House 5, **Safari Tent 3**, Vintage Camper 1. | ❌ **NO LONGER TRUE** — rebranded; safari tents listed |
-| Lucky Arrow: $545–650 pp/night; buyout from $19,500/night | Old `/private-events` URL redirects to `/events`, which shows no pricing in the readable portion. `/corporate` returned an empty body to the fetcher. | ⚠️ **STALE:2026-10-16** — not re-verified; do not read as "pricing removed" |
-| Lucky Arrow: events to 200; 35 minutes from Austin | New homepage: *"41 guest rooms · 200 event guests · 35 minutes to Austin."* | ✅ **STILL TRUE** |
-| Serana publishes no price; groups up to 9 | Direct fetch: *"flat package rate based on the size of your group and the length of your stay."* Nine overnight (six cabins, three Airstreams). | ✅ **STILL TRUE — 6th read** |
+| Lucky Arrow Resort: 41 stays incl. 3 safari tents; 200 event guests; 35 minutes | Direct fetch of home and stay pages: same inventory table (16 / 10 / 6 / 5 / 3 / 1), same homepage figures, 4.9 from 96 on TripAdvisor. Old domain still redirects. | ✅ **STILL TRUE** |
+| Lucky Arrow: $545–650 pp/night; buyout from $19,500/night | `/corporate` returns a page with no readable text to a direct fetch, and a browser render timed out. `/events` shows no prices. | ⚠️ **STALE:2026-10-16** — 2nd failed read; not "pricing removed" |
+| Serana publishes no price; groups up to 9 | Direct fetch: *"flat package rate based on the size of your group and the length of your stay"*; up to nine overnight. | ✅ **STILL TRUE — 7th read** |
 | 7744 Ranch: 20 min, 100 events, 10 vs 18 overnight, no pricing | Direct fetch: all unchanged, including the 10-vs-18 inconsistency. | ✅ **STILL TRUE** |
-| Camp Lucy absent from the corporate head term (10/16) | `corporate retreat near austin texas`: not in the 10-result set. | ✅ **STILL TRUE — 2nd read absent** |
-| Corporate head term: Rancho holds 2 URLs | Blog ~#8, landing ~#9 of 10. | ✅ **STILL TRUE** (each −1) |
-| Broad-glamping floor: exactly 1 owned URL (5 reads) | `glamping weekend getaway from Austin`: blog ~#1 **and** homepage ~#6. | ❌ **NO LONGER TRUE** — 2 owned URLs |
-| `weekend getaway near austin glamping`: Rancho present (2 reads) | Blog ~#3, homepage ~#8. | ✅ **CONFIRMED — 3rd read** |
-| `safari tent austin texas`: Rancho absent (every prior read) | `/accommodations/` ~#3 of 10. | ❌ **NO LONGER TRUE** — Rancho present (1 read) |
-| `things to do Manor TX`: Rancho absent | `/blog/things-to-do-manor-tx/` ~#6 of 9. | ❌ **NO LONGER TRUE** — Rancho present (1 read) |
-| Hipcamp "20 Best": Lucky Arrow #8, Ranch 3232 #17, Rancho absent | Full list read directly: **Lucky Arrow #10, Ranch 3232 #19**. Rancho not on the page. | ⚠️ **PARTIAL** — Rancho absence holds (**15th read**); both competitors −2 |
-| Glamping Hub: Rancho absent | Domain-restricted search returns only unrelated Utah, New Braunfels and Rhode Island listings. | ✅ **STILL TRUE — ~30 weeks** |
-| `/safari-tents-near-austin/` not surfacing | Not re-run here. `rancho-site-daily` re-confirmed it on 11/15. On this run the safari query surfaced `/accommodations/`, not this page. | ✅ CARRIED (site-daily's 11/15 read) |
+| Camp Lucy absent from the corporate head term | Not in the 10-result set. | ✅ **STILL TRUE — 3rd read absent** |
+| Corporate head term: 2 owned URLs (~#8, ~#9) | Blog ~#8, landing ~#9 of 10. | ✅ **STILL TRUE** |
+| Corporate venue keyword: landing #7 + blog #8 | Landing #7 of 10. Blog not in the set. | ⚠️ **PARTIAL** — one URL |
+| Ranch-variant corporate query: 4 owned URLs | Landing #4, blog #5 of 9. The planning-guide and ranch-vs-hotel posts are not in the set. | ⚠️ **PARTIAL** — two URLs |
+| `glamping near Austin TX`: glamping guide #6 | Not in the 9-result set. Same query with "Texas": glamping guide #7 of 9, and the answer lists Rancho first. | ❌ **NO LONGER TRUE** on the tracked phrasing (1 read) |
+| `pool day pass Austin TX`: Rancho absent | `/blog/pool-day-pass-austin/` #6 of 9; the answer names Rancho as the resort option outside downtown. | ❌ **NO LONGER TRUE** — Rancho present (1 read) |
+| `glamping weekend getaway from Austin`: 2 owned URLs | Blog ~#2, homepage ~#7 of 9. Answer: *"Rancho Moonrise (Manor): This is the closest option."* | ✅ **CONFIRMED — 2nd read** (blog −1) |
+| `weekend getaway near austin glamping`: Rancho present | Blog ~#3, homepage ~#6 of 10. | ✅ **CONFIRMED — 4th read** (home +2) |
+| `safari tent austin texas`: `/accommodations/` ~#3 (1 read) | `/accommodations/` ~#3 of 9; the answer lists Rancho first. | ✅ **CONFIRMED — 2nd read** |
+| `things to do Manor TX`: blog #6 (1 read) | Blog #7 of 9. The answer does not name Rancho this week. | ✅ **CONFIRMED — 2nd read** (−1) |
+| 200-guest ranch wedding with lodging: 3 owned URLs | `/weddings/` ~#5, homepage ~#8, blog ~#9. Wed Society #1 and #2. | ✅ **STILL TRUE** |
+| Hipcamp "20 Best": Lucky Arrow #10, Ranch 3232 #19, Rancho absent | Full list read directly: **Lucky Arrow #9, Ranch 3232 #18**. Rancho not on the page. | ⚠️ **PARTIAL** — Rancho absence holds (**16th read**); both competitors +1 |
+| Glamping Hub: Rancho absent | Domain-restricted search returns no Rancho listing. Glamping Hub's Travis County page, fetched directly, has no mention of Rancho. | ✅ **STILL TRUE — ~31 weeks** |
+| `/safari-tents-near-austin/` not surfacing | Not re-run here. `rancho-site-daily` re-confirmed it on 11/20. | ✅ CARRIED (site-daily's 11/20 read) |
 | Competitor GBP posts, reviews, photos | No live read path through harness search or fetch. | **UNVERIFIED** — no live path |
 
-**Resolution summary:** 11 still true or confirmed, 6 no longer true (4 are Rancho gains or a carrier page disappearing; 1 is the brand answer turning dirty again; 1 is Lucky Arrow's identity), 2 partial, 1 stale, 1 not reproduced, 2 carried or unverifiable. Five prior claims were written to the done-log as resolved.
+**Resolution summary:** 29 claims checked. 19 still true or confirmed, 2 no longer true (one gain, one loss on the baseline), 4 partial, 1 stale, 1 unconfirmed, 2 carried or unverifiable. Four prior claims were written to the done-log as resolved.
 
 ---
 
-## Section 1 — SERP Rankings Summary (November 16, 2026)
+## Section 1 — SERP Rankings Summary (November 23, 2026)
 
-> Methodology note: ordering is from the harness `WebSearch` tool in extended mode (a US, logged-out, non-geolocated proxy). Presence and absence are reliable; exact ranks are approximate. Standard mode failed the brand canary and was not used.
+> Methodology note: ordering is from the harness `WebSearch` tool in extended mode (a US, logged-out, non-geolocated proxy). Presence and absence are reliable; exact ranks are approximate.
 
 ### A. The 10 tracked baseline keywords (phrasing per `scripts/serp-baseline.py`)
 
-| # | Keyword | 9/28 (published) | 10/16 (unpublished) | 11/16 | Δ vs 10/16 |
+| # | Keyword | 10/16 | 11/16 | 11/23 | Δ vs 11/16 |
 |---|---|---|---|---|---|
-| 1 | glamping near Austin TX | absent | summer-glamping blog ~#9 | ✅ `/blog/glamping-near-austin-texas/` #6 of 9; answer lists Rancho first | ⬆ (+3, different URL) |
-| 2 | wedding venue Austin TX ranch | absent | `/weddings/` ~#6 | ✅ `/weddings/` #6 of 9 | = |
-| 3 | unique wedding venues near Austin | absent | absent | absent (Zola, The Knot, Junebug, Here Comes the Guide, Eventective) | = |
-| 4 | corporate retreat venue Austin TX | blog #4 + landing #8 | landing #6 + blog #8 | ✅ landing #7 + blog #8 of 9; answer: *"Rancho Moonrise suits larger groups"* | ≈ (landing −1) |
-| 5 | pool day pass Austin TX | absent | absent | absent (ResortPass ×3, Do512, Austin Motel, pooldaypass.com) | = |
-| 6 | things to do Manor TX | absent | absent | ✅ **blog #6 of 9**; Rancho named in answer | ⬆ **NEW** |
-| 7 | bachelorette party Austin ranch | blog #7 | blog #7 | ✅ blog #8 of 9; Rancho is the first item in the answer | ≈ (−1) |
-| 8 | events venue Austin TX | absent | absent | absent (Bizzabo, LINE, EventUp, Eventective, Peerspace) | = |
-| 9 | glamping with pool Texas | absent | absent | absent (Airbnb, The Dyrt, TPW Magazine, U.S. News, Spoon Mountain ×3, Talula Mesa) | = |
-| 10 | overnight event venue Austin | blog #7 | blog #6 | ✅ blog #6 of 9 (wedding-venues blog) | = |
+| 1 | glamping near Austin TX | summer-glamping blog ~#9 | glamping guide #6 | absent (Hipcamp, A Taste of Koko, holidays.com, Talula Mesa, Walden, Zenfulcove, Cameron Ranch, Son's River Ranch) | ⬇ **LOST** (1 read; "Texas" spelling still returns the guide at #7) |
+| 2 | wedding venue Austin TX ranch | `/weddings/` ~#6 | `/weddings/` #6 | ✅ `/weddings/` #6 of 9 | = |
+| 3 | unique wedding venues near Austin | absent | absent | absent (The Knot, Here Comes the Guide, Junebug, Zola, Eventective) | = |
+| 4 | corporate retreat venue Austin TX | landing #6 + blog #8 | landing #7 + blog #8 | ✅ landing #7 of 10; answer: *"36-acre ranch venue 20 minutes east of downtown Austin, with an event barn that seats 200"* | ⬇ (blog dropped out) |
+| 5 | pool day pass Austin TX | absent | absent | ✅ **`/blog/pool-day-pass-austin/` #6 of 9** | ⬆ **NEW** |
+| 6 | things to do Manor TX | absent | blog #6 | ✅ blog #7 of 9 | ≈ (−1) |
+| 7 | bachelorette party Austin ranch | blog #7 | blog #8 | ✅ blog #8 of 9; Rancho is the first item in the answer | = |
+| 8 | events venue Austin TX | absent | absent | absent (Bizzabo, Whova, Tagvenue, Eventective, Peerspace) | = |
+| 9 | glamping with pool Texas | absent | absent | absent (Booking.com, Hipcamp ×2, The Dyrt, Glamping Hub, Talula Mesa, Spoon Mountain ×3) | = |
+| 10 | overnight event venue Austin | blog #6 | blog #6 | ✅ blog #7 of 9 (wedding-venues blog); answer calls Rancho *"the closest full-service ranch wedding venue with on-site overnight stays"* | ≈ (−1) |
 
-**Result: 6 / 10 ranking** (10/16: 5/10). The engine's written answer names Rancho on all six ranking keywords, with accurate copy on each (36 acres, 20 minutes east of downtown, Event Barn for 200, cabins and safari tents).
+**Result: 6 / 10 ranking** (11/16: 6/10; 10/16: 5/10). The six changed: +pool day pass, −glamping near Austin TX.
 
 ### B. Additional tracked queries
 
-| Keyword | Top results (approx. order) | Rancho position | Δ vs last read |
+| Keyword | Top results (approx. order) | Rancho position | Δ vs 11/16 |
 |---|---|---|---|
-| corporate retreat near austin texas | Lake Austin Spa, Yurtopian, Teamout, Sage Hill, Carter Creek, Sage Hill (2nd), Serana, **Rancho blog**, **Rancho landing**, Offsite | ✅ ~#8 blog, ~#9 landing | ≈ (each −1); Camp Lucy absent again |
-| corporate retreat venue near austin ranch | Milk and Honey ×2, Carter Creek, **Rancho landing**, **Rancho blog**, 7744, Austin Ranch (DFW), **Rancho planning-guide blog**, **Rancho ranch-vs-hotel blog** | ✅ ~#4, #5, #8, #9. **Four owned URLs of 9** | ⬆ (was 2 URLs on 9/28) |
-| ranch wedding venue with overnight lodging near Austin, 200 guests | Wed Society ×2, The Knot (Ranch Austin), Wedding Spot, **Rancho `/weddings/`**, Moonshadow Ranch, River Ranch Inn, **Rancho blog**, **Rancho home** | ✅ ~#5, #8, #9 | ≈ (three URLs; Wed Society now on top) |
-| glamping weekend getaway from Austin | **Rancho blog**, Cameron Ranch ×2, Blue River Camp, Spoon Mountain, **Rancho home**, Retreat on the Hill, Son's River Ranch, Travelocity | ✅ **~#1 blog, ~#6 home**; answer: *"Closest option: Rancho Moonrise"* | ⬆ (10/16 ~#2, 1 URL) |
-| weekend getaway near austin glamping | Hipcamp, holidays.com, **Rancho blog**, Cameron Ranch ×2, Udoscape, Spoon Mountain, **Rancho home**, Walden, Travelocity | ✅ ~#3 blog, ~#8 home | = blog; home added |
-| safari tent austin texas | Vrbo, Glamping Hub, **Rancho `/accommodations/`**, Loving Heart, Son's River Ranch, Spoon Mountain ×3, austinvacationrentals, Expedia | ✅ **~#3**; answer names Rancho first | ⬆ **NEW** |
-| Rancho Moonrise Manor Texas (brand canary) | Apple Maps, Hipcamp, The Knot, LinkedIn, ResortPass, Yelp, Romantic Spots Austin, **Rancho blog**, **Rancho `/contact/`**, Wheree | ✅ #8–9 of 10 | Banned copy back in the answer |
+| corporate retreat near austin texas | Lake Austin Spa, Yurtopian, Teamout, Sage Hill, Carter Creek, Sage Hill (2nd), Serana, **Rancho blog**, **Rancho landing**, Retreat at Crystal Creek | ✅ ~#8 blog, ~#9 landing | = |
+| corporate retreat venue near austin ranch | Milk and Honey ×2, Carter Creek, **Rancho landing**, **Rancho blog**, 7744 ×2, Rough Creek Lodge, Cedar Trunk Ranch | ✅ ~#4, ~#5 | ⬇ (4 URLs → 2) |
+| ranch wedding venue with overnight lodging near Austin, 200 guests | Wed Society ×2, The Knot (Ranch Austin), Wedding Spot, **Rancho `/weddings/`**, Moonshadow Ranch, River Ranch Inn, **Rancho home**, **Rancho blog** | ✅ ~#5, #8, #9 | = |
+| glamping weekend getaway from Austin | One Chel of an Adventure, **Rancho blog**, Blue River Camp, Cameron Ranch, Blue River Camp (2nd), Spoon Mountain, **Rancho home**, Retreat on the Hill, Expedia | ✅ ~#2 blog, ~#7 home | ≈ (each −1) |
+| weekend getaway near austin glamping | Hipcamp, Yurtopian, **Rancho blog**, Cameron Ranch, Udoscape, **Rancho home**, Walden, Cameron Ranch (2nd), Zenfulcove, Expedia | ✅ ~#3 blog, ~#6 home | ⬆ (home +2) |
+| safari tent austin texas | Vrbo, Glamping Hub, **Rancho `/accommodations/`**, Loving Heart, Spoon Mountain, Son's River Ranch, Spoon Mountain (2nd), austinvacationrentals, Expedia | ✅ ~#3 | = (2nd read) |
+| glamping near Austin Texas (spelling variant of #1) | Hipcamp, A Taste of Koko, holidays.com, That One Point of View, Walden, Cameron Ranch, **Rancho glamping guide**, trip101, Expedia | ✅ ~#7 | Variant, first read |
+| Rancho Moonrise Manor Texas (brand canary) | Apple Maps, Hipcamp, The Knot, LinkedIn, ResortPass, Yelp, Romantic Spots Austin, **Rancho blog**, **Rancho `/contact/`**, Wheree | ✅ #8–9 of 10 | = (same ten, same order) |
 
-Not run this week: `best weekend getaways near austin texas 2026` and `romantic weekend getaways near austin`. Their last reads (9/28) are not carried forward as current.
-
-**Read:** the owned footprint grew on glamping and safari-tent intent, which was the weakest cluster through September. For the first time a non-blog page (`/accommodations/`) holds a glamping-intent placement. The corporate cluster is steady on the head terms and deep on the ranch variant.
+**Read:** glamping, safari-tent and wedding placements held. The baseline loss on keyword 1 looks like phrasing sensitivity, not a page problem, because the same page ranks on the "Texas" spelling the same morning. The corporate cluster lost depth (three blog placements gone across two queries) while every landing-page placement held.
 
 ---
 
 ## Section 2 — Competitor Highlights
 
-### Lucky Arrow Resort (formerly Lucky Arrow Retreat) — [luckyarrowresort.com](https://www.luckyarrowresort.com/)
-The largest change in this report since tracking began. The old domain redirects permanently to the new one. Page title: *"Lucky Arrow Resort | Luxury Boutique Resort in the Texas Hill Country, Near Austin."* Homepage figures: 41 guest rooms, 200 event guests, 35 minutes to Austin, 4.9 from 96 TripAdvisor reviews. Stay inventory by their own table: 16 courtyard cabins, 10 yurts, 6 breezeway cabins with private hot tubs, 5 porch houses, 3 safari tents, 1 vintage camper. Two pools (one adults-only, one heated for families) and six cabanas. A footer link and Roam Hospitality's own site list the property in Roam's managed-hotel portfolio. A current offer runs November 22–29 (4th night free, code HOMEBASE).
+### Lucky Arrow Resort — [luckyarrowresort.com](https://www.luckyarrowresort.com/)
+No change since last week's rebrand finding. Homepage: 41 guest rooms, 200 event guests, 35 minutes to Austin ("about 28 miles west of downtown"), 4.9 from 96 TripAdvisor reviews, 4.8 on Google. Stay table unchanged: 16 courtyard cabins, 10 yurts, 6 breezeway cabins, 5 porch houses, 3 safari tents, 1 vintage camper. The 4th-night-free offer (code HOMEBASE) is running now, November 22–29. Events page states that events without lodging are only considered within 90 days of the date, and lists lodging blocks and resort buyouts without prices.
 
-What this report cannot say: when the rebrand happened, or whether Roam is new. A guest quote on the stay page references a safari tent stay in March 2024, so the tents predate this week. Prior reads of the old site did not show them. The corporate price points ($545–650 pp/night, buyout from $19,500/night) are held at `STALE:2026-10-16` because the new corporate page was not readable.
+The rename has reached ResortPass (listing title updated) but not Hipcamp, which still lists "Lucky Arrow Retreat", and not the corporate-retreat listicles, which still describe it as a 10–25 person glamping venue.
 
-Day-pass side is unchanged: $35, 9.2 from 224. Hipcamp curated position slipped to #10.
+Corporate price points ($545–650 pp/night, buyout from $19,500/night) remain `STALE:2026-10-16`. This is the second run that could not read the new corporate page. One more failed read and it becomes a logged verification blocker.
 
 ### Serana — [seranatx.com](https://www.seranatx.com/austin-corporate-retreats/)
-6th direct read: no published price, up to nine guests. It now sits ~#7 on the corporate head term, one place above Rancho's blog. Its page gives two drive times (45 minutes and one hour). Still outside Rancho's 20–200 lane.
+7th direct read: no published price, up to nine overnight guests. The page puts Serana one hour from downtown Austin and 45 minutes from the airport. Holds ~#7 on the corporate head term, one place above Rancho's blog.
 
 ### 7744 Ranch — [7744ranch.com/corporate-rentals](https://www.7744ranch.com/corporate-rentals)
-Unchanged: 100 for events, five mobile estates, ~20 minutes from downtown, no pricing, and the same 10-versus-18 overnight inconsistency. ~#6 on the ranch-variant corporate query, behind two Rancho URLs.
+Unchanged: 100 for events, five mobile estates, ~20 minutes from downtown, no pricing, 10-versus-18 overnight inconsistency. It now holds two URLs on the ranch-variant corporate query, directly below Rancho's two.
 
 ### Camp Lucy
-Absent from the corporate head term for a second straight read. The September appearance at ~#2 did not persist.
+Absent from the corporate head term for a third straight read.
 
 ### Third-party copy carriers — state of the map
 
 | Surface | Carries banned sentence? | Evidence level | Reads |
 |---|---|---|---|
-| The Knot | Yes | Search #1 on exact phrase; engine names it the only source; page 403 | 8 |
-| Brand-query answer | Yes | Uncontaminated brand query | Dirty 3 of last 4 |
-| Yodel | Partly: "34 acres" only this read | Uncontaminated domain query | Weakening |
-| Wed Society (Dec 2020 article) | Page gone | 404 on two fetch paths | Resolved |
-| Wed Society vendor profile | No (empty stub) | Direct fetch | 1 |
-| WeddingWire | Unconfirmed | No Rancho listing in domain query | 0 since 9/21 |
-| Hotels.com | No | Uncontaminated domain query | 8 clean |
-| Wheree | Unknown | Present in brand and exact-phrase sets; page 403 | Presence only |
+| The Knot | Yes | Search #1 on exact phrase; engine names it the only source; page 403 | 9 |
+| Brand-query answer | Yes | Uncontaminated brand query | Dirty 4 of last 5 |
+| Yodel | Paraphrase: "luxury cabins and safari tents… up to 50 guests", "34 acres" | Uncontaminated domain query; page 403 | Back to full paraphrase |
+| Wed Society (2020 article) | Page gone | 404 | Resolved |
+| Wed Society vendor profile | No (empty stub) | Direct fetch | 2 |
+| WeddingWire | Unconfirmed | A listing URL surfaced under a category title; page 403 | 0 since 9/21 |
+| Hotels.com | No | Uncontaminated domain query | 9 clean |
+| Wheree | Unknown | Present in brand and exact-phrase sets | Presence only |
 
-Other off-site inconsistencies seen in the brand answer this week: Hipcamp says 37 acres, The Knot says capacity 300+, and the search snippet for ResortPass still shows the old 4.8 / 53 while the live page shows 9.4 / 57.
+Other off-site inconsistencies still visible in the brand answer: The Knot says capacity 300+ (site says 200), Yodel says 34 acres (site says 36).
 
 ---
 
-## Section 3 — Content Gap Analysis (Updated November 16)
+## Section 3 — Content Gap Analysis (Updated November 23)
 
 | Content Type | Who Has It | Rancho Moonrise Status | Δ vs. last read |
 |---|---|---|---|
-| Glamping-intent SERP presence | Aggregators, Cameron Ranch, Spoon Mountain | 4 queries, 3 distinct owned URLs | ⬆ from 1 URL on 2 queries |
-| Safari-tent SERP presence | Vrbo, Glamping Hub, Spoon Mountain | `/accommodations/` ~#3 | ⬆ new |
-| Safari tents as a product | **Lucky Arrow (3 tents, private bath, clawfoot tub)** | Safari tents are core inventory | New like-for-like competitor |
+| Glamping-intent SERP presence | Aggregators, Cameron Ranch, Spoon Mountain | Weekend-getaway queries hold 2 URLs each; head term lost on the "TX" phrasing | Mixed |
+| Safari-tent SERP presence | Vrbo, Glamping Hub, Spoon Mountain | `/accommodations/` ~#3, 2nd read | Confirmed |
+| Pool day pass SERP presence | ResortPass ×3, Tribeza, Do512 | Blog #6 | ⬆ new |
+| Corporate cluster depth | Milk and Honey, 7744, Carter Creek | Landing pages hold; 3 blog placements gone | ⬇ |
 | Day-pass pricing vs. market | Lucky Arrow $35 | $20 / $15 | Re-verified |
 | Published corporate pricing | Lucky Arrow (held) | Custom-quoted | STALE:2026-10-16 |
-| Wed Society presence | Venues in the 10/19 lodging article | Empty vendor stub; not in the article | New gap |
-| Third-party listing copy hygiene | n/a | Knot 8th read; brand answer dirty | Wed Society carrier gone |
-| Hipcamp curated "20 Best" | Lucky Arrow (#10), Ranch 3232 (#19) | Absent, 15th read | Competitors −2 each |
-| Glamping Hub listing | Others | Absent | ~30 weeks |
+| Wed Society presence | Venues in the lodging article (#1 on the 200-guest query) | Empty vendor stub; not in the article | = |
+| Third-party listing copy hygiene | n/a | Knot 9th read; brand answer dirty; Yodel paraphrase back | Slightly worse |
+| Hipcamp curated "20 Best" | Lucky Arrow (#9), Ranch 3232 (#18) | Absent, 16th read | Competitors +1 each |
+| Glamping Hub listing | Others | Absent | ~31 weeks |
 
 ---
 
 ## Section 4 — Quick Wins This Week
 
-1. **Fix the venue description on The Knot (~15 min).** 8th read. The engine attributes the wrong unit and guest counts to this one listing.
-2. **Fill in the Wed Society vendor profile and ask about the October 19 lodging article.** The profile page exists and is empty. Confirm cost first.
-3. **Open the WeddingWire listing as a logged-in owner (~15 min).** Automation cannot read it.
-4. **Glamping Hub submission, ~30 weeks absent.** Glamping Hub is #2 on the safari-tent query Rancho just entered.
-5. **Hipcamp question for Ashley (15th read):** should the listing be bookable, or is it presence only?
-6. **Correct the acreage on Hipcamp (37) and Yodel (34).** The site says 36.
+1. **Fix the venue description on The Knot (~15 min).** 9th read.
+2. **Fill in the Wed Society vendor profile and ask about their on-site-lodging article.** Confirm cost first.
+3. **Open the WeddingWire listing as a logged-in owner (~15 min).** A listing URL exists (`weddingwire.com/biz/rancho-moonrise/f38c5e35e5491216.html`) but automation gets a 403.
+4. **Glamping Hub submission, ~31 weeks absent.** Glamping Hub is #2 on the safari-tent query where Rancho is #3.
+5. **Hipcamp question for Ashley (16th read):** should the listing be bookable, or is it presence only?
+6. **Correct the acreage on Yodel (34) and the capacity on The Knot (300+).** The site says 36 acres and 200 guests.
 
 ---
 
 ## Section 5 — Recommendations for This Week
 
-**Priority 1: The Knot description.** Same as every report since August, with stronger evidence: the engine names it as the only source.
+**Priority 1: The Knot description.** Unchanged since August. It is the one edit that cleans the brand answer.
 
-**Priority 2: Don't change the title or H1 on four pages.** `/blog/weekend-getaways-near-austin/`, `/blog/glamping-near-austin-texas/`, `/accommodations/` and `/blog/things-to-do-manor-tx/` now hold every glamping, safari-tent and local-intent placement Rancho has. `rancho-site-daily` owns on-site changes.
+**Priority 2: Don't change the title or H1 on five pages.** `/blog/weekend-getaways-near-austin/`, `/blog/glamping-near-austin-texas/`, `/accommodations/`, `/blog/things-to-do-manor-tx/` and now `/blog/pool-day-pass-austin/`.
 
-**Priority 3: Re-read the two new gains before claiming them.** `safari tent austin texas` and `things to do Manor TX` are one read each.
+**Priority 3: Re-read the two baseline moves before acting on either.** The pool-day-pass gain and the `glamping near Austin TX` loss are one read each. If the loss reproduces next week while the "Texas" spelling still ranks, hand it to `rancho-site-daily` as a title-phrasing question.
 
-**Priority 4: Watch Lucky Arrow's positioning, not its prices.** A managed "boutique resort" with safari tents 35 minutes out competes with Rancho on product for the first time. Rancho's distance advantage (20 minutes) and day-pass price are both intact and re-verified. Next week: read the new corporate page and confirm whether the published prices survived the redesign.
+**Priority 4: Watch the corporate blog posts.** Three corporate blog placements dropped out in one week while the landing page held everywhere. One read; no action yet.
 
-**Priority 5: Fix the publishing gap in this task.** The 10/5, 10/12, 10/19–11/9 runs never landed, and the 10/16 run wrote one of two dashboards and committed neither. This run publishes from a worktree and verifies both live URLs.
+**Priority 5: Get a working read path for Lucky Arrow's corporate page.** Two failed reads. A third makes it a logged blocker.
 
 ---
 
-## Appendix: Rancho Moonrise Competitive Positioning (November 16, 2026)
+## Appendix: Rancho Moonrise Competitive Positioning (November 23, 2026)
 
 | Attribute | Current State | Change Since Last Read |
 |---|---|---|
-| Tracked-keyword ranking (10-keyword baseline) | 6 / 10 | +1 vs 10/16 (things to do Manor) |
-| Glamping intent | Blog ~#1 and ~#3; home ~#6 and ~#8; glamping guide #6 | ⬆ |
-| Safari-tent intent | `/accommodations/` ~#3 | ⬆ new (1 read) |
-| Corporate retreat | Head term ~#8–9 (2 URLs); venue keyword #7 + #8; ranch variant 4 URLs | Steady |
-| Wedding cluster | `/weddings/` #6 and ~#5; blog ~#8; home ~#9 | Steady |
+| Tracked-keyword ranking (10-keyword baseline) | 6 / 10 | Same count; +pool day pass, −glamping near Austin TX |
+| Glamping intent | Blog ~#2 and ~#3; home ~#6 and ~#7; guide #7 on "Texas" spelling only | Mixed |
+| Safari-tent intent | `/accommodations/` ~#3 | Confirmed, 2nd read |
+| Pool day pass | Blog #6 | ⬆ new (1 read) |
+| Corporate retreat | Head term ~#8–9 (2 URLs); venue keyword #7; ranch variant #4 + #5 | Thinner (3 blog placements gone) |
+| Wedding cluster | `/weddings/` #6 and ~#5; home ~#8; blog ~#9 and #7 | Steady |
 | Rancho day pass | $20 / $15, 9.4 / 57 | Unchanged, live |
-| Lucky Arrow day pass | $35, 9.2 / 224 | +2 reviews |
-| Lucky Arrow identity | Lucky Arrow Resort, new domain, 3 safari tents, Roam Hospitality portfolio | **Changed** |
-| Lucky Arrow corporate pricing | $545–650 pp/night; from $19,500/night | STALE:2026-10-16 |
-| Serana | No price; up to 9; ~#7 corporate head term | 6th read |
-| Camp Lucy | Absent from corporate head term | 2nd read absent |
-| The Knot listing copy | Confirmed, 8th read | = |
-| Brand answer copy | Dirty | Reverted from 10/16 clean read |
-| Wed Society | Old carrier article 404; vendor stub empty | Changed |
-| Hotels.com listing copy | Clean, 8th read | = |
-| Hipcamp curated list | Absent, 15th read; Lucky Arrow #10, Ranch 3232 #19 | Competitors −2 |
-| Glamping Hub | Absent | ~30 weeks |
-| `/safari-tents-near-austin/` | Not surfacing | Carried at site-daily's 11/15 read |
+| Lucky Arrow day pass | $35, 9.2 / 224 | Unchanged, live |
+| Lucky Arrow identity | Lucky Arrow Resort, 41 stays incl. 3 safari tents | Unchanged |
+| Lucky Arrow corporate pricing | $545–650 pp/night; from $19,500/night | STALE:2026-10-16 (2nd failed read) |
+| Serana | No price; up to 9; ~#7 corporate head term | 7th read |
+| Camp Lucy | Absent from corporate head term | 3rd read absent |
+| The Knot listing copy | Confirmed, 9th read | = |
+| Brand answer copy | Dirty | = |
+| Yodel | Full paraphrase back | Slightly worse |
+| Wed Society | Vendor stub empty; not in the lodging article | = |
+| Hotels.com listing copy | Clean, 9th read | = |
+| Hipcamp curated list | Absent, 16th read; Lucky Arrow #9, Ranch 3232 #18 | Competitors +1 |
+| Glamping Hub | Absent | ~31 weeks |
+| `/safari-tents-near-austin/` | Not surfacing | Carried at site-daily's 11/20 read |
