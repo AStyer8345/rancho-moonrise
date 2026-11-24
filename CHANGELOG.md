@@ -2646,3 +2646,11 @@ Launch-blocker sweep and conversion sharpening across the primary pages, ahead o
 - Re-verify gate: 29 claims, 19 still true or confirmed, 2 no longer true, 4 partial, 1 stale, 1 unconfirmed, 2 carried or unverifiable. Four RESOLVED lines appended to `rancho-done-log.md`.
 - Competitors unchanged on direct fetch (Lucky Arrow Resort, Serana, 7744, both ResortPass listings). Lucky Arrow corporate pricing held `STALE:2026-10-16` (2nd failed read).
 - A browser render attempt hung the run for about a day; research is dated 11/23, publish 11/24. Run-log: `run-logs/2026-11-23-competitive.md`.
+
+## 2026-11-24 — rancho-site-daily
+
+- `site/pages/horses.html`: added `BreadcrumbList` (Home > Horses). It was the only inner page in the sitemap without one.
+- `site/pages/weddings.html`: Related Reading links today's post, `/blog/outdoor-wedding-near-austin-rain-plan/`. Before this the post's only inbound link was the blog index.
+- Today's Tuesday post was published with `BreadcrumbList` and a 59-character title; the publisher follow-up from 11/20 is closed.
+- Gate: canary passes; `/safari-tents-near-austin/` still not surfacing; 37/37 sitemap routes 200 with JSON-LD, max TTFB 0.36s. `validate:site` and `test:runtime` pass. Commit `25eb9de`, verified live.
+- Not done: Search Console (no API access), PageSpeed (429). Run-log: `run-logs/2026-11-24-seo.md`.
