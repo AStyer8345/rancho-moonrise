@@ -113,32 +113,30 @@ The 4 accommodation files are literally 340×340 thumbnails masquerading as cont
 
 ---
 
-## Key Metrics (updated April 30, 2026 — week 3 vs. baseline)
+## Key Metrics (updated November 25, 2026 — rancho-metrics-weekly)
 
-| Metric | Value | Delta vs. Apr 9 |
+**11/25 note:** extended search mode; rankings are single search-harness samples, not GSC. Published from a clean worktree off `origin/main` (the live dashboard's Metrics tab had been showing April 30 numbers because no metrics pull since then reached `origin/main`). The main checkout is still mid-rebase (detached HEAD since 9/18) and still needs Adam.
+
+| Metric | Value | Delta vs. 11/18 |
 |---|---|---|
-| Google reviews | **130 (4.9★)** (live-verified RUN_034 via GBP dashboard; WebSearch snippet still lags at 126) | +5 |
-| GBP search impressions | 6,967 (April 14 backfill) | Awaiting next dashboard export |
-| GBP profile views | 15,053 (April 14 backfill) | Awaiting next dashboard export |
-| GBP clicks | 554 | Flat |
-| GBP directions | 513 | Flat |
-| GBP calls | 44 | Flat |
-| GBP weekly posts | **Yes (Publer auto)** | NEW — 12-event backlog cleared 4/21 |
-| Instagram | ~13K followers | Flat |
-| Facebook | 864 followers, 5 reviews | Flat |
-| TikTok | 1,408 followers | Flat |
-| LinkedIn | 106 followers | Flat |
-| TripAdvisor | 0 reviews, NOT claimed | Flat |
-| Hipcamp | Listed, 0 reviews | Flat |
-| Expedia | 8.0 rating | Flat |
-| Google ranking (non-brand) | **4 / 10 keywords ranking** (baselined 2026-08-18) | **+4** — first measurement; prior 0/10 carried since April |
-| AI engine citations | **4 / 10 cited** (one engine — harness synthesis) | **+4** — ChatGPT/Perplexity/AI Overview still unmeasured |
-| Google indexed pages (old site) | ~10 | Flat |
-| **DNS cutover** | **✅ Live (4/30)** | NEW — Vercel is now production origin |
-| Schema coverage (new site) | **17 / 17 pages** (+`/corporate-retreats/` = 18/18 incl. new landing) | +5 vs. Apr 9 (12/14) |
-| Blog individual URLs | **18 posts** | +18 vs. Apr 9 (was 0) |
-| Next metrics update | May 7, 2026 | — |
-| Improvement tasks done | 3/35 (#4, #6, #10) | Flat |
+| Google reviews | **150 (4.8★)**, review-monitor live read 11/24. 17 of 150 replied (~11%); 2★ Samantha J. (new), 1★ Joaly S.C. and 1★ Stacey K. unanswered | +2 reviews, rating -0.1 (first time off 4.9) |
+| GBP performance | 9/29 manager card: 7,933 interactions / 10,359 monthly views | Needs dashboard export |
+| GBP description / hours / Q&A / chat | Unverified via search | — |
+| GBP weekly posts | Latest draft 11/23 not confirmed posted | — |
+| Instagram | ~13K (unverified) | Flat |
+| Facebook | 1,221 followers (unverified); 6 reviews / 86% (review-monitor 11/24) | Flat |
+| TikTok | 1,408 (unverified) | Flat |
+| LinkedIn | 106 followers (unverified) | Flat |
+| The Knot | 8 / 4.5★ (review-monitor 11/24) | Flat |
+| Yelp | 2 / 4.5★ (review-monitor 11/24) | Flat |
+| Expedia | 8.4 (45), review-monitor 11/24 | Flat |
+| ResortPass | 9.5 (57), review-monitor first full read 11/24. Not a dashboard row | New read |
+| TripAdvisor | 0 reviews, unclaimed | Flat |
+| Hipcamp | Listing URL still redirects to the Texas category page (11/24) — looks delisted | Flat (second week) |
+| Google ranking (non-brand) | **7 / 10 in top 10**: safari tent **#3**, glamping w/ pool #5, ranch wedding venue #5, corporate retreat #6, glamping near austin #7, things to do Manor #7, bachelorette #7. Not ranked: wedding venue Manor, pool day pass, outdoor event venue | Held at 7 (4 up, 2 down one spot, 1 held) |
+| AI engine citations | 3 / 10 (carried, unverified; not measurable this pull) | — |
+| Google indexed pages | 9+ (verified 11/25) | Held |
+| Next metrics update | December 2, 2026 | — |
 
 ---
 

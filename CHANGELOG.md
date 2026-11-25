@@ -1,5 +1,15 @@
 # Rancho Moonrise — Changelog
 
+## 2026-11-25
+
+- **rancho-metrics-weekly:** Refreshed improvement-plan metrics in both `brand/` and `site/` copies (extended search mode). Deltas are vs. 11/18.
+- **Rankings held at 7 / 10 in the top 10.** Up: "safari tent Austin TX" #4 → **#3** (/accommodations/, first top-3), "ranch wedding venue Austin" #6 → **#5** (/weddings/), "corporate retreat Austin" #7 → **#6**, "bachelorette party Austin ranch" #8 → **#7**. Held: "glamping near austin with pool" #5. Down one spot: "glamping near austin" #6 → #7, "things to do Manor TX" #6 → #7. Still unranked: "wedding venue Manor TX", "pool day pass Austin", "outdoor event venue Austin". Single search-harness samples, not GSC positions.
+- `site:` returned 9 owned URLs.
+- Google reviews **148 → 150**, rating **4.9 → 4.8** (new 2★ from Samantha James, ~11/22), per review-monitor 11/24. 17 of 150 replied. Expedia 8.4 (45), Facebook, Knot, Yelp flat. Hipcamp listing still redirects. ResortPass first read 9.5 (57), noted but not a tracked row.
+- Social follower counts not exposed in search: held, marked unverified. AI citations not measurable (3 / 10 carried, unverified). GBP health, GBP Performance and GSC still need a dashboard export. "Weekly posts active" now carries an unverified note, since no draft since 4/13 is confirmed posted.
+- **Published from a clean worktree** (`../rancho-moonrise-metrics-20261125`) off `origin/main`. Before this, `origin/main` and the live dashboard still showed the April 30 metrics: every pull from 9/20 on sat unpushed in the stuck main checkout. Only the Metrics tab and the "Last updated" line were replaced on the `origin/main` files; baseline values were checked unchanged. The main checkout is still mid-rebase and was edited in place but not committed.
+- GOALS.md is outside the connected folders and was not read. The `brand/` and `site/` copies still differ outside the metrics section, and in the GBP Performance baseline rows (left alone).
+
 ## 2026-11-23 — Horses photo strip
 
 - Added five contiguous square horse photos after the inquiry form, with responsive mobile scrolling.
