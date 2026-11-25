@@ -1,0 +1,42 @@
+{
+  "series": "Rancho Horse Blog",
+  "maximumPosts": 6,
+  "publicationRule": "Exactly one article per run. First resume any deployment_pending topic at its existing URL and verify publication; never advance past an unfinished topic. Only mark published after the live URL returns the expected article. Do not duplicate an existing article. Stop after all six are verified.",
+  "topics": [
+    {
+      "number": 1,
+      "topic": "Where to Ride a Horse in Austin",
+      "status": "deployment_pending",
+      "title": "Where to Ride a Horse in Austin: Locations & Booking Tips",
+      "url": "https://ranchomoonrise.com/blog/where-to-ride-a-horse-in-austin/",
+      "path": "site/pages/where-to-ride-a-horse-in-austin.html",
+      "publicationDate": "2026-11-25",
+      "preparedAt": "2026-11-25T08:12:00-06:00"
+    },
+    {
+      "number": 2,
+      "topic": "Horse Photoshoot Locations in Texas",
+      "status": "not_started"
+    },
+    {
+      "number": 3,
+      "topic": "Horses + Pilates: A Private Event Idea in Austin",
+      "status": "not_started"
+    },
+    {
+      "number": 4,
+      "topic": "Best Bachelorette Ideas for Austin",
+      "status": "not_started"
+    },
+    {
+      "number": 5,
+      "topic": "Party Add-Ons: Horses and Bulls at Rancho Moonrise",
+      "status": "not_started"
+    },
+    {
+      "number": 6,
+      "topic": "Ranch Rides in Austin",
+      "status": "not_started"
+    }
+  ]
+}

@@ -69,6 +69,8 @@ The 4 accommodation files are literally 340×340 thumbnails masquerading as cont
 
 ## Last Worked On
 
+- 2026-11-25 — Horse blog 1/6: prepared Where to Ride a Horse in Austin, scoped to location/booking comparison and distinct from existing weekend/bachelorette guides. Added only article, blog card/schema, route, sitemap and repository progress; official operator sources and live Rancho event data checked. Verify deployment before advancing topic 2.
+
 - 2026-11-24 — rancho-competitive-weekly published the 11/23 intel report and card (baseline 6/10; +pool day pass, −glamping near Austin TX).
 
 - 2026-11-24 — Wedding blog 1/6: published `/blog/outdoor-wedding-near-austin-rain-plan/`, with a guest-focused rain-layout, communication, route and comfort checklist. Used the 11/23 wedding rain FAQ; no unconfirmed weather-backup capacity or pricing. Added blog index/card/schema, route, sitemap and BlogPosting/BreadcrumbList metadata only; existing wedding/home/events pages untouched. Next sequence topic: one-day wedding vs full weekend, scoped beyond the existing weekend itinerary.

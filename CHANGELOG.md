@@ -2654,3 +2654,5 @@ Launch-blocker sweep and conversion sharpening across the primary pages, ahead o
 - Today's Tuesday post was published with `BreadcrumbList` and a 59-character title; the publisher follow-up from 11/20 is closed.
 - Gate: canary passes; `/safari-tents-near-austin/` still not surfacing; 37/37 sitemap routes 200 with JSON-LD, max TTFB 0.36s. `validate:site` and `test:runtime` pass. Commit `25eb9de`, verified live.
 - Not done: Search Console (no API access), PageSpeed (429). Run-log: `run-logs/2026-11-24-seo.md`.
+
+- 2026-11-25 — Horse blog 1/6: prepared Where to Ride a Horse in Austin, scoped to location/booking comparison and distinct from existing weekend/bachelorette guides. Added only article, blog card/schema, route, sitemap and repository progress; official operator sources and live Rancho event data checked. Verify deployment before advancing topic 2.

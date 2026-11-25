@@ -189,6 +189,7 @@
     }
   ],
   "rewrites": [
+    { "source": "/blog/where-to-ride-a-horse-in-austin/", "destination": "/pages/where-to-ride-a-horse-in-austin.html" },
     { "source": "/blog/outdoor-wedding-near-austin-rain-plan/", "destination": "/pages/outdoor-wedding-near-austin-rain-plan.html" },
     {
       "source": "/blog/wedding-weekend-near-austin/",
