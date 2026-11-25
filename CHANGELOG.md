@@ -2658,3 +2658,7 @@ Launch-blocker sweep and conversion sharpening across the primary pages, ahead o
 - 2026-11-25 — Horse blog 1/6: prepared Where to Ride a Horse in Austin, scoped to location/booking comparison and distinct from existing weekend/bachelorette guides. Added only article, blog card/schema, route, sitemap and repository progress; official operator sources and live Rancho event data checked. Verify deployment before advancing topic 2.
 
 - 2026-11-25 — Verified horse series topic 1 deployed successfully on Vercel and returns HTTP 200 at its canonical URL. Article content/metadata, blog index link and sitemap entry checked live; series progress marked published (1/6).
+
+- 2026-11-25 — rancho-site-daily: linked the new horse-riding guide (`/blog/where-to-ride-a-horse-in-austin/`) from Related Reading on `/blog/things-to-do-manor-tx/`, `/blog/bachelorette-party-austin-texas/` and `/blog/weekend-getaways-near-austin/`. Its only inbound link had been the blog index.
+- Gate: canary passes; `/safari-tents-near-austin/` still not surfacing; 38/38 sitemap routes 200 with JSON-LD, max TTFB 0.44s. `validate:site` and `test:runtime` pass. Commit `2d5c8de`, verified live.
+- Not done: Search Console (no API access), PageSpeed (429). Run-log: `run-logs/2026-11-25-seo.md`.

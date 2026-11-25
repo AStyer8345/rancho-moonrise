@@ -30,3 +30,4 @@ SESSION_START: 2026-04-09T05:00:00-05:00
 - Key finding: launching the Vercel site on the main domain is THE single biggest SEO/AEO unlock
 [2026-11-16 08:15] rancho-site-daily — baked 2 wedding copy blocks; fixed /faqs/ schema family answer. Skipped review count / reply state / GBP cadence (owned by rancho-review-monitor / rancho-gbp-weekly).
 [2026-11-19 14:25] rancho-site-daily — removed 3 dead YouTube cards + 2 dead VideoObject entries from /videos/. Skipped review count (homepage "125+" vs 148) / reply state / GBP cadence (owned by rancho-review-monitor / rancho-gbp-weekly).
+[2026-11-25 10:15] rancho-site-daily — linked the 11/25 horse-riding guide from 3 Related Reading lists. Skipped review count / reply state / GBP cadence (owned by rancho-review-monitor / rancho-gbp-weekly).

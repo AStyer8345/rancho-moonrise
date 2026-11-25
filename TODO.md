@@ -11,7 +11,7 @@
 - [x] 2026-11-17 — Publish wedding weekend and lodging checklist articles to the blog only; add blog discovery, metadata, routes and sitemap. Six additional Tuesday publications scheduled November 24–December 29, with ChatGPT notifications for Ashley.
 
 - [x] 2026-11-04 — Remove Off The Grid from shared desktop/mobile navigation at Ashley's request.
-Last updated: 2026-11-24 (rancho-site-daily — `/horses/` has a `BreadcrumbList`; `/weddings/` links the rain-plan guide. The Tuesday-post breadcrumb follow-up is closed: the publisher now emits one. Remaining follow-up for each Tuesday post through 12/29: link it from `/weddings/` Related Reading and check the title length. Capacity and breakfast-tacos questions below are still open. Run-log: `run-logs/2026-11-24-seo.md`.)
+Last updated: 2026-11-25 (rancho-site-daily — the 11/25 horse-riding guide is linked from three Related Reading lists. Follow-ups: each Tuesday wedding post through 12/29 gets a `/weddings/` Related Reading link and a title-length check; each remaining horse-series post (5 to go) gets at least one inbound link beyond the blog index. Ashley's call, not done: a link from `/horses/` to the riding guide. Capacity and breakfast-tacos questions below are still open. Run-log: `run-logs/2026-11-25-seo.md`.)
 
 Prior: 2026-11-23 (rancho-site-daily — trimmed two over-long wedding post titles; `/videos/` got a Twitter card. Follow-ups unchanged: add `BreadcrumbList` to each Tuesday post as it publishes (next one 11/24) and check its `<title>` stays under about 60 characters. Capacity and breakfast-tacos questions below are still open. Run-log: `run-logs/2026-11-23-seo.md`.)
 
