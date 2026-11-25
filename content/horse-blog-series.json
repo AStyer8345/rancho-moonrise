@@ -6,12 +6,15 @@
     {
       "number": 1,
       "topic": "Where to Ride a Horse in Austin",
-      "status": "deployment_pending",
+      "status": "published",
       "title": "Where to Ride a Horse in Austin: Locations & Booking Tips",
       "url": "https://ranchomoonrise.com/blog/where-to-ride-a-horse-in-austin/",
       "path": "site/pages/where-to-ride-a-horse-in-austin.html",
       "publicationDate": "2026-11-25",
-      "preparedAt": "2026-11-25T08:12:00-06:00"
+      "preparedAt": "2026-11-25T08:12:00-06:00",
+      "publicationCommit": "6a1132784cbb7c3774afb43987aad2f620ad4e7a",
+      "verifiedDate": "2026-11-25",
+      "verification": "HTTP 200 at canonical URL; expected article, JSON-LD, blog index and sitemap verified after Vercel deployment success."
     },
     {
       "number": 2,

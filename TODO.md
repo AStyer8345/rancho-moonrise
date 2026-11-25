@@ -1306,4 +1306,4 @@ All 17 customer-facing HTML pages + `js/main.js` swept clean of banned terms. Li
 
 - [x] 2026-11-23 — Link Horses next to Private Events in desktop/mobile main navigation across the site.
 
-- [ ] 2026-11-25 — Verify horse series topic 1 live, then mark published in content/horse-blog-series.json; next topic is Horse Photoshoot Locations in Texas.
+- [x] 2026-11-25 — Publish and live-verify horse series topic 1; marked published in content/horse-blog-series.json. Next topic: Horse Photoshoot Locations in Texas.

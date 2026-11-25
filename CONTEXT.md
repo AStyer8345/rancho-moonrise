@@ -69,7 +69,7 @@ The 4 accommodation files are literally 340×340 thumbnails masquerading as cont
 
 ## Last Worked On
 
-- 2026-11-25 — Horse blog 1/6: prepared Where to Ride a Horse in Austin, scoped to location/booking comparison and distinct from existing weekend/bachelorette guides. Added only article, blog card/schema, route, sitemap and repository progress; official operator sources and live Rancho event data checked. Verify deployment before advancing topic 2.
+- 2026-11-25 — Horse blog 1/6: published and live-verified `/blog/where-to-ride-a-horse-in-austin/`. Location/booking guide with official operator sources, current Rancho details, actual horse image, blog card/schema, route and sitemap. Progress: `content/horse-blog-series.json`. Next topic: Horse Photoshoot Locations in Texas. No other page promotion or wedding-task changes.
 
 - 2026-11-24 — rancho-competitive-weekly published the 11/23 intel report and card (baseline 6/10; +pool day pass, −glamping near Austin TX).
 

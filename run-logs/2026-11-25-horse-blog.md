@@ -16,3 +16,5 @@ Topic 1: Where to Ride a Horse in Austin: Locations & Booking Tips
 - Publication state: deployment_pending. Verify expected live content before marking published.
 
 - Prepublication validation passed: HTML parsing, one H1, BlogPosting and BreadcrumbList JSON-LD, route JSON, sitemap XML, blog card links, inline-script syntax, 13 article links/image HTTP 200 and all linked horse/calendar anchors present.
+
+- Publication verified: Vercel status success for 6a1132784cbb7c3774afb43987aad2f620ad4e7a; canonical article HTTP 200 with expected title/content and valid JSON-LD. Blog index and sitemap entries verified from production. Topic 1 marked published; five topics remain. No further article published in this run.

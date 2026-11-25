@@ -2656,3 +2656,5 @@ Launch-blocker sweep and conversion sharpening across the primary pages, ahead o
 - Not done: Search Console (no API access), PageSpeed (429). Run-log: `run-logs/2026-11-24-seo.md`.
 
 - 2026-11-25 — Horse blog 1/6: prepared Where to Ride a Horse in Austin, scoped to location/booking comparison and distinct from existing weekend/bachelorette guides. Added only article, blog card/schema, route, sitemap and repository progress; official operator sources and live Rancho event data checked. Verify deployment before advancing topic 2.
+
+- 2026-11-25 — Verified horse series topic 1 deployed successfully on Vercel and returns HTTP 200 at its canonical URL. Article content/metadata, blog index link and sitemap entry checked live; series progress marked published (1/6).
