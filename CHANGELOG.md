@@ -2662,3 +2662,9 @@ Launch-blocker sweep and conversion sharpening across the primary pages, ahead o
 - 2026-11-25 — rancho-site-daily: linked the new horse-riding guide (`/blog/where-to-ride-a-horse-in-austin/`) from Related Reading on `/blog/things-to-do-manor-tx/`, `/blog/bachelorette-party-austin-texas/` and `/blog/weekend-getaways-near-austin/`. Its only inbound link had been the blog index.
 - Gate: canary passes; `/safari-tents-near-austin/` still not surfacing; 38/38 sitemap routes 200 with JSON-LD, max TTFB 0.44s. `validate:site` and `test:runtime` pass. Commit `2d5c8de`, verified live.
 - Not done: Search Console (no API access), PageSpeed (429). Run-log: `run-logs/2026-11-25-seo.md`.
+
+## 2026-11-25 — rancho-content-weekly: wedding-venues-near-austin strengthened
+- Added three real photos (corral ceremony, dinner table with the cabins behind, wedding dancing at night) in a new "Ceremony, Dinner, and the Walk to Bed" section; the page had no body images before.
+- Added the `Ashley · Rancho Moonrise` author block, switched `BlogPosting.author` to Ashley, and bumped `dateModified` and the sitemap `lastmod` to 2026-11-25.
+- Answered three of the page's own tour questions with facts already published on the weddings page (rain spaces and umbrellas, outside caterers, benches and chairs in the rental). Fixed a doubled phrase in the buyout paragraph.
+- Testimonial still blocked: no approved wedding quote on file. Not seen rendered (preview server declined in the unattended run).

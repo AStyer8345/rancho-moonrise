@@ -408,7 +408,13 @@ The video card **"Escape to Rancho Moonrise"** on `/videos/` points at YouTube I
 
 I've left the card in place rather than silently removing visible content, since deleting published content is your call, not mine.
 
-### NEEDS ADAM — Approve testimonial T-001 (unblocks the 4th element of every content-weekly run) — added 2026-07-22, **re-verified 2026-11-18** by `rancho-content-weekly`
+### NEEDS ADAM — Approve testimonial T-001 (unblocks the 4th element of every content-weekly run) — added 2026-07-22, **re-verified 2026-11-25** by `rancho-content-weekly`
+
+**Re-verified live 2026-11-25:** `brand/approved-testimonials.md` unchanged; T-001 still `UNAPPROVED`, event date unknown (**133 days**). This run strengthened `wedding-venues-near-austin.html` to 3 of 4. **Next week's page is `corporate-retreat-near-austin.html`, the page T-001 was suggested for.** If T-001 is approved with an event date before 12/2, that run ships all 4 elements for the first time.
+
+**Also found 2026-11-25 (~5 min, any session):** `wedding-poolside` is not poolside. The photo is a bride and groom dancing at night under disco balls; no pool is visible. `weddings.html` describes it as poolside in five alt texts ("Wedding guests poolside", "Poolside wedding celebration", "Poolside wedding ceremony at sunset with lounge chairs…", "Poolside wedding cocktail hour"). The "ceremony at sunset with lounge chairs" alt may belong to a different photo that was swapped out. Same family as `wedding-event-barn` and `accom-campfire-evening`.
+
+**Also found 2026-11-25 (needs Ashley):** `wedding-venues-near-austin.html` still says "2026 Saturday dates are booking fast — only limited availability remains for peak season." That line is stale in late November. Replace it with real 2027 availability or cut it.
 
 **Re-verified live 2026-11-18:** `brand/approved-testimonials.md` unchanged; T-001 still `UNAPPROVED`, event date unknown (**126 days**). This run strengthened `ranch-wedding-texas.html` to 3 of 4. Weddings are the file's highest-value gap (no quote on file), and the next two queue pages are also wedding pages. **Ask for Ashley:** 2–3 wedding quotes with real event dates from HoneyBook or her inbox.
 

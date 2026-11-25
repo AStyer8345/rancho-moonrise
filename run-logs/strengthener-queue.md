@@ -17,7 +17,7 @@ Priority: broken/placeholder assets first, then highest-impression landing pages
 | `glamping-near-austin-texas.html` | **2026-10-01** | ✅ **STRENGTHENED**: 3 of 4 elements (photos, author block, local detail). Testimonial still NEEDS ADAM (glamping is a listed coverage gap; T-001 doesn't serve it). |
 | `bachelorette-party-austin-texas.html` | **2026-10-16** | ✅ **STRENGTHENED**: 3 of 4 elements (photos, author block, local detail). Testimonial still NEEDS ADAM (bachelorette is a listed coverage gap). |
 | `ranch-wedding-texas.html` | **2026-11-18** | ✅ **STRENGTHENED**: 3 of 4 elements (photos, author block, local detail). Testimonial still NEEDS ADAM (weddings are the top coverage gap). |
-| `wedding-venues-near-austin.html` | — | Pending |
+| `wedding-venues-near-austin.html` | **2026-11-25** | ✅ **STRENGTHENED**: 3 of 4 elements (photos, author block, local detail). Testimonial still NEEDS ADAM (weddings are the top coverage gap). |
 | `corporate-retreat-near-austin.html` | — | Pending |
 | `safari-tents-near-austin.html` | — | Pending |
 | `things-to-do-near-austin-with-kids.html` | — | Pending |
@@ -321,3 +321,27 @@ Both hard stops re-verified live still true (`find brand site -iname "*testimoni
 **Left alone deliberately (already there, outside a content pass):** `publisher.aggregateRating.reviewCount: 125` is stale (live Google is 148). "in Manor, TX" appears in the AEO block and FAQ schema. Body copy says "dancing that went late" and "Venues with kitchen access (like Rancho Moonrise)"; the first runs into the open private-event quiet-hours question from 8/19, and the second is not in the facts file. Both need Ashley, not a content pass.
 
 **Next run:** `wedding-venues-near-austin.html`.
+
+---
+
+### 2026-11-25 — wedding-venues-near-austin.html — ✅ SHIPPED (run 17; eighth consecutive productive run)
+
+**Gates re-checked live:** GOALS.md `## Settled Decisions` still names Ashley as the byline, and `rancho-content-weekly` is still under Keep running. `brand/approved-testimonials.md` is unchanged: T-001 is still `UNAPPROVED`, and the Coverage-gaps table lists Weddings as "No", so the testimonial is **NEEDS ADAM** (TODO updated, not duplicated).
+
+**Repo state:** the main checkout is still mid-rebase (detached at `5160813`) with other tasks' uncommitted work. This run used a clean worktree (`rancho-moonrise-content-20261125`) cut from `origin/main` `2fb40fe`. Before editing, the live `/blog/wedding-venues-near-austin/` was byte-identical to `origin/main`.
+
+**Shipped (2 files: the page plus the sitemap `lastmod`):**
+- **3 real photos**, each opened and checked before alt text was written. Before this run each was used only on `weddings.html` (and the corral shot on the home page), and this page had no body images:
+  - `wedding-ceremony-corral`: a ceremony set at the corral. Weathered wood-stave fence with a gate at the center, pine benches either side of a grass aisle, striped woven rugs, marigolds and pampas grass in vases.
+  - `wedding-wishbone-chairs`: a farm table set for dinner on the grass with wishbone chairs, and two black glass-front cabins against the tree line behind. This is the page's argument in one frame.
+  - `wedding-poolside`: **the file name is wrong.** It is a bride and groom dancing among guests at night under disco balls and hanging greenery. No pool is visible. Alt text here describes the photo and names no space. `weddings.html` still describes it as poolside in five places → logged to TODO.
+  - New section "Ceremony, Dinner, and the Walk to Bed" after the article, using the existing `.features` / `.feature-card` grid. No new CSS. Sources are 1024×683, 1024×1366 and 1024×1178 going into 4:3 crops. **Not seen rendered:** the preview server start was declined in this unattended run.
+- **Named author block:** `Ashley · Rancho Moonrise` after the CTA. `BlogPosting.author` changed from Organization to Person (Ashley). `dateModified` changed 2026-11-13 → 2026-11-25.
+- **Local detail (verifiable, all already published on `weddings.html`):** the page ends with seven questions to ask on a tour and never answered any of them for this ranch. It now answers three: rain (Event Barn 40×60 ft indoor plus 40×36 ft covered pavilion, up to 200 clear umbrellas at no charge, tenting optional), catering (outside caterers and vendors welcome, bar service from the venue), and seating (ceremony benches, reception chairs and a day-of venue manager in the rental). The benches are tied to the corral photo.
+- **Copy defect fixed:** "your closest wedding party — your closest wedding party stays overnight" was a doubled phrase.
+
+**Verification:** `npm run validate:site` passes. All 4 JSON-LD blocks parse; author and dateModified confirmed by parsing. No banned filler words, no emoji. All 6 image variants exist.
+
+**Left alone deliberately (already there, outside a content pass):** "2026 Saturday dates are booking fast" is stale in late November 2026 and needs Ashley's real availability. `reviewCount: 125` and "125+ Google reviews" lag the live 150. "in Manor, TX" appears in the AEO block and FAQ schema. The noise-curfew tour question is still unanswered for this ranch: it is the open private-event quiet-hours question from 8/19. `wordCount` in the schema was not recalculated.
+
+**Next run:** `corporate-retreat-near-austin.html`. T-001 is suggested for that page, so it is the first page where one approval would deliver all 4 elements.

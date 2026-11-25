@@ -100,7 +100,7 @@ The 4 accommodation files are literally 340×340 thumbnails masquerading as cont
 - 2026-11-23 — rancho-site-daily trimmed two over-long wedding post titles and added a Twitter card to `/videos/` (`48aac73`, live).
 - 2026-11-20 — rancho-site-daily linked the two 11/17 wedding guides from `/weddings/` and added `BreadcrumbList` to four new wedding posts (`bb7b7bb`, live).
 - 2026-11-19 — rancho-site-daily removed three dead YouTube cards and two dead schema entries from `site/pages/videos.html` (`81cbc16`, live).
-- 2026-11-18 — content-weekly: `ranch-wedding-texas.html` strengthened to 3 of 4 (photos, Ashley byline, wedding rental specifics). No approved wedding testimonial on file. Next page: `wedding-venues-near-austin.html`. Detail in `run-logs/strengthener-queue.md`.
+- 2026-11-25 — content-weekly: `wedding-venues-near-austin.html` strengthened to 3 of 4 (photos, Ashley byline, tour-question answers from the weddings page). No approved wedding testimonial on file. Not seen rendered. Next page: `corporate-retreat-near-austin.html` (T-001's suggested page; approving it would give that run all 4).
 
 ## Mark Done System — How It Works
 
